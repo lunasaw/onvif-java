@@ -33,122 +33,140 @@ import javax.xml.soap.SOAPPart;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
+
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.MessageDigestAlgorithms;
+
 /*
  Utility class to add user/password onvif credentials to SOAP communications
 */
 public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
 
-  private final String username;
-  private final String password;
-  private final String nonce;
-  private String utcTime;
-  private static Random rnd = new SecureRandom();
+    private final String username;
+    private final String password;
+    private String utcTime;
+    private static Random rnd = new SecureRandom();
 
-  public SimpleSecurityHandler(String username, String password) {
-    this.username = username;
-    this.password = password;
-    this.nonce = "" + rnd.nextInt();
-  }
+    public SimpleSecurityHandler(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
-  @Override
-  public boolean handleMessage(final SOAPMessageContext msgCtx) {
-    // System.out.println("SimpleSecurityHandler");
+    public byte[] generateNonce(int length) {
+        byte[] nonceBytes = new byte[length];
 
-    // Indicator telling us which direction this message is going in
-    final Boolean outInd = (Boolean) msgCtx.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
+        // fill byte[]
+        rnd.nextBytes(nonceBytes);
+        return nonceBytes;
+    }
 
-    // Handler must only add security headers to outbound messages
-    if (outInd.booleanValue()) {
-      try {
-        // Create the xml
-        SOAPMessage soapMessage = msgCtx.getMessage();
-        SOAPEnvelope envelope = soapMessage.getSOAPPart().getEnvelope();
-        SOAPHeader header = envelope.getHeader();
-        if (header == null) header = envelope.addHeader();
+    public String encryptPassword(String password, byte[] nonceBytes) {
+        String digestBase64 = "";
 
-        SOAPPart sp = soapMessage.getSOAPPart();
-        SOAPEnvelope se = sp.getEnvelope();
-        se.addNamespaceDeclaration(WSSE_PREFIX, WSSE_NS);
-        se.addNamespaceDeclaration(WSU_PREFIX, WSU_NS);
+        try {
+            // 1. Base64 decode the nonce
+            byte[] decodedNonce = nonceBytes;
 
-        SOAPElement securityElem = header.addChildElement(WSSE_LN, WSSE_PREFIX);
-        // securityElem.setAttribute("SOAP-ENV:mustUnderstand", "1");
+            // 2. Concatenate decodedNonce, date, and password
+            byte[] dateBytes = getUTCTime().getBytes();
+            byte[] passwordBytes = password.getBytes();
+            byte[] toBeHashed = new byte[decodedNonce.length + dateBytes.length + passwordBytes.length];
 
-        SOAPElement usernameTokenElem =
-            securityElem.addChildElement(USERNAME_TOKEN_LN, WSSE_PREFIX);
+            System.arraycopy(decodedNonce, 0, toBeHashed, 0, decodedNonce.length);
+            System.arraycopy(dateBytes, 0, toBeHashed, decodedNonce.length, dateBytes.length);
+            System.arraycopy(passwordBytes, 0, toBeHashed, decodedNonce.length + dateBytes.length, passwordBytes.length);
 
-        SOAPElement usernameElem = usernameTokenElem.addChildElement(USERNAME_LN, WSSE_PREFIX);
-        usernameElem.setTextContent(username);
+            // 3. SHA-1 hash the concatenated bytes
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            byte[] sha1Hash = digest.digest(toBeHashed);
 
-        SOAPElement passwordElem = usernameTokenElem.addChildElement(PASSWORD_LN, WSSE_PREFIX);
-        passwordElem.setAttribute(PASSWORD_TYPE_ATTR, PASSWORD_DIGEST);
-        passwordElem.setTextContent(encryptPassword(password));
+            // 4. Base64 encode the SHA-1 hash
+            digestBase64 = java.util.Base64.getEncoder().encodeToString(sha1Hash);
 
-        SOAPElement nonceElem = usernameTokenElem.addChildElement(NONCE_LN, WSSE_PREFIX);
-        nonceElem.setAttribute("EncodingType", BASE64_ENCODING);
-        nonceElem.setTextContent(Base64.encodeBase64String(nonce.getBytes()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return digestBase64;
+    }
 
-        SOAPElement createdElem = usernameTokenElem.addChildElement(CREATED_LN, WSU_PREFIX);
-        createdElem.setTextContent(getLastUTCTime());
-      } catch (final Exception e) {
-        e.printStackTrace();
+    @Override
+    public boolean handleMessage(final SOAPMessageContext msgCtx) {
+        byte[] nonceBytes = generateNonce(16);
+        // Indicator telling us which direction this message is going in
+        final Boolean outInd = (Boolean) msgCtx.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
+
+        // Handler must only add security headers to outbound messages
+        if (outInd.booleanValue()) {
+            try {
+                // Create the xml
+                SOAPMessage soapMessage = msgCtx.getMessage();
+                SOAPEnvelope envelope = soapMessage.getSOAPPart().getEnvelope();
+                SOAPHeader header = envelope.getHeader();
+                if (header == null) {
+                    header = envelope.addHeader();
+                }
+
+                SOAPPart sp = soapMessage.getSOAPPart();
+                SOAPEnvelope se = sp.getEnvelope();
+                se.addNamespaceDeclaration(WSSE_PREFIX, WSSE_NS);
+                se.addNamespaceDeclaration(WSU_PREFIX, WSU_NS);
+
+                SOAPElement securityElem = header.addChildElement(WSSE_LN, WSSE_PREFIX);
+                // securityElem.setAttribute("SOAP-ENV:mustUnderstand", "1");
+
+                SOAPElement usernameTokenElem =
+                        securityElem.addChildElement(USERNAME_TOKEN_LN, WSSE_PREFIX);
+
+                SOAPElement usernameElem = usernameTokenElem.addChildElement(USERNAME_LN, WSSE_PREFIX);
+                usernameElem.setTextContent(username);
+
+                SOAPElement passwordElem = usernameTokenElem.addChildElement(PASSWORD_LN, WSSE_PREFIX);
+                passwordElem.setAttribute(PASSWORD_TYPE_ATTR, PASSWORD_DIGEST);
+                passwordElem.setTextContent(encryptPassword(password, nonceBytes));
+
+                SOAPElement nonceElem = usernameTokenElem.addChildElement(NONCE_LN, WSSE_PREFIX);
+                nonceElem.setAttribute("EncodingType", BASE64_ENCODING);
+                nonceElem.setTextContent(Base64.encodeBase64String(nonceBytes));
+
+                SOAPElement createdElem = usernameTokenElem.addChildElement(CREATED_LN, WSU_PREFIX);
+                createdElem.setTextContent(getLastUTCTime());
+            } catch (final Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String getLastUTCTime() {
+        return utcTime;
+    }
+
+    public String getUTCTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ss'Z'");
+        sdf.setTimeZone(new SimpleTimeZone(SimpleTimeZone.UTC_TIME, "UTC"));
+        Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
+        String utcTime = sdf.format(cal.getTime());
+        this.utcTime = utcTime;
+        return utcTime;
+    }
+
+
+    @Override
+    public boolean handleFault(SOAPMessageContext context) {
+        // TODO Auto-generated method stub
         return false;
-      }
     }
-    return true;
-  }
 
-  public String getLastUTCTime() {
-    return utcTime;
-  }
+    @Override
+    public void close(MessageContext context) {
+        // TODO Auto-generated method stub
 
-  public String getUTCTime() {
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ss'Z'");
-    sdf.setTimeZone(new SimpleTimeZone(SimpleTimeZone.UTC_TIME, "UTC"));
-    Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
-    String utcTime = sdf.format(cal.getTime());
-    this.utcTime = utcTime;
-    return utcTime;
-  }
-
-  public String encryptPassword(String password) {
-    String timestamp = getUTCTime();
-    String beforeEncryption = nonce + timestamp + password;
-    byte[] encryptedRaw;
-    try {
-      encryptedRaw = sha1(beforeEncryption);
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-      return null;
     }
-    String encoded = Base64.encodeBase64String(encryptedRaw);
-    return encoded;
-  }
-  // Other required methods on interface need no guts
-  private static byte[] sha1(String s) throws NoSuchAlgorithmException {
-    MessageDigest SHA1 = MessageDigest.getInstance(MessageDigestAlgorithms.SHA_1);
-    SHA1.reset();
-    SHA1.update(s.getBytes());
-    return SHA1.digest();
-  }
 
-  @Override
-  public boolean handleFault(SOAPMessageContext context) {
-    // TODO Auto-generated method stub
-    return false;
-  }
-
-  @Override
-  public void close(MessageContext context) {
-    // TODO Auto-generated method stub
-
-  }
-
-  @Override
-  public Set<QName> getHeaders() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+    @Override
+    public Set<QName> getHeaders() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
