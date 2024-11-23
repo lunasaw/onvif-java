@@ -4,10 +4,7 @@ import de.onvif.beans.DeviceInfo;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import jakarta.xml.soap.SOAPException;
 import jakarta.xml.ws.BindingProvider;
@@ -139,7 +136,7 @@ public class OnvifDevice {
 
     // resetSystemDateAndTime();		// don't modify the camera in a constructor.. :)
 
-    Capabilities capabilities = this.device.getCapabilities(Arrays.asList(CapabilityCategory.ALL));
+    Capabilities capabilities = this.device.getCapabilities(List.of(CapabilityCategory.ALL));
     if (capabilities == null) {
       throw new ConnectException("Capabilities not reachable.");
     }

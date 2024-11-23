@@ -45,7 +45,7 @@ public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
     private final String username;
     private final String password;
     private String utcTime;
-    private static Random rnd = new SecureRandom();
+    private static final Random rnd = new SecureRandom();
 
     public SimpleSecurityHandler(String username, String password) {
         this.username = username;

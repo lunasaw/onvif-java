@@ -32,7 +32,7 @@ public class SimpleTest {
           OnvifDevice cam =
               new OnvifDevice(
                   credentials.getHost(), credentials.getUser(), credentials.getPassword());
-          System.out.printf("Connected to device %s (%s)%n", cam.getDeviceInfo(), k.toString());
+          System.out.printf("Connected to device %s (%s)%n", cam.getDeviceInfo(), k);
           System.out.println(TestDevice.inspect(cam));
 
           String snapshotUri = cam.getSnapshotUri();

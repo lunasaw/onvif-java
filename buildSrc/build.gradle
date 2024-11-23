@@ -17,7 +17,9 @@ repositories {
 }
 
 dependencies {
-implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '4.0.2'
+implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '3.0.1'
 implementation group: 'jakarta.xml.soap', name: 'jakarta.xml.soap-api', version: '3.0.2'
-implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.2'
+implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
+implementation group: 'com.sun.xml.messaging.saaj', name: 'saaj-impl', version: '3.0.4'
+
 }

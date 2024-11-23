@@ -66,7 +66,7 @@ public class WsNotificationTest {
     System.out.println("Connected to device " + cam.getDeviceInfo());
 
     // get device capabilities
-    Capabilities cap = cam.getDevice().getCapabilities(Arrays.asList(CapabilityCategory.ALL));
+    Capabilities cap = cam.getDevice().getCapabilities(List.of(CapabilityCategory.ALL));
     System.out.println(cap.getDevice().toString());
     // print profiles
     printProfiles(cam);

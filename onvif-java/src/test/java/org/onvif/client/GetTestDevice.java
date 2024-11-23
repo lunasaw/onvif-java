@@ -97,7 +97,7 @@ public class GetTestDevice {
 	private static OnvifCredentials getFirstFromResource(String resource) throws IOException {
 		InputStream res = GetTestDevice.class.getResourceAsStream(resource);
 		if (res != null) {
-			try (Scanner s = new Scanner(res, StandardCharsets.UTF_8.name());) {
+			try (Scanner s = new Scanner(res, StandardCharsets.UTF_8)) {
 				s.useDelimiter("\\A");
 				while (s.hasNextLine()) {
 					String line = s.nextLine();

@@ -11,6 +11,12 @@ plugins {
 //sourceCompatibility = "1.8"
 //targetCompatibility = "1.8"
 
+configurations.all {
+    resolutionStrategy {
+        force group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
+    }
+}
+
 dependencies {
     api libs.org.apache.cxf.cxf.rt.frontend.jaxws
     api libs.org.apache.cxf.cxf.rt.transports.http.jetty
@@ -31,6 +37,7 @@ dependencies {
     implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '3.0.0'
     implementation group: 'jakarta.xml.soap', name: 'jakarta.xml.soap-api', version: '3.0.0'
     implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.0'
+    implementation group: 'com.sun.xml.messaging.saaj', name: 'saaj-impl', version: '3.0.4'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'

@@ -93,9 +93,8 @@ public class DeviceDiscovery {
     for (String key : discoverWsDevices()) {
       try {
         final URL url = new URL(key);
-        boolean ok = true;
-        if (regexpProtocol.length() > 0 && !url.getProtocol().matches(regexpProtocol)) ok = false;
-        if (regexpPath.length() > 0 && !url.getPath().matches(regexpPath)) ok = false;
+        boolean ok = regexpProtocol.length() <= 0 || url.getProtocol().matches(regexpProtocol);
+          if (regexpPath.length() > 0 && !url.getPath().matches(regexpPath)) ok = false;
         // ignore ip6 hosts
         if (ok && !enableIPv6 && url.getHost().startsWith("[")) ok = false;
         if (ok) urls.add(url);

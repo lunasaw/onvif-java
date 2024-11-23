@@ -57,9 +57,9 @@ public class ReadCommandsFromStdInput {
               List<Profile> profiles = cam.getMedia().getProfiles();
               for (Profile p : profiles) {
                 System.out.println(
-                    "URL from Profile \'"
+                        "URL from Profile '"
                         + p.getName()
-                        + "\': "
+                        + "': "
                         + cam.getMedia().getSnapshotUri(p.getToken()));
               }
               break;
