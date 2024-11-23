@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.w3c.dom.Element;
 
 
@@ -140,14 +138,13 @@ public class KeyAttribute {
 
     /**
      * Gets the value of the hasPrivateKey property.
-     * This getter has been renamed from isHasPrivateKey() to getHasPrivateKey() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean getHasPrivateKey() {
+    public Boolean isHasPrivateKey() {
         return hasPrivateKey;
     }
 
@@ -193,7 +190,7 @@ public class KeyAttribute {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
+     * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
@@ -205,8 +202,8 @@ public class KeyAttribute {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link Object }
+     * {@link Element }
      * 
      * 
      */
@@ -219,14 +216,13 @@ public class KeyAttribute {
 
     /**
      * Gets the value of the externallyGenerated property.
-     * This getter has been renamed from isExternallyGenerated() to getExternallyGenerated() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean getExternallyGenerated() {
+    public Boolean isExternallyGenerated() {
         return externallyGenerated;
     }
 
@@ -244,14 +240,13 @@ public class KeyAttribute {
 
     /**
      * Gets the value of the securelyStored property.
-     * This getter has been renamed from isSecurelyStored() to getSecurelyStored() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean getSecurelyStored() {
+    public Boolean isSecurelyStored() {
         return securelyStored;
     }
 
@@ -309,16 +304,6 @@ public class KeyAttribute {
         return otherAttributes;
     }
 
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
-    }
-
 
     /**
      * <p>Java class for anonymous complex type.
@@ -354,7 +339,7 @@ public class KeyAttribute {
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
+         * returned list will be present inside the Jakarta XML Binding object.
          * This is why there is not a <CODE>set</CODE> method for the any property.
          * 
          * <p>
@@ -366,8 +351,8 @@ public class KeyAttribute {
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link Element }
          * {@link Object }
+         * {@link Element }
          * 
          * 
          */
@@ -376,16 +361,6 @@ public class KeyAttribute {
                 any = new ArrayList<Object>();
             }
             return this.any;
-        }
-
-        /**
-         * Generates a String representation of the contents of this type.
-         * This is an extension method, produced by the 'ts' xjc plugin
-         * 
-         */
-        @Override
-        public String toString() {
-            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

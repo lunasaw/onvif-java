@@ -1,13 +1,11 @@
 
 package org.onvif.ver20.ptz.wsdl;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.onvif.ver10.schema.PTZConfiguration;
 
 
@@ -70,10 +68,9 @@ public class SetConfiguration {
 
     /**
      * Gets the value of the forcePersistence property.
-     * This getter has been renamed from isForcePersistence() to getForcePersistence() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getForcePersistence() {
+    public boolean isForcePersistence() {
         return forcePersistence;
     }
 
@@ -83,16 +80,6 @@ public class SetConfiguration {
      */
     public void setForcePersistence(boolean value) {
         this.forcePersistence = value;
-    }
-
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

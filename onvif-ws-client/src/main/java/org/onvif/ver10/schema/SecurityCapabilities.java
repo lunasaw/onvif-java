@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
 
@@ -86,10 +84,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the tls11 property.
-     * This getter has been renamed from isTLS11() to getTLS11() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getTLS11() {
+    public boolean isTLS11() {
         return tls11;
     }
 
@@ -103,10 +100,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the tls12 property.
-     * This getter has been renamed from isTLS12() to getTLS12() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getTLS12() {
+    public boolean isTLS12() {
         return tls12;
     }
 
@@ -120,10 +116,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the onboardKeyGeneration property.
-     * This getter has been renamed from isOnboardKeyGeneration() to getOnboardKeyGeneration() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getOnboardKeyGeneration() {
+    public boolean isOnboardKeyGeneration() {
         return onboardKeyGeneration;
     }
 
@@ -137,10 +132,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the accessPolicyConfig property.
-     * This getter has been renamed from isAccessPolicyConfig() to getAccessPolicyConfig() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getAccessPolicyConfig() {
+    public boolean isAccessPolicyConfig() {
         return accessPolicyConfig;
     }
 
@@ -154,10 +148,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the x509Token property.
-     * This getter has been renamed from isX509Token() to getX509Token() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getX509Token() {
+    public boolean isX509Token() {
         return x509Token;
     }
 
@@ -171,10 +164,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the samlToken property.
-     * This getter has been renamed from isSAMLToken() to getSAMLToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getSAMLToken() {
+    public boolean isSAMLToken() {
         return samlToken;
     }
 
@@ -188,10 +180,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the kerberosToken property.
-     * This getter has been renamed from isKerberosToken() to getKerberosToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getKerberosToken() {
+    public boolean isKerberosToken() {
         return kerberosToken;
     }
 
@@ -205,10 +196,9 @@ public class SecurityCapabilities {
 
     /**
      * Gets the value of the relToken property.
-     * This getter has been renamed from isRELToken() to getRELToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getRELToken() {
+    public boolean isRELToken() {
         return relToken;
     }
 
@@ -226,7 +216,7 @@ public class SecurityCapabilities {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
+     * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
@@ -238,8 +228,8 @@ public class SecurityCapabilities {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link java.lang.Object }
+     * {@link Element }
      * 
      * 
      */
@@ -290,16 +280,6 @@ public class SecurityCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
-    }
-
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
 
@@ -70,10 +68,9 @@ public class Dot11Capabilities {
 
     /**
      * Gets the value of the tkip property.
-     * This getter has been renamed from isTKIP() to getTKIP() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getTKIP() {
+    public boolean isTKIP() {
         return tkip;
     }
 
@@ -87,10 +84,9 @@ public class Dot11Capabilities {
 
     /**
      * Gets the value of the scanAvailableNetworks property.
-     * This getter has been renamed from isScanAvailableNetworks() to getScanAvailableNetworks() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getScanAvailableNetworks() {
+    public boolean isScanAvailableNetworks() {
         return scanAvailableNetworks;
     }
 
@@ -104,10 +100,9 @@ public class Dot11Capabilities {
 
     /**
      * Gets the value of the multipleConfiguration property.
-     * This getter has been renamed from isMultipleConfiguration() to getMultipleConfiguration() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getMultipleConfiguration() {
+    public boolean isMultipleConfiguration() {
         return multipleConfiguration;
     }
 
@@ -121,10 +116,9 @@ public class Dot11Capabilities {
 
     /**
      * Gets the value of the adHocStationMode property.
-     * This getter has been renamed from isAdHocStationMode() to getAdHocStationMode() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getAdHocStationMode() {
+    public boolean isAdHocStationMode() {
         return adHocStationMode;
     }
 
@@ -138,10 +132,9 @@ public class Dot11Capabilities {
 
     /**
      * Gets the value of the wep property.
-     * This getter has been renamed from isWEP() to getWEP() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getWEP() {
+    public boolean isWEP() {
         return wep;
     }
 
@@ -159,7 +152,7 @@ public class Dot11Capabilities {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
+     * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
@@ -171,8 +164,8 @@ public class Dot11Capabilities {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link java.lang.Object }
+     * {@link Element }
      * 
      * 
      */
@@ -199,16 +192,6 @@ public class Dot11Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
-    }
-
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -3,14 +3,12 @@ package org.onvif.ver10.schema;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -50,10 +48,9 @@ public class PTZFilter {
 
     /**
      * Gets the value of the status property.
-     * This getter has been renamed from isStatus() to getStatus() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
@@ -67,10 +64,9 @@ public class PTZFilter {
 
     /**
      * Gets the value of the position property.
-     * This getter has been renamed from isPosition() to getPosition() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getPosition() {
+    public boolean isPosition() {
         return position;
     }
 
@@ -98,16 +94,6 @@ public class PTZFilter {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
-    }
-
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

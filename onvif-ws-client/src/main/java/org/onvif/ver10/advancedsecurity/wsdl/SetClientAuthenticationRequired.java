@@ -1,12 +1,10 @@
 
 package org.onvif.ver10.advancedsecurity.wsdl;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -39,10 +37,9 @@ public class SetClientAuthenticationRequired {
 
     /**
      * Gets the value of the clientAuthenticationRequired property.
-     * This getter has been renamed from isClientAuthenticationRequired() to getClientAuthenticationRequired() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean getClientAuthenticationRequired() {
+    public boolean isClientAuthenticationRequired() {
         return clientAuthenticationRequired;
     }
 
@@ -52,16 +49,6 @@ public class SetClientAuthenticationRequired {
      */
     public void setClientAuthenticationRequired(boolean value) {
         this.clientAuthenticationRequired = value;
-    }
-
-    /**
-     * Generates a String representation of the contents of this type.
-     * This is an extension method, produced by the 'ts' xjc plugin
-     * 
-     */
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }
