@@ -132,7 +132,7 @@ public interface AccessRulesPort {
      * shall be
      * empty, the service shall allocate a token for the access profile. The allocated token shall
      * be returned
-     * in the response. If the client sends any value in the token field, the device shall return
+     * in the response. If the tests sends any value in the token field, the device shall return
      * InvalidArgVal
      * as generic fault code.
      * In an access profile, if several access policies specifying different schedules for the same

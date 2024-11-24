@@ -45,7 +45,7 @@ public interface EventPortType {
      *         This message contains the same elements as the SubscriptionRequest of the
      *         WS-BaseNotification without the ConsumerReference.
      *         
-     *         If no Filter is specified the pullpoint notifies all occurring events to the client.
+     *         If no Filter is specified the pullpoint notifies all occurring events to the tests.
      *         
      *         This method is mandatory.
      *       

@@ -22,6 +22,7 @@ repositories {
 //    }
 //}
 
+
 clean.dependsOn(":onvif-ws-client:clean")
 
 dependencies {
@@ -37,9 +38,9 @@ dependencies {
     api 'javax.xml.bind:jaxb-api:2.3.1'
     api 'com.sun.xml.bind:jaxb-core:2.3.0.1'
     api 'com.sun.xml.bind:jaxb-impl:2.3.1'
-    api testImplementation(project(':onvif-ws-client'))
+    api testFixtures(project(':onvif-ws-client'))
     api testImplementation('org.slf4j:slf4j-simple:1.7.26')
-    implementation project(':onvif-ws-client')
+   // implementation project(':onvif-ws-client')
     //   testCompileOnly(testFixtures(project(':onvif-ws-client')))
 }
 

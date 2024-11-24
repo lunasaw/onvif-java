@@ -665,7 +665,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         <ul>
           <li>The entire time range from StartPoint to EndPoint has been searched through.</li>
           <li>The total number of matches has been found, defined by the MaxMatches parameter.</li>
-          <li>The session has been ended by a client EndSession request.</li>
+          <li>The session has been ended by a tests EndSession request.</li>
           <li>The session has been ended because KeepAliveTime since the last request related to
             this session has expired.
           </li>
@@ -717,7 +717,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
             The entire time range from StartPoint to EndPoint has been searched through.
           </li>
           <li>The total number of matches has been found, defined by the MaxMatches parameter.</li>
-          <li>The session has been ended by a client EndSession request.</li>
+          <li>The session has been ended by a tests EndSession request.</li>
           <li>The session has been ended because KeepAliveTime since the last request related to
             this session has expired.
           </li>
@@ -767,7 +767,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
             The entire time range from StartPoint to EndPoint has been searched through.
           </li>
           <li>The total number of matches has been found, defined by the MaxMatches parameter.</li>
-          <li>The session has been ended by a client EndSession request.</li>
+          <li>The session has been ended by a tests EndSession request.</li>
           <li>The session has been ended because KeepAliveTime since the last request related to
             this session has expired.
           </li>
@@ -840,7 +840,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
             The entire time range from StartPoint to EndPoint has been searched through.
           </li>
           <li>The total number of matches has been found, defined by the MaxMatches parameter.</li>
-          <li>The session has been ended by a client EndSession request.</li>
+          <li>The session has been ended by a tests EndSession request.</li>
           <li>The session has been ended because KeepAliveTime since the last request related to
             this session has expired.
           </li>

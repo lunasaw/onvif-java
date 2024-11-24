@@ -38,14 +38,15 @@ dependencies {
 }
 
 processResources.dependsOn('compileTestFixturesJava')
-processResources.dependsOn(':onvif-ws-client:testFixturesJar')
-layout.buildDirectory.set(layout.projectDirectory.dir("src/main/resources"))
+        .dependsOn(':onvif-ws-client:testFixturesJar')
+        .dependsOn("compileJava")
+
+layout.buildDirectory.set(layout.projectDirectory.dir("build"))
 clean {
     delete("${layout.projectDirectory.dir('src/main/java/org')}")
     delete("${layout.projectDirectory.dir('src/wsdl/resources/resources/main/classes')}")
 }
 
-processResources.dependsOn("compileJava")
 
 wsdl2java {
     //   layout.buildDirectory = "${projectDir}/onvif-ws-client/src/main/resources/wsdl"
