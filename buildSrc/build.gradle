@@ -8,18 +8,6 @@ plugins {
 }
 
 repositories {
-     // Use the plugin portal to apply community plugins in convention plugins.
+    // Use the plugin portal to apply community plugins in convention plugins.
     gradlePluginPortal()
-    maven {
-        url = uri("https://build.shibboleth.net/maven/releases/")  // For implementation group: 'org.opensaml', name: 'opensaml-xacml-impl', version: '4.3.0'
-        url = uri("https://company/com/maven2")
-    }
-}
-
-dependencies {
-implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '3.0.1'
-implementation group: 'jakarta.xml.soap', name: 'jakarta.xml.soap-api', version: '3.0.2'
-implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
-implementation group: 'com.sun.xml.messaging.saaj', name: 'saaj-impl', version: '3.0.4'
-
 }

@@ -6,7 +6,7 @@ import de.onvif.utils.OnvifUtils;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import jakarta.xml.soap.SOAPException;
+import javax.xml.soap.SOAPException;
 import org.onvif.ver10.device.wsdl.DeviceServiceCapabilities;
 import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.GetEventProperties;

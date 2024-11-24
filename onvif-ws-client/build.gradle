@@ -3,7 +3,10 @@
  */
 
 plugins {
-    id 'buildlogic.java-conventions'
+    id 'org.onvif.java-conventions'
+    id 'java-library'
+    id("java-test-fixtures")
+    id 'maven-publish'
     id 'java'
     id 'com.github.bjornvester.wsdl2java' version '2.0.2'
 }
@@ -11,41 +14,31 @@ plugins {
 //sourceCompatibility = "1.8"
 //targetCompatibility = "1.8"
 
-configurations.all {
-    resolutionStrategy {
-        force group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
+//    }
+//}
 
 dependencies {
-    api libs.org.apache.cxf.cxf.rt.frontend.jaxws
-    api libs.org.apache.cxf.cxf.rt.transports.http.jetty
+    api 'org.apache.cxf:cxf-rt-frontend-jaxws:3.3.2'
+    api 'org.apache.cxf:cxf-rt-transports-http-jetty:3.3.2'
+    api 'javax.xml.ws:jaxws-api:2.3.1'
+    api 'javax.jws:javax.jws-api:1.1'
+    api 'org.apache.cxf.services.wsn:cxf-services-wsn-core:3.3.2'
+    api 'org.apache.commons:commons-lang3:3.8.1'
+    api 'org.apache.cxf.xjc-utils:cxf-xjc-runtime:3.3.0'
+    api 'org.apache.maven:maven-model-builder:3.6.1'
 
-    implementation group: 'jakarta.jws', name: 'jakarta.jws-api', version: '3.0.0'
+    // API dependencies are visible to consumers when building
+    testFixturesApi 'org.apache.commons:commons-lang3:3.9'
 
-    api libs.org.apache.cxf.services.wsn.cxf.services.wsn.core
-    api libs.org.apache.commons.commons.lang3.x1
-    api libs.org.apache.cxf.xjc.utils.cxf.xjc.runtime
-    api libs.org.apache.maven.maven.model.builder
-
-    implementation group: 'jakarta.annotation', name: 'jakarta.annotation-api', version: '3.0.0'
-    implementation group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '4.0.5'
-
-//    implementation group: 'com.sun.xml.bind', name: 'jaxb-core', version: '4.0.5'
-//    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.5'
-
-    implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '3.0.0'
-    implementation group: 'jakarta.xml.soap', name: 'jakarta.xml.soap-api', version: '3.0.0'
-    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.0'
-    implementation group: 'com.sun.xml.messaging.saaj', name: 'saaj-impl', version: '3.0.4'
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-}
-test {
-    useJUnitPlatform()
+    // Implementation dependencies are not leaked to consumers when building
+    testFixturesImplementation 'org.apache.commons:commons-text:1.6'
 }
 
+processResources.dependsOn('compileTestFixturesJava')
+processResources.dependsOn(':onvif-ws-client:testFixturesJar')
 layout.buildDirectory.set(layout.projectDirectory.dir("src/main/resources"))
 clean {
     delete("${layout.projectDirectory.dir('src/main/java/org')}")
@@ -61,7 +54,7 @@ wsdl2java {
     options.set(["-wsdlLocation", "null", "-catalog", "${layout.projectDirectory.dir('src/wsdl/resources/wsdl/jax-ws-catalog.xml')}"])
     generatedSourceDir.set(layout.projectDirectory.dir("src/main/java"))
     wsdlDir.set(layout.projectDirectory.dir("src/wsdl/resources"))
-    useJakarta.set(true)
-    cxfVersion.set("4.0.2")
+    useJakarta.set(false)
+    cxfVersion.set("3.3.2")
 }
 description = 'onvif-ws-client'

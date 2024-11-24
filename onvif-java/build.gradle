@@ -3,7 +3,8 @@
  */
 
 plugins {
-    id 'buildlogic.java-conventions'
+    id 'org.onvif.java-conventions'
+    id 'java-test-fixtures'
 }
 
 repositories {
@@ -15,61 +16,35 @@ repositories {
   //  uri = uri("https://build.shibboleth.net/maven/releases/org/opensaml/")
 }
 
-configurations.all {
-    resolutionStrategy {
-        force group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
+//    }
+//}
+
+clean.dependsOn(":onvif-ws-client:clean")
 
 dependencies {
-//    implementation group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '4.0.5'
-//    implementation group: 'org.apache.cxf', name: 'cxf-rt-ws-security', version: '4.0.5'
-//    implementation group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '4.0.5'
-//    implementation group: 'org.apache.cxf', name: 'apache-cxf', version: '4.0.5', ext: 'pom'
-    implementation group: 'jakarta.jws', name: 'jakarta.jws-api', version: '3.0.0'
-    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
-    implementation group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '4.0.5'
-
-    implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.2'
-    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
- //   implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.5'
- //   implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.5'
-    implementation group: 'org.apache.wss4j', name: 'wss4j-ws-security-dom', version: '3.0.4'
-    implementation group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
-
-    implementation group: 'org.glassfish.hk2', name: 'osgi-resource-locator', version: '2.5.0-b42'
-//    implementation group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '4.0.3'
-    implementation group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '4.0.5'
-
-    implementation group: 'org.apache.wss4j', name: 'wss4j-ws-security-common', version: '3.0.4'
-
-    implementation group: 'org.opensaml', name: 'opensaml-saml-impl', version: '4.3.0'
-    implementation group: 'org.opensaml', name: 'opensaml-storage-api', version: '4.3.0'
-    implementation group: 'org.opensaml', name: 'opensaml-storage-api', version: '4.3.0'
-    implementation group: 'org.opensaml', name: 'opensaml-messaging-api', version: '4.3.0'
-    implementation group: 'org.opensaml', name: 'opensaml-soap-impl', version: '4.3.0'
-
-    implementation group: 'jakarta.xml.ws', name: 'jakarta.xml.ws-api', version: '3.0.1'
-    implementation group: 'jakarta.xml.soap', name: 'jakarta.xml.soap-api', version: '3.0.2'
-    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '3.0.1'
-    implementation group: 'jakarta.activation', name: 'jakarta.activation-api', version: '2.1.3'
-    implementation group: 'com.sun.xml.messaging.saaj', name: 'saaj-impl', version: '3.0.4'
-
+    api 'org.apache.cxf:cxf-rt-frontend-jaxws:3.3.2'
+    api 'org.apache.cxf:cxf-rt-ws-security:3.3.2'
+    api 'org.apache.cxf:cxf-rt-transports-http:3.3.2'
     api project(':onvif-ws-client')
-
-    api libs.commons.io.commons.io
-    api libs.commons.codec.commons.codec
-    api libs.org.apache.commons.commons.lang3
- //   api libs.com.sun.xml.messaging.saaj.saaj.impl
-
-
-//    api libs.com.sun.activation.javax.activation
-
-   // api libs.javax.xml.bind.jaxb.api
-//    api libs.com.sun.xml.bind.jaxb.core
-//    api libs.com.sun.xml.bind.jaxb.impl
-   // implementation project(':onvif-ws-client')
-    testImplementation libs.org.slf4j.slf4j.simple
+    api 'commons-io:commons-io:2.14.0'
+    api 'commons-codec:commons-codec:1.10'
+    api 'org.apache.commons:commons-lang3:3.4'
+    api 'com.sun.xml.messaging.saaj:saaj-impl:1.5.1'
+    api 'com.sun.activation:javax.activation:1.2.0'
+    api 'javax.xml.bind:jaxb-api:2.3.1'
+    api 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+    api 'com.sun.xml.bind:jaxb-impl:2.3.1'
+    api testImplementation(project(':onvif-ws-client'))
+    api testImplementation('org.slf4j:slf4j-simple:1.7.26')
+    implementation project(':onvif-ws-client')
+    //   testCompileOnly(testFixtures(project(':onvif-ws-client')))
 }
+
+//test {
+//    useJUnitPlatform()
+//}
 
 description = 'onvif-java'

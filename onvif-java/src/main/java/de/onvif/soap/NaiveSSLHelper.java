@@ -12,7 +12,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import jakarta.xml.ws.BindingProvider;
+import javax.xml.ws.BindingProvider;
 import org.apache.cxf.configuration.jsse.TLSClientParameters;
 import org.apache.cxf.transport.http.HTTPConduit;
 

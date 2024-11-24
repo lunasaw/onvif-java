@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
 import java.util.List;
-import jakarta.xml.soap.SOAPException;
+import javax.xml.soap.SOAPException;
 import org.onvif.ver10.schema.Profile;
 
 public class ReadCommandsFromStdInput {
