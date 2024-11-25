@@ -3,5 +3,4 @@
  */
 
 rootProject.name = 'onvif'
-include(':onvif-java')
-include(':onvif-ws-client')
+include 'onvif-java', 'onvif-ws-client'
