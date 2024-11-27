@@ -1,14 +1,9 @@
 package de.onvif.soap;
 
 import de.onvif.beans.DeviceInfo;
-import java.net.ConnectException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-import javax.xml.soap.SOAPException;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.Holder;
+import jakarta.xml.soap.SOAPException;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.Holder;
 import org.apache.cxf.binding.soap.Soap12;
 import org.apache.cxf.binding.soap.SoapBindingConfiguration;
 import org.apache.cxf.endpoint.Client;
@@ -24,15 +19,7 @@ import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.EventService;
 import org.onvif.ver10.media.wsdl.Media;
 import org.onvif.ver10.media.wsdl.MediaService;
-import org.onvif.ver10.schema.Capabilities;
-import org.onvif.ver10.schema.CapabilityCategory;
-import org.onvif.ver10.schema.DateTime;
-import org.onvif.ver10.schema.MediaUri;
-import org.onvif.ver10.schema.SetDateTimeType;
-import org.onvif.ver10.schema.StreamSetup;
-import org.onvif.ver10.schema.StreamType;
-import org.onvif.ver10.schema.Transport;
-import org.onvif.ver10.schema.TransportProtocol;
+import org.onvif.ver10.schema.*;
 import org.onvif.ver20.imaging.wsdl.ImagingPort;
 import org.onvif.ver20.imaging.wsdl.ImagingService;
 import org.onvif.ver20.ptz.wsdl.PTZ;
@@ -40,8 +27,14 @@ import org.onvif.ver20.ptz.wsdl.PtzService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.xml.ws.handler.Handler;
-import javax.xml.ws.handler.MessageContext;
+import java.net.ConnectException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Robin Dick
@@ -215,7 +208,7 @@ public class OnvifDevice {
     date.setYear(calendar.get(Calendar.YEAR));
     date.setMonth(calendar.get(Calendar.MONTH) + 1);
     date.setDay(calendar.get(Calendar.DAY_OF_MONTH));
-    org.onvif.ver10.schema.DateTime utcDateTime = new org.onvif.ver10.schema.DateTime();
+    DateTime utcDateTime = new DateTime();
     utcDateTime.setDate(date);
     utcDateTime.setTime(time);
     device.setSystemDateAndTime(SetDateTimeType.MANUAL, daylightSavings, timeZone, utcDateTime);

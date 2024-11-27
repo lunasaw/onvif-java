@@ -3,8 +3,8 @@
  */
 
 plugins {
- //   id 'org.onvif.java-conventions'
- //   id 'java-test-fixtures'
+    //   id 'org.onvif.java-conventions'
+    //   id 'java-test-fixtures'
     id 'java'
     id 'java-library'
     id("com.github.erdi.webdriver-binaries") version "3.2"
@@ -23,7 +23,7 @@ repositories {
         //  url = uri("https://company/com/maven2")
     }
 
-  //  uri = uri("https://build.shibboleth.net/maven/releases/org/opensaml/")
+    //  uri = uri("https://build.shibboleth.net/maven/releases/org/opensaml/")
 }
 
 tasks.register('xxx', Exec) {
@@ -35,34 +35,41 @@ clean.dependsOn(":onvif-ws-client:clean")
 compileJava.dependsOn(":onvif-ws-client:build")
 
 dependencies {
-    implementation 'org.apache.cxf:cxf-rt-frontend-jaxws:3.3.2'
-    implementation 'org.apache.cxf:cxf-rt-ws-security:3.3.2'
-    implementation 'org.apache.cxf:cxf-rt-transports-http:3.3.2'
-    implementation group: 'org.apache.cxf.services.wsn', name: 'cxf-services-wsn-core', version: '3.3.2'
+    implementation "org.apache.cxf:cxf-rt-frontend-jaxws:${project.property('cxfVersion')}"
+    implementation "org.apache.cxf:cxf-rt-ws-security:${project.property('cxfVersion')}"
+    implementation "org.apache.cxf:cxf-rt-transports-http:${project.property('cxfVersion')}"
+    implementation group: "org.apache.cxf.services.wsn", name: "cxf-services-wsn-core", version: project.property('cxfVersion')
+    implementation "org.apache.cxf:cxf-rt-transports-http-jetty:${project.property('cxfVersion')}"
+    testCompileOnly "org.apache.cxf:cxf-rt-frontend-jaxws:${project.property('cxfVersion')}"
+    testCompileOnly "org.apache.cxf:cxf-rt-ws-security:${project.property('cxfVersion')}"
+    testCompileOnly "org.apache.cxf:cxf-rt-transports-http:${project.property('cxfVersion')}"
+    testCompileOnly "org.apache.cxf.services.wsn:cxf-services-wsn-core:${project.property('cxfVersion')}"
 
-   //implementation files('../onvif-ws-client/build/libs/onvif-ws-client.jar')
-  //  testImplementation files('../onvif-ws-client/build/libs/onvif-ws-client.jar')
+
+    // Required for cxf version > 4.0.1
+//    compileOnly 'org.checkerframework:checker-qual:3.48.2'
+//    compileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+//    compileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
+//    testCompileOnly 'org.checkerframework:checker-qual:3.48.2'
+//    testCompileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+//    testCompileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
+
+    implementation 'org.apache.activemq:activemq-broker:6.1.4'
+
     implementation project(':onvif-ws-client')
-    testImplementation project(':onvif-ws-client')
+
 
     implementation 'commons-io:commons-io:2.14.0'
     implementation 'commons-codec:commons-codec:1.10'
     implementation 'org.apache.commons:commons-lang3:3.4'
-    implementation 'com.sun.xml.messaging.saaj:saaj-impl:1.5.1'
-    implementation 'com.sun.activation:javax.activation:1.2.0'
-    implementation 'javax.xml.bind:jaxb-api:2.3.1'
-    implementation group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+    compileOnly    'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
+    compileOnly   'jakarta.xml.ws:jakarta.xml.ws-api:4.0.2'
+    implementation 'jakarta.jws:jakarta.jws-api:3.0.0'
+    implementation 'jakarta.xml.soap:jakarta.xml.soap-api:3.0.2'
 
-    implementation group: 'javax.xml.soap', name: 'javax.xml.soap-api', version: '1.4.0'
-    implementation group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
- //   implementation group: 'org.apache.activemq', name: 'activemq-broker', version: '6.1.4'
-
-
-    implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
-    implementation 'com.sun.xml.bind:jaxb-impl:2.3.1'
- //   implementation testFixtures(project(':onvif-ws-client'))
+    implementation 'org.glassfish.hk2:osgi-resource-locator:1.0.3'
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.12'
 }
 
 

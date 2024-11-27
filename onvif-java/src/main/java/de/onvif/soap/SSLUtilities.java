@@ -1,16 +1,12 @@
 package de.onvif.soap;
 
 /** @author schrepfler */
+
+import javax.net.ssl.*;
 import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
 /**
  * This class provide various static methods that relax X509 certificate and hostname verification
@@ -25,12 +21,14 @@ public final class SSLUtilities {
    *
    * @deprecated see {@link #_hostnameVerifier}.
    */
+  @Deprecated
   private static HostnameVerifier __hostnameVerifier;
   /**
    * Thrust managers for the Sun's deprecated API.
    *
    * @deprecated see {@link #_trustManagers}.
    */
+  @Deprecated
   private static TrustManager[] __trustManagers;
   /** Hostname verifier. */
   private static HostnameVerifier _hostnameVerifier;
@@ -43,6 +41,7 @@ public final class SSLUtilities {
    *
    * @deprecated see {@link #_trustAllHostnames()}.
    */
+  @Deprecated
   private static void __trustAllHostnames() {
     // Create a trust manager that does not validate certificate chains
     if (__hostnameVerifier == null) {
@@ -59,6 +58,7 @@ public final class SSLUtilities {
    *
    * @deprecated see {@link #_trustAllHttpsCertificates()}.
    */
+  @Deprecated
   private static void __trustAllHttpsCertificates() {
     SSLContext context;
 
@@ -147,8 +147,9 @@ public final class SSLUtilities {
    * old deprecated API from the com.sun. ssl package.
    *
    * @author Francis Labrie
-   * @deprecated see {@link SSLUtilities.FakeHostnameVerifier}.
+   * @deprecated see {@link FakeHostnameVerifier}.
    */
+  @Deprecated
   public static class _FakeHostnameVerifier implements HostnameVerifier {
 
     /**
@@ -170,8 +171,9 @@ public final class SSLUtilities {
    * com.sun.ssl package.
    *
    * @author Francis Labrie
-   * @deprecated see {@link SSLUtilities.FakeX509TrustManager}.
+   * @deprecated see {@link FakeX509TrustManager}.
    */
+  @Deprecated
   public static class _FakeX509TrustManager implements X509TrustManager {
 
     /** Empty array of certificate authority certificates. */

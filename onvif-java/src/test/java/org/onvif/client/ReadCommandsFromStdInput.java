@@ -1,14 +1,15 @@
 package org.onvif.client;
 
 import de.onvif.soap.OnvifDevice;
+import jakarta.xml.soap.SOAPException;
+import org.onvif.ver10.schema.Profile;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
 import java.util.List;
-import javax.xml.soap.SOAPException;
-import org.onvif.ver10.schema.Profile;
 
 public class ReadCommandsFromStdInput {
 

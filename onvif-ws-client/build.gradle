@@ -3,7 +3,7 @@
  */
 
 plugins {
- //   id 'org.onvif.java-conventions'
+    //   id 'org.onvif.java-conventions'
     id 'java-library'
 //    id 'java'
 //    id("java-test-fixtures")
@@ -31,27 +31,20 @@ repositories {
 //targetCompatibility = "1.8"
 
 dependencies {
-    implementation 'org.apache.cxf:cxf-rt-frontend-jaxws:3.3.2'
-    implementation 'org.apache.cxf:cxf-rt-transports-http-jetty:3.3.2'
-    implementation 'javax.xml.ws:jaxws-api:2.3.1'
-    implementation 'javax.jws:javax.jws-api:1.1'
-    implementation 'org.apache.cxf.services.wsn:cxf-services-wsn-core:3.3.2'
+    // Required for cxf version > 4.0.1
+//    implementation 'org.checkerframework:checker-qual:3.48.2'
+//    implementation 'com.google.errorprone:error_prone_annotations:2.36.0'
+//    implementation 'com.google.j2objc:j2objc-annotations:3.0.0'
+
+    implementation 'jakarta.xml.ws:jakarta.xml.ws-api:4.0.2'
+    implementation 'jakarta.jws:jakarta.jws-api:3.0.0'
+
     implementation 'org.apache.commons:commons-lang3:3.4'
     implementation 'org.apache.cxf.xjc-utils:cxf-xjc-runtime:3.3.0'
     implementation 'org.apache.maven:maven-model-builder:3.6.1'
-
-    // API dependencies are visible to consumers when building
-//    testFixturesApi 'org.apache.commons:commons-lang3:3.9'
-
-    // Implementation dependencies are not leaked to consumers when building
-//    testFixturesImplementation 'org.apache.commons:commons-text:1.6'
 }
 
-processResources
-   //     .dependsOn('compileTestFixturesJava')
-  //      .dependsOn(':onvif-ws-client:testFixturesJar')
-        .dependsOn("compileJava")
-
+processResources.dependsOn("compileJava")
 
 clean {
     delete("${layout.projectDirectory.dir('src/main/java/org')}")
@@ -65,7 +58,8 @@ wsdl2java {
     options.set(["-wsdlLocation", "null", "-catalog", "${layout.projectDirectory.dir('src/wsdl/resources/wsdl/jax-ws-catalog.xml')}"])
     generatedSourceDir.set(layout.projectDirectory.dir("src/main/java"))
     wsdlDir.set(layout.projectDirectory.dir("src/wsdl/resources"))
-    useJakarta.set(false)
-    cxfVersion.set("3.3.2")
+    useJakarta.set(true)
+    cxfVersion.set(project.property('cxfVersion') as String)
 }
+
 description = 'onvif-ws-client'

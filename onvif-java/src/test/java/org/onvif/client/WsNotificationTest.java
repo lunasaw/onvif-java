@@ -1,15 +1,8 @@
 package org.onvif.client;
 
 import de.onvif.soap.OnvifDevice;
-import java.io.File;
-import java.io.IOException;
-import java.net.ConnectException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import javax.xml.bind.JAXBElement;
-import javax.xml.soap.SOAPException;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.soap.SOAPException;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.cxf.wsn.client.Consumer;
@@ -20,24 +13,10 @@ import org.apache.cxf.wsn.services.JaxwsNotificationBroker;
 import org.oasis_open.docs.wsn.b_2.FilterType;
 import org.oasis_open.docs.wsn.b_2.NotificationMessageHolderType;
 import org.oasis_open.docs.wsn.b_2.TopicExpressionType;
-import org.oasis_open.docs.wsn.bw_2.InvalidFilterFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidMessageContentExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidProducerPropertiesExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.InvalidTopicExpressionFault;
-import org.oasis_open.docs.wsn.bw_2.NotifyMessageNotSupportedFault;
-import org.oasis_open.docs.wsn.bw_2.SubscribeCreationFailedFault;
-import org.oasis_open.docs.wsn.bw_2.TopicExpressionDialectUnknownFault;
-import org.oasis_open.docs.wsn.bw_2.TopicNotSupportedFault;
-import org.oasis_open.docs.wsn.bw_2.UnacceptableInitialTerminationTimeFault;
-import org.oasis_open.docs.wsn.bw_2.UnrecognizedPolicyRequestFault;
-import org.oasis_open.docs.wsn.bw_2.UnsupportedPolicyRequestFault;
+import org.oasis_open.docs.wsn.bw_2.*;
 import org.oasis_open.docs.wsrf.rw_2.ResourceUnknownFault;
-import org.onvif.ver10.events.wsdl.CreatePullPointSubscription;
+import org.onvif.ver10.events.wsdl.*;
 import org.onvif.ver10.events.wsdl.CreatePullPointSubscription.SubscriptionPolicy;
-import org.onvif.ver10.events.wsdl.CreatePullPointSubscriptionResponse;
-import org.onvif.ver10.events.wsdl.EventPortType;
-import org.onvif.ver10.events.wsdl.GetEventProperties;
-import org.onvif.ver10.events.wsdl.GetEventPropertiesResponse;
 import org.onvif.ver10.schema.Capabilities;
 import org.onvif.ver10.schema.CapabilityCategory;
 import org.onvif.ver10.schema.MediaUri;
@@ -45,6 +24,13 @@ import org.onvif.ver10.schema.Profile;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.ConnectException;
+import java.net.URL;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 public class WsNotificationTest {
 
@@ -79,8 +65,8 @@ public class WsNotificationTest {
     GetEventProperties getEventProperties = new GetEventProperties();
     GetEventPropertiesResponse getEventPropertiesResp =
         eventWs.getEventProperties(getEventProperties);
-    getEventPropertiesResp.getMessageContentFilterDialect().forEach(x -> System.out.println(x));
-    getEventPropertiesResp.getTopicExpressionDialect().forEach(x -> System.out.println(x));
+    getEventPropertiesResp.getMessageContentFilterDialect().forEach(System.out::println);
+    getEventPropertiesResp.getTopicExpressionDialect().forEach(System.out::println);
     for (Object object : getEventPropertiesResp.getTopicSet().getAny()) {
       Element e = (Element) object;
       printTree(e, e.getNodeName());
