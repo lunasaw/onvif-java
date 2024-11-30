@@ -7,7 +7,7 @@ plugins {
     //   id 'java-test-fixtures'
     id 'java'
     id 'java-library'
-    id("com.github.erdi.webdriver-binaries") version "3.2"
+//    id("com.github.erdi.webdriver-binaries") version "3.2"
 }
 
 java {
@@ -39,16 +39,16 @@ dependencies {
     implementation group: "org.apache.cxf.services.wsn", name: "cxf-services-wsn-core", version: project.property('cxfVersion')
     compileOnly "org.apache.cxf:cxf-rt-ws-security:${project.property('cxfVersion')}"
     implementation "org.apache.cxf:cxf-rt-transports-http:${project.property('cxfVersion')}"
+    implementation "org.apache.cxf:cxf-rt-transports-http-jetty:${project.property('cxfVersion')}"
 
-//    implementation "org.apache.cxf:cxf-rt-transports-http-jetty:${project.property('cxfVersion')}"
 
     // Required for cxf version > 4.0.1
-//    compileOnly 'org.checkerframework:checker-qual:3.48.2'
-//    compileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
-//    compileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
-//    testCompileOnly 'org.checkerframework:checker-qual:3.48.2'
-//    testCompileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
-//    testCompileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
+    compileOnly 'org.checkerframework:checker-qual:3.48.2'
+    compileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+    compileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
+    testCompileOnly 'org.checkerframework:checker-qual:3.48.2'
+    testCompileOnly 'com.google.errorprone:error_prone_annotations:2.36.0'
+    testCompileOnly 'com.google.j2objc:j2objc-annotations:3.0.0'
 
     implementation 'org.apache.activemq:activemq-broker:6.1.4'
 
@@ -62,10 +62,9 @@ dependencies {
     implementation 'jakarta.jws:jakarta.jws-api:3.0.0'
     implementation 'jakarta.xml.soap:jakarta.xml.soap-api:3.0.2'
 
-    implementation 'org.glassfish.hk2:osgi-resource-locator:2.4.0'
+ //   implementation 'org.glassfish.hk2:osgi-resource-locator:2.4.0'
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
     testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.12'
 }
-
 
 description = 'onvif-java'

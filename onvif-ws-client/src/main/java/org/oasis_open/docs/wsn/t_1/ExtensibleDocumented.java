@@ -36,8 +36,8 @@ import jakarta.xml.bind.annotation.XmlType;
     "documentation"
 })
 @XmlSeeAlso({
-    TopicNamespaceType.class,
     TopicSetType.class,
+    TopicNamespaceType.class,
     TopicType.class
 })
 public abstract class ExtensibleDocumented {
