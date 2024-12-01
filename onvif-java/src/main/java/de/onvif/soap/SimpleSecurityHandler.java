@@ -1,41 +1,19 @@
 package de.onvif.soap;
 
-import static org.apache.wss4j.common.WSS4JConstants.BASE64_ENCODING;
-import static org.apache.wss4j.common.WSS4JConstants.CREATED_LN;
-import static org.apache.wss4j.common.WSS4JConstants.NONCE_LN;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_DIGEST;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_LN;
-import static org.apache.wss4j.common.WSS4JConstants.PASSWORD_TYPE_ATTR;
-import static org.apache.wss4j.common.WSS4JConstants.USERNAME_LN;
-import static org.apache.wss4j.common.WSS4JConstants.USERNAME_TOKEN_LN;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_LN;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_NS;
-import static org.apache.wss4j.common.WSS4JConstants.WSSE_PREFIX;
-import static org.apache.wss4j.common.WSS4JConstants.WSU_NS;
-import static org.apache.wss4j.common.WSS4JConstants.WSU_PREFIX;
+import jakarta.xml.soap.*;
+import jakarta.xml.ws.handler.MessageContext;
+import jakarta.xml.ws.handler.soap.SOAPHandler;
+import jakarta.xml.ws.handler.soap.SOAPMessageContext;
+import org.apache.commons.codec.binary.Base64;
 
+import javax.xml.namespace.QName;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Random;
-import java.util.Set;
-import java.util.SimpleTimeZone;
-import java.util.TimeZone;
-import javax.xml.namespace.QName;
-import jakarta.xml.soap.SOAPElement;
-import jakarta.xml.soap.SOAPEnvelope;
-import jakarta.xml.soap.SOAPHeader;
-import jakarta.xml.soap.SOAPMessage;
-import jakarta.xml.soap.SOAPPart;
-import jakarta.xml.ws.handler.MessageContext;
-import jakarta.xml.ws.handler.soap.SOAPHandler;
-import jakarta.xml.ws.handler.soap.SOAPMessageContext;
+import java.util.*;
 
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.MessageDigestAlgorithms;
+import static org.apache.wss4j.common.WSS4JConstants.*;
 
 /*
  Utility class to add user/password onvif credentials to SOAP communications
