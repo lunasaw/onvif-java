@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="VideoSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="VideoSourceModeToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="VideoSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="VideoSourceModeToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,23 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SetVideoSourceMode")
 public class SetVideoSourceMode {
 
+    /**
+     * Contains a video source reference for which a video source mode is
+     *                   requested.
+     * 
+     */
     @XmlElement(name = "VideoSourceToken", required = true)
     protected String videoSourceToken;
+    /**
+     * Indicate video source mode.
+     * 
+     */
     @XmlElement(name = "VideoSourceModeToken", required = true)
     protected String videoSourceModeToken;
 
     /**
-     * Gets the value of the videoSourceToken property.
+     * Contains a video source reference for which a video source mode is
+     *                   requested.
      * 
      * @return
      *     possible object is
@@ -60,13 +70,14 @@ public class SetVideoSourceMode {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getVideoSourceToken()
      */
     public void setVideoSourceToken(String value) {
         this.videoSourceToken = value;
     }
 
     /**
-     * Gets the value of the videoSourceModeToken property.
+     * Indicate video source mode.
      * 
      * @return
      *     possible object is
@@ -84,6 +95,7 @@ public class SetVideoSourceMode {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getVideoSourceModeToken()
      */
     public void setVideoSourceModeToken(String value) {
         this.videoSourceModeToken = value;

@@ -11,23 +11,23 @@ import org.onvif.ver10.schema.PTZVector;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="Translation" type="{http://www.onvif.org/ver10/schema}PTZVector"/&gt;
- *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="Translation" type="{http://www.onvif.org/ver10/schema}PTZVector"/>
+ *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -40,15 +40,27 @@ import org.onvif.ver10.schema.PTZVector;
 @XmlRootElement(name = "RelativeMove")
 public class RelativeMove {
 
+    /**
+     * A reference to the MediaProfile.
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * A positional Translation relative to the current position
+     * 
+     */
     @XmlElement(name = "Translation", required = true)
     protected PTZVector translation;
+    /**
+     * An optional Speed parameter.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected PTZSpeed speed;
 
     /**
-     * Gets the value of the profileToken property.
+     * A reference to the MediaProfile.
      * 
      * @return
      *     possible object is
@@ -66,13 +78,14 @@ public class RelativeMove {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the translation property.
+     * A positional Translation relative to the current position
      * 
      * @return
      *     possible object is
@@ -90,13 +103,14 @@ public class RelativeMove {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getTranslation()
      */
     public void setTranslation(PTZVector value) {
         this.translation = value;
     }
 
     /**
-     * Gets the value of the speed property.
+     * An optional Speed parameter.
      * 
      * @return
      *     possible object is
@@ -114,6 +128,7 @@ public class RelativeMove {
      *     allowed object is
      *     {@link PTZSpeed }
      *     
+     * @see #getSpeed()
      */
     public void setSpeed(PTZSpeed value) {
         this.speed = value;

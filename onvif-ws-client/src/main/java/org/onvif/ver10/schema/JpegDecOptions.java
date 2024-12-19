@@ -16,25 +16,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for JpegDecOptions complex type.
+ * <p>Java class for JpegDecOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="JpegDecOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/&gt;
- *         &lt;element name="SupportedInputBitrate" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;element name="SupportedFrameRate" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="JpegDecOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/>
+ *         <element name="SupportedInputBitrate" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <element name="SupportedFrameRate" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,48 +47,65 @@ import org.w3c.dom.Element;
 })
 public class JpegDecOptions {
 
+    /**
+     * List of supported Jpeg Video Resolutions
+     * 
+     */
     @XmlElement(name = "ResolutionsAvailable", required = true)
     protected List<VideoResolution> resolutionsAvailable;
+    /**
+     * Supported Jpeg bitrate range in kbps
+     * 
+     */
     @XmlElement(name = "SupportedInputBitrate", required = true)
     protected IntRange supportedInputBitrate;
+    /**
+     * Supported Jpeg framerate range in fps
+     * 
+     */
     @XmlElement(name = "SupportedFrameRate", required = true)
     protected IntRange supportedFrameRate;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * List of supported Jpeg Video Resolutions
+     * 
      * Gets the value of the resolutionsAvailable property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getResolutionsAvailable().add(newItem);
+     * getResolutionsAvailable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link VideoResolution }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the resolutionsAvailable property.
      */
     public List<VideoResolution> getResolutionsAvailable() {
         if (resolutionsAvailable == null) {
-            resolutionsAvailable = new ArrayList<VideoResolution>();
+            resolutionsAvailable = new ArrayList<>();
         }
         return this.resolutionsAvailable;
     }
 
     /**
-     * Gets the value of the supportedInputBitrate property.
+     * Supported Jpeg bitrate range in kbps
      * 
      * @return
      *     possible object is
@@ -106,13 +123,14 @@ public class JpegDecOptions {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getSupportedInputBitrate()
      */
     public void setSupportedInputBitrate(IntRange value) {
         this.supportedInputBitrate = value;
     }
 
     /**
-     * Gets the value of the supportedFrameRate property.
+     * Supported Jpeg framerate range in fps
      * 
      * @return
      *     possible object is
@@ -130,6 +148,7 @@ public class JpegDecOptions {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getSupportedFrameRate()
      */
     public void setSupportedFrameRate(IntRange value) {
         this.supportedFrameRate = value;
@@ -138,16 +157,16 @@ public class JpegDecOptions {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -155,12 +174,15 @@ public class JpegDecOptions {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RelativeFocusOptions20 complex type.
+ * <p>Java class for RelativeFocusOptions20 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RelativeFocusOptions20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Distance" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RelativeFocusOptions20">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Distance" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RelativeFocusOptions20 {
 
+    /**
+     * Valid ranges of the distance.
+     * 
+     */
     @XmlElement(name = "Distance", required = true)
     protected FloatRange distance;
+    /**
+     * Valid ranges of the speed.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected FloatRange speed;
 
     /**
-     * Gets the value of the distance property.
+     * Valid ranges of the distance.
      * 
      * @return
      *     possible object is
@@ -58,13 +66,14 @@ public class RelativeFocusOptions20 {
      *     allowed object is
      *     {@link FloatRange }
      *     
+     * @see #getDistance()
      */
     public void setDistance(FloatRange value) {
         this.distance = value;
     }
 
     /**
-     * Gets the value of the speed property.
+     * Valid ranges of the speed.
      * 
      * @return
      *     possible object is
@@ -82,6 +91,7 @@ public class RelativeFocusOptions20 {
      *     allowed object is
      *     {@link FloatRange }
      *     
+     * @see #getSpeed()
      */
     public void setSpeed(FloatRange value) {
         this.speed = value;

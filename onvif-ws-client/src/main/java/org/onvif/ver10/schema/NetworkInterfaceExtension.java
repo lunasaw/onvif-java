@@ -12,25 +12,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for NetworkInterfaceExtension complex type.
+ * <p>Java class for NetworkInterfaceExtension complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkInterfaceExtension"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="InterfaceType" type="{http://www.onvif.org/ver10/schema}IANA-IfTypes"/&gt;
- *         &lt;element name="Dot3" type="{http://www.onvif.org/ver10/schema}Dot3Configuration" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Dot11" type="{http://www.onvif.org/ver10/schema}Dot11Configuration" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceExtension2" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkInterfaceExtension">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="InterfaceType" type="{http://www.onvif.org/ver10/schema}IANA-IfTypes"/>
+ *         <element name="Dot3" type="{http://www.onvif.org/ver10/schema}Dot3Configuration" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Dot11" type="{http://www.onvif.org/ver10/schema}Dot11Configuration" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceExtension2" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -48,6 +48,10 @@ public class NetworkInterfaceExtension {
     protected List<java.lang.Object> any;
     @XmlElement(name = "InterfaceType")
     protected int interfaceType;
+    /**
+     * Extension point prepared for future 802.3 configuration.
+     * 
+     */
     @XmlElement(name = "Dot3")
     protected List<Dot3Configuration> dot3;
     @XmlElement(name = "Dot11")
@@ -58,16 +62,16 @@ public class NetworkInterfaceExtension {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -75,12 +79,15 @@ public class NetworkInterfaceExtension {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
@@ -102,30 +109,35 @@ public class NetworkInterfaceExtension {
     }
 
     /**
+     * Extension point prepared for future 802.3 configuration.
+     * 
      * Gets the value of the dot3 property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the dot3 property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dot3 property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDot3().add(newItem);
+     * getDot3().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Dot3Configuration }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the dot3 property.
      */
     public List<Dot3Configuration> getDot3() {
         if (dot3 == null) {
-            dot3 = new ArrayList<Dot3Configuration>();
+            dot3 = new ArrayList<>();
         }
         return this.dot3;
     }
@@ -133,28 +145,31 @@ public class NetworkInterfaceExtension {
     /**
      * Gets the value of the dot11 property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the dot11 property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dot11 property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDot11().add(newItem);
+     * getDot11().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Dot11Configuration }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the dot11 property.
      */
     public List<Dot11Configuration> getDot11() {
         if (dot11 == null) {
-            dot11 = new ArrayList<Dot11Configuration>();
+            dot11 = new ArrayList<>();
         }
         return this.dot11;
     }

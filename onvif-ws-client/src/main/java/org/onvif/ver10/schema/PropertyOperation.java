@@ -7,18 +7,20 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PropertyOperation.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="PropertyOperation"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Initialized"/&gt;
- *     &lt;enumeration value="Deleted"/&gt;
- *     &lt;enumeration value="Changed"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * 
+ * <p>Java class for PropertyOperation</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="PropertyOperation">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="Initialized"/>
+ *     <enumeration value="Deleted"/>
+ *     <enumeration value="Changed"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "PropertyOperation")
@@ -37,10 +39,26 @@ public enum PropertyOperation {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static PropertyOperation fromValue(String v) {
         for (PropertyOperation c: PropertyOperation.values()) {
             if (c.value.equals(v)) {

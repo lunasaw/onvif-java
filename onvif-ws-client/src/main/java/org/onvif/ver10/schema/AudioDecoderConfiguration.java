@@ -18,24 +18,23 @@ import org.w3c.dom.Element;
  * The Audio Decoder Configuration does not contain any that parameter to
  *         configure the
  *         decoding .A decoder shall decode every data it receives (according to its capabilities).
- *       
  * 
- * <p>Java class for AudioDecoderConfiguration complex type.
+ * <p>Java class for AudioDecoderConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AudioDecoderConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AudioDecoderConfiguration">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -50,21 +49,21 @@ public class AudioDecoderConfiguration
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -72,12 +71,15 @@ public class AudioDecoderConfiguration
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

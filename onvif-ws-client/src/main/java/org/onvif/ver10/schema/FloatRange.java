@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * Range of values greater equal Min value and less equal Max value.
- *       
  * 
- * <p>Java class for FloatRange complex type.
+ * <p>Java class for FloatRange complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="FloatRange"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Min" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;element name="Max" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="FloatRange">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Min" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <element name="Max" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

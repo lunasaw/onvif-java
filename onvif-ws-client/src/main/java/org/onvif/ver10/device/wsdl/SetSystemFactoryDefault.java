@@ -11,21 +11,21 @@ import org.onvif.ver10.schema.FactoryDefaultType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="FactoryDefault" type="{http://www.onvif.org/ver10/schema}FactoryDefaultType"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="FactoryDefault" type="{http://www.onvif.org/ver10/schema}FactoryDefaultType"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,12 +36,16 @@ import org.onvif.ver10.schema.FactoryDefaultType;
 @XmlRootElement(name = "SetSystemFactoryDefault")
 public class SetSystemFactoryDefault {
 
+    /**
+     * Specifies the factory default action type.
+     * 
+     */
     @XmlElement(name = "FactoryDefault", required = true)
     @XmlSchemaType(name = "string")
     protected FactoryDefaultType factoryDefault;
 
     /**
-     * Gets the value of the factoryDefault property.
+     * Specifies the factory default action type.
      * 
      * @return
      *     possible object is
@@ -59,6 +63,7 @@ public class SetSystemFactoryDefault {
      *     allowed object is
      *     {@link FactoryDefaultType }
      *     
+     * @see #getFactoryDefault()
      */
     public void setFactoryDefault(FactoryDefaultType value) {
         this.factoryDefault = value;

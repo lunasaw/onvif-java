@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.NTPInformation;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="NTPInformation" type="{http://www.onvif.org/ver10/schema}NTPInformation"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="NTPInformation" type="{http://www.onvif.org/ver10/schema}NTPInformation"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.NTPInformation;
 @XmlRootElement(name = "GetNTPResponse")
 public class GetNTPResponse {
 
+    /**
+     * NTP information.
+     * 
+     */
     @XmlElement(name = "NTPInformation", required = true)
     protected NTPInformation ntpInformation;
 
     /**
-     * Gets the value of the ntpInformation property.
+     * NTP information.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetNTPResponse {
      *     allowed object is
      *     {@link NTPInformation }
      *     
+     * @see #getNTPInformation()
      */
     public void setNTPInformation(NTPInformation value) {
         this.ntpInformation = value;

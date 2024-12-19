@@ -10,22 +10,22 @@ import org.onvif.ver10.schema.StreamSetup;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="StreamSetup" type="{http://www.onvif.org/ver10/schema}StreamSetup"/&gt;
- *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="StreamSetup" type="{http://www.onvif.org/ver10/schema}StreamSetup"/>
+ *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -37,13 +37,23 @@ import org.onvif.ver10.schema.StreamSetup;
 @XmlRootElement(name = "GetReplayUri")
 public class GetReplayUri {
 
+    /**
+     * Specifies the connection parameters to be used for the stream. The
+     *                   URI that is returned may depend on these parameters.
+     * 
+     */
     @XmlElement(name = "StreamSetup", required = true)
     protected StreamSetup streamSetup;
+    /**
+     * The identifier of the recording to be streamed.
+     * 
+     */
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
 
     /**
-     * Gets the value of the streamSetup property.
+     * Specifies the connection parameters to be used for the stream. The
+     *                   URI that is returned may depend on these parameters.
      * 
      * @return
      *     possible object is
@@ -61,13 +71,14 @@ public class GetReplayUri {
      *     allowed object is
      *     {@link StreamSetup }
      *     
+     * @see #getStreamSetup()
      */
     public void setStreamSetup(StreamSetup value) {
         this.streamSetup = value;
     }
 
     /**
-     * Gets the value of the recordingToken property.
+     * The identifier of the recording to be streamed.
      * 
      * @return
      *     possible object is
@@ -85,6 +96,7 @@ public class GetReplayUri {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getRecordingToken()
      */
     public void setRecordingToken(String value) {
         this.recordingToken = value;

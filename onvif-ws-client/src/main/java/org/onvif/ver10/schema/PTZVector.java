@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZVector complex type.
+ * <p>Java class for PTZVector complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZVector"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PanTilt" type="{http://www.onvif.org/ver10/schema}Vector2D" minOccurs="0"/&gt;
- *         &lt;element name="Zoom" type="{http://www.onvif.org/ver10/schema}Vector1D" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZVector">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PanTilt" type="{http://www.onvif.org/ver10/schema}Vector2D" minOccurs="0"/>
+ *         <element name="Zoom" type="{http://www.onvif.org/ver10/schema}Vector1D" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,23 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZVector {
 
+    /**
+     * Pan and tilt position. The x component corresponds to pan and the y
+     *             component to tilt.
+     * 
+     */
     @XmlElement(name = "PanTilt")
     protected Vector2D panTilt;
+    /**
+     * A zoom position.
+     * 
+     */
     @XmlElement(name = "Zoom")
     protected Vector1D zoom;
 
     /**
-     * Gets the value of the panTilt property.
+     * Pan and tilt position. The x component corresponds to pan and the y
+     *             component to tilt.
      * 
      * @return
      *     possible object is
@@ -58,13 +68,14 @@ public class PTZVector {
      *     allowed object is
      *     {@link Vector2D }
      *     
+     * @see #getPanTilt()
      */
     public void setPanTilt(Vector2D value) {
         this.panTilt = value;
     }
 
     /**
-     * Gets the value of the zoom property.
+     * A zoom position.
      * 
      * @return
      *     possible object is
@@ -82,6 +93,7 @@ public class PTZVector {
      *     allowed object is
      *     {@link Vector1D }
      *     
+     * @see #getZoom()
      */
     public void setZoom(Vector1D value) {
         this.zoom = value;

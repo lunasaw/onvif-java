@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.TrackConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="TrackConfiguration" type="{http://www.onvif.org/ver10/schema}TrackConfiguration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="TrackConfiguration" type="{http://www.onvif.org/ver10/schema}TrackConfiguration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.TrackConfiguration;
 @XmlRootElement(name = "GetTrackConfigurationResponse")
 public class GetTrackConfigurationResponse {
 
+    /**
+     * Configuration of the track.
+     * 
+     */
     @XmlElement(name = "TrackConfiguration", required = true)
     protected TrackConfiguration trackConfiguration;
 
     /**
-     * Gets the value of the trackConfiguration property.
+     * Configuration of the track.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetTrackConfigurationResponse {
      *     allowed object is
      *     {@link TrackConfiguration }
      *     
+     * @see #getTrackConfiguration()
      */
     public void setTrackConfiguration(TrackConfiguration value) {
         this.trackConfiguration = value;

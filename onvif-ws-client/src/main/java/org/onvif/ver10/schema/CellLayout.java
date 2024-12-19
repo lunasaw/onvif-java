@@ -18,25 +18,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for CellLayout complex type.
+ * <p>Java class for CellLayout complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="CellLayout"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Transformation" type="{http://www.onvif.org/ver10/schema}Transformation"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Columns" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
- *       &lt;attribute name="Rows" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="CellLayout">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Transformation" type="{http://www.onvif.org/ver10/schema}Transformation"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="Columns" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       <attribute name="Rows" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,19 +47,35 @@ import org.w3c.dom.Element;
 })
 public class CellLayout {
 
+    /**
+     * Mapping of the cell grid to the Video frame. The cell grid is starting
+     *             from the upper left corner and x dimension is going from left to right and the y
+     *             dimension from up to down.
+     * 
+     */
     @XmlElement(name = "Transformation", required = true)
     protected Transformation transformation;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
+    /**
+     * Number of columns of the cell grid (x dimension)
+     * 
+     */
     @XmlAttribute(name = "Columns", required = true)
     protected BigInteger columns;
+    /**
+     * Number of rows of the cell grid (y dimension)
+     * 
+     */
     @XmlAttribute(name = "Rows", required = true)
     protected BigInteger rows;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the transformation property.
+     * Mapping of the cell grid to the Video frame. The cell grid is starting
+     *             from the upper left corner and x dimension is going from left to right and the y
+     *             dimension from up to down.
      * 
      * @return
      *     possible object is
@@ -77,6 +93,7 @@ public class CellLayout {
      *     allowed object is
      *     {@link Transformation }
      *     
+     * @see #getTransformation()
      */
     public void setTransformation(Transformation value) {
         this.transformation = value;
@@ -85,16 +102,16 @@ public class CellLayout {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -102,18 +119,21 @@ public class CellLayout {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the columns property.
+     * Number of columns of the cell grid (x dimension)
      * 
      * @return
      *     possible object is
@@ -131,13 +151,14 @@ public class CellLayout {
      *     allowed object is
      *     {@link BigInteger }
      *     
+     * @see #getColumns()
      */
     public void setColumns(BigInteger value) {
         this.columns = value;
     }
 
     /**
-     * Gets the value of the rows property.
+     * Number of rows of the cell grid (y dimension)
      * 
      * @return
      *     possible object is
@@ -155,6 +176,7 @@ public class CellLayout {
      *     allowed object is
      *     {@link BigInteger }
      *     
+     * @see #getRows()
      */
     public void setRows(BigInteger value) {
         this.rows = value;

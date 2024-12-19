@@ -21,39 +21,39 @@ import org.w3c.dom.Element;
 /**
  * The attributes of a key in the keystore.
  * 
- * <p>Java class for KeyAttribute complex type.
+ * <p>Java class for KeyAttribute complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="KeyAttribute"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="KeyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeyID"/&gt;
- *         &lt;element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="hasPrivateKey" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="KeyStatus" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="externallyGenerated" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="securelyStored" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Extension" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' namespace='http://www.onvif.org/ver10/advancedsecurity/wsdl' maxOccurs="unbounded" minOccurs="0"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="KeyAttribute">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="KeyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeyID"/>
+ *         <element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="hasPrivateKey" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="KeyStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="externallyGenerated" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="securelyStored" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Extension" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax' namespace='http://www.onvif.org/ver10/advancedsecurity/wsdl' maxOccurs="unbounded" minOccurs="0"/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -70,26 +70,54 @@ import org.w3c.dom.Element;
 })
 public class KeyAttribute {
 
+    /**
+     * The ID of the key.
+     * 
+     */
     @XmlElement(name = "KeyID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
     protected String keyID;
+    /**
+     * The tests-defined alias of the key.
+     * 
+     */
     @XmlElement(name = "Alias")
     protected String alias;
+    /**
+     * Absent if the key is not a key pair. True if and only if the key is
+     *                 a key pair and contains a private key. False if and only if the key is a key pair
+     *                 and does not contain a private key.
+     * 
+     */
     protected Boolean hasPrivateKey;
+    /**
+     * The status of the key. The value should be one of the values in the
+     *                 tas:KeyStatus enumeration.
+     * 
+     */
     @XmlElement(name = "KeyStatus", required = true)
     protected String keyStatus;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * True if and only if the key was generated outside the device.
+     * 
+     */
     protected Boolean externallyGenerated;
+    /**
+     * True if and only if the key is stored in a specially protected
+     *                 hardware component inside the device.
+     * 
+     */
     protected Boolean securelyStored;
     @XmlElement(name = "Extension")
     protected KeyAttribute.Extension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the keyID property.
+     * The ID of the key.
      * 
      * @return
      *     possible object is
@@ -107,13 +135,14 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getKeyID()
      */
     public void setKeyID(String value) {
         this.keyID = value;
     }
 
     /**
-     * Gets the value of the alias property.
+     * The tests-defined alias of the key.
      * 
      * @return
      *     possible object is
@@ -131,13 +160,16 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getAlias()
      */
     public void setAlias(String value) {
         this.alias = value;
     }
 
     /**
-     * Gets the value of the hasPrivateKey property.
+     * Absent if the key is not a key pair. True if and only if the key is
+     *                 a key pair and contains a private key. False if and only if the key is a key pair
+     *                 and does not contain a private key.
      * 
      * @return
      *     possible object is
@@ -155,13 +187,15 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHasPrivateKey()
      */
     public void setHasPrivateKey(Boolean value) {
         this.hasPrivateKey = value;
     }
 
     /**
-     * Gets the value of the keyStatus property.
+     * The status of the key. The value should be one of the values in the
+     *                 tas:KeyStatus enumeration.
      * 
      * @return
      *     possible object is
@@ -179,6 +213,7 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getKeyStatus()
      */
     public void setKeyStatus(String value) {
         this.keyStatus = value;
@@ -187,16 +222,16 @@ public class KeyAttribute {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -204,18 +239,21 @@ public class KeyAttribute {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the externallyGenerated property.
+     * True if and only if the key was generated outside the device.
      * 
      * @return
      *     possible object is
@@ -233,13 +271,15 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isExternallyGenerated()
      */
     public void setExternallyGenerated(Boolean value) {
         this.externallyGenerated = value;
     }
 
     /**
-     * Gets the value of the securelyStored property.
+     * True if and only if the key is stored in a specially protected
+     *                 hardware component inside the device.
      * 
      * @return
      *     possible object is
@@ -257,6 +297,7 @@ public class KeyAttribute {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isSecurelyStored()
      */
     public void setSecurelyStored(Boolean value) {
         this.securelyStored = value;
@@ -306,21 +347,21 @@ public class KeyAttribute {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' namespace='http://www.onvif.org/ver10/advancedsecurity/wsdl' maxOccurs="unbounded" minOccurs="0"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' namespace='http://www.onvif.org/ver10/advancedsecurity/wsdl' maxOccurs="unbounded" minOccurs="0"/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -336,16 +377,16 @@ public class KeyAttribute {
         /**
          * Gets the value of the any property.
          * 
-         * <p>
-         * This accessor method returns a reference to the live list,
+         * <p>This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the Jakarta XML Binding object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
          * 
          * <p>
          * For example, to add a new item, do as follows:
+         * </p>
          * <pre>
-         *    getAny().add(newItem);
+         * getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -353,12 +394,15 @@ public class KeyAttribute {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
+         * </p>
          * 
          * 
+         * @return
+         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<Object>();
+                any = new ArrayList<>();
             }
             return this.any;
         }

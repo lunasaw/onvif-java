@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.advancedsecurity.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -27,8 +27,8 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/advancedsecurity/wsdl", "Capabilities");
-    private final static QName _GetAssignedCertPathValidationPoliciesResponseCertPathValidationPolicyID_QNAME = new QName("http://www.onvif.org/ver10/advancedsecurity/wsdl", "CertPathValidationPolicyID");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/advancedsecurity/wsdl", "Capabilities");
+    private static final QName _GetAssignedCertPathValidationPoliciesResponseCertPathValidationPolicyID_QNAME = new QName("http://www.onvif.org/ver10/advancedsecurity/wsdl", "CertPathValidationPolicyID");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.advancedsecurity.wsdl
@@ -40,6 +40,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCRL }
      * 
+     * @return
+     *     the new instance of {@link UploadCRL }
      */
     public UploadCRL createUploadCRL() {
         return new UploadCRL();
@@ -48,6 +50,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertPathValidationPolicy }
      * 
+     * @return
+     *     the new instance of {@link CreateCertPathValidationPolicy }
      */
     public CreateCertPathValidationPolicy createCreateCertPathValidationPolicy() {
         return new CreateCertPathValidationPolicy();
@@ -56,6 +60,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link KeystoreCapabilities }
      * 
+     * @return
+     *     the new instance of {@link KeystoreCapabilities }
      */
     public KeystoreCapabilities createKeystoreCapabilities() {
         return new KeystoreCapabilities();
@@ -64,6 +70,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertPathValidationPolicy }
      * 
+     * @return
+     *     the new instance of {@link CertPathValidationPolicy }
      */
     public CertPathValidationPolicy createCertPathValidationPolicy() {
         return new CertPathValidationPolicy();
@@ -72,6 +80,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertPathValidationParameters }
      * 
+     * @return
+     *     the new instance of {@link CertPathValidationParameters }
      */
     public CertPathValidationParameters createCertPathValidationParameters() {
         return new CertPathValidationParameters();
@@ -80,6 +90,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PassphraseAttribute }
      * 
+     * @return
+     *     the new instance of {@link PassphraseAttribute }
      */
     public PassphraseAttribute createPassphraseAttribute() {
         return new PassphraseAttribute();
@@ -88,6 +100,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertificationPath }
      * 
+     * @return
+     *     the new instance of {@link CertificationPath }
      */
     public CertificationPath createCertificationPath() {
         return new CertificationPath();
@@ -96,6 +110,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AlgorithmIdentifier }
      * 
+     * @return
+     *     the new instance of {@link AlgorithmIdentifier }
      */
     public AlgorithmIdentifier createAlgorithmIdentifier() {
         return new AlgorithmIdentifier();
@@ -104,6 +120,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CSRAttribute }
      * 
+     * @return
+     *     the new instance of {@link CSRAttribute }
      */
     public CSRAttribute createCSRAttribute() {
         return new CSRAttribute();
@@ -112,6 +130,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DistinguishedName }
      * 
+     * @return
+     *     the new instance of {@link DistinguishedName }
      */
     public DistinguishedName createDistinguishedName() {
         return new DistinguishedName();
@@ -120,6 +140,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link KeyAttribute }
      * 
+     * @return
+     *     the new instance of {@link KeyAttribute }
      */
     public KeyAttribute createKeyAttribute() {
         return new KeyAttribute();
@@ -128,6 +150,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -136,6 +160,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -144,6 +170,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -152,6 +180,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateRSAKeyPair }
      * 
+     * @return
+     *     the new instance of {@link CreateRSAKeyPair }
      */
     public CreateRSAKeyPair createCreateRSAKeyPair() {
         return new CreateRSAKeyPair();
@@ -160,6 +190,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateRSAKeyPairResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateRSAKeyPairResponse }
      */
     public CreateRSAKeyPairResponse createCreateRSAKeyPairResponse() {
         return new CreateRSAKeyPairResponse();
@@ -168,6 +200,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadKeyPairInPKCS8 }
      * 
+     * @return
+     *     the new instance of {@link UploadKeyPairInPKCS8 }
      */
     public UploadKeyPairInPKCS8 createUploadKeyPairInPKCS8() {
         return new UploadKeyPairInPKCS8();
@@ -176,6 +210,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadKeyPairInPKCS8Response }
      * 
+     * @return
+     *     the new instance of {@link UploadKeyPairInPKCS8Response }
      */
     public UploadKeyPairInPKCS8Response createUploadKeyPairInPKCS8Response() {
         return new UploadKeyPairInPKCS8Response();
@@ -184,6 +220,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCertificateWithPrivateKeyInPKCS12 }
      * 
+     * @return
+     *     the new instance of {@link UploadCertificateWithPrivateKeyInPKCS12 }
      */
     public UploadCertificateWithPrivateKeyInPKCS12 createUploadCertificateWithPrivateKeyInPKCS12() {
         return new UploadCertificateWithPrivateKeyInPKCS12();
@@ -192,6 +230,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCertificateWithPrivateKeyInPKCS12Response }
      * 
+     * @return
+     *     the new instance of {@link UploadCertificateWithPrivateKeyInPKCS12Response }
      */
     public UploadCertificateWithPrivateKeyInPKCS12Response createUploadCertificateWithPrivateKeyInPKCS12Response() {
         return new UploadCertificateWithPrivateKeyInPKCS12Response();
@@ -200,6 +240,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetKeyStatus }
      * 
+     * @return
+     *     the new instance of {@link GetKeyStatus }
      */
     public GetKeyStatus createGetKeyStatus() {
         return new GetKeyStatus();
@@ -208,6 +250,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetKeyStatusResponse }
      * 
+     * @return
+     *     the new instance of {@link GetKeyStatusResponse }
      */
     public GetKeyStatusResponse createGetKeyStatusResponse() {
         return new GetKeyStatusResponse();
@@ -216,6 +260,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPrivateKeyStatus }
      * 
+     * @return
+     *     the new instance of {@link GetPrivateKeyStatus }
      */
     public GetPrivateKeyStatus createGetPrivateKeyStatus() {
         return new GetPrivateKeyStatus();
@@ -224,6 +270,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPrivateKeyStatusResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPrivateKeyStatusResponse }
      */
     public GetPrivateKeyStatusResponse createGetPrivateKeyStatusResponse() {
         return new GetPrivateKeyStatusResponse();
@@ -232,6 +280,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllKeys }
      * 
+     * @return
+     *     the new instance of {@link GetAllKeys }
      */
     public GetAllKeys createGetAllKeys() {
         return new GetAllKeys();
@@ -240,6 +290,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllKeysResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllKeysResponse }
      */
     public GetAllKeysResponse createGetAllKeysResponse() {
         return new GetAllKeysResponse();
@@ -248,6 +300,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteKey }
      * 
+     * @return
+     *     the new instance of {@link DeleteKey }
      */
     public DeleteKey createDeleteKey() {
         return new DeleteKey();
@@ -256,6 +310,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteKeyResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteKeyResponse }
      */
     public DeleteKeyResponse createDeleteKeyResponse() {
         return new DeleteKeyResponse();
@@ -264,6 +320,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePKCS10CSR }
      * 
+     * @return
+     *     the new instance of {@link CreatePKCS10CSR }
      */
     public CreatePKCS10CSR createCreatePKCS10CSR() {
         return new CreatePKCS10CSR();
@@ -272,6 +330,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePKCS10CSRResponse }
      * 
+     * @return
+     *     the new instance of {@link CreatePKCS10CSRResponse }
      */
     public CreatePKCS10CSRResponse createCreatePKCS10CSRResponse() {
         return new CreatePKCS10CSRResponse();
@@ -280,6 +340,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateSelfSignedCertificate }
      * 
+     * @return
+     *     the new instance of {@link CreateSelfSignedCertificate }
      */
     public CreateSelfSignedCertificate createCreateSelfSignedCertificate() {
         return new CreateSelfSignedCertificate();
@@ -288,6 +350,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link X509V3Extension }
      * 
+     * @return
+     *     the new instance of {@link X509V3Extension }
      */
     public X509V3Extension createX509V3Extension() {
         return new X509V3Extension();
@@ -296,6 +360,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateSelfSignedCertificateResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateSelfSignedCertificateResponse }
      */
     public CreateSelfSignedCertificateResponse createCreateSelfSignedCertificateResponse() {
         return new CreateSelfSignedCertificateResponse();
@@ -304,6 +370,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCertificate }
      * 
+     * @return
+     *     the new instance of {@link UploadCertificate }
      */
     public UploadCertificate createUploadCertificate() {
         return new UploadCertificate();
@@ -312,6 +380,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCertificateResponse }
      * 
+     * @return
+     *     the new instance of {@link UploadCertificateResponse }
      */
     public UploadCertificateResponse createUploadCertificateResponse() {
         return new UploadCertificateResponse();
@@ -320,6 +390,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificate }
      * 
+     * @return
+     *     the new instance of {@link GetCertificate }
      */
     public GetCertificate createGetCertificate() {
         return new GetCertificate();
@@ -328,6 +400,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificateResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertificateResponse }
      */
     public GetCertificateResponse createGetCertificateResponse() {
         return new GetCertificateResponse();
@@ -336,6 +410,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link X509Certificate }
      * 
+     * @return
+     *     the new instance of {@link X509Certificate }
      */
     public X509Certificate createX509Certificate() {
         return new X509Certificate();
@@ -344,6 +420,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertificates }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertificates }
      */
     public GetAllCertificates createGetAllCertificates() {
         return new GetAllCertificates();
@@ -352,6 +430,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertificatesResponse }
      */
     public GetAllCertificatesResponse createGetAllCertificatesResponse() {
         return new GetAllCertificatesResponse();
@@ -360,6 +440,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificate }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificate }
      */
     public DeleteCertificate createDeleteCertificate() {
         return new DeleteCertificate();
@@ -368,6 +450,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificateResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificateResponse }
      */
     public DeleteCertificateResponse createDeleteCertificateResponse() {
         return new DeleteCertificateResponse();
@@ -376,6 +460,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertificationPath }
      * 
+     * @return
+     *     the new instance of {@link CreateCertificationPath }
      */
     public CreateCertificationPath createCreateCertificationPath() {
         return new CreateCertificationPath();
@@ -384,6 +470,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertificateIDs }
      * 
+     * @return
+     *     the new instance of {@link CertificateIDs }
      */
     public CertificateIDs createCertificateIDs() {
         return new CertificateIDs();
@@ -392,6 +480,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertificationPathResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateCertificationPathResponse }
      */
     public CreateCertificationPathResponse createCreateCertificationPathResponse() {
         return new CreateCertificationPathResponse();
@@ -400,6 +490,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificationPath }
      * 
+     * @return
+     *     the new instance of {@link GetCertificationPath }
      */
     public GetCertificationPath createGetCertificationPath() {
         return new GetCertificationPath();
@@ -408,6 +500,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificationPathResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertificationPathResponse }
      */
     public GetCertificationPathResponse createGetCertificationPathResponse() {
         return new GetCertificationPathResponse();
@@ -416,6 +510,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertificationPaths }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertificationPaths }
      */
     public GetAllCertificationPaths createGetAllCertificationPaths() {
         return new GetAllCertificationPaths();
@@ -424,6 +520,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertificationPathsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertificationPathsResponse }
      */
     public GetAllCertificationPathsResponse createGetAllCertificationPathsResponse() {
         return new GetAllCertificationPathsResponse();
@@ -432,6 +530,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificationPath }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificationPath }
      */
     public DeleteCertificationPath createDeleteCertificationPath() {
         return new DeleteCertificationPath();
@@ -440,6 +540,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificationPathResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificationPathResponse }
      */
     public DeleteCertificationPathResponse createDeleteCertificationPathResponse() {
         return new DeleteCertificationPathResponse();
@@ -448,6 +550,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadPassphrase }
      * 
+     * @return
+     *     the new instance of {@link UploadPassphrase }
      */
     public UploadPassphrase createUploadPassphrase() {
         return new UploadPassphrase();
@@ -456,6 +560,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadPassphraseResponse }
      * 
+     * @return
+     *     the new instance of {@link UploadPassphraseResponse }
      */
     public UploadPassphraseResponse createUploadPassphraseResponse() {
         return new UploadPassphraseResponse();
@@ -464,6 +570,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllPassphrases }
      * 
+     * @return
+     *     the new instance of {@link GetAllPassphrases }
      */
     public GetAllPassphrases createGetAllPassphrases() {
         return new GetAllPassphrases();
@@ -472,6 +580,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllPassphrasesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllPassphrasesResponse }
      */
     public GetAllPassphrasesResponse createGetAllPassphrasesResponse() {
         return new GetAllPassphrasesResponse();
@@ -480,6 +590,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeletePassphrase }
      * 
+     * @return
+     *     the new instance of {@link DeletePassphrase }
      */
     public DeletePassphrase createDeletePassphrase() {
         return new DeletePassphrase();
@@ -488,6 +600,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeletePassphraseResponse }
      * 
+     * @return
+     *     the new instance of {@link DeletePassphraseResponse }
      */
     public DeletePassphraseResponse createDeletePassphraseResponse() {
         return new DeletePassphraseResponse();
@@ -496,6 +610,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddServerCertificateAssignment }
      * 
+     * @return
+     *     the new instance of {@link AddServerCertificateAssignment }
      */
     public AddServerCertificateAssignment createAddServerCertificateAssignment() {
         return new AddServerCertificateAssignment();
@@ -504,6 +620,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddServerCertificateAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link AddServerCertificateAssignmentResponse }
      */
     public AddServerCertificateAssignmentResponse createAddServerCertificateAssignmentResponse() {
         return new AddServerCertificateAssignmentResponse();
@@ -512,6 +630,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveServerCertificateAssignment }
      * 
+     * @return
+     *     the new instance of {@link RemoveServerCertificateAssignment }
      */
     public RemoveServerCertificateAssignment createRemoveServerCertificateAssignment() {
         return new RemoveServerCertificateAssignment();
@@ -520,6 +640,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveServerCertificateAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveServerCertificateAssignmentResponse }
      */
     public RemoveServerCertificateAssignmentResponse createRemoveServerCertificateAssignmentResponse() {
         return new RemoveServerCertificateAssignmentResponse();
@@ -528,6 +650,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ReplaceServerCertificateAssignment }
      * 
+     * @return
+     *     the new instance of {@link ReplaceServerCertificateAssignment }
      */
     public ReplaceServerCertificateAssignment createReplaceServerCertificateAssignment() {
         return new ReplaceServerCertificateAssignment();
@@ -536,6 +660,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ReplaceServerCertificateAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link ReplaceServerCertificateAssignmentResponse }
      */
     public ReplaceServerCertificateAssignmentResponse createReplaceServerCertificateAssignmentResponse() {
         return new ReplaceServerCertificateAssignmentResponse();
@@ -544,6 +670,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAssignedServerCertificates }
      * 
+     * @return
+     *     the new instance of {@link GetAssignedServerCertificates }
      */
     public GetAssignedServerCertificates createGetAssignedServerCertificates() {
         return new GetAssignedServerCertificates();
@@ -552,6 +680,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAssignedServerCertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAssignedServerCertificatesResponse }
      */
     public GetAssignedServerCertificatesResponse createGetAssignedServerCertificatesResponse() {
         return new GetAssignedServerCertificatesResponse();
@@ -560,6 +690,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCRL.AnyParameters }
      * 
+     * @return
+     *     the new instance of {@link UploadCRL.AnyParameters }
      */
     public UploadCRL.AnyParameters createUploadCRLAnyParameters() {
         return new UploadCRL.AnyParameters();
@@ -568,6 +700,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UploadCRLResponse }
      * 
+     * @return
+     *     the new instance of {@link UploadCRLResponse }
      */
     public UploadCRLResponse createUploadCRLResponse() {
         return new UploadCRLResponse();
@@ -576,6 +710,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCRL }
      * 
+     * @return
+     *     the new instance of {@link GetCRL }
      */
     public GetCRL createGetCRL() {
         return new GetCRL();
@@ -584,6 +720,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCRLResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCRLResponse }
      */
     public GetCRLResponse createGetCRLResponse() {
         return new GetCRLResponse();
@@ -592,6 +730,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CRL }
      * 
+     * @return
+     *     the new instance of {@link CRL }
      */
     public CRL createCRL() {
         return new CRL();
@@ -600,6 +740,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCRLs }
      * 
+     * @return
+     *     the new instance of {@link GetAllCRLs }
      */
     public GetAllCRLs createGetAllCRLs() {
         return new GetAllCRLs();
@@ -608,6 +750,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCRLsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllCRLsResponse }
      */
     public GetAllCRLsResponse createGetAllCRLsResponse() {
         return new GetAllCRLsResponse();
@@ -616,6 +760,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCRL }
      * 
+     * @return
+     *     the new instance of {@link DeleteCRL }
      */
     public DeleteCRL createDeleteCRL() {
         return new DeleteCRL();
@@ -624,6 +770,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCRLResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteCRLResponse }
      */
     public DeleteCRLResponse createDeleteCRLResponse() {
         return new DeleteCRLResponse();
@@ -632,6 +780,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link TrustAnchor }
      * 
+     * @return
+     *     the new instance of {@link TrustAnchor }
      */
     public TrustAnchor createTrustAnchor() {
         return new TrustAnchor();
@@ -640,6 +790,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertPathValidationPolicy.AnyParameters }
      * 
+     * @return
+     *     the new instance of {@link CreateCertPathValidationPolicy.AnyParameters }
      */
     public CreateCertPathValidationPolicy.AnyParameters createCreateCertPathValidationPolicyAnyParameters() {
         return new CreateCertPathValidationPolicy.AnyParameters();
@@ -648,6 +800,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertPathValidationPolicyResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateCertPathValidationPolicyResponse }
      */
     public CreateCertPathValidationPolicyResponse createCreateCertPathValidationPolicyResponse() {
         return new CreateCertPathValidationPolicyResponse();
@@ -656,6 +810,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertPathValidationPolicy }
      * 
+     * @return
+     *     the new instance of {@link GetCertPathValidationPolicy }
      */
     public GetCertPathValidationPolicy createGetCertPathValidationPolicy() {
         return new GetCertPathValidationPolicy();
@@ -664,6 +820,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertPathValidationPolicyResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertPathValidationPolicyResponse }
      */
     public GetCertPathValidationPolicyResponse createGetCertPathValidationPolicyResponse() {
         return new GetCertPathValidationPolicyResponse();
@@ -672,6 +830,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertPathValidationPolicies }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertPathValidationPolicies }
      */
     public GetAllCertPathValidationPolicies createGetAllCertPathValidationPolicies() {
         return new GetAllCertPathValidationPolicies();
@@ -680,6 +840,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAllCertPathValidationPoliciesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAllCertPathValidationPoliciesResponse }
      */
     public GetAllCertPathValidationPoliciesResponse createGetAllCertPathValidationPoliciesResponse() {
         return new GetAllCertPathValidationPoliciesResponse();
@@ -688,6 +850,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertPathValidationPolicy }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertPathValidationPolicy }
      */
     public DeleteCertPathValidationPolicy createDeleteCertPathValidationPolicy() {
         return new DeleteCertPathValidationPolicy();
@@ -696,6 +860,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertPathValidationPolicyResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertPathValidationPolicyResponse }
      */
     public DeleteCertPathValidationPolicyResponse createDeleteCertPathValidationPolicyResponse() {
         return new DeleteCertPathValidationPolicyResponse();
@@ -704,6 +870,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetClientAuthenticationRequired }
      * 
+     * @return
+     *     the new instance of {@link SetClientAuthenticationRequired }
      */
     public SetClientAuthenticationRequired createSetClientAuthenticationRequired() {
         return new SetClientAuthenticationRequired();
@@ -712,6 +880,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetClientAuthenticationRequiredResponse }
      * 
+     * @return
+     *     the new instance of {@link SetClientAuthenticationRequiredResponse }
      */
     public SetClientAuthenticationRequiredResponse createSetClientAuthenticationRequiredResponse() {
         return new SetClientAuthenticationRequiredResponse();
@@ -720,6 +890,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetClientAuthenticationRequired }
      * 
+     * @return
+     *     the new instance of {@link GetClientAuthenticationRequired }
      */
     public GetClientAuthenticationRequired createGetClientAuthenticationRequired() {
         return new GetClientAuthenticationRequired();
@@ -728,6 +900,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetClientAuthenticationRequiredResponse }
      * 
+     * @return
+     *     the new instance of {@link GetClientAuthenticationRequiredResponse }
      */
     public GetClientAuthenticationRequiredResponse createGetClientAuthenticationRequiredResponse() {
         return new GetClientAuthenticationRequiredResponse();
@@ -736,6 +910,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddCertPathValidationPolicyAssignment }
      * 
+     * @return
+     *     the new instance of {@link AddCertPathValidationPolicyAssignment }
      */
     public AddCertPathValidationPolicyAssignment createAddCertPathValidationPolicyAssignment() {
         return new AddCertPathValidationPolicyAssignment();
@@ -744,6 +920,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddCertPathValidationPolicyAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link AddCertPathValidationPolicyAssignmentResponse }
      */
     public AddCertPathValidationPolicyAssignmentResponse createAddCertPathValidationPolicyAssignmentResponse() {
         return new AddCertPathValidationPolicyAssignmentResponse();
@@ -752,6 +930,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveCertPathValidationPolicyAssignment }
      * 
+     * @return
+     *     the new instance of {@link RemoveCertPathValidationPolicyAssignment }
      */
     public RemoveCertPathValidationPolicyAssignment createRemoveCertPathValidationPolicyAssignment() {
         return new RemoveCertPathValidationPolicyAssignment();
@@ -760,6 +940,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveCertPathValidationPolicyAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveCertPathValidationPolicyAssignmentResponse }
      */
     public RemoveCertPathValidationPolicyAssignmentResponse createRemoveCertPathValidationPolicyAssignmentResponse() {
         return new RemoveCertPathValidationPolicyAssignmentResponse();
@@ -768,6 +950,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ReplaceCertPathValidationPolicyAssignment }
      * 
+     * @return
+     *     the new instance of {@link ReplaceCertPathValidationPolicyAssignment }
      */
     public ReplaceCertPathValidationPolicyAssignment createReplaceCertPathValidationPolicyAssignment() {
         return new ReplaceCertPathValidationPolicyAssignment();
@@ -776,6 +960,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ReplaceCertPathValidationPolicyAssignmentResponse }
      * 
+     * @return
+     *     the new instance of {@link ReplaceCertPathValidationPolicyAssignmentResponse }
      */
     public ReplaceCertPathValidationPolicyAssignmentResponse createReplaceCertPathValidationPolicyAssignmentResponse() {
         return new ReplaceCertPathValidationPolicyAssignmentResponse();
@@ -784,6 +970,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAssignedCertPathValidationPolicies }
      * 
+     * @return
+     *     the new instance of {@link GetAssignedCertPathValidationPolicies }
      */
     public GetAssignedCertPathValidationPolicies createGetAssignedCertPathValidationPolicies() {
         return new GetAssignedCertPathValidationPolicies();
@@ -792,6 +980,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAssignedCertPathValidationPoliciesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAssignedCertPathValidationPoliciesResponse }
      */
     public GetAssignedCertPathValidationPoliciesResponse createGetAssignedCertPathValidationPoliciesResponse() {
         return new GetAssignedCertPathValidationPoliciesResponse();
@@ -800,6 +990,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DNAttributeTypeAndValue }
      * 
+     * @return
+     *     the new instance of {@link DNAttributeTypeAndValue }
      */
     public DNAttributeTypeAndValue createDNAttributeTypeAndValue() {
         return new DNAttributeTypeAndValue();
@@ -808,6 +1000,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link MultiValuedRDN }
      * 
+     * @return
+     *     the new instance of {@link MultiValuedRDN }
      */
     public MultiValuedRDN createMultiValuedRDN() {
         return new MultiValuedRDN();
@@ -816,6 +1010,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link BasicRequestAttribute }
      * 
+     * @return
+     *     the new instance of {@link BasicRequestAttribute }
      */
     public BasicRequestAttribute createBasicRequestAttribute() {
         return new BasicRequestAttribute();
@@ -824,6 +1020,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link TLSServerCapabilities }
      * 
+     * @return
+     *     the new instance of {@link TLSServerCapabilities }
      */
     public TLSServerCapabilities createTLSServerCapabilities() {
         return new TLSServerCapabilities();
@@ -832,6 +1030,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link KeystoreCapabilities.AnyElement }
      * 
+     * @return
+     *     the new instance of {@link KeystoreCapabilities.AnyElement }
      */
     public KeystoreCapabilities.AnyElement createKeystoreCapabilitiesAnyElement() {
         return new KeystoreCapabilities.AnyElement();
@@ -840,6 +1040,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertPathValidationPolicy.AnyParameters }
      * 
+     * @return
+     *     the new instance of {@link CertPathValidationPolicy.AnyParameters }
      */
     public CertPathValidationPolicy.AnyParameters createCertPathValidationPolicyAnyParameters() {
         return new CertPathValidationPolicy.AnyParameters();
@@ -848,6 +1050,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertPathValidationParameters.AnyParameters }
      * 
+     * @return
+     *     the new instance of {@link CertPathValidationParameters.AnyParameters }
      */
     public CertPathValidationParameters.AnyParameters createCertPathValidationParametersAnyParameters() {
         return new CertPathValidationParameters.AnyParameters();
@@ -856,6 +1060,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PassphraseAttribute.Extension }
      * 
+     * @return
+     *     the new instance of {@link PassphraseAttribute.Extension }
      */
     public PassphraseAttribute.Extension createPassphraseAttributeExtension() {
         return new PassphraseAttribute.Extension();
@@ -864,6 +1070,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CertificationPath.AnyElement }
      * 
+     * @return
+     *     the new instance of {@link CertificationPath.AnyElement }
      */
     public CertificationPath.AnyElement createCertificationPathAnyElement() {
         return new CertificationPath.AnyElement();
@@ -872,6 +1080,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AlgorithmIdentifier.AnyParameters }
      * 
+     * @return
+     *     the new instance of {@link AlgorithmIdentifier.AnyParameters }
      */
     public AlgorithmIdentifier.AnyParameters createAlgorithmIdentifierAnyParameters() {
         return new AlgorithmIdentifier.AnyParameters();
@@ -880,6 +1090,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CSRAttribute.AnyAttribute }
      * 
+     * @return
+     *     the new instance of {@link CSRAttribute.AnyAttribute }
      */
     public CSRAttribute.AnyAttribute createCSRAttributeAnyAttribute() {
         return new CSRAttribute.AnyAttribute();
@@ -888,6 +1100,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DistinguishedName.AnyAttribute }
      * 
+     * @return
+     *     the new instance of {@link DistinguishedName.AnyAttribute }
      */
     public DistinguishedName.AnyAttribute createDistinguishedNameAnyAttribute() {
         return new DistinguishedName.AnyAttribute();
@@ -896,6 +1110,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link KeyAttribute.Extension }
      * 
+     * @return
+     *     the new instance of {@link KeyAttribute.Extension }
      */
     public KeyAttribute.Extension createKeyAttributeExtension() {
         return new KeyAttribute.Extension();
@@ -911,7 +1127,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/advancedsecurity/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
     /**
@@ -926,7 +1142,7 @@ public class ObjectFactory {
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
     public JAXBElement<String> createGetAssignedCertPathValidationPoliciesResponseCertPathValidationPolicyID(String value) {
-        return new JAXBElement<String>(_GetAssignedCertPathValidationPoliciesResponseCertPathValidationPolicyID_QNAME, String.class, GetAssignedCertPathValidationPoliciesResponse.class, value);
+        return new JAXBElement<>(_GetAssignedCertPathValidationPoliciesResponseCertPathValidationPolicyID_QNAME, String.class, GetAssignedCertPathValidationPoliciesResponse.class, value);
     }
 
 }

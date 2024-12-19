@@ -18,36 +18,36 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for StorageConfigurationData complex type.
+ * <p>Java class for StorageConfigurationData complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="StorageConfigurationData"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="LocalPath" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/&gt;
- *         &lt;element name="StorageUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/&gt;
- *         &lt;element name="User" type="{http://www.onvif.org/ver10/device/wsdl}UserCredential" minOccurs="0"/&gt;
- *         &lt;element name="Extension" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="StorageConfigurationData">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="LocalPath" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *         <element name="StorageUri" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *         <element name="User" type="{http://www.onvif.org/ver10/device/wsdl}UserCredential" minOccurs="0"/>
+ *         <element name="Extension" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *       <attribute name="type" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -60,23 +60,39 @@ import org.w3c.dom.Element;
 })
 public class StorageConfigurationData {
 
+    /**
+     * local path
+     * 
+     */
     @XmlElement(name = "LocalPath")
     @XmlSchemaType(name = "anyURI")
     protected String localPath;
+    /**
+     * Storage server address
+     * 
+     */
     @XmlElement(name = "StorageUri")
     @XmlSchemaType(name = "anyURI")
     protected String storageUri;
+    /**
+     * User credential for the storage server
+     * 
+     */
     @XmlElement(name = "User")
     protected UserCredential user;
     @XmlElement(name = "Extension")
     protected StorageConfigurationData.Extension extension;
+    /**
+     * StorageType lists the acceptable values for type attribute
+     * 
+     */
     @XmlAttribute(name = "type", required = true)
     protected String type;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the localPath property.
+     * local path
      * 
      * @return
      *     possible object is
@@ -94,13 +110,14 @@ public class StorageConfigurationData {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getLocalPath()
      */
     public void setLocalPath(String value) {
         this.localPath = value;
     }
 
     /**
-     * Gets the value of the storageUri property.
+     * Storage server address
      * 
      * @return
      *     possible object is
@@ -118,13 +135,14 @@ public class StorageConfigurationData {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getStorageUri()
      */
     public void setStorageUri(String value) {
         this.storageUri = value;
     }
 
     /**
-     * Gets the value of the user property.
+     * User credential for the storage server
      * 
      * @return
      *     possible object is
@@ -142,6 +160,7 @@ public class StorageConfigurationData {
      *     allowed object is
      *     {@link UserCredential }
      *     
+     * @see #getUser()
      */
     public void setUser(UserCredential value) {
         this.user = value;
@@ -172,7 +191,7 @@ public class StorageConfigurationData {
     }
 
     /**
-     * Gets the value of the type property.
+     * StorageType lists the acceptable values for type attribute
      * 
      * @return
      *     possible object is
@@ -190,6 +209,7 @@ public class StorageConfigurationData {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getType()
      */
     public void setType(String value) {
         this.type = value;
@@ -215,21 +235,21 @@ public class StorageConfigurationData {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -245,16 +265,16 @@ public class StorageConfigurationData {
         /**
          * Gets the value of the any property.
          * 
-         * <p>
-         * This accessor method returns a reference to the live list,
+         * <p>This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the Jakarta XML Binding object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
          * 
          * <p>
          * For example, to add a new item, do as follows:
+         * </p>
          * <pre>
-         *    getAny().add(newItem);
+         * getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -262,12 +282,15 @@ public class StorageConfigurationData {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
+         * </p>
          * 
          * 
+         * @return
+         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<Object>();
+                any = new ArrayList<>();
             }
             return this.any;
         }

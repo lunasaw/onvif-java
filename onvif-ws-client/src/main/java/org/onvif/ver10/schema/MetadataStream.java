@@ -15,27 +15,27 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for MetadataStream complex type.
+ * <p>Java class for MetadataStream complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="MetadataStream"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
- *           &lt;element name="VideoAnalytics" type="{http://www.onvif.org/ver10/schema}VideoAnalyticsStream"/&gt;
- *           &lt;element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZStream"/&gt;
- *           &lt;element name="Event" type="{http://www.onvif.org/ver10/schema}EventStream"/&gt;
- *           &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}MetadataStreamExtension"/&gt;
- *         &lt;/choice&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="MetadataStream">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <choice maxOccurs="unbounded" minOccurs="0">
+ *           <element name="VideoAnalytics" type="{http://www.onvif.org/ver10/schema}VideoAnalyticsStream"/>
+ *           <element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZStream"/>
+ *           <element name="Event" type="{http://www.onvif.org/ver10/schema}EventStream"/>
+ *           <element name="Extension" type="{http://www.onvif.org/ver10/schema}MetadataStreamExtension"/>
+ *         </choice>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -53,21 +53,21 @@ public class MetadataStream {
     })
     protected List<java.lang.Object> videoAnalyticsOrPTZOrEvent;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the videoAnalyticsOrPTZOrEvent property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the videoAnalyticsOrPTZOrEvent property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the videoAnalyticsOrPTZOrEvent property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getVideoAnalyticsOrPTZOrEvent().add(newItem);
+     * getVideoAnalyticsOrPTZOrEvent().add(newItem);
      * </pre>
      * 
      * 
@@ -77,12 +77,15 @@ public class MetadataStream {
      * {@link MetadataStreamExtension }
      * {@link PTZStream }
      * {@link VideoAnalyticsStream }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the videoAnalyticsOrPTZOrEvent property.
      */
     public List<java.lang.Object> getVideoAnalyticsOrPTZOrEvent() {
         if (videoAnalyticsOrPTZOrEvent == null) {
-            videoAnalyticsOrPTZOrEvent = new ArrayList<java.lang.Object>();
+            videoAnalyticsOrPTZOrEvent = new ArrayList<>();
         }
         return this.videoAnalyticsOrPTZOrEvent;
     }

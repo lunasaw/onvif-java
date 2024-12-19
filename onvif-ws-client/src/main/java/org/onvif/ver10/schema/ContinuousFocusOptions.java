@@ -8,21 +8,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ContinuousFocusOptions complex type.
+ * <p>Java class for ContinuousFocusOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ContinuousFocusOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ContinuousFocusOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -32,11 +32,15 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ContinuousFocusOptions {
 
+    /**
+     * Valid ranges of the speed.
+     * 
+     */
     @XmlElement(name = "Speed", required = true)
     protected FloatRange speed;
 
     /**
-     * Gets the value of the speed property.
+     * Valid ranges of the speed.
      * 
      * @return
      *     possible object is
@@ -54,6 +58,7 @@ public class ContinuousFocusOptions {
      *     allowed object is
      *     {@link FloatRange }
      *     
+     * @see #getSpeed()
      */
     public void setSpeed(FloatRange value) {
         this.speed = value;

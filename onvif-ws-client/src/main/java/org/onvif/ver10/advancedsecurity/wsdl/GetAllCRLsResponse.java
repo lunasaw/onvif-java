@@ -11,21 +11,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Crl" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CRL" maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Crl" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CRL" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,34 +36,43 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetAllCRLsResponse")
 public class GetAllCRLsResponse {
 
+    /**
+     * A list of all CRLs that are stored in the keystore on the device.
+     * 
+     */
     @XmlElement(name = "Crl")
     protected List<CRL> crl;
 
     /**
+     * A list of all CRLs that are stored in the keystore on the device.
+     * 
      * Gets the value of the crl property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the crl property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the crl property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getCrl().add(newItem);
+     * getCrl().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link CRL }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the crl property.
      */
     public List<CRL> getCrl() {
         if (crl == null) {
-            crl = new ArrayList<CRL>();
+            crl = new ArrayList<>();
         }
         return this.crl;
     }

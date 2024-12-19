@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.media.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/media/wsdl", "Capabilities");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/media/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.media.wsdl
@@ -36,6 +36,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -44,6 +46,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -52,6 +56,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -60,6 +66,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSources }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSources }
      */
     public GetVideoSources createGetVideoSources() {
         return new GetVideoSources();
@@ -68,6 +76,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourcesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourcesResponse }
      */
     public GetVideoSourcesResponse createGetVideoSourcesResponse() {
         return new GetVideoSourcesResponse();
@@ -76,6 +86,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSources }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSources }
      */
     public GetAudioSources createGetAudioSources() {
         return new GetAudioSources();
@@ -84,6 +96,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourcesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourcesResponse }
      */
     public GetAudioSourcesResponse createGetAudioSourcesResponse() {
         return new GetAudioSourcesResponse();
@@ -92,6 +106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputs }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputs }
      */
     public GetAudioOutputs createGetAudioOutputs() {
         return new GetAudioOutputs();
@@ -100,6 +116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputsResponse }
      */
     public GetAudioOutputsResponse createGetAudioOutputsResponse() {
         return new GetAudioOutputsResponse();
@@ -108,6 +126,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateProfile }
      * 
+     * @return
+     *     the new instance of {@link CreateProfile }
      */
     public CreateProfile createCreateProfile() {
         return new CreateProfile();
@@ -116,6 +136,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateProfileResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateProfileResponse }
      */
     public CreateProfileResponse createCreateProfileResponse() {
         return new CreateProfileResponse();
@@ -124,6 +146,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetProfile }
      * 
+     * @return
+     *     the new instance of {@link GetProfile }
      */
     public GetProfile createGetProfile() {
         return new GetProfile();
@@ -132,6 +156,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetProfileResponse }
      * 
+     * @return
+     *     the new instance of {@link GetProfileResponse }
      */
     public GetProfileResponse createGetProfileResponse() {
         return new GetProfileResponse();
@@ -140,6 +166,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetProfiles }
      * 
+     * @return
+     *     the new instance of {@link GetProfiles }
      */
     public GetProfiles createGetProfiles() {
         return new GetProfiles();
@@ -148,6 +176,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetProfilesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetProfilesResponse }
      */
     public GetProfilesResponse createGetProfilesResponse() {
         return new GetProfilesResponse();
@@ -156,6 +186,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddVideoEncoderConfiguration }
      */
     public AddVideoEncoderConfiguration createAddVideoEncoderConfiguration() {
         return new AddVideoEncoderConfiguration();
@@ -164,6 +196,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddVideoEncoderConfigurationResponse }
      */
     public AddVideoEncoderConfigurationResponse createAddVideoEncoderConfigurationResponse() {
         return new AddVideoEncoderConfigurationResponse();
@@ -172,6 +206,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoEncoderConfiguration }
      */
     public RemoveVideoEncoderConfiguration createRemoveVideoEncoderConfiguration() {
         return new RemoveVideoEncoderConfiguration();
@@ -180,6 +216,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoEncoderConfigurationResponse }
      */
     public RemoveVideoEncoderConfigurationResponse createRemoveVideoEncoderConfigurationResponse() {
         return new RemoveVideoEncoderConfigurationResponse();
@@ -188,6 +226,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddVideoSourceConfiguration }
      */
     public AddVideoSourceConfiguration createAddVideoSourceConfiguration() {
         return new AddVideoSourceConfiguration();
@@ -196,6 +236,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddVideoSourceConfigurationResponse }
      */
     public AddVideoSourceConfigurationResponse createAddVideoSourceConfigurationResponse() {
         return new AddVideoSourceConfigurationResponse();
@@ -204,6 +246,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoSourceConfiguration }
      */
     public RemoveVideoSourceConfiguration createRemoveVideoSourceConfiguration() {
         return new RemoveVideoSourceConfiguration();
@@ -212,6 +256,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoSourceConfigurationResponse }
      */
     public RemoveVideoSourceConfigurationResponse createRemoveVideoSourceConfigurationResponse() {
         return new RemoveVideoSourceConfigurationResponse();
@@ -220,6 +266,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddAudioEncoderConfiguration }
      */
     public AddAudioEncoderConfiguration createAddAudioEncoderConfiguration() {
         return new AddAudioEncoderConfiguration();
@@ -228,6 +276,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddAudioEncoderConfigurationResponse }
      */
     public AddAudioEncoderConfigurationResponse createAddAudioEncoderConfigurationResponse() {
         return new AddAudioEncoderConfigurationResponse();
@@ -236,6 +286,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioEncoderConfiguration }
      */
     public RemoveAudioEncoderConfiguration createRemoveAudioEncoderConfiguration() {
         return new RemoveAudioEncoderConfiguration();
@@ -244,6 +296,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioEncoderConfigurationResponse }
      */
     public RemoveAudioEncoderConfigurationResponse createRemoveAudioEncoderConfigurationResponse() {
         return new RemoveAudioEncoderConfigurationResponse();
@@ -252,6 +306,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddAudioSourceConfiguration }
      */
     public AddAudioSourceConfiguration createAddAudioSourceConfiguration() {
         return new AddAudioSourceConfiguration();
@@ -260,6 +316,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddAudioSourceConfigurationResponse }
      */
     public AddAudioSourceConfigurationResponse createAddAudioSourceConfigurationResponse() {
         return new AddAudioSourceConfigurationResponse();
@@ -268,6 +326,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioSourceConfiguration }
      */
     public RemoveAudioSourceConfiguration createRemoveAudioSourceConfiguration() {
         return new RemoveAudioSourceConfiguration();
@@ -276,6 +336,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioSourceConfigurationResponse }
      */
     public RemoveAudioSourceConfigurationResponse createRemoveAudioSourceConfigurationResponse() {
         return new RemoveAudioSourceConfigurationResponse();
@@ -284,6 +346,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddPTZConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddPTZConfiguration }
      */
     public AddPTZConfiguration createAddPTZConfiguration() {
         return new AddPTZConfiguration();
@@ -292,6 +356,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddPTZConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddPTZConfigurationResponse }
      */
     public AddPTZConfigurationResponse createAddPTZConfigurationResponse() {
         return new AddPTZConfigurationResponse();
@@ -300,6 +366,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePTZConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemovePTZConfiguration }
      */
     public RemovePTZConfiguration createRemovePTZConfiguration() {
         return new RemovePTZConfiguration();
@@ -308,6 +376,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePTZConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemovePTZConfigurationResponse }
      */
     public RemovePTZConfigurationResponse createRemovePTZConfigurationResponse() {
         return new RemovePTZConfigurationResponse();
@@ -316,6 +386,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoAnalyticsConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddVideoAnalyticsConfiguration }
      */
     public AddVideoAnalyticsConfiguration createAddVideoAnalyticsConfiguration() {
         return new AddVideoAnalyticsConfiguration();
@@ -324,6 +396,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddVideoAnalyticsConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddVideoAnalyticsConfigurationResponse }
      */
     public AddVideoAnalyticsConfigurationResponse createAddVideoAnalyticsConfigurationResponse() {
         return new AddVideoAnalyticsConfigurationResponse();
@@ -332,6 +406,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoAnalyticsConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoAnalyticsConfiguration }
      */
     public RemoveVideoAnalyticsConfiguration createRemoveVideoAnalyticsConfiguration() {
         return new RemoveVideoAnalyticsConfiguration();
@@ -340,6 +416,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveVideoAnalyticsConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveVideoAnalyticsConfigurationResponse }
      */
     public RemoveVideoAnalyticsConfigurationResponse createRemoveVideoAnalyticsConfigurationResponse() {
         return new RemoveVideoAnalyticsConfigurationResponse();
@@ -348,6 +426,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddMetadataConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddMetadataConfiguration }
      */
     public AddMetadataConfiguration createAddMetadataConfiguration() {
         return new AddMetadataConfiguration();
@@ -356,6 +436,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddMetadataConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddMetadataConfigurationResponse }
      */
     public AddMetadataConfigurationResponse createAddMetadataConfigurationResponse() {
         return new AddMetadataConfigurationResponse();
@@ -364,6 +446,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveMetadataConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveMetadataConfiguration }
      */
     public RemoveMetadataConfiguration createRemoveMetadataConfiguration() {
         return new RemoveMetadataConfiguration();
@@ -372,6 +456,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveMetadataConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveMetadataConfigurationResponse }
      */
     public RemoveMetadataConfigurationResponse createRemoveMetadataConfigurationResponse() {
         return new RemoveMetadataConfigurationResponse();
@@ -380,6 +466,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddAudioOutputConfiguration }
      */
     public AddAudioOutputConfiguration createAddAudioOutputConfiguration() {
         return new AddAudioOutputConfiguration();
@@ -388,6 +476,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddAudioOutputConfigurationResponse }
      */
     public AddAudioOutputConfigurationResponse createAddAudioOutputConfigurationResponse() {
         return new AddAudioOutputConfigurationResponse();
@@ -396,6 +486,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioOutputConfiguration }
      */
     public RemoveAudioOutputConfiguration createRemoveAudioOutputConfiguration() {
         return new RemoveAudioOutputConfiguration();
@@ -404,6 +496,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioOutputConfigurationResponse }
      */
     public RemoveAudioOutputConfigurationResponse createRemoveAudioOutputConfigurationResponse() {
         return new RemoveAudioOutputConfigurationResponse();
@@ -412,6 +506,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioDecoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link AddAudioDecoderConfiguration }
      */
     public AddAudioDecoderConfiguration createAddAudioDecoderConfiguration() {
         return new AddAudioDecoderConfiguration();
@@ -420,6 +516,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddAudioDecoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link AddAudioDecoderConfigurationResponse }
      */
     public AddAudioDecoderConfigurationResponse createAddAudioDecoderConfigurationResponse() {
         return new AddAudioDecoderConfigurationResponse();
@@ -428,6 +526,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioDecoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioDecoderConfiguration }
      */
     public RemoveAudioDecoderConfiguration createRemoveAudioDecoderConfiguration() {
         return new RemoveAudioDecoderConfiguration();
@@ -436,6 +536,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveAudioDecoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveAudioDecoderConfigurationResponse }
      */
     public RemoveAudioDecoderConfigurationResponse createRemoveAudioDecoderConfigurationResponse() {
         return new RemoveAudioDecoderConfigurationResponse();
@@ -444,6 +546,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteProfile }
      * 
+     * @return
+     *     the new instance of {@link DeleteProfile }
      */
     public DeleteProfile createDeleteProfile() {
         return new DeleteProfile();
@@ -452,6 +556,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteProfileResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteProfileResponse }
      */
     public DeleteProfileResponse createDeleteProfileResponse() {
         return new DeleteProfileResponse();
@@ -460,6 +566,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfigurations }
      */
     public GetVideoEncoderConfigurations createGetVideoEncoderConfigurations() {
         return new GetVideoEncoderConfigurations();
@@ -468,6 +576,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfigurationsResponse }
      */
     public GetVideoEncoderConfigurationsResponse createGetVideoEncoderConfigurationsResponse() {
         return new GetVideoEncoderConfigurationsResponse();
@@ -476,6 +586,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurations }
      */
     public GetVideoSourceConfigurations createGetVideoSourceConfigurations() {
         return new GetVideoSourceConfigurations();
@@ -484,6 +596,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationsResponse }
      */
     public GetVideoSourceConfigurationsResponse createGetVideoSourceConfigurationsResponse() {
         return new GetVideoSourceConfigurationsResponse();
@@ -492,6 +606,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfigurations }
      */
     public GetAudioEncoderConfigurations createGetAudioEncoderConfigurations() {
         return new GetAudioEncoderConfigurations();
@@ -500,6 +616,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfigurationsResponse }
      */
     public GetAudioEncoderConfigurationsResponse createGetAudioEncoderConfigurationsResponse() {
         return new GetAudioEncoderConfigurationsResponse();
@@ -508,6 +626,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurations }
      */
     public GetAudioSourceConfigurations createGetAudioSourceConfigurations() {
         return new GetAudioSourceConfigurations();
@@ -516,6 +636,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationsResponse }
      */
     public GetAudioSourceConfigurationsResponse createGetAudioSourceConfigurationsResponse() {
         return new GetAudioSourceConfigurationsResponse();
@@ -524,6 +646,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoAnalyticsConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetVideoAnalyticsConfigurations }
      */
     public GetVideoAnalyticsConfigurations createGetVideoAnalyticsConfigurations() {
         return new GetVideoAnalyticsConfigurations();
@@ -532,6 +656,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoAnalyticsConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoAnalyticsConfigurationsResponse }
      */
     public GetVideoAnalyticsConfigurationsResponse createGetVideoAnalyticsConfigurationsResponse() {
         return new GetVideoAnalyticsConfigurationsResponse();
@@ -540,6 +666,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfigurations }
      */
     public GetMetadataConfigurations createGetMetadataConfigurations() {
         return new GetMetadataConfigurations();
@@ -548,6 +676,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfigurationsResponse }
      */
     public GetMetadataConfigurationsResponse createGetMetadataConfigurationsResponse() {
         return new GetMetadataConfigurationsResponse();
@@ -556,6 +686,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurations }
      */
     public GetAudioOutputConfigurations createGetAudioOutputConfigurations() {
         return new GetAudioOutputConfigurations();
@@ -564,6 +696,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationsResponse }
      */
     public GetAudioOutputConfigurationsResponse createGetAudioOutputConfigurationsResponse() {
         return new GetAudioOutputConfigurationsResponse();
@@ -572,6 +706,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfigurations }
      */
     public GetAudioDecoderConfigurations createGetAudioDecoderConfigurations() {
         return new GetAudioDecoderConfigurations();
@@ -580,6 +716,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfigurationsResponse }
      */
     public GetAudioDecoderConfigurationsResponse createGetAudioDecoderConfigurationsResponse() {
         return new GetAudioDecoderConfigurationsResponse();
@@ -588,6 +726,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfiguration }
      */
     public GetVideoSourceConfiguration createGetVideoSourceConfiguration() {
         return new GetVideoSourceConfiguration();
@@ -596,6 +736,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationResponse }
      */
     public GetVideoSourceConfigurationResponse createGetVideoSourceConfigurationResponse() {
         return new GetVideoSourceConfigurationResponse();
@@ -604,6 +746,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfiguration }
      */
     public GetVideoEncoderConfiguration createGetVideoEncoderConfiguration() {
         return new GetVideoEncoderConfiguration();
@@ -612,6 +756,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfigurationResponse }
      */
     public GetVideoEncoderConfigurationResponse createGetVideoEncoderConfigurationResponse() {
         return new GetVideoEncoderConfigurationResponse();
@@ -620,6 +766,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfiguration }
      */
     public GetAudioSourceConfiguration createGetAudioSourceConfiguration() {
         return new GetAudioSourceConfiguration();
@@ -628,6 +776,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationResponse }
      */
     public GetAudioSourceConfigurationResponse createGetAudioSourceConfigurationResponse() {
         return new GetAudioSourceConfigurationResponse();
@@ -636,6 +786,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfiguration }
      */
     public GetAudioEncoderConfiguration createGetAudioEncoderConfiguration() {
         return new GetAudioEncoderConfiguration();
@@ -644,6 +796,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfigurationResponse }
      */
     public GetAudioEncoderConfigurationResponse createGetAudioEncoderConfigurationResponse() {
         return new GetAudioEncoderConfigurationResponse();
@@ -652,6 +806,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoAnalyticsConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetVideoAnalyticsConfiguration }
      */
     public GetVideoAnalyticsConfiguration createGetVideoAnalyticsConfiguration() {
         return new GetVideoAnalyticsConfiguration();
@@ -660,6 +816,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoAnalyticsConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoAnalyticsConfigurationResponse }
      */
     public GetVideoAnalyticsConfigurationResponse createGetVideoAnalyticsConfigurationResponse() {
         return new GetVideoAnalyticsConfigurationResponse();
@@ -668,6 +826,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfiguration }
      */
     public GetMetadataConfiguration createGetMetadataConfiguration() {
         return new GetMetadataConfiguration();
@@ -676,6 +836,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfigurationResponse }
      */
     public GetMetadataConfigurationResponse createGetMetadataConfigurationResponse() {
         return new GetMetadataConfigurationResponse();
@@ -684,6 +846,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfiguration }
      */
     public GetAudioOutputConfiguration createGetAudioOutputConfiguration() {
         return new GetAudioOutputConfiguration();
@@ -692,6 +856,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationResponse }
      */
     public GetAudioOutputConfigurationResponse createGetAudioOutputConfigurationResponse() {
         return new GetAudioOutputConfigurationResponse();
@@ -700,6 +866,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfiguration }
      */
     public GetAudioDecoderConfiguration createGetAudioDecoderConfiguration() {
         return new GetAudioDecoderConfiguration();
@@ -708,6 +876,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfigurationResponse }
      */
     public GetAudioDecoderConfigurationResponse createGetAudioDecoderConfigurationResponse() {
         return new GetAudioDecoderConfigurationResponse();
@@ -716,6 +886,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoEncoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoEncoderConfigurations }
      */
     public GetCompatibleVideoEncoderConfigurations createGetCompatibleVideoEncoderConfigurations() {
         return new GetCompatibleVideoEncoderConfigurations();
@@ -724,6 +896,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoEncoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoEncoderConfigurationsResponse }
      */
     public GetCompatibleVideoEncoderConfigurationsResponse createGetCompatibleVideoEncoderConfigurationsResponse() {
         return new GetCompatibleVideoEncoderConfigurationsResponse();
@@ -732,6 +906,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoSourceConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoSourceConfigurations }
      */
     public GetCompatibleVideoSourceConfigurations createGetCompatibleVideoSourceConfigurations() {
         return new GetCompatibleVideoSourceConfigurations();
@@ -740,6 +916,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoSourceConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoSourceConfigurationsResponse }
      */
     public GetCompatibleVideoSourceConfigurationsResponse createGetCompatibleVideoSourceConfigurationsResponse() {
         return new GetCompatibleVideoSourceConfigurationsResponse();
@@ -748,6 +926,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioEncoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioEncoderConfigurations }
      */
     public GetCompatibleAudioEncoderConfigurations createGetCompatibleAudioEncoderConfigurations() {
         return new GetCompatibleAudioEncoderConfigurations();
@@ -756,6 +936,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioEncoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioEncoderConfigurationsResponse }
      */
     public GetCompatibleAudioEncoderConfigurationsResponse createGetCompatibleAudioEncoderConfigurationsResponse() {
         return new GetCompatibleAudioEncoderConfigurationsResponse();
@@ -764,6 +946,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioSourceConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioSourceConfigurations }
      */
     public GetCompatibleAudioSourceConfigurations createGetCompatibleAudioSourceConfigurations() {
         return new GetCompatibleAudioSourceConfigurations();
@@ -772,6 +956,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioSourceConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioSourceConfigurationsResponse }
      */
     public GetCompatibleAudioSourceConfigurationsResponse createGetCompatibleAudioSourceConfigurationsResponse() {
         return new GetCompatibleAudioSourceConfigurationsResponse();
@@ -780,6 +966,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoAnalyticsConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoAnalyticsConfigurations }
      */
     public GetCompatibleVideoAnalyticsConfigurations createGetCompatibleVideoAnalyticsConfigurations() {
         return new GetCompatibleVideoAnalyticsConfigurations();
@@ -788,6 +976,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleVideoAnalyticsConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleVideoAnalyticsConfigurationsResponse }
      */
     public GetCompatibleVideoAnalyticsConfigurationsResponse createGetCompatibleVideoAnalyticsConfigurationsResponse() {
         return new GetCompatibleVideoAnalyticsConfigurationsResponse();
@@ -796,6 +986,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleMetadataConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleMetadataConfigurations }
      */
     public GetCompatibleMetadataConfigurations createGetCompatibleMetadataConfigurations() {
         return new GetCompatibleMetadataConfigurations();
@@ -804,6 +996,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleMetadataConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleMetadataConfigurationsResponse }
      */
     public GetCompatibleMetadataConfigurationsResponse createGetCompatibleMetadataConfigurationsResponse() {
         return new GetCompatibleMetadataConfigurationsResponse();
@@ -812,6 +1006,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioOutputConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioOutputConfigurations }
      */
     public GetCompatibleAudioOutputConfigurations createGetCompatibleAudioOutputConfigurations() {
         return new GetCompatibleAudioOutputConfigurations();
@@ -820,6 +1016,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioOutputConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioOutputConfigurationsResponse }
      */
     public GetCompatibleAudioOutputConfigurationsResponse createGetCompatibleAudioOutputConfigurationsResponse() {
         return new GetCompatibleAudioOutputConfigurationsResponse();
@@ -828,6 +1026,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioDecoderConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioDecoderConfigurations }
      */
     public GetCompatibleAudioDecoderConfigurations createGetCompatibleAudioDecoderConfigurations() {
         return new GetCompatibleAudioDecoderConfigurations();
@@ -836,6 +1036,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleAudioDecoderConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleAudioDecoderConfigurationsResponse }
      */
     public GetCompatibleAudioDecoderConfigurationsResponse createGetCompatibleAudioDecoderConfigurationsResponse() {
         return new GetCompatibleAudioDecoderConfigurationsResponse();
@@ -844,6 +1046,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetVideoEncoderConfiguration }
      */
     public SetVideoEncoderConfiguration createSetVideoEncoderConfiguration() {
         return new SetVideoEncoderConfiguration();
@@ -852,6 +1056,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoEncoderConfigurationResponse }
      */
     public SetVideoEncoderConfigurationResponse createSetVideoEncoderConfigurationResponse() {
         return new SetVideoEncoderConfigurationResponse();
@@ -860,6 +1066,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceConfiguration }
      */
     public SetVideoSourceConfiguration createSetVideoSourceConfiguration() {
         return new SetVideoSourceConfiguration();
@@ -868,6 +1076,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceConfigurationResponse }
      */
     public SetVideoSourceConfigurationResponse createSetVideoSourceConfigurationResponse() {
         return new SetVideoSourceConfigurationResponse();
@@ -876,6 +1086,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioEncoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioEncoderConfiguration }
      */
     public SetAudioEncoderConfiguration createSetAudioEncoderConfiguration() {
         return new SetAudioEncoderConfiguration();
@@ -884,6 +1096,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioEncoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioEncoderConfigurationResponse }
      */
     public SetAudioEncoderConfigurationResponse createSetAudioEncoderConfigurationResponse() {
         return new SetAudioEncoderConfigurationResponse();
@@ -892,6 +1106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioSourceConfiguration }
      */
     public SetAudioSourceConfiguration createSetAudioSourceConfiguration() {
         return new SetAudioSourceConfiguration();
@@ -900,6 +1116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioSourceConfigurationResponse }
      */
     public SetAudioSourceConfigurationResponse createSetAudioSourceConfigurationResponse() {
         return new SetAudioSourceConfigurationResponse();
@@ -908,6 +1126,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoAnalyticsConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetVideoAnalyticsConfiguration }
      */
     public SetVideoAnalyticsConfiguration createSetVideoAnalyticsConfiguration() {
         return new SetVideoAnalyticsConfiguration();
@@ -916,6 +1136,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoAnalyticsConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoAnalyticsConfigurationResponse }
      */
     public SetVideoAnalyticsConfigurationResponse createSetVideoAnalyticsConfigurationResponse() {
         return new SetVideoAnalyticsConfigurationResponse();
@@ -924,6 +1146,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetMetadataConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetMetadataConfiguration }
      */
     public SetMetadataConfiguration createSetMetadataConfiguration() {
         return new SetMetadataConfiguration();
@@ -932,6 +1156,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetMetadataConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetMetadataConfigurationResponse }
      */
     public SetMetadataConfigurationResponse createSetMetadataConfigurationResponse() {
         return new SetMetadataConfigurationResponse();
@@ -940,6 +1166,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioOutputConfiguration }
      */
     public SetAudioOutputConfiguration createSetAudioOutputConfiguration() {
         return new SetAudioOutputConfiguration();
@@ -948,6 +1176,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioOutputConfigurationResponse }
      */
     public SetAudioOutputConfigurationResponse createSetAudioOutputConfigurationResponse() {
         return new SetAudioOutputConfigurationResponse();
@@ -956,6 +1186,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioDecoderConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioDecoderConfiguration }
      */
     public SetAudioDecoderConfiguration createSetAudioDecoderConfiguration() {
         return new SetAudioDecoderConfiguration();
@@ -964,6 +1196,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioDecoderConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioDecoderConfigurationResponse }
      */
     public SetAudioDecoderConfigurationResponse createSetAudioDecoderConfigurationResponse() {
         return new SetAudioDecoderConfigurationResponse();
@@ -972,6 +1206,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationOptions }
      */
     public GetVideoSourceConfigurationOptions createGetVideoSourceConfigurationOptions() {
         return new GetVideoSourceConfigurationOptions();
@@ -980,6 +1216,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationOptionsResponse }
      */
     public GetVideoSourceConfigurationOptionsResponse createGetVideoSourceConfigurationOptionsResponse() {
         return new GetVideoSourceConfigurationOptionsResponse();
@@ -988,6 +1226,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfigurationOptions }
      */
     public GetVideoEncoderConfigurationOptions createGetVideoEncoderConfigurationOptions() {
         return new GetVideoEncoderConfigurationOptions();
@@ -996,6 +1236,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoEncoderConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoEncoderConfigurationOptionsResponse }
      */
     public GetVideoEncoderConfigurationOptionsResponse createGetVideoEncoderConfigurationOptionsResponse() {
         return new GetVideoEncoderConfigurationOptionsResponse();
@@ -1004,6 +1246,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationOptions }
      */
     public GetAudioSourceConfigurationOptions createGetAudioSourceConfigurationOptions() {
         return new GetAudioSourceConfigurationOptions();
@@ -1012,6 +1256,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationOptionsResponse }
      */
     public GetAudioSourceConfigurationOptionsResponse createGetAudioSourceConfigurationOptionsResponse() {
         return new GetAudioSourceConfigurationOptionsResponse();
@@ -1020,6 +1266,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfigurationOptions }
      */
     public GetAudioEncoderConfigurationOptions createGetAudioEncoderConfigurationOptions() {
         return new GetAudioEncoderConfigurationOptions();
@@ -1028,6 +1276,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioEncoderConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioEncoderConfigurationOptionsResponse }
      */
     public GetAudioEncoderConfigurationOptionsResponse createGetAudioEncoderConfigurationOptionsResponse() {
         return new GetAudioEncoderConfigurationOptionsResponse();
@@ -1036,6 +1286,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfigurationOptions }
      */
     public GetMetadataConfigurationOptions createGetMetadataConfigurationOptions() {
         return new GetMetadataConfigurationOptions();
@@ -1044,6 +1296,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMetadataConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetMetadataConfigurationOptionsResponse }
      */
     public GetMetadataConfigurationOptionsResponse createGetMetadataConfigurationOptionsResponse() {
         return new GetMetadataConfigurationOptionsResponse();
@@ -1052,6 +1306,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationOptions }
      */
     public GetAudioOutputConfigurationOptions createGetAudioOutputConfigurationOptions() {
         return new GetAudioOutputConfigurationOptions();
@@ -1060,6 +1316,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationOptionsResponse }
      */
     public GetAudioOutputConfigurationOptionsResponse createGetAudioOutputConfigurationOptionsResponse() {
         return new GetAudioOutputConfigurationOptionsResponse();
@@ -1068,6 +1326,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfigurationOptions }
      */
     public GetAudioDecoderConfigurationOptions createGetAudioDecoderConfigurationOptions() {
         return new GetAudioDecoderConfigurationOptions();
@@ -1076,6 +1336,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioDecoderConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioDecoderConfigurationOptionsResponse }
      */
     public GetAudioDecoderConfigurationOptionsResponse createGetAudioDecoderConfigurationOptionsResponse() {
         return new GetAudioDecoderConfigurationOptionsResponse();
@@ -1084,6 +1346,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetGuaranteedNumberOfVideoEncoderInstances }
      * 
+     * @return
+     *     the new instance of {@link GetGuaranteedNumberOfVideoEncoderInstances }
      */
     public GetGuaranteedNumberOfVideoEncoderInstances createGetGuaranteedNumberOfVideoEncoderInstances() {
         return new GetGuaranteedNumberOfVideoEncoderInstances();
@@ -1092,6 +1356,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetGuaranteedNumberOfVideoEncoderInstancesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetGuaranteedNumberOfVideoEncoderInstancesResponse }
      */
     public GetGuaranteedNumberOfVideoEncoderInstancesResponse createGetGuaranteedNumberOfVideoEncoderInstancesResponse() {
         return new GetGuaranteedNumberOfVideoEncoderInstancesResponse();
@@ -1100,6 +1366,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStreamUri }
      * 
+     * @return
+     *     the new instance of {@link GetStreamUri }
      */
     public GetStreamUri createGetStreamUri() {
         return new GetStreamUri();
@@ -1108,6 +1376,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStreamUriResponse }
      * 
+     * @return
+     *     the new instance of {@link GetStreamUriResponse }
      */
     public GetStreamUriResponse createGetStreamUriResponse() {
         return new GetStreamUriResponse();
@@ -1116,6 +1386,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartMulticastStreaming }
      * 
+     * @return
+     *     the new instance of {@link StartMulticastStreaming }
      */
     public StartMulticastStreaming createStartMulticastStreaming() {
         return new StartMulticastStreaming();
@@ -1124,6 +1396,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartMulticastStreamingResponse }
      * 
+     * @return
+     *     the new instance of {@link StartMulticastStreamingResponse }
      */
     public StartMulticastStreamingResponse createStartMulticastStreamingResponse() {
         return new StartMulticastStreamingResponse();
@@ -1132,6 +1406,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StopMulticastStreaming }
      * 
+     * @return
+     *     the new instance of {@link StopMulticastStreaming }
      */
     public StopMulticastStreaming createStopMulticastStreaming() {
         return new StopMulticastStreaming();
@@ -1140,6 +1416,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StopMulticastStreamingResponse }
      * 
+     * @return
+     *     the new instance of {@link StopMulticastStreamingResponse }
      */
     public StopMulticastStreamingResponse createStopMulticastStreamingResponse() {
         return new StopMulticastStreamingResponse();
@@ -1148,6 +1426,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSynchronizationPoint }
      * 
+     * @return
+     *     the new instance of {@link SetSynchronizationPoint }
      */
     public SetSynchronizationPoint createSetSynchronizationPoint() {
         return new SetSynchronizationPoint();
@@ -1156,6 +1436,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSynchronizationPointResponse }
      * 
+     * @return
+     *     the new instance of {@link SetSynchronizationPointResponse }
      */
     public SetSynchronizationPointResponse createSetSynchronizationPointResponse() {
         return new SetSynchronizationPointResponse();
@@ -1164,6 +1446,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSnapshotUri }
      * 
+     * @return
+     *     the new instance of {@link GetSnapshotUri }
      */
     public GetSnapshotUri createGetSnapshotUri() {
         return new GetSnapshotUri();
@@ -1172,6 +1456,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSnapshotUriResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSnapshotUriResponse }
      */
     public GetSnapshotUriResponse createGetSnapshotUriResponse() {
         return new GetSnapshotUriResponse();
@@ -1180,6 +1466,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceModes }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceModes }
      */
     public GetVideoSourceModes createGetVideoSourceModes() {
         return new GetVideoSourceModes();
@@ -1188,6 +1476,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceModesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceModesResponse }
      */
     public GetVideoSourceModesResponse createGetVideoSourceModesResponse() {
         return new GetVideoSourceModesResponse();
@@ -1196,6 +1486,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link VideoSourceMode }
      * 
+     * @return
+     *     the new instance of {@link VideoSourceMode }
      */
     public VideoSourceMode createVideoSourceMode() {
         return new VideoSourceMode();
@@ -1204,6 +1496,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceMode }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceMode }
      */
     public SetVideoSourceMode createSetVideoSourceMode() {
         return new SetVideoSourceMode();
@@ -1212,6 +1506,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceModeResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceModeResponse }
      */
     public SetVideoSourceModeResponse createSetVideoSourceModeResponse() {
         return new SetVideoSourceModeResponse();
@@ -1220,6 +1516,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSDs }
      * 
+     * @return
+     *     the new instance of {@link GetOSDs }
      */
     public GetOSDs createGetOSDs() {
         return new GetOSDs();
@@ -1228,6 +1526,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSDsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetOSDsResponse }
      */
     public GetOSDsResponse createGetOSDsResponse() {
         return new GetOSDsResponse();
@@ -1236,6 +1536,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSD }
      * 
+     * @return
+     *     the new instance of {@link GetOSD }
      */
     public GetOSD createGetOSD() {
         return new GetOSD();
@@ -1244,6 +1546,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSDResponse }
      * 
+     * @return
+     *     the new instance of {@link GetOSDResponse }
      */
     public GetOSDResponse createGetOSDResponse() {
         return new GetOSDResponse();
@@ -1252,6 +1556,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetOSD }
      * 
+     * @return
+     *     the new instance of {@link SetOSD }
      */
     public SetOSD createSetOSD() {
         return new SetOSD();
@@ -1260,6 +1566,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetOSDResponse }
      * 
+     * @return
+     *     the new instance of {@link SetOSDResponse }
      */
     public SetOSDResponse createSetOSDResponse() {
         return new SetOSDResponse();
@@ -1268,6 +1576,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSDOptions }
      * 
+     * @return
+     *     the new instance of {@link GetOSDOptions }
      */
     public GetOSDOptions createGetOSDOptions() {
         return new GetOSDOptions();
@@ -1276,6 +1586,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOSDOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetOSDOptionsResponse }
      */
     public GetOSDOptionsResponse createGetOSDOptionsResponse() {
         return new GetOSDOptionsResponse();
@@ -1284,6 +1596,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateOSD }
      * 
+     * @return
+     *     the new instance of {@link CreateOSD }
      */
     public CreateOSD createCreateOSD() {
         return new CreateOSD();
@@ -1292,6 +1606,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateOSDResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateOSDResponse }
      */
     public CreateOSDResponse createCreateOSDResponse() {
         return new CreateOSDResponse();
@@ -1300,6 +1616,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteOSD }
      * 
+     * @return
+     *     the new instance of {@link DeleteOSD }
      */
     public DeleteOSD createDeleteOSD() {
         return new DeleteOSD();
@@ -1308,6 +1626,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteOSDResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteOSDResponse }
      */
     public DeleteOSDResponse createDeleteOSDResponse() {
         return new DeleteOSDResponse();
@@ -1316,6 +1636,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ProfileCapabilities }
      * 
+     * @return
+     *     the new instance of {@link ProfileCapabilities }
      */
     public ProfileCapabilities createProfileCapabilities() {
         return new ProfileCapabilities();
@@ -1324,6 +1646,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StreamingCapabilities }
      * 
+     * @return
+     *     the new instance of {@link StreamingCapabilities }
      */
     public StreamingCapabilities createStreamingCapabilities() {
         return new StreamingCapabilities();
@@ -1332,6 +1656,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link VideoSourceModeExtension }
      * 
+     * @return
+     *     the new instance of {@link VideoSourceModeExtension }
      */
     public VideoSourceModeExtension createVideoSourceModeExtension() {
         return new VideoSourceModeExtension();
@@ -1347,7 +1673,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/media/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

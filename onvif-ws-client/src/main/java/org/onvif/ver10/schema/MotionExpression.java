@@ -17,24 +17,24 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for MotionExpression complex type.
+ * <p>Java class for MotionExpression complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="MotionExpression"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Expression" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Type" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="MotionExpression">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Expression" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="Type" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,6 +45,12 @@ import org.w3c.dom.Element;
 })
 public class MotionExpression {
 
+    /**
+     * Motion Expression data structure contains motion expression which is
+     *             based on Scene Descriptor schema with XPATH syntax. The Type argument could allow
+     *             introduction of different dialects
+     * 
+     */
     @XmlElement(name = "Expression", required = true)
     protected String expression;
     @XmlAnyElement(lax = true)
@@ -52,10 +58,12 @@ public class MotionExpression {
     @XmlAttribute(name = "Type")
     protected String type;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the expression property.
+     * Motion Expression data structure contains motion expression which is
+     *             based on Scene Descriptor schema with XPATH syntax. The Type argument could allow
+     *             introduction of different dialects
      * 
      * @return
      *     possible object is
@@ -73,6 +81,7 @@ public class MotionExpression {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getExpression()
      */
     public void setExpression(String value) {
         this.expression = value;
@@ -81,16 +90,16 @@ public class MotionExpression {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -98,12 +107,15 @@ public class MotionExpression {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

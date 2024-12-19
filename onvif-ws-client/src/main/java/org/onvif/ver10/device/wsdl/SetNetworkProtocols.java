@@ -12,21 +12,21 @@ import org.onvif.ver10.schema.NetworkProtocol;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="NetworkProtocols" type="{http://www.onvif.org/ver10/schema}NetworkProtocol" maxOccurs="unbounded"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="NetworkProtocols" type="{http://www.onvif.org/ver10/schema}NetworkProtocol" maxOccurs="unbounded"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -37,34 +37,47 @@ import org.onvif.ver10.schema.NetworkProtocol;
 @XmlRootElement(name = "SetNetworkProtocols")
 public class SetNetworkProtocols {
 
+    /**
+     * Configures one or more defined network protocols supported by the
+     *                   device. There are currently three protocols defined; HTTP, HTTPS and RTSP. The
+     *                   following parameters can be set for each protocol: port and enable/disable.
+     * 
+     */
     @XmlElement(name = "NetworkProtocols", required = true)
     protected List<NetworkProtocol> networkProtocols;
 
     /**
+     * Configures one or more defined network protocols supported by the
+     *                   device. There are currently three protocols defined; HTTP, HTTPS and RTSP. The
+     *                   following parameters can be set for each protocol: port and enable/disable.
+     * 
      * Gets the value of the networkProtocols property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the networkProtocols property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the networkProtocols property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getNetworkProtocols().add(newItem);
+     * getNetworkProtocols().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link NetworkProtocol }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the networkProtocols property.
      */
     public List<NetworkProtocol> getNetworkProtocols() {
         if (networkProtocols == null) {
-            networkProtocols = new ArrayList<NetworkProtocol>();
+            networkProtocols = new ArrayList<>();
         }
         return this.networkProtocols;
     }

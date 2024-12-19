@@ -8,19 +8,19 @@ import org.oasis_open.docs.wsrf.bf_2.BaseFaultType;
 
 
 /**
- * <p>Java class for UnableToDestroySubscriptionFaultType complex type.
+ * <p>Java class for UnableToDestroySubscriptionFaultType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="UnableToDestroySubscriptionFaultType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType"&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="UnableToDestroySubscriptionFaultType">
+ *   <complexContent>
+ *     <extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType">
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

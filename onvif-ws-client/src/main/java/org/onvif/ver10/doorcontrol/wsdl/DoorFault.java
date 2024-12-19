@@ -17,29 +17,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * 
- *             Fault information for a Door.
+ * Fault information for a Door.
  *             This can be extended with optional attributes in the future.
- *           
  * 
- * <p>Java class for DoorFault complex type.
+ * <p>Java class for DoorFault complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="DoorFault"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorFaultState"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DoorFault">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="State" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorFaultState"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,18 +49,29 @@ import org.w3c.dom.Element;
 })
 public class DoorFault {
 
+    /**
+     * Optional reason for fault.
+     * 
+     */
     @XmlElement(name = "Reason")
     protected String reason;
+    /**
+     * Overall fault state for the door; it is of type DoorFaultState. If
+     *                 there are any faults, the value shall be: FaultDetected. Details of the detected
+     *                 fault shall be found in the Reason field, and/or the various DoorState fields and/or
+     *                 in extensions to this structure.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     @XmlSchemaType(name = "string")
     protected DoorFaultState state;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the reason property.
+     * Optional reason for fault.
      * 
      * @return
      *     possible object is
@@ -80,13 +89,17 @@ public class DoorFault {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getReason()
      */
     public void setReason(String value) {
         this.reason = value;
     }
 
     /**
-     * Gets the value of the state property.
+     * Overall fault state for the door; it is of type DoorFaultState. If
+     *                 there are any faults, the value shall be: FaultDetected. Details of the detected
+     *                 fault shall be found in the Reason field, and/or the various DoorState fields and/or
+     *                 in extensions to this structure.
      * 
      * @return
      *     possible object is
@@ -104,6 +117,7 @@ public class DoorFault {
      *     allowed object is
      *     {@link DoorFaultState }
      *     
+     * @see #getState()
      */
     public void setState(DoorFaultState value) {
         this.state = value;
@@ -112,16 +126,16 @@ public class DoorFault {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -129,12 +143,15 @@ public class DoorFault {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

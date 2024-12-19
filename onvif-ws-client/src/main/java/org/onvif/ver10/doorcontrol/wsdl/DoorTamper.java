@@ -17,28 +17,26 @@ import org.w3c.dom.Element;
 
 
 /**
+ * Tampering information for a Door.
  * 
- *             Tampering information for a Door.
- *           
+ * <p>Java class for DoorTamper complex type</p>.
  * 
- * <p>Java class for DoorTamper complex type.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="DoorTamper"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorTamperState"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DoorTamper">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Reason" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="State" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorTamperState"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -50,18 +48,40 @@ import org.w3c.dom.Element;
 })
 public class DoorTamper {
 
+    /**
+     * Optional field; Details describing tampering state change (e.g.,
+     *                 reason, place and time).
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:pt="http://www.onvif.org/ver10/pacs" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tdc="http://www.onvif.org/ver10/doorcontrol/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * NOTE: All fields (including this one) which are
+     *                 designed to give end-user prompts can be localized to the customers's native
+     *                 language.
+     * 
+     */
     @XmlElement(name = "Reason")
     protected String reason;
+    /**
+     * State of the tamper detector; it is of type DoorTamperState.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     @XmlSchemaType(name = "string")
     protected DoorTamperState state;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the reason property.
+     * Optional field; Details describing tampering state change (e.g.,
+     *                 reason, place and time).
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:pt="http://www.onvif.org/ver10/pacs" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tdc="http://www.onvif.org/ver10/doorcontrol/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * NOTE: All fields (including this one) which are
+     *                 designed to give end-user prompts can be localized to the customers's native
+     *                 language.
      * 
      * @return
      *     possible object is
@@ -79,13 +99,14 @@ public class DoorTamper {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getReason()
      */
     public void setReason(String value) {
         this.reason = value;
     }
 
     /**
-     * Gets the value of the state property.
+     * State of the tamper detector; it is of type DoorTamperState.
      * 
      * @return
      *     possible object is
@@ -103,6 +124,7 @@ public class DoorTamper {
      *     allowed object is
      *     {@link DoorTamperState }
      *     
+     * @see #getState()
      */
     public void setState(DoorTamperState value) {
         this.state = value;
@@ -111,16 +133,16 @@ public class DoorTamper {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -128,12 +150,15 @@ public class DoorTamper {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

@@ -16,23 +16,23 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Mpeg4Options2 complex type.
+ * <p>Java class for Mpeg4Options2 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Mpeg4Options2"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}Mpeg4Options"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BitrateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Mpeg4Options2">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}Mpeg4Options">
+ *       <sequence>
+ *         <element name="BitrateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,15 +45,19 @@ public class Mpeg4Options2
     extends Mpeg4Options
 {
 
+    /**
+     * Supported range of encoded bitrate in kbps.
+     * 
+     */
     @XmlElement(name = "BitrateRange", required = true)
     protected IntRange bitrateRange;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the bitrateRange property.
+     * Supported range of encoded bitrate in kbps.
      * 
      * @return
      *     possible object is
@@ -71,6 +75,7 @@ public class Mpeg4Options2
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getBitrateRange()
      */
     public void setBitrateRange(IntRange value) {
         this.bitrateRange = value;
@@ -79,16 +84,16 @@ public class Mpeg4Options2
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -96,12 +101,15 @@ public class Mpeg4Options2
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

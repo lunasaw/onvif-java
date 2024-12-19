@@ -16,27 +16,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Capabilities complex type.
+ * <p>Java class for Capabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="RTP_Multicast" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="SupportedReceivers" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="MaximumRTSPURILength" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="RTP_Multicast" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="SupportedReceivers" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MaximumRTSPURILength" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -48,32 +48,53 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * Indicates that the device can receive RTP multicast streams.
+     * 
+     */
     @XmlAttribute(name = "RTP_Multicast")
     protected Boolean rtpMulticast;
+    /**
+     * Indicates that the device can receive RTP/TCP streams
+     * 
+     */
     @XmlAttribute(name = "RTP_TCP")
     protected Boolean rtptcp;
+    /**
+     * Indicates that the device can receive RTP/RTSP/TCP streams.
+     * 
+     */
     @XmlAttribute(name = "RTP_RTSP_TCP")
     protected Boolean rtprtsptcp;
+    /**
+     * The maximum number of receivers supported by the device.
+     * 
+     */
     @XmlAttribute(name = "SupportedReceivers", required = true)
     protected int supportedReceivers;
+    /**
+     * The maximum allowed length for RTSP URIs (Minimum and default value is
+     *               128 octet).
+     * 
+     */
     @XmlAttribute(name = "MaximumRTSPURILength")
     protected Integer maximumRTSPURILength;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -81,18 +102,21 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the rtpMulticast property.
+     * Indicates that the device can receive RTP multicast streams.
      * 
      * @return
      *     possible object is
@@ -110,13 +134,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPMulticast()
      */
     public void setRTPMulticast(Boolean value) {
         this.rtpMulticast = value;
     }
 
     /**
-     * Gets the value of the rtptcp property.
+     * Indicates that the device can receive RTP/TCP streams
      * 
      * @return
      *     possible object is
@@ -134,13 +159,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPTCP()
      */
     public void setRTPTCP(Boolean value) {
         this.rtptcp = value;
     }
 
     /**
-     * Gets the value of the rtprtsptcp property.
+     * Indicates that the device can receive RTP/RTSP/TCP streams.
      * 
      * @return
      *     possible object is
@@ -158,13 +184,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPRTSPTCP()
      */
     public void setRTPRTSPTCP(Boolean value) {
         this.rtprtsptcp = value;
     }
 
     /**
-     * Gets the value of the supportedReceivers property.
+     * The maximum number of receivers supported by the device.
      * 
      */
     public int getSupportedReceivers() {
@@ -180,7 +207,8 @@ public class Capabilities {
     }
 
     /**
-     * Gets the value of the maximumRTSPURILength property.
+     * The maximum allowed length for RTSP URIs (Minimum and default value is
+     *               128 octet).
      * 
      * @return
      *     possible object is
@@ -198,6 +226,7 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getMaximumRTSPURILength()
      */
     public void setMaximumRTSPURILength(Integer value) {
         this.maximumRTSPURILength = value;

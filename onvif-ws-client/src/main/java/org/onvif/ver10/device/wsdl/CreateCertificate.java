@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="CertificateID" type="{http://www.w3.org/2001/XMLSchema}token" minOccurs="0"/&gt;
- *         &lt;element name="Subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="ValidNotBefore" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="ValidNotAfter" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="CertificateID" type="{http://www.w3.org/2001/XMLSchema}token" minOccurs="0"/>
+ *         <element name="Subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="ValidNotBefore" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         <element name="ValidNotAfter" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,21 +44,37 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "CreateCertificate")
 public class CreateCertificate {
 
+    /**
+     * Certificate id.
+     * 
+     */
     @XmlElement(name = "CertificateID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String certificateID;
+    /**
+     * Identification of the entity associated with the public-key.
+     * 
+     */
     @XmlElement(name = "Subject")
     protected String subject;
+    /**
+     * Certificate validity start date.
+     * 
+     */
     @XmlElement(name = "ValidNotBefore")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar validNotBefore;
+    /**
+     * Certificate expiry start date.
+     * 
+     */
     @XmlElement(name = "ValidNotAfter")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar validNotAfter;
 
     /**
-     * Gets the value of the certificateID property.
+     * Certificate id.
      * 
      * @return
      *     possible object is
@@ -76,13 +92,14 @@ public class CreateCertificate {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getCertificateID()
      */
     public void setCertificateID(String value) {
         this.certificateID = value;
     }
 
     /**
-     * Gets the value of the subject property.
+     * Identification of the entity associated with the public-key.
      * 
      * @return
      *     possible object is
@@ -100,13 +117,14 @@ public class CreateCertificate {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getSubject()
      */
     public void setSubject(String value) {
         this.subject = value;
     }
 
     /**
-     * Gets the value of the validNotBefore property.
+     * Certificate validity start date.
      * 
      * @return
      *     possible object is
@@ -124,13 +142,14 @@ public class CreateCertificate {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getValidNotBefore()
      */
     public void setValidNotBefore(XMLGregorianCalendar value) {
         this.validNotBefore = value;
     }
 
     /**
-     * Gets the value of the validNotAfter property.
+     * Certificate expiry start date.
      * 
      * @return
      *     possible object is
@@ -148,6 +167,7 @@ public class CreateCertificate {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getValidNotAfter()
      */
     public void setValidNotAfter(XMLGregorianCalendar value) {
         this.validNotAfter = value;

@@ -11,21 +11,21 @@ import org.onvif.ver10.schema.SystemLogType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="LogType" type="{http://www.onvif.org/ver10/schema}SystemLogType"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="LogType" type="{http://www.onvif.org/ver10/schema}SystemLogType"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,12 +36,16 @@ import org.onvif.ver10.schema.SystemLogType;
 @XmlRootElement(name = "GetSystemLog")
 public class GetSystemLog {
 
+    /**
+     * Specifies the type of system log to get.
+     * 
+     */
     @XmlElement(name = "LogType", required = true)
     @XmlSchemaType(name = "string")
     protected SystemLogType logType;
 
     /**
-     * Gets the value of the logType property.
+     * Specifies the type of system log to get.
      * 
      * @return
      *     possible object is
@@ -59,6 +63,7 @@ public class GetSystemLog {
      *     allowed object is
      *     {@link SystemLogType }
      *     
+     * @see #getLogType()
      */
     public void setLogType(SystemLogType value) {
         this.logType = value;

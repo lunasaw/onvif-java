@@ -10,24 +10,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * Type describing whether BLC mode is enabled or disabled (on/off).
- *       
  * 
- * <p>Java class for BacklightCompensation20 complex type.
+ * <p>Java class for BacklightCompensation20 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="BacklightCompensation20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}BacklightCompensationMode"/&gt;
- *         &lt;element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="BacklightCompensation20">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}BacklightCompensationMode"/>
+ *         <element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -38,14 +37,22 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class BacklightCompensation20 {
 
+    /**
+     * Backlight compensation mode (on/off).
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected BacklightCompensationMode mode;
+    /**
+     * Optional level parameter (unit unspecified).
+     * 
+     */
     @XmlElement(name = "Level")
     protected Float level;
 
     /**
-     * Gets the value of the mode property.
+     * Backlight compensation mode (on/off).
      * 
      * @return
      *     possible object is
@@ -63,13 +70,14 @@ public class BacklightCompensation20 {
      *     allowed object is
      *     {@link BacklightCompensationMode }
      *     
+     * @see #getMode()
      */
     public void setMode(BacklightCompensationMode value) {
         this.mode = value;
     }
 
     /**
-     * Gets the value of the level property.
+     * Optional level parameter (unit unspecified).
      * 
      * @return
      *     possible object is
@@ -87,6 +95,7 @@ public class BacklightCompensation20 {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getLevel()
      */
     public void setLevel(Float value) {
         this.level = value;

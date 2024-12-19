@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.ReceiverConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Configuration" type="{http://www.onvif.org/ver10/schema}ReceiverConfiguration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Configuration" type="{http://www.onvif.org/ver10/schema}ReceiverConfiguration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.ReceiverConfiguration;
 @XmlRootElement(name = "CreateReceiver")
 public class CreateReceiver {
 
+    /**
+     * The initial configuration for the new receiver.
+     * 
+     */
     @XmlElement(name = "Configuration", required = true)
     protected ReceiverConfiguration configuration;
 
     /**
-     * Gets the value of the configuration property.
+     * The initial configuration for the new receiver.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class CreateReceiver {
      *     allowed object is
      *     {@link ReceiverConfiguration }
      *     
+     * @see #getConfiguration()
      */
     public void setConfiguration(ReceiverConfiguration value) {
         this.configuration = value;

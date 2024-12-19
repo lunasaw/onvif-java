@@ -15,28 +15,28 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PresetTour complex type.
+ * <p>Java class for PresetTour complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PresetTour"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/&gt;
- *         &lt;element name="Status" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatus"/&gt;
- *         &lt;element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="StartingCondition" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingCondition"/&gt;
- *         &lt;element name="TourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PresetTour">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/>
+ *         <element name="Status" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatus"/>
+ *         <element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="StartingCondition" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingCondition"/>
+ *         <element name="TourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,25 +51,50 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PresetTour {
 
+    /**
+     * Readable name of the preset tour.
+     * 
+     */
     @XmlElement(name = "Name")
     protected String name;
+    /**
+     * Read only parameters to indicate the status of the preset tour.
+     * 
+     */
     @XmlElement(name = "Status", required = true)
     protected PTZPresetTourStatus status;
+    /**
+     * Auto Start flag of the preset tour. True allows the preset tour to be
+     *             activated always.
+     * 
+     */
     @XmlElement(name = "AutoStart")
     protected boolean autoStart;
+    /**
+     * Parameters to specify the detail behavior of the preset tour.
+     * 
+     */
     @XmlElement(name = "StartingCondition", required = true)
     protected PTZPresetTourStartingCondition startingCondition;
+    /**
+     * A list of detail of touring spots including preset positions.
+     * 
+     */
     @XmlElement(name = "TourSpot")
     protected List<PTZPresetTourSpot> tourSpot;
     @XmlElement(name = "Extension")
     protected PTZPresetTourExtension extension;
+    /**
+     * Unique identifier of this preset tour.
+     * 
+     */
     @XmlAttribute(name = "token")
     protected String token;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the name property.
+     * Readable name of the preset tour.
      * 
      * @return
      *     possible object is
@@ -87,13 +112,14 @@ public class PresetTour {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the status property.
+     * Read only parameters to indicate the status of the preset tour.
      * 
      * @return
      *     possible object is
@@ -111,13 +137,15 @@ public class PresetTour {
      *     allowed object is
      *     {@link PTZPresetTourStatus }
      *     
+     * @see #getStatus()
      */
     public void setStatus(PTZPresetTourStatus value) {
         this.status = value;
     }
 
     /**
-     * Gets the value of the autoStart property.
+     * Auto Start flag of the preset tour. True allows the preset tour to be
+     *             activated always.
      * 
      */
     public boolean isAutoStart() {
@@ -133,7 +161,7 @@ public class PresetTour {
     }
 
     /**
-     * Gets the value of the startingCondition property.
+     * Parameters to specify the detail behavior of the preset tour.
      * 
      * @return
      *     possible object is
@@ -151,36 +179,42 @@ public class PresetTour {
      *     allowed object is
      *     {@link PTZPresetTourStartingCondition }
      *     
+     * @see #getStartingCondition()
      */
     public void setStartingCondition(PTZPresetTourStartingCondition value) {
         this.startingCondition = value;
     }
 
     /**
+     * A list of detail of touring spots including preset positions.
+     * 
      * Gets the value of the tourSpot property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the tourSpot property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the tourSpot property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getTourSpot().add(newItem);
+     * getTourSpot().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PTZPresetTourSpot }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the tourSpot property.
      */
     public List<PTZPresetTourSpot> getTourSpot() {
         if (tourSpot == null) {
-            tourSpot = new ArrayList<PTZPresetTourSpot>();
+            tourSpot = new ArrayList<>();
         }
         return this.tourSpot;
     }
@@ -210,7 +244,7 @@ public class PresetTour {
     }
 
     /**
-     * Gets the value of the token property.
+     * Unique identifier of this preset tour.
      * 
      * @return
      *     possible object is
@@ -228,6 +262,7 @@ public class PresetTour {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;

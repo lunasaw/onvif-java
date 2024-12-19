@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ImagingOptions20Extension2 complex type.
+ * <p>Java class for ImagingOptions20Extension2 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ImagingOptions20Extension2"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="IrCutFilterAutoAdjustment" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptions" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension3" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ImagingOptions20Extension2">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="IrCutFilterAutoAdjustment" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptions" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension3" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,17 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImagingOptions20Extension2 {
 
+    /**
+     * Options of parameters for adjustment of Ir cut filter auto mode.
+     * 
+     */
     @XmlElement(name = "IrCutFilterAutoAdjustment")
     protected IrCutFilterAutoAdjustmentOptions irCutFilterAutoAdjustment;
     @XmlElement(name = "Extension")
     protected ImagingOptions20Extension3 extension;
 
     /**
-     * Gets the value of the irCutFilterAutoAdjustment property.
+     * Options of parameters for adjustment of Ir cut filter auto mode.
      * 
      * @return
      *     possible object is
@@ -58,6 +62,7 @@ public class ImagingOptions20Extension2 {
      *     allowed object is
      *     {@link IrCutFilterAutoAdjustmentOptions }
      *     
+     * @see #getIrCutFilterAutoAdjustment()
      */
     public void setIrCutFilterAutoAdjustment(IrCutFilterAutoAdjustmentOptions value) {
         this.irCutFilterAutoAdjustment = value;

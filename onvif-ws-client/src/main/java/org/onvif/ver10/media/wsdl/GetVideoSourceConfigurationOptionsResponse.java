@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.VideoSourceConfigurationOptions;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Options" type="{http://www.onvif.org/ver10/schema}VideoSourceConfigurationOptions"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Options" type="{http://www.onvif.org/ver10/schema}VideoSourceConfigurationOptions"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,23 @@ import org.onvif.ver10.schema.VideoSourceConfigurationOptions;
 @XmlRootElement(name = "GetVideoSourceConfigurationOptionsResponse")
 public class GetVideoSourceConfigurationOptionsResponse {
 
+    /**
+     * This message contains the video source configuration options. If a
+     *                   video source configuration is specified, the options shall concern that particular
+     *                   configuration. If a media profile is specified, the options shall be compatible
+     *                   with that media profile. If no tokens are specified, the options shall be
+     *                   considered generic for the device.
+     * 
+     */
     @XmlElement(name = "Options", required = true)
     protected VideoSourceConfigurationOptions options;
 
     /**
-     * Gets the value of the options property.
+     * This message contains the video source configuration options. If a
+     *                   video source configuration is specified, the options shall concern that particular
+     *                   configuration. If a media profile is specified, the options shall be compatible
+     *                   with that media profile. If no tokens are specified, the options shall be
+     *                   considered generic for the device.
      * 
      * @return
      *     possible object is
@@ -57,6 +69,7 @@ public class GetVideoSourceConfigurationOptionsResponse {
      *     allowed object is
      *     {@link VideoSourceConfigurationOptions }
      *     
+     * @see #getOptions()
      */
     public void setOptions(VideoSourceConfigurationOptions value) {
         this.options = value;

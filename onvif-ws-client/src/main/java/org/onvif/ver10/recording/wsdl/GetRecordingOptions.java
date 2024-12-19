@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetRecordingOptions")
 public class GetRecordingOptions {
 
+    /**
+     * Token of the recording.
+     * 
+     */
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
 
     /**
-     * Gets the value of the recordingToken property.
+     * Token of the recording.
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class GetRecordingOptions {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getRecordingToken()
      */
     public void setRecordingToken(String value) {
         this.recordingToken = value;

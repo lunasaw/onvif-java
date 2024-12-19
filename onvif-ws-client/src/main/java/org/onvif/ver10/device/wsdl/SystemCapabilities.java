@@ -12,30 +12,30 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SystemCapabilities complex type.
+ * <p>Java class for SystemCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SystemCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="HttpFirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="HttpSystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="HttpSystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="HttpSupportInformation" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="StorageConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SystemCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="HttpFirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="HttpSystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="HttpSystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="HttpSupportInformation" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="StorageConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -43,33 +43,77 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "SystemCapabilities")
 public class SystemCapabilities {
 
+    /**
+     * Indicates support for WS Discovery resolve requests.
+     * 
+     */
     @XmlAttribute(name = "DiscoveryResolve")
     protected Boolean discoveryResolve;
+    /**
+     * Indicates support for WS-Discovery Bye.
+     * 
+     */
     @XmlAttribute(name = "DiscoveryBye")
     protected Boolean discoveryBye;
+    /**
+     * Indicates support for remote discovery.
+     * 
+     */
     @XmlAttribute(name = "RemoteDiscovery")
     protected Boolean remoteDiscovery;
+    /**
+     * Indicates support for system backup through MTOM.
+     * 
+     */
     @XmlAttribute(name = "SystemBackup")
     protected Boolean systemBackup;
+    /**
+     * Indicates support for retrieval of system logging through MTOM.
+     * 
+     */
     @XmlAttribute(name = "SystemLogging")
     protected Boolean systemLogging;
+    /**
+     * Indicates support for firmware upgrade through MTOM.
+     * 
+     */
     @XmlAttribute(name = "FirmwareUpgrade")
     protected Boolean firmwareUpgrade;
+    /**
+     * Indicates support for firmware upgrade through HTTP.
+     * 
+     */
     @XmlAttribute(name = "HttpFirmwareUpgrade")
     protected Boolean httpFirmwareUpgrade;
+    /**
+     * Indicates support for system backup through HTTP.
+     * 
+     */
     @XmlAttribute(name = "HttpSystemBackup")
     protected Boolean httpSystemBackup;
+    /**
+     * Indicates support for retrieval of system logging through HTTP.
+     * 
+     */
     @XmlAttribute(name = "HttpSystemLogging")
     protected Boolean httpSystemLogging;
+    /**
+     * Indicates support for retrieving support information through HTTP.
+     * 
+     */
     @XmlAttribute(name = "HttpSupportInformation")
     protected Boolean httpSupportInformation;
+    /**
+     * Indicates support for storage configuration interfaces.
+     * 
+     */
     @XmlAttribute(name = "StorageConfiguration")
     protected Boolean storageConfiguration;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the discoveryResolve property.
+     * Indicates support for WS Discovery resolve requests.
      * 
      * @return
      *     possible object is
@@ -87,13 +131,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDiscoveryResolve()
      */
     public void setDiscoveryResolve(Boolean value) {
         this.discoveryResolve = value;
     }
 
     /**
-     * Gets the value of the discoveryBye property.
+     * Indicates support for WS-Discovery Bye.
      * 
      * @return
      *     possible object is
@@ -111,13 +156,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDiscoveryBye()
      */
     public void setDiscoveryBye(Boolean value) {
         this.discoveryBye = value;
     }
 
     /**
-     * Gets the value of the remoteDiscovery property.
+     * Indicates support for remote discovery.
      * 
      * @return
      *     possible object is
@@ -135,13 +181,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRemoteDiscovery()
      */
     public void setRemoteDiscovery(Boolean value) {
         this.remoteDiscovery = value;
     }
 
     /**
-     * Gets the value of the systemBackup property.
+     * Indicates support for system backup through MTOM.
      * 
      * @return
      *     possible object is
@@ -159,13 +206,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isSystemBackup()
      */
     public void setSystemBackup(Boolean value) {
         this.systemBackup = value;
     }
 
     /**
-     * Gets the value of the systemLogging property.
+     * Indicates support for retrieval of system logging through MTOM.
      * 
      * @return
      *     possible object is
@@ -183,13 +231,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isSystemLogging()
      */
     public void setSystemLogging(Boolean value) {
         this.systemLogging = value;
     }
 
     /**
-     * Gets the value of the firmwareUpgrade property.
+     * Indicates support for firmware upgrade through MTOM.
      * 
      * @return
      *     possible object is
@@ -207,13 +256,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isFirmwareUpgrade()
      */
     public void setFirmwareUpgrade(Boolean value) {
         this.firmwareUpgrade = value;
     }
 
     /**
-     * Gets the value of the httpFirmwareUpgrade property.
+     * Indicates support for firmware upgrade through HTTP.
      * 
      * @return
      *     possible object is
@@ -231,13 +281,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHttpFirmwareUpgrade()
      */
     public void setHttpFirmwareUpgrade(Boolean value) {
         this.httpFirmwareUpgrade = value;
     }
 
     /**
-     * Gets the value of the httpSystemBackup property.
+     * Indicates support for system backup through HTTP.
      * 
      * @return
      *     possible object is
@@ -255,13 +306,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHttpSystemBackup()
      */
     public void setHttpSystemBackup(Boolean value) {
         this.httpSystemBackup = value;
     }
 
     /**
-     * Gets the value of the httpSystemLogging property.
+     * Indicates support for retrieval of system logging through HTTP.
      * 
      * @return
      *     possible object is
@@ -279,13 +331,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHttpSystemLogging()
      */
     public void setHttpSystemLogging(Boolean value) {
         this.httpSystemLogging = value;
     }
 
     /**
-     * Gets the value of the httpSupportInformation property.
+     * Indicates support for retrieving support information through HTTP.
      * 
      * @return
      *     possible object is
@@ -303,13 +356,14 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHttpSupportInformation()
      */
     public void setHttpSupportInformation(Boolean value) {
         this.httpSupportInformation = value;
     }
 
     /**
-     * Gets the value of the storageConfiguration property.
+     * Indicates support for storage configuration interfaces.
      * 
      * @return
      *     possible object is
@@ -327,6 +381,7 @@ public class SystemCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isStorageConfiguration()
      */
     public void setStorageConfiguration(Boolean value) {
         this.storageConfiguration = value;

@@ -11,21 +11,21 @@ import org.onvif.ver10.schema.DiscoveryMode;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RemoteDiscoveryMode" type="{http://www.onvif.org/ver10/schema}DiscoveryMode"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RemoteDiscoveryMode" type="{http://www.onvif.org/ver10/schema}DiscoveryMode"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,12 +36,16 @@ import org.onvif.ver10.schema.DiscoveryMode;
 @XmlRootElement(name = "GetRemoteDiscoveryModeResponse")
 public class GetRemoteDiscoveryModeResponse {
 
+    /**
+     * Indicator of discovery mode: Discoverable, NonDiscoverable.
+     * 
+     */
     @XmlElement(name = "RemoteDiscoveryMode", required = true)
     @XmlSchemaType(name = "string")
     protected DiscoveryMode remoteDiscoveryMode;
 
     /**
-     * Gets the value of the remoteDiscoveryMode property.
+     * Indicator of discovery mode: Discoverable, NonDiscoverable.
      * 
      * @return
      *     possible object is
@@ -59,6 +63,7 @@ public class GetRemoteDiscoveryModeResponse {
      *     allowed object is
      *     {@link DiscoveryMode }
      *     
+     * @see #getRemoteDiscoveryMode()
      */
     public void setRemoteDiscoveryMode(DiscoveryMode value) {
         this.remoteDiscoveryMode = value;

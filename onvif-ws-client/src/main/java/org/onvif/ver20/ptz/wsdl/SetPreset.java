@@ -9,23 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="PresetName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="PresetName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -38,15 +38,29 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SetPreset")
 public class SetPreset {
 
+    /**
+     * A reference to the MediaProfile where the operation should take
+     *                   place.
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * A requested preset name.
+     * 
+     */
     @XmlElement(name = "PresetName")
     protected String presetName;
+    /**
+     * A requested preset token.
+     * 
+     */
     @XmlElement(name = "PresetToken")
     protected String presetToken;
 
     /**
-     * Gets the value of the profileToken property.
+     * A reference to the MediaProfile where the operation should take
+     *                   place.
      * 
      * @return
      *     possible object is
@@ -64,13 +78,14 @@ public class SetPreset {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the presetName property.
+     * A requested preset name.
      * 
      * @return
      *     possible object is
@@ -88,13 +103,14 @@ public class SetPreset {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPresetName()
      */
     public void setPresetName(String value) {
         this.presetName = value;
     }
 
     /**
-     * Gets the value of the presetToken property.
+     * A requested preset token.
      * 
      * @return
      *     possible object is
@@ -112,6 +128,7 @@ public class SetPreset {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPresetToken()
      */
     public void setPresetToken(String value) {
         this.presetToken = value;

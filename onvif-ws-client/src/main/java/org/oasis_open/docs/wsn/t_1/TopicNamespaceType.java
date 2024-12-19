@@ -16,35 +16,35 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for TopicNamespaceType complex type.
+ * <p>Java class for TopicNamespaceType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="TopicNamespaceType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Topic" maxOccurs="unbounded" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType"&gt;
- *                 &lt;attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" /&gt;
- *                 &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *               &lt;/extension&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}NCName" /&gt;
- *       &lt;attribute name="targetNamespace" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *       &lt;attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="TopicNamespaceType">
+ *   <complexContent>
+ *     <extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented">
+ *       <sequence>
+ *         <element name="Topic" maxOccurs="unbounded" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType">
+ *                 <attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" />
+ *                 <anyAttribute processContents='lax' namespace='##other'/>
+ *               </extension>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="name" type="{http://www.w3.org/2001/XMLSchema}NCName" />
+ *       <attribute name="targetNamespace" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *       <attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -74,28 +74,31 @@ public class TopicNamespaceType
     /**
      * Gets the value of the topic property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the topic property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the topic property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getTopic().add(newItem);
+     * getTopic().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TopicNamespaceType.Topic }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the topic property.
      */
     public List<TopicNamespaceType.Topic> getTopic() {
         if (topic == null) {
-            topic = new ArrayList<TopicNamespaceType.Topic>();
+            topic = new ArrayList<>();
         }
         return this.topic;
     }
@@ -103,16 +106,16 @@ public class TopicNamespaceType
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -120,12 +123,15 @@ public class TopicNamespaceType
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
@@ -208,20 +214,20 @@ public class TopicNamespaceType
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType"&gt;
-     *       &lt;attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" /&gt;
-     *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
-     *     &lt;/extension&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType">
+     *       <attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" />
+     *       <anyAttribute processContents='lax' namespace='##other'/>
+     *     </extension>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */

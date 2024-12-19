@@ -14,24 +14,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for VideoSourceConfigurationOptions complex type.
+ * <p>Java class for VideoSourceConfigurationOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="VideoSourceConfigurationOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BoundsRange" type="{http://www.onvif.org/ver10/schema}IntRectangleRange"/&gt;
- *         &lt;element name="VideoSourceTokensAvailable" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceConfigurationOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="VideoSourceConfigurationOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="BoundsRange" type="{http://www.onvif.org/ver10/schema}IntRectangleRange"/>
+ *         <element name="VideoSourceTokensAvailable" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceConfigurationOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -43,17 +43,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoSourceConfigurationOptions {
 
+    /**
+     * Supported range for the capturing area.
+     * 
+     */
     @XmlElement(name = "BoundsRange", required = true)
     protected IntRectangleRange boundsRange;
+    /**
+     * List of physical inputs.
+     * 
+     */
     @XmlElement(name = "VideoSourceTokensAvailable", required = true)
     protected List<String> videoSourceTokensAvailable;
     @XmlElement(name = "Extension")
     protected VideoSourceConfigurationOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the boundsRange property.
+     * Supported range for the capturing area.
      * 
      * @return
      *     possible object is
@@ -71,36 +79,42 @@ public class VideoSourceConfigurationOptions {
      *     allowed object is
      *     {@link IntRectangleRange }
      *     
+     * @see #getBoundsRange()
      */
     public void setBoundsRange(IntRectangleRange value) {
         this.boundsRange = value;
     }
 
     /**
+     * List of physical inputs.
+     * 
      * Gets the value of the videoSourceTokensAvailable property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the videoSourceTokensAvailable property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the videoSourceTokensAvailable property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getVideoSourceTokensAvailable().add(newItem);
+     * getVideoSourceTokensAvailable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the videoSourceTokensAvailable property.
      */
     public List<String> getVideoSourceTokensAvailable() {
         if (videoSourceTokensAvailable == null) {
-            videoSourceTokensAvailable = new ArrayList<String>();
+            videoSourceTokensAvailable = new ArrayList<>();
         }
         return this.videoSourceTokensAvailable;
     }

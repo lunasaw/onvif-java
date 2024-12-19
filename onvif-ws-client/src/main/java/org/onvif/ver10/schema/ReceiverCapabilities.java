@@ -17,28 +17,28 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for ReceiverCapabilities complex type.
+ * <p>Java class for ReceiverCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ReceiverCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="RTP_Multicast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SupportedReceivers" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="MaximumRTSPURILength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ReceiverCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="RTP_Multicast" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SupportedReceivers" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="MaximumRTSPURILength" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -54,26 +54,50 @@ import org.w3c.dom.Element;
 })
 public class ReceiverCapabilities {
 
+    /**
+     * The address of the receiver service.
+     * 
+     */
     @XmlElement(name = "XAddr", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String xAddr;
+    /**
+     * Indicates whether the device can receive RTP multicast streams.
+     * 
+     */
     @XmlElement(name = "RTP_Multicast")
     protected boolean rtpMulticast;
+    /**
+     * Indicates whether the device can receive RTP/TCP streams
+     * 
+     */
     @XmlElement(name = "RTP_TCP")
     protected boolean rtptcp;
+    /**
+     * Indicates whether the device can receive RTP/RTSP/TCP streams.
+     * 
+     */
     @XmlElement(name = "RTP_RTSP_TCP")
     protected boolean rtprtsptcp;
+    /**
+     * The maximum number of receivers supported by the device.
+     * 
+     */
     @XmlElement(name = "SupportedReceivers")
     protected int supportedReceivers;
+    /**
+     * The maximum allowed length for RTSP URIs.
+     * 
+     */
     @XmlElement(name = "MaximumRTSPURILength")
     protected int maximumRTSPURILength;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the xAddr property.
+     * The address of the receiver service.
      * 
      * @return
      *     possible object is
@@ -91,13 +115,14 @@ public class ReceiverCapabilities {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getXAddr()
      */
     public void setXAddr(String value) {
         this.xAddr = value;
     }
 
     /**
-     * Gets the value of the rtpMulticast property.
+     * Indicates whether the device can receive RTP multicast streams.
      * 
      */
     public boolean isRTPMulticast() {
@@ -113,7 +138,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Gets the value of the rtptcp property.
+     * Indicates whether the device can receive RTP/TCP streams
      * 
      */
     public boolean isRTPTCP() {
@@ -129,7 +154,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Gets the value of the rtprtsptcp property.
+     * Indicates whether the device can receive RTP/RTSP/TCP streams.
      * 
      */
     public boolean isRTPRTSPTCP() {
@@ -145,7 +170,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Gets the value of the supportedReceivers property.
+     * The maximum number of receivers supported by the device.
      * 
      */
     public int getSupportedReceivers() {
@@ -161,7 +186,7 @@ public class ReceiverCapabilities {
     }
 
     /**
-     * Gets the value of the maximumRTSPURILength property.
+     * The maximum allowed length for RTSP URIs.
      * 
      */
     public int getMaximumRTSPURILength() {
@@ -179,16 +204,16 @@ public class ReceiverCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -196,12 +221,15 @@ public class ReceiverCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

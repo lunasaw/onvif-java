@@ -14,31 +14,29 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *             The access profile structure contains information about the collection of access
+ * The access profile structure contains information about the collection of access
  *             policies. The
  *             device shall include all properties of the AccessProfileInfo structure and also a list
  *             of access
  *             policies.
- *           
  * 
- * <p>Java class for AccessProfile complex type.
+ * <p>Java class for AccessProfile complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AccessProfile"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileInfo"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AccessPolicy" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessPolicy" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AccessProfile">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileInfo">
+ *       <sequence>
+ *         <element name="AccessPolicy" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessPolicy" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,38 +49,49 @@ public class AccessProfile
     extends AccessProfileInfo
 {
 
+    /**
+     * A list of access policy structures, where each access policy
+     *                     defines during which schedule an access point can be accessed.
+     * 
+     */
     @XmlElement(name = "AccessPolicy")
     protected List<AccessPolicy> accessPolicy;
     @XmlElement(name = "Extension")
     protected AccessProfileExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * A list of access policy structures, where each access policy
+     *                     defines during which schedule an access point can be accessed.
+     * 
      * Gets the value of the accessPolicy property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the accessPolicy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the accessPolicy property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAccessPolicy().add(newItem);
+     * getAccessPolicy().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link AccessPolicy }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the accessPolicy property.
      */
     public List<AccessPolicy> getAccessPolicy() {
         if (accessPolicy == null) {
-            accessPolicy = new ArrayList<AccessPolicy>();
+            accessPolicy = new ArrayList<>();
         }
         return this.accessPolicy;
     }

@@ -9,23 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="PanTilt" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Zoom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="PanTilt" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Zoom" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -38,15 +38,31 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Stop")
 public class Stop {
 
+    /**
+     * A reference to the MediaProfile that indicate what should be
+     *                   stopped.
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * Set true when we want to stop ongoing pan and tilt movements.If
+     *                   PanTilt arguments are not present, this command stops these movements.
+     * 
+     */
     @XmlElement(name = "PanTilt")
     protected Boolean panTilt;
+    /**
+     * Set true when we want to stop ongoing zoom movement.If Zoom
+     *                   arguments are not present, this command stops ongoing zoom movement.
+     * 
+     */
     @XmlElement(name = "Zoom")
     protected Boolean zoom;
 
     /**
-     * Gets the value of the profileToken property.
+     * A reference to the MediaProfile that indicate what should be
+     *                   stopped.
      * 
      * @return
      *     possible object is
@@ -64,13 +80,15 @@ public class Stop {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the panTilt property.
+     * Set true when we want to stop ongoing pan and tilt movements.If
+     *                   PanTilt arguments are not present, this command stops these movements.
      * 
      * @return
      *     possible object is
@@ -88,13 +106,15 @@ public class Stop {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isPanTilt()
      */
     public void setPanTilt(Boolean value) {
         this.panTilt = value;
     }
 
     /**
-     * Gets the value of the zoom property.
+     * Set true when we want to stop ongoing zoom movement.If Zoom
+     *                   arguments are not present, this command stops ongoing zoom movement.
      * 
      * @return
      *     possible object is
@@ -112,6 +132,7 @@ public class Stop {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isZoom()
      */
     public void setZoom(Boolean value) {
         this.zoom = value;

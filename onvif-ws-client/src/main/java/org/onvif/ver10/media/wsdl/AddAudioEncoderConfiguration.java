@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,21 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "AddAudioEncoderConfiguration")
 public class AddAudioEncoderConfiguration {
 
+    /**
+     * Reference to the profile where the configuration should be added
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * Contains a reference to the AudioEncoderConfiguration to add
+     * 
+     */
     @XmlElement(name = "ConfigurationToken", required = true)
     protected String configurationToken;
 
     /**
-     * Gets the value of the profileToken property.
+     * Reference to the profile where the configuration should be added
      * 
      * @return
      *     possible object is
@@ -60,13 +68,14 @@ public class AddAudioEncoderConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the configurationToken property.
+     * Contains a reference to the AudioEncoderConfiguration to add
      * 
      * @return
      *     possible object is
@@ -84,6 +93,7 @@ public class AddAudioEncoderConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getConfigurationToken()
      */
     public void setConfigurationToken(String value) {
         this.configurationToken = value;

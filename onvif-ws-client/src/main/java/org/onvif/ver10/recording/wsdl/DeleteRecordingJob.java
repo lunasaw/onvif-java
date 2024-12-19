@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "DeleteRecordingJob")
 public class DeleteRecordingJob {
 
+    /**
+     * The token of the job to be deleted.
+     * 
+     */
     @XmlElement(name = "JobToken", required = true)
     protected String jobToken;
 
     /**
-     * Gets the value of the jobToken property.
+     * The token of the job to be deleted.
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class DeleteRecordingJob {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getJobToken()
      */
     public void setJobToken(String value) {
         this.jobToken = value;

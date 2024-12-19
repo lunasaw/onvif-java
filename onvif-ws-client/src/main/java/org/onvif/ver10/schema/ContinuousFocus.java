@@ -8,21 +8,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ContinuousFocus complex type.
+ * <p>Java class for ContinuousFocus complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ContinuousFocus"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ContinuousFocus">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -32,11 +32,15 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ContinuousFocus {
 
+    /**
+     * Speed parameter for the Continuous focus control.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected float speed;
 
     /**
-     * Gets the value of the speed property.
+     * Speed parameter for the Continuous focus control.
      * 
      */
     public float getSpeed() {

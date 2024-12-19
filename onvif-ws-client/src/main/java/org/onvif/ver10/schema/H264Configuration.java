@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for H264Configuration complex type.
+ * <p>Java class for H264Configuration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="H264Configuration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="H264Profile" type="{http://www.onvif.org/ver10/schema}H264Profile"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="H264Configuration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="H264Profile" type="{http://www.onvif.org/ver10/schema}H264Profile"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,14 +35,28 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class H264Configuration {
 
+    /**
+     * Group of Video frames length. Determines typically the interval in which
+     *             the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated.
+     *             An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame,
+     *             etc. The frames in between are coded as P or B Frames.
+     * 
+     */
     @XmlElement(name = "GovLength")
     protected int govLength;
+    /**
+     * the H.264 profile, either baseline, main, extended or high
+     * 
+     */
     @XmlElement(name = "H264Profile", required = true)
     @XmlSchemaType(name = "string")
     protected H264Profile h264Profile;
 
     /**
-     * Gets the value of the govLength property.
+     * Group of Video frames length. Determines typically the interval in which
+     *             the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated.
+     *             An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame,
+     *             etc. The frames in between are coded as P or B Frames.
      * 
      */
     public int getGovLength() {
@@ -58,7 +72,7 @@ public class H264Configuration {
     }
 
     /**
-     * Gets the value of the h264Profile property.
+     * the H.264 profile, either baseline, main, extended or high
      * 
      * @return
      *     possible object is
@@ -76,6 +90,7 @@ public class H264Configuration {
      *     allowed object is
      *     {@link H264Profile }
      *     
+     * @see #getH264Profile()
      */
     public void setH264Profile(H264Profile value) {
         this.h264Profile = value;

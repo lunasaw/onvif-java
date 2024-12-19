@@ -13,23 +13,23 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="VideoOutput" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="PaneToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="VideoOutput" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="PaneToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -42,15 +42,23 @@ import org.w3c.dom.Element;
 @XmlRootElement(name = "DeletePaneConfiguration")
 public class DeletePaneConfiguration {
 
+    /**
+     * Token of the video output where the pane shall be deleted.
+     * 
+     */
     @XmlElement(name = "VideoOutput", required = true)
     protected String videoOutput;
+    /**
+     * Token of the pane to be deleted.
+     * 
+     */
     @XmlElement(name = "PaneToken", required = true)
     protected String paneToken;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
 
     /**
-     * Gets the value of the videoOutput property.
+     * Token of the video output where the pane shall be deleted.
      * 
      * @return
      *     possible object is
@@ -68,13 +76,14 @@ public class DeletePaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getVideoOutput()
      */
     public void setVideoOutput(String value) {
         this.videoOutput = value;
     }
 
     /**
-     * Gets the value of the paneToken property.
+     * Token of the pane to be deleted.
      * 
      * @return
      *     possible object is
@@ -92,6 +101,7 @@ public class DeletePaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPaneToken()
      */
     public void setPaneToken(String value) {
         this.paneToken = value;
@@ -100,16 +110,16 @@ public class DeletePaneConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -117,12 +127,15 @@ public class DeletePaneConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

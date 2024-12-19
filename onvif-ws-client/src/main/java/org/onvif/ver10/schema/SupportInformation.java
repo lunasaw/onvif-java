@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SupportInformation complex type.
+ * <p>Java class for SupportInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SupportInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Binary" type="{http://www.onvif.org/ver10/schema}AttachmentData" minOccurs="0"/&gt;
- *         &lt;element name="String" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SupportInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Binary" type="{http://www.onvif.org/ver10/schema}AttachmentData" minOccurs="0"/>
+ *         <element name="String" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SupportInformation {
 
+    /**
+     * The support information as attachment data.
+     * 
+     */
     @XmlElement(name = "Binary")
     protected AttachmentData binary;
+    /**
+     * The support information as character data.
+     * 
+     */
     @XmlElement(name = "String")
     protected String string;
 
     /**
-     * Gets the value of the binary property.
+     * The support information as attachment data.
      * 
      * @return
      *     possible object is
@@ -58,13 +66,14 @@ public class SupportInformation {
      *     allowed object is
      *     {@link AttachmentData }
      *     
+     * @see #getBinary()
      */
     public void setBinary(AttachmentData value) {
         this.binary = value;
     }
 
     /**
-     * Gets the value of the string property.
+     * The support information as character data.
      * 
      * @return
      *     possible object is
@@ -82,6 +91,7 @@ public class SupportInformation {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getString()
      */
     public void setString(String value) {
         this.string = value;

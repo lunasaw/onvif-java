@@ -9,21 +9,21 @@ import org.onvif.ver10.schema.DeviceEntity;
 
 
 /**
- * <p>Java class for StorageConfiguration complex type.
+ * <p>Java class for StorageConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="StorageConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Data" type="{http://www.onvif.org/ver10/device/wsdl}StorageConfigurationData"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="StorageConfiguration">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}DeviceEntity">
+ *       <sequence>
+ *         <element name="Data" type="{http://www.onvif.org/ver10/device/wsdl}StorageConfigurationData"/>
+ *       </sequence>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

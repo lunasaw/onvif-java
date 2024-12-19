@@ -16,29 +16,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * 
- *             The DoorInfo type represents the Door as a physical object.
+ * The DoorInfo type represents the Door as a physical object.
  *             The structure contains information and capabilities of a specific door instance.
  *             An ONVIF compliant device shall provide the following fields for each Door instance:
- *           
  * 
- * <p>Java class for DoorInfo complex type.
+ * <p>Java class for DoorInfo complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="DoorInfo"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorInfoBase"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Capabilities" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorCapabilities"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DoorInfo">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorInfoBase">
+ *       <sequence>
+ *         <element name="Capabilities" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}DoorCapabilities"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,15 +49,19 @@ public class DoorInfo
     extends DoorInfoBase
 {
 
+    /**
+     * The capabilities of the Door.
+     * 
+     */
     @XmlElement(name = "Capabilities", required = true)
     protected DoorCapabilities capabilities;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the capabilities property.
+     * The capabilities of the Door.
      * 
      * @return
      *     possible object is
@@ -77,6 +79,7 @@ public class DoorInfo
      *     allowed object is
      *     {@link DoorCapabilities }
      *     
+     * @see #getCapabilities()
      */
     public void setCapabilities(DoorCapabilities value) {
         this.capabilities = value;
@@ -85,16 +88,16 @@ public class DoorInfo
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -102,12 +105,15 @@ public class DoorInfo
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

@@ -6,17 +6,19 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for BacklightCompensationMode.
+ * Enumeration describing the available backlight compenstation modes.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="BacklightCompensationMode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OFF"/&gt;
- *     &lt;enumeration value="ON"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <p>Java class for BacklightCompensationMode</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="BacklightCompensationMode">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="OFF"/>
+ *     <enumeration value="ON"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "BacklightCompensationMode")

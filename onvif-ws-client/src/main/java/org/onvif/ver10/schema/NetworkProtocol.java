@@ -15,25 +15,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkProtocol complex type.
+ * <p>Java class for NetworkProtocol complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkProtocol"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}NetworkProtocolType"/&gt;
- *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="Port" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkProtocolExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkProtocol">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}NetworkProtocolType"/>
+ *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="Port" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkProtocolExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -46,20 +46,32 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkProtocol {
 
+    /**
+     * Network protocol type string.
+     * 
+     */
     @XmlElement(name = "Name", required = true)
     @XmlSchemaType(name = "string")
     protected NetworkProtocolType name;
+    /**
+     * Indicates if the protocol is enabled or not.
+     * 
+     */
     @XmlElement(name = "Enabled")
     protected boolean enabled;
+    /**
+     * The port that is used by the protocol.
+     * 
+     */
     @XmlElement(name = "Port", type = Integer.class)
     protected List<Integer> port;
     @XmlElement(name = "Extension")
     protected NetworkProtocolExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the name property.
+     * Network protocol type string.
      * 
      * @return
      *     possible object is
@@ -77,13 +89,14 @@ public class NetworkProtocol {
      *     allowed object is
      *     {@link NetworkProtocolType }
      *     
+     * @see #getName()
      */
     public void setName(NetworkProtocolType value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the enabled property.
+     * Indicates if the protocol is enabled or not.
      * 
      */
     public boolean isEnabled() {
@@ -99,30 +112,35 @@ public class NetworkProtocol {
     }
 
     /**
+     * The port that is used by the protocol.
+     * 
      * Gets the value of the port property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the port property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the port property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPort().add(newItem);
+     * getPort().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Integer }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the port property.
      */
     public List<Integer> getPort() {
         if (port == null) {
-            port = new ArrayList<Integer>();
+            port = new ArrayList<>();
         }
         return this.port;
     }

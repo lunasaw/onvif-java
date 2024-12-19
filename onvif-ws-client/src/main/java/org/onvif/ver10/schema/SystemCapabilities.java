@@ -14,29 +14,29 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SystemCapabilities complex type.
+ * <p>Java class for SystemCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SystemCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SupportedVersions" type="{http://www.onvif.org/ver10/schema}OnvifVersion" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SystemCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SupportedVersions" type="{http://www.onvif.org/ver10/schema}OnvifVersion" maxOccurs="unbounded"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -53,27 +53,55 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SystemCapabilities {
 
+    /**
+     * Indicates whether or not WS Discovery resolve requests are supported.
+     * 
+     */
     @XmlElement(name = "DiscoveryResolve")
     protected boolean discoveryResolve;
+    /**
+     * Indicates whether or not WS-Discovery Bye is supported.
+     * 
+     */
     @XmlElement(name = "DiscoveryBye")
     protected boolean discoveryBye;
+    /**
+     * Indicates whether or not remote discovery is supported.
+     * 
+     */
     @XmlElement(name = "RemoteDiscovery")
     protected boolean remoteDiscovery;
+    /**
+     * Indicates whether or not system backup is supported.
+     * 
+     */
     @XmlElement(name = "SystemBackup")
     protected boolean systemBackup;
+    /**
+     * Indicates whether or not system logging is supported.
+     * 
+     */
     @XmlElement(name = "SystemLogging")
     protected boolean systemLogging;
+    /**
+     * Indicates whether or not firmware upgrade is supported.
+     * 
+     */
     @XmlElement(name = "FirmwareUpgrade")
     protected boolean firmwareUpgrade;
+    /**
+     * Indicates supported ONVIF version(s).
+     * 
+     */
     @XmlElement(name = "SupportedVersions", required = true)
     protected List<OnvifVersion> supportedVersions;
     @XmlElement(name = "Extension")
     protected SystemCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the discoveryResolve property.
+     * Indicates whether or not WS Discovery resolve requests are supported.
      * 
      */
     public boolean isDiscoveryResolve() {
@@ -89,7 +117,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Gets the value of the discoveryBye property.
+     * Indicates whether or not WS-Discovery Bye is supported.
      * 
      */
     public boolean isDiscoveryBye() {
@@ -105,7 +133,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Gets the value of the remoteDiscovery property.
+     * Indicates whether or not remote discovery is supported.
      * 
      */
     public boolean isRemoteDiscovery() {
@@ -121,7 +149,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Gets the value of the systemBackup property.
+     * Indicates whether or not system backup is supported.
      * 
      */
     public boolean isSystemBackup() {
@@ -137,7 +165,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Gets the value of the systemLogging property.
+     * Indicates whether or not system logging is supported.
      * 
      */
     public boolean isSystemLogging() {
@@ -153,7 +181,7 @@ public class SystemCapabilities {
     }
 
     /**
-     * Gets the value of the firmwareUpgrade property.
+     * Indicates whether or not firmware upgrade is supported.
      * 
      */
     public boolean isFirmwareUpgrade() {
@@ -169,30 +197,35 @@ public class SystemCapabilities {
     }
 
     /**
+     * Indicates supported ONVIF version(s).
+     * 
      * Gets the value of the supportedVersions property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedVersions property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the supportedVersions property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getSupportedVersions().add(newItem);
+     * getSupportedVersions().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link OnvifVersion }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the supportedVersions property.
      */
     public List<OnvifVersion> getSupportedVersions() {
         if (supportedVersions == null) {
-            supportedVersions = new ArrayList<OnvifVersion>();
+            supportedVersions = new ArrayList<>();
         }
         return this.supportedVersions;
     }

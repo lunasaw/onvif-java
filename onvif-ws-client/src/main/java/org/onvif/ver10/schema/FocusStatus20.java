@@ -13,25 +13,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FocusStatus20 complex type.
+ * <p>Java class for FocusStatus20 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="FocusStatus20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}MoveStatus"/&gt;
- *         &lt;element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusStatus20Extension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="FocusStatus20">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}MoveStatus"/>
+ *         <element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusStatus20Extension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,20 +44,32 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FocusStatus20 {
 
+    /**
+     * Status of focus position.
+     * 
+     */
     @XmlElement(name = "Position")
     protected float position;
+    /**
+     * Status of focus MoveStatus.
+     * 
+     */
     @XmlElement(name = "MoveStatus", required = true)
     @XmlSchemaType(name = "string")
     protected MoveStatus moveStatus;
+    /**
+     * Error status of focus.
+     * 
+     */
     @XmlElement(name = "Error")
     protected String error;
     @XmlElement(name = "Extension")
     protected FocusStatus20Extension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the position property.
+     * Status of focus position.
      * 
      */
     public float getPosition() {
@@ -73,7 +85,7 @@ public class FocusStatus20 {
     }
 
     /**
-     * Gets the value of the moveStatus property.
+     * Status of focus MoveStatus.
      * 
      * @return
      *     possible object is
@@ -91,13 +103,14 @@ public class FocusStatus20 {
      *     allowed object is
      *     {@link MoveStatus }
      *     
+     * @see #getMoveStatus()
      */
     public void setMoveStatus(MoveStatus value) {
         this.moveStatus = value;
     }
 
     /**
-     * Gets the value of the error property.
+     * Error status of focus.
      * 
      * @return
      *     possible object is
@@ -115,6 +128,7 @@ public class FocusStatus20 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getError()
      */
     public void setError(String value) {
         this.error = value;

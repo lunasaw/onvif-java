@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.SystemDateTime;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SystemDateAndTime" type="{http://www.onvif.org/ver10/schema}SystemDateTime"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SystemDateAndTime" type="{http://www.onvif.org/ver10/schema}SystemDateTime"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,19 @@ import org.onvif.ver10.schema.SystemDateTime;
 @XmlRootElement(name = "GetSystemDateAndTimeResponse")
 public class GetSystemDateAndTimeResponse {
 
+    /**
+     * Contains information whether system date and time are set manually
+     *                   or by NTP, daylight savings is on or off, time zone in POSIX 1003.1 format and
+     *                   system date and time in UTC and also local system date and time.
+     * 
+     */
     @XmlElement(name = "SystemDateAndTime", required = true)
     protected SystemDateTime systemDateAndTime;
 
     /**
-     * Gets the value of the systemDateAndTime property.
+     * Contains information whether system date and time are set manually
+     *                   or by NTP, daylight savings is on or off, time zone in POSIX 1003.1 format and
+     *                   system date and time in UTC and also local system date and time.
      * 
      * @return
      *     possible object is
@@ -57,6 +65,7 @@ public class GetSystemDateAndTimeResponse {
      *     allowed object is
      *     {@link SystemDateTime }
      *     
+     * @see #getSystemDateAndTime()
      */
     public void setSystemDateAndTime(SystemDateTime value) {
         this.systemDateAndTime = value;

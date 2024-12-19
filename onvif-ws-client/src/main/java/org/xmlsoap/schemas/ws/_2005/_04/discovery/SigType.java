@@ -18,26 +18,26 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for SigType complex type.
+ * <p>Java class for SigType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SigType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Scheme" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *       &lt;attribute name="KeyId" type="{http://www.w3.org/2001/XMLSchema}base64Binary" /&gt;
- *       &lt;attribute name="Refs" use="required" type="{http://www.w3.org/2001/XMLSchema}IDREFS" /&gt;
- *       &lt;attribute name="Sig" use="required" type="{http://www.w3.org/2001/XMLSchema}base64Binary" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SigType">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="Scheme" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *       <attribute name="KeyId" type="{http://www.w3.org/2001/XMLSchema}base64Binary" />
+ *       <attribute name="Refs" use="required" type="{http://www.w3.org/2001/XMLSchema}IDREFS" />
+ *       <attribute name="Sig" use="required" type="{http://www.w3.org/2001/XMLSchema}base64Binary" />
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -61,21 +61,21 @@ public class SigType {
     @XmlAttribute(name = "Sig", required = true)
     protected byte[] sig;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -83,12 +83,15 @@ public class SigType {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
@@ -142,28 +145,31 @@ public class SigType {
     /**
      * Gets the value of the refs property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the refs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the refs property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getRefs().add(newItem);
+     * getRefs().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the refs property.
      */
     public List<Object> getRefs() {
         if (refs == null) {
-            refs = new ArrayList<Object>();
+            refs = new ArrayList<>();
         }
         return this.refs;
     }

@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.ImagingStatus20;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Status" type="{http://www.onvif.org/ver10/schema}ImagingStatus20"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Status" type="{http://www.onvif.org/ver10/schema}ImagingStatus20"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.ImagingStatus20;
 @XmlRootElement(name = "GetStatusResponse")
 public class GetStatusResponse {
 
+    /**
+     * Requested imaging status.
+     * 
+     */
     @XmlElement(name = "Status", required = true)
     protected ImagingStatus20 status;
 
     /**
-     * Gets the value of the status property.
+     * Requested imaging status.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetStatusResponse {
      *     allowed object is
      *     {@link ImagingStatus20 }
      *     
+     * @see #getStatus()
      */
     public void setStatus(ImagingStatus20 value) {
         this.status = value;

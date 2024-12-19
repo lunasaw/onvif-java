@@ -7,19 +7,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SearchState.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="SearchState"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Queued"/&gt;
- *     &lt;enumeration value="Searching"/&gt;
- *     &lt;enumeration value="Completed"/&gt;
- *     &lt;enumeration value="Unknown"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * 
+ * <p>Java class for SearchState</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="SearchState">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="Queued"/>
+ *     <enumeration value="Searching"/>
+ *     <enumeration value="Completed"/>
+ *     <enumeration value="Unknown"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "SearchState")
@@ -43,7 +45,6 @@ public enum SearchState {
 
     /**
      * The search has been completed and no new results will be found.
-     *           
      * 
      */
     @XmlEnumValue("Completed")
@@ -52,7 +53,6 @@ public enum SearchState {
     /**
      * The state of the search is unknown. (This is not a valid response from
      *             GetSearchState.)
-     *           
      * 
      */
     @XmlEnumValue("Unknown")
@@ -63,10 +63,26 @@ public enum SearchState {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static SearchState fromValue(String v) {
         for (SearchState c: SearchState.values()) {
             if (c.value.equals(v)) {

@@ -14,23 +14,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AudioSourceConfigurationOptions complex type.
+ * <p>Java class for AudioSourceConfigurationOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AudioSourceConfigurationOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="InputTokensAvailable" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioSourceOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AudioSourceConfigurationOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="InputTokensAvailable" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioSourceOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,38 +41,47 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class AudioSourceConfigurationOptions {
 
+    /**
+     * Tokens of the audio source the configuration can be used for.
+     * 
+     */
     @XmlElement(name = "InputTokensAvailable", required = true)
     protected List<String> inputTokensAvailable;
     @XmlElement(name = "Extension")
     protected AudioSourceOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * Tokens of the audio source the configuration can be used for.
+     * 
      * Gets the value of the inputTokensAvailable property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the inputTokensAvailable property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the inputTokensAvailable property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getInputTokensAvailable().add(newItem);
+     * getInputTokensAvailable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the inputTokensAvailable property.
      */
     public List<String> getInputTokensAvailable() {
         if (inputTokensAvailable == null) {
-            inputTokensAvailable = new ArrayList<String>();
+            inputTokensAvailable = new ArrayList<>();
         }
         return this.inputTokensAvailable;
     }

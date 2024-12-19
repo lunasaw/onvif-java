@@ -12,21 +12,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for LensOffset complex type.
+ * <p>Java class for LensOffset complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="LensOffset"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="x" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="y" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="LensOffset">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="x" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="y" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,15 +34,23 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "LensOffset")
 public class LensOffset {
 
+    /**
+     * Optional horizontal offset of the lens center in normalized coordinates.
+     * 
+     */
     @XmlAttribute(name = "x")
     protected Float x;
+    /**
+     * Optional vertical offset of the lens center in normalized coordinates.
+     * 
+     */
     @XmlAttribute(name = "y")
     protected Float y;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the x property.
+     * Optional horizontal offset of the lens center in normalized coordinates.
      * 
      * @return
      *     possible object is
@@ -60,13 +68,14 @@ public class LensOffset {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getX()
      */
     public void setX(Float value) {
         this.x = value;
     }
 
     /**
-     * Gets the value of the y property.
+     * Optional vertical offset of the lens center in normalized coordinates.
      * 
      * @return
      *     possible object is
@@ -84,6 +93,7 @@ public class LensOffset {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getY()
      */
     public void setY(Float value) {
         this.y = value;

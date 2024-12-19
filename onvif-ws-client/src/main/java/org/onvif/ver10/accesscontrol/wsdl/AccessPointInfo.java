@@ -16,8 +16,7 @@ import org.w3c.dom.Element;
 
 
 /**
- * 
- *             The AccessPointInfo structure contains basic information about an AccessPoint instance.
+ * The AccessPointInfo structure contains basic information about an AccessPoint instance.
  *             An AccessPoint defines an entity a Credential can be granted or denied access to. The
  *             AccessPointInfo provides basic information on how access is controlled in one direction
  *             for a
@@ -32,25 +31,24 @@ import org.w3c.dom.Element;
  * 
  *             An ONVIF compliant device shall provide the following fields for each AccessPoint
  *             instance:
- *           
  * 
- * <p>Java class for AccessPointInfo complex type.
+ * <p>Java class for AccessPointInfo complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AccessPointInfo"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointInfoBase"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Capabilities" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointCapabilities"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AccessPointInfo">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointInfoBase">
+ *       <sequence>
+ *         <element name="Capabilities" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointCapabilities"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -63,15 +61,19 @@ public class AccessPointInfo
     extends AccessPointInfoBase
 {
 
+    /**
+     * The capabilities for the AccessPoint.
+     * 
+     */
     @XmlElement(name = "Capabilities", required = true)
     protected AccessPointCapabilities capabilities;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the capabilities property.
+     * The capabilities for the AccessPoint.
      * 
      * @return
      *     possible object is
@@ -89,6 +91,7 @@ public class AccessPointInfo
      *     allowed object is
      *     {@link AccessPointCapabilities }
      *     
+     * @see #getCapabilities()
      */
     public void setCapabilities(AccessPointCapabilities value) {
         this.capabilities = value;
@@ -97,16 +100,16 @@ public class AccessPointInfo
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -114,12 +117,15 @@ public class AccessPointInfo
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

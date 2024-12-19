@@ -10,26 +10,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Token" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/&gt;
- *         &lt;element name="UseExtendedTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="AccessTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="OpenTooLongTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="PreAlarmTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}AccessDoorExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Token" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/>
+ *         <element name="UseExtendedTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="AccessTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="OpenTooLongTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="PreAlarmTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/doorcontrol/wsdl}AccessDoorExtension" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,21 +45,46 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "AccessDoor")
 public class AccessDoor {
 
+    /**
+     * Token of the Door instance to control.
+     * 
+     */
     @XmlElement(name = "Token", required = true)
     protected String token;
+    /**
+     * Optional - Indicates that the configured extended time should be
+     *                   used.
+     * 
+     */
     @XmlElement(name = "UseExtendedTime")
     protected Boolean useExtendedTime;
+    /**
+     * Optional - overrides AccessTime if specified.
+     * 
+     */
     @XmlElement(name = "AccessTime")
     protected Duration accessTime;
+    /**
+     * Optional - overrides OpenTooLongTime if specified (DOTL).
+     * 
+     */
     @XmlElement(name = "OpenTooLongTime")
     protected Duration openTooLongTime;
+    /**
+     * Optional - overrides PreAlarmTime if specified.
+     * 
+     */
     @XmlElement(name = "PreAlarmTime")
     protected Duration preAlarmTime;
+    /**
+     * Future extension.
+     * 
+     */
     @XmlElement(name = "Extension")
     protected AccessDoorExtension extension;
 
     /**
-     * Gets the value of the token property.
+     * Token of the Door instance to control.
      * 
      * @return
      *     possible object is
@@ -77,13 +102,15 @@ public class AccessDoor {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
     }
 
     /**
-     * Gets the value of the useExtendedTime property.
+     * Optional - Indicates that the configured extended time should be
+     *                   used.
      * 
      * @return
      *     possible object is
@@ -101,13 +128,14 @@ public class AccessDoor {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isUseExtendedTime()
      */
     public void setUseExtendedTime(Boolean value) {
         this.useExtendedTime = value;
     }
 
     /**
-     * Gets the value of the accessTime property.
+     * Optional - overrides AccessTime if specified.
      * 
      * @return
      *     possible object is
@@ -125,13 +153,14 @@ public class AccessDoor {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getAccessTime()
      */
     public void setAccessTime(Duration value) {
         this.accessTime = value;
     }
 
     /**
-     * Gets the value of the openTooLongTime property.
+     * Optional - overrides OpenTooLongTime if specified (DOTL).
      * 
      * @return
      *     possible object is
@@ -149,13 +178,14 @@ public class AccessDoor {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getOpenTooLongTime()
      */
     public void setOpenTooLongTime(Duration value) {
         this.openTooLongTime = value;
     }
 
     /**
-     * Gets the value of the preAlarmTime property.
+     * Optional - overrides PreAlarmTime if specified.
      * 
      * @return
      *     possible object is
@@ -173,13 +203,14 @@ public class AccessDoor {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getPreAlarmTime()
      */
     public void setPreAlarmTime(Duration value) {
         this.preAlarmTime = value;
     }
 
     /**
-     * Gets the value of the extension property.
+     * Future extension.
      * 
      * @return
      *     possible object is
@@ -197,6 +228,7 @@ public class AccessDoor {
      *     allowed object is
      *     {@link AccessDoorExtension }
      *     
+     * @see #getExtension()
      */
     public void setExtension(AccessDoorExtension value) {
         this.extension = value;

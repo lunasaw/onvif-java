@@ -14,28 +14,28 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OSDTextOptions complex type.
+ * <p>Java class for OSDTextOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OSDTextOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
- *         &lt;element name="FontSizeRange" type="{http://www.onvif.org/ver10/schema}IntRange" minOccurs="0"/&gt;
- *         &lt;element name="DateFormat" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="TimeFormat" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="FontColor" type="{http://www.onvif.org/ver10/schema}OSDColorOptions" minOccurs="0"/&gt;
- *         &lt;element name="BackgroundColor" type="{http://www.onvif.org/ver10/schema}OSDColorOptions" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDTextOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OSDTextOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+ *         <element name="FontSizeRange" type="{http://www.onvif.org/ver10/schema}IntRange" minOccurs="0"/>
+ *         <element name="DateFormat" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="TimeFormat" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="FontColor" type="{http://www.onvif.org/ver10/schema}OSDColorOptions" minOccurs="0"/>
+ *         <element name="BackgroundColor" type="{http://www.onvif.org/ver10/schema}OSDColorOptions" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDTextOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,54 +51,85 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OSDTextOptions {
 
+    /**
+     * List of supported OSD text type. When a device indicates the supported
+     *             number relating to Text type in MaximumNumberOfOSDs, the type shall be presented.
+     * 
+     */
     @XmlElement(name = "Type", required = true)
     protected List<String> type;
+    /**
+     * Range of the font size value.
+     * 
+     */
     @XmlElement(name = "FontSizeRange")
     protected IntRange fontSizeRange;
+    /**
+     * List of supported date format.
+     * 
+     */
     @XmlElement(name = "DateFormat")
     protected List<String> dateFormat;
+    /**
+     * List of supported time format.
+     * 
+     */
     @XmlElement(name = "TimeFormat")
     protected List<String> timeFormat;
+    /**
+     * List of supported font color.
+     * 
+     */
     @XmlElement(name = "FontColor")
     protected OSDColorOptions fontColor;
+    /**
+     * List of supported background color.
+     * 
+     */
     @XmlElement(name = "BackgroundColor")
     protected OSDColorOptions backgroundColor;
     @XmlElement(name = "Extension")
     protected OSDTextOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * List of supported OSD text type. When a device indicates the supported
+     *             number relating to Text type in MaximumNumberOfOSDs, the type shall be presented.
+     * 
      * Gets the value of the type property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the type property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the type property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getType().add(newItem);
+     * getType().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the type property.
      */
     public List<String> getType() {
         if (type == null) {
-            type = new ArrayList<String>();
+            type = new ArrayList<>();
         }
         return this.type;
     }
 
     /**
-     * Gets the value of the fontSizeRange property.
+     * Range of the font size value.
      * 
      * @return
      *     possible object is
@@ -116,71 +147,82 @@ public class OSDTextOptions {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getFontSizeRange()
      */
     public void setFontSizeRange(IntRange value) {
         this.fontSizeRange = value;
     }
 
     /**
+     * List of supported date format.
+     * 
      * Gets the value of the dateFormat property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the dateFormat property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dateFormat property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDateFormat().add(newItem);
+     * getDateFormat().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the dateFormat property.
      */
     public List<String> getDateFormat() {
         if (dateFormat == null) {
-            dateFormat = new ArrayList<String>();
+            dateFormat = new ArrayList<>();
         }
         return this.dateFormat;
     }
 
     /**
+     * List of supported time format.
+     * 
      * Gets the value of the timeFormat property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the timeFormat property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the timeFormat property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getTimeFormat().add(newItem);
+     * getTimeFormat().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the timeFormat property.
      */
     public List<String> getTimeFormat() {
         if (timeFormat == null) {
-            timeFormat = new ArrayList<String>();
+            timeFormat = new ArrayList<>();
         }
         return this.timeFormat;
     }
 
     /**
-     * Gets the value of the fontColor property.
+     * List of supported font color.
      * 
      * @return
      *     possible object is
@@ -198,13 +240,14 @@ public class OSDTextOptions {
      *     allowed object is
      *     {@link OSDColorOptions }
      *     
+     * @see #getFontColor()
      */
     public void setFontColor(OSDColorOptions value) {
         this.fontColor = value;
     }
 
     /**
-     * Gets the value of the backgroundColor property.
+     * List of supported background color.
      * 
      * @return
      *     possible object is
@@ -222,6 +265,7 @@ public class OSDTextOptions {
      *     allowed object is
      *     {@link OSDColorOptions }
      *     
+     * @see #getBackgroundColor()
      */
     public void setBackgroundColor(OSDColorOptions value) {
         this.backgroundColor = value;

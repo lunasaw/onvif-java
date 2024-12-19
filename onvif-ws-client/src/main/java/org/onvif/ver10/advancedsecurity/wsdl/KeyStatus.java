@@ -7,18 +7,20 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for KeyStatus.
+ * The status of a key in the keystore.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="KeyStatus"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="ok"/&gt;
- *     &lt;enumeration value="generating"/&gt;
- *     &lt;enumeration value="corrupt"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <p>Java class for KeyStatus</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="KeyStatus">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="ok"/>
+ *     <enumeration value="generating"/>
+ *     <enumeration value="corrupt"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "KeyStatus")
@@ -42,7 +44,6 @@ public enum KeyStatus {
 
     /**
      * Key has not been successfully generated and cannot be used.
-     *               
      * 
      */
     @XmlEnumValue("corrupt")
@@ -53,10 +54,26 @@ public enum KeyStatus {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static KeyStatus fromValue(String v) {
         for (KeyStatus c: KeyStatus.values()) {
             if (c.value.equals(v)) {

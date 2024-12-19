@@ -15,25 +15,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * Description of a pane layout describing a complete display layout.
- *       
  * 
- * <p>Java class for PaneLayoutOptions complex type.
+ * <p>Java class for PaneLayoutOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PaneLayoutOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Area" type="{http://www.onvif.org/ver10/schema}Rectangle" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PaneOptionExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PaneLayoutOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Area" type="{http://www.onvif.org/ver10/schema}Rectangle" maxOccurs="unbounded"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PaneOptionExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,38 +43,49 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PaneLayoutOptions {
 
+    /**
+     * List of areas assembling a layout. Coordinate values are in the range
+     *             [-1.0, 1.0].
+     * 
+     */
     @XmlElement(name = "Area", required = true)
     protected List<Rectangle> area;
     @XmlElement(name = "Extension")
     protected PaneOptionExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * List of areas assembling a layout. Coordinate values are in the range
+     *             [-1.0, 1.0].
+     * 
      * Gets the value of the area property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the area property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the area property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getArea().add(newItem);
+     * getArea().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Rectangle }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the area property.
      */
     public List<Rectangle> getArea() {
         if (area == null) {
-            area = new ArrayList<Rectangle>();
+            area = new ArrayList<>();
         }
         return this.area;
     }

@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ToneCompensation complex type.
+ * <p>Java class for ToneCompensation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ToneCompensation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ToneCompensationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ToneCompensation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ToneCompensationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ToneCompensation {
 
+    /**
+     * Parameter to enable/disable or automatic ToneCompensation feature.
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     protected String mode;
+    /**
+     * Optional level parameter specified with unitless normalized value from
+     *             0.0 to +1.0.
+     * 
+     */
     @XmlElement(name = "Level")
     protected Float level;
     @XmlElement(name = "Extension")
     protected ToneCompensationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the mode property.
+     * Parameter to enable/disable or automatic ToneCompensation feature.
      * 
      * @return
      *     possible object is
@@ -69,13 +78,15 @@ public class ToneCompensation {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getMode()
      */
     public void setMode(String value) {
         this.mode = value;
     }
 
     /**
-     * Gets the value of the level property.
+     * Optional level parameter specified with unitless normalized value from
+     *             0.0 to +1.0.
      * 
      * @return
      *     possible object is
@@ -93,6 +104,7 @@ public class ToneCompensation {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getLevel()
      */
     public void setLevel(Float value) {
         this.level = value;

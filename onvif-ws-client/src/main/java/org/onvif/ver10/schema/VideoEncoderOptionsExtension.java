@@ -12,25 +12,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for VideoEncoderOptionsExtension complex type.
+ * <p>Java class for VideoEncoderOptionsExtension complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="VideoEncoderOptionsExtension"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="JPEG" type="{http://www.onvif.org/ver10/schema}JpegOptions2" minOccurs="0"/&gt;
- *         &lt;element name="MPEG4" type="{http://www.onvif.org/ver10/schema}Mpeg4Options2" minOccurs="0"/&gt;
- *         &lt;element name="H264" type="{http://www.onvif.org/ver10/schema}H264Options2" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoEncoderOptionsExtension2" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="VideoEncoderOptionsExtension">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="JPEG" type="{http://www.onvif.org/ver10/schema}JpegOptions2" minOccurs="0"/>
+ *         <element name="MPEG4" type="{http://www.onvif.org/ver10/schema}Mpeg4Options2" minOccurs="0"/>
+ *         <element name="H264" type="{http://www.onvif.org/ver10/schema}H264Options2" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoEncoderOptionsExtension2" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -46,10 +46,22 @@ public class VideoEncoderOptionsExtension {
 
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
+    /**
+     * Optional JPEG encoder settings ranges.
+     * 
+     */
     @XmlElement(name = "JPEG")
     protected JpegOptions2 jpeg;
+    /**
+     * Optional MPEG-4 encoder settings ranges.
+     * 
+     */
     @XmlElement(name = "MPEG4")
     protected Mpeg4Options2 mpeg4;
+    /**
+     * Optional H.264 encoder settings ranges.
+     * 
+     */
     @XmlElement(name = "H264")
     protected H264Options2 h264;
     @XmlElement(name = "Extension")
@@ -58,16 +70,16 @@ public class VideoEncoderOptionsExtension {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -75,18 +87,21 @@ public class VideoEncoderOptionsExtension {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the jpeg property.
+     * Optional JPEG encoder settings ranges.
      * 
      * @return
      *     possible object is
@@ -104,13 +119,14 @@ public class VideoEncoderOptionsExtension {
      *     allowed object is
      *     {@link JpegOptions2 }
      *     
+     * @see #getJPEG()
      */
     public void setJPEG(JpegOptions2 value) {
         this.jpeg = value;
     }
 
     /**
-     * Gets the value of the mpeg4 property.
+     * Optional MPEG-4 encoder settings ranges.
      * 
      * @return
      *     possible object is
@@ -128,13 +144,14 @@ public class VideoEncoderOptionsExtension {
      *     allowed object is
      *     {@link Mpeg4Options2 }
      *     
+     * @see #getMPEG4()
      */
     public void setMPEG4(Mpeg4Options2 value) {
         this.mpeg4 = value;
     }
 
     /**
-     * Gets the value of the h264 property.
+     * Optional H.264 encoder settings ranges.
      * 
      * @return
      *     possible object is
@@ -152,6 +169,7 @@ public class VideoEncoderOptionsExtension {
      *     allowed object is
      *     {@link H264Options2 }
      *     
+     * @see #getH264()
      */
     public void setH264(H264Options2 value) {
         this.h264 = value;

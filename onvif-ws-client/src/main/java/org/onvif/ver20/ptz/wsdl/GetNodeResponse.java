@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.PTZNode;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PTZNode" type="{http://www.onvif.org/ver10/schema}PTZNode"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PTZNode" type="{http://www.onvif.org/ver10/schema}PTZNode"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.PTZNode;
 @XmlRootElement(name = "GetNodeResponse")
 public class GetNodeResponse {
 
+    /**
+     * A requested PTZNode.
+     * 
+     */
     @XmlElement(name = "PTZNode", required = true)
     protected PTZNode ptzNode;
 
     /**
-     * Gets the value of the ptzNode property.
+     * A requested PTZNode.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetNodeResponse {
      *     allowed object is
      *     {@link PTZNode }
      *     
+     * @see #getPTZNode()
      */
     public void setPTZNode(PTZNode value) {
         this.ptzNode = value;

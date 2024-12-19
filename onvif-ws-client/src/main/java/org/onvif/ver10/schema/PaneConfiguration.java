@@ -17,30 +17,29 @@ import org.w3c.dom.Element;
 
 /**
  * Configuration of the streaming and coding settings of a Video window.
- *       
  * 
- * <p>Java class for PaneConfiguration complex type.
+ * <p>Java class for PaneConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PaneConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PaneName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="AudioOutputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="AudioSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="AudioEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PaneConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PaneName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="AudioOutputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="AudioSourceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="AudioEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfiguration" minOccurs="0"/>
+ *         <element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -56,25 +55,62 @@ import org.w3c.dom.Element;
 })
 public class PaneConfiguration {
 
+    /**
+     * Optional name of the pane configuration.
+     * 
+     */
     @XmlElement(name = "PaneName")
     protected String paneName;
+    /**
+     * If the device has audio outputs, this element contains a pointer to the
+     *             audio output that is associated with the pane. A tests
+     *             can retrieve the available audio outputs of a device using the GetAudioOutputs command
+     *             of the DeviceIO service.
+     * 
+     */
     @XmlElement(name = "AudioOutputToken")
     protected String audioOutputToken;
+    /**
+     * If the device has audio sources, this element contains a pointer to the
+     *             audio source that is associated with this pane.
+     *             The audio connection from a decoder device to the NVT is established using the
+     *             backchannel mechanism. A tests can retrieve the available audio sources of a device
+     *             using the GetAudioSources command of the
+     *             DeviceIO service.
+     * 
+     */
     @XmlElement(name = "AudioSourceToken")
     protected String audioSourceToken;
+    /**
+     * The configuration of the audio encoder including codec, bitrate
+     *             and sample rate.
+     * 
+     */
     @XmlElement(name = "AudioEncoderConfiguration")
     protected AudioEncoderConfiguration audioEncoderConfiguration;
+    /**
+     * A pointer to a Receiver that has the necessary information to receive
+     *             data from a Transmitter. This Receiver can be connected and the network video decoder
+     *             displays the received data on the specified outputs. A tests can retrieve the available
+     *             Receivers using the
+     *             GetReceivers command of the Receiver Service.
+     * 
+     */
     @XmlElement(name = "ReceiverToken")
     protected String receiverToken;
+    /**
+     * A unique identifier in the display device.
+     * 
+     */
     @XmlElement(name = "Token", required = true)
     protected String token;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the paneName property.
+     * Optional name of the pane configuration.
      * 
      * @return
      *     possible object is
@@ -92,13 +128,17 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPaneName()
      */
     public void setPaneName(String value) {
         this.paneName = value;
     }
 
     /**
-     * Gets the value of the audioOutputToken property.
+     * If the device has audio outputs, this element contains a pointer to the
+     *             audio output that is associated with the pane. A tests
+     *             can retrieve the available audio outputs of a device using the GetAudioOutputs command
+     *             of the DeviceIO service.
      * 
      * @return
      *     possible object is
@@ -116,13 +156,19 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getAudioOutputToken()
      */
     public void setAudioOutputToken(String value) {
         this.audioOutputToken = value;
     }
 
     /**
-     * Gets the value of the audioSourceToken property.
+     * If the device has audio sources, this element contains a pointer to the
+     *             audio source that is associated with this pane.
+     *             The audio connection from a decoder device to the NVT is established using the
+     *             backchannel mechanism. A tests can retrieve the available audio sources of a device
+     *             using the GetAudioSources command of the
+     *             DeviceIO service.
      * 
      * @return
      *     possible object is
@@ -140,13 +186,15 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getAudioSourceToken()
      */
     public void setAudioSourceToken(String value) {
         this.audioSourceToken = value;
     }
 
     /**
-     * Gets the value of the audioEncoderConfiguration property.
+     * The configuration of the audio encoder including codec, bitrate
+     *             and sample rate.
      * 
      * @return
      *     possible object is
@@ -164,13 +212,18 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link AudioEncoderConfiguration }
      *     
+     * @see #getAudioEncoderConfiguration()
      */
     public void setAudioEncoderConfiguration(AudioEncoderConfiguration value) {
         this.audioEncoderConfiguration = value;
     }
 
     /**
-     * Gets the value of the receiverToken property.
+     * A pointer to a Receiver that has the necessary information to receive
+     *             data from a Transmitter. This Receiver can be connected and the network video decoder
+     *             displays the received data on the specified outputs. A tests can retrieve the available
+     *             Receivers using the
+     *             GetReceivers command of the Receiver Service.
      * 
      * @return
      *     possible object is
@@ -188,13 +241,14 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getReceiverToken()
      */
     public void setReceiverToken(String value) {
         this.receiverToken = value;
     }
 
     /**
-     * Gets the value of the token property.
+     * A unique identifier in the display device.
      * 
      * @return
      *     possible object is
@@ -212,6 +266,7 @@ public class PaneConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
@@ -220,16 +275,16 @@ public class PaneConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -237,12 +292,15 @@ public class PaneConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

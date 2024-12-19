@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.Certificate;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="NvtCertificate" type="{http://www.onvif.org/ver10/schema}Certificate"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="NvtCertificate" type="{http://www.onvif.org/ver10/schema}Certificate"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.Certificate;
 @XmlRootElement(name = "CreateCertificateResponse")
 public class CreateCertificateResponse {
 
+    /**
+     * base64 encoded DER representation of certificate.
+     * 
+     */
     @XmlElement(name = "NvtCertificate", required = true)
     protected Certificate nvtCertificate;
 
     /**
-     * Gets the value of the nvtCertificate property.
+     * base64 encoded DER representation of certificate.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class CreateCertificateResponse {
      *     allowed object is
      *     {@link Certificate }
      *     
+     * @see #getNvtCertificate()
      */
     public void setNvtCertificate(Certificate value) {
         this.nvtCertificate = value;

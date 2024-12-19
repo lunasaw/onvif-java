@@ -12,25 +12,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Mpeg4Options complex type.
+ * <p>Java class for Mpeg4Options complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Mpeg4Options"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/&gt;
- *         &lt;element name="GovLengthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;element name="FrameRateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;element name="EncodingIntervalRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
- *         &lt;element name="Mpeg4ProfilesSupported" type="{http://www.onvif.org/ver10/schema}Mpeg4Profile" maxOccurs="unbounded"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Mpeg4Options">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/>
+ *         <element name="GovLengthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <element name="FrameRateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <element name="EncodingIntervalRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
+ *         <element name="Mpeg4ProfilesSupported" type="{http://www.onvif.org/ver10/schema}Mpeg4Profile" maxOccurs="unbounded"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,49 +47,78 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Mpeg4Options {
 
+    /**
+     * List of supported image sizes.
+     * 
+     */
     @XmlElement(name = "ResolutionsAvailable", required = true)
     protected List<VideoResolution> resolutionsAvailable;
+    /**
+     * Supported group of Video frames length. This value typically corresponds
+     *             to the I-Frame distance.
+     * 
+     */
     @XmlElement(name = "GovLengthRange", required = true)
     protected IntRange govLengthRange;
+    /**
+     * Supported frame rate in fps (frames per second).
+     * 
+     */
     @XmlElement(name = "FrameRateRange", required = true)
     protected IntRange frameRateRange;
+    /**
+     * Supported encoding interval range. The encoding interval corresponds to
+     *             the number of frames devided by the encoded frames. An encoding interval value of "1"
+     *             means that all frames are encoded.
+     * 
+     */
     @XmlElement(name = "EncodingIntervalRange", required = true)
     protected IntRange encodingIntervalRange;
+    /**
+     * List of supported MPEG-4 profiles.
+     * 
+     */
     @XmlElement(name = "Mpeg4ProfilesSupported", required = true)
     @XmlSchemaType(name = "string")
     protected List<Mpeg4Profile> mpeg4ProfilesSupported;
 
     /**
+     * List of supported image sizes.
+     * 
      * Gets the value of the resolutionsAvailable property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getResolutionsAvailable().add(newItem);
+     * getResolutionsAvailable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link VideoResolution }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the resolutionsAvailable property.
      */
     public List<VideoResolution> getResolutionsAvailable() {
         if (resolutionsAvailable == null) {
-            resolutionsAvailable = new ArrayList<VideoResolution>();
+            resolutionsAvailable = new ArrayList<>();
         }
         return this.resolutionsAvailable;
     }
 
     /**
-     * Gets the value of the govLengthRange property.
+     * Supported group of Video frames length. This value typically corresponds
+     *             to the I-Frame distance.
      * 
      * @return
      *     possible object is
@@ -107,13 +136,14 @@ public class Mpeg4Options {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getGovLengthRange()
      */
     public void setGovLengthRange(IntRange value) {
         this.govLengthRange = value;
     }
 
     /**
-     * Gets the value of the frameRateRange property.
+     * Supported frame rate in fps (frames per second).
      * 
      * @return
      *     possible object is
@@ -131,13 +161,16 @@ public class Mpeg4Options {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getFrameRateRange()
      */
     public void setFrameRateRange(IntRange value) {
         this.frameRateRange = value;
     }
 
     /**
-     * Gets the value of the encodingIntervalRange property.
+     * Supported encoding interval range. The encoding interval corresponds to
+     *             the number of frames devided by the encoded frames. An encoding interval value of "1"
+     *             means that all frames are encoded.
      * 
      * @return
      *     possible object is
@@ -155,36 +188,42 @@ public class Mpeg4Options {
      *     allowed object is
      *     {@link IntRange }
      *     
+     * @see #getEncodingIntervalRange()
      */
     public void setEncodingIntervalRange(IntRange value) {
         this.encodingIntervalRange = value;
     }
 
     /**
+     * List of supported MPEG-4 profiles.
+     * 
      * Gets the value of the mpeg4ProfilesSupported property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the mpeg4ProfilesSupported property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mpeg4ProfilesSupported property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getMpeg4ProfilesSupported().add(newItem);
+     * getMpeg4ProfilesSupported().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Mpeg4Profile }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the mpeg4ProfilesSupported property.
      */
     public List<Mpeg4Profile> getMpeg4ProfilesSupported() {
         if (mpeg4ProfilesSupported == null) {
-            mpeg4ProfilesSupported = new ArrayList<Mpeg4Profile>();
+            mpeg4ProfilesSupported = new ArrayList<>();
         }
         return this.mpeg4ProfilesSupported;
     }

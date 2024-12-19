@@ -18,24 +18,24 @@ import org.w3c.dom.Element;
 /**
  * A CSR attribute as specified in RFC 2986.
  * 
- * <p>Java class for BasicRequestAttribute complex type.
+ * <p>Java class for BasicRequestAttribute complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="BasicRequestAttribute"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="OID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/&gt;
- *         &lt;element name="value" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="BasicRequestAttribute">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="OID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/>
+ *         <element name="value" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,17 +47,26 @@ import org.w3c.dom.Element;
 })
 public class BasicRequestAttribute {
 
+    /**
+     * The OID of the attribute.
+     * 
+     */
     @XmlElement(name = "OID", required = true)
     protected String oid;
+    /**
+     * The value of the attribute as a base64-encoded DER representation of
+     *                 an ASN.1 value.
+     * 
+     */
     @XmlElement(required = true)
     protected byte[] value;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the oid property.
+     * The OID of the attribute.
      * 
      * @return
      *     possible object is
@@ -75,13 +84,15 @@ public class BasicRequestAttribute {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getOID()
      */
     public void setOID(String value) {
         this.oid = value;
     }
 
     /**
-     * Gets the value of the value property.
+     * The value of the attribute as a base64-encoded DER representation of
+     *                 an ASN.1 value.
      * 
      * @return
      *     possible object is
@@ -97,6 +108,7 @@ public class BasicRequestAttribute {
      * @param value
      *     allowed object is
      *     byte[]
+     * @see #getValue()
      */
     public void setValue(byte[] value) {
         this.value = value;
@@ -105,16 +117,16 @@ public class BasicRequestAttribute {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -122,12 +134,15 @@ public class BasicRequestAttribute {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

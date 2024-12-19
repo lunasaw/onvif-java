@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.replay.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/replay/wsdl", "Capabilities");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/replay/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.replay.wsdl
@@ -36,6 +36,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -44,6 +46,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -52,6 +56,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -60,6 +66,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReplayUri }
      * 
+     * @return
+     *     the new instance of {@link GetReplayUri }
      */
     public GetReplayUri createGetReplayUri() {
         return new GetReplayUri();
@@ -68,6 +76,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReplayUriResponse }
      * 
+     * @return
+     *     the new instance of {@link GetReplayUriResponse }
      */
     public GetReplayUriResponse createGetReplayUriResponse() {
         return new GetReplayUriResponse();
@@ -76,6 +86,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetReplayConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetReplayConfiguration }
      */
     public SetReplayConfiguration createSetReplayConfiguration() {
         return new SetReplayConfiguration();
@@ -84,6 +96,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetReplayConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetReplayConfigurationResponse }
      */
     public SetReplayConfigurationResponse createSetReplayConfigurationResponse() {
         return new SetReplayConfigurationResponse();
@@ -92,6 +106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReplayConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetReplayConfiguration }
      */
     public GetReplayConfiguration createGetReplayConfiguration() {
         return new GetReplayConfiguration();
@@ -100,6 +116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReplayConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetReplayConfigurationResponse }
      */
     public GetReplayConfigurationResponse createGetReplayConfigurationResponse() {
         return new GetReplayConfigurationResponse();
@@ -115,7 +133,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/replay/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

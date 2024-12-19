@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver20.ptz.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver20/ptz/wsdl", "Capabilities");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver20/ptz/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver20.ptz.wsdl
@@ -36,6 +36,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -44,6 +46,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -52,6 +56,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -60,6 +66,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNodes }
      * 
+     * @return
+     *     the new instance of {@link GetNodes }
      */
     public GetNodes createGetNodes() {
         return new GetNodes();
@@ -68,6 +76,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNodesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNodesResponse }
      */
     public GetNodesResponse createGetNodesResponse() {
         return new GetNodesResponse();
@@ -76,6 +86,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNode }
      * 
+     * @return
+     *     the new instance of {@link GetNode }
      */
     public GetNode createGetNode() {
         return new GetNode();
@@ -84,6 +96,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNodeResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNodeResponse }
      */
     public GetNodeResponse createGetNodeResponse() {
         return new GetNodeResponse();
@@ -92,6 +106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetConfigurations }
      */
     public GetConfigurations createGetConfigurations() {
         return new GetConfigurations();
@@ -100,6 +116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetConfigurationsResponse }
      */
     public GetConfigurationsResponse createGetConfigurationsResponse() {
         return new GetConfigurationsResponse();
@@ -108,6 +126,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetConfiguration }
      */
     public GetConfiguration createGetConfiguration() {
         return new GetConfiguration();
@@ -116,6 +136,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetConfigurationResponse }
      */
     public GetConfigurationResponse createGetConfigurationResponse() {
         return new GetConfigurationResponse();
@@ -124,6 +146,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetConfiguration }
      */
     public SetConfiguration createSetConfiguration() {
         return new SetConfiguration();
@@ -132,6 +156,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetConfigurationResponse }
      */
     public SetConfigurationResponse createSetConfigurationResponse() {
         return new SetConfigurationResponse();
@@ -140,6 +166,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetConfigurationOptions }
      */
     public GetConfigurationOptions createGetConfigurationOptions() {
         return new GetConfigurationOptions();
@@ -148,6 +176,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetConfigurationOptionsResponse }
      */
     public GetConfigurationOptionsResponse createGetConfigurationOptionsResponse() {
         return new GetConfigurationOptionsResponse();
@@ -156,6 +186,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendAuxiliaryCommand }
      * 
+     * @return
+     *     the new instance of {@link SendAuxiliaryCommand }
      */
     public SendAuxiliaryCommand createSendAuxiliaryCommand() {
         return new SendAuxiliaryCommand();
@@ -164,6 +196,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendAuxiliaryCommandResponse }
      * 
+     * @return
+     *     the new instance of {@link SendAuxiliaryCommandResponse }
      */
     public SendAuxiliaryCommandResponse createSendAuxiliaryCommandResponse() {
         return new SendAuxiliaryCommandResponse();
@@ -172,6 +206,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresets }
      * 
+     * @return
+     *     the new instance of {@link GetPresets }
      */
     public GetPresets createGetPresets() {
         return new GetPresets();
@@ -180,6 +216,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPresetsResponse }
      */
     public GetPresetsResponse createGetPresetsResponse() {
         return new GetPresetsResponse();
@@ -188,6 +226,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPreset }
      * 
+     * @return
+     *     the new instance of {@link SetPreset }
      */
     public SetPreset createSetPreset() {
         return new SetPreset();
@@ -196,6 +236,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPresetResponse }
      * 
+     * @return
+     *     the new instance of {@link SetPresetResponse }
      */
     public SetPresetResponse createSetPresetResponse() {
         return new SetPresetResponse();
@@ -204,6 +246,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePreset }
      * 
+     * @return
+     *     the new instance of {@link RemovePreset }
      */
     public RemovePreset createRemovePreset() {
         return new RemovePreset();
@@ -212,6 +256,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePresetResponse }
      * 
+     * @return
+     *     the new instance of {@link RemovePresetResponse }
      */
     public RemovePresetResponse createRemovePresetResponse() {
         return new RemovePresetResponse();
@@ -220,6 +266,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GotoPreset }
      * 
+     * @return
+     *     the new instance of {@link GotoPreset }
      */
     public GotoPreset createGotoPreset() {
         return new GotoPreset();
@@ -228,6 +276,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GotoPresetResponse }
      * 
+     * @return
+     *     the new instance of {@link GotoPresetResponse }
      */
     public GotoPresetResponse createGotoPresetResponse() {
         return new GotoPresetResponse();
@@ -236,6 +286,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStatus }
      * 
+     * @return
+     *     the new instance of {@link GetStatus }
      */
     public GetStatus createGetStatus() {
         return new GetStatus();
@@ -244,6 +296,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStatusResponse }
      * 
+     * @return
+     *     the new instance of {@link GetStatusResponse }
      */
     public GetStatusResponse createGetStatusResponse() {
         return new GetStatusResponse();
@@ -252,6 +306,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GotoHomePosition }
      * 
+     * @return
+     *     the new instance of {@link GotoHomePosition }
      */
     public GotoHomePosition createGotoHomePosition() {
         return new GotoHomePosition();
@@ -260,6 +316,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GotoHomePositionResponse }
      * 
+     * @return
+     *     the new instance of {@link GotoHomePositionResponse }
      */
     public GotoHomePositionResponse createGotoHomePositionResponse() {
         return new GotoHomePositionResponse();
@@ -268,6 +326,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHomePosition }
      * 
+     * @return
+     *     the new instance of {@link SetHomePosition }
      */
     public SetHomePosition createSetHomePosition() {
         return new SetHomePosition();
@@ -276,6 +336,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHomePositionResponse }
      * 
+     * @return
+     *     the new instance of {@link SetHomePositionResponse }
      */
     public SetHomePositionResponse createSetHomePositionResponse() {
         return new SetHomePositionResponse();
@@ -284,6 +346,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ContinuousMove }
      * 
+     * @return
+     *     the new instance of {@link ContinuousMove }
      */
     public ContinuousMove createContinuousMove() {
         return new ContinuousMove();
@@ -292,6 +356,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ContinuousMoveResponse }
      * 
+     * @return
+     *     the new instance of {@link ContinuousMoveResponse }
      */
     public ContinuousMoveResponse createContinuousMoveResponse() {
         return new ContinuousMoveResponse();
@@ -300,6 +366,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RelativeMove }
      * 
+     * @return
+     *     the new instance of {@link RelativeMove }
      */
     public RelativeMove createRelativeMove() {
         return new RelativeMove();
@@ -308,6 +376,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RelativeMoveResponse }
      * 
+     * @return
+     *     the new instance of {@link RelativeMoveResponse }
      */
     public RelativeMoveResponse createRelativeMoveResponse() {
         return new RelativeMoveResponse();
@@ -316,6 +386,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AbsoluteMove }
      * 
+     * @return
+     *     the new instance of {@link AbsoluteMove }
      */
     public AbsoluteMove createAbsoluteMove() {
         return new AbsoluteMove();
@@ -324,6 +396,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AbsoluteMoveResponse }
      * 
+     * @return
+     *     the new instance of {@link AbsoluteMoveResponse }
      */
     public AbsoluteMoveResponse createAbsoluteMoveResponse() {
         return new AbsoluteMoveResponse();
@@ -332,6 +406,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Stop }
      * 
+     * @return
+     *     the new instance of {@link Stop }
      */
     public Stop createStop() {
         return new Stop();
@@ -340,6 +416,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StopResponse }
      * 
+     * @return
+     *     the new instance of {@link StopResponse }
      */
     public StopResponse createStopResponse() {
         return new StopResponse();
@@ -348,6 +426,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetTours }
      * 
+     * @return
+     *     the new instance of {@link GetPresetTours }
      */
     public GetPresetTours createGetPresetTours() {
         return new GetPresetTours();
@@ -356,6 +436,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetToursResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPresetToursResponse }
      */
     public GetPresetToursResponse createGetPresetToursResponse() {
         return new GetPresetToursResponse();
@@ -364,6 +446,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetTour }
      * 
+     * @return
+     *     the new instance of {@link GetPresetTour }
      */
     public GetPresetTour createGetPresetTour() {
         return new GetPresetTour();
@@ -372,6 +456,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetTourResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPresetTourResponse }
      */
     public GetPresetTourResponse createGetPresetTourResponse() {
         return new GetPresetTourResponse();
@@ -380,6 +466,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetTourOptions }
      * 
+     * @return
+     *     the new instance of {@link GetPresetTourOptions }
      */
     public GetPresetTourOptions createGetPresetTourOptions() {
         return new GetPresetTourOptions();
@@ -388,6 +476,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPresetTourOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPresetTourOptionsResponse }
      */
     public GetPresetTourOptionsResponse createGetPresetTourOptionsResponse() {
         return new GetPresetTourOptionsResponse();
@@ -396,6 +486,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePresetTour }
      * 
+     * @return
+     *     the new instance of {@link CreatePresetTour }
      */
     public CreatePresetTour createCreatePresetTour() {
         return new CreatePresetTour();
@@ -404,6 +496,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePresetTourResponse }
      * 
+     * @return
+     *     the new instance of {@link CreatePresetTourResponse }
      */
     public CreatePresetTourResponse createCreatePresetTourResponse() {
         return new CreatePresetTourResponse();
@@ -412,6 +506,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ModifyPresetTour }
      * 
+     * @return
+     *     the new instance of {@link ModifyPresetTour }
      */
     public ModifyPresetTour createModifyPresetTour() {
         return new ModifyPresetTour();
@@ -420,6 +516,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ModifyPresetTourResponse }
      * 
+     * @return
+     *     the new instance of {@link ModifyPresetTourResponse }
      */
     public ModifyPresetTourResponse createModifyPresetTourResponse() {
         return new ModifyPresetTourResponse();
@@ -428,6 +526,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link OperatePresetTour }
      * 
+     * @return
+     *     the new instance of {@link OperatePresetTour }
      */
     public OperatePresetTour createOperatePresetTour() {
         return new OperatePresetTour();
@@ -436,6 +536,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link OperatePresetTourResponse }
      * 
+     * @return
+     *     the new instance of {@link OperatePresetTourResponse }
      */
     public OperatePresetTourResponse createOperatePresetTourResponse() {
         return new OperatePresetTourResponse();
@@ -444,6 +546,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePresetTour }
      * 
+     * @return
+     *     the new instance of {@link RemovePresetTour }
      */
     public RemovePresetTour createRemovePresetTour() {
         return new RemovePresetTour();
@@ -452,6 +556,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemovePresetTourResponse }
      * 
+     * @return
+     *     the new instance of {@link RemovePresetTourResponse }
      */
     public RemovePresetTourResponse createRemovePresetTourResponse() {
         return new RemovePresetTourResponse();
@@ -460,6 +566,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleConfigurations }
      */
     public GetCompatibleConfigurations createGetCompatibleConfigurations() {
         return new GetCompatibleConfigurations();
@@ -468,6 +576,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCompatibleConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCompatibleConfigurationsResponse }
      */
     public GetCompatibleConfigurationsResponse createGetCompatibleConfigurationsResponse() {
         return new GetCompatibleConfigurationsResponse();
@@ -483,7 +593,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver20/ptz/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

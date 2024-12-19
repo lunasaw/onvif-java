@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PTZConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PTZConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetConfiguration")
 public class GetConfiguration {
 
+    /**
+     * Token of the requested PTZConfiguration.
+     * 
+     */
     @XmlElement(name = "PTZConfigurationToken", required = true)
     protected String ptzConfigurationToken;
 
     /**
-     * Gets the value of the ptzConfigurationToken property.
+     * Token of the requested PTZConfiguration.
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class GetConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPTZConfigurationToken()
      */
     public void setPTZConfigurationToken(String value) {
         this.ptzConfigurationToken = value;

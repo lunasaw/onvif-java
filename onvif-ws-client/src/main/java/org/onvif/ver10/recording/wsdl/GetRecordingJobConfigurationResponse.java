@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.RecordingJobConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.RecordingJobConfiguration;
 @XmlRootElement(name = "GetRecordingJobConfigurationResponse")
 public class GetRecordingJobConfigurationResponse {
 
+    /**
+     * Current configuration of the recording job.
+     * 
+     */
     @XmlElement(name = "JobConfiguration", required = true)
     protected RecordingJobConfiguration jobConfiguration;
 
     /**
-     * Gets the value of the jobConfiguration property.
+     * Current configuration of the recording job.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetRecordingJobConfigurationResponse {
      *     allowed object is
      *     {@link RecordingJobConfiguration }
      *     
+     * @see #getJobConfiguration()
      */
     public void setJobConfiguration(RecordingJobConfiguration value) {
         this.jobConfiguration = value;

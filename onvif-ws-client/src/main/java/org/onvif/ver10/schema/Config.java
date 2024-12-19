@@ -10,23 +10,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Config complex type.
+ * <p>Java class for Config complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Config"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Parameters" type="{http://www.onvif.org/ver10/schema}ItemList"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Config">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Parameters" type="{http://www.onvif.org/ver10/schema}ItemList"/>
+ *       </sequence>
+ *       <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       <attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,15 +36,30 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Config {
 
+    /**
+     * List of configuration parameters as defined in the correspding
+     *             description.
+     * 
+     */
     @XmlElement(name = "Parameters", required = true)
     protected ItemList parameters;
+    /**
+     * Name of the configuration.
+     * 
+     */
     @XmlAttribute(name = "Name", required = true)
     protected String name;
+    /**
+     * Type of the configuration represented by a unique QName. The Type
+     *           characterizes a ConfigDescription defining the Parameters.
+     * 
+     */
     @XmlAttribute(name = "Type", required = true)
     protected QName type;
 
     /**
-     * Gets the value of the parameters property.
+     * List of configuration parameters as defined in the correspding
+     *             description.
      * 
      * @return
      *     possible object is
@@ -62,13 +77,14 @@ public class Config {
      *     allowed object is
      *     {@link ItemList }
      *     
+     * @see #getParameters()
      */
     public void setParameters(ItemList value) {
         this.parameters = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Name of the configuration.
      * 
      * @return
      *     possible object is
@@ -86,13 +102,15 @@ public class Config {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the type property.
+     * Type of the configuration represented by a unique QName. The Type
+     *           characterizes a ConfigDescription defining the Parameters.
      * 
      * @return
      *     possible object is
@@ -110,6 +128,7 @@ public class Config {
      *     allowed object is
      *     {@link QName }
      *     
+     * @see #getType()
      */
     public void setType(QName value) {
         this.type = value;

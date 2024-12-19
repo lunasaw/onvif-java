@@ -12,27 +12,27 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="CertWithPrivateKey" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/&gt;
- *         &lt;element name="CertificationPathAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="KeyAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="IgnoreAdditionalCertificates" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="IntegrityPassphraseID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}PassphraseID" minOccurs="0"/&gt;
- *         &lt;element name="EncryptionPassphraseID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}PassphraseID" minOccurs="0"/&gt;
- *         &lt;element name="Passphrase" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="CertWithPrivateKey" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/>
+ *         <element name="CertificationPathAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="KeyAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="IgnoreAdditionalCertificates" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="IntegrityPassphraseID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}PassphraseID" minOccurs="0"/>
+ *         <element name="EncryptionPassphraseID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}PassphraseID" minOccurs="0"/>
+ *         <element name="Passphrase" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,27 +49,62 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "UploadCertificateWithPrivateKeyInPKCS12")
 public class UploadCertificateWithPrivateKeyInPKCS12 {
 
+    /**
+     * The certificates and key pair to be uploaded in a PKCS#12 data
+     *                   structure.
+     * 
+     */
     @XmlElement(name = "CertWithPrivateKey", required = true)
     protected byte[] certWithPrivateKey;
+    /**
+     * The tests-defined alias of the certification path.
+     * 
+     */
     @XmlElement(name = "CertificationPathAlias")
     protected String certificationPathAlias;
+    /**
+     * The tests-defined alias of the key pair.
+     * 
+     */
     @XmlElement(name = "KeyAlias")
     protected String keyAlias;
+    /**
+     * True if and only if the device shall behave as if
+     *                   the tests had only supplied the first certificate in the sequence of
+     *                   certificates.
+     * 
+     */
     @XmlElement(name = "IgnoreAdditionalCertificates", defaultValue = "false")
     protected Boolean ignoreAdditionalCertificates;
+    /**
+     * The ID of the passphrase to use for integrity checking of the
+     *                   uploaded PKCS#12 data structure.
+     * 
+     */
     @XmlElement(name = "IntegrityPassphraseID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
     protected String integrityPassphraseID;
+    /**
+     * The ID of the passphrase to use for decrypting the uploaded
+     *                   PKCS#12 data structure.
+     * 
+     */
     @XmlElement(name = "EncryptionPassphraseID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
     protected String encryptionPassphraseID;
+    /**
+     * The passphrase to use for integrity checking and decrypting the
+     *                   uploaded PKCS#12 data structure.
+     * 
+     */
     @XmlElement(name = "Passphrase")
     protected String passphrase;
 
     /**
-     * Gets the value of the certWithPrivateKey property.
+     * The certificates and key pair to be uploaded in a PKCS#12 data
+     *                   structure.
      * 
      * @return
      *     possible object is
@@ -85,13 +120,14 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      * @param value
      *     allowed object is
      *     byte[]
+     * @see #getCertWithPrivateKey()
      */
     public void setCertWithPrivateKey(byte[] value) {
         this.certWithPrivateKey = value;
     }
 
     /**
-     * Gets the value of the certificationPathAlias property.
+     * The tests-defined alias of the certification path.
      * 
      * @return
      *     possible object is
@@ -109,13 +145,14 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getCertificationPathAlias()
      */
     public void setCertificationPathAlias(String value) {
         this.certificationPathAlias = value;
     }
 
     /**
-     * Gets the value of the keyAlias property.
+     * The tests-defined alias of the key pair.
      * 
      * @return
      *     possible object is
@@ -133,13 +170,16 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getKeyAlias()
      */
     public void setKeyAlias(String value) {
         this.keyAlias = value;
     }
 
     /**
-     * Gets the value of the ignoreAdditionalCertificates property.
+     * True if and only if the device shall behave as if
+     *                   the tests had only supplied the first certificate in the sequence of
+     *                   certificates.
      * 
      * @return
      *     possible object is
@@ -157,13 +197,15 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIgnoreAdditionalCertificates()
      */
     public void setIgnoreAdditionalCertificates(Boolean value) {
         this.ignoreAdditionalCertificates = value;
     }
 
     /**
-     * Gets the value of the integrityPassphraseID property.
+     * The ID of the passphrase to use for integrity checking of the
+     *                   uploaded PKCS#12 data structure.
      * 
      * @return
      *     possible object is
@@ -181,13 +223,15 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getIntegrityPassphraseID()
      */
     public void setIntegrityPassphraseID(String value) {
         this.integrityPassphraseID = value;
     }
 
     /**
-     * Gets the value of the encryptionPassphraseID property.
+     * The ID of the passphrase to use for decrypting the uploaded
+     *                   PKCS#12 data structure.
      * 
      * @return
      *     possible object is
@@ -205,13 +249,15 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getEncryptionPassphraseID()
      */
     public void setEncryptionPassphraseID(String value) {
         this.encryptionPassphraseID = value;
     }
 
     /**
-     * Gets the value of the passphrase property.
+     * The passphrase to use for integrity checking and decrypting the
+     *                   uploaded PKCS#12 data structure.
      * 
      * @return
      *     possible object is
@@ -229,6 +275,7 @@ public class UploadCertificateWithPrivateKeyInPKCS12 {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPassphrase()
      */
     public void setPassphrase(String value) {
         this.passphrase = value;

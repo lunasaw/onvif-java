@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Scope complex type.
+ * <p>Java class for Scope complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Scope"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ScopeDef" type="{http://www.onvif.org/ver10/schema}ScopeDefinition"/&gt;
- *         &lt;element name="ScopeItem" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Scope">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ScopeDef" type="{http://www.onvif.org/ver10/schema}ScopeDefinition"/>
+ *         <element name="ScopeItem" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,15 +35,23 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Scope {
 
+    /**
+     * Indicates if the scope is fixed or configurable.
+     * 
+     */
     @XmlElement(name = "ScopeDef", required = true)
     @XmlSchemaType(name = "string")
     protected ScopeDefinition scopeDef;
+    /**
+     * Scope item URI.
+     * 
+     */
     @XmlElement(name = "ScopeItem", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String scopeItem;
 
     /**
-     * Gets the value of the scopeDef property.
+     * Indicates if the scope is fixed or configurable.
      * 
      * @return
      *     possible object is
@@ -61,13 +69,14 @@ public class Scope {
      *     allowed object is
      *     {@link ScopeDefinition }
      *     
+     * @see #getScopeDef()
      */
     public void setScopeDef(ScopeDefinition value) {
         this.scopeDef = value;
     }
 
     /**
-     * Gets the value of the scopeItem property.
+     * Scope item URI.
      * 
      * @return
      *     possible object is
@@ -85,6 +94,7 @@ public class Scope {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getScopeItem()
      */
     public void setScopeItem(String value) {
         this.scopeItem = value;

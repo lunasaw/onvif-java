@@ -15,24 +15,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SupportedAnalyticsModules complex type.
+ * <p>Java class for SupportedAnalyticsModules complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SupportedAnalyticsModules"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AnalyticsModuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="AnalyticsModuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedAnalyticsModulesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SupportedAnalyticsModules">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AnalyticsModuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="AnalyticsModuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedAnalyticsModulesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,6 +44,16 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SupportedAnalyticsModules {
 
+    /**
+     * It optionally contains a list of URLs that provide the location of
+     *             schema files.
+     *             These schema files describe the types and elements used in the analytics module
+     *             descriptions.
+     *             If the analytics module descriptions reference types or elements of the ONVIF schema
+     *             file,
+     *             the ONVIF schema file MUST be explicitly listed.
+     * 
+     */
     @XmlElement(name = "AnalyticsModuleContentSchemaLocation")
     @XmlSchemaType(name = "anyURI")
     protected List<String> analyticsModuleContentSchemaLocation;
@@ -52,33 +62,44 @@ public class SupportedAnalyticsModules {
     @XmlElement(name = "Extension")
     protected SupportedAnalyticsModulesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * It optionally contains a list of URLs that provide the location of
+     *             schema files.
+     *             These schema files describe the types and elements used in the analytics module
+     *             descriptions.
+     *             If the analytics module descriptions reference types or elements of the ONVIF schema
+     *             file,
+     *             the ONVIF schema file MUST be explicitly listed.
+     * 
      * Gets the value of the analyticsModuleContentSchemaLocation property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the analyticsModuleContentSchemaLocation property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the analyticsModuleContentSchemaLocation property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAnalyticsModuleContentSchemaLocation().add(newItem);
+     * getAnalyticsModuleContentSchemaLocation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the analyticsModuleContentSchemaLocation property.
      */
     public List<String> getAnalyticsModuleContentSchemaLocation() {
         if (analyticsModuleContentSchemaLocation == null) {
-            analyticsModuleContentSchemaLocation = new ArrayList<String>();
+            analyticsModuleContentSchemaLocation = new ArrayList<>();
         }
         return this.analyticsModuleContentSchemaLocation;
     }
@@ -86,28 +107,31 @@ public class SupportedAnalyticsModules {
     /**
      * Gets the value of the analyticsModuleDescription property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the analyticsModuleDescription property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the analyticsModuleDescription property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAnalyticsModuleDescription().add(newItem);
+     * getAnalyticsModuleDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigDescription }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the analyticsModuleDescription property.
      */
     public List<ConfigDescription> getAnalyticsModuleDescription() {
         if (analyticsModuleDescription == null) {
-            analyticsModuleDescription = new ArrayList<ConfigDescription>();
+            analyticsModuleDescription = new ArrayList<>();
         }
         return this.analyticsModuleDescription;
     }

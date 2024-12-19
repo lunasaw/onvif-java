@@ -16,28 +16,28 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for PTZPresetTourPresetDetail complex type.
+ * <p>Java class for PTZPresetTourPresetDetail complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourPresetDetail"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;choice&gt;
- *           &lt;element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *           &lt;element name="Home" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *           &lt;element name="PTZPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/&gt;
- *           &lt;element name="TypeExtension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourTypeExtension"/&gt;
- *         &lt;/choice&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourPresetDetail">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <choice>
+ *           <element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *           <element name="Home" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *           <element name="PTZPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/>
+ *           <element name="TypeExtension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourTypeExtension"/>
+ *         </choice>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,10 +51,25 @@ import org.w3c.dom.Element;
 })
 public class PTZPresetTourPresetDetail {
 
+    /**
+     * Option to specify the preset position with Preset Token defined in
+     *               advance.
+     * 
+     */
     @XmlElement(name = "PresetToken")
     protected String presetToken;
+    /**
+     * Option to specify the preset position with the home position of this
+     *               PTZ Node. "False" to this parameter shall be treated as an invalid argument.
+     * 
+     */
     @XmlElement(name = "Home")
     protected Boolean home;
+    /**
+     * Option to specify the preset position with vector of PTZ node
+     *               directly.
+     * 
+     */
     @XmlElement(name = "PTZPosition")
     protected PTZVector ptzPosition;
     @XmlElement(name = "TypeExtension")
@@ -62,10 +77,11 @@ public class PTZPresetTourPresetDetail {
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the presetToken property.
+     * Option to specify the preset position with Preset Token defined in
+     *               advance.
      * 
      * @return
      *     possible object is
@@ -83,13 +99,15 @@ public class PTZPresetTourPresetDetail {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPresetToken()
      */
     public void setPresetToken(String value) {
         this.presetToken = value;
     }
 
     /**
-     * Gets the value of the home property.
+     * Option to specify the preset position with the home position of this
+     *               PTZ Node. "False" to this parameter shall be treated as an invalid argument.
      * 
      * @return
      *     possible object is
@@ -107,13 +125,15 @@ public class PTZPresetTourPresetDetail {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHome()
      */
     public void setHome(Boolean value) {
         this.home = value;
     }
 
     /**
-     * Gets the value of the ptzPosition property.
+     * Option to specify the preset position with vector of PTZ node
+     *               directly.
      * 
      * @return
      *     possible object is
@@ -131,6 +151,7 @@ public class PTZPresetTourPresetDetail {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getPTZPosition()
      */
     public void setPTZPosition(PTZVector value) {
         this.ptzPosition = value;
@@ -163,16 +184,16 @@ public class PTZPresetTourPresetDetail {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -180,12 +201,15 @@ public class PTZPresetTourPresetDetail {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

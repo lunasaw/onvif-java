@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTControlDirection complex type.
+ * <p>Java class for PTControlDirection complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTControlDirection"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="EFlip" type="{http://www.onvif.org/ver10/schema}EFlip" minOccurs="0"/&gt;
- *         &lt;element name="Reverse" type="{http://www.onvif.org/ver10/schema}Reverse" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTControlDirectionExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTControlDirection">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="EFlip" type="{http://www.onvif.org/ver10/schema}EFlip" minOccurs="0"/>
+ *         <element name="Reverse" type="{http://www.onvif.org/ver10/schema}Reverse" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTControlDirectionExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTControlDirection {
 
+    /**
+     * Optional element to configure related parameters for E-Flip.
+     * 
+     */
     @XmlElement(name = "EFlip")
     protected EFlip eFlip;
+    /**
+     * Optional element to configure related parameters for reversing of PT
+     *             Control Direction.
+     * 
+     */
     @XmlElement(name = "Reverse")
     protected Reverse reverse;
     @XmlElement(name = "Extension")
     protected PTControlDirectionExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the eFlip property.
+     * Optional element to configure related parameters for E-Flip.
      * 
      * @return
      *     possible object is
@@ -69,13 +78,15 @@ public class PTControlDirection {
      *     allowed object is
      *     {@link EFlip }
      *     
+     * @see #getEFlip()
      */
     public void setEFlip(EFlip value) {
         this.eFlip = value;
     }
 
     /**
-     * Gets the value of the reverse property.
+     * Optional element to configure related parameters for reversing of PT
+     *             Control Direction.
      * 
      * @return
      *     possible object is
@@ -93,6 +104,7 @@ public class PTControlDirection {
      *     allowed object is
      *     {@link Reverse }
      *     
+     * @see #getReverse()
      */
     public void setReverse(Reverse value) {
         this.reverse = value;

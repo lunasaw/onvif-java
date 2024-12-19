@@ -7,21 +7,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RecordingStatus.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="RecordingStatus"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Initiated"/&gt;
- *     &lt;enumeration value="Recording"/&gt;
- *     &lt;enumeration value="Stopped"/&gt;
- *     &lt;enumeration value="Removing"/&gt;
- *     &lt;enumeration value="Removed"/&gt;
- *     &lt;enumeration value="Unknown"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * 
+ * <p>Java class for RecordingStatus</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="RecordingStatus">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="Initiated"/>
+ *     <enumeration value="Recording"/>
+ *     <enumeration value="Stopped"/>
+ *     <enumeration value="Removing"/>
+ *     <enumeration value="Removed"/>
+ *     <enumeration value="Unknown"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "RecordingStatus")
@@ -51,10 +53,26 @@ public enum RecordingStatus {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static RecordingStatus fromValue(String v) {
         for (RecordingStatus c: RecordingStatus.values()) {
             if (c.value.equals(v)) {

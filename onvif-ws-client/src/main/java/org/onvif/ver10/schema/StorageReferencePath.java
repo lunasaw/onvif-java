@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for StorageReferencePath complex type.
+ * <p>Java class for StorageReferencePath complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="StorageReferencePath"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="StorageToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="RelativePath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}StorageReferencePathExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="StorageReferencePath">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="StorageToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="RelativePath" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}StorageReferencePathExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class StorageReferencePath {
 
+    /**
+     * identifier of an existing Storage Configuration.
+     * 
+     */
     @XmlElement(name = "StorageToken", required = true)
     protected String storageToken;
+    /**
+     * gives the relative directory path on the storage
+     * 
+     */
     @XmlElement(name = "RelativePath")
     protected String relativePath;
     @XmlElement(name = "Extension")
     protected StorageReferencePathExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the storageToken property.
+     * identifier of an existing Storage Configuration.
      * 
      * @return
      *     possible object is
@@ -69,13 +77,14 @@ public class StorageReferencePath {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getStorageToken()
      */
     public void setStorageToken(String value) {
         this.storageToken = value;
     }
 
     /**
-     * Gets the value of the relativePath property.
+     * gives the relative directory path on the storage
      * 
      * @return
      *     possible object is
@@ -93,6 +102,7 @@ public class StorageReferencePath {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getRelativePath()
      */
     public void setRelativePath(String value) {
         this.relativePath = value;

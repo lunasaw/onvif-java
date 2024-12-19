@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ConfigurationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,24 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetVideoEncoderConfigurationOptions")
 public class GetVideoEncoderConfigurationOptions {
 
+    /**
+     * Optional video encoder configuration token that specifies an
+     *                   existing configuration that the options are intended for.
+     * 
+     */
     @XmlElement(name = "ConfigurationToken")
     protected String configurationToken;
+    /**
+     * Optional ProfileToken that specifies an existing media profile
+     *                   that the options shall be compatible with.
+     * 
+     */
     @XmlElement(name = "ProfileToken")
     protected String profileToken;
 
     /**
-     * Gets the value of the configurationToken property.
+     * Optional video encoder configuration token that specifies an
+     *                   existing configuration that the options are intended for.
      * 
      * @return
      *     possible object is
@@ -60,13 +71,15 @@ public class GetVideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getConfigurationToken()
      */
     public void setConfigurationToken(String value) {
         this.configurationToken = value;
     }
 
     /**
-     * Gets the value of the profileToken property.
+     * Optional ProfileToken that specifies an existing media profile
+     *                   that the options shall be compatible with.
      * 
      * @return
      *     possible object is
@@ -84,6 +97,7 @@ public class GetVideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;

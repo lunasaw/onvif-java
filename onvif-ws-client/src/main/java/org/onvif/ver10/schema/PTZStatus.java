@@ -18,26 +18,26 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for PTZStatus complex type.
+ * <p>Java class for PTZStatus complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZStatus"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Position" type="{http://www.onvif.org/ver10/schema}PTZVector" minOccurs="0"/&gt;
- *         &lt;element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}PTZMoveStatus" minOccurs="0"/&gt;
- *         &lt;element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="UtcTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZStatus">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Position" type="{http://www.onvif.org/ver10/schema}PTZVector" minOccurs="0"/>
+ *         <element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}PTZMoveStatus" minOccurs="0"/>
+ *         <element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="UtcTime" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,22 +51,43 @@ import org.w3c.dom.Element;
 })
 public class PTZStatus {
 
+    /**
+     * Specifies the absolute position of the PTZ unit together with the Space references. The
+     *             default absolute spaces of the corresponding PTZ configuration MUST be referenced within
+     *             the Position element.
+     * 
+     */
     @XmlElement(name = "Position")
     protected PTZVector position;
+    /**
+     * Indicates if the Pan/Tilt/Zoom device unit is currently moving, idle or in an unknown
+     *             state.
+     * 
+     */
     @XmlElement(name = "MoveStatus")
     protected PTZMoveStatus moveStatus;
+    /**
+     * States a current PTZ error.
+     * 
+     */
     @XmlElement(name = "Error")
     protected String error;
+    /**
+     * Specifies the UTC time when this status was generated.
+     * 
+     */
     @XmlElement(name = "UtcTime", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar utcTime;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the position property.
+     * Specifies the absolute position of the PTZ unit together with the Space references. The
+     *             default absolute spaces of the corresponding PTZ configuration MUST be referenced within
+     *             the Position element.
      * 
      * @return
      *     possible object is
@@ -84,13 +105,15 @@ public class PTZStatus {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getPosition()
      */
     public void setPosition(PTZVector value) {
         this.position = value;
     }
 
     /**
-     * Gets the value of the moveStatus property.
+     * Indicates if the Pan/Tilt/Zoom device unit is currently moving, idle or in an unknown
+     *             state.
      * 
      * @return
      *     possible object is
@@ -108,13 +131,14 @@ public class PTZStatus {
      *     allowed object is
      *     {@link PTZMoveStatus }
      *     
+     * @see #getMoveStatus()
      */
     public void setMoveStatus(PTZMoveStatus value) {
         this.moveStatus = value;
     }
 
     /**
-     * Gets the value of the error property.
+     * States a current PTZ error.
      * 
      * @return
      *     possible object is
@@ -132,13 +156,14 @@ public class PTZStatus {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getError()
      */
     public void setError(String value) {
         this.error = value;
     }
 
     /**
-     * Gets the value of the utcTime property.
+     * Specifies the UTC time when this status was generated.
      * 
      * @return
      *     possible object is
@@ -156,6 +181,7 @@ public class PTZStatus {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getUtcTime()
      */
     public void setUtcTime(XMLGregorianCalendar value) {
         this.utcTime = value;
@@ -164,16 +190,16 @@ public class PTZStatus {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -181,12 +207,15 @@ public class PTZStatus {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

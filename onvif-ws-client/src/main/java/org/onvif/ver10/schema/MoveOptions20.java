@@ -8,23 +8,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for MoveOptions20 complex type.
+ * <p>Java class for MoveOptions20 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="MoveOptions20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Absolute" type="{http://www.onvif.org/ver10/schema}AbsoluteFocusOptions" minOccurs="0"/&gt;
- *         &lt;element name="Relative" type="{http://www.onvif.org/ver10/schema}RelativeFocusOptions20" minOccurs="0"/&gt;
- *         &lt;element name="Continuous" type="{http://www.onvif.org/ver10/schema}ContinuousFocusOptions" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="MoveOptions20">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Absolute" type="{http://www.onvif.org/ver10/schema}AbsoluteFocusOptions" minOccurs="0"/>
+ *         <element name="Relative" type="{http://www.onvif.org/ver10/schema}RelativeFocusOptions20" minOccurs="0"/>
+ *         <element name="Continuous" type="{http://www.onvif.org/ver10/schema}ContinuousFocusOptions" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,15 +36,27 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class MoveOptions20 {
 
+    /**
+     * Valid ranges for the absolute control.
+     * 
+     */
     @XmlElement(name = "Absolute")
     protected AbsoluteFocusOptions absolute;
+    /**
+     * Valid ranges for the relative control.
+     * 
+     */
     @XmlElement(name = "Relative")
     protected RelativeFocusOptions20 relative;
+    /**
+     * Valid ranges for the continuous control.
+     * 
+     */
     @XmlElement(name = "Continuous")
     protected ContinuousFocusOptions continuous;
 
     /**
-     * Gets the value of the absolute property.
+     * Valid ranges for the absolute control.
      * 
      * @return
      *     possible object is
@@ -62,13 +74,14 @@ public class MoveOptions20 {
      *     allowed object is
      *     {@link AbsoluteFocusOptions }
      *     
+     * @see #getAbsolute()
      */
     public void setAbsolute(AbsoluteFocusOptions value) {
         this.absolute = value;
     }
 
     /**
-     * Gets the value of the relative property.
+     * Valid ranges for the relative control.
      * 
      * @return
      *     possible object is
@@ -86,13 +99,14 @@ public class MoveOptions20 {
      *     allowed object is
      *     {@link RelativeFocusOptions20 }
      *     
+     * @see #getRelative()
      */
     public void setRelative(RelativeFocusOptions20 value) {
         this.relative = value;
     }
 
     /**
-     * Gets the value of the continuous property.
+     * Valid ranges for the continuous control.
      * 
      * @return
      *     possible object is
@@ -110,6 +124,7 @@ public class MoveOptions20 {
      *     allowed object is
      *     {@link ContinuousFocusOptions }
      *     
+     * @see #getContinuous()
      */
     public void setContinuous(ContinuousFocusOptions value) {
         this.continuous = value;

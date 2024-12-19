@@ -17,25 +17,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for AudioOutputConfiguration complex type.
+ * <p>Java class for AudioOutputConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AudioOutputConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="OutputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="SendPrimacy" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/&gt;
- *         &lt;element name="OutputLevel" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AudioOutputConfiguration">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
+ *       <sequence>
+ *         <element name="OutputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="SendPrimacy" type="{http://www.w3.org/2001/XMLSchema}anyURI" minOccurs="0"/>
+ *         <element name="OutputLevel" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -50,20 +50,63 @@ public class AudioOutputConfiguration
     extends ConfigurationEntity
 {
 
+    /**
+     * Token of the phsycial Audio output.
+     * 
+     */
     @XmlElement(name = "OutputToken", required = true)
     protected String outputToken;
+    /**
+     * An audio channel MAY support different types of audio transmission. While for full
+     *                 duplex
+     *                 operation no special handling is required, in half duplex operation the transmission
+     *                 direction
+     *                 needs to be switched.
+     *                 The optional SendPrimacy parameter inside the AudioOutputConfiguration indicates
+     *                 which
+     *                 direction is currently active. An NVC can switch between different modes by setting
+     *                 the
+     *                 AudioOutputConfiguration.
+     *                 
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * 
+     *                 The following modes for the Send-Primacy are defined:
+     *                 
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Server
+     *                       The server is allowed to send audio data to the tests. The tests shall not
+     *                       send
+     *                       audio data via the backchannel to the NVT in this mode.
+     *                   &lt;/li&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Client
+     *                     The tests is allowed to send audio data via the backchannel to the server. The
+     *                     NVT shall not send audio data to the tests in this mode.
+     *                   &lt;/li&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Auto
+     *                     It is up to the device how to deal with sending and receiving audio data.
+     *                   &lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     * 
+     *                 Acoustic echo cancellation is out of ONVIF scope.
+     * 
+     */
     @XmlElement(name = "SendPrimacy")
     @XmlSchemaType(name = "anyURI")
     protected String sendPrimacy;
+    /**
+     * Volume setting of the output. The applicable range is defined via
+     *                 the option AudioOutputOptions.OutputLevelRange.
+     * 
+     */
     @XmlElement(name = "OutputLevel")
     protected int outputLevel;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the outputToken property.
+     * Token of the phsycial Audio output.
      * 
      * @return
      *     possible object is
@@ -81,13 +124,44 @@ public class AudioOutputConfiguration
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getOutputToken()
      */
     public void setOutputToken(String value) {
         this.outputToken = value;
     }
 
     /**
-     * Gets the value of the sendPrimacy property.
+     * An audio channel MAY support different types of audio transmission. While for full
+     *                 duplex
+     *                 operation no special handling is required, in half duplex operation the transmission
+     *                 direction
+     *                 needs to be switched.
+     *                 The optional SendPrimacy parameter inside the AudioOutputConfiguration indicates
+     *                 which
+     *                 direction is currently active. An NVC can switch between different modes by setting
+     *                 the
+     *                 AudioOutputConfiguration.
+     *                 
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * 
+     *                 The following modes for the Send-Primacy are defined:
+     *                 
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Server
+     *                       The server is allowed to send audio data to the tests. The tests shall not
+     *                       send
+     *                       audio data via the backchannel to the NVT in this mode.
+     *                   &lt;/li&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Client
+     *                     The tests is allowed to send audio data via the backchannel to the server. The
+     *                     NVT shall not send audio data to the tests in this mode.
+     *                   &lt;/li&gt;&lt;li&gt;www.onvif.org/ver20/HalfDuplex/Auto
+     *                     It is up to the device how to deal with sending and receiving audio data.
+     *                   &lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     * 
+     *                 Acoustic echo cancellation is out of ONVIF scope.
      * 
      * @return
      *     possible object is
@@ -105,13 +179,15 @@ public class AudioOutputConfiguration
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getSendPrimacy()
      */
     public void setSendPrimacy(String value) {
         this.sendPrimacy = value;
     }
 
     /**
-     * Gets the value of the outputLevel property.
+     * Volume setting of the output. The applicable range is defined via
+     *                 the option AudioOutputOptions.OutputLevelRange.
      * 
      */
     public int getOutputLevel() {
@@ -129,16 +205,16 @@ public class AudioOutputConfiguration
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -146,12 +222,15 @@ public class AudioOutputConfiguration
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

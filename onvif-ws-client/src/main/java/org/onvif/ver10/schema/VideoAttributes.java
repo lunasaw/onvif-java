@@ -17,27 +17,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for VideoAttributes complex type.
+ * <p>Java class for VideoAttributes complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="VideoAttributes"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Bitrate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Encoding" type="{http://www.onvif.org/ver10/schema}VideoEncoding"/&gt;
- *         &lt;element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="VideoAttributes">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Bitrate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Encoding" type="{http://www.onvif.org/ver10/schema}VideoEncoding"/>
+ *         <element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -52,24 +52,44 @@ import org.w3c.dom.Element;
 })
 public class VideoAttributes {
 
+    /**
+     * Average bitrate in kbps.
+     * 
+     */
     @XmlElement(name = "Bitrate")
     protected Integer bitrate;
+    /**
+     * The width of the video in pixels.
+     * 
+     */
     @XmlElement(name = "Width")
     protected int width;
+    /**
+     * The height of the video in pixels.
+     * 
+     */
     @XmlElement(name = "Height")
     protected int height;
+    /**
+     * Used video codec, either Jpeg, H.264 or Mpeg4
+     * 
+     */
     @XmlElement(name = "Encoding", required = true)
     @XmlSchemaType(name = "string")
     protected VideoEncoding encoding;
+    /**
+     * Average framerate in frames per second.
+     * 
+     */
     @XmlElement(name = "Framerate")
     protected float framerate;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the bitrate property.
+     * Average bitrate in kbps.
      * 
      * @return
      *     possible object is
@@ -87,13 +107,14 @@ public class VideoAttributes {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getBitrate()
      */
     public void setBitrate(Integer value) {
         this.bitrate = value;
     }
 
     /**
-     * Gets the value of the width property.
+     * The width of the video in pixels.
      * 
      */
     public int getWidth() {
@@ -109,7 +130,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Gets the value of the height property.
+     * The height of the video in pixels.
      * 
      */
     public int getHeight() {
@@ -125,7 +146,7 @@ public class VideoAttributes {
     }
 
     /**
-     * Gets the value of the encoding property.
+     * Used video codec, either Jpeg, H.264 or Mpeg4
      * 
      * @return
      *     possible object is
@@ -143,13 +164,14 @@ public class VideoAttributes {
      *     allowed object is
      *     {@link VideoEncoding }
      *     
+     * @see #getEncoding()
      */
     public void setEncoding(VideoEncoding value) {
         this.encoding = value;
     }
 
     /**
-     * Gets the value of the framerate property.
+     * Average framerate in frames per second.
      * 
      */
     public float getFramerate() {
@@ -167,16 +189,16 @@ public class VideoAttributes {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -184,12 +206,15 @@ public class VideoAttributes {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

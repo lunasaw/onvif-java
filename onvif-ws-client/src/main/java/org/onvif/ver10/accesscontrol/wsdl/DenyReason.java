@@ -7,22 +7,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for DenyReason.
+ * Non-normative enum that describes the various reasons for denying access.
+ *             The following strings shall be used for the reason field:
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <pre>
- * &lt;simpleType name="DenyReason"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CredentialNotEnabled"/&gt;
- *     &lt;enumeration value="CredentialNotActive"/&gt;
- *     &lt;enumeration value="CredentialExpired"/&gt;
- *     &lt;enumeration value="InvalidPIN"/&gt;
- *     &lt;enumeration value="NotPermittedAtThisTime"/&gt;
- *     &lt;enumeration value="Unauthorized"/&gt;
- *     &lt;enumeration value="Other"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * <p>Java class for DenyReason</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="DenyReason">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="CredentialNotEnabled"/>
+ *     <enumeration value="CredentialNotActive"/>
+ *     <enumeration value="CredentialExpired"/>
+ *     <enumeration value="InvalidPIN"/>
+ *     <enumeration value="NotPermittedAtThisTime"/>
+ *     <enumeration value="Unauthorized"/>
+ *     <enumeration value="Other"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "DenyReason")
@@ -34,7 +37,6 @@ public enum DenyReason {
      * The device shall provide the following event, whenever a valid
      *                 credential is not enabled or has been disabled (e.g., due to credential being lost
      *                 etc.) to prevent unauthorized entry.
-     *               
      * 
      */
     @XmlEnumValue("CredentialNotEnabled")
@@ -44,7 +46,6 @@ public enum DenyReason {
      * The device shall provide the following event, whenever a valid
      *                 credential is presented though it is not active yet;: e.g, the credential was
      *                 presented before the start date.
-     *               
      * 
      */
     @XmlEnumValue("CredentialNotActive")
@@ -53,7 +54,6 @@ public enum DenyReason {
     /**
      * The device shall provide the following event, whenever a valid
      *                 credential was presented after its expiry date.
-     *               
      * 
      */
     @XmlEnumValue("CredentialExpired")
@@ -62,7 +62,6 @@ public enum DenyReason {
     /**
      * The device shall provide the following event, whenever an entered
      *                 PIN code does not match the credential.
-     *               
      * 
      */
     @XmlEnumValue("InvalidPIN")
@@ -72,7 +71,6 @@ public enum DenyReason {
      * The device shall provide the following event, whenever a valid
      *                 credential is denied access to the requested AccessPoint because the credential is
      *                 not permitted at the moment.
-     *               
      * 
      */
     @XmlEnumValue("NotPermittedAtThisTime")
@@ -81,7 +79,6 @@ public enum DenyReason {
     /**
      * The device shall provide the following event, whenever the presented
      *                 credential is not authorized.
-     *               
      * 
      */
     @XmlEnumValue("Unauthorized")
@@ -90,7 +87,6 @@ public enum DenyReason {
     /**
      * The device shall provide the following event, whenever the request
      *                 is denied and no other specific event matches it or is supported by the service.
-     *               
      * 
      */
     @XmlEnumValue("Other")
@@ -101,10 +97,26 @@ public enum DenyReason {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static DenyReason fromValue(String v) {
         for (DenyReason c: DenyReason.values()) {
             if (c.value.equals(v)) {

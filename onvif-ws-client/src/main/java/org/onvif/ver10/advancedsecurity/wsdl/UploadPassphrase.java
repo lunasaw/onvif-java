@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Passphrase" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="PassphraseAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Passphrase" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="PassphraseAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,21 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "UploadPassphrase")
 public class UploadPassphrase {
 
+    /**
+     * The passphrase to upload.
+     * 
+     */
     @XmlElement(name = "Passphrase", required = true)
     protected String passphrase;
+    /**
+     * The alias for the passphrase to upload.
+     * 
+     */
     @XmlElement(name = "PassphraseAlias")
     protected String passphraseAlias;
 
     /**
-     * Gets the value of the passphrase property.
+     * The passphrase to upload.
      * 
      * @return
      *     possible object is
@@ -60,13 +68,14 @@ public class UploadPassphrase {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPassphrase()
      */
     public void setPassphrase(String value) {
         this.passphrase = value;
     }
 
     /**
-     * Gets the value of the passphraseAlias property.
+     * The alias for the passphrase to upload.
      * 
      * @return
      *     possible object is
@@ -84,6 +93,7 @@ public class UploadPassphrase {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPassphraseAlias()
      */
     public void setPassphraseAlias(String value) {
         this.passphraseAlias = value;

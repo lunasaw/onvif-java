@@ -12,21 +12,21 @@ import org.onvif.ver10.schema.VideoOutput;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="VideoOutputs" type="{http://www.onvif.org/ver10/schema}VideoOutput" maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="VideoOutputs" type="{http://www.onvif.org/ver10/schema}VideoOutput" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -37,34 +37,45 @@ import org.onvif.ver10.schema.VideoOutput;
 @XmlRootElement(name = "GetVideoOutputsResponse")
 public class GetVideoOutputsResponse {
 
+    /**
+     * List containing all physical Video output connections of a
+     *                   device.
+     * 
+     */
     @XmlElement(name = "VideoOutputs")
     protected List<VideoOutput> videoOutputs;
 
     /**
+     * List containing all physical Video output connections of a
+     *                   device.
+     * 
      * Gets the value of the videoOutputs property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the videoOutputs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the videoOutputs property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getVideoOutputs().add(newItem);
+     * getVideoOutputs().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link VideoOutput }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the videoOutputs property.
      */
     public List<VideoOutput> getVideoOutputs() {
         if (videoOutputs == null) {
-            videoOutputs = new ArrayList<VideoOutput>();
+            videoOutputs = new ArrayList<>();
         }
         return this.videoOutputs;
     }

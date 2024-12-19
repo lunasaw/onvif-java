@@ -15,28 +15,28 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZNode complex type.
+ * <p>Java class for PTZNode complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZNode"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/&gt;
- *         &lt;element name="SupportedPTZSpaces" type="{http://www.onvif.org/ver10/schema}PTZSpaces"/&gt;
- *         &lt;element name="MaximumNumberOfPresets" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="HomeSupported" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="AuxiliaryCommands" type="{http://www.onvif.org/ver10/schema}AuxiliaryData" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZNodeExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="FixedHomePosition" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZNode">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}DeviceEntity">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/>
+ *         <element name="SupportedPTZSpaces" type="{http://www.onvif.org/ver10/schema}PTZSpaces"/>
+ *         <element name="MaximumNumberOfPresets" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="HomeSupported" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="AuxiliaryCommands" type="{http://www.onvif.org/ver10/schema}AuxiliaryData" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZNodeExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="FixedHomePosition" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -53,25 +53,54 @@ public class PTZNode
     extends DeviceEntity
 {
 
+    /**
+     * A unique identifier that is used to reference PTZ Nodes.
+     * 
+     */
     @XmlElement(name = "Name")
     protected String name;
+    /**
+     * A list of Coordinate Systems available for the PTZ Node. For each Coordinate System,
+     *                 the PTZ Node MUST specify its allowed range.
+     * 
+     */
     @XmlElement(name = "SupportedPTZSpaces", required = true)
     protected PTZSpaces supportedPTZSpaces;
+    /**
+     * All preset operations MUST be available for this PTZ Node if one preset is
+     *                 supported.
+     * 
+     */
     @XmlElement(name = "MaximumNumberOfPresets")
     protected int maximumNumberOfPresets;
+    /**
+     * A boolean operator specifying the availability of a home position. If set to true,
+     *                 the Home Position Operations MUST be available for this PTZ Node.
+     * 
+     */
     @XmlElement(name = "HomeSupported")
     protected boolean homeSupported;
+    /**
+     * A list of supported Auxiliary commands. If the list is not empty, the Auxiliary
+     *                 Operations MUST be available for this PTZ Node.
+     * 
+     */
     @XmlElement(name = "AuxiliaryCommands")
     protected List<String> auxiliaryCommands;
     @XmlElement(name = "Extension")
     protected PTZNodeExtension extension;
+    /**
+     * Indication whether the HomePosition of a Node is fixed or it can be changed via the
+     *               SetHomePosition command.
+     * 
+     */
     @XmlAttribute(name = "FixedHomePosition")
     protected Boolean fixedHomePosition;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the name property.
+     * A unique identifier that is used to reference PTZ Nodes.
      * 
      * @return
      *     possible object is
@@ -89,13 +118,15 @@ public class PTZNode
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the supportedPTZSpaces property.
+     * A list of Coordinate Systems available for the PTZ Node. For each Coordinate System,
+     *                 the PTZ Node MUST specify its allowed range.
      * 
      * @return
      *     possible object is
@@ -113,13 +144,15 @@ public class PTZNode
      *     allowed object is
      *     {@link PTZSpaces }
      *     
+     * @see #getSupportedPTZSpaces()
      */
     public void setSupportedPTZSpaces(PTZSpaces value) {
         this.supportedPTZSpaces = value;
     }
 
     /**
-     * Gets the value of the maximumNumberOfPresets property.
+     * All preset operations MUST be available for this PTZ Node if one preset is
+     *                 supported.
      * 
      */
     public int getMaximumNumberOfPresets() {
@@ -135,7 +168,8 @@ public class PTZNode
     }
 
     /**
-     * Gets the value of the homeSupported property.
+     * A boolean operator specifying the availability of a home position. If set to true,
+     *                 the Home Position Operations MUST be available for this PTZ Node.
      * 
      */
     public boolean isHomeSupported() {
@@ -151,30 +185,36 @@ public class PTZNode
     }
 
     /**
+     * A list of supported Auxiliary commands. If the list is not empty, the Auxiliary
+     *                 Operations MUST be available for this PTZ Node.
+     * 
      * Gets the value of the auxiliaryCommands property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the auxiliaryCommands property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the auxiliaryCommands property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAuxiliaryCommands().add(newItem);
+     * getAuxiliaryCommands().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the auxiliaryCommands property.
      */
     public List<String> getAuxiliaryCommands() {
         if (auxiliaryCommands == null) {
-            auxiliaryCommands = new ArrayList<String>();
+            auxiliaryCommands = new ArrayList<>();
         }
         return this.auxiliaryCommands;
     }
@@ -204,7 +244,8 @@ public class PTZNode
     }
 
     /**
-     * Gets the value of the fixedHomePosition property.
+     * Indication whether the HomePosition of a Node is fixed or it can be changed via the
+     *               SetHomePosition command.
      * 
      * @return
      *     possible object is
@@ -222,6 +263,7 @@ public class PTZNode
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isFixedHomePosition()
      */
     public void setFixedHomePosition(Boolean value) {
         this.fixedHomePosition = value;

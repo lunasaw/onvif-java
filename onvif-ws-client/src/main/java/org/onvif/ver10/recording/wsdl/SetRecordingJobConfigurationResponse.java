@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.RecordingJobConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,19 @@ import org.onvif.ver10.schema.RecordingJobConfiguration;
 @XmlRootElement(name = "SetRecordingJobConfigurationResponse")
 public class SetRecordingJobConfigurationResponse {
 
+    /**
+     * The JobConfiguration structure shall be the configuration
+     *                   as it is used by the device. This may be different from the JobConfiguration
+     *                   passed to SetRecordingJobConfiguration.
+     * 
+     */
     @XmlElement(name = "JobConfiguration", required = true)
     protected RecordingJobConfiguration jobConfiguration;
 
     /**
-     * Gets the value of the jobConfiguration property.
+     * The JobConfiguration structure shall be the configuration
+     *                   as it is used by the device. This may be different from the JobConfiguration
+     *                   passed to SetRecordingJobConfiguration.
      * 
      * @return
      *     possible object is
@@ -57,6 +65,7 @@ public class SetRecordingJobConfigurationResponse {
      *     allowed object is
      *     {@link RecordingJobConfiguration }
      *     
+     * @see #getJobConfiguration()
      */
     public void setJobConfiguration(RecordingJobConfiguration value) {
         this.jobConfiguration = value;

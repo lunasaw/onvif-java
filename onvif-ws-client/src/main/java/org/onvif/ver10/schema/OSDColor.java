@@ -16,25 +16,24 @@ import jakarta.xml.bind.annotation.XmlType;
  * The value range of "Transparent" could be defined by vendors only should
  *         follow this rule: the minimum value means non-transparent and the maximum value maens fully
  *         transparent.
- *       
  * 
- * <p>Java class for OSDColor complex type.
+ * <p>Java class for OSDColor complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OSDColor"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Color" type="{http://www.onvif.org/ver10/schema}Color"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Transparent" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OSDColor">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Color" type="{http://www.onvif.org/ver10/schema}Color"/>
+ *       </sequence>
+ *       <attribute name="Transparent" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,7 +48,7 @@ public class OSDColor {
     @XmlAttribute(name = "Transparent")
     protected Integer transparent;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the color property.

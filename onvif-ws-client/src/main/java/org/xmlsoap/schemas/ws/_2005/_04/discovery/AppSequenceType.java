@@ -13,22 +13,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AppSequenceType complex type.
+ * <p>Java class for AppSequenceType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AppSequenceType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="InstanceId" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" /&gt;
- *       &lt;attribute name="SequenceId" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *       &lt;attribute name="MessageNumber" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AppSequenceType">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="InstanceId" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" />
+ *       <attribute name="SequenceId" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *       <attribute name="MessageNumber" use="required" type="{http://www.w3.org/2001/XMLSchema}unsignedInt" />
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -46,7 +46,7 @@ public class AppSequenceType {
     @XmlSchemaType(name = "unsignedInt")
     protected long messageNumber;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the instanceId property.

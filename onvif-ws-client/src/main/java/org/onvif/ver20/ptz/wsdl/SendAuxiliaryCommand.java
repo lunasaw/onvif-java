@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="AuxiliaryData" type="{http://www.onvif.org/ver10/schema}AuxiliaryData"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="AuxiliaryData" type="{http://www.onvif.org/ver10/schema}AuxiliaryData"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,23 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SendAuxiliaryCommand")
 public class SendAuxiliaryCommand {
 
+    /**
+     * A reference to the MediaProfile where the operation should take
+     *                   place.
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * The Auxiliary request data.
+     * 
+     */
     @XmlElement(name = "AuxiliaryData", required = true)
     protected String auxiliaryData;
 
     /**
-     * Gets the value of the profileToken property.
+     * A reference to the MediaProfile where the operation should take
+     *                   place.
      * 
      * @return
      *     possible object is
@@ -60,13 +70,14 @@ public class SendAuxiliaryCommand {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the auxiliaryData property.
+     * The Auxiliary request data.
      * 
      * @return
      *     possible object is
@@ -84,6 +95,7 @@ public class SendAuxiliaryCommand {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getAuxiliaryData()
      */
     public void setAuxiliaryData(String value) {
         this.auxiliaryData = value;

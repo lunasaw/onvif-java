@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OnvifVersion complex type.
+ * <p>Java class for OnvifVersion complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OnvifVersion"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Major" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Minor" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OnvifVersion">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Major" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Minor" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,22 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OnvifVersion {
 
+    /**
+     * Major version number.
+     * 
+     */
     @XmlElement(name = "Major")
     protected int major;
+    /**
+     * Two digit minor version number (e.g. X.0.1 maps to "01" and X.2.1 maps
+     *             to "21" where X stands for Major version number).
+     * 
+     */
     @XmlElement(name = "Minor")
     protected int minor;
 
     /**
-     * Gets the value of the major property.
+     * Major version number.
      * 
      */
     public int getMajor() {
@@ -56,7 +65,8 @@ public class OnvifVersion {
     }
 
     /**
-     * Gets the value of the minor property.
+     * Two digit minor version number (e.g. X.0.1 maps to "01" and X.2.1 maps
+     *             to "21" where X stands for Major version number).
      * 
      */
     public int getMinor() {

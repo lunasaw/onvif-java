@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}RecordingJobMode"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}RecordingJobMode"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,13 +36,21 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SetRecordingJobMode")
 public class SetRecordingJobMode {
 
+    /**
+     * Token of the recording job.
+     * 
+     */
     @XmlElement(name = "JobToken", required = true)
     protected String jobToken;
+    /**
+     * The new mode for the recording job.
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     protected String mode;
 
     /**
-     * Gets the value of the jobToken property.
+     * Token of the recording job.
      * 
      * @return
      *     possible object is
@@ -60,13 +68,14 @@ public class SetRecordingJobMode {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getJobToken()
      */
     public void setJobToken(String value) {
         this.jobToken = value;
     }
 
     /**
-     * Gets the value of the mode property.
+     * The new mode for the recording job.
      * 
      * @return
      *     possible object is
@@ -84,6 +93,7 @@ public class SetRecordingJobMode {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getMode()
      */
     public void setMode(String value) {
         this.mode = value;

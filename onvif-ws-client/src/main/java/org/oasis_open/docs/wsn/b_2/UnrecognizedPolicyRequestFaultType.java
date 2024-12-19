@@ -12,22 +12,22 @@ import org.oasis_open.docs.wsrf.bf_2.BaseFaultType;
 
 
 /**
- * <p>Java class for UnrecognizedPolicyRequestFaultType complex type.
+ * <p>Java class for UnrecognizedPolicyRequestFaultType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="UnrecognizedPolicyRequestFaultType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="UnrecognizedPolicy" type="{http://www.w3.org/2001/XMLSchema}QName" maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="UnrecognizedPolicyRequestFaultType">
+ *   <complexContent>
+ *     <extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType">
+ *       <sequence>
+ *         <element name="UnrecognizedPolicy" type="{http://www.w3.org/2001/XMLSchema}QName" maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,28 +45,31 @@ public class UnrecognizedPolicyRequestFaultType
     /**
      * Gets the value of the unrecognizedPolicy property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the unrecognizedPolicy property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the unrecognizedPolicy property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getUnrecognizedPolicy().add(newItem);
+     * getUnrecognizedPolicy().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link QName }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the unrecognizedPolicy property.
      */
     public List<QName> getUnrecognizedPolicy() {
         if (unrecognizedPolicy == null) {
-            unrecognizedPolicy = new ArrayList<QName>();
+            unrecognizedPolicy = new ArrayList<>();
         }
         return this.unrecognizedPolicy;
     }

@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.RecordingJobStateInformation;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobStateInformation"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobStateInformation"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.RecordingJobStateInformation;
 @XmlRootElement(name = "GetRecordingJobStateResponse")
 public class GetRecordingJobStateResponse {
 
+    /**
+     * The current state of the recording job.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     protected RecordingJobStateInformation state;
 
     /**
-     * Gets the value of the state property.
+     * The current state of the recording job.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetRecordingJobStateResponse {
      *     allowed object is
      *     {@link RecordingJobStateInformation }
      *     
+     * @see #getState()
      */
     public void setState(RecordingJobStateInformation value) {
         this.state = value;

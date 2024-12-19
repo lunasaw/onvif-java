@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Vector2D complex type.
+ * <p>Java class for Vector2D complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Vector2D"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="y" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="space" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Vector2D">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="y" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="space" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,6 +35,14 @@ public class Vector2D {
     protected float x;
     @XmlAttribute(name = "y", required = true)
     protected float y;
+    /**
+     * Pan/tilt coordinate space selector. The following options are defined:
+     *           
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     * 
+     */
     @XmlAttribute(name = "space")
     @XmlSchemaType(name = "anyURI")
     protected String space;
@@ -72,7 +80,11 @@ public class Vector2D {
     }
 
     /**
-     * Gets the value of the space property.
+     * Pan/tilt coordinate space selector. The following options are defined:
+     *           
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
      * 
      * @return
      *     possible object is
@@ -90,6 +102,7 @@ public class Vector2D {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getSpace()
      */
     public void setSpace(String value) {
         this.space = value;

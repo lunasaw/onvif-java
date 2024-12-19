@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Mpeg4Configuration complex type.
+ * <p>Java class for Mpeg4Configuration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Mpeg4Configuration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Mpeg4Profile" type="{http://www.onvif.org/ver10/schema}Mpeg4Profile"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Mpeg4Configuration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="GovLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Mpeg4Profile" type="{http://www.onvif.org/ver10/schema}Mpeg4Profile"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,14 +35,29 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Mpeg4Configuration {
 
+    /**
+     * Determines the interval in which the I-Frames will be coded. An entry of
+     *             1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd
+     *             image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as
+     *             P or B Frames.
+     * 
+     */
     @XmlElement(name = "GovLength")
     protected int govLength;
+    /**
+     * the Mpeg4 profile, either simple profile (SP) or advanced simple profile
+     *             (ASP)
+     * 
+     */
     @XmlElement(name = "Mpeg4Profile", required = true)
     @XmlSchemaType(name = "string")
     protected Mpeg4Profile mpeg4Profile;
 
     /**
-     * Gets the value of the govLength property.
+     * Determines the interval in which the I-Frames will be coded. An entry of
+     *             1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd
+     *             image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as
+     *             P or B Frames.
      * 
      */
     public int getGovLength() {
@@ -58,7 +73,8 @@ public class Mpeg4Configuration {
     }
 
     /**
-     * Gets the value of the mpeg4Profile property.
+     * the Mpeg4 profile, either simple profile (SP) or advanced simple profile
+     *             (ASP)
      * 
      * @return
      *     possible object is
@@ -76,6 +92,7 @@ public class Mpeg4Configuration {
      *     allowed object is
      *     {@link Mpeg4Profile }
      *     
+     * @see #getMpeg4Profile()
      */
     public void setMpeg4Profile(Mpeg4Profile value) {
         this.mpeg4Profile = value;

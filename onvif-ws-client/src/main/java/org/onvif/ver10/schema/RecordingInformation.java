@@ -18,29 +18,29 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for RecordingInformation complex type.
+ * <p>Java class for RecordingInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RecordingInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
- *         &lt;element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingSourceInformation"/&gt;
- *         &lt;element name="EarliestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="LatestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
- *         &lt;element name="Content" type="{http://www.onvif.org/ver10/schema}Description"/&gt;
- *         &lt;element name="Track" type="{http://www.onvif.org/ver10/schema}TrackInformation" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="RecordingStatus" type="{http://www.onvif.org/ver10/schema}RecordingStatus"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RecordingInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
+ *         <element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingSourceInformation"/>
+ *         <element name="EarliestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         <element name="LatestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         <element name="Content" type="{http://www.onvif.org/ver10/schema}Description"/>
+ *         <element name="Track" type="{http://www.onvif.org/ver10/schema}TrackInformation" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="RecordingStatus" type="{http://www.onvif.org/ver10/schema}RecordingStatus"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -59,6 +59,15 @@ public class RecordingInformation {
 
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
+    /**
+     * Information about the source of the recording. This gives a description of where the
+     *             data in the recording comes from. Since a single
+     *             recording is intended to record related material, there is just one source. It is
+     *             indicates the physical location or the
+     *             major data source for the recording. Currently the recordingconfiguration cannot
+     *             describe each individual data source.
+     * 
+     */
     @XmlElement(name = "Source", required = true)
     protected RecordingSourceInformation source;
     @XmlElement(name = "EarliestRecording")
@@ -69,6 +78,11 @@ public class RecordingInformation {
     protected XMLGregorianCalendar latestRecording;
     @XmlElement(name = "Content", required = true)
     protected String content;
+    /**
+     * Basic information about the track. Note that a track may represent a
+     *             single contiguous time span or consist of multiple slices.
+     * 
+     */
     @XmlElement(name = "Track")
     protected List<TrackInformation> track;
     @XmlElement(name = "RecordingStatus", required = true)
@@ -77,7 +91,7 @@ public class RecordingInformation {
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the recordingToken property.
@@ -104,7 +118,12 @@ public class RecordingInformation {
     }
 
     /**
-     * Gets the value of the source property.
+     * Information about the source of the recording. This gives a description of where the
+     *             data in the recording comes from. Since a single
+     *             recording is intended to record related material, there is just one source. It is
+     *             indicates the physical location or the
+     *             major data source for the recording. Currently the recordingconfiguration cannot
+     *             describe each individual data source.
      * 
      * @return
      *     possible object is
@@ -122,6 +141,7 @@ public class RecordingInformation {
      *     allowed object is
      *     {@link RecordingSourceInformation }
      *     
+     * @see #getSource()
      */
     public void setSource(RecordingSourceInformation value) {
         this.source = value;
@@ -200,30 +220,36 @@ public class RecordingInformation {
     }
 
     /**
+     * Basic information about the track. Note that a track may represent a
+     *             single contiguous time span or consist of multiple slices.
+     * 
      * Gets the value of the track property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the track property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the track property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getTrack().add(newItem);
+     * getTrack().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TrackInformation }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the track property.
      */
     public List<TrackInformation> getTrack() {
         if (track == null) {
-            track = new ArrayList<TrackInformation>();
+            track = new ArrayList<>();
         }
         return this.track;
     }
@@ -255,16 +281,16 @@ public class RecordingInformation {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -272,12 +298,15 @@ public class RecordingInformation {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

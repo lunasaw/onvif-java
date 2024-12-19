@@ -18,27 +18,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for AudioEncoderConfiguration complex type.
+ * <p>Java class for AudioEncoderConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AudioEncoderConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Encoding" type="{http://www.onvif.org/ver10/schema}AudioEncoding"/&gt;
- *         &lt;element name="Bitrate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="SampleRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration"/&gt;
- *         &lt;element name="SessionTimeout" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AudioEncoderConfiguration">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
+ *       <sequence>
+ *         <element name="Encoding" type="{http://www.onvif.org/ver10/schema}AudioEncoding"/>
+ *         <element name="Bitrate" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="SampleRate" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration"/>
+ *         <element name="SessionTimeout" type="{http://www.w3.org/2001/XMLSchema}duration"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -55,24 +55,47 @@ public class AudioEncoderConfiguration
     extends ConfigurationEntity
 {
 
+    /**
+     * Audio codec used for encoding the audio input (either G.711, G.726
+     *                 or AAC)
+     * 
+     */
     @XmlElement(name = "Encoding", required = true)
     @XmlSchemaType(name = "string")
     protected AudioEncoding encoding;
+    /**
+     * The output bitrate in kbps.
+     * 
+     */
     @XmlElement(name = "Bitrate")
     protected int bitrate;
+    /**
+     * The output sample rate in kHz.
+     * 
+     */
     @XmlElement(name = "SampleRate")
     protected int sampleRate;
+    /**
+     * Defines the multicast settings that could be used for video
+     *                 streaming.
+     * 
+     */
     @XmlElement(name = "Multicast", required = true)
     protected MulticastConfiguration multicast;
+    /**
+     * The rtsp session timeout for the related audio stream
+     * 
+     */
     @XmlElement(name = "SessionTimeout", required = true)
     protected Duration sessionTimeout;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the encoding property.
+     * Audio codec used for encoding the audio input (either G.711, G.726
+     *                 or AAC)
      * 
      * @return
      *     possible object is
@@ -90,13 +113,14 @@ public class AudioEncoderConfiguration
      *     allowed object is
      *     {@link AudioEncoding }
      *     
+     * @see #getEncoding()
      */
     public void setEncoding(AudioEncoding value) {
         this.encoding = value;
     }
 
     /**
-     * Gets the value of the bitrate property.
+     * The output bitrate in kbps.
      * 
      */
     public int getBitrate() {
@@ -112,7 +136,7 @@ public class AudioEncoderConfiguration
     }
 
     /**
-     * Gets the value of the sampleRate property.
+     * The output sample rate in kHz.
      * 
      */
     public int getSampleRate() {
@@ -128,7 +152,8 @@ public class AudioEncoderConfiguration
     }
 
     /**
-     * Gets the value of the multicast property.
+     * Defines the multicast settings that could be used for video
+     *                 streaming.
      * 
      * @return
      *     possible object is
@@ -146,13 +171,14 @@ public class AudioEncoderConfiguration
      *     allowed object is
      *     {@link MulticastConfiguration }
      *     
+     * @see #getMulticast()
      */
     public void setMulticast(MulticastConfiguration value) {
         this.multicast = value;
     }
 
     /**
-     * Gets the value of the sessionTimeout property.
+     * The rtsp session timeout for the related audio stream
      * 
      * @return
      *     possible object is
@@ -170,6 +196,7 @@ public class AudioEncoderConfiguration
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getSessionTimeout()
      */
     public void setSessionTimeout(Duration value) {
         this.sessionTimeout = value;
@@ -178,16 +205,16 @@ public class AudioEncoderConfiguration
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -195,12 +222,15 @@ public class AudioEncoderConfiguration
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

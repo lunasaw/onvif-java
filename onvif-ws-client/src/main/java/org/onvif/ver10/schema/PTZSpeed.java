@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZSpeed complex type.
+ * <p>Java class for PTZSpeed complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZSpeed"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PanTilt" type="{http://www.onvif.org/ver10/schema}Vector2D" minOccurs="0"/&gt;
- *         &lt;element name="Zoom" type="{http://www.onvif.org/ver10/schema}Vector1D" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZSpeed">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PanTilt" type="{http://www.onvif.org/ver10/schema}Vector2D" minOccurs="0"/>
+ *         <element name="Zoom" type="{http://www.onvif.org/ver10/schema}Vector1D" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZSpeed {
 
+    /**
+     * Pan and tilt speed. The x component corresponds to pan and the y
+     *             component to tilt. If omitted in a request, the current (if any) PanTilt movement should
+     *             not be affected.
+     * 
+     */
     @XmlElement(name = "PanTilt")
     protected Vector2D panTilt;
+    /**
+     * A zoom speed. If omitted in a request, the current (if any) Zoom movement should not be
+     *             affected.
+     * 
+     */
     @XmlElement(name = "Zoom")
     protected Vector1D zoom;
 
     /**
-     * Gets the value of the panTilt property.
+     * Pan and tilt speed. The x component corresponds to pan and the y
+     *             component to tilt. If omitted in a request, the current (if any) PanTilt movement should
+     *             not be affected.
      * 
      * @return
      *     possible object is
@@ -58,13 +71,15 @@ public class PTZSpeed {
      *     allowed object is
      *     {@link Vector2D }
      *     
+     * @see #getPanTilt()
      */
     public void setPanTilt(Vector2D value) {
         this.panTilt = value;
     }
 
     /**
-     * Gets the value of the zoom property.
+     * A zoom speed. If omitted in a request, the current (if any) Zoom movement should not be
+     *             affected.
      * 
      * @return
      *     possible object is
@@ -82,6 +97,7 @@ public class PTZSpeed {
      *     allowed object is
      *     {@link Vector1D }
      *     
+     * @see #getZoom()
      */
     public void setZoom(Vector1D value) {
         this.zoom = value;

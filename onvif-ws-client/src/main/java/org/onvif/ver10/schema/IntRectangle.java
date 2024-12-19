@@ -9,24 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * Rectangle defined by lower left corner position and size. Units are pixel.
- *       
  * 
- * <p>Java class for IntRectangle complex type.
+ * <p>Java class for IntRectangle complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="IntRectangle"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="y" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="width" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="height" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="IntRectangle">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="y" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="width" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="height" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

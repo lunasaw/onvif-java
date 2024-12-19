@@ -18,27 +18,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for TrackInformation complex type.
+ * <p>Java class for TrackInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="TrackInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="TrackToken" type="{http://www.onvif.org/ver10/schema}TrackReference"/&gt;
- *         &lt;element name="TrackType" type="{http://www.onvif.org/ver10/schema}TrackType"/&gt;
- *         &lt;element name="Description" type="{http://www.onvif.org/ver10/schema}Description"/&gt;
- *         &lt;element name="DataFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;element name="DataTo" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="TrackInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="TrackToken" type="{http://www.onvif.org/ver10/schema}TrackReference"/>
+ *         <element name="TrackType" type="{http://www.onvif.org/ver10/schema}TrackType"/>
+ *         <element name="Description" type="{http://www.onvif.org/ver10/schema}Description"/>
+ *         <element name="DataFrom" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         <element name="DataTo" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -55,21 +55,38 @@ public class TrackInformation {
 
     @XmlElement(name = "TrackToken", required = true)
     protected String trackToken;
+    /**
+     * Type of the track: "Video", "Audio" or "Metadata".
+     *             The track shall only be able to hold data of that type.
+     * 
+     */
     @XmlElement(name = "TrackType", required = true)
     @XmlSchemaType(name = "string")
     protected TrackType trackType;
+    /**
+     * Informative description of the contents of the track.
+     * 
+     */
     @XmlElement(name = "Description", required = true)
     protected String description;
+    /**
+     * The start date and time of the oldest recorded data in the track.
+     * 
+     */
     @XmlElement(name = "DataFrom", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dataFrom;
+    /**
+     * The stop date and time of the newest recorded data in the track.
+     * 
+     */
     @XmlElement(name = "DataTo", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dataTo;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the trackToken property.
@@ -96,7 +113,8 @@ public class TrackInformation {
     }
 
     /**
-     * Gets the value of the trackType property.
+     * Type of the track: "Video", "Audio" or "Metadata".
+     *             The track shall only be able to hold data of that type.
      * 
      * @return
      *     possible object is
@@ -114,13 +132,14 @@ public class TrackInformation {
      *     allowed object is
      *     {@link TrackType }
      *     
+     * @see #getTrackType()
      */
     public void setTrackType(TrackType value) {
         this.trackType = value;
     }
 
     /**
-     * Gets the value of the description property.
+     * Informative description of the contents of the track.
      * 
      * @return
      *     possible object is
@@ -138,13 +157,14 @@ public class TrackInformation {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;
     }
 
     /**
-     * Gets the value of the dataFrom property.
+     * The start date and time of the oldest recorded data in the track.
      * 
      * @return
      *     possible object is
@@ -162,13 +182,14 @@ public class TrackInformation {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getDataFrom()
      */
     public void setDataFrom(XMLGregorianCalendar value) {
         this.dataFrom = value;
     }
 
     /**
-     * Gets the value of the dataTo property.
+     * The stop date and time of the newest recorded data in the track.
      * 
      * @return
      *     possible object is
@@ -186,6 +207,7 @@ public class TrackInformation {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getDataTo()
      */
     public void setDataTo(XMLGregorianCalendar value) {
         this.dataTo = value;
@@ -194,16 +216,16 @@ public class TrackInformation {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -211,12 +233,15 @@ public class TrackInformation {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

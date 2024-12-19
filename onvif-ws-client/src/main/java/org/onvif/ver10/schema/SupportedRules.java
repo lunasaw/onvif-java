@@ -15,24 +15,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SupportedRules complex type.
+ * <p>Java class for SupportedRules complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SupportedRules"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="RuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedRulesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SupportedRules">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="RuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedRulesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,70 +44,88 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SupportedRules {
 
+    /**
+     * Lists the location of all schemas that are referenced in the rules.
+     * 
+     */
     @XmlElement(name = "RuleContentSchemaLocation")
     @XmlSchemaType(name = "anyURI")
     protected List<String> ruleContentSchemaLocation;
+    /**
+     * List of rules supported by the Video Analytics configuration..
+     * 
+     */
     @XmlElement(name = "RuleDescription")
     protected List<ConfigDescription> ruleDescription;
     @XmlElement(name = "Extension")
     protected SupportedRulesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * Lists the location of all schemas that are referenced in the rules.
+     * 
      * Gets the value of the ruleContentSchemaLocation property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ruleContentSchemaLocation property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ruleContentSchemaLocation property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getRuleContentSchemaLocation().add(newItem);
+     * getRuleContentSchemaLocation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ruleContentSchemaLocation property.
      */
     public List<String> getRuleContentSchemaLocation() {
         if (ruleContentSchemaLocation == null) {
-            ruleContentSchemaLocation = new ArrayList<String>();
+            ruleContentSchemaLocation = new ArrayList<>();
         }
         return this.ruleContentSchemaLocation;
     }
 
     /**
+     * List of rules supported by the Video Analytics configuration..
+     * 
      * Gets the value of the ruleDescription property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ruleDescription property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ruleDescription property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getRuleDescription().add(newItem);
+     * getRuleDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigDescription }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ruleDescription property.
      */
     public List<ConfigDescription> getRuleDescription() {
         if (ruleDescription == null) {
-            ruleDescription = new ArrayList<ConfigDescription>();
+            ruleDescription = new ArrayList<>();
         }
         return this.ruleDescription;
     }

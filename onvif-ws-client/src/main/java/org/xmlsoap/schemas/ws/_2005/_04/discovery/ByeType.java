@@ -19,27 +19,27 @@ import org.xmlsoap.schemas.ws._2004._08.addressing.EndpointReferenceType;
 
 
 /**
- * <p>Java class for ByeType complex type.
+ * <p>Java class for ByeType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ByeType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element ref="{http://schemas.xmlsoap.org/ws/2004/08/addressing}EndpointReference"/&gt;
- *         &lt;element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}Types" minOccurs="0"/&gt;
- *         &lt;element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}Scopes" minOccurs="0"/&gt;
- *         &lt;element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}XAddrs" minOccurs="0"/&gt;
- *         &lt;element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}MetadataVersion" minOccurs="0"/&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ByeType">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element ref="{http://schemas.xmlsoap.org/ws/2004/08/addressing}EndpointReference"/>
+ *         <element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}Types" minOccurs="0"/>
+ *         <element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}Scopes" minOccurs="0"/>
+ *         <element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}XAddrs" minOccurs="0"/>
+ *         <element ref="{http://schemas.xmlsoap.org/ws/2005/04/discovery}MetadataVersion" minOccurs="0"/>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -70,7 +70,7 @@ public class ByeType {
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the endpointReference property.
@@ -99,28 +99,31 @@ public class ByeType {
     /**
      * Gets the value of the types property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the types property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the types property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getTypes().add(newItem);
+     * getTypes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link QName }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the types property.
      */
     public List<QName> getTypes() {
         if (types == null) {
-            types = new ArrayList<QName>();
+            types = new ArrayList<>();
         }
         return this.types;
     }
@@ -152,28 +155,31 @@ public class ByeType {
     /**
      * Gets the value of the xAddrs property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the xAddrs property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the xAddrs property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getXAddrs().add(newItem);
+     * getXAddrs().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the xAddrs property.
      */
     public List<String> getXAddrs() {
         if (xAddrs == null) {
-            xAddrs = new ArrayList<String>();
+            xAddrs = new ArrayList<>();
         }
         return this.xAddrs;
     }
@@ -205,16 +211,16 @@ public class ByeType {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -222,12 +228,15 @@ public class ByeType {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

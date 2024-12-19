@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AbsoluteFocus complex type.
+ * <p>Java class for AbsoluteFocus complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AbsoluteFocus"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AbsoluteFocus">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class AbsoluteFocus {
 
+    /**
+     * Position parameter for the absolute focus control.
+     * 
+     */
     @XmlElement(name = "Position")
     protected float position;
+    /**
+     * Speed parameter for the absolute focus control.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected Float speed;
 
     /**
-     * Gets the value of the position property.
+     * Position parameter for the absolute focus control.
      * 
      */
     public float getPosition() {
@@ -56,7 +64,7 @@ public class AbsoluteFocus {
     }
 
     /**
-     * Gets the value of the speed property.
+     * Speed parameter for the absolute focus control.
      * 
      * @return
      *     possible object is
@@ -74,6 +82,7 @@ public class AbsoluteFocus {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getSpeed()
      */
     public void setSpeed(Float value) {
         this.speed = value;

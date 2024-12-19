@@ -18,36 +18,36 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Service complex type.
+ * <p>Java class for Service complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Service"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Namespace" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="Capabilities" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax'/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="Version" type="{http://www.onvif.org/ver10/schema}OnvifVersion"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Service">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Namespace" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="Capabilities" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax'/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *         <element name="Version" type="{http://www.onvif.org/ver10/schema}OnvifVersion"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -61,23 +61,40 @@ import org.w3c.dom.Element;
 })
 public class Service {
 
+    /**
+     * Namespace of the service being described. This parameter allows to
+     *                 match the service capabilities to the service. Note that only one set of
+     *                 capabilities is supported per namespace.
+     * 
+     */
     @XmlElement(name = "Namespace", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String namespace;
+    /**
+     * The transport addresses where the service can be reached. The scheme
+     *                 and IP part shall match the one used in the request (i.e. the GetServices request).
+     * 
+     */
     @XmlElement(name = "XAddr", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String xAddr;
     @XmlElement(name = "Capabilities")
     protected Service.Capabilities capabilities;
+    /**
+     * The version of the service (not the ONVIF core spec version).
+     * 
+     */
     @XmlElement(name = "Version", required = true)
     protected OnvifVersion version;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the namespace property.
+     * Namespace of the service being described. This parameter allows to
+     *                 match the service capabilities to the service. Note that only one set of
+     *                 capabilities is supported per namespace.
      * 
      * @return
      *     possible object is
@@ -95,13 +112,15 @@ public class Service {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getNamespace()
      */
     public void setNamespace(String value) {
         this.namespace = value;
     }
 
     /**
-     * Gets the value of the xAddr property.
+     * The transport addresses where the service can be reached. The scheme
+     *                 and IP part shall match the one used in the request (i.e. the GetServices request).
      * 
      * @return
      *     possible object is
@@ -119,6 +138,7 @@ public class Service {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getXAddr()
      */
     public void setXAddr(String value) {
         this.xAddr = value;
@@ -149,7 +169,7 @@ public class Service {
     }
 
     /**
-     * Gets the value of the version property.
+     * The version of the service (not the ONVIF core spec version).
      * 
      * @return
      *     possible object is
@@ -167,6 +187,7 @@ public class Service {
      *     allowed object is
      *     {@link OnvifVersion }
      *     
+     * @see #getVersion()
      */
     public void setVersion(OnvifVersion value) {
         this.version = value;
@@ -175,16 +196,16 @@ public class Service {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -192,12 +213,15 @@ public class Service {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
@@ -222,21 +246,21 @@ public class Service {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax'/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax'/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -246,11 +270,19 @@ public class Service {
     })
     public static class Capabilities {
 
+        /**
+         * The placeholder for the service capabilities. The service
+         *                       capability element shall be returned here. For example for the device service
+         *                       that would be the tds:DeviceServiceCapabilities element (not complextype).
+         * 
+         */
         @XmlAnyElement(lax = true)
         protected Object any;
 
         /**
-         * Gets the value of the any property.
+         * The placeholder for the service capabilities. The service
+         *                       capability element shall be returned here. For example for the device service
+         *                       that would be the tds:DeviceServiceCapabilities element (not complextype).
          * 
          * @return
          *     possible object is
@@ -270,6 +302,7 @@ public class Service {
          *     {@link Object }
          *     {@link Element }
          *     
+         * @see #getAny()
          */
         public void setAny(Object value) {
             this.any = value;

@@ -14,24 +14,24 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Subject" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DistinguishedName"/&gt;
- *         &lt;element name="KeyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeyID"/&gt;
- *         &lt;element name="CSRAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CSRAttribute" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="SignatureAlgorithm" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}AlgorithmIdentifier"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Subject" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DistinguishedName"/>
+ *         <element name="KeyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeyID"/>
+ *         <element name="CSRAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CSRAttribute" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="SignatureAlgorithm" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}AlgorithmIdentifier"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,19 +45,36 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "CreatePKCS10CSR")
 public class CreatePKCS10CSR {
 
+    /**
+     * The subject to be included in the CSR.
+     * 
+     */
     @XmlElement(name = "Subject", required = true)
     protected DistinguishedName subject;
+    /**
+     * The ID of the key for which the CSR shall be created.
+     * 
+     */
     @XmlElement(name = "KeyID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
     protected String keyID;
+    /**
+     * An attribute to be included in the CSR.
+     * 
+     */
     @XmlElement(name = "CSRAttribute")
     protected List<CSRAttribute> csrAttribute;
+    /**
+     * The signature algorithm to be used to sign the CSR. Defaults to
+     *                   SHA1 with RSA Encryption.
+     * 
+     */
     @XmlElement(name = "SignatureAlgorithm", required = true)
     protected AlgorithmIdentifier signatureAlgorithm;
 
     /**
-     * Gets the value of the subject property.
+     * The subject to be included in the CSR.
      * 
      * @return
      *     possible object is
@@ -75,13 +92,14 @@ public class CreatePKCS10CSR {
      *     allowed object is
      *     {@link DistinguishedName }
      *     
+     * @see #getSubject()
      */
     public void setSubject(DistinguishedName value) {
         this.subject = value;
     }
 
     /**
-     * Gets the value of the keyID property.
+     * The ID of the key for which the CSR shall be created.
      * 
      * @return
      *     possible object is
@@ -99,42 +117,49 @@ public class CreatePKCS10CSR {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getKeyID()
      */
     public void setKeyID(String value) {
         this.keyID = value;
     }
 
     /**
+     * An attribute to be included in the CSR.
+     * 
      * Gets the value of the csrAttribute property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the csrAttribute property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the csrAttribute property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getCSRAttribute().add(newItem);
+     * getCSRAttribute().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link CSRAttribute }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the csrAttribute property.
      */
     public List<CSRAttribute> getCSRAttribute() {
         if (csrAttribute == null) {
-            csrAttribute = new ArrayList<CSRAttribute>();
+            csrAttribute = new ArrayList<>();
         }
         return this.csrAttribute;
     }
 
     /**
-     * Gets the value of the signatureAlgorithm property.
+     * The signature algorithm to be used to sign the CSR. Defaults to
+     *                   SHA1 with RSA Encryption.
      * 
      * @return
      *     possible object is
@@ -152,6 +177,7 @@ public class CreatePKCS10CSR {
      *     allowed object is
      *     {@link AlgorithmIdentifier }
      *     
+     * @see #getSignatureAlgorithm()
      */
     public void setSignatureAlgorithm(AlgorithmIdentifier value) {
         this.signatureAlgorithm = value;

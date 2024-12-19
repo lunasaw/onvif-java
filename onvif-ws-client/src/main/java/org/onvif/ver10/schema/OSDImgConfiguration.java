@@ -13,23 +13,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OSDImgConfiguration complex type.
+ * <p>Java class for OSDImgConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OSDImgConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ImgPath" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDImgConfigurationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OSDImgConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ImgPath" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDImgConfigurationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -40,16 +40,20 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OSDImgConfiguration {
 
+    /**
+     * The URI of the image which to be displayed.
+     * 
+     */
     @XmlElement(name = "ImgPath", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String imgPath;
     @XmlElement(name = "Extension")
     protected OSDImgConfigurationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the imgPath property.
+     * The URI of the image which to be displayed.
      * 
      * @return
      *     possible object is
@@ -67,6 +71,7 @@ public class OSDImgConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getImgPath()
      */
     public void setImgPath(String value) {
         this.imgPath = value;

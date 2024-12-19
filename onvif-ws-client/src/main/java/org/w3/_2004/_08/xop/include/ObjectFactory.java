@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.w3._2004._08.xop.include package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Include_QNAME = new QName("http://www.w3.org/2004/08/xop/include", "Include");
+    private static final QName _Include_QNAME = new QName("http://www.w3.org/2004/08/xop/include", "Include");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.w3._2004._08.xop.include
@@ -36,6 +36,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Include }
      * 
+     * @return
+     *     the new instance of {@link Include }
      */
     public Include createInclude() {
         return new Include();
@@ -51,7 +53,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.w3.org/2004/08/xop/include", name = "Include")
     public JAXBElement<Include> createInclude(Include value) {
-        return new JAXBElement<Include>(_Include_QNAME, Include.class, null, value);
+        return new JAXBElement<>(_Include_QNAME, Include.class, null, value);
     }
 
 }

@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.Capabilities;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Capabilities" type="{http://www.onvif.org/ver10/schema}Capabilities"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Capabilities" type="{http://www.onvif.org/ver10/schema}Capabilities"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.Capabilities;
 @XmlRootElement(name = "GetCapabilitiesResponse")
 public class GetCapabilitiesResponse {
 
+    /**
+     * Capability information.
+     * 
+     */
     @XmlElement(name = "Capabilities", required = true)
     protected Capabilities capabilities;
 
     /**
-     * Gets the value of the capabilities property.
+     * Capability information.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetCapabilitiesResponse {
      *     allowed object is
      *     {@link Capabilities }
      *     
+     * @see #getCapabilities()
      */
     public void setCapabilities(Capabilities value) {
         this.capabilities = value;

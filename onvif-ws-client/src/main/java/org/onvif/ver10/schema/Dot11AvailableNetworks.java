@@ -17,28 +17,28 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for Dot11AvailableNetworks complex type.
+ * <p>Java class for Dot11AvailableNetworks complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Dot11AvailableNetworks"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SSID" type="{http://www.onvif.org/ver10/schema}Dot11SSIDType"/&gt;
- *         &lt;element name="BSSID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="AuthAndMangementSuite" type="{http://www.onvif.org/ver10/schema}Dot11AuthAndMangementSuite" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="PairCipher" type="{http://www.onvif.org/ver10/schema}Dot11Cipher" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="GroupCipher" type="{http://www.onvif.org/ver10/schema}Dot11Cipher" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="SignalStrength" type="{http://www.onvif.org/ver10/schema}Dot11SignalStrength" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}Dot11AvailableNetworksExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Dot11AvailableNetworks">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SSID" type="{http://www.onvif.org/ver10/schema}Dot11SSIDType"/>
+ *         <element name="BSSID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="AuthAndMangementSuite" type="{http://www.onvif.org/ver10/schema}Dot11AuthAndMangementSuite" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="PairCipher" type="{http://www.onvif.org/ver10/schema}Dot11Cipher" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="GroupCipher" type="{http://www.onvif.org/ver10/schema}Dot11Cipher" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="SignalStrength" type="{http://www.onvif.org/ver10/schema}Dot11SignalStrength" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}Dot11AvailableNetworksExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -60,6 +60,10 @@ public class Dot11AvailableNetworks {
     protected byte[] ssid;
     @XmlElement(name = "BSSID")
     protected String bssid;
+    /**
+     * See IEEE802.11 7.3.2.25.2 for details.
+     * 
+     */
     @XmlElement(name = "AuthAndMangementSuite")
     @XmlSchemaType(name = "string")
     protected List<Dot11AuthAndMangementSuite> authAndMangementSuite;
@@ -75,7 +79,7 @@ public class Dot11AvailableNetworks {
     @XmlElement(name = "Extension")
     protected Dot11AvailableNetworksExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the ssid property.
@@ -126,30 +130,35 @@ public class Dot11AvailableNetworks {
     }
 
     /**
+     * See IEEE802.11 7.3.2.25.2 for details.
+     * 
      * Gets the value of the authAndMangementSuite property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the authAndMangementSuite property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the authAndMangementSuite property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAuthAndMangementSuite().add(newItem);
+     * getAuthAndMangementSuite().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Dot11AuthAndMangementSuite }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the authAndMangementSuite property.
      */
     public List<Dot11AuthAndMangementSuite> getAuthAndMangementSuite() {
         if (authAndMangementSuite == null) {
-            authAndMangementSuite = new ArrayList<Dot11AuthAndMangementSuite>();
+            authAndMangementSuite = new ArrayList<>();
         }
         return this.authAndMangementSuite;
     }
@@ -157,28 +166,31 @@ public class Dot11AvailableNetworks {
     /**
      * Gets the value of the pairCipher property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the pairCipher property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pairCipher property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPairCipher().add(newItem);
+     * getPairCipher().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Dot11Cipher }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the pairCipher property.
      */
     public List<Dot11Cipher> getPairCipher() {
         if (pairCipher == null) {
-            pairCipher = new ArrayList<Dot11Cipher>();
+            pairCipher = new ArrayList<>();
         }
         return this.pairCipher;
     }
@@ -186,28 +198,31 @@ public class Dot11AvailableNetworks {
     /**
      * Gets the value of the groupCipher property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the groupCipher property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the groupCipher property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getGroupCipher().add(newItem);
+     * getGroupCipher().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Dot11Cipher }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the groupCipher property.
      */
     public List<Dot11Cipher> getGroupCipher() {
         if (groupCipher == null) {
-            groupCipher = new ArrayList<Dot11Cipher>();
+            groupCipher = new ArrayList<>();
         }
         return this.groupCipher;
     }

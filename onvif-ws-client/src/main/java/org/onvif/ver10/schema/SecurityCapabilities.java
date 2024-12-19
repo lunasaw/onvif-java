@@ -16,31 +16,31 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for SecurityCapabilities complex type.
+ * <p>Java class for SecurityCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SecurityCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="TLS1.1" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="TLS1.2" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="OnboardKeyGeneration" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="AccessPolicyConfig" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="X.509Token" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SAMLToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="KerberosToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="RELToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SecurityCapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SecurityCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="TLS1.1" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="TLS1.2" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="OnboardKeyGeneration" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="AccessPolicyConfig" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="X.509Token" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SAMLToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="KerberosToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="RELToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SecurityCapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -59,20 +59,52 @@ import org.w3c.dom.Element;
 })
 public class SecurityCapabilities {
 
+    /**
+     * Indicates whether or not TLS 1.1 is supported.
+     * 
+     */
     @XmlElement(name = "TLS1.1")
     protected boolean tls11;
+    /**
+     * Indicates whether or not TLS 1.2 is supported.
+     * 
+     */
     @XmlElement(name = "TLS1.2")
     protected boolean tls12;
+    /**
+     * Indicates whether or not onboard key generation is supported.
+     * 
+     */
     @XmlElement(name = "OnboardKeyGeneration")
     protected boolean onboardKeyGeneration;
+    /**
+     * Indicates whether or not access policy configuration is supported.
+     * 
+     */
     @XmlElement(name = "AccessPolicyConfig")
     protected boolean accessPolicyConfig;
+    /**
+     * Indicates whether or not WS-Security X.509 token is supported.
+     * 
+     */
     @XmlElement(name = "X.509Token")
     protected boolean x509Token;
+    /**
+     * Indicates whether or not WS-Security SAML token is supported.
+     * 
+     */
     @XmlElement(name = "SAMLToken")
     protected boolean samlToken;
+    /**
+     * Indicates whether or not WS-Security Kerberos token is supported.
+     * 
+     */
     @XmlElement(name = "KerberosToken")
     protected boolean kerberosToken;
+    /**
+     * Indicates whether or not WS-Security REL token is supported.
+     * 
+     */
     @XmlElement(name = "RELToken")
     protected boolean relToken;
     @XmlAnyElement(lax = true)
@@ -80,10 +112,10 @@ public class SecurityCapabilities {
     @XmlElement(name = "Extension")
     protected SecurityCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the tls11 property.
+     * Indicates whether or not TLS 1.1 is supported.
      * 
      */
     public boolean isTLS11() {
@@ -99,7 +131,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the tls12 property.
+     * Indicates whether or not TLS 1.2 is supported.
      * 
      */
     public boolean isTLS12() {
@@ -115,7 +147,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the onboardKeyGeneration property.
+     * Indicates whether or not onboard key generation is supported.
      * 
      */
     public boolean isOnboardKeyGeneration() {
@@ -131,7 +163,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the accessPolicyConfig property.
+     * Indicates whether or not access policy configuration is supported.
      * 
      */
     public boolean isAccessPolicyConfig() {
@@ -147,7 +179,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the x509Token property.
+     * Indicates whether or not WS-Security X.509 token is supported.
      * 
      */
     public boolean isX509Token() {
@@ -163,7 +195,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the samlToken property.
+     * Indicates whether or not WS-Security SAML token is supported.
      * 
      */
     public boolean isSAMLToken() {
@@ -179,7 +211,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the kerberosToken property.
+     * Indicates whether or not WS-Security Kerberos token is supported.
      * 
      */
     public boolean isKerberosToken() {
@@ -195,7 +227,7 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Gets the value of the relToken property.
+     * Indicates whether or not WS-Security REL token is supported.
      * 
      */
     public boolean isRELToken() {
@@ -213,16 +245,16 @@ public class SecurityCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -230,12 +262,15 @@ public class SecurityCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

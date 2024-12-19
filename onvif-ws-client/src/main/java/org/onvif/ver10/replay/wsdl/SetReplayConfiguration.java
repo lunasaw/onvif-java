@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.ReplayConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Configuration" type="{http://www.onvif.org/ver10/schema}ReplayConfiguration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Configuration" type="{http://www.onvif.org/ver10/schema}ReplayConfiguration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.ReplayConfiguration;
 @XmlRootElement(name = "SetReplayConfiguration")
 public class SetReplayConfiguration {
 
+    /**
+     * Description of the new replay configuration parameters.
+     * 
+     */
     @XmlElement(name = "Configuration", required = true)
     protected ReplayConfiguration configuration;
 
     /**
-     * Gets the value of the configuration property.
+     * Description of the new replay configuration parameters.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class SetReplayConfiguration {
      *     allowed object is
      *     {@link ReplayConfiguration }
      *     
+     * @see #getConfiguration()
      */
     public void setConfiguration(ReplayConfiguration value) {
         this.configuration = value;

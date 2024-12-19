@@ -17,32 +17,32 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for ImagingOptions complex type.
+ * <p>Java class for ImagingOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ImagingOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions"/&gt;
- *         &lt;element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions"/&gt;
- *         &lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions"/&gt;
- *         &lt;element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions"/&gt;
- *         &lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ImagingOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions"/>
+ *         <element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions"/>
+ *         <element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions"/>
+ *         <element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded"/>
+ *         <element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions"/>
+ *         <element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -86,7 +86,7 @@ public class ImagingOptions {
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the backlightCompensation property.
@@ -235,28 +235,31 @@ public class ImagingOptions {
     /**
      * Gets the value of the irCutFilterModes property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the irCutFilterModes property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the irCutFilterModes property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getIrCutFilterModes().add(newItem);
+     * getIrCutFilterModes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link IrCutFilterMode }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the irCutFilterModes property.
      */
     public List<IrCutFilterMode> getIrCutFilterModes() {
         if (irCutFilterModes == null) {
-            irCutFilterModes = new ArrayList<IrCutFilterMode>();
+            irCutFilterModes = new ArrayList<>();
         }
         return this.irCutFilterModes;
     }
@@ -336,16 +339,16 @@ public class ImagingOptions {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -353,12 +356,15 @@ public class ImagingOptions {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.DNSInformation;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="DNSInformation" type="{http://www.onvif.org/ver10/schema}DNSInformation"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="DNSInformation" type="{http://www.onvif.org/ver10/schema}DNSInformation"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.DNSInformation;
 @XmlRootElement(name = "GetDNSResponse")
 public class GetDNSResponse {
 
+    /**
+     * DNS information.
+     * 
+     */
     @XmlElement(name = "DNSInformation", required = true)
     protected DNSInformation dnsInformation;
 
     /**
-     * Gets the value of the dnsInformation property.
+     * DNS information.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetDNSResponse {
      *     allowed object is
      *     {@link DNSInformation }
      *     
+     * @see #getDNSInformation()
      */
     public void setDNSInformation(DNSInformation value) {
         this.dnsInformation = value;

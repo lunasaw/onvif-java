@@ -12,23 +12,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TrackOptions complex type.
+ * <p>Java class for TrackOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="TrackOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="SpareTotal" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="SpareVideo" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="SpareAudio" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="SpareMetadata" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="TrackOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="SpareTotal" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="SpareVideo" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="SpareAudio" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="SpareMetadata" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,19 +36,35 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "TrackOptions")
 public class TrackOptions {
 
+    /**
+     * Total spare number of tracks that can be added to this recording.
+     * 
+     */
     @XmlAttribute(name = "SpareTotal")
     protected Integer spareTotal;
+    /**
+     * Number of spare Video tracks that can be added to this recording.
+     * 
+     */
     @XmlAttribute(name = "SpareVideo")
     protected Integer spareVideo;
+    /**
+     * Number of spare Aduio tracks that can be added to this recording.
+     * 
+     */
     @XmlAttribute(name = "SpareAudio")
     protected Integer spareAudio;
+    /**
+     * Number of spare Metadata tracks that can be added to this recording.
+     * 
+     */
     @XmlAttribute(name = "SpareMetadata")
     protected Integer spareMetadata;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the spareTotal property.
+     * Total spare number of tracks that can be added to this recording.
      * 
      * @return
      *     possible object is
@@ -66,13 +82,14 @@ public class TrackOptions {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getSpareTotal()
      */
     public void setSpareTotal(Integer value) {
         this.spareTotal = value;
     }
 
     /**
-     * Gets the value of the spareVideo property.
+     * Number of spare Video tracks that can be added to this recording.
      * 
      * @return
      *     possible object is
@@ -90,13 +107,14 @@ public class TrackOptions {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getSpareVideo()
      */
     public void setSpareVideo(Integer value) {
         this.spareVideo = value;
     }
 
     /**
-     * Gets the value of the spareAudio property.
+     * Number of spare Aduio tracks that can be added to this recording.
      * 
      * @return
      *     possible object is
@@ -114,13 +132,14 @@ public class TrackOptions {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getSpareAudio()
      */
     public void setSpareAudio(Integer value) {
         this.spareAudio = value;
     }
 
     /**
-     * Gets the value of the spareMetadata property.
+     * Number of spare Metadata tracks that can be added to this recording.
      * 
      * @return
      *     possible object is
@@ -138,6 +157,7 @@ public class TrackOptions {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getSpareMetadata()
      */
     public void setSpareMetadata(Integer value) {
         this.spareMetadata = value;

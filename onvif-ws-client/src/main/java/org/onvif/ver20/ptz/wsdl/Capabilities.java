@@ -16,27 +16,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Capabilities complex type.
+ * <p>Java class for Capabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="EFlip" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Reverse" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="GetCompatibleConfigurations" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="MoveStatus" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="StatusPosition" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="EFlip" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Reverse" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="GetCompatibleConfigurations" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="MoveStatus" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="StatusPosition" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -48,32 +48,53 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * Indicates whether or not EFlip is supported.
+     * 
+     */
     @XmlAttribute(name = "EFlip")
     protected Boolean eFlip;
+    /**
+     * Indicates whether or not reversing of PT control direction is
+     *               supported.
+     * 
+     */
     @XmlAttribute(name = "Reverse")
     protected Boolean reverse;
+    /**
+     * Indicates support for the GetCompatibleConfigurations command.
+     * 
+     */
     @XmlAttribute(name = "GetCompatibleConfigurations")
     protected Boolean getCompatibleConfigurations;
+    /**
+     * Indicates that the PTZVector includes MoveStatus information.
+     * 
+     */
     @XmlAttribute(name = "MoveStatus")
     protected Boolean moveStatus;
+    /**
+     * Indicates that the PTZVector includes Position information.
+     * 
+     */
     @XmlAttribute(name = "StatusPosition")
     protected Boolean statusPosition;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -81,18 +102,21 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the eFlip property.
+     * Indicates whether or not EFlip is supported.
      * 
      * @return
      *     possible object is
@@ -110,13 +134,15 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isEFlip()
      */
     public void setEFlip(Boolean value) {
         this.eFlip = value;
     }
 
     /**
-     * Gets the value of the reverse property.
+     * Indicates whether or not reversing of PT control direction is
+     *               supported.
      * 
      * @return
      *     possible object is
@@ -134,13 +160,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isReverse()
      */
     public void setReverse(Boolean value) {
         this.reverse = value;
     }
 
     /**
-     * Gets the value of the getCompatibleConfigurations property.
+     * Indicates support for the GetCompatibleConfigurations command.
      * 
      * @return
      *     possible object is
@@ -158,13 +185,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isGetCompatibleConfigurations()
      */
     public void setGetCompatibleConfigurations(Boolean value) {
         this.getCompatibleConfigurations = value;
     }
 
     /**
-     * Gets the value of the moveStatus property.
+     * Indicates that the PTZVector includes MoveStatus information.
      * 
      * @return
      *     possible object is
@@ -182,13 +210,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isMoveStatus()
      */
     public void setMoveStatus(Boolean value) {
         this.moveStatus = value;
     }
 
     /**
-     * Gets the value of the statusPosition property.
+     * Indicates that the PTZVector includes Position information.
      * 
      * @return
      *     possible object is
@@ -206,6 +235,7 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isStatusPosition()
      */
     public void setStatusPosition(Boolean value) {
         this.statusPosition = value;

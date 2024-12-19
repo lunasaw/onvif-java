@@ -18,26 +18,25 @@ import org.w3c.dom.Element;
 /**
  * A pane layout describes one Video window of a display. It links a pane
  *         configuration to a region of the screen.
- *       
  * 
- * <p>Java class for PaneLayout complex type.
+ * <p>Java class for PaneLayout complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PaneLayout"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Pane" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="Area" type="{http://www.onvif.org/ver10/schema}Rectangle"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PaneLayout">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Pane" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="Area" type="{http://www.onvif.org/ver10/schema}Rectangle"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,17 +48,26 @@ import org.w3c.dom.Element;
 })
 public class PaneLayout {
 
+    /**
+     * Reference to the configuration of the streaming and coding parameters.
+     * 
+     */
     @XmlElement(name = "Pane", required = true)
     protected String pane;
+    /**
+     * Describes the location and size of the area on the monitor. The area
+     *             coordinate values are espressed in normalized units [-1.0, 1.0].
+     * 
+     */
     @XmlElement(name = "Area", required = true)
     protected Rectangle area;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the pane property.
+     * Reference to the configuration of the streaming and coding parameters.
      * 
      * @return
      *     possible object is
@@ -77,13 +85,15 @@ public class PaneLayout {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPane()
      */
     public void setPane(String value) {
         this.pane = value;
     }
 
     /**
-     * Gets the value of the area property.
+     * Describes the location and size of the area on the monitor. The area
+     *             coordinate values are espressed in normalized units [-1.0, 1.0].
      * 
      * @return
      *     possible object is
@@ -101,6 +111,7 @@ public class PaneLayout {
      *     allowed object is
      *     {@link Rectangle }
      *     
+     * @see #getArea()
      */
     public void setArea(Rectangle value) {
         this.area = value;
@@ -109,16 +120,16 @@ public class PaneLayout {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -126,12 +137,15 @@ public class PaneLayout {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

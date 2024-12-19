@@ -16,20 +16,20 @@ import jakarta.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for ScopesType complex type.
+ * <p>Java class for ScopesType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ScopesType"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://schemas.xmlsoap.org/ws/2005/04/discovery&gt;UriListType"&gt;
- *       &lt;attribute name="MatchBy" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ScopesType">
+ *   <simpleContent>
+ *     <extension base="<http://schemas.xmlsoap.org/ws/2005/04/discovery>UriListType">
+ *       <attribute name="MatchBy" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </simpleContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,33 +45,36 @@ public class ScopesType {
     @XmlSchemaType(name = "anyURI")
     protected String matchBy;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the value property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the value property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the value property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getValue().add(newItem);
+     * getValue().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the value property.
      */
     public List<String> getValue() {
         if (value == null) {
-            value = new ArrayList<String>();
+            value = new ArrayList<>();
         }
         return this.value;
     }

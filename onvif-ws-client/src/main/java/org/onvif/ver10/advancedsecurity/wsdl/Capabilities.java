@@ -18,26 +18,25 @@ import org.w3c.dom.Element;
 /**
  * The capabilities of an Advanced Security Service implementation on a
  *             device.
- *           
  * 
- * <p>Java class for Capabilities complex type.
+ * <p>Java class for Capabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="KeystoreCapabilities" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeystoreCapabilities"/&gt;
- *         &lt;element name="TLSServerCapabilities" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}TLSServerCapabilities"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="KeystoreCapabilities" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}KeystoreCapabilities"/>
+ *         <element name="TLSServerCapabilities" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}TLSServerCapabilities"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,17 +48,25 @@ import org.w3c.dom.Element;
 })
 public class Capabilities {
 
+    /**
+     * The capabilities of the keystore implementation.
+     * 
+     */
     @XmlElement(name = "KeystoreCapabilities", required = true)
     protected KeystoreCapabilities keystoreCapabilities;
+    /**
+     * The capabilities of the TLS server implementation.
+     * 
+     */
     @XmlElement(name = "TLSServerCapabilities", required = true)
     protected TLSServerCapabilities tlsServerCapabilities;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the keystoreCapabilities property.
+     * The capabilities of the keystore implementation.
      * 
      * @return
      *     possible object is
@@ -77,13 +84,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link KeystoreCapabilities }
      *     
+     * @see #getKeystoreCapabilities()
      */
     public void setKeystoreCapabilities(KeystoreCapabilities value) {
         this.keystoreCapabilities = value;
     }
 
     /**
-     * Gets the value of the tlsServerCapabilities property.
+     * The capabilities of the TLS server implementation.
      * 
      * @return
      *     possible object is
@@ -101,6 +109,7 @@ public class Capabilities {
      *     allowed object is
      *     {@link TLSServerCapabilities }
      *     
+     * @see #getTLSServerCapabilities()
      */
     public void setTLSServerCapabilities(TLSServerCapabilities value) {
         this.tlsServerCapabilities = value;
@@ -109,16 +118,16 @@ public class Capabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -126,12 +135,15 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

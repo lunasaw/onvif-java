@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.Profile;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Profile" type="{http://www.onvif.org/ver10/schema}Profile"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Profile" type="{http://www.onvif.org/ver10/schema}Profile"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.Profile;
 @XmlRootElement(name = "CreateProfileResponse")
 public class CreateProfileResponse {
 
+    /**
+     * returns the new created profile
+     * 
+     */
     @XmlElement(name = "Profile", required = true)
     protected Profile profile;
 
     /**
-     * Gets the value of the profile property.
+     * returns the new created profile
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class CreateProfileResponse {
      *     allowed object is
      *     {@link Profile }
      *     
+     * @see #getProfile()
      */
     public void setProfile(Profile value) {
         this.profile = value;

@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AccessPointState" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointState"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AccessPointState" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointState"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetAccessPointStateResponse")
 public class GetAccessPointStateResponse {
 
+    /**
+     * AccessPointState item.
+     * 
+     */
     @XmlElement(name = "AccessPointState", required = true)
     protected AccessPointState accessPointState;
 
     /**
-     * Gets the value of the accessPointState property.
+     * AccessPointState item.
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class GetAccessPointStateResponse {
      *     allowed object is
      *     {@link AccessPointState }
      *     
+     * @see #getAccessPointState()
      */
     public void setAccessPointState(AccessPointState value) {
         this.accessPointState = value;

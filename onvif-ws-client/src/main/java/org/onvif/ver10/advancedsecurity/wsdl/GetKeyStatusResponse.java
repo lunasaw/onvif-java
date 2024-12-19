@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="KeyStatus" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="KeyStatus" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,17 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetKeyStatusResponse")
 public class GetKeyStatusResponse {
 
+    /**
+     * Status of the requested key. The value should be one of the values
+     *                   in the tas:KeyStatus enumeration.
+     * 
+     */
     @XmlElement(name = "KeyStatus", required = true)
     protected String keyStatus;
 
     /**
-     * Gets the value of the keyStatus property.
+     * Status of the requested key. The value should be one of the values
+     *                   in the tas:KeyStatus enumeration.
      * 
      * @return
      *     possible object is
@@ -56,6 +62,7 @@ public class GetKeyStatusResponse {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getKeyStatus()
      */
     public void setKeyStatus(String value) {
         this.keyStatus = value;

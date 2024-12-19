@@ -12,26 +12,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkCapabilities complex type.
+ * <p>Java class for NetworkCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkCapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkCapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,21 +45,37 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkCapabilities {
 
+    /**
+     * Indicates whether or not IP filtering is supported.
+     * 
+     */
     @XmlElement(name = "IPFilter")
     protected Boolean ipFilter;
+    /**
+     * Indicates whether or not zeroconf is supported.
+     * 
+     */
     @XmlElement(name = "ZeroConfiguration")
     protected Boolean zeroConfiguration;
+    /**
+     * Indicates whether or not IPv6 is supported.
+     * 
+     */
     @XmlElement(name = "IPVersion6")
     protected Boolean ipVersion6;
+    /**
+     * Indicates whether or not is supported.
+     * 
+     */
     @XmlElement(name = "DynDNS")
     protected Boolean dynDNS;
     @XmlElement(name = "Extension")
     protected NetworkCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the ipFilter property.
+     * Indicates whether or not IP filtering is supported.
      * 
      * @return
      *     possible object is
@@ -77,13 +93,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIPFilter()
      */
     public void setIPFilter(Boolean value) {
         this.ipFilter = value;
     }
 
     /**
-     * Gets the value of the zeroConfiguration property.
+     * Indicates whether or not zeroconf is supported.
      * 
      * @return
      *     possible object is
@@ -101,13 +118,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isZeroConfiguration()
      */
     public void setZeroConfiguration(Boolean value) {
         this.zeroConfiguration = value;
     }
 
     /**
-     * Gets the value of the ipVersion6 property.
+     * Indicates whether or not IPv6 is supported.
      * 
      * @return
      *     possible object is
@@ -125,13 +143,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIPVersion6()
      */
     public void setIPVersion6(Boolean value) {
         this.ipVersion6 = value;
     }
 
     /**
-     * Gets the value of the dynDNS property.
+     * Indicates whether or not is supported.
      * 
      * @return
      *     possible object is
@@ -149,6 +168,7 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDynDNS()
      */
     public void setDynDNS(Boolean value) {
         this.dynDNS = value;

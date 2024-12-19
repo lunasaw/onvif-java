@@ -13,25 +13,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPresetTourSpot complex type.
+ * <p>Java class for PTZPresetTourSpot complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourSpot"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PresetDetail" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetail"/&gt;
- *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/&gt;
- *         &lt;element name="StayTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpotExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourSpot">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PresetDetail" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetail"/>
+ *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/>
+ *         <element name="StayTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpotExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,19 +44,33 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourSpot {
 
+    /**
+     * Detail definition of preset position of the tour spot.
+     * 
+     */
     @XmlElement(name = "PresetDetail", required = true)
     protected PTZPresetTourPresetDetail presetDetail;
+    /**
+     * Optional parameter to specify Pan/Tilt and Zoom speed on moving toward
+     *             this tour spot.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected PTZSpeed speed;
+    /**
+     * Optional parameter to specify time duration of staying on this tour
+     *             sport.
+     * 
+     */
     @XmlElement(name = "StayTime")
     protected Duration stayTime;
     @XmlElement(name = "Extension")
     protected PTZPresetTourSpotExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the presetDetail property.
+     * Detail definition of preset position of the tour spot.
      * 
      * @return
      *     possible object is
@@ -74,13 +88,15 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link PTZPresetTourPresetDetail }
      *     
+     * @see #getPresetDetail()
      */
     public void setPresetDetail(PTZPresetTourPresetDetail value) {
         this.presetDetail = value;
     }
 
     /**
-     * Gets the value of the speed property.
+     * Optional parameter to specify Pan/Tilt and Zoom speed on moving toward
+     *             this tour spot.
      * 
      * @return
      *     possible object is
@@ -98,13 +114,15 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link PTZSpeed }
      *     
+     * @see #getSpeed()
      */
     public void setSpeed(PTZSpeed value) {
         this.speed = value;
     }
 
     /**
-     * Gets the value of the stayTime property.
+     * Optional parameter to specify time duration of staying on this tour
+     *             sport.
      * 
      * @return
      *     possible object is
@@ -122,6 +140,7 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getStayTime()
      */
     public void setStayTime(Duration value) {
         this.stayTime = value;

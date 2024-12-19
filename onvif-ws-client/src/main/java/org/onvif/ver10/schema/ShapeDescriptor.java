@@ -14,25 +14,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ShapeDescriptor complex type.
+ * <p>Java class for ShapeDescriptor complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ShapeDescriptor"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BoundingBox" type="{http://www.onvif.org/ver10/schema}Rectangle"/&gt;
- *         &lt;element name="CenterOfGravity" type="{http://www.onvif.org/ver10/schema}Vector"/&gt;
- *         &lt;element name="Polygon" type="{http://www.onvif.org/ver10/schema}Polygon" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ShapeDescriptorExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ShapeDescriptor">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="BoundingBox" type="{http://www.onvif.org/ver10/schema}Rectangle"/>
+ *         <element name="CenterOfGravity" type="{http://www.onvif.org/ver10/schema}Vector"/>
+ *         <element name="Polygon" type="{http://www.onvif.org/ver10/schema}Polygon" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ShapeDescriptorExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -54,7 +54,7 @@ public class ShapeDescriptor {
     @XmlElement(name = "Extension")
     protected ShapeDescriptorExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the boundingBox property.
@@ -107,28 +107,31 @@ public class ShapeDescriptor {
     /**
      * Gets the value of the polygon property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the polygon property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the polygon property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPolygon().add(newItem);
+     * getPolygon().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Polygon }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the polygon property.
      */
     public List<Polygon> getPolygon() {
         if (polygon == null) {
-            polygon = new ArrayList<Polygon>();
+            polygon = new ArrayList<>();
         }
         return this.polygon;
     }

@@ -8,23 +8,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FocusMove complex type.
+ * <p>Java class for FocusMove complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="FocusMove"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Absolute" type="{http://www.onvif.org/ver10/schema}AbsoluteFocus" minOccurs="0"/&gt;
- *         &lt;element name="Relative" type="{http://www.onvif.org/ver10/schema}RelativeFocus" minOccurs="0"/&gt;
- *         &lt;element name="Continuous" type="{http://www.onvif.org/ver10/schema}ContinuousFocus" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="FocusMove">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Absolute" type="{http://www.onvif.org/ver10/schema}AbsoluteFocus" minOccurs="0"/>
+ *         <element name="Relative" type="{http://www.onvif.org/ver10/schema}RelativeFocus" minOccurs="0"/>
+ *         <element name="Continuous" type="{http://www.onvif.org/ver10/schema}ContinuousFocus" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,15 +36,27 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FocusMove {
 
+    /**
+     * Parameters for the absolute focus control.
+     * 
+     */
     @XmlElement(name = "Absolute")
     protected AbsoluteFocus absolute;
+    /**
+     * Parameters for the relative focus control.
+     * 
+     */
     @XmlElement(name = "Relative")
     protected RelativeFocus relative;
+    /**
+     * Parameter for the continuous focus control.
+     * 
+     */
     @XmlElement(name = "Continuous")
     protected ContinuousFocus continuous;
 
     /**
-     * Gets the value of the absolute property.
+     * Parameters for the absolute focus control.
      * 
      * @return
      *     possible object is
@@ -62,13 +74,14 @@ public class FocusMove {
      *     allowed object is
      *     {@link AbsoluteFocus }
      *     
+     * @see #getAbsolute()
      */
     public void setAbsolute(AbsoluteFocus value) {
         this.absolute = value;
     }
 
     /**
-     * Gets the value of the relative property.
+     * Parameters for the relative focus control.
      * 
      * @return
      *     possible object is
@@ -86,13 +99,14 @@ public class FocusMove {
      *     allowed object is
      *     {@link RelativeFocus }
      *     
+     * @see #getRelative()
      */
     public void setRelative(RelativeFocus value) {
         this.relative = value;
     }
 
     /**
-     * Gets the value of the continuous property.
+     * Parameter for the continuous focus control.
      * 
      * @return
      *     possible object is
@@ -110,6 +124,7 @@ public class FocusMove {
      *     allowed object is
      *     {@link ContinuousFocus }
      *     
+     * @see #getContinuous()
      */
     public void setContinuous(ContinuousFocus value) {
         this.continuous = value;

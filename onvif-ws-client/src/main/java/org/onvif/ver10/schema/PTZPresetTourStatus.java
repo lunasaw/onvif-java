@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPresetTourStatus complex type.
+ * <p>Java class for PTZPresetTourStatus complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourStatus"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/schema}PTZPresetTourState"/&gt;
- *         &lt;element name="CurrentTourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatusExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourStatus">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="State" type="{http://www.onvif.org/ver10/schema}PTZPresetTourState"/>
+ *         <element name="CurrentTourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatusExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -42,18 +42,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourStatus {
 
+    /**
+     * Indicates state of this preset tour by Idle/Touring/Paused.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     @XmlSchemaType(name = "string")
     protected PTZPresetTourState state;
+    /**
+     * Indicates a tour spot currently staying.
+     * 
+     */
     @XmlElement(name = "CurrentTourSpot")
     protected PTZPresetTourSpot currentTourSpot;
     @XmlElement(name = "Extension")
     protected PTZPresetTourStatusExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the state property.
+     * Indicates state of this preset tour by Idle/Touring/Paused.
      * 
      * @return
      *     possible object is
@@ -71,13 +79,14 @@ public class PTZPresetTourStatus {
      *     allowed object is
      *     {@link PTZPresetTourState }
      *     
+     * @see #getState()
      */
     public void setState(PTZPresetTourState value) {
         this.state = value;
     }
 
     /**
-     * Gets the value of the currentTourSpot property.
+     * Indicates a tour spot currently staying.
      * 
      * @return
      *     possible object is
@@ -95,6 +104,7 @@ public class PTZPresetTourStatus {
      *     allowed object is
      *     {@link PTZPresetTourSpot }
      *     
+     * @see #getCurrentTourSpot()
      */
     public void setCurrentTourSpot(PTZPresetTourSpot value) {
         this.currentTourSpot = value;

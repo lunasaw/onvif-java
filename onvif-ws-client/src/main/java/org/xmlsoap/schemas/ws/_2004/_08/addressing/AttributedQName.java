@@ -12,19 +12,19 @@ import jakarta.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for AttributedQName complex type.
+ * <p>Java class for AttributedQName complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AttributedQName"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;QName"&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AttributedQName">
+ *   <simpleContent>
+ *     <extension base="<http://www.w3.org/2001/XMLSchema>QName">
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </simpleContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -37,7 +37,7 @@ public class AttributedQName {
     @XmlValue
     protected QName value;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the value property.

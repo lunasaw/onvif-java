@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SetPresetResponse")
 public class SetPresetResponse {
 
+    /**
+     * A token to the Preset which has been set.
+     * 
+     */
     @XmlElement(name = "PresetToken", required = true)
     protected String presetToken;
 
     /**
-     * Gets the value of the presetToken property.
+     * A token to the Preset which has been set.
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class SetPresetResponse {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPresetToken()
      */
     public void setPresetToken(String value) {
         this.presetToken = value;

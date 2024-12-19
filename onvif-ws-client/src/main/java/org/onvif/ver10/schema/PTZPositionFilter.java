@@ -16,25 +16,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for PTZPositionFilter complex type.
+ * <p>Java class for PTZPositionFilter complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPositionFilter"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="MinPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/&gt;
- *         &lt;element name="MaxPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/&gt;
- *         &lt;element name="EnterOrExit" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPositionFilter">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="MinPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/>
+ *         <element name="MaxPosition" type="{http://www.onvif.org/ver10/schema}PTZVector"/>
+ *         <element name="EnterOrExit" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,19 +47,31 @@ import org.w3c.dom.Element;
 })
 public class PTZPositionFilter {
 
+    /**
+     * The lower boundary of the PTZ volume to look for.
+     * 
+     */
     @XmlElement(name = "MinPosition", required = true)
     protected PTZVector minPosition;
+    /**
+     * The upper boundary of the PTZ volume to look for.
+     * 
+     */
     @XmlElement(name = "MaxPosition", required = true)
     protected PTZVector maxPosition;
+    /**
+     * If true, search for when entering the specified PTZ volume.
+     * 
+     */
     @XmlElement(name = "EnterOrExit")
     protected boolean enterOrExit;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the minPosition property.
+     * The lower boundary of the PTZ volume to look for.
      * 
      * @return
      *     possible object is
@@ -77,13 +89,14 @@ public class PTZPositionFilter {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getMinPosition()
      */
     public void setMinPosition(PTZVector value) {
         this.minPosition = value;
     }
 
     /**
-     * Gets the value of the maxPosition property.
+     * The upper boundary of the PTZ volume to look for.
      * 
      * @return
      *     possible object is
@@ -101,13 +114,14 @@ public class PTZPositionFilter {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getMaxPosition()
      */
     public void setMaxPosition(PTZVector value) {
         this.maxPosition = value;
     }
 
     /**
-     * Gets the value of the enterOrExit property.
+     * If true, search for when entering the specified PTZ volume.
      * 
      */
     public boolean isEnterOrExit() {
@@ -125,16 +139,16 @@ public class PTZPositionFilter {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -142,12 +156,15 @@ public class PTZPositionFilter {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

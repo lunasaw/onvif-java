@@ -13,25 +13,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for WhiteBalance20 complex type.
+ * <p>Java class for WhiteBalance20 complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="WhiteBalance20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}WhiteBalanceMode"/&gt;
- *         &lt;element name="CrGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="CbGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}WhiteBalance20Extension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="WhiteBalance20">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}WhiteBalanceMode"/>
+ *         <element name="CrGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="CbGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}WhiteBalance20Extension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,20 +44,32 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class WhiteBalance20 {
 
+    /**
+     * 'AUTO' or 'MANUAL'
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected WhiteBalanceMode mode;
+    /**
+     * Rgain (unitless).
+     * 
+     */
     @XmlElement(name = "CrGain")
     protected Float crGain;
+    /**
+     * Bgain (unitless).
+     * 
+     */
     @XmlElement(name = "CbGain")
     protected Float cbGain;
     @XmlElement(name = "Extension")
     protected WhiteBalance20Extension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the mode property.
+     * 'AUTO' or 'MANUAL'
      * 
      * @return
      *     possible object is
@@ -75,13 +87,14 @@ public class WhiteBalance20 {
      *     allowed object is
      *     {@link WhiteBalanceMode }
      *     
+     * @see #getMode()
      */
     public void setMode(WhiteBalanceMode value) {
         this.mode = value;
     }
 
     /**
-     * Gets the value of the crGain property.
+     * Rgain (unitless).
      * 
      * @return
      *     possible object is
@@ -99,13 +112,14 @@ public class WhiteBalance20 {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getCrGain()
      */
     public void setCrGain(Float value) {
         this.crGain = value;
     }
 
     /**
-     * Gets the value of the cbGain property.
+     * Bgain (unitless).
      * 
      * @return
      *     possible object is
@@ -123,6 +137,7 @@ public class WhiteBalance20 {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getCbGain()
      */
     public void setCbGain(Float value) {
         this.cbGain = value;

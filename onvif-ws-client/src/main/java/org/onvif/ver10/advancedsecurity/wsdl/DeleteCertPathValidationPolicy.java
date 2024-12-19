@@ -13,21 +13,21 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="CertPathValidationPolicyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CertPathValidationPolicyID"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="CertPathValidationPolicyID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CertPathValidationPolicyID"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -38,6 +38,10 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "DeleteCertPathValidationPolicy")
 public class DeleteCertPathValidationPolicy {
 
+    /**
+     * The ID of the certification path validation policy to be deleted.
+     * 
+     */
     @XmlElement(name = "CertPathValidationPolicyID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -45,7 +49,7 @@ public class DeleteCertPathValidationPolicy {
     protected String certPathValidationPolicyID;
 
     /**
-     * Gets the value of the certPathValidationPolicyID property.
+     * The ID of the certification path validation policy to be deleted.
      * 
      * @return
      *     possible object is
@@ -63,6 +67,7 @@ public class DeleteCertPathValidationPolicy {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getCertPathValidationPolicyID()
      */
     public void setCertPathValidationPolicyID(String value) {
         this.certPathValidationPolicyID = value;

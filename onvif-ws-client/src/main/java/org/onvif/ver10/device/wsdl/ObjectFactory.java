@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.device.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/device/wsdl", "Capabilities");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/device/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.device.wsdl
@@ -36,6 +36,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemUrisResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSystemUrisResponse }
      */
     public GetSystemUrisResponse createGetSystemUrisResponse() {
         return new GetSystemUrisResponse();
@@ -44,6 +46,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UserCredential }
      * 
+     * @return
+     *     the new instance of {@link UserCredential }
      */
     public UserCredential createUserCredential() {
         return new UserCredential();
@@ -52,6 +56,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StorageConfigurationData }
      * 
+     * @return
+     *     the new instance of {@link StorageConfigurationData }
      */
     public StorageConfigurationData createStorageConfigurationData() {
         return new StorageConfigurationData();
@@ -60,6 +66,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Service }
      * 
+     * @return
+     *     the new instance of {@link Service }
      */
     public Service createService() {
         return new Service();
@@ -68,6 +76,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServices }
      * 
+     * @return
+     *     the new instance of {@link GetServices }
      */
     public GetServices createGetServices() {
         return new GetServices();
@@ -76,6 +86,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServicesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServicesResponse }
      */
     public GetServicesResponse createGetServicesResponse() {
         return new GetServicesResponse();
@@ -84,6 +96,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -92,6 +106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -100,6 +116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeviceServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link DeviceServiceCapabilities }
      */
     public DeviceServiceCapabilities createDeviceServiceCapabilities() {
         return new DeviceServiceCapabilities();
@@ -108,6 +126,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDeviceInformation }
      * 
+     * @return
+     *     the new instance of {@link GetDeviceInformation }
      */
     public GetDeviceInformation createGetDeviceInformation() {
         return new GetDeviceInformation();
@@ -116,6 +136,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDeviceInformationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDeviceInformationResponse }
      */
     public GetDeviceInformationResponse createGetDeviceInformationResponse() {
         return new GetDeviceInformationResponse();
@@ -124,6 +146,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSystemDateAndTime }
      * 
+     * @return
+     *     the new instance of {@link SetSystemDateAndTime }
      */
     public SetSystemDateAndTime createSetSystemDateAndTime() {
         return new SetSystemDateAndTime();
@@ -132,6 +156,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSystemDateAndTimeResponse }
      * 
+     * @return
+     *     the new instance of {@link SetSystemDateAndTimeResponse }
      */
     public SetSystemDateAndTimeResponse createSetSystemDateAndTimeResponse() {
         return new SetSystemDateAndTimeResponse();
@@ -140,6 +166,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemDateAndTime }
      * 
+     * @return
+     *     the new instance of {@link GetSystemDateAndTime }
      */
     public GetSystemDateAndTime createGetSystemDateAndTime() {
         return new GetSystemDateAndTime();
@@ -148,6 +176,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemDateAndTimeResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSystemDateAndTimeResponse }
      */
     public GetSystemDateAndTimeResponse createGetSystemDateAndTimeResponse() {
         return new GetSystemDateAndTimeResponse();
@@ -156,6 +186,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSystemFactoryDefault }
      * 
+     * @return
+     *     the new instance of {@link SetSystemFactoryDefault }
      */
     public SetSystemFactoryDefault createSetSystemFactoryDefault() {
         return new SetSystemFactoryDefault();
@@ -164,6 +196,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSystemFactoryDefaultResponse }
      * 
+     * @return
+     *     the new instance of {@link SetSystemFactoryDefaultResponse }
      */
     public SetSystemFactoryDefaultResponse createSetSystemFactoryDefaultResponse() {
         return new SetSystemFactoryDefaultResponse();
@@ -172,6 +206,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UpgradeSystemFirmware }
      * 
+     * @return
+     *     the new instance of {@link UpgradeSystemFirmware }
      */
     public UpgradeSystemFirmware createUpgradeSystemFirmware() {
         return new UpgradeSystemFirmware();
@@ -180,6 +216,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UpgradeSystemFirmwareResponse }
      * 
+     * @return
+     *     the new instance of {@link UpgradeSystemFirmwareResponse }
      */
     public UpgradeSystemFirmwareResponse createUpgradeSystemFirmwareResponse() {
         return new UpgradeSystemFirmwareResponse();
@@ -188,6 +226,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SystemReboot }
      * 
+     * @return
+     *     the new instance of {@link SystemReboot }
      */
     public SystemReboot createSystemReboot() {
         return new SystemReboot();
@@ -196,6 +236,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SystemRebootResponse }
      * 
+     * @return
+     *     the new instance of {@link SystemRebootResponse }
      */
     public SystemRebootResponse createSystemRebootResponse() {
         return new SystemRebootResponse();
@@ -204,6 +246,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RestoreSystem }
      * 
+     * @return
+     *     the new instance of {@link RestoreSystem }
      */
     public RestoreSystem createRestoreSystem() {
         return new RestoreSystem();
@@ -212,6 +256,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RestoreSystemResponse }
      * 
+     * @return
+     *     the new instance of {@link RestoreSystemResponse }
      */
     public RestoreSystemResponse createRestoreSystemResponse() {
         return new RestoreSystemResponse();
@@ -220,6 +266,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemBackup }
      * 
+     * @return
+     *     the new instance of {@link GetSystemBackup }
      */
     public GetSystemBackup createGetSystemBackup() {
         return new GetSystemBackup();
@@ -228,6 +276,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemBackupResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSystemBackupResponse }
      */
     public GetSystemBackupResponse createGetSystemBackupResponse() {
         return new GetSystemBackupResponse();
@@ -236,6 +286,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemSupportInformation }
      * 
+     * @return
+     *     the new instance of {@link GetSystemSupportInformation }
      */
     public GetSystemSupportInformation createGetSystemSupportInformation() {
         return new GetSystemSupportInformation();
@@ -244,6 +296,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemSupportInformationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSystemSupportInformationResponse }
      */
     public GetSystemSupportInformationResponse createGetSystemSupportInformationResponse() {
         return new GetSystemSupportInformationResponse();
@@ -252,6 +306,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemLog }
      * 
+     * @return
+     *     the new instance of {@link GetSystemLog }
      */
     public GetSystemLog createGetSystemLog() {
         return new GetSystemLog();
@@ -260,6 +316,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemLogResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSystemLogResponse }
      */
     public GetSystemLogResponse createGetSystemLogResponse() {
         return new GetSystemLogResponse();
@@ -268,6 +326,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetScopes }
      * 
+     * @return
+     *     the new instance of {@link GetScopes }
      */
     public GetScopes createGetScopes() {
         return new GetScopes();
@@ -276,6 +336,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetScopesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetScopesResponse }
      */
     public GetScopesResponse createGetScopesResponse() {
         return new GetScopesResponse();
@@ -284,6 +346,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetScopes }
      * 
+     * @return
+     *     the new instance of {@link SetScopes }
      */
     public SetScopes createSetScopes() {
         return new SetScopes();
@@ -292,6 +356,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetScopesResponse }
      * 
+     * @return
+     *     the new instance of {@link SetScopesResponse }
      */
     public SetScopesResponse createSetScopesResponse() {
         return new SetScopesResponse();
@@ -300,6 +366,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddScopes }
      * 
+     * @return
+     *     the new instance of {@link AddScopes }
      */
     public AddScopes createAddScopes() {
         return new AddScopes();
@@ -308,6 +376,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddScopesResponse }
      * 
+     * @return
+     *     the new instance of {@link AddScopesResponse }
      */
     public AddScopesResponse createAddScopesResponse() {
         return new AddScopesResponse();
@@ -316,6 +386,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveScopes }
      * 
+     * @return
+     *     the new instance of {@link RemoveScopes }
      */
     public RemoveScopes createRemoveScopes() {
         return new RemoveScopes();
@@ -324,6 +396,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveScopesResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveScopesResponse }
      */
     public RemoveScopesResponse createRemoveScopesResponse() {
         return new RemoveScopesResponse();
@@ -332,6 +406,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDiscoveryMode }
      * 
+     * @return
+     *     the new instance of {@link GetDiscoveryMode }
      */
     public GetDiscoveryMode createGetDiscoveryMode() {
         return new GetDiscoveryMode();
@@ -340,6 +416,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDiscoveryModeResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDiscoveryModeResponse }
      */
     public GetDiscoveryModeResponse createGetDiscoveryModeResponse() {
         return new GetDiscoveryModeResponse();
@@ -348,6 +426,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDiscoveryMode }
      * 
+     * @return
+     *     the new instance of {@link SetDiscoveryMode }
      */
     public SetDiscoveryMode createSetDiscoveryMode() {
         return new SetDiscoveryMode();
@@ -356,6 +436,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDiscoveryModeResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDiscoveryModeResponse }
      */
     public SetDiscoveryModeResponse createSetDiscoveryModeResponse() {
         return new SetDiscoveryModeResponse();
@@ -364,6 +446,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRemoteDiscoveryMode }
      * 
+     * @return
+     *     the new instance of {@link GetRemoteDiscoveryMode }
      */
     public GetRemoteDiscoveryMode createGetRemoteDiscoveryMode() {
         return new GetRemoteDiscoveryMode();
@@ -372,6 +456,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRemoteDiscoveryModeResponse }
      * 
+     * @return
+     *     the new instance of {@link GetRemoteDiscoveryModeResponse }
      */
     public GetRemoteDiscoveryModeResponse createGetRemoteDiscoveryModeResponse() {
         return new GetRemoteDiscoveryModeResponse();
@@ -380,6 +466,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRemoteDiscoveryMode }
      * 
+     * @return
+     *     the new instance of {@link SetRemoteDiscoveryMode }
      */
     public SetRemoteDiscoveryMode createSetRemoteDiscoveryMode() {
         return new SetRemoteDiscoveryMode();
@@ -388,6 +476,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRemoteDiscoveryModeResponse }
      * 
+     * @return
+     *     the new instance of {@link SetRemoteDiscoveryModeResponse }
      */
     public SetRemoteDiscoveryModeResponse createSetRemoteDiscoveryModeResponse() {
         return new SetRemoteDiscoveryModeResponse();
@@ -396,6 +486,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDPAddresses }
      * 
+     * @return
+     *     the new instance of {@link GetDPAddresses }
      */
     public GetDPAddresses createGetDPAddresses() {
         return new GetDPAddresses();
@@ -404,6 +496,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDPAddressesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDPAddressesResponse }
      */
     public GetDPAddressesResponse createGetDPAddressesResponse() {
         return new GetDPAddressesResponse();
@@ -412,6 +506,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDPAddresses }
      * 
+     * @return
+     *     the new instance of {@link SetDPAddresses }
      */
     public SetDPAddresses createSetDPAddresses() {
         return new SetDPAddresses();
@@ -420,6 +516,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDPAddressesResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDPAddressesResponse }
      */
     public SetDPAddressesResponse createSetDPAddressesResponse() {
         return new SetDPAddressesResponse();
@@ -428,6 +526,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetEndpointReference }
      * 
+     * @return
+     *     the new instance of {@link GetEndpointReference }
      */
     public GetEndpointReference createGetEndpointReference() {
         return new GetEndpointReference();
@@ -436,6 +536,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetEndpointReferenceResponse }
      * 
+     * @return
+     *     the new instance of {@link GetEndpointReferenceResponse }
      */
     public GetEndpointReferenceResponse createGetEndpointReferenceResponse() {
         return new GetEndpointReferenceResponse();
@@ -444,6 +546,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRemoteUser }
      * 
+     * @return
+     *     the new instance of {@link GetRemoteUser }
      */
     public GetRemoteUser createGetRemoteUser() {
         return new GetRemoteUser();
@@ -452,6 +556,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRemoteUserResponse }
      * 
+     * @return
+     *     the new instance of {@link GetRemoteUserResponse }
      */
     public GetRemoteUserResponse createGetRemoteUserResponse() {
         return new GetRemoteUserResponse();
@@ -460,6 +566,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRemoteUser }
      * 
+     * @return
+     *     the new instance of {@link SetRemoteUser }
      */
     public SetRemoteUser createSetRemoteUser() {
         return new SetRemoteUser();
@@ -468,6 +576,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRemoteUserResponse }
      * 
+     * @return
+     *     the new instance of {@link SetRemoteUserResponse }
      */
     public SetRemoteUserResponse createSetRemoteUserResponse() {
         return new SetRemoteUserResponse();
@@ -476,6 +586,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetUsers }
      * 
+     * @return
+     *     the new instance of {@link GetUsers }
      */
     public GetUsers createGetUsers() {
         return new GetUsers();
@@ -484,6 +596,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetUsersResponse }
      * 
+     * @return
+     *     the new instance of {@link GetUsersResponse }
      */
     public GetUsersResponse createGetUsersResponse() {
         return new GetUsersResponse();
@@ -492,6 +606,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateUsers }
      * 
+     * @return
+     *     the new instance of {@link CreateUsers }
      */
     public CreateUsers createCreateUsers() {
         return new CreateUsers();
@@ -500,6 +616,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateUsersResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateUsersResponse }
      */
     public CreateUsersResponse createCreateUsersResponse() {
         return new CreateUsersResponse();
@@ -508,6 +626,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteUsers }
      * 
+     * @return
+     *     the new instance of {@link DeleteUsers }
      */
     public DeleteUsers createDeleteUsers() {
         return new DeleteUsers();
@@ -516,6 +636,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteUsersResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteUsersResponse }
      */
     public DeleteUsersResponse createDeleteUsersResponse() {
         return new DeleteUsersResponse();
@@ -524,6 +646,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetUser }
      * 
+     * @return
+     *     the new instance of {@link SetUser }
      */
     public SetUser createSetUser() {
         return new SetUser();
@@ -532,6 +656,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetUserResponse }
      * 
+     * @return
+     *     the new instance of {@link SetUserResponse }
      */
     public SetUserResponse createSetUserResponse() {
         return new SetUserResponse();
@@ -540,6 +666,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetWsdlUrl }
      * 
+     * @return
+     *     the new instance of {@link GetWsdlUrl }
      */
     public GetWsdlUrl createGetWsdlUrl() {
         return new GetWsdlUrl();
@@ -548,6 +676,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetWsdlUrlResponse }
      * 
+     * @return
+     *     the new instance of {@link GetWsdlUrlResponse }
      */
     public GetWsdlUrlResponse createGetWsdlUrlResponse() {
         return new GetWsdlUrlResponse();
@@ -556,6 +686,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetCapabilities }
      */
     public GetCapabilities createGetCapabilities() {
         return new GetCapabilities();
@@ -564,6 +696,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCapabilitiesResponse }
      */
     public GetCapabilitiesResponse createGetCapabilitiesResponse() {
         return new GetCapabilitiesResponse();
@@ -572,6 +706,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetHostname }
      * 
+     * @return
+     *     the new instance of {@link GetHostname }
      */
     public GetHostname createGetHostname() {
         return new GetHostname();
@@ -580,6 +716,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetHostnameResponse }
      * 
+     * @return
+     *     the new instance of {@link GetHostnameResponse }
      */
     public GetHostnameResponse createGetHostnameResponse() {
         return new GetHostnameResponse();
@@ -588,6 +726,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHostname }
      * 
+     * @return
+     *     the new instance of {@link SetHostname }
      */
     public SetHostname createSetHostname() {
         return new SetHostname();
@@ -596,6 +736,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHostnameResponse }
      * 
+     * @return
+     *     the new instance of {@link SetHostnameResponse }
      */
     public SetHostnameResponse createSetHostnameResponse() {
         return new SetHostnameResponse();
@@ -604,6 +746,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHostnameFromDHCP }
      * 
+     * @return
+     *     the new instance of {@link SetHostnameFromDHCP }
      */
     public SetHostnameFromDHCP createSetHostnameFromDHCP() {
         return new SetHostnameFromDHCP();
@@ -612,6 +756,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetHostnameFromDHCPResponse }
      * 
+     * @return
+     *     the new instance of {@link SetHostnameFromDHCPResponse }
      */
     public SetHostnameFromDHCPResponse createSetHostnameFromDHCPResponse() {
         return new SetHostnameFromDHCPResponse();
@@ -620,6 +766,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDNS }
      * 
+     * @return
+     *     the new instance of {@link GetDNS }
      */
     public GetDNS createGetDNS() {
         return new GetDNS();
@@ -628,6 +776,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDNSResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDNSResponse }
      */
     public GetDNSResponse createGetDNSResponse() {
         return new GetDNSResponse();
@@ -636,6 +786,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDNS }
      * 
+     * @return
+     *     the new instance of {@link SetDNS }
      */
     public SetDNS createSetDNS() {
         return new SetDNS();
@@ -644,6 +796,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDNSResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDNSResponse }
      */
     public SetDNSResponse createSetDNSResponse() {
         return new SetDNSResponse();
@@ -652,6 +806,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNTP }
      * 
+     * @return
+     *     the new instance of {@link GetNTP }
      */
     public GetNTP createGetNTP() {
         return new GetNTP();
@@ -660,6 +816,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNTPResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNTPResponse }
      */
     public GetNTPResponse createGetNTPResponse() {
         return new GetNTPResponse();
@@ -668,6 +826,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNTP }
      * 
+     * @return
+     *     the new instance of {@link SetNTP }
      */
     public SetNTP createSetNTP() {
         return new SetNTP();
@@ -676,6 +836,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNTPResponse }
      * 
+     * @return
+     *     the new instance of {@link SetNTPResponse }
      */
     public SetNTPResponse createSetNTPResponse() {
         return new SetNTPResponse();
@@ -684,6 +846,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDynamicDNS }
      * 
+     * @return
+     *     the new instance of {@link GetDynamicDNS }
      */
     public GetDynamicDNS createGetDynamicDNS() {
         return new GetDynamicDNS();
@@ -692,6 +856,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDynamicDNSResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDynamicDNSResponse }
      */
     public GetDynamicDNSResponse createGetDynamicDNSResponse() {
         return new GetDynamicDNSResponse();
@@ -700,6 +866,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDynamicDNS }
      * 
+     * @return
+     *     the new instance of {@link SetDynamicDNS }
      */
     public SetDynamicDNS createSetDynamicDNS() {
         return new SetDynamicDNS();
@@ -708,6 +876,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDynamicDNSResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDynamicDNSResponse }
      */
     public SetDynamicDNSResponse createSetDynamicDNSResponse() {
         return new SetDynamicDNSResponse();
@@ -716,6 +886,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkInterfaces }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkInterfaces }
      */
     public GetNetworkInterfaces createGetNetworkInterfaces() {
         return new GetNetworkInterfaces();
@@ -724,6 +896,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkInterfacesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkInterfacesResponse }
      */
     public GetNetworkInterfacesResponse createGetNetworkInterfacesResponse() {
         return new GetNetworkInterfacesResponse();
@@ -732,6 +906,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkInterfaces }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkInterfaces }
      */
     public SetNetworkInterfaces createSetNetworkInterfaces() {
         return new SetNetworkInterfaces();
@@ -740,6 +916,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkInterfacesResponse }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkInterfacesResponse }
      */
     public SetNetworkInterfacesResponse createSetNetworkInterfacesResponse() {
         return new SetNetworkInterfacesResponse();
@@ -748,6 +926,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkProtocols }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkProtocols }
      */
     public GetNetworkProtocols createGetNetworkProtocols() {
         return new GetNetworkProtocols();
@@ -756,6 +936,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkProtocolsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkProtocolsResponse }
      */
     public GetNetworkProtocolsResponse createGetNetworkProtocolsResponse() {
         return new GetNetworkProtocolsResponse();
@@ -764,6 +946,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkProtocols }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkProtocols }
      */
     public SetNetworkProtocols createSetNetworkProtocols() {
         return new SetNetworkProtocols();
@@ -772,6 +956,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkProtocolsResponse }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkProtocolsResponse }
      */
     public SetNetworkProtocolsResponse createSetNetworkProtocolsResponse() {
         return new SetNetworkProtocolsResponse();
@@ -780,6 +966,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkDefaultGateway }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkDefaultGateway }
      */
     public GetNetworkDefaultGateway createGetNetworkDefaultGateway() {
         return new GetNetworkDefaultGateway();
@@ -788,6 +976,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetNetworkDefaultGatewayResponse }
      * 
+     * @return
+     *     the new instance of {@link GetNetworkDefaultGatewayResponse }
      */
     public GetNetworkDefaultGatewayResponse createGetNetworkDefaultGatewayResponse() {
         return new GetNetworkDefaultGatewayResponse();
@@ -796,6 +986,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkDefaultGateway }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkDefaultGateway }
      */
     public SetNetworkDefaultGateway createSetNetworkDefaultGateway() {
         return new SetNetworkDefaultGateway();
@@ -804,6 +996,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetNetworkDefaultGatewayResponse }
      * 
+     * @return
+     *     the new instance of {@link SetNetworkDefaultGatewayResponse }
      */
     public SetNetworkDefaultGatewayResponse createSetNetworkDefaultGatewayResponse() {
         return new SetNetworkDefaultGatewayResponse();
@@ -812,6 +1006,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetZeroConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetZeroConfiguration }
      */
     public GetZeroConfiguration createGetZeroConfiguration() {
         return new GetZeroConfiguration();
@@ -820,6 +1016,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetZeroConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetZeroConfigurationResponse }
      */
     public GetZeroConfigurationResponse createGetZeroConfigurationResponse() {
         return new GetZeroConfigurationResponse();
@@ -828,6 +1026,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetZeroConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetZeroConfiguration }
      */
     public SetZeroConfiguration createSetZeroConfiguration() {
         return new SetZeroConfiguration();
@@ -836,6 +1036,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetZeroConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetZeroConfigurationResponse }
      */
     public SetZeroConfigurationResponse createSetZeroConfigurationResponse() {
         return new SetZeroConfigurationResponse();
@@ -844,6 +1046,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetIPAddressFilter }
      * 
+     * @return
+     *     the new instance of {@link GetIPAddressFilter }
      */
     public GetIPAddressFilter createGetIPAddressFilter() {
         return new GetIPAddressFilter();
@@ -852,6 +1056,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetIPAddressFilterResponse }
      * 
+     * @return
+     *     the new instance of {@link GetIPAddressFilterResponse }
      */
     public GetIPAddressFilterResponse createGetIPAddressFilterResponse() {
         return new GetIPAddressFilterResponse();
@@ -860,6 +1066,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetIPAddressFilter }
      * 
+     * @return
+     *     the new instance of {@link SetIPAddressFilter }
      */
     public SetIPAddressFilter createSetIPAddressFilter() {
         return new SetIPAddressFilter();
@@ -868,6 +1076,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetIPAddressFilterResponse }
      * 
+     * @return
+     *     the new instance of {@link SetIPAddressFilterResponse }
      */
     public SetIPAddressFilterResponse createSetIPAddressFilterResponse() {
         return new SetIPAddressFilterResponse();
@@ -876,6 +1086,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddIPAddressFilter }
      * 
+     * @return
+     *     the new instance of {@link AddIPAddressFilter }
      */
     public AddIPAddressFilter createAddIPAddressFilter() {
         return new AddIPAddressFilter();
@@ -884,6 +1096,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AddIPAddressFilterResponse }
      * 
+     * @return
+     *     the new instance of {@link AddIPAddressFilterResponse }
      */
     public AddIPAddressFilterResponse createAddIPAddressFilterResponse() {
         return new AddIPAddressFilterResponse();
@@ -892,6 +1106,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveIPAddressFilter }
      * 
+     * @return
+     *     the new instance of {@link RemoveIPAddressFilter }
      */
     public RemoveIPAddressFilter createRemoveIPAddressFilter() {
         return new RemoveIPAddressFilter();
@@ -900,6 +1116,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RemoveIPAddressFilterResponse }
      * 
+     * @return
+     *     the new instance of {@link RemoveIPAddressFilterResponse }
      */
     public RemoveIPAddressFilterResponse createRemoveIPAddressFilterResponse() {
         return new RemoveIPAddressFilterResponse();
@@ -908,6 +1126,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPolicy }
      * 
+     * @return
+     *     the new instance of {@link GetAccessPolicy }
      */
     public GetAccessPolicy createGetAccessPolicy() {
         return new GetAccessPolicy();
@@ -916,6 +1136,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPolicyResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAccessPolicyResponse }
      */
     public GetAccessPolicyResponse createGetAccessPolicyResponse() {
         return new GetAccessPolicyResponse();
@@ -924,6 +1146,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAccessPolicy }
      * 
+     * @return
+     *     the new instance of {@link SetAccessPolicy }
      */
     public SetAccessPolicy createSetAccessPolicy() {
         return new SetAccessPolicy();
@@ -932,6 +1156,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAccessPolicyResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAccessPolicyResponse }
      */
     public SetAccessPolicyResponse createSetAccessPolicyResponse() {
         return new SetAccessPolicyResponse();
@@ -940,6 +1166,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertificate }
      * 
+     * @return
+     *     the new instance of {@link CreateCertificate }
      */
     public CreateCertificate createCreateCertificate() {
         return new CreateCertificate();
@@ -948,6 +1176,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateCertificateResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateCertificateResponse }
      */
     public CreateCertificateResponse createCreateCertificateResponse() {
         return new CreateCertificateResponse();
@@ -956,6 +1186,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificates }
      * 
+     * @return
+     *     the new instance of {@link GetCertificates }
      */
     public GetCertificates createGetCertificates() {
         return new GetCertificates();
@@ -964,6 +1196,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertificatesResponse }
      */
     public GetCertificatesResponse createGetCertificatesResponse() {
         return new GetCertificatesResponse();
@@ -972,6 +1206,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificatesStatus }
      * 
+     * @return
+     *     the new instance of {@link GetCertificatesStatus }
      */
     public GetCertificatesStatus createGetCertificatesStatus() {
         return new GetCertificatesStatus();
@@ -980,6 +1216,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificatesStatusResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertificatesStatusResponse }
      */
     public GetCertificatesStatusResponse createGetCertificatesStatusResponse() {
         return new GetCertificatesStatusResponse();
@@ -988,6 +1226,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetCertificatesStatus }
      * 
+     * @return
+     *     the new instance of {@link SetCertificatesStatus }
      */
     public SetCertificatesStatus createSetCertificatesStatus() {
         return new SetCertificatesStatus();
@@ -996,6 +1236,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetCertificatesStatusResponse }
      * 
+     * @return
+     *     the new instance of {@link SetCertificatesStatusResponse }
      */
     public SetCertificatesStatusResponse createSetCertificatesStatusResponse() {
         return new SetCertificatesStatusResponse();
@@ -1004,6 +1246,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificates }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificates }
      */
     public DeleteCertificates createDeleteCertificates() {
         return new DeleteCertificates();
@@ -1012,6 +1256,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteCertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteCertificatesResponse }
      */
     public DeleteCertificatesResponse createDeleteCertificatesResponse() {
         return new DeleteCertificatesResponse();
@@ -1020,6 +1266,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPkcs10Request }
      * 
+     * @return
+     *     the new instance of {@link GetPkcs10Request }
      */
     public GetPkcs10Request createGetPkcs10Request() {
         return new GetPkcs10Request();
@@ -1028,6 +1276,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPkcs10RequestResponse }
      * 
+     * @return
+     *     the new instance of {@link GetPkcs10RequestResponse }
      */
     public GetPkcs10RequestResponse createGetPkcs10RequestResponse() {
         return new GetPkcs10RequestResponse();
@@ -1036,6 +1286,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCertificates }
      * 
+     * @return
+     *     the new instance of {@link LoadCertificates }
      */
     public LoadCertificates createLoadCertificates() {
         return new LoadCertificates();
@@ -1044,6 +1296,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link LoadCertificatesResponse }
      */
     public LoadCertificatesResponse createLoadCertificatesResponse() {
         return new LoadCertificatesResponse();
@@ -1052,6 +1306,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetClientCertificateMode }
      * 
+     * @return
+     *     the new instance of {@link GetClientCertificateMode }
      */
     public GetClientCertificateMode createGetClientCertificateMode() {
         return new GetClientCertificateMode();
@@ -1060,6 +1316,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetClientCertificateModeResponse }
      * 
+     * @return
+     *     the new instance of {@link GetClientCertificateModeResponse }
      */
     public GetClientCertificateModeResponse createGetClientCertificateModeResponse() {
         return new GetClientCertificateModeResponse();
@@ -1068,6 +1326,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetClientCertificateMode }
      * 
+     * @return
+     *     the new instance of {@link SetClientCertificateMode }
      */
     public SetClientCertificateMode createSetClientCertificateMode() {
         return new SetClientCertificateMode();
@@ -1076,6 +1336,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetClientCertificateModeResponse }
      * 
+     * @return
+     *     the new instance of {@link SetClientCertificateModeResponse }
      */
     public SetClientCertificateModeResponse createSetClientCertificateModeResponse() {
         return new SetClientCertificateModeResponse();
@@ -1084,6 +1346,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCACertificates }
      * 
+     * @return
+     *     the new instance of {@link GetCACertificates }
      */
     public GetCACertificates createGetCACertificates() {
         return new GetCACertificates();
@@ -1092,6 +1356,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCACertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCACertificatesResponse }
      */
     public GetCACertificatesResponse createGetCACertificatesResponse() {
         return new GetCACertificatesResponse();
@@ -1100,6 +1366,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCertificateWithPrivateKey }
      * 
+     * @return
+     *     the new instance of {@link LoadCertificateWithPrivateKey }
      */
     public LoadCertificateWithPrivateKey createLoadCertificateWithPrivateKey() {
         return new LoadCertificateWithPrivateKey();
@@ -1108,6 +1376,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCertificateWithPrivateKeyResponse }
      * 
+     * @return
+     *     the new instance of {@link LoadCertificateWithPrivateKeyResponse }
      */
     public LoadCertificateWithPrivateKeyResponse createLoadCertificateWithPrivateKeyResponse() {
         return new LoadCertificateWithPrivateKeyResponse();
@@ -1116,6 +1386,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificateInformation }
      * 
+     * @return
+     *     the new instance of {@link GetCertificateInformation }
      */
     public GetCertificateInformation createGetCertificateInformation() {
         return new GetCertificateInformation();
@@ -1124,6 +1396,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetCertificateInformationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetCertificateInformationResponse }
      */
     public GetCertificateInformationResponse createGetCertificateInformationResponse() {
         return new GetCertificateInformationResponse();
@@ -1132,6 +1406,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCACertificates }
      * 
+     * @return
+     *     the new instance of {@link LoadCACertificates }
      */
     public LoadCACertificates createLoadCACertificates() {
         return new LoadCACertificates();
@@ -1140,6 +1416,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link LoadCACertificatesResponse }
      * 
+     * @return
+     *     the new instance of {@link LoadCACertificatesResponse }
      */
     public LoadCACertificatesResponse createLoadCACertificatesResponse() {
         return new LoadCACertificatesResponse();
@@ -1148,6 +1426,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateDot1XConfiguration }
      * 
+     * @return
+     *     the new instance of {@link CreateDot1XConfiguration }
      */
     public CreateDot1XConfiguration createCreateDot1XConfiguration() {
         return new CreateDot1XConfiguration();
@@ -1156,6 +1436,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateDot1XConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateDot1XConfigurationResponse }
      */
     public CreateDot1XConfigurationResponse createCreateDot1XConfigurationResponse() {
         return new CreateDot1XConfigurationResponse();
@@ -1164,6 +1446,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDot1XConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetDot1XConfiguration }
      */
     public SetDot1XConfiguration createSetDot1XConfiguration() {
         return new SetDot1XConfiguration();
@@ -1172,6 +1456,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDot1XConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDot1XConfigurationResponse }
      */
     public SetDot1XConfigurationResponse createSetDot1XConfigurationResponse() {
         return new SetDot1XConfigurationResponse();
@@ -1180,6 +1466,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot1XConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetDot1XConfiguration }
      */
     public GetDot1XConfiguration createGetDot1XConfiguration() {
         return new GetDot1XConfiguration();
@@ -1188,6 +1476,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot1XConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDot1XConfigurationResponse }
      */
     public GetDot1XConfigurationResponse createGetDot1XConfigurationResponse() {
         return new GetDot1XConfigurationResponse();
@@ -1196,6 +1486,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot1XConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetDot1XConfigurations }
      */
     public GetDot1XConfigurations createGetDot1XConfigurations() {
         return new GetDot1XConfigurations();
@@ -1204,6 +1496,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot1XConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDot1XConfigurationsResponse }
      */
     public GetDot1XConfigurationsResponse createGetDot1XConfigurationsResponse() {
         return new GetDot1XConfigurationsResponse();
@@ -1212,6 +1506,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteDot1XConfiguration }
      * 
+     * @return
+     *     the new instance of {@link DeleteDot1XConfiguration }
      */
     public DeleteDot1XConfiguration createDeleteDot1XConfiguration() {
         return new DeleteDot1XConfiguration();
@@ -1220,6 +1516,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteDot1XConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteDot1XConfigurationResponse }
      */
     public DeleteDot1XConfigurationResponse createDeleteDot1XConfigurationResponse() {
         return new DeleteDot1XConfigurationResponse();
@@ -1228,6 +1526,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRelayOutputs }
      * 
+     * @return
+     *     the new instance of {@link GetRelayOutputs }
      */
     public GetRelayOutputs createGetRelayOutputs() {
         return new GetRelayOutputs();
@@ -1236,6 +1536,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRelayOutputsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetRelayOutputsResponse }
      */
     public GetRelayOutputsResponse createGetRelayOutputsResponse() {
         return new GetRelayOutputsResponse();
@@ -1244,6 +1546,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputSettings }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputSettings }
      */
     public SetRelayOutputSettings createSetRelayOutputSettings() {
         return new SetRelayOutputSettings();
@@ -1252,6 +1556,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputSettingsResponse }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputSettingsResponse }
      */
     public SetRelayOutputSettingsResponse createSetRelayOutputSettingsResponse() {
         return new SetRelayOutputSettingsResponse();
@@ -1260,6 +1566,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputState }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputState }
      */
     public SetRelayOutputState createSetRelayOutputState() {
         return new SetRelayOutputState();
@@ -1268,6 +1576,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputStateResponse }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputStateResponse }
      */
     public SetRelayOutputStateResponse createSetRelayOutputStateResponse() {
         return new SetRelayOutputStateResponse();
@@ -1276,6 +1586,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendAuxiliaryCommand }
      * 
+     * @return
+     *     the new instance of {@link SendAuxiliaryCommand }
      */
     public SendAuxiliaryCommand createSendAuxiliaryCommand() {
         return new SendAuxiliaryCommand();
@@ -1284,6 +1596,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendAuxiliaryCommandResponse }
      * 
+     * @return
+     *     the new instance of {@link SendAuxiliaryCommandResponse }
      */
     public SendAuxiliaryCommandResponse createSendAuxiliaryCommandResponse() {
         return new SendAuxiliaryCommandResponse();
@@ -1292,6 +1606,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot11Capabilities }
      * 
+     * @return
+     *     the new instance of {@link GetDot11Capabilities }
      */
     public GetDot11Capabilities createGetDot11Capabilities() {
         return new GetDot11Capabilities();
@@ -1300,6 +1616,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot11CapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDot11CapabilitiesResponse }
      */
     public GetDot11CapabilitiesResponse createGetDot11CapabilitiesResponse() {
         return new GetDot11CapabilitiesResponse();
@@ -1308,6 +1626,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot11Status }
      * 
+     * @return
+     *     the new instance of {@link GetDot11Status }
      */
     public GetDot11Status createGetDot11Status() {
         return new GetDot11Status();
@@ -1316,6 +1636,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDot11StatusResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDot11StatusResponse }
      */
     public GetDot11StatusResponse createGetDot11StatusResponse() {
         return new GetDot11StatusResponse();
@@ -1324,6 +1646,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ScanAvailableDot11Networks }
      * 
+     * @return
+     *     the new instance of {@link ScanAvailableDot11Networks }
      */
     public ScanAvailableDot11Networks createScanAvailableDot11Networks() {
         return new ScanAvailableDot11Networks();
@@ -1332,6 +1656,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ScanAvailableDot11NetworksResponse }
      * 
+     * @return
+     *     the new instance of {@link ScanAvailableDot11NetworksResponse }
      */
     public ScanAvailableDot11NetworksResponse createScanAvailableDot11NetworksResponse() {
         return new ScanAvailableDot11NetworksResponse();
@@ -1340,6 +1666,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemUris }
      * 
+     * @return
+     *     the new instance of {@link GetSystemUris }
      */
     public GetSystemUris createGetSystemUris() {
         return new GetSystemUris();
@@ -1348,6 +1676,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSystemUrisResponse.Extension }
      * 
+     * @return
+     *     the new instance of {@link GetSystemUrisResponse.Extension }
      */
     public GetSystemUrisResponse.Extension createGetSystemUrisResponseExtension() {
         return new GetSystemUrisResponse.Extension();
@@ -1356,6 +1686,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartFirmwareUpgrade }
      * 
+     * @return
+     *     the new instance of {@link StartFirmwareUpgrade }
      */
     public StartFirmwareUpgrade createStartFirmwareUpgrade() {
         return new StartFirmwareUpgrade();
@@ -1364,6 +1696,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartFirmwareUpgradeResponse }
      * 
+     * @return
+     *     the new instance of {@link StartFirmwareUpgradeResponse }
      */
     public StartFirmwareUpgradeResponse createStartFirmwareUpgradeResponse() {
         return new StartFirmwareUpgradeResponse();
@@ -1372,6 +1706,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartSystemRestore }
      * 
+     * @return
+     *     the new instance of {@link StartSystemRestore }
      */
     public StartSystemRestore createStartSystemRestore() {
         return new StartSystemRestore();
@@ -1380,6 +1716,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StartSystemRestoreResponse }
      * 
+     * @return
+     *     the new instance of {@link StartSystemRestoreResponse }
      */
     public StartSystemRestoreResponse createStartSystemRestoreResponse() {
         return new StartSystemRestoreResponse();
@@ -1388,6 +1726,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStorageConfigurations }
      * 
+     * @return
+     *     the new instance of {@link GetStorageConfigurations }
      */
     public GetStorageConfigurations createGetStorageConfigurations() {
         return new GetStorageConfigurations();
@@ -1396,6 +1736,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStorageConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetStorageConfigurationsResponse }
      */
     public GetStorageConfigurationsResponse createGetStorageConfigurationsResponse() {
         return new GetStorageConfigurationsResponse();
@@ -1404,6 +1746,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StorageConfiguration }
      * 
+     * @return
+     *     the new instance of {@link StorageConfiguration }
      */
     public StorageConfiguration createStorageConfiguration() {
         return new StorageConfiguration();
@@ -1412,6 +1756,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateStorageConfiguration }
      * 
+     * @return
+     *     the new instance of {@link CreateStorageConfiguration }
      */
     public CreateStorageConfiguration createCreateStorageConfiguration() {
         return new CreateStorageConfiguration();
@@ -1420,6 +1766,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateStorageConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link CreateStorageConfigurationResponse }
      */
     public CreateStorageConfigurationResponse createCreateStorageConfigurationResponse() {
         return new CreateStorageConfigurationResponse();
@@ -1428,6 +1776,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStorageConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetStorageConfiguration }
      */
     public GetStorageConfiguration createGetStorageConfiguration() {
         return new GetStorageConfiguration();
@@ -1436,6 +1786,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStorageConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetStorageConfigurationResponse }
      */
     public GetStorageConfigurationResponse createGetStorageConfigurationResponse() {
         return new GetStorageConfigurationResponse();
@@ -1444,6 +1796,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetStorageConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetStorageConfiguration }
      */
     public SetStorageConfiguration createSetStorageConfiguration() {
         return new SetStorageConfiguration();
@@ -1452,6 +1806,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetStorageConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetStorageConfigurationResponse }
      */
     public SetStorageConfigurationResponse createSetStorageConfigurationResponse() {
         return new SetStorageConfigurationResponse();
@@ -1460,6 +1816,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteStorageConfiguration }
      * 
+     * @return
+     *     the new instance of {@link DeleteStorageConfiguration }
      */
     public DeleteStorageConfiguration createDeleteStorageConfiguration() {
         return new DeleteStorageConfiguration();
@@ -1468,6 +1826,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteStorageConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link DeleteStorageConfigurationResponse }
      */
     public DeleteStorageConfigurationResponse createDeleteStorageConfigurationResponse() {
         return new DeleteStorageConfigurationResponse();
@@ -1476,6 +1836,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link NetworkCapabilities }
      * 
+     * @return
+     *     the new instance of {@link NetworkCapabilities }
      */
     public NetworkCapabilities createNetworkCapabilities() {
         return new NetworkCapabilities();
@@ -1484,6 +1846,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SecurityCapabilities }
      * 
+     * @return
+     *     the new instance of {@link SecurityCapabilities }
      */
     public SecurityCapabilities createSecurityCapabilities() {
         return new SecurityCapabilities();
@@ -1492,6 +1856,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SystemCapabilities }
      * 
+     * @return
+     *     the new instance of {@link SystemCapabilities }
      */
     public SystemCapabilities createSystemCapabilities() {
         return new SystemCapabilities();
@@ -1500,6 +1866,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link MiscCapabilities }
      * 
+     * @return
+     *     the new instance of {@link MiscCapabilities }
      */
     public MiscCapabilities createMiscCapabilities() {
         return new MiscCapabilities();
@@ -1508,6 +1876,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link UserCredential.Extension }
      * 
+     * @return
+     *     the new instance of {@link UserCredential.Extension }
      */
     public UserCredential.Extension createUserCredentialExtension() {
         return new UserCredential.Extension();
@@ -1516,6 +1886,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StorageConfigurationData.Extension }
      * 
+     * @return
+     *     the new instance of {@link StorageConfigurationData.Extension }
      */
     public StorageConfigurationData.Extension createStorageConfigurationDataExtension() {
         return new StorageConfigurationData.Extension();
@@ -1524,6 +1896,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Service.Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Service.Capabilities }
      */
     public Service.Capabilities createServiceCapabilities() {
         return new Service.Capabilities();
@@ -1539,7 +1913,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/device/wsdl", name = "Capabilities")
     public JAXBElement<DeviceServiceCapabilities> createCapabilities(DeviceServiceCapabilities value) {
-        return new JAXBElement<DeviceServiceCapabilities>(_Capabilities_QNAME, DeviceServiceCapabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, DeviceServiceCapabilities.class, null, value);
     }
 
 }

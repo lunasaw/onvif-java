@@ -14,25 +14,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NTPInformation complex type.
+ * <p>Java class for NTPInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NTPInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="NTPFromDHCP" type="{http://www.onvif.org/ver10/schema}NetworkHost" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="NTPManual" type="{http://www.onvif.org/ver10/schema}NetworkHost" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NTPInformationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NTPInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="NTPFromDHCP" type="{http://www.onvif.org/ver10/schema}NetworkHost" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="NTPManual" type="{http://www.onvif.org/ver10/schema}NetworkHost" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NTPInformationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,19 +45,31 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NTPInformation {
 
+    /**
+     * Indicates if NTP information is to be retrieved by using DHCP.
+     * 
+     */
     @XmlElement(name = "FromDHCP")
     protected boolean fromDHCP;
+    /**
+     * List of NTP addresses retrieved by using DHCP.
+     * 
+     */
     @XmlElement(name = "NTPFromDHCP")
     protected List<NetworkHost> ntpFromDHCP;
+    /**
+     * List of manually entered NTP addresses.
+     * 
+     */
     @XmlElement(name = "NTPManual")
     protected List<NetworkHost> ntpManual;
     @XmlElement(name = "Extension")
     protected NTPInformationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the fromDHCP property.
+     * Indicates if NTP information is to be retrieved by using DHCP.
      * 
      */
     public boolean isFromDHCP() {
@@ -73,59 +85,69 @@ public class NTPInformation {
     }
 
     /**
+     * List of NTP addresses retrieved by using DHCP.
+     * 
      * Gets the value of the ntpFromDHCP property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ntpFromDHCP property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntpFromDHCP property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getNTPFromDHCP().add(newItem);
+     * getNTPFromDHCP().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link NetworkHost }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ntpFromDHCP property.
      */
     public List<NetworkHost> getNTPFromDHCP() {
         if (ntpFromDHCP == null) {
-            ntpFromDHCP = new ArrayList<NetworkHost>();
+            ntpFromDHCP = new ArrayList<>();
         }
         return this.ntpFromDHCP;
     }
 
     /**
+     * List of manually entered NTP addresses.
+     * 
      * Gets the value of the ntpManual property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ntpManual property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ntpManual property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getNTPManual().add(newItem);
+     * getNTPManual().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link NetworkHost }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ntpManual property.
      */
     public List<NetworkHost> getNTPManual() {
         if (ntpManual == null) {
-            ntpManual = new ArrayList<NetworkHost>();
+            ntpManual = new ArrayList<>();
         }
         return this.ntpManual;
     }

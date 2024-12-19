@@ -13,24 +13,24 @@ import org.onvif.ver10.schema.TimeZone;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="DateTimeType" type="{http://www.onvif.org/ver10/schema}SetDateTimeType"/&gt;
- *         &lt;element name="DaylightSavings" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="TimeZone" type="{http://www.onvif.org/ver10/schema}TimeZone" minOccurs="0"/&gt;
- *         &lt;element name="UTCDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="DateTimeType" type="{http://www.onvif.org/ver10/schema}SetDateTimeType"/>
+ *         <element name="DaylightSavings" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="TimeZone" type="{http://www.onvif.org/ver10/schema}TimeZone" minOccurs="0"/>
+ *         <element name="UTCDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,18 +44,35 @@ import org.onvif.ver10.schema.TimeZone;
 @XmlRootElement(name = "SetSystemDateAndTime")
 public class SetSystemDateAndTime {
 
+    /**
+     * Defines if the date and time is set via NTP or manually.
+     * 
+     */
     @XmlElement(name = "DateTimeType", required = true)
     @XmlSchemaType(name = "string")
     protected SetDateTimeType dateTimeType;
+    /**
+     * Automatically adjust Daylight savings if defined in TimeZone.
+     * 
+     */
     @XmlElement(name = "DaylightSavings")
     protected boolean daylightSavings;
+    /**
+     * The time zone in POSIX 1003.1 format
+     * 
+     */
     @XmlElement(name = "TimeZone")
     protected TimeZone timeZone;
+    /**
+     * Date and time in UTC. If time is obtained via NTP, UTCDateTime has
+     *                   no meaning
+     * 
+     */
     @XmlElement(name = "UTCDateTime")
     protected DateTime utcDateTime;
 
     /**
-     * Gets the value of the dateTimeType property.
+     * Defines if the date and time is set via NTP or manually.
      * 
      * @return
      *     possible object is
@@ -73,13 +90,14 @@ public class SetSystemDateAndTime {
      *     allowed object is
      *     {@link SetDateTimeType }
      *     
+     * @see #getDateTimeType()
      */
     public void setDateTimeType(SetDateTimeType value) {
         this.dateTimeType = value;
     }
 
     /**
-     * Gets the value of the daylightSavings property.
+     * Automatically adjust Daylight savings if defined in TimeZone.
      * 
      */
     public boolean isDaylightSavings() {
@@ -95,7 +113,7 @@ public class SetSystemDateAndTime {
     }
 
     /**
-     * Gets the value of the timeZone property.
+     * The time zone in POSIX 1003.1 format
      * 
      * @return
      *     possible object is
@@ -113,13 +131,15 @@ public class SetSystemDateAndTime {
      *     allowed object is
      *     {@link TimeZone }
      *     
+     * @see #getTimeZone()
      */
     public void setTimeZone(TimeZone value) {
         this.timeZone = value;
     }
 
     /**
-     * Gets the value of the utcDateTime property.
+     * Date and time in UTC. If time is obtained via NTP, UTCDateTime has
+     *                   no meaning
      * 
      * @return
      *     possible object is
@@ -137,6 +157,7 @@ public class SetSystemDateAndTime {
      *     allowed object is
      *     {@link DateTime }
      *     
+     * @see #getUTCDateTime()
      */
     public void setUTCDateTime(DateTime value) {
         this.utcDateTime = value;

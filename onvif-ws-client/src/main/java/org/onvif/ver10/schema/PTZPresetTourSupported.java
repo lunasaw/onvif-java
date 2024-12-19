@@ -15,24 +15,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPresetTourSupported complex type.
+ * <p>Java class for PTZPresetTourSupported complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourSupported"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="MaximumNumberOfPresetTours" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="PTZPresetTourOperation" type="{http://www.onvif.org/ver10/schema}PTZPresetTourOperation" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSupportedExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourSupported">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="MaximumNumberOfPresetTours" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="PTZPresetTourOperation" type="{http://www.onvif.org/ver10/schema}PTZPresetTourOperation" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSupportedExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,18 +44,31 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourSupported {
 
+    /**
+     * Indicates number of preset tours that can be created. Required preset
+     *             tour operations shall be available for this PTZ Node if one or more preset tour is
+     *             supported.
+     * 
+     */
     @XmlElement(name = "MaximumNumberOfPresetTours")
     protected int maximumNumberOfPresetTours;
+    /**
+     * Indicates which preset tour operations are available for this PTZ
+     *             Node.
+     * 
+     */
     @XmlElement(name = "PTZPresetTourOperation")
     @XmlSchemaType(name = "string")
     protected List<PTZPresetTourOperation> ptzPresetTourOperation;
     @XmlElement(name = "Extension")
     protected PTZPresetTourSupportedExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the maximumNumberOfPresetTours property.
+     * Indicates number of preset tours that can be created. Required preset
+     *             tour operations shall be available for this PTZ Node if one or more preset tour is
+     *             supported.
      * 
      */
     public int getMaximumNumberOfPresetTours() {
@@ -71,30 +84,36 @@ public class PTZPresetTourSupported {
     }
 
     /**
+     * Indicates which preset tour operations are available for this PTZ
+     *             Node.
+     * 
      * Gets the value of the ptzPresetTourOperation property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ptzPresetTourOperation property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ptzPresetTourOperation property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPTZPresetTourOperation().add(newItem);
+     * getPTZPresetTourOperation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PTZPresetTourOperation }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ptzPresetTourOperation property.
      */
     public List<PTZPresetTourOperation> getPTZPresetTourOperation() {
         if (ptzPresetTourOperation == null) {
-            ptzPresetTourOperation = new ArrayList<PTZPresetTourOperation>();
+            ptzPresetTourOperation = new ArrayList<>();
         }
         return this.ptzPresetTourOperation;
     }

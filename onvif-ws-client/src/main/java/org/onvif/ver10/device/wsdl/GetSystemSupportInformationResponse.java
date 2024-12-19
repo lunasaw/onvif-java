@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.SupportInformation;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SupportInformation" type="{http://www.onvif.org/ver10/schema}SupportInformation"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SupportInformation" type="{http://www.onvif.org/ver10/schema}SupportInformation"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.SupportInformation;
 @XmlRootElement(name = "GetSystemSupportInformationResponse")
 public class GetSystemSupportInformationResponse {
 
+    /**
+     * Contains the arbitary device diagnostics information.
+     * 
+     */
     @XmlElement(name = "SupportInformation", required = true)
     protected SupportInformation supportInformation;
 
     /**
-     * Gets the value of the supportInformation property.
+     * Contains the arbitary device diagnostics information.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetSystemSupportInformationResponse {
      *     allowed object is
      *     {@link SupportInformation }
      *     
+     * @see #getSupportInformation()
      */
     public void setSupportInformation(SupportInformation value) {
         this.supportInformation = value;

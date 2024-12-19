@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for IPv6NetworkInterface complex type.
+ * <p>Java class for IPv6NetworkInterface complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="IPv6NetworkInterface"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="Config" type="{http://www.onvif.org/ver10/schema}IPv6Configuration" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="IPv6NetworkInterface">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="Config" type="{http://www.onvif.org/ver10/schema}IPv6Configuration" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IPv6NetworkInterface {
 
+    /**
+     * Indicates whether or not IPv6 is enabled.
+     * 
+     */
     @XmlElement(name = "Enabled")
     protected boolean enabled;
+    /**
+     * IPv6 configuration.
+     * 
+     */
     @XmlElement(name = "Config")
     protected IPv6Configuration config;
 
     /**
-     * Gets the value of the enabled property.
+     * Indicates whether or not IPv6 is enabled.
      * 
      */
     public boolean isEnabled() {
@@ -56,7 +64,7 @@ public class IPv6NetworkInterface {
     }
 
     /**
-     * Gets the value of the config property.
+     * IPv6 configuration.
      * 
      * @return
      *     possible object is
@@ -74,6 +82,7 @@ public class IPv6NetworkInterface {
      *     allowed object is
      *     {@link IPv6Configuration }
      *     
+     * @see #getConfig()
      */
     public void setConfig(IPv6Configuration value) {
         this.config = value;

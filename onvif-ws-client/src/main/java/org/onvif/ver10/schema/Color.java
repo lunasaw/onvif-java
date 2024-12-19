@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Color complex type.
+ * <p>Java class for Color complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Color"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="X" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="Y" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="Z" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Color">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="X" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="Y" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="Z" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
+ *       <attribute name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */

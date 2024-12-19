@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Rotate complex type.
+ * <p>Java class for Rotate complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Rotate"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}RotateMode"/&gt;
- *         &lt;element name="Degree" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RotateExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Rotate">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}RotateMode"/>
+ *         <element name="Degree" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RotateExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -42,18 +42,27 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Rotate {
 
+    /**
+     * Parameter to enable/disable Rotation feature.
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected RotateMode mode;
+    /**
+     * Optional parameter to configure how much degree of clockwise rotation of
+     *             image for On mode. Omitting this parameter for On mode means 180 degree rotation.
+     * 
+     */
     @XmlElement(name = "Degree")
     protected Integer degree;
     @XmlElement(name = "Extension")
     protected RotateExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the mode property.
+     * Parameter to enable/disable Rotation feature.
      * 
      * @return
      *     possible object is
@@ -71,13 +80,15 @@ public class Rotate {
      *     allowed object is
      *     {@link RotateMode }
      *     
+     * @see #getMode()
      */
     public void setMode(RotateMode value) {
         this.mode = value;
     }
 
     /**
-     * Gets the value of the degree property.
+     * Optional parameter to configure how much degree of clockwise rotation of
+     *             image for On mode. Omitting this parameter for On mode means 180 degree rotation.
      * 
      * @return
      *     possible object is
@@ -95,6 +106,7 @@ public class Rotate {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getDegree()
      */
     public void setDegree(Integer value) {
         this.degree = value;

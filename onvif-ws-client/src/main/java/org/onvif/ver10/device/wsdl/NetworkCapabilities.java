@@ -12,28 +12,28 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkCapabilities complex type.
+ * <p>Java class for NetworkCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Dot11Configuration" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Dot1XConfigurations" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="HostnameFromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="NTP" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="DHCPv6" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Dot11Configuration" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Dot1XConfigurations" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="HostnameFromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="NTP" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="DHCPv6" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,29 +41,67 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "NetworkCapabilities")
 public class NetworkCapabilities {
 
+    /**
+     * Indicates support for IP filtering.
+     * 
+     */
     @XmlAttribute(name = "IPFilter")
     protected Boolean ipFilter;
+    /**
+     * Indicates support for zeroconf.
+     * 
+     */
     @XmlAttribute(name = "ZeroConfiguration")
     protected Boolean zeroConfiguration;
+    /**
+     * Indicates support for IPv6.
+     * 
+     */
     @XmlAttribute(name = "IPVersion6")
     protected Boolean ipVersion6;
+    /**
+     * Indicates support for dynamic DNS configuration.
+     * 
+     */
     @XmlAttribute(name = "DynDNS")
     protected Boolean dynDNS;
+    /**
+     * Indicates support for IEEE 802.11 configuration.
+     * 
+     */
     @XmlAttribute(name = "Dot11Configuration")
     protected Boolean dot11Configuration;
+    /**
+     * Indicates the maximum number of Dot1X configurations supported by the
+     *               device
+     * 
+     */
     @XmlAttribute(name = "Dot1XConfigurations")
     protected Integer dot1XConfigurations;
+    /**
+     * Indicates support for retrieval of hostname from DHCP.
+     * 
+     */
     @XmlAttribute(name = "HostnameFromDHCP")
     protected Boolean hostnameFromDHCP;
+    /**
+     * Maximum number of NTP servers supported by the devices SetNTP
+     *               command.
+     * 
+     */
     @XmlAttribute(name = "NTP")
     protected Integer ntp;
+    /**
+     * Indicates support for Stateful IPv6 DHCP.
+     * 
+     */
     @XmlAttribute(name = "DHCPv6")
     protected Boolean dhcPv6;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the ipFilter property.
+     * Indicates support for IP filtering.
      * 
      * @return
      *     possible object is
@@ -81,13 +119,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIPFilter()
      */
     public void setIPFilter(Boolean value) {
         this.ipFilter = value;
     }
 
     /**
-     * Gets the value of the zeroConfiguration property.
+     * Indicates support for zeroconf.
      * 
      * @return
      *     possible object is
@@ -105,13 +144,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isZeroConfiguration()
      */
     public void setZeroConfiguration(Boolean value) {
         this.zeroConfiguration = value;
     }
 
     /**
-     * Gets the value of the ipVersion6 property.
+     * Indicates support for IPv6.
      * 
      * @return
      *     possible object is
@@ -129,13 +169,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIPVersion6()
      */
     public void setIPVersion6(Boolean value) {
         this.ipVersion6 = value;
     }
 
     /**
-     * Gets the value of the dynDNS property.
+     * Indicates support for dynamic DNS configuration.
      * 
      * @return
      *     possible object is
@@ -153,13 +194,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDynDNS()
      */
     public void setDynDNS(Boolean value) {
         this.dynDNS = value;
     }
 
     /**
-     * Gets the value of the dot11Configuration property.
+     * Indicates support for IEEE 802.11 configuration.
      * 
      * @return
      *     possible object is
@@ -177,13 +219,15 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDot11Configuration()
      */
     public void setDot11Configuration(Boolean value) {
         this.dot11Configuration = value;
     }
 
     /**
-     * Gets the value of the dot1XConfigurations property.
+     * Indicates the maximum number of Dot1X configurations supported by the
+     *               device
      * 
      * @return
      *     possible object is
@@ -201,13 +245,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getDot1XConfigurations()
      */
     public void setDot1XConfigurations(Integer value) {
         this.dot1XConfigurations = value;
     }
 
     /**
-     * Gets the value of the hostnameFromDHCP property.
+     * Indicates support for retrieval of hostname from DHCP.
      * 
      * @return
      *     possible object is
@@ -225,13 +270,15 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHostnameFromDHCP()
      */
     public void setHostnameFromDHCP(Boolean value) {
         this.hostnameFromDHCP = value;
     }
 
     /**
-     * Gets the value of the ntp property.
+     * Maximum number of NTP servers supported by the devices SetNTP
+     *               command.
      * 
      * @return
      *     possible object is
@@ -249,13 +296,14 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getNTP()
      */
     public void setNTP(Integer value) {
         this.ntp = value;
     }
 
     /**
-     * Gets the value of the dhcPv6 property.
+     * Indicates support for Stateful IPv6 DHCP.
      * 
      * @return
      *     possible object is
@@ -273,6 +321,7 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDHCPv6()
      */
     public void setDHCPv6(Boolean value) {
         this.dhcPv6 = value;

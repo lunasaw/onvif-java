@@ -18,25 +18,25 @@ import org.w3c.dom.Element;
 /**
  * An X.509v3 extension field as specified in RFC 5280
  * 
- * <p>Java class for X509v3Extension complex type.
+ * <p>Java class for X509v3Extension complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="X509v3Extension"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="extnOID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/&gt;
- *         &lt;element name="critical" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="extnValue" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="X509v3Extension">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="extnOID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/>
+ *         <element name="critical" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="extnValue" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,19 +49,32 @@ import org.w3c.dom.Element;
 })
 public class X509V3Extension {
 
+    /**
+     * The OID of the extension field.
+     * 
+     */
     @XmlElement(required = true)
     protected String extnOID;
+    /**
+     * True if and only if the extension is critical.
+     * 
+     */
     @XmlElement(defaultValue = "false")
     protected boolean critical;
+    /**
+     * The value of the extension field as a base64-encoded DER
+     *                 representation of an ASN.1 value.
+     * 
+     */
     @XmlElement(required = true)
     protected byte[] extnValue;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the extnOID property.
+     * The OID of the extension field.
      * 
      * @return
      *     possible object is
@@ -79,13 +92,14 @@ public class X509V3Extension {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getExtnOID()
      */
     public void setExtnOID(String value) {
         this.extnOID = value;
     }
 
     /**
-     * Gets the value of the critical property.
+     * True if and only if the extension is critical.
      * 
      */
     public boolean isCritical() {
@@ -101,7 +115,8 @@ public class X509V3Extension {
     }
 
     /**
-     * Gets the value of the extnValue property.
+     * The value of the extension field as a base64-encoded DER
+     *                 representation of an ASN.1 value.
      * 
      * @return
      *     possible object is
@@ -117,6 +132,7 @@ public class X509V3Extension {
      * @param value
      *     allowed object is
      *     byte[]
+     * @see #getExtnValue()
      */
     public void setExtnValue(byte[] value) {
         this.extnValue = value;
@@ -125,16 +141,16 @@ public class X509V3Extension {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -142,12 +158,15 @@ public class X509V3Extension {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

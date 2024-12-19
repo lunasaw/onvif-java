@@ -12,25 +12,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RealTimeStreamingCapabilities complex type.
+ * <p>Java class for RealTimeStreamingCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RealTimeStreamingCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RTPMulticast" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RealTimeStreamingCapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RealTimeStreamingCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RTPMulticast" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RealTimeStreamingCapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -43,19 +43,31 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RealTimeStreamingCapabilities {
 
+    /**
+     * Indicates whether or not RTP multicast is supported.
+     * 
+     */
     @XmlElement(name = "RTPMulticast")
     protected Boolean rtpMulticast;
+    /**
+     * Indicates whether or not RTP over TCP is supported.
+     * 
+     */
     @XmlElement(name = "RTP_TCP")
     protected Boolean rtptcp;
+    /**
+     * Indicates whether or not RTP/RTSP/TCP is supported.
+     * 
+     */
     @XmlElement(name = "RTP_RTSP_TCP")
     protected Boolean rtprtsptcp;
     @XmlElement(name = "Extension")
     protected RealTimeStreamingCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the rtpMulticast property.
+     * Indicates whether or not RTP multicast is supported.
      * 
      * @return
      *     possible object is
@@ -73,13 +85,14 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPMulticast()
      */
     public void setRTPMulticast(Boolean value) {
         this.rtpMulticast = value;
     }
 
     /**
-     * Gets the value of the rtptcp property.
+     * Indicates whether or not RTP over TCP is supported.
      * 
      * @return
      *     possible object is
@@ -97,13 +110,14 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPTCP()
      */
     public void setRTPTCP(Boolean value) {
         this.rtptcp = value;
     }
 
     /**
-     * Gets the value of the rtprtsptcp property.
+     * Indicates whether or not RTP/RTSP/TCP is supported.
      * 
      * @return
      *     possible object is
@@ -121,6 +135,7 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRTPRTSPTCP()
      */
     public void setRTPRTSPTCP(Boolean value) {
         this.rtprtsptcp = value;

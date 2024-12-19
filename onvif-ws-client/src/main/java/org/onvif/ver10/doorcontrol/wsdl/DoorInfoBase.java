@@ -10,26 +10,24 @@ import org.onvif.ver10.pacs.DataEntity;
 
 
 /**
+ * Used as extension base.
  * 
- *             Used as extension base.
- *           
+ * <p>Java class for DoorInfoBase complex type</p>.
  * 
- * <p>Java class for DoorInfoBase complex type.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="DoorInfoBase"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
- *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DoorInfoBase">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/pacs}DataEntity">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/>
+ *         <element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/>
+ *       </sequence>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,13 +43,22 @@ public class DoorInfoBase
     extends DataEntity
 {
 
+    /**
+     * A user readable name. It shall be up to 64 characters.
+     * 
+     */
     @XmlElement(name = "Name", required = true)
     protected String name;
+    /**
+     * A user readable description. It shall be up to 1024
+     *                     characters.
+     * 
+     */
     @XmlElement(name = "Description")
     protected String description;
 
     /**
-     * Gets the value of the name property.
+     * A user readable name. It shall be up to 64 characters.
      * 
      * @return
      *     possible object is
@@ -69,13 +76,15 @@ public class DoorInfoBase
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the description property.
+     * A user readable description. It shall be up to 1024
+     *                     characters.
      * 
      * @return
      *     possible object is
@@ -93,6 +102,7 @@ public class DoorInfoBase
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;

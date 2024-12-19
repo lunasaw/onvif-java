@@ -14,21 +14,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for JobOptions complex type.
+ * <p>Java class for JobOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="JobOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="Spare" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="CompatibleSources" type="{http://www.onvif.org/ver10/schema}StringAttrList" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="JobOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="Spare" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="CompatibleSources" type="{http://www.onvif.org/ver10/schema}StringAttrList" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,15 +36,24 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "JobOptions")
 public class JobOptions {
 
+    /**
+     * Number of spare jobs that can be created for the recording.
+     * 
+     */
     @XmlAttribute(name = "Spare")
     protected Integer spare;
+    /**
+     * A device that supports recording of a restricted set of Media Service
+     *               Profiles returns the list of profiles that can be recorded on the given Recording.
+     * 
+     */
     @XmlAttribute(name = "CompatibleSources")
     protected List<String> compatibleSources;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the spare property.
+     * Number of spare jobs that can be created for the recording.
      * 
      * @return
      *     possible object is
@@ -62,36 +71,43 @@ public class JobOptions {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getSpare()
      */
     public void setSpare(Integer value) {
         this.spare = value;
     }
 
     /**
+     * A device that supports recording of a restricted set of Media Service
+     *               Profiles returns the list of profiles that can be recorded on the given Recording.
+     * 
      * Gets the value of the compatibleSources property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the compatibleSources property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the compatibleSources property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getCompatibleSources().add(newItem);
+     * getCompatibleSources().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the compatibleSources property.
      */
     public List<String> getCompatibleSources() {
         if (compatibleSources == null) {
-            compatibleSources = new ArrayList<String>();
+            compatibleSources = new ArrayList<>();
         }
         return this.compatibleSources;
     }

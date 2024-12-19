@@ -13,8 +13,7 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *         A media profile consists of a set of media configurations. Media profiles are used by a
+ * A media profile consists of a set of media configurations. Media profiles are used by a
  *         tests
  *         to configure properties of a media stream from an NVT.
  *         
@@ -35,34 +34,33 @@ import jakarta.xml.bind.annotation.XmlType;
  *         by the NVT and can be either static or created dynamically by the NVT. For example, the
  *         dynamic configurations can be created by the NVT depending on current available encoding
  *         resources.
- *       
  * 
- * <p>Java class for Profile complex type.
+ * <p>Java class for Profile complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Profile"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/&gt;
- *         &lt;element name="VideoSourceConfiguration" type="{http://www.onvif.org/ver10/schema}VideoSourceConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="AudioSourceConfiguration" type="{http://www.onvif.org/ver10/schema}AudioSourceConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="VideoEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}VideoEncoderConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="AudioEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="VideoAnalyticsConfiguration" type="{http://www.onvif.org/ver10/schema}VideoAnalyticsConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="PTZConfiguration" type="{http://www.onvif.org/ver10/schema}PTZConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="MetadataConfiguration" type="{http://www.onvif.org/ver10/schema}MetadataConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ProfileExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
- *       &lt;attribute name="fixed" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Profile">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/>
+ *         <element name="VideoSourceConfiguration" type="{http://www.onvif.org/ver10/schema}VideoSourceConfiguration" minOccurs="0"/>
+ *         <element name="AudioSourceConfiguration" type="{http://www.onvif.org/ver10/schema}AudioSourceConfiguration" minOccurs="0"/>
+ *         <element name="VideoEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}VideoEncoderConfiguration" minOccurs="0"/>
+ *         <element name="AudioEncoderConfiguration" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfiguration" minOccurs="0"/>
+ *         <element name="VideoAnalyticsConfiguration" type="{http://www.onvif.org/ver10/schema}VideoAnalyticsConfiguration" minOccurs="0"/>
+ *         <element name="PTZConfiguration" type="{http://www.onvif.org/ver10/schema}PTZConfiguration" minOccurs="0"/>
+ *         <element name="MetadataConfiguration" type="{http://www.onvif.org/ver10/schema}MetadataConfiguration" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ProfileExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
+ *       <attribute name="fixed" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -80,33 +78,78 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Profile {
 
+    /**
+     * User readable name of the profile.
+     * 
+     */
     @XmlElement(name = "Name", required = true)
     protected String name;
+    /**
+     * Optional configuration of the Video input.
+     * 
+     */
     @XmlElement(name = "VideoSourceConfiguration")
     protected VideoSourceConfiguration videoSourceConfiguration;
+    /**
+     * Optional configuration of the Audio input.
+     * 
+     */
     @XmlElement(name = "AudioSourceConfiguration")
     protected AudioSourceConfiguration audioSourceConfiguration;
+    /**
+     * Optional configuration of the Video encoder.
+     * 
+     */
     @XmlElement(name = "VideoEncoderConfiguration")
     protected VideoEncoderConfiguration videoEncoderConfiguration;
+    /**
+     * Optional configuration of the Audio encoder.
+     * 
+     */
     @XmlElement(name = "AudioEncoderConfiguration")
     protected AudioEncoderConfiguration audioEncoderConfiguration;
+    /**
+     * Optional configuration of the video analytics module and rule engine.
+     * 
+     */
     @XmlElement(name = "VideoAnalyticsConfiguration")
     protected VideoAnalyticsConfiguration videoAnalyticsConfiguration;
+    /**
+     * Optional configuration of the pan tilt zoom unit.
+     * 
+     */
     @XmlElement(name = "PTZConfiguration")
     protected PTZConfiguration ptzConfiguration;
+    /**
+     * Optional configuration of the metadata stream.
+     * 
+     */
     @XmlElement(name = "MetadataConfiguration")
     protected MetadataConfiguration metadataConfiguration;
+    /**
+     * Extensions defined in ONVIF 2.0
+     * 
+     */
     @XmlElement(name = "Extension")
     protected ProfileExtension extension;
+    /**
+     * Unique identifier of the profile.
+     * 
+     */
     @XmlAttribute(name = "token", required = true)
     protected String token;
+    /**
+     * A value of true signals that the profile cannot be deleted. Default is
+     *           false.
+     * 
+     */
     @XmlAttribute(name = "fixed")
     protected Boolean fixed;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the name property.
+     * User readable name of the profile.
      * 
      * @return
      *     possible object is
@@ -124,13 +167,14 @@ public class Profile {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the videoSourceConfiguration property.
+     * Optional configuration of the Video input.
      * 
      * @return
      *     possible object is
@@ -148,13 +192,14 @@ public class Profile {
      *     allowed object is
      *     {@link VideoSourceConfiguration }
      *     
+     * @see #getVideoSourceConfiguration()
      */
     public void setVideoSourceConfiguration(VideoSourceConfiguration value) {
         this.videoSourceConfiguration = value;
     }
 
     /**
-     * Gets the value of the audioSourceConfiguration property.
+     * Optional configuration of the Audio input.
      * 
      * @return
      *     possible object is
@@ -172,13 +217,14 @@ public class Profile {
      *     allowed object is
      *     {@link AudioSourceConfiguration }
      *     
+     * @see #getAudioSourceConfiguration()
      */
     public void setAudioSourceConfiguration(AudioSourceConfiguration value) {
         this.audioSourceConfiguration = value;
     }
 
     /**
-     * Gets the value of the videoEncoderConfiguration property.
+     * Optional configuration of the Video encoder.
      * 
      * @return
      *     possible object is
@@ -196,13 +242,14 @@ public class Profile {
      *     allowed object is
      *     {@link VideoEncoderConfiguration }
      *     
+     * @see #getVideoEncoderConfiguration()
      */
     public void setVideoEncoderConfiguration(VideoEncoderConfiguration value) {
         this.videoEncoderConfiguration = value;
     }
 
     /**
-     * Gets the value of the audioEncoderConfiguration property.
+     * Optional configuration of the Audio encoder.
      * 
      * @return
      *     possible object is
@@ -220,13 +267,14 @@ public class Profile {
      *     allowed object is
      *     {@link AudioEncoderConfiguration }
      *     
+     * @see #getAudioEncoderConfiguration()
      */
     public void setAudioEncoderConfiguration(AudioEncoderConfiguration value) {
         this.audioEncoderConfiguration = value;
     }
 
     /**
-     * Gets the value of the videoAnalyticsConfiguration property.
+     * Optional configuration of the video analytics module and rule engine.
      * 
      * @return
      *     possible object is
@@ -244,13 +292,14 @@ public class Profile {
      *     allowed object is
      *     {@link VideoAnalyticsConfiguration }
      *     
+     * @see #getVideoAnalyticsConfiguration()
      */
     public void setVideoAnalyticsConfiguration(VideoAnalyticsConfiguration value) {
         this.videoAnalyticsConfiguration = value;
     }
 
     /**
-     * Gets the value of the ptzConfiguration property.
+     * Optional configuration of the pan tilt zoom unit.
      * 
      * @return
      *     possible object is
@@ -268,13 +317,14 @@ public class Profile {
      *     allowed object is
      *     {@link PTZConfiguration }
      *     
+     * @see #getPTZConfiguration()
      */
     public void setPTZConfiguration(PTZConfiguration value) {
         this.ptzConfiguration = value;
     }
 
     /**
-     * Gets the value of the metadataConfiguration property.
+     * Optional configuration of the metadata stream.
      * 
      * @return
      *     possible object is
@@ -292,13 +342,14 @@ public class Profile {
      *     allowed object is
      *     {@link MetadataConfiguration }
      *     
+     * @see #getMetadataConfiguration()
      */
     public void setMetadataConfiguration(MetadataConfiguration value) {
         this.metadataConfiguration = value;
     }
 
     /**
-     * Gets the value of the extension property.
+     * Extensions defined in ONVIF 2.0
      * 
      * @return
      *     possible object is
@@ -316,13 +367,14 @@ public class Profile {
      *     allowed object is
      *     {@link ProfileExtension }
      *     
+     * @see #getExtension()
      */
     public void setExtension(ProfileExtension value) {
         this.extension = value;
     }
 
     /**
-     * Gets the value of the token property.
+     * Unique identifier of the profile.
      * 
      * @return
      *     possible object is
@@ -340,13 +392,15 @@ public class Profile {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
     }
 
     /**
-     * Gets the value of the fixed property.
+     * A value of true signals that the profile cannot be deleted. Default is
+     *           false.
      * 
      * @return
      *     possible object is
@@ -364,6 +418,7 @@ public class Profile {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isFixed()
      */
     public void setFixed(Boolean value) {
         this.fixed = value;

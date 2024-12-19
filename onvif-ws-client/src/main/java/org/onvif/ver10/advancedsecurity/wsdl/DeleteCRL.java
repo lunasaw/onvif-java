@@ -13,21 +13,21 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="CrlID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CRLID"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="CrlID" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CRLID"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -38,6 +38,10 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "DeleteCRL")
 public class DeleteCRL {
 
+    /**
+     * The ID of the CRL to be deleted.
+     * 
+     */
     @XmlElement(name = "CrlID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -45,7 +49,7 @@ public class DeleteCRL {
     protected String crlID;
 
     /**
-     * Gets the value of the crlID property.
+     * The ID of the CRL to be deleted.
      * 
      * @return
      *     possible object is
@@ -63,6 +67,7 @@ public class DeleteCRL {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getCrlID()
      */
     public void setCrlID(String value) {
         this.crlID = value;

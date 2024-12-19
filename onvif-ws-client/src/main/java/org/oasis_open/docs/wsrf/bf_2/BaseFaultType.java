@@ -43,54 +43,54 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for BaseFaultType complex type.
+ * <p>Java class for BaseFaultType complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="BaseFaultType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;element name="Originator" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType" minOccurs="0"/&gt;
- *         &lt;element name="ErrorCode" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *                 &lt;anyAttribute processContents='skip'/&gt;
- *               &lt;/extension&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="Description" maxOccurs="unbounded" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;simpleContent&gt;
- *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
- *                 &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&gt;
- *               &lt;/extension&gt;
- *             &lt;/simpleContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="FaultCause" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' namespace='##other'/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="BaseFaultType">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         <element name="Originator" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType" minOccurs="0"/>
+ *         <element name="ErrorCode" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <extension base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+ *                 <anyAttribute processContents='skip'/>
+ *               </extension>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *         <element name="Description" maxOccurs="unbounded" minOccurs="0">
+ *           <complexType>
+ *             <simpleContent>
+ *               <extension base="<http://www.w3.org/2001/XMLSchema>string">
+ *                 <attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/>
+ *               </extension>
+ *             </simpleContent>
+ *           </complexType>
+ *         </element>
+ *         <element name="FaultCause" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax' namespace='##other'/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -141,21 +141,21 @@ public class BaseFaultType {
     @XmlElement(name = "FaultCause")
     protected BaseFaultType.FaultCause faultCause;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -163,12 +163,15 @@ public class BaseFaultType {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
@@ -248,28 +251,31 @@ public class BaseFaultType {
     /**
      * Gets the value of the description property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the description property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDescription().add(newItem);
+     * getDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link BaseFaultType.Description }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the description property.
      */
     public List<BaseFaultType.Description> getDescription() {
         if (description == null) {
-            description = new ArrayList<BaseFaultType.Description>();
+            description = new ArrayList<>();
         }
         return this.description;
     }
@@ -318,19 +324,19 @@ public class BaseFaultType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;simpleContent&gt;
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
-     *       &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&gt;
-     *     &lt;/extension&gt;
-     *   &lt;/simpleContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <simpleContent>
+     *     <extension base="<http://www.w3.org/2001/XMLSchema>string">
+     *       <attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/>
+     *     </extension>
+     *   </simpleContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -342,6 +348,38 @@ public class BaseFaultType {
 
         @XmlValue
         protected String value;
+        /**
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;&lt;p&gt;
+         *             denotes an attribute whose value
+         *             is a language code for the natural language of the content of
+         *             any element; its value is inherited. This name is reserved
+         *             by virtue of its definition in the XML specification.
+         *           &lt;/p&gt;&lt;/div&gt;
+         * </pre>
+         * 
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h4&gt;Notes&lt;/h4&gt;&lt;p&gt;
+         *             Attempting to install the relevant ISO 2- and 3-letter
+         *             codes as the enumerated possible values is probably never
+         *             going to be a realistic possibility.
+         *           &lt;/p&gt;&lt;p&gt;
+         *             See BCP 47 at
+         *             &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
+         *               http://www.rfc-editor.org/rfc/bcp/bcp47.txt
+         *             &lt;/a&gt;
+         *             and the IANA language subtag registry at
+         *             &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
+         *               http://www.iana.org/assignments/language-subtag-registry
+         *             &lt;/a&gt;
+         *             for further information.
+         *           &lt;/p&gt;&lt;p&gt;
+         *             The union allows for the 'un-declaration' of xml:lang with
+         *             the empty string.
+         *           &lt;/p&gt;&lt;/div&gt;
+         * </pre>
+         * 
+         */
         @XmlAttribute(name = "lang", namespace = "http://www.w3.org/XML/1998/namespace")
         protected String lang;
 
@@ -370,7 +408,35 @@ public class BaseFaultType {
         }
 
         /**
-         * Gets the value of the lang property.
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;&lt;p&gt;
+         *             denotes an attribute whose value
+         *             is a language code for the natural language of the content of
+         *             any element; its value is inherited. This name is reserved
+         *             by virtue of its definition in the XML specification.
+         *           &lt;/p&gt;&lt;/div&gt;
+         * </pre>
+         * 
+         * <pre>
+         * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h4&gt;Notes&lt;/h4&gt;&lt;p&gt;
+         *             Attempting to install the relevant ISO 2- and 3-letter
+         *             codes as the enumerated possible values is probably never
+         *             going to be a realistic possibility.
+         *           &lt;/p&gt;&lt;p&gt;
+         *             See BCP 47 at
+         *             &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
+         *               http://www.rfc-editor.org/rfc/bcp/bcp47.txt
+         *             &lt;/a&gt;
+         *             and the IANA language subtag registry at
+         *             &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
+         *               http://www.iana.org/assignments/language-subtag-registry
+         *             &lt;/a&gt;
+         *             for further information.
+         *           &lt;/p&gt;&lt;p&gt;
+         *             The union allows for the 'un-declaration' of xml:lang with
+         *             the empty string.
+         *           &lt;/p&gt;&lt;/div&gt;
+         * </pre>
          * 
          * @return
          *     possible object is
@@ -388,6 +454,7 @@ public class BaseFaultType {
          *     allowed object is
          *     {@link String }
          *     
+         * @see #getLang()
          */
         public void setLang(String value) {
             this.lang = value;
@@ -397,20 +464,20 @@ public class BaseFaultType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
-     *       &lt;anyAttribute processContents='skip'/&gt;
-     *     &lt;/extension&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <extension base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
+     *       <anyAttribute processContents='skip'/>
+     *     </extension>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -427,21 +494,21 @@ public class BaseFaultType {
         @XmlSchemaType(name = "anyURI")
         protected String dialect;
         @XmlAnyAttribute
-        private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+        private Map<QName, String> otherAttributes = new HashMap<>();
 
         /**
          * Gets the value of the content property.
          * 
-         * <p>
-         * This accessor method returns a reference to the live list,
+         * <p>This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the Jakarta XML Binding object.
-         * This is why there is not a <CODE>set</CODE> method for the content property.
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the content property.</p>
          * 
          * <p>
          * For example, to add a new item, do as follows:
+         * </p>
          * <pre>
-         *    getContent().add(newItem);
+         * getContent().add(newItem);
          * </pre>
          * 
          * 
@@ -449,12 +516,15 @@ public class BaseFaultType {
          * Objects of the following type(s) are allowed in the list
          * {@link String }
          * {@link Element }
+         * </p>
          * 
          * 
+         * @return
+         *     The value of the content property.
          */
         public List<Object> getContent() {
             if (content == null) {
-                content = new ArrayList<Object>();
+                content = new ArrayList<>();
             }
             return this.content;
         }
@@ -505,21 +575,21 @@ public class BaseFaultType {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' namespace='##other'/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' namespace='##other'/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */

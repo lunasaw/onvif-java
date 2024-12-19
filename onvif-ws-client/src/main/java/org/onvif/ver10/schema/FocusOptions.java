@@ -11,24 +11,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FocusOptions complex type.
+ * <p>Java class for FocusOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="FocusOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AutoFocusModes" type="{http://www.onvif.org/ver10/schema}AutoFocusMode" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="DefaultSpeed" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="NearLimit" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="FarLimit" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="FocusOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AutoFocusModes" type="{http://www.onvif.org/ver10/schema}AutoFocusMode" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="DefaultSpeed" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="NearLimit" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *         <element name="FarLimit" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -54,28 +54,31 @@ public class FocusOptions {
     /**
      * Gets the value of the autoFocusModes property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAutoFocusModes().add(newItem);
+     * getAutoFocusModes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link AutoFocusMode }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the autoFocusModes property.
      */
     public List<AutoFocusMode> getAutoFocusModes() {
         if (autoFocusModes == null) {
-            autoFocusModes = new ArrayList<AutoFocusMode>();
+            autoFocusModes = new ArrayList<>();
         }
         return this.autoFocusModes;
     }

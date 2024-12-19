@@ -15,26 +15,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPresetTourStartingCondition complex type.
+ * <p>Java class for PTZPresetTourStartingCondition complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourStartingCondition"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RecurringTime" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="RecurringDuration" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="Direction" type="{http://www.onvif.org/ver10/schema}PTZPresetTourDirection" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingConditionExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="RandomPresetOrder" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourStartingCondition">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RecurringTime" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="RecurringDuration" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="Direction" type="{http://www.onvif.org/ver10/schema}PTZPresetTourDirection" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingConditionExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="RandomPresetOrder" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,22 +47,43 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourStartingCondition {
 
+    /**
+     * Optional parameter to specify how many times the preset tour is
+     *             recurred.
+     * 
+     */
     @XmlElement(name = "RecurringTime")
     protected Integer recurringTime;
+    /**
+     * Optional parameter to specify how long time duration the preset tour is
+     *             recurred.
+     * 
+     */
     @XmlElement(name = "RecurringDuration")
     protected Duration recurringDuration;
+    /**
+     * Optional parameter to choose which direction the preset tour goes.
+     *             Forward shall be chosen in case it is omitted.
+     * 
+     */
     @XmlElement(name = "Direction")
     @XmlSchemaType(name = "string")
     protected PTZPresetTourDirection direction;
     @XmlElement(name = "Extension")
     protected PTZPresetTourStartingConditionExtension extension;
+    /**
+     * Execute presets in random order. If set to true and Direction is also
+     *           present, Direction will be ignored and presets of the Tour will be recalled randomly.
+     * 
+     */
     @XmlAttribute(name = "RandomPresetOrder")
     protected Boolean randomPresetOrder;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the recurringTime property.
+     * Optional parameter to specify how many times the preset tour is
+     *             recurred.
      * 
      * @return
      *     possible object is
@@ -80,13 +101,15 @@ public class PTZPresetTourStartingCondition {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getRecurringTime()
      */
     public void setRecurringTime(Integer value) {
         this.recurringTime = value;
     }
 
     /**
-     * Gets the value of the recurringDuration property.
+     * Optional parameter to specify how long time duration the preset tour is
+     *             recurred.
      * 
      * @return
      *     possible object is
@@ -104,13 +127,15 @@ public class PTZPresetTourStartingCondition {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getRecurringDuration()
      */
     public void setRecurringDuration(Duration value) {
         this.recurringDuration = value;
     }
 
     /**
-     * Gets the value of the direction property.
+     * Optional parameter to choose which direction the preset tour goes.
+     *             Forward shall be chosen in case it is omitted.
      * 
      * @return
      *     possible object is
@@ -128,6 +153,7 @@ public class PTZPresetTourStartingCondition {
      *     allowed object is
      *     {@link PTZPresetTourDirection }
      *     
+     * @see #getDirection()
      */
     public void setDirection(PTZPresetTourDirection value) {
         this.direction = value;
@@ -158,7 +184,8 @@ public class PTZPresetTourStartingCondition {
     }
 
     /**
-     * Gets the value of the randomPresetOrder property.
+     * Execute presets in random order. If set to true and Direction is also
+     *           present, Direction will be ignored and presets of the Tour will be recalled randomly.
      * 
      * @return
      *     possible object is
@@ -176,6 +203,7 @@ public class PTZPresetTourStartingCondition {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRandomPresetOrder()
      */
     public void setRandomPresetOrder(Boolean value) {
         this.randomPresetOrder = value;

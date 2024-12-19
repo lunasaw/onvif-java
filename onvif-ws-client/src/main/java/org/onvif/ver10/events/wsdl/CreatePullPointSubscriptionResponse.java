@@ -16,24 +16,24 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SubscriptionReference" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType"/&gt;
- *         &lt;element ref="{http://docs.oasis-open.org/wsn/b-2}CurrentTime"/&gt;
- *         &lt;element ref="{http://docs.oasis-open.org/wsn/b-2}TerminationTime"/&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SubscriptionReference" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType"/>
+ *         <element ref="{http://docs.oasis-open.org/wsn/b-2}CurrentTime"/>
+ *         <element ref="{http://docs.oasis-open.org/wsn/b-2}TerminationTime"/>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,11 +47,25 @@ import org.w3c.dom.Element;
 @XmlRootElement(name = "CreatePullPointSubscriptionResponse")
 public class CreatePullPointSubscriptionResponse {
 
+    /**
+     * Endpoint reference of the subscription to be used for pulling the
+     *                   messages.
+     * 
+     */
     @XmlElement(name = "SubscriptionReference", required = true)
     protected W3CEndpointReference subscriptionReference;
+    /**
+     * Current time of the server for synchronization purposes.
+     * 
+     */
     @XmlElement(name = "CurrentTime", namespace = "http://docs.oasis-open.org/wsn/b-2", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar currentTime;
+    /**
+     * Date time when the PullPoint will be shut down without further
+     *                   pull requests.
+     * 
+     */
     @XmlElement(name = "TerminationTime", namespace = "http://docs.oasis-open.org/wsn/b-2", required = true, nillable = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar terminationTime;
@@ -59,7 +73,8 @@ public class CreatePullPointSubscriptionResponse {
     protected List<Object> any;
 
     /**
-     * Gets the value of the subscriptionReference property.
+     * Endpoint reference of the subscription to be used for pulling the
+     *                   messages.
      * 
      * @return
      *     possible object is
@@ -77,6 +92,7 @@ public class CreatePullPointSubscriptionResponse {
      *     allowed object is
      *     {@link W3CEndpointReference }
      *     
+     * @see #getSubscriptionReference()
      */
     public void setSubscriptionReference(W3CEndpointReference value) {
         this.subscriptionReference = value;
@@ -84,7 +100,6 @@ public class CreatePullPointSubscriptionResponse {
 
     /**
      * Current time of the server for synchronization purposes.
-     *                 
      * 
      * @return
      *     possible object is
@@ -102,6 +117,7 @@ public class CreatePullPointSubscriptionResponse {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getCurrentTime()
      */
     public void setCurrentTime(XMLGregorianCalendar value) {
         this.currentTime = value;
@@ -110,7 +126,6 @@ public class CreatePullPointSubscriptionResponse {
     /**
      * Date time when the PullPoint will be shut down without further
      *                   pull requests.
-     *                 
      * 
      * @return
      *     possible object is
@@ -128,6 +143,7 @@ public class CreatePullPointSubscriptionResponse {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
+     * @see #getTerminationTime()
      */
     public void setTerminationTime(XMLGregorianCalendar value) {
         this.terminationTime = value;
@@ -136,16 +152,16 @@ public class CreatePullPointSubscriptionResponse {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -153,12 +169,15 @@ public class CreatePullPointSubscriptionResponse {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

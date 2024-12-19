@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ImageStabilization complex type.
+ * <p>Java class for ImageStabilization complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="ImageStabilization"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ImageStabilizationMode"/&gt;
- *         &lt;element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImageStabilizationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="ImageStabilization">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ImageStabilizationMode"/>
+ *         <element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImageStabilizationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -42,18 +42,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImageStabilization {
 
+    /**
+     * Parameter to enable/disable Image Stabilization feature.
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected ImageStabilizationMode mode;
+    /**
+     * Optional level parameter (unit unspecified)
+     * 
+     */
     @XmlElement(name = "Level")
     protected Float level;
     @XmlElement(name = "Extension")
     protected ImageStabilizationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the mode property.
+     * Parameter to enable/disable Image Stabilization feature.
      * 
      * @return
      *     possible object is
@@ -71,13 +79,14 @@ public class ImageStabilization {
      *     allowed object is
      *     {@link ImageStabilizationMode }
      *     
+     * @see #getMode()
      */
     public void setMode(ImageStabilizationMode value) {
         this.mode = value;
     }
 
     /**
-     * Gets the value of the level property.
+     * Optional level parameter (unit unspecified)
      * 
      * @return
      *     possible object is
@@ -95,6 +104,7 @@ public class ImageStabilization {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getLevel()
      */
     public void setLevel(Float value) {
         this.level = value;

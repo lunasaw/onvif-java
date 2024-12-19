@@ -9,23 +9,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkInterfaceConnectionSetting complex type.
+ * <p>Java class for NetworkInterfaceConnectionSetting complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkInterfaceConnectionSetting"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AutoNegotiation" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="Speed" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Duplex" type="{http://www.onvif.org/ver10/schema}Duplex"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkInterfaceConnectionSetting">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AutoNegotiation" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="Speed" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Duplex" type="{http://www.onvif.org/ver10/schema}Duplex"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -37,16 +37,28 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkInterfaceConnectionSetting {
 
+    /**
+     * Auto negotiation on/off.
+     * 
+     */
     @XmlElement(name = "AutoNegotiation")
     protected boolean autoNegotiation;
+    /**
+     * Speed.
+     * 
+     */
     @XmlElement(name = "Speed")
     protected int speed;
+    /**
+     * Duplex type, Half or Full.
+     * 
+     */
     @XmlElement(name = "Duplex", required = true)
     @XmlSchemaType(name = "string")
     protected Duplex duplex;
 
     /**
-     * Gets the value of the autoNegotiation property.
+     * Auto negotiation on/off.
      * 
      */
     public boolean isAutoNegotiation() {
@@ -62,7 +74,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Gets the value of the speed property.
+     * Speed.
      * 
      */
     public int getSpeed() {
@@ -78,7 +90,7 @@ public class NetworkInterfaceConnectionSetting {
     }
 
     /**
-     * Gets the value of the duplex property.
+     * Duplex type, Half or Full.
      * 
      * @return
      *     possible object is
@@ -96,6 +108,7 @@ public class NetworkInterfaceConnectionSetting {
      *     allowed object is
      *     {@link Duplex }
      *     
+     * @see #getDuplex()
      */
     public void setDuplex(Duplex value) {
         this.duplex = value;

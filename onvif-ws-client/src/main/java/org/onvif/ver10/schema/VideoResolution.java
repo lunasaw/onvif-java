@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for VideoResolution complex type.
+ * <p>Java class for VideoResolution complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="VideoResolution"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="VideoResolution">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoResolution {
 
+    /**
+     * Number of the columns of the Video image.
+     * 
+     */
     @XmlElement(name = "Width")
     protected int width;
+    /**
+     * Number of the lines of the Video image.
+     * 
+     */
     @XmlElement(name = "Height")
     protected int height;
 
     /**
-     * Gets the value of the width property.
+     * Number of the columns of the Video image.
      * 
      */
     public int getWidth() {
@@ -56,7 +64,7 @@ public class VideoResolution {
     }
 
     /**
-     * Gets the value of the height property.
+     * Number of the lines of the Video image.
      * 
      */
     public int getHeight() {

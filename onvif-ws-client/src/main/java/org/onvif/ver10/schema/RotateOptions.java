@@ -15,24 +15,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RotateOptions complex type.
+ * <p>Java class for RotateOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RotateOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}RotateMode" maxOccurs="unbounded"/&gt;
- *         &lt;element name="DegreeList" type="{http://www.onvif.org/ver10/schema}IntList" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RotateOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RotateOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}RotateMode" maxOccurs="unbounded"/>
+ *         <element name="DegreeList" type="{http://www.onvif.org/ver10/schema}IntList" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RotateOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,47 +44,60 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RotateOptions {
 
+    /**
+     * Supported options of Rotate mode parameter.
+     * 
+     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected List<RotateMode> mode;
+    /**
+     * List of supported degree value for rotation.
+     * 
+     */
     @XmlElement(name = "DegreeList")
     protected IntList degreeList;
     @XmlElement(name = "Extension")
     protected RotateOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * Supported options of Rotate mode parameter.
+     * 
      * Gets the value of the mode property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the mode property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the mode property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getMode().add(newItem);
+     * getMode().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link RotateMode }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the mode property.
      */
     public List<RotateMode> getMode() {
         if (mode == null) {
-            mode = new ArrayList<RotateMode>();
+            mode = new ArrayList<>();
         }
         return this.mode;
     }
 
     /**
-     * Gets the value of the degreeList property.
+     * List of supported degree value for rotation.
      * 
      * @return
      *     possible object is
@@ -102,6 +115,7 @@ public class RotateOptions {
      *     allowed object is
      *     {@link IntList }
      *     
+     * @see #getDegreeList()
      */
     public void setDegreeList(IntList value) {
         this.degreeList = value;

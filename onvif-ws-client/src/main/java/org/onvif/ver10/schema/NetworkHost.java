@@ -15,26 +15,26 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for NetworkHost complex type.
+ * <p>Java class for NetworkHost complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkHost"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Type" type="{http://www.onvif.org/ver10/schema}NetworkHostType"/&gt;
- *         &lt;element name="IPv4Address" type="{http://www.onvif.org/ver10/schema}IPv4Address" minOccurs="0"/&gt;
- *         &lt;element name="IPv6Address" type="{http://www.onvif.org/ver10/schema}IPv6Address" minOccurs="0"/&gt;
- *         &lt;element name="DNSname" type="{http://www.onvif.org/ver10/schema}DNSName" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkHostExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkHost">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Type" type="{http://www.onvif.org/ver10/schema}NetworkHostType"/>
+ *         <element name="IPv4Address" type="{http://www.onvif.org/ver10/schema}IPv4Address" minOccurs="0"/>
+ *         <element name="IPv6Address" type="{http://www.onvif.org/ver10/schema}IPv6Address" minOccurs="0"/>
+ *         <element name="DNSname" type="{http://www.onvif.org/ver10/schema}DNSName" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkHostExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -48,17 +48,33 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class NetworkHost {
 
+    /**
+     * Network host type: IPv4, IPv6 or DNS.
+     * 
+     */
     @XmlElement(name = "Type", required = true)
     @XmlSchemaType(name = "string")
     protected NetworkHostType type;
+    /**
+     * IPv4 address.
+     * 
+     */
     @XmlElement(name = "IPv4Address")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String iPv4Address;
+    /**
+     * IPv6 address.
+     * 
+     */
     @XmlElement(name = "IPv6Address")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String iPv6Address;
+    /**
+     * DNS name.
+     * 
+     */
     @XmlElement(name = "DNSname")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
@@ -66,10 +82,10 @@ public class NetworkHost {
     @XmlElement(name = "Extension")
     protected NetworkHostExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the type property.
+     * Network host type: IPv4, IPv6 or DNS.
      * 
      * @return
      *     possible object is
@@ -87,13 +103,14 @@ public class NetworkHost {
      *     allowed object is
      *     {@link NetworkHostType }
      *     
+     * @see #getType()
      */
     public void setType(NetworkHostType value) {
         this.type = value;
     }
 
     /**
-     * Gets the value of the iPv4Address property.
+     * IPv4 address.
      * 
      * @return
      *     possible object is
@@ -111,13 +128,14 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getIPv4Address()
      */
     public void setIPv4Address(String value) {
         this.iPv4Address = value;
     }
 
     /**
-     * Gets the value of the iPv6Address property.
+     * IPv6 address.
      * 
      * @return
      *     possible object is
@@ -135,13 +153,14 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getIPv6Address()
      */
     public void setIPv6Address(String value) {
         this.iPv6Address = value;
     }
 
     /**
-     * Gets the value of the dnSname property.
+     * DNS name.
      * 
      * @return
      *     possible object is
@@ -159,6 +178,7 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getDNSname()
      */
     public void setDNSname(String value) {
         this.dnSname = value;

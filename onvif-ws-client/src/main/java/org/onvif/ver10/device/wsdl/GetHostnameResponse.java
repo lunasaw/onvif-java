@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.HostnameInformation;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="HostnameInformation" type="{http://www.onvif.org/ver10/schema}HostnameInformation"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="HostnameInformation" type="{http://www.onvif.org/ver10/schema}HostnameInformation"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.HostnameInformation;
 @XmlRootElement(name = "GetHostnameResponse")
 public class GetHostnameResponse {
 
+    /**
+     * Contains the hostname information.
+     * 
+     */
     @XmlElement(name = "HostnameInformation", required = true)
     protected HostnameInformation hostnameInformation;
 
     /**
-     * Gets the value of the hostnameInformation property.
+     * Contains the hostname information.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetHostnameResponse {
      *     allowed object is
      *     {@link HostnameInformation }
      *     
+     * @see #getHostnameInformation()
      */
     public void setHostnameInformation(HostnameInformation value) {
         this.hostnameInformation = value;

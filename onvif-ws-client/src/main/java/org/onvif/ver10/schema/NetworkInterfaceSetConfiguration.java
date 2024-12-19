@@ -12,27 +12,27 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkInterfaceSetConfiguration complex type.
+ * <p>Java class for NetworkInterfaceSetConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkInterfaceSetConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Link" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting" minOccurs="0"/&gt;
- *         &lt;element name="MTU" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="IPv4" type="{http://www.onvif.org/ver10/schema}IPv4NetworkInterfaceSetConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="IPv6" type="{http://www.onvif.org/ver10/schema}IPv6NetworkInterfaceSetConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceSetConfigurationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkInterfaceSetConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Link" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting" minOccurs="0"/>
+ *         <element name="MTU" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="IPv4" type="{http://www.onvif.org/ver10/schema}IPv4NetworkInterfaceSetConfiguration" minOccurs="0"/>
+ *         <element name="IPv6" type="{http://www.onvif.org/ver10/schema}IPv6NetworkInterfaceSetConfiguration" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceSetConfigurationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,23 +47,43 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkInterfaceSetConfiguration {
 
+    /**
+     * Indicates whether or not an interface is enabled.
+     * 
+     */
     @XmlElement(name = "Enabled")
     protected Boolean enabled;
+    /**
+     * Link configuration.
+     * 
+     */
     @XmlElement(name = "Link")
     protected NetworkInterfaceConnectionSetting link;
+    /**
+     * Maximum transmission unit.
+     * 
+     */
     @XmlElement(name = "MTU")
     protected Integer mtu;
+    /**
+     * IPv4 network interface configuration.
+     * 
+     */
     @XmlElement(name = "IPv4")
     protected IPv4NetworkInterfaceSetConfiguration iPv4;
+    /**
+     * IPv6 network interface configuration.
+     * 
+     */
     @XmlElement(name = "IPv6")
     protected IPv6NetworkInterfaceSetConfiguration iPv6;
     @XmlElement(name = "Extension")
     protected NetworkInterfaceSetConfigurationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the enabled property.
+     * Indicates whether or not an interface is enabled.
      * 
      * @return
      *     possible object is
@@ -81,13 +101,14 @@ public class NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isEnabled()
      */
     public void setEnabled(Boolean value) {
         this.enabled = value;
     }
 
     /**
-     * Gets the value of the link property.
+     * Link configuration.
      * 
      * @return
      *     possible object is
@@ -105,13 +126,14 @@ public class NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link NetworkInterfaceConnectionSetting }
      *     
+     * @see #getLink()
      */
     public void setLink(NetworkInterfaceConnectionSetting value) {
         this.link = value;
     }
 
     /**
-     * Gets the value of the mtu property.
+     * Maximum transmission unit.
      * 
      * @return
      *     possible object is
@@ -129,13 +151,14 @@ public class NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getMTU()
      */
     public void setMTU(Integer value) {
         this.mtu = value;
     }
 
     /**
-     * Gets the value of the iPv4 property.
+     * IPv4 network interface configuration.
      * 
      * @return
      *     possible object is
@@ -153,13 +176,14 @@ public class NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link IPv4NetworkInterfaceSetConfiguration }
      *     
+     * @see #getIPv4()
      */
     public void setIPv4(IPv4NetworkInterfaceSetConfiguration value) {
         this.iPv4 = value;
     }
 
     /**
-     * Gets the value of the iPv6 property.
+     * IPv6 network interface configuration.
      * 
      * @return
      *     possible object is
@@ -177,6 +201,7 @@ public class NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link IPv6NetworkInterfaceSetConfiguration }
      *     
+     * @see #getIPv6()
      */
     public void setIPv6(IPv6NetworkInterfaceSetConfiguration value) {
         this.iPv6 = value;

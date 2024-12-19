@@ -12,19 +12,19 @@ import jakarta.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for OSDReference complex type.
+ * <p>Java class for OSDReference complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OSDReference"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.onvif.org/ver10/schema&gt;ReferenceToken"&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OSDReference">
+ *   <simpleContent>
+ *     <extension base="<http://www.onvif.org/ver10/schema>ReferenceToken">
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </simpleContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,17 +34,23 @@ import jakarta.xml.bind.annotation.XmlValue;
 })
 public class OSDReference {
 
+    /**
+     * Unique identifier for a physical or logical resource.
+     *         Tokens should be assigned such that they are unique within a device. Tokens must be at least
+     *         unique within its class.
+     *         Length up to 64 characters.
+     * 
+     */
     @XmlValue
     protected String value;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Unique identifier for a physical or logical resource.
      *         Tokens should be assigned such that they are unique within a device. Tokens must be at least
      *         unique within its class.
      *         Length up to 64 characters.
-     *       
      * 
      * @return
      *     possible object is
@@ -62,6 +68,7 @@ public class OSDReference {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getValue()
      */
     public void setValue(String value) {
         this.value = value;

@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPreset complex type.
+ * <p>Java class for PTZPreset complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPreset"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/&gt;
- *         &lt;element name="PTZPosition" type="{http://www.onvif.org/ver10/schema}PTZVector" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPreset">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/>
+ *         <element name="PTZPosition" type="{http://www.onvif.org/ver10/schema}PTZVector" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPreset {
 
+    /**
+     * A list of preset position name.
+     * 
+     */
     @XmlElement(name = "Name")
     protected String name;
+    /**
+     * A list of preset position.
+     * 
+     */
     @XmlElement(name = "PTZPosition")
     protected PTZVector ptzPosition;
     @XmlAttribute(name = "token")
     protected String token;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the name property.
+     * A list of preset position name.
      * 
      * @return
      *     possible object is
@@ -69,13 +77,14 @@ public class PTZPreset {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the ptzPosition property.
+     * A list of preset position.
      * 
      * @return
      *     possible object is
@@ -93,6 +102,7 @@ public class PTZPreset {
      *     allowed object is
      *     {@link PTZVector }
      *     
+     * @see #getPTZPosition()
      */
     public void setPTZPosition(PTZVector value) {
         this.ptzPosition = value;

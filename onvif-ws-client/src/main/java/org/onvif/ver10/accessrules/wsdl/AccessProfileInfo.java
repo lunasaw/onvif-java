@@ -10,28 +10,26 @@ import org.onvif.ver10.pacs.DataEntity;
 
 
 /**
- * 
- *             The AccessProfileInfo structure contains basic information about an access profile. The
+ * The AccessProfileInfo structure contains basic information about an access profile. The
  *             device
  *             shall provide the following fields for each AccessProfileInfo.
- *           
  * 
- * <p>Java class for AccessProfileInfo complex type.
+ * <p>Java class for AccessProfileInfo complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AccessProfileInfo"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
- *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AccessProfileInfo">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/pacs}DataEntity">
+ *       <sequence>
+ *         <element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/>
+ *         <element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/>
+ *       </sequence>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,13 +45,22 @@ public class AccessProfileInfo
     extends DataEntity
 {
 
+    /**
+     * A user readable name. It shall be up to 64 characters.
+     * 
+     */
     @XmlElement(name = "Name", required = true)
     protected String name;
+    /**
+     * User readable description for the access profile. It shall be up
+     *                     to 1024 characters.
+     * 
+     */
     @XmlElement(name = "Description")
     protected String description;
 
     /**
-     * Gets the value of the name property.
+     * A user readable name. It shall be up to 64 characters.
      * 
      * @return
      *     possible object is
@@ -71,13 +78,15 @@ public class AccessProfileInfo
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Gets the value of the description property.
+     * User readable description for the access profile. It shall be up
+     *                     to 1024 characters.
      * 
      * @return
      *     possible object is
@@ -95,6 +104,7 @@ public class AccessProfileInfo
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;

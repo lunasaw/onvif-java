@@ -16,44 +16,42 @@ import org.w3c.dom.Element;
 
 
 /**
- * 
- *             DoorCapabilities reflect optional functionality of a particular physical entity.
+ * DoorCapabilities reflect optional functionality of a particular physical entity.
  *             Different door instances may have different set of capabilities.
  *             This information may change during device operation, e.g. if hardware settings are
  *             changed.
  *             The following capabilities are available:
- *           
  * 
- * <p>Java class for DoorCapabilities complex type.
+ * <p>Java class for DoorCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="DoorCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="Access" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="AccessTimingOverride" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Lock" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Unlock" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Block" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DoubleLock" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="LockDown" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="LockOpen" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DoorMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="LockMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DoubleLockMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Alarm" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Tamper" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Fault" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DoorCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="Access" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="AccessTimingOverride" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Lock" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Unlock" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Block" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="DoubleLock" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="LockDown" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="LockOpen" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="DoorMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="LockMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="DoubleLockMonitor" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Alarm" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Tamper" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="Fault" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -65,50 +63,120 @@ public class DoorCapabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * Indicates whether or not this Door instance supports AccessDoor
+     *               command to perform momentary access.
+     * 
+     */
     @XmlAttribute(name = "Access")
     protected Boolean access;
+    /**
+     * Indicates that this Door instance supports overriding configured
+     *               timing in the AccessDoor command.
+     * 
+     */
     @XmlAttribute(name = "AccessTimingOverride")
     protected Boolean accessTimingOverride;
+    /**
+     * Indicates that this Door instance supports LockDoor command to lock
+     *               the door.
+     * 
+     */
     @XmlAttribute(name = "Lock")
     protected Boolean lock;
+    /**
+     * Indicates that this Door instance supports UnlockDoor command to
+     *               unlock the door.
+     * 
+     */
     @XmlAttribute(name = "Unlock")
     protected Boolean unlock;
+    /**
+     * Indicates that this Door instance supports BlockDoor command to block
+     *               the door.
+     * 
+     */
     @XmlAttribute(name = "Block")
     protected Boolean block;
+    /**
+     * Indicates that this Door instance supports DoubleLockDoor command to
+     *               lock multiple locks on the door.
+     * 
+     */
     @XmlAttribute(name = "DoubleLock")
     protected Boolean doubleLock;
+    /**
+     * Indicates that this Door instance supports LockDown (and
+     *               LockDownRelease) commands to lock the door and put it in LockedDown mode.
+     * 
+     */
     @XmlAttribute(name = "LockDown")
     protected Boolean lockDown;
+    /**
+     * Indicates that this Door instance supports LockOpen (and
+     *               LockOpenRelease) commands to unlock the door and put it in LockedOpen mode.
+     * 
+     */
     @XmlAttribute(name = "LockOpen")
     protected Boolean lockOpen;
+    /**
+     * Indicates that this Door instance has a DoorMonitor and supports the
+     *               DoorPhysicalState event.
+     * 
+     */
     @XmlAttribute(name = "DoorMonitor")
     protected Boolean doorMonitor;
+    /**
+     * Indicates that this Door instance has a LockMonitor and supports the
+     *               LockPhysicalState event.
+     * 
+     */
     @XmlAttribute(name = "LockMonitor")
     protected Boolean lockMonitor;
+    /**
+     * Indicates that this Door instance has a DoubleLockMonitor and supports
+     *               the DoubleLockPhysicalState event.
+     * 
+     */
     @XmlAttribute(name = "DoubleLockMonitor")
     protected Boolean doubleLockMonitor;
+    /**
+     * Indicates that this Door instance supports door alarm and the
+     *               DoorAlarm event.
+     * 
+     */
     @XmlAttribute(name = "Alarm")
     protected Boolean alarm;
+    /**
+     * Indicates that this Door instance has a Tamper detector and supports
+     *               the DoorTamper event.
+     * 
+     */
     @XmlAttribute(name = "Tamper")
     protected Boolean tamper;
+    /**
+     * Indicates that this Door instance supports door fault and the
+     *               DoorFault event.
+     * 
+     */
     @XmlAttribute(name = "Fault")
     protected Boolean fault;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -116,18 +184,22 @@ public class DoorCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the access property.
+     * Indicates whether or not this Door instance supports AccessDoor
+     *               command to perform momentary access.
      * 
      * @return
      *     possible object is
@@ -145,13 +217,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isAccess()
      */
     public void setAccess(Boolean value) {
         this.access = value;
     }
 
     /**
-     * Gets the value of the accessTimingOverride property.
+     * Indicates that this Door instance supports overriding configured
+     *               timing in the AccessDoor command.
      * 
      * @return
      *     possible object is
@@ -169,13 +243,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isAccessTimingOverride()
      */
     public void setAccessTimingOverride(Boolean value) {
         this.accessTimingOverride = value;
     }
 
     /**
-     * Gets the value of the lock property.
+     * Indicates that this Door instance supports LockDoor command to lock
+     *               the door.
      * 
      * @return
      *     possible object is
@@ -193,13 +269,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isLock()
      */
     public void setLock(Boolean value) {
         this.lock = value;
     }
 
     /**
-     * Gets the value of the unlock property.
+     * Indicates that this Door instance supports UnlockDoor command to
+     *               unlock the door.
      * 
      * @return
      *     possible object is
@@ -217,13 +295,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isUnlock()
      */
     public void setUnlock(Boolean value) {
         this.unlock = value;
     }
 
     /**
-     * Gets the value of the block property.
+     * Indicates that this Door instance supports BlockDoor command to block
+     *               the door.
      * 
      * @return
      *     possible object is
@@ -241,13 +321,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isBlock()
      */
     public void setBlock(Boolean value) {
         this.block = value;
     }
 
     /**
-     * Gets the value of the doubleLock property.
+     * Indicates that this Door instance supports DoubleLockDoor command to
+     *               lock multiple locks on the door.
      * 
      * @return
      *     possible object is
@@ -265,13 +347,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDoubleLock()
      */
     public void setDoubleLock(Boolean value) {
         this.doubleLock = value;
     }
 
     /**
-     * Gets the value of the lockDown property.
+     * Indicates that this Door instance supports LockDown (and
+     *               LockDownRelease) commands to lock the door and put it in LockedDown mode.
      * 
      * @return
      *     possible object is
@@ -289,13 +373,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isLockDown()
      */
     public void setLockDown(Boolean value) {
         this.lockDown = value;
     }
 
     /**
-     * Gets the value of the lockOpen property.
+     * Indicates that this Door instance supports LockOpen (and
+     *               LockOpenRelease) commands to unlock the door and put it in LockedOpen mode.
      * 
      * @return
      *     possible object is
@@ -313,13 +399,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isLockOpen()
      */
     public void setLockOpen(Boolean value) {
         this.lockOpen = value;
     }
 
     /**
-     * Gets the value of the doorMonitor property.
+     * Indicates that this Door instance has a DoorMonitor and supports the
+     *               DoorPhysicalState event.
      * 
      * @return
      *     possible object is
@@ -337,13 +425,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDoorMonitor()
      */
     public void setDoorMonitor(Boolean value) {
         this.doorMonitor = value;
     }
 
     /**
-     * Gets the value of the lockMonitor property.
+     * Indicates that this Door instance has a LockMonitor and supports the
+     *               LockPhysicalState event.
      * 
      * @return
      *     possible object is
@@ -361,13 +451,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isLockMonitor()
      */
     public void setLockMonitor(Boolean value) {
         this.lockMonitor = value;
     }
 
     /**
-     * Gets the value of the doubleLockMonitor property.
+     * Indicates that this Door instance has a DoubleLockMonitor and supports
+     *               the DoubleLockPhysicalState event.
      * 
      * @return
      *     possible object is
@@ -385,13 +477,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isDoubleLockMonitor()
      */
     public void setDoubleLockMonitor(Boolean value) {
         this.doubleLockMonitor = value;
     }
 
     /**
-     * Gets the value of the alarm property.
+     * Indicates that this Door instance supports door alarm and the
+     *               DoorAlarm event.
      * 
      * @return
      *     possible object is
@@ -409,13 +503,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isAlarm()
      */
     public void setAlarm(Boolean value) {
         this.alarm = value;
     }
 
     /**
-     * Gets the value of the tamper property.
+     * Indicates that this Door instance has a Tamper detector and supports
+     *               the DoorTamper event.
      * 
      * @return
      *     possible object is
@@ -433,13 +529,15 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isTamper()
      */
     public void setTamper(Boolean value) {
         this.tamper = value;
     }
 
     /**
-     * Gets the value of the fault property.
+     * Indicates that this Door instance supports door fault and the
+     *               DoorFault event.
      * 
      * @return
      *     possible object is
@@ -457,6 +555,7 @@ public class DoorCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isFault()
      */
     public void setFault(Boolean value) {
         this.fault = value;

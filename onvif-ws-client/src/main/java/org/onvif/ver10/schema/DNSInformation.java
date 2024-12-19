@@ -17,26 +17,26 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for DNSInformation complex type.
+ * <p>Java class for DNSInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="DNSInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="SearchDomain" type="{http://www.w3.org/2001/XMLSchema}token" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="DNSFromDHCP" type="{http://www.onvif.org/ver10/schema}IPAddress" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="DNSManual" type="{http://www.onvif.org/ver10/schema}IPAddress" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}DNSInformationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DNSInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="SearchDomain" type="{http://www.w3.org/2001/XMLSchema}token" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="DNSFromDHCP" type="{http://www.onvif.org/ver10/schema}IPAddress" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="DNSManual" type="{http://www.onvif.org/ver10/schema}IPAddress" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}DNSInformationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -50,23 +50,39 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class DNSInformation {
 
+    /**
+     * Indicates whether or not DNS information is retrieved from DHCP.
+     * 
+     */
     @XmlElement(name = "FromDHCP")
     protected boolean fromDHCP;
+    /**
+     * Search domain.
+     * 
+     */
     @XmlElement(name = "SearchDomain")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected List<String> searchDomain;
+    /**
+     * List of DNS addresses received from DHCP.
+     * 
+     */
     @XmlElement(name = "DNSFromDHCP")
     protected List<IPAddress> dnsFromDHCP;
+    /**
+     * List of manually entered DNS addresses.
+     * 
+     */
     @XmlElement(name = "DNSManual")
     protected List<IPAddress> dnsManual;
     @XmlElement(name = "Extension")
     protected DNSInformationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the fromDHCP property.
+     * Indicates whether or not DNS information is retrieved from DHCP.
      * 
      */
     public boolean isFromDHCP() {
@@ -82,88 +98,103 @@ public class DNSInformation {
     }
 
     /**
+     * Search domain.
+     * 
      * Gets the value of the searchDomain property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the searchDomain property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the searchDomain property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getSearchDomain().add(newItem);
+     * getSearchDomain().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the searchDomain property.
      */
     public List<String> getSearchDomain() {
         if (searchDomain == null) {
-            searchDomain = new ArrayList<String>();
+            searchDomain = new ArrayList<>();
         }
         return this.searchDomain;
     }
 
     /**
+     * List of DNS addresses received from DHCP.
+     * 
      * Gets the value of the dnsFromDHCP property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the dnsFromDHCP property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dnsFromDHCP property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDNSFromDHCP().add(newItem);
+     * getDNSFromDHCP().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link IPAddress }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the dnsFromDHCP property.
      */
     public List<IPAddress> getDNSFromDHCP() {
         if (dnsFromDHCP == null) {
-            dnsFromDHCP = new ArrayList<IPAddress>();
+            dnsFromDHCP = new ArrayList<>();
         }
         return this.dnsFromDHCP;
     }
 
     /**
+     * List of manually entered DNS addresses.
+     * 
      * Gets the value of the dnsManual property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the dnsManual property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the dnsManual property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getDNSManual().add(newItem);
+     * getDNSManual().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link IPAddress }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the dnsManual property.
      */
     public List<IPAddress> getDNSManual() {
         if (dnsManual == null) {
-            dnsManual = new ArrayList<IPAddress>();
+            dnsManual = new ArrayList<>();
         }
         return this.dnsManual;
     }

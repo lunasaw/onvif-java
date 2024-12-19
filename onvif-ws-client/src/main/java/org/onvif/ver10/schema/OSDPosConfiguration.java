@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for OSDPosConfiguration complex type.
+ * <p>Java class for OSDPosConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="OSDPosConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Pos" type="{http://www.onvif.org/ver10/schema}Vector" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDPosConfigurationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="OSDPosConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="Pos" type="{http://www.onvif.org/ver10/schema}Vector" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDPosConfigurationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,6 +41,14 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OSDPosConfiguration {
 
+    /**
+     * For OSD position type, following are the pre-defined:
+     *             
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;&lt;li&gt;UpperRight&lt;/li&gt;&lt;li&gt;LowerLeft&lt;/li&gt;&lt;li&gt;LowerRight&lt;/li&gt;&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
+     * 
+     */
     @XmlElement(name = "Type", required = true)
     protected String type;
     @XmlElement(name = "Pos")
@@ -48,10 +56,14 @@ public class OSDPosConfiguration {
     @XmlElement(name = "Extension")
     protected OSDPosConfigurationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the type property.
+     * For OSD position type, following are the pre-defined:
+     *             
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;&lt;li&gt;UpperRight&lt;/li&gt;&lt;li&gt;LowerLeft&lt;/li&gt;&lt;li&gt;LowerRight&lt;/li&gt;&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
+     * </pre>
      * 
      * @return
      *     possible object is
@@ -69,6 +81,7 @@ public class OSDPosConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getType()
      */
     public void setType(String value) {
         this.type = value;

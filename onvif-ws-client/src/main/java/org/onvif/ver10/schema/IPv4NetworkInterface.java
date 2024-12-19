@@ -8,22 +8,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for IPv4NetworkInterface complex type.
+ * <p>Java class for IPv4NetworkInterface complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="IPv4NetworkInterface"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="Config" type="{http://www.onvif.org/ver10/schema}IPv4Configuration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="IPv4NetworkInterface">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="Config" type="{http://www.onvif.org/ver10/schema}IPv4Configuration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,13 +34,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IPv4NetworkInterface {
 
+    /**
+     * Indicates whether or not IPv4 is enabled.
+     * 
+     */
     @XmlElement(name = "Enabled")
     protected boolean enabled;
+    /**
+     * IPv4 configuration.
+     * 
+     */
     @XmlElement(name = "Config", required = true)
     protected IPv4Configuration config;
 
     /**
-     * Gets the value of the enabled property.
+     * Indicates whether or not IPv4 is enabled.
      * 
      */
     public boolean isEnabled() {
@@ -56,7 +64,7 @@ public class IPv4NetworkInterface {
     }
 
     /**
-     * Gets the value of the config property.
+     * IPv4 configuration.
      * 
      * @return
      *     possible object is
@@ -74,6 +82,7 @@ public class IPv4NetworkInterface {
      *     allowed object is
      *     {@link IPv4Configuration }
      *     
+     * @see #getConfig()
      */
     public void setConfig(IPv4Configuration value) {
         this.config = value;

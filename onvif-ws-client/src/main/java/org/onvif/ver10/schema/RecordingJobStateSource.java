@@ -16,25 +16,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for RecordingJobStateSource complex type.
+ * <p>Java class for RecordingJobStateSource complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RecordingJobStateSource"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SourceToken" type="{http://www.onvif.org/ver10/schema}SourceReference"/&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobState"/&gt;
- *         &lt;element name="Tracks" type="{http://www.onvif.org/ver10/schema}RecordingJobStateTracks"/&gt;
- *         &lt;any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RecordingJobStateSource">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SourceToken" type="{http://www.onvif.org/ver10/schema}SourceReference"/>
+ *         <element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobState"/>
+ *         <element name="Tracks" type="{http://www.onvif.org/ver10/schema}RecordingJobStateTracks"/>
+ *         <any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,19 +47,32 @@ import org.w3c.dom.Element;
 })
 public class RecordingJobStateSource {
 
+    /**
+     * Identifies the data source of the recording job.
+     * 
+     */
     @XmlElement(name = "SourceToken", required = true)
     protected SourceReference sourceToken;
+    /**
+     * Holds the aggregated state over all substructures of
+     *             RecordingJobStateSource.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     protected String state;
+    /**
+     * List of track items.
+     * 
+     */
     @XmlElement(name = "Tracks", required = true)
     protected RecordingJobStateTracks tracks;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the sourceToken property.
+     * Identifies the data source of the recording job.
      * 
      * @return
      *     possible object is
@@ -77,13 +90,15 @@ public class RecordingJobStateSource {
      *     allowed object is
      *     {@link SourceReference }
      *     
+     * @see #getSourceToken()
      */
     public void setSourceToken(SourceReference value) {
         this.sourceToken = value;
     }
 
     /**
-     * Gets the value of the state property.
+     * Holds the aggregated state over all substructures of
+     *             RecordingJobStateSource.
      * 
      * @return
      *     possible object is
@@ -101,13 +116,14 @@ public class RecordingJobStateSource {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getState()
      */
     public void setState(String value) {
         this.state = value;
     }
 
     /**
-     * Gets the value of the tracks property.
+     * List of track items.
      * 
      * @return
      *     possible object is
@@ -125,6 +141,7 @@ public class RecordingJobStateSource {
      *     allowed object is
      *     {@link RecordingJobStateTracks }
      *     
+     * @see #getTracks()
      */
     public void setTracks(RecordingJobStateTracks value) {
         this.tracks = value;
@@ -133,16 +150,16 @@ public class RecordingJobStateSource {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -150,12 +167,15 @@ public class RecordingJobStateSource {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

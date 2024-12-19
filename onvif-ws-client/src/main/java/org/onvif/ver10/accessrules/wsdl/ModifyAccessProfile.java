@@ -9,21 +9,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AccessProfile" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfile"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AccessProfile" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfile"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -34,11 +34,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ModifyAccessProfile")
 public class ModifyAccessProfile {
 
+    /**
+     * The details of Access Profile
+     * 
+     */
     @XmlElement(name = "AccessProfile", required = true)
     protected AccessProfile accessProfile;
 
     /**
-     * Gets the value of the accessProfile property.
+     * The details of Access Profile
      * 
      * @return
      *     possible object is
@@ -56,6 +60,7 @@ public class ModifyAccessProfile {
      *     allowed object is
      *     {@link AccessProfile }
      *     
+     * @see #getAccessProfile()
      */
     public void setAccessProfile(AccessProfile value) {
         this.accessProfile = value;

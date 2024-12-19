@@ -14,26 +14,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for PTZPresetTourPresetDetailOptions complex type.
+ * <p>Java class for PTZPresetTourPresetDetailOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZPresetTourPresetDetailOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Home" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="PanTiltPositionSpace" type="{http://www.onvif.org/ver10/schema}Space2DDescription" minOccurs="0"/&gt;
- *         &lt;element name="ZoomPositionSpace" type="{http://www.onvif.org/ver10/schema}Space1DDescription" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetailOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZPresetTourPresetDetailOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="PresetToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Home" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="PanTiltPositionSpace" type="{http://www.onvif.org/ver10/schema}Space2DDescription" minOccurs="0"/>
+ *         <element name="ZoomPositionSpace" type="{http://www.onvif.org/ver10/schema}Space1DDescription" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetailOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -47,50 +47,71 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourPresetDetailOptions {
 
+    /**
+     * A list of available Preset Tokens for tour spots.
+     * 
+     */
     @XmlElement(name = "PresetToken")
     protected List<String> presetToken;
+    /**
+     * An option to indicate Home postion for tour spots.
+     * 
+     */
     @XmlElement(name = "Home")
     protected Boolean home;
+    /**
+     * Supported range of Pan and Tilt for tour spots.
+     * 
+     */
     @XmlElement(name = "PanTiltPositionSpace")
     protected Space2DDescription panTiltPositionSpace;
+    /**
+     * Supported range of Zoom for a tour spot.
+     * 
+     */
     @XmlElement(name = "ZoomPositionSpace")
     protected Space1DDescription zoomPositionSpace;
     @XmlElement(name = "Extension")
     protected PTZPresetTourPresetDetailOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
+     * A list of available Preset Tokens for tour spots.
+     * 
      * Gets the value of the presetToken property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the presetToken property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the presetToken property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPresetToken().add(newItem);
+     * getPresetToken().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the presetToken property.
      */
     public List<String> getPresetToken() {
         if (presetToken == null) {
-            presetToken = new ArrayList<String>();
+            presetToken = new ArrayList<>();
         }
         return this.presetToken;
     }
 
     /**
-     * Gets the value of the home property.
+     * An option to indicate Home postion for tour spots.
      * 
      * @return
      *     possible object is
@@ -108,13 +129,14 @@ public class PTZPresetTourPresetDetailOptions {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isHome()
      */
     public void setHome(Boolean value) {
         this.home = value;
     }
 
     /**
-     * Gets the value of the panTiltPositionSpace property.
+     * Supported range of Pan and Tilt for tour spots.
      * 
      * @return
      *     possible object is
@@ -132,13 +154,14 @@ public class PTZPresetTourPresetDetailOptions {
      *     allowed object is
      *     {@link Space2DDescription }
      *     
+     * @see #getPanTiltPositionSpace()
      */
     public void setPanTiltPositionSpace(Space2DDescription value) {
         this.panTiltPositionSpace = value;
     }
 
     /**
-     * Gets the value of the zoomPositionSpace property.
+     * Supported range of Zoom for a tour spot.
      * 
      * @return
      *     possible object is
@@ -156,6 +179,7 @@ public class PTZPresetTourPresetDetailOptions {
      *     allowed object is
      *     {@link Space1DDescription }
      *     
+     * @see #getZoomPositionSpace()
      */
     public void setZoomPositionSpace(Space1DDescription value) {
         this.zoomPositionSpace = value;

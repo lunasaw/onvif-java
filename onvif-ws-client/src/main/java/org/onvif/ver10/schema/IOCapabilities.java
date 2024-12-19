@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for IOCapabilities complex type.
+ * <p>Java class for IOCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="IOCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="InputConnectors" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="RelayOutputs" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}IOCapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="IOCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="InputConnectors" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="RelayOutputs" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}IOCapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IOCapabilities {
 
+    /**
+     * Number of input connectors.
+     * 
+     */
     @XmlElement(name = "InputConnectors")
     protected Integer inputConnectors;
+    /**
+     * Number of relay outputs.
+     * 
+     */
     @XmlElement(name = "RelayOutputs")
     protected Integer relayOutputs;
     @XmlElement(name = "Extension")
     protected IOCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the inputConnectors property.
+     * Number of input connectors.
      * 
      * @return
      *     possible object is
@@ -69,13 +77,14 @@ public class IOCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getInputConnectors()
      */
     public void setInputConnectors(Integer value) {
         this.inputConnectors = value;
     }
 
     /**
-     * Gets the value of the relayOutputs property.
+     * Number of relay outputs.
      * 
      * @return
      *     possible object is
@@ -93,6 +102,7 @@ public class IOCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getRelayOutputs()
      */
     public void setRelayOutputs(Integer value) {
         this.relayOutputs = value;

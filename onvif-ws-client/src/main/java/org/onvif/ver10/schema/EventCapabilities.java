@@ -17,26 +17,26 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for EventCapabilities complex type.
+ * <p>Java class for EventCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="EventCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="EventCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <element name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -50,22 +50,39 @@ import org.w3c.dom.Element;
 })
 public class EventCapabilities {
 
+    /**
+     * Event service URI.
+     * 
+     */
     @XmlElement(name = "XAddr", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String xAddr;
+    /**
+     * Indicates whether or not WS Subscription policy is supported.
+     * 
+     */
     @XmlElement(name = "WSSubscriptionPolicySupport")
     protected boolean wsSubscriptionPolicySupport;
+    /**
+     * Indicates whether or not WS Pull Point is supported.
+     * 
+     */
     @XmlElement(name = "WSPullPointSupport")
     protected boolean wsPullPointSupport;
+    /**
+     * Indicates whether or not WS Pausable Subscription Manager Interface is
+     *             supported.
+     * 
+     */
     @XmlElement(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected boolean wsPausableSubscriptionManagerInterfaceSupport;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the xAddr property.
+     * Event service URI.
      * 
      * @return
      *     possible object is
@@ -83,13 +100,14 @@ public class EventCapabilities {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getXAddr()
      */
     public void setXAddr(String value) {
         this.xAddr = value;
     }
 
     /**
-     * Gets the value of the wsSubscriptionPolicySupport property.
+     * Indicates whether or not WS Subscription policy is supported.
      * 
      */
     public boolean isWSSubscriptionPolicySupport() {
@@ -105,7 +123,7 @@ public class EventCapabilities {
     }
 
     /**
-     * Gets the value of the wsPullPointSupport property.
+     * Indicates whether or not WS Pull Point is supported.
      * 
      */
     public boolean isWSPullPointSupport() {
@@ -121,7 +139,8 @@ public class EventCapabilities {
     }
 
     /**
-     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
+     * Indicates whether or not WS Pausable Subscription Manager Interface is
+     *             supported.
      * 
      */
     public boolean isWSPausableSubscriptionManagerInterfaceSupport() {
@@ -139,16 +158,16 @@ public class EventCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -156,12 +175,15 @@ public class EventCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

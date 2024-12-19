@@ -12,22 +12,22 @@ import org.oasis_open.docs.wsn.b_2.NotificationMessageHolderType;
 
 
 /**
- * <p>Java class for EventStream complex type.
+ * <p>Java class for EventStream complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="EventStream"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;choice maxOccurs="unbounded" minOccurs="0"&gt;
- *         &lt;element ref="{http://docs.oasis-open.org/wsn/b-2}NotificationMessage"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}EventStreamExtension"/&gt;
- *       &lt;/choice&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="EventStream">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <choice maxOccurs="unbounded" minOccurs="0">
+ *         <element ref="{http://docs.oasis-open.org/wsn/b-2}NotificationMessage"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}EventStreamExtension"/>
+ *       </choice>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -46,16 +46,16 @@ public class EventStream {
     /**
      * Gets the value of the notificationMessageOrExtension property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the notificationMessageOrExtension property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the notificationMessageOrExtension property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getNotificationMessageOrExtension().add(newItem);
+     * getNotificationMessageOrExtension().add(newItem);
      * </pre>
      * 
      * 
@@ -63,12 +63,15 @@ public class EventStream {
      * Objects of the following type(s) are allowed in the list
      * {@link NotificationMessageHolderType }
      * {@link EventStreamExtension }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the notificationMessageOrExtension property.
      */
     public List<java.lang.Object> getNotificationMessageOrExtension() {
         if (notificationMessageOrExtension == null) {
-            notificationMessageOrExtension = new ArrayList<java.lang.Object>();
+            notificationMessageOrExtension = new ArrayList<>();
         }
         return this.notificationMessageOrExtension;
     }

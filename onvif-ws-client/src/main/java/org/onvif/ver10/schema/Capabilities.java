@@ -12,28 +12,28 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Capabilities complex type.
+ * <p>Java class for Capabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Analytics" type="{http://www.onvif.org/ver10/schema}AnalyticsCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="Device" type="{http://www.onvif.org/ver10/schema}DeviceCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="Events" type="{http://www.onvif.org/ver10/schema}EventCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="Media" type="{http://www.onvif.org/ver10/schema}MediaCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZCapabilities" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}CapabilitiesExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Analytics" type="{http://www.onvif.org/ver10/schema}AnalyticsCapabilities" minOccurs="0"/>
+ *         <element name="Device" type="{http://www.onvif.org/ver10/schema}DeviceCapabilities" minOccurs="0"/>
+ *         <element name="Events" type="{http://www.onvif.org/ver10/schema}EventCapabilities" minOccurs="0"/>
+ *         <element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingCapabilities" minOccurs="0"/>
+ *         <element name="Media" type="{http://www.onvif.org/ver10/schema}MediaCapabilities" minOccurs="0"/>
+ *         <element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZCapabilities" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}CapabilitiesExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,25 +49,49 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Capabilities {
 
+    /**
+     * Analytics capabilities
+     * 
+     */
     @XmlElement(name = "Analytics")
     protected AnalyticsCapabilities analytics;
+    /**
+     * Device capabilities
+     * 
+     */
     @XmlElement(name = "Device")
     protected DeviceCapabilities device;
+    /**
+     * Event capabilities
+     * 
+     */
     @XmlElement(name = "Events")
     protected EventCapabilities events;
+    /**
+     * Imaging capabilities
+     * 
+     */
     @XmlElement(name = "Imaging")
     protected ImagingCapabilities imaging;
+    /**
+     * Media capabilities
+     * 
+     */
     @XmlElement(name = "Media")
     protected MediaCapabilities media;
+    /**
+     * PTZ capabilities
+     * 
+     */
     @XmlElement(name = "PTZ")
     protected PTZCapabilities ptz;
     @XmlElement(name = "Extension")
     protected CapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the analytics property.
+     * Analytics capabilities
      * 
      * @return
      *     possible object is
@@ -85,13 +109,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link AnalyticsCapabilities }
      *     
+     * @see #getAnalytics()
      */
     public void setAnalytics(AnalyticsCapabilities value) {
         this.analytics = value;
     }
 
     /**
-     * Gets the value of the device property.
+     * Device capabilities
      * 
      * @return
      *     possible object is
@@ -109,13 +134,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link DeviceCapabilities }
      *     
+     * @see #getDevice()
      */
     public void setDevice(DeviceCapabilities value) {
         this.device = value;
     }
 
     /**
-     * Gets the value of the events property.
+     * Event capabilities
      * 
      * @return
      *     possible object is
@@ -133,13 +159,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link EventCapabilities }
      *     
+     * @see #getEvents()
      */
     public void setEvents(EventCapabilities value) {
         this.events = value;
     }
 
     /**
-     * Gets the value of the imaging property.
+     * Imaging capabilities
      * 
      * @return
      *     possible object is
@@ -157,13 +184,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link ImagingCapabilities }
      *     
+     * @see #getImaging()
      */
     public void setImaging(ImagingCapabilities value) {
         this.imaging = value;
     }
 
     /**
-     * Gets the value of the media property.
+     * Media capabilities
      * 
      * @return
      *     possible object is
@@ -181,13 +209,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link MediaCapabilities }
      *     
+     * @see #getMedia()
      */
     public void setMedia(MediaCapabilities value) {
         this.media = value;
     }
 
     /**
-     * Gets the value of the ptz property.
+     * PTZ capabilities
      * 
      * @return
      *     possible object is
@@ -205,6 +234,7 @@ public class Capabilities {
      *     allowed object is
      *     {@link PTZCapabilities }
      *     
+     * @see #getPTZ()
      */
     public void setPTZ(PTZCapabilities value) {
         this.ptz = value;

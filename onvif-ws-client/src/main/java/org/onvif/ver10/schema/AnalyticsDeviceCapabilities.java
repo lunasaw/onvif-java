@@ -13,24 +13,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AnalyticsDeviceCapabilities complex type.
+ * <p>Java class for AnalyticsDeviceCapabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AnalyticsDeviceCapabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="RuleSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}AnalyticsDeviceExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AnalyticsDeviceCapabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="RuleSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}AnalyticsDeviceExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,12 +45,16 @@ public class AnalyticsDeviceCapabilities {
     @XmlElement(name = "XAddr", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String xAddr;
+    /**
+     * Obsolete property.
+     * 
+     */
     @XmlElement(name = "RuleSupport")
     protected Boolean ruleSupport;
     @XmlElement(name = "Extension")
     protected AnalyticsDeviceExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the xAddr property.
@@ -77,7 +81,7 @@ public class AnalyticsDeviceCapabilities {
     }
 
     /**
-     * Gets the value of the ruleSupport property.
+     * Obsolete property.
      * 
      * @return
      *     possible object is
@@ -95,6 +99,7 @@ public class AnalyticsDeviceCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isRuleSupport()
      */
     public void setRuleSupport(Boolean value) {
         this.ruleSupport = value;

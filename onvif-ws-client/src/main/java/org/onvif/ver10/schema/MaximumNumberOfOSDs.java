@@ -12,25 +12,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for MaximumNumberOfOSDs complex type.
+ * <p>Java class for MaximumNumberOfOSDs complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="MaximumNumberOfOSDs"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="Total" use="required" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="Image" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="PlainText" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="Date" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="Time" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="DateAndTime" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="MaximumNumberOfOSDs">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <attribute name="Total" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="Image" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="PlainText" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="Date" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="Time" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="DateAndTime" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,7 +51,7 @@ public class MaximumNumberOfOSDs {
     @XmlAttribute(name = "DateAndTime")
     protected Integer dateAndTime;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the total property.

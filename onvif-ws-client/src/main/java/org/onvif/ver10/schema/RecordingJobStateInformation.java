@@ -14,25 +14,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RecordingJobStateInformation complex type.
+ * <p>Java class for RecordingJobStateInformation complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="RecordingJobStateInformation"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
- *         &lt;element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobState"/&gt;
- *         &lt;element name="Sources" type="{http://www.onvif.org/ver10/schema}RecordingJobStateSource" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RecordingJobStateInformationExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="RecordingJobStateInformation">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
+ *         <element name="State" type="{http://www.onvif.org/ver10/schema}RecordingJobState"/>
+ *         <element name="Sources" type="{http://www.onvif.org/ver10/schema}RecordingJobStateSource" maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RecordingJobStateInformationExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -45,19 +45,32 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RecordingJobStateInformation {
 
+    /**
+     * Identification of the recording that the recording job records to.
+     * 
+     */
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
+    /**
+     * Holds the aggregated state over the whole RecordingJobInformation
+     *             structure.
+     * 
+     */
     @XmlElement(name = "State", required = true)
     protected String state;
+    /**
+     * Identifies the data source of the recording job.
+     * 
+     */
     @XmlElement(name = "Sources")
     protected List<RecordingJobStateSource> sources;
     @XmlElement(name = "Extension")
     protected RecordingJobStateInformationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the recordingToken property.
+     * Identification of the recording that the recording job records to.
      * 
      * @return
      *     possible object is
@@ -75,13 +88,15 @@ public class RecordingJobStateInformation {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getRecordingToken()
      */
     public void setRecordingToken(String value) {
         this.recordingToken = value;
     }
 
     /**
-     * Gets the value of the state property.
+     * Holds the aggregated state over the whole RecordingJobInformation
+     *             structure.
      * 
      * @return
      *     possible object is
@@ -99,36 +114,42 @@ public class RecordingJobStateInformation {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getState()
      */
     public void setState(String value) {
         this.state = value;
     }
 
     /**
+     * Identifies the data source of the recording job.
+     * 
      * Gets the value of the sources property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the sources property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the sources property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getSources().add(newItem);
+     * getSources().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link RecordingJobStateSource }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the sources property.
      */
     public List<RecordingJobStateSource> getSources() {
         if (sources == null) {
-            sources = new ArrayList<RecordingJobStateSource>();
+            sources = new ArrayList<>();
         }
         return this.sources;
     }

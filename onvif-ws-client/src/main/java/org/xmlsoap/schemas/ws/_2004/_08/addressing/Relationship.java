@@ -14,20 +14,20 @@ import jakarta.xml.bind.annotation.XmlValue;
 
 
 /**
- * <p>Java class for Relationship complex type.
+ * <p>Java class for Relationship complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Relationship"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;anyURI"&gt;
- *       &lt;attribute name="RelationshipType" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Relationship">
+ *   <simpleContent>
+ *     <extension base="<http://www.w3.org/2001/XMLSchema>anyURI">
+ *       <attribute name="RelationshipType" type="{http://www.w3.org/2001/XMLSchema}QName" />
+ *       <anyAttribute processContents='lax' namespace='##other'/>
+ *     </extension>
+ *   </simpleContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -43,7 +43,7 @@ public class Relationship {
     @XmlAttribute(name = "RelationshipType")
     protected QName relationshipType;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the value property.

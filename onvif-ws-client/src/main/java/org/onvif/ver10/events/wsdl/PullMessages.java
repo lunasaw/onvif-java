@@ -13,23 +13,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Timeout" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *         &lt;element name="MessageLimit" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;any namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Timeout" type="{http://www.w3.org/2001/XMLSchema}duration"/>
+ *         <element name="MessageLimit" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         <any namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -42,15 +42,24 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "PullMessages")
 public class PullMessages {
 
+    /**
+     * Maximum time to block until this method returns.
+     * 
+     */
     @XmlElement(name = "Timeout", required = true)
     protected Duration timeout;
+    /**
+     * Upper limit for the number of messages to return at once. A server
+     *                   implementation may decide to return less messages.
+     * 
+     */
     @XmlElement(name = "MessageLimit")
     protected int messageLimit;
     @XmlAnyElement(lax = true)
     protected List<Object> any;
 
     /**
-     * Gets the value of the timeout property.
+     * Maximum time to block until this method returns.
      * 
      * @return
      *     possible object is
@@ -68,13 +77,15 @@ public class PullMessages {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getTimeout()
      */
     public void setTimeout(Duration value) {
         this.timeout = value;
     }
 
     /**
-     * Gets the value of the messageLimit property.
+     * Upper limit for the number of messages to return at once. A server
+     *                   implementation may decide to return less messages.
      * 
      */
     public int getMessageLimit() {
@@ -92,28 +103,31 @@ public class PullMessages {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

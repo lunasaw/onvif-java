@@ -11,23 +11,23 @@ import org.onvif.ver10.schema.StorageReferencePath;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="SearchScope" type="{http://www.onvif.org/ver10/schema}SearchScope"/&gt;
- *         &lt;element name="FileFormat" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="StorageDestination" type="{http://www.onvif.org/ver10/schema}StorageReferencePath"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="SearchScope" type="{http://www.onvif.org/ver10/schema}SearchScope"/>
+ *         <element name="FileFormat" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="StorageDestination" type="{http://www.onvif.org/ver10/schema}StorageReferencePath"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -40,15 +40,27 @@ import org.onvif.ver10.schema.StorageReferencePath;
 @XmlRootElement(name = "ExportRecordedData")
 public class ExportRecordedData {
 
+    /**
+     * Indicates the selection criterion on the existing recordings. .
+     * 
+     */
     @XmlElement(name = "SearchScope", required = true)
     protected SearchScope searchScope;
+    /**
+     * Indicates which export file format to be used.
+     * 
+     */
     @XmlElement(name = "FileFormat", required = true)
     protected String fileFormat;
+    /**
+     * Indicates the target storage and relative directory path.
+     * 
+     */
     @XmlElement(name = "StorageDestination", required = true)
     protected StorageReferencePath storageDestination;
 
     /**
-     * Gets the value of the searchScope property.
+     * Indicates the selection criterion on the existing recordings. .
      * 
      * @return
      *     possible object is
@@ -66,13 +78,14 @@ public class ExportRecordedData {
      *     allowed object is
      *     {@link SearchScope }
      *     
+     * @see #getSearchScope()
      */
     public void setSearchScope(SearchScope value) {
         this.searchScope = value;
     }
 
     /**
-     * Gets the value of the fileFormat property.
+     * Indicates which export file format to be used.
      * 
      * @return
      *     possible object is
@@ -90,13 +103,14 @@ public class ExportRecordedData {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getFileFormat()
      */
     public void setFileFormat(String value) {
         this.fileFormat = value;
     }
 
     /**
-     * Gets the value of the storageDestination property.
+     * Indicates the target storage and relative directory path.
      * 
      * @return
      *     possible object is
@@ -114,6 +128,7 @@ public class ExportRecordedData {
      *     allowed object is
      *     {@link StorageReferencePath }
      *     
+     * @see #getStorageDestination()
      */
     public void setStorageDestination(StorageReferencePath value) {
         this.storageDestination = value;

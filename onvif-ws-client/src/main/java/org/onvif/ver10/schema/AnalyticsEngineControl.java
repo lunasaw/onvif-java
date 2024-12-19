@@ -17,29 +17,29 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for AnalyticsEngineControl complex type.
+ * <p>Java class for AnalyticsEngineControl complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AnalyticsEngineControl"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="EngineToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="EngineConfigToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="InputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/&gt;
- *         &lt;element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="Subscription" type="{http://www.onvif.org/ver10/schema}Config"/&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ModeOfOperation"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AnalyticsEngineControl">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/schema}ConfigurationEntity">
+ *       <sequence>
+ *         <element name="EngineToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="EngineConfigToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="InputToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/>
+ *         <element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken" maxOccurs="unbounded"/>
+ *         <element name="Multicast" type="{http://www.onvif.org/ver10/schema}MulticastConfiguration" minOccurs="0"/>
+ *         <element name="Subscription" type="{http://www.onvif.org/ver10/schema}Config"/>
+ *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ModeOfOperation"/>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -58,12 +58,30 @@ public class AnalyticsEngineControl
     extends ConfigurationEntity
 {
 
+    /**
+     * Token of the analytics engine (AnalyticsEngine) being controlled.
+     * 
+     */
     @XmlElement(name = "EngineToken", required = true)
     protected String engineToken;
+    /**
+     * Token of the analytics engine configuration
+     *                 (VideoAnalyticsConfiguration) in effect.
+     * 
+     */
     @XmlElement(name = "EngineConfigToken", required = true)
     protected String engineConfigToken;
+    /**
+     * Tokens of the input (AnalyticsEngineInput) configuration applied.
+     * 
+     */
     @XmlElement(name = "InputToken", required = true)
     protected List<String> inputToken;
+    /**
+     * Tokens of the receiver providing media input data. The order of
+     *                 ReceiverToken shall exactly match the order of InputToken.
+     * 
+     */
     @XmlElement(name = "ReceiverToken", required = true)
     protected List<String> receiverToken;
     @XmlElement(name = "Multicast")
@@ -76,10 +94,10 @@ public class AnalyticsEngineControl
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the engineToken property.
+     * Token of the analytics engine (AnalyticsEngine) being controlled.
      * 
      * @return
      *     possible object is
@@ -97,13 +115,15 @@ public class AnalyticsEngineControl
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getEngineToken()
      */
     public void setEngineToken(String value) {
         this.engineToken = value;
     }
 
     /**
-     * Gets the value of the engineConfigToken property.
+     * Token of the analytics engine configuration
+     *                 (VideoAnalyticsConfiguration) in effect.
      * 
      * @return
      *     possible object is
@@ -121,65 +141,77 @@ public class AnalyticsEngineControl
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getEngineConfigToken()
      */
     public void setEngineConfigToken(String value) {
         this.engineConfigToken = value;
     }
 
     /**
+     * Tokens of the input (AnalyticsEngineInput) configuration applied.
+     * 
      * Gets the value of the inputToken property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the inputToken property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the inputToken property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getInputToken().add(newItem);
+     * getInputToken().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the inputToken property.
      */
     public List<String> getInputToken() {
         if (inputToken == null) {
-            inputToken = new ArrayList<String>();
+            inputToken = new ArrayList<>();
         }
         return this.inputToken;
     }
 
     /**
+     * Tokens of the receiver providing media input data. The order of
+     *                 ReceiverToken shall exactly match the order of InputToken.
+     * 
      * Gets the value of the receiverToken property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the receiverToken property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the receiverToken property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getReceiverToken().add(newItem);
+     * getReceiverToken().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the receiverToken property.
      */
     public List<String> getReceiverToken() {
         if (receiverToken == null) {
-            receiverToken = new ArrayList<String>();
+            receiverToken = new ArrayList<>();
         }
         return this.receiverToken;
     }
@@ -259,16 +291,16 @@ public class AnalyticsEngineControl
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -276,12 +308,15 @@ public class AnalyticsEngineControl
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }

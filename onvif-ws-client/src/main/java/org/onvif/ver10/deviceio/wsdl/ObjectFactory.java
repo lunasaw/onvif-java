@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.deviceio.wsdl package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,13 +24,13 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "Capabilities");
-    private final static QName _GetVideoSources_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetVideoSources");
-    private final static QName _GetVideoSourcesResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetVideoSourcesResponse");
-    private final static QName _GetAudioSources_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioSources");
-    private final static QName _GetAudioSourcesResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioSourcesResponse");
-    private final static QName _GetAudioOutputs_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioOutputs");
-    private final static QName _GetAudioOutputsResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioOutputsResponse");
+    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "Capabilities");
+    private static final QName _GetVideoSources_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetVideoSources");
+    private static final QName _GetVideoSourcesResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetVideoSourcesResponse");
+    private static final QName _GetAudioSources_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioSources");
+    private static final QName _GetAudioSourcesResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioSourcesResponse");
+    private static final QName _GetAudioOutputs_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioOutputs");
+    private static final QName _GetAudioOutputsResponse_QNAME = new QName("http://www.onvif.org/ver10/deviceIO/wsdl", "GetAudioOutputsResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.deviceio.wsdl
@@ -42,6 +42,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -50,6 +52,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
+     * @return
+     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -58,6 +62,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
+     * @return
+     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -66,6 +72,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRelayOutputOptions }
      * 
+     * @return
+     *     the new instance of {@link GetRelayOutputOptions }
      */
     public GetRelayOutputOptions createGetRelayOutputOptions() {
         return new GetRelayOutputOptions();
@@ -74,6 +82,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetRelayOutputOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetRelayOutputOptionsResponse }
      */
     public GetRelayOutputOptionsResponse createGetRelayOutputOptionsResponse() {
         return new GetRelayOutputOptionsResponse();
@@ -82,6 +92,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RelayOutputOptions }
      * 
+     * @return
+     *     the new instance of {@link RelayOutputOptions }
      */
     public RelayOutputOptions createRelayOutputOptions() {
         return new RelayOutputOptions();
@@ -90,6 +102,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Get }
      * 
+     * @return
+     *     the new instance of {@link Get }
      */
     public Get createGet() {
         return new Get();
@@ -98,6 +112,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetResponse }
      * 
+     * @return
+     *     the new instance of {@link GetResponse }
      */
     public GetResponse createGetResponse() {
         return new GetResponse();
@@ -106,6 +122,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputs }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputs }
      */
     public GetVideoOutputs createGetVideoOutputs() {
         return new GetVideoOutputs();
@@ -114,6 +132,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputsResponse }
      */
     public GetVideoOutputsResponse createGetVideoOutputsResponse() {
         return new GetVideoOutputsResponse();
@@ -122,6 +142,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfiguration }
      */
     public GetAudioSourceConfiguration createGetAudioSourceConfiguration() {
         return new GetAudioSourceConfiguration();
@@ -130,6 +152,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationResponse }
      */
     public GetAudioSourceConfigurationResponse createGetAudioSourceConfigurationResponse() {
         return new GetAudioSourceConfigurationResponse();
@@ -138,6 +162,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfiguration }
      */
     public GetAudioOutputConfiguration createGetAudioOutputConfiguration() {
         return new GetAudioOutputConfiguration();
@@ -146,6 +172,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationResponse }
      */
     public GetAudioOutputConfigurationResponse createGetAudioOutputConfigurationResponse() {
         return new GetAudioOutputConfigurationResponse();
@@ -154,6 +182,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfiguration }
      */
     public GetVideoSourceConfiguration createGetVideoSourceConfiguration() {
         return new GetVideoSourceConfiguration();
@@ -162,6 +192,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationResponse }
      */
     public GetVideoSourceConfigurationResponse createGetVideoSourceConfigurationResponse() {
         return new GetVideoSourceConfigurationResponse();
@@ -170,6 +202,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputConfiguration }
      */
     public GetVideoOutputConfiguration createGetVideoOutputConfiguration() {
         return new GetVideoOutputConfiguration();
@@ -178,6 +212,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputConfigurationResponse }
      */
     public GetVideoOutputConfigurationResponse createGetVideoOutputConfigurationResponse() {
         return new GetVideoOutputConfigurationResponse();
@@ -186,6 +222,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioSourceConfiguration }
      */
     public SetAudioSourceConfiguration createSetAudioSourceConfiguration() {
         return new SetAudioSourceConfiguration();
@@ -194,6 +232,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioSourceConfigurationResponse }
      */
     public SetAudioSourceConfigurationResponse createSetAudioSourceConfigurationResponse() {
         return new SetAudioSourceConfigurationResponse();
@@ -202,6 +242,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetAudioOutputConfiguration }
      */
     public SetAudioOutputConfiguration createSetAudioOutputConfiguration() {
         return new SetAudioOutputConfiguration();
@@ -210,6 +252,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetAudioOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetAudioOutputConfigurationResponse }
      */
     public SetAudioOutputConfigurationResponse createSetAudioOutputConfigurationResponse() {
         return new SetAudioOutputConfigurationResponse();
@@ -218,6 +262,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceConfiguration }
      */
     public SetVideoSourceConfiguration createSetVideoSourceConfiguration() {
         return new SetVideoSourceConfiguration();
@@ -226,6 +272,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoSourceConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoSourceConfigurationResponse }
      */
     public SetVideoSourceConfigurationResponse createSetVideoSourceConfigurationResponse() {
         return new SetVideoSourceConfigurationResponse();
@@ -234,6 +282,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoOutputConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetVideoOutputConfiguration }
      */
     public SetVideoOutputConfiguration createSetVideoOutputConfiguration() {
         return new SetVideoOutputConfiguration();
@@ -242,6 +292,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetVideoOutputConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetVideoOutputConfigurationResponse }
      */
     public SetVideoOutputConfigurationResponse createSetVideoOutputConfigurationResponse() {
         return new SetVideoOutputConfigurationResponse();
@@ -250,6 +302,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationOptions }
      */
     public GetVideoSourceConfigurationOptions createGetVideoSourceConfigurationOptions() {
         return new GetVideoSourceConfigurationOptions();
@@ -258,6 +312,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoSourceConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoSourceConfigurationOptionsResponse }
      */
     public GetVideoSourceConfigurationOptionsResponse createGetVideoSourceConfigurationOptionsResponse() {
         return new GetVideoSourceConfigurationOptionsResponse();
@@ -266,6 +322,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputConfigurationOptions }
      */
     public GetVideoOutputConfigurationOptions createGetVideoOutputConfigurationOptions() {
         return new GetVideoOutputConfigurationOptions();
@@ -274,6 +332,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetVideoOutputConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetVideoOutputConfigurationOptionsResponse }
      */
     public GetVideoOutputConfigurationOptionsResponse createGetVideoOutputConfigurationOptionsResponse() {
         return new GetVideoOutputConfigurationOptionsResponse();
@@ -282,6 +342,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationOptions }
      */
     public GetAudioSourceConfigurationOptions createGetAudioSourceConfigurationOptions() {
         return new GetAudioSourceConfigurationOptions();
@@ -290,6 +352,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioSourceConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioSourceConfigurationOptionsResponse }
      */
     public GetAudioSourceConfigurationOptionsResponse createGetAudioSourceConfigurationOptionsResponse() {
         return new GetAudioSourceConfigurationOptionsResponse();
@@ -298,6 +362,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationOptions }
      */
     public GetAudioOutputConfigurationOptions createGetAudioOutputConfigurationOptions() {
         return new GetAudioOutputConfigurationOptions();
@@ -306,6 +372,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAudioOutputConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetAudioOutputConfigurationOptionsResponse }
      */
     public GetAudioOutputConfigurationOptionsResponse createGetAudioOutputConfigurationOptionsResponse() {
         return new GetAudioOutputConfigurationOptionsResponse();
@@ -314,6 +382,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputSettings }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputSettings }
      */
     public SetRelayOutputSettings createSetRelayOutputSettings() {
         return new SetRelayOutputSettings();
@@ -322,6 +392,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetRelayOutputSettingsResponse }
      * 
+     * @return
+     *     the new instance of {@link SetRelayOutputSettingsResponse }
      */
     public SetRelayOutputSettingsResponse createSetRelayOutputSettingsResponse() {
         return new SetRelayOutputSettingsResponse();
@@ -330,6 +402,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDigitalInputs }
      * 
+     * @return
+     *     the new instance of {@link GetDigitalInputs }
      */
     public GetDigitalInputs createGetDigitalInputs() {
         return new GetDigitalInputs();
@@ -338,6 +412,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDigitalInputsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDigitalInputsResponse }
      */
     public GetDigitalInputsResponse createGetDigitalInputsResponse() {
         return new GetDigitalInputsResponse();
@@ -346,6 +422,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDigitalInputConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetDigitalInputConfigurationOptions }
      */
     public GetDigitalInputConfigurationOptions createGetDigitalInputConfigurationOptions() {
         return new GetDigitalInputConfigurationOptions();
@@ -354,6 +432,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDigitalInputConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetDigitalInputConfigurationOptionsResponse }
      */
     public GetDigitalInputConfigurationOptionsResponse createGetDigitalInputConfigurationOptionsResponse() {
         return new GetDigitalInputConfigurationOptionsResponse();
@@ -362,6 +442,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DigitalInputConfigurationInputOptions }
      * 
+     * @return
+     *     the new instance of {@link DigitalInputConfigurationInputOptions }
      */
     public DigitalInputConfigurationInputOptions createDigitalInputConfigurationInputOptions() {
         return new DigitalInputConfigurationInputOptions();
@@ -370,6 +452,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDigitalInputConfigurations }
      * 
+     * @return
+     *     the new instance of {@link SetDigitalInputConfigurations }
      */
     public SetDigitalInputConfigurations createSetDigitalInputConfigurations() {
         return new SetDigitalInputConfigurations();
@@ -378,6 +462,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetDigitalInputConfigurationsResponse }
      * 
+     * @return
+     *     the new instance of {@link SetDigitalInputConfigurationsResponse }
      */
     public SetDigitalInputConfigurationsResponse createSetDigitalInputConfigurationsResponse() {
         return new SetDigitalInputConfigurationsResponse();
@@ -386,6 +472,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPorts }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPorts }
      */
     public GetSerialPorts createGetSerialPorts() {
         return new GetSerialPorts();
@@ -394,6 +482,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPortsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPortsResponse }
      */
     public GetSerialPortsResponse createGetSerialPortsResponse() {
         return new GetSerialPortsResponse();
@@ -402,6 +492,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SerialPort }
      * 
+     * @return
+     *     the new instance of {@link SerialPort }
      */
     public SerialPort createSerialPort() {
         return new SerialPort();
@@ -410,6 +502,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPortConfiguration }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPortConfiguration }
      */
     public GetSerialPortConfiguration createGetSerialPortConfiguration() {
         return new GetSerialPortConfiguration();
@@ -418,6 +512,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPortConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPortConfigurationResponse }
      */
     public GetSerialPortConfigurationResponse createGetSerialPortConfigurationResponse() {
         return new GetSerialPortConfigurationResponse();
@@ -426,6 +522,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SerialPortConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SerialPortConfiguration }
      */
     public SerialPortConfiguration createSerialPortConfiguration() {
         return new SerialPortConfiguration();
@@ -434,6 +532,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSerialPortConfiguration }
      * 
+     * @return
+     *     the new instance of {@link SetSerialPortConfiguration }
      */
     public SetSerialPortConfiguration createSetSerialPortConfiguration() {
         return new SetSerialPortConfiguration();
@@ -442,6 +542,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSerialPortConfigurationResponse }
      * 
+     * @return
+     *     the new instance of {@link SetSerialPortConfigurationResponse }
      */
     public SetSerialPortConfigurationResponse createSetSerialPortConfigurationResponse() {
         return new SetSerialPortConfigurationResponse();
@@ -450,6 +552,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPortConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPortConfigurationOptions }
      */
     public GetSerialPortConfigurationOptions createGetSerialPortConfigurationOptions() {
         return new GetSerialPortConfigurationOptions();
@@ -458,6 +562,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetSerialPortConfigurationOptionsResponse }
      * 
+     * @return
+     *     the new instance of {@link GetSerialPortConfigurationOptionsResponse }
      */
     public GetSerialPortConfigurationOptionsResponse createGetSerialPortConfigurationOptionsResponse() {
         return new GetSerialPortConfigurationOptionsResponse();
@@ -466,6 +572,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SerialPortConfigurationOptions }
      * 
+     * @return
+     *     the new instance of {@link SerialPortConfigurationOptions }
      */
     public SerialPortConfigurationOptions createSerialPortConfigurationOptions() {
         return new SerialPortConfigurationOptions();
@@ -474,6 +582,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendReceiveSerialCommand }
      * 
+     * @return
+     *     the new instance of {@link SendReceiveSerialCommand }
      */
     public SendReceiveSerialCommand createSendReceiveSerialCommand() {
         return new SendReceiveSerialCommand();
@@ -482,6 +592,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SerialData }
      * 
+     * @return
+     *     the new instance of {@link SerialData }
      */
     public SerialData createSerialData() {
         return new SerialData();
@@ -490,6 +602,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SendReceiveSerialCommandResponse }
      * 
+     * @return
+     *     the new instance of {@link SendReceiveSerialCommandResponse }
      */
     public SendReceiveSerialCommandResponse createSendReceiveSerialCommandResponse() {
         return new SendReceiveSerialCommandResponse();
@@ -498,6 +612,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link RelayOutputOptionsExtension }
      * 
+     * @return
+     *     the new instance of {@link RelayOutputOptionsExtension }
      */
     public RelayOutputOptionsExtension createRelayOutputOptionsExtension() {
         return new RelayOutputOptionsExtension();
@@ -506,6 +622,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ParityBitList }
      * 
+     * @return
+     *     the new instance of {@link ParityBitList }
      */
     public ParityBitList createParityBitList() {
         return new ParityBitList();
@@ -521,7 +639,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
     /**
@@ -534,7 +652,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetVideoSources")
     public JAXBElement<Get> createGetVideoSources(Get value) {
-        return new JAXBElement<Get>(_GetVideoSources_QNAME, Get.class, null, value);
+        return new JAXBElement<>(_GetVideoSources_QNAME, Get.class, null, value);
     }
 
     /**
@@ -547,7 +665,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetVideoSourcesResponse")
     public JAXBElement<GetResponse> createGetVideoSourcesResponse(GetResponse value) {
-        return new JAXBElement<GetResponse>(_GetVideoSourcesResponse_QNAME, GetResponse.class, null, value);
+        return new JAXBElement<>(_GetVideoSourcesResponse_QNAME, GetResponse.class, null, value);
     }
 
     /**
@@ -560,7 +678,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioSources")
     public JAXBElement<Get> createGetAudioSources(Get value) {
-        return new JAXBElement<Get>(_GetAudioSources_QNAME, Get.class, null, value);
+        return new JAXBElement<>(_GetAudioSources_QNAME, Get.class, null, value);
     }
 
     /**
@@ -573,7 +691,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioSourcesResponse")
     public JAXBElement<GetResponse> createGetAudioSourcesResponse(GetResponse value) {
-        return new JAXBElement<GetResponse>(_GetAudioSourcesResponse_QNAME, GetResponse.class, null, value);
+        return new JAXBElement<>(_GetAudioSourcesResponse_QNAME, GetResponse.class, null, value);
     }
 
     /**
@@ -586,7 +704,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioOutputs")
     public JAXBElement<Get> createGetAudioOutputs(Get value) {
-        return new JAXBElement<Get>(_GetAudioOutputs_QNAME, Get.class, null, value);
+        return new JAXBElement<>(_GetAudioOutputs_QNAME, Get.class, null, value);
     }
 
     /**
@@ -599,7 +717,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/deviceIO/wsdl", name = "GetAudioOutputsResponse")
     public JAXBElement<GetResponse> createGetAudioOutputsResponse(GetResponse value) {
-        return new JAXBElement<GetResponse>(_GetAudioOutputsResponse_QNAME, GetResponse.class, null, value);
+        return new JAXBElement<>(_GetAudioOutputsResponse_QNAME, GetResponse.class, null, value);
     }
 
 }

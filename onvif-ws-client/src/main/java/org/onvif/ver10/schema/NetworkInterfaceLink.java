@@ -8,23 +8,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for NetworkInterfaceLink complex type.
+ * <p>Java class for NetworkInterfaceLink complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="NetworkInterfaceLink"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AdminSettings" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting"/&gt;
- *         &lt;element name="OperSettings" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting"/&gt;
- *         &lt;element name="InterfaceType" type="{http://www.onvif.org/ver10/schema}IANA-IfTypes"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="NetworkInterfaceLink">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AdminSettings" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting"/>
+ *         <element name="OperSettings" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceConnectionSetting"/>
+ *         <element name="InterfaceType" type="{http://www.onvif.org/ver10/schema}IANA-IfTypes"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -36,15 +36,27 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkInterfaceLink {
 
+    /**
+     * Configured link settings.
+     * 
+     */
     @XmlElement(name = "AdminSettings", required = true)
     protected NetworkInterfaceConnectionSetting adminSettings;
+    /**
+     * Current active link settings.
+     * 
+     */
     @XmlElement(name = "OperSettings", required = true)
     protected NetworkInterfaceConnectionSetting operSettings;
+    /**
+     * Integer indicating interface type, for example: 6 is ethernet.
+     * 
+     */
     @XmlElement(name = "InterfaceType")
     protected int interfaceType;
 
     /**
-     * Gets the value of the adminSettings property.
+     * Configured link settings.
      * 
      * @return
      *     possible object is
@@ -62,13 +74,14 @@ public class NetworkInterfaceLink {
      *     allowed object is
      *     {@link NetworkInterfaceConnectionSetting }
      *     
+     * @see #getAdminSettings()
      */
     public void setAdminSettings(NetworkInterfaceConnectionSetting value) {
         this.adminSettings = value;
     }
 
     /**
-     * Gets the value of the operSettings property.
+     * Current active link settings.
      * 
      * @return
      *     possible object is
@@ -86,13 +99,14 @@ public class NetworkInterfaceLink {
      *     allowed object is
      *     {@link NetworkInterfaceConnectionSetting }
      *     
+     * @see #getOperSettings()
      */
     public void setOperSettings(NetworkInterfaceConnectionSetting value) {
         this.operSettings = value;
     }
 
     /**
-     * Gets the value of the interfaceType property.
+     * Integer indicating interface type, for example: 6 is ethernet.
      * 
      */
     public int getInterfaceType() {

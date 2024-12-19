@@ -18,34 +18,34 @@ import org.w3c.dom.Element;
 /**
  * An identifier of an algorithm.
  * 
- * <p>Java class for AlgorithmIdentifier complex type.
+ * <p>Java class for AlgorithmIdentifier complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AlgorithmIdentifier"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="algorithm" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/&gt;
- *         &lt;element name="parameters" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value" minOccurs="0"/&gt;
- *         &lt;element name="anyParameters" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AlgorithmIdentifier">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="algorithm" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DotDecimalOID"/>
+ *         <element name="parameters" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value" minOccurs="0"/>
+ *         <element name="anyParameters" minOccurs="0">
+ *           <complexType>
+ *             <complexContent>
+ *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 <sequence>
+ *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *                 </sequence>
+ *               </restriction>
+ *             </complexContent>
+ *           </complexType>
+ *         </element>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -57,15 +57,23 @@ import org.w3c.dom.Element;
 })
 public class AlgorithmIdentifier {
 
+    /**
+     * The OID of the algorithm in dot-decimal form.
+     * 
+     */
     @XmlElement(required = true)
     protected String algorithm;
+    /**
+     * Optional parameters of the algorithm (depending on the algorithm).
+     * 
+     */
     protected byte[] parameters;
     protected AlgorithmIdentifier.AnyParameters anyParameters;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the algorithm property.
+     * The OID of the algorithm in dot-decimal form.
      * 
      * @return
      *     possible object is
@@ -83,13 +91,14 @@ public class AlgorithmIdentifier {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getAlgorithm()
      */
     public void setAlgorithm(String value) {
         this.algorithm = value;
     }
 
     /**
-     * Gets the value of the parameters property.
+     * Optional parameters of the algorithm (depending on the algorithm).
      * 
      * @return
      *     possible object is
@@ -105,6 +114,7 @@ public class AlgorithmIdentifier {
      * @param value
      *     allowed object is
      *     byte[]
+     * @see #getParameters()
      */
     public void setParameters(byte[] value) {
         this.parameters = value;
@@ -154,21 +164,21 @@ public class AlgorithmIdentifier {
 
 
     /**
-     * <p>Java class for anonymous complex type.
+     * <p>Java class for anonymous complex type</p>.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
+     * <p>The following schema fragment specifies the expected content contained within this class.</p>
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * <pre>{@code
+     * <complexType>
+     *   <complexContent>
+     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       <sequence>
+     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+     *       </sequence>
+     *     </restriction>
+     *   </complexContent>
+     * </complexType>
+     * }</pre>
      * 
      * 
      */
@@ -184,16 +194,16 @@ public class AlgorithmIdentifier {
         /**
          * Gets the value of the any property.
          * 
-         * <p>
-         * This accessor method returns a reference to the live list,
+         * <p>This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the Jakarta XML Binding object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
          * 
          * <p>
          * For example, to add a new item, do as follows:
+         * </p>
          * <pre>
-         *    getAny().add(newItem);
+         * getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -201,12 +211,15 @@ public class AlgorithmIdentifier {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
+         * </p>
          * 
          * 
+         * @return
+         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<Object>();
+                any = new ArrayList<>();
             }
             return this.any;
         }

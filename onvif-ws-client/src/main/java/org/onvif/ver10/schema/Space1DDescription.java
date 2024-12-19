@@ -9,22 +9,22 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Space1DDescription complex type.
+ * <p>Java class for Space1DDescription complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Space1DDescription"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="URI" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
- *         &lt;element name="XRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Space1DDescription">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="URI" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         <element name="XRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,14 +35,22 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Space1DDescription {
 
+    /**
+     * A URI of coordinate systems.
+     * 
+     */
     @XmlElement(name = "URI", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String uri;
+    /**
+     * A range of x-axis.
+     * 
+     */
     @XmlElement(name = "XRange", required = true)
     protected FloatRange xRange;
 
     /**
-     * Gets the value of the uri property.
+     * A URI of coordinate systems.
      * 
      * @return
      *     possible object is
@@ -60,13 +68,14 @@ public class Space1DDescription {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getURI()
      */
     public void setURI(String value) {
         this.uri = value;
     }
 
     /**
-     * Gets the value of the xRange property.
+     * A range of x-axis.
      * 
      * @return
      *     possible object is
@@ -84,6 +93,7 @@ public class Space1DDescription {
      *     allowed object is
      *     {@link FloatRange }
      *     
+     * @see #getXRange()
      */
     public void setXRange(FloatRange value) {
         this.xRange = value;

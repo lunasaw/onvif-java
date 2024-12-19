@@ -7,19 +7,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for VideoEncodingMimeNames.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * ONVIF prominent MIME type names as referenced by IANA. See also 
  * <pre>
- * &lt;simpleType name="VideoEncodingMimeNames"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="JPEG"/&gt;
- *     &lt;enumeration value="MPV4-ES"/&gt;
- *     &lt;enumeration value="H264"/&gt;
- *     &lt;enumeration value="H265"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
+ * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;a xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" href="http://www.iana.org/assignments/media-types/media-types.xhtml"&gt;IANA Media Types&lt;/a&gt;
  * </pre>
+ * .
+ * 
+ * <p>Java class for VideoEncodingMimeNames</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <pre>{@code
+ * <simpleType name="VideoEncodingMimeNames">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="JPEG"/>
+ *     <enumeration value="MPV4-ES"/>
+ *     <enumeration value="H264"/>
+ *     <enumeration value="H265"/>
+ *   </restriction>
+ * </simpleType>
+ * }</pre>
  * 
  */
 @XmlType(name = "VideoEncodingMimeNames")
@@ -39,10 +45,26 @@ public enum VideoEncodingMimeNames {
         value = v;
     }
 
+    /**
+     * Gets the value associated to the enum constant.
+     * 
+     * @return
+     *     The value linked to the enum.
+     */
     public String value() {
         return value;
     }
 
+    /**
+     * Gets the enum associated to the value passed as parameter.
+     * 
+     * @param v
+     *     The value to get the enum from.
+     * @return
+     *     The enum which corresponds to the value, if it exists.
+     * @throws IllegalArgumentException
+     *     If no value matches in the enum declaration.
+     */
     public static VideoEncodingMimeNames fromValue(String v) {
         for (VideoEncodingMimeNames c: VideoEncodingMimeNames.values()) {
             if (c.value.equals(v)) {

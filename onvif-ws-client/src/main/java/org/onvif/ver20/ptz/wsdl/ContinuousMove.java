@@ -11,23 +11,23 @@ import org.onvif.ver10.schema.PTZSpeed;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
- *         &lt;element name="Velocity" type="{http://www.onvif.org/ver10/schema}PTZSpeed"/&gt;
- *         &lt;element name="Timeout" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
+ *         <element name="Velocity" type="{http://www.onvif.org/ver10/schema}PTZSpeed"/>
+ *         <element name="Timeout" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -40,15 +40,27 @@ import org.onvif.ver10.schema.PTZSpeed;
 @XmlRootElement(name = "ContinuousMove")
 public class ContinuousMove {
 
+    /**
+     * A reference to the MediaProfile.
+     * 
+     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
+    /**
+     * A Velocity vector specifying the velocity of pan, tilt and zoom.
+     * 
+     */
     @XmlElement(name = "Velocity", required = true)
     protected PTZSpeed velocity;
+    /**
+     * An optional Timeout parameter.
+     * 
+     */
     @XmlElement(name = "Timeout")
     protected Duration timeout;
 
     /**
-     * Gets the value of the profileToken property.
+     * A reference to the MediaProfile.
      * 
      * @return
      *     possible object is
@@ -66,13 +78,14 @@ public class ContinuousMove {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * Gets the value of the velocity property.
+     * A Velocity vector specifying the velocity of pan, tilt and zoom.
      * 
      * @return
      *     possible object is
@@ -90,13 +103,14 @@ public class ContinuousMove {
      *     allowed object is
      *     {@link PTZSpeed }
      *     
+     * @see #getVelocity()
      */
     public void setVelocity(PTZSpeed value) {
         this.velocity = value;
     }
 
     /**
-     * Gets the value of the timeout property.
+     * An optional Timeout parameter.
      * 
      * @return
      *     possible object is
@@ -114,6 +128,7 @@ public class ContinuousMove {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getTimeout()
      */
     public void setTimeout(Duration value) {
         this.timeout = value;

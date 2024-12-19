@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.oasis_open.docs.wsrf.r_2 package. 
- * <p>An ObjectFactory allows you to programatically 
+ * <p>An ObjectFactory allows you to programmatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,8 +24,8 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ResourceUnknownFault_QNAME = new QName("http://docs.oasis-open.org/wsrf/r-2", "ResourceUnknownFault");
-    private final static QName _ResourceUnavailableFault_QNAME = new QName("http://docs.oasis-open.org/wsrf/r-2", "ResourceUnavailableFault");
+    private static final QName _ResourceUnknownFault_QNAME = new QName("http://docs.oasis-open.org/wsrf/r-2", "ResourceUnknownFault");
+    private static final QName _ResourceUnavailableFault_QNAME = new QName("http://docs.oasis-open.org/wsrf/r-2", "ResourceUnavailableFault");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.oasis_open.docs.wsrf.r_2
@@ -37,6 +37,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ResourceUnknownFaultType }
      * 
+     * @return
+     *     the new instance of {@link ResourceUnknownFaultType }
      */
     public ResourceUnknownFaultType createResourceUnknownFaultType() {
         return new ResourceUnknownFaultType();
@@ -45,6 +47,8 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ResourceUnavailableFaultType }
      * 
+     * @return
+     *     the new instance of {@link ResourceUnavailableFaultType }
      */
     public ResourceUnavailableFaultType createResourceUnavailableFaultType() {
         return new ResourceUnavailableFaultType();
@@ -60,7 +64,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsrf/r-2", name = "ResourceUnknownFault")
     public JAXBElement<ResourceUnknownFaultType> createResourceUnknownFault(ResourceUnknownFaultType value) {
-        return new JAXBElement<ResourceUnknownFaultType>(_ResourceUnknownFault_QNAME, ResourceUnknownFaultType.class, null, value);
+        return new JAXBElement<>(_ResourceUnknownFault_QNAME, ResourceUnknownFaultType.class, null, value);
     }
 
     /**
@@ -73,7 +77,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://docs.oasis-open.org/wsrf/r-2", name = "ResourceUnavailableFault")
     public JAXBElement<ResourceUnavailableFaultType> createResourceUnavailableFault(ResourceUnavailableFaultType value) {
-        return new JAXBElement<ResourceUnavailableFaultType>(_ResourceUnavailableFault_QNAME, ResourceUnavailableFaultType.class, null, value);
+        return new JAXBElement<>(_ResourceUnavailableFault_QNAME, ResourceUnavailableFaultType.class, null, value);
     }
 
 }

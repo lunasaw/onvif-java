@@ -16,28 +16,28 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Capabilities complex type.
+ * <p>Java class for Capabilities complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="Capabilities">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       <attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,34 +49,60 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
+    /**
+     * Indicates that the WS Subscription policy is supported.
+     * 
+     */
     @XmlAttribute(name = "WSSubscriptionPolicySupport")
     protected Boolean wsSubscriptionPolicySupport;
+    /**
+     * Indicates that the WS Pull Point is supported.
+     * 
+     */
     @XmlAttribute(name = "WSPullPointSupport")
     protected Boolean wsPullPointSupport;
+    /**
+     * Indicates that the WS Pausable Subscription Manager Interface is
+     *               supported.
+     * 
+     */
     @XmlAttribute(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected Boolean wsPausableSubscriptionManagerInterfaceSupport;
+    /**
+     * Maximum number of supported notification producers as defined by
+     *               WS-BaseNotification.
+     * 
+     */
     @XmlAttribute(name = "MaxNotificationProducers")
     protected Integer maxNotificationProducers;
+    /**
+     * Maximum supported number of notification pull points.
+     * 
+     */
     @XmlAttribute(name = "MaxPullPoints")
     protected Integer maxPullPoints;
+    /**
+     * Indication if the device supports persistent notification storage.
+     * 
+     */
     @XmlAttribute(name = "PersistentNotificationStorage")
     protected Boolean persistentNotificationStorage;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -84,18 +110,21 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the wsSubscriptionPolicySupport property.
+     * Indicates that the WS Subscription policy is supported.
      * 
      * @return
      *     possible object is
@@ -113,13 +142,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isWSSubscriptionPolicySupport()
      */
     public void setWSSubscriptionPolicySupport(Boolean value) {
         this.wsSubscriptionPolicySupport = value;
     }
 
     /**
-     * Gets the value of the wsPullPointSupport property.
+     * Indicates that the WS Pull Point is supported.
      * 
      * @return
      *     possible object is
@@ -137,13 +167,15 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isWSPullPointSupport()
      */
     public void setWSPullPointSupport(Boolean value) {
         this.wsPullPointSupport = value;
     }
 
     /**
-     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
+     * Indicates that the WS Pausable Subscription Manager Interface is
+     *               supported.
      * 
      * @return
      *     possible object is
@@ -161,13 +193,15 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isWSPausableSubscriptionManagerInterfaceSupport()
      */
     public void setWSPausableSubscriptionManagerInterfaceSupport(Boolean value) {
         this.wsPausableSubscriptionManagerInterfaceSupport = value;
     }
 
     /**
-     * Gets the value of the maxNotificationProducers property.
+     * Maximum number of supported notification producers as defined by
+     *               WS-BaseNotification.
      * 
      * @return
      *     possible object is
@@ -185,13 +219,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getMaxNotificationProducers()
      */
     public void setMaxNotificationProducers(Integer value) {
         this.maxNotificationProducers = value;
     }
 
     /**
-     * Gets the value of the maxPullPoints property.
+     * Maximum supported number of notification pull points.
      * 
      * @return
      *     possible object is
@@ -209,13 +244,14 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
+     * @see #getMaxPullPoints()
      */
     public void setMaxPullPoints(Integer value) {
         this.maxPullPoints = value;
     }
 
     /**
-     * Gets the value of the persistentNotificationStorage property.
+     * Indication if the device supports persistent notification storage.
      * 
      * @return
      *     possible object is
@@ -233,6 +269,7 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isPersistentNotificationStorage()
      */
     public void setPersistentNotificationStorage(Boolean value) {
         this.persistentNotificationStorage = value;

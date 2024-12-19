@@ -14,26 +14,26 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for MessageDescription complex type.
+ * <p>Java class for MessageDescription complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="MessageDescription"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Source" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/&gt;
- *         &lt;element name="Key" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/&gt;
- *         &lt;element name="Data" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}MessageDescriptionExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="IsProperty" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="MessageDescription">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Source" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/>
+ *         <element name="Key" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/>
+ *         <element name="Data" type="{http://www.onvif.org/ver10/schema}ItemListDescription" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}MessageDescriptionExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="IsProperty" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -49,21 +49,66 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class MessageDescription {
 
+    /**
+     * Set of tokens producing this message. The list may only contain
+     *             SimpleItemDescription items.
+     *             The set of tokens identify the component within the WS-Endpoint, which is responsible
+     *             for the producing the message.
+     *             
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * 
+     *             For analytics events the token set shall include the VideoSourceConfigurationToken, the
+     *             VideoAnalyticsConfigurationToken
+     *             and the name of the analytics module or rule.
+     * 
+     */
     @XmlElement(name = "Source")
     protected ItemListDescription source;
+    /**
+     * Describes optional message payload parameters that may be used as key.
+     *             E.g. object IDs of tracked objects are conveyed as key.
+     * 
+     */
     @XmlElement(name = "Key")
     protected ItemListDescription key;
+    /**
+     * Describes the payload of the message.
+     * 
+     */
     @XmlElement(name = "Data")
     protected ItemListDescription data;
     @XmlElement(name = "Extension")
     protected MessageDescriptionExtension extension;
+    /**
+     * Must be set to true when the described Message relates to a property. An
+     *           alternative term of "property" is a "state" in contrast to a pure event, which contains
+     *           relevant information for only a single point in time.
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * Default is false.
+     * 
+     */
     @XmlAttribute(name = "IsProperty")
     protected Boolean isProperty;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the source property.
+     * Set of tokens producing this message. The list may only contain
+     *             SimpleItemDescription items.
+     *             The set of tokens identify the component within the WS-Endpoint, which is responsible
+     *             for the producing the message.
+     *             
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * 
+     *             For analytics events the token set shall include the VideoSourceConfigurationToken, the
+     *             VideoAnalyticsConfigurationToken
+     *             and the name of the analytics module or rule.
      * 
      * @return
      *     possible object is
@@ -81,13 +126,15 @@ public class MessageDescription {
      *     allowed object is
      *     {@link ItemListDescription }
      *     
+     * @see #getSource()
      */
     public void setSource(ItemListDescription value) {
         this.source = value;
     }
 
     /**
-     * Gets the value of the key property.
+     * Describes optional message payload parameters that may be used as key.
+     *             E.g. object IDs of tracked objects are conveyed as key.
      * 
      * @return
      *     possible object is
@@ -105,13 +152,14 @@ public class MessageDescription {
      *     allowed object is
      *     {@link ItemListDescription }
      *     
+     * @see #getKey()
      */
     public void setKey(ItemListDescription value) {
         this.key = value;
     }
 
     /**
-     * Gets the value of the data property.
+     * Describes the payload of the message.
      * 
      * @return
      *     possible object is
@@ -129,6 +177,7 @@ public class MessageDescription {
      *     allowed object is
      *     {@link ItemListDescription }
      *     
+     * @see #getData()
      */
     public void setData(ItemListDescription value) {
         this.data = value;
@@ -159,7 +208,13 @@ public class MessageDescription {
     }
 
     /**
-     * Gets the value of the isProperty property.
+     * Must be set to true when the described Message relates to a property. An
+     *           alternative term of "property" is a "state" in contrast to a pure event, which contains
+     *           relevant information for only a single point in time.
+     * <pre>
+     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
+     * </pre>
+     * Default is false.
      * 
      * @return
      *     possible object is
@@ -177,6 +232,7 @@ public class MessageDescription {
      *     allowed object is
      *     {@link Boolean }
      *     
+     * @see #isIsProperty()
      */
     public void setIsProperty(Boolean value) {
         this.isProperty = value;

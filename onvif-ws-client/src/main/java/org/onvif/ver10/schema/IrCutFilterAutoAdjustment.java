@@ -13,25 +13,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for IrCutFilterAutoAdjustment complex type.
+ * <p>Java class for IrCutFilterAutoAdjustment complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="IrCutFilterAutoAdjustment"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BoundaryType" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="BoundaryOffset" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="ResponseTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="IrCutFilterAutoAdjustment">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="BoundaryType" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="BoundaryOffset" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
+ *         <element name="ResponseTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -44,19 +44,38 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IrCutFilterAutoAdjustment {
 
+    /**
+     * Specifies which boundaries to automatically toggle Ir cut filter
+     *             following parameters are applied to. Its options shall be chosen from
+     *             tt:IrCutFilterAutoBoundaryType.
+     * 
+     */
     @XmlElement(name = "BoundaryType", required = true)
     protected String boundaryType;
+    /**
+     * Adjusts boundary exposure level for toggling Ir cut filter to on/off
+     *             specified with unitless normalized value from +1.0 to -1.0. Zero is default and -1.0 is
+     *             the darkest adjustment (Unitless).
+     * 
+     */
     @XmlElement(name = "BoundaryOffset")
     protected Float boundaryOffset;
+    /**
+     * Delay time of toggling Ir cut filter to on/off after crossing of the
+     *             boundary exposure levels.
+     * 
+     */
     @XmlElement(name = "ResponseTime")
     protected Duration responseTime;
     @XmlElement(name = "Extension")
     protected IrCutFilterAutoAdjustmentExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the boundaryType property.
+     * Specifies which boundaries to automatically toggle Ir cut filter
+     *             following parameters are applied to. Its options shall be chosen from
+     *             tt:IrCutFilterAutoBoundaryType.
      * 
      * @return
      *     possible object is
@@ -74,13 +93,16 @@ public class IrCutFilterAutoAdjustment {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getBoundaryType()
      */
     public void setBoundaryType(String value) {
         this.boundaryType = value;
     }
 
     /**
-     * Gets the value of the boundaryOffset property.
+     * Adjusts boundary exposure level for toggling Ir cut filter to on/off
+     *             specified with unitless normalized value from +1.0 to -1.0. Zero is default and -1.0 is
+     *             the darkest adjustment (Unitless).
      * 
      * @return
      *     possible object is
@@ -98,13 +120,15 @@ public class IrCutFilterAutoAdjustment {
      *     allowed object is
      *     {@link Float }
      *     
+     * @see #getBoundaryOffset()
      */
     public void setBoundaryOffset(Float value) {
         this.boundaryOffset = value;
     }
 
     /**
-     * Gets the value of the responseTime property.
+     * Delay time of toggling Ir cut filter to on/off after crossing of the
+     *             boundary exposure levels.
      * 
      * @return
      *     possible object is
@@ -122,6 +146,7 @@ public class IrCutFilterAutoAdjustment {
      *     allowed object is
      *     {@link Duration }
      *     
+     * @see #getResponseTime()
      */
     public void setResponseTime(Duration value) {
         this.responseTime = value;

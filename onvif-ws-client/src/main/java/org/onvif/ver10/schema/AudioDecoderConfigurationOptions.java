@@ -12,25 +12,25 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AudioDecoderConfigurationOptions complex type.
+ * <p>Java class for AudioDecoderConfigurationOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AudioDecoderConfigurationOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="AACDecOptions" type="{http://www.onvif.org/ver10/schema}AACDecOptions" minOccurs="0"/&gt;
- *         &lt;element name="G711DecOptions" type="{http://www.onvif.org/ver10/schema}G711DecOptions" minOccurs="0"/&gt;
- *         &lt;element name="G726DecOptions" type="{http://www.onvif.org/ver10/schema}G726DecOptions" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptionsExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AudioDecoderConfigurationOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="AACDecOptions" type="{http://www.onvif.org/ver10/schema}AACDecOptions" minOccurs="0"/>
+ *         <element name="G711DecOptions" type="{http://www.onvif.org/ver10/schema}G711DecOptions" minOccurs="0"/>
+ *         <element name="G726DecOptions" type="{http://www.onvif.org/ver10/schema}G726DecOptions" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptionsExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -43,19 +43,35 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class AudioDecoderConfigurationOptions {
 
+    /**
+     * If the device is able to decode AAC encoded audio this section describes
+     *             the supported configurations
+     * 
+     */
     @XmlElement(name = "AACDecOptions")
     protected AACDecOptions aacDecOptions;
+    /**
+     * If the device is able to decode G711 encoded audio this section
+     *             describes the supported configurations
+     * 
+     */
     @XmlElement(name = "G711DecOptions")
     protected G711DecOptions g711DecOptions;
+    /**
+     * If the device is able to decode G726 encoded audio this section
+     *             describes the supported configurations
+     * 
+     */
     @XmlElement(name = "G726DecOptions")
     protected G726DecOptions g726DecOptions;
     @XmlElement(name = "Extension")
     protected AudioDecoderConfigurationOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the aacDecOptions property.
+     * If the device is able to decode AAC encoded audio this section describes
+     *             the supported configurations
      * 
      * @return
      *     possible object is
@@ -73,13 +89,15 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link AACDecOptions }
      *     
+     * @see #getAACDecOptions()
      */
     public void setAACDecOptions(AACDecOptions value) {
         this.aacDecOptions = value;
     }
 
     /**
-     * Gets the value of the g711DecOptions property.
+     * If the device is able to decode G711 encoded audio this section
+     *             describes the supported configurations
      * 
      * @return
      *     possible object is
@@ -97,13 +115,15 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link G711DecOptions }
      *     
+     * @see #getG711DecOptions()
      */
     public void setG711DecOptions(G711DecOptions value) {
         this.g711DecOptions = value;
     }
 
     /**
-     * Gets the value of the g726DecOptions property.
+     * If the device is able to decode G726 encoded audio this section
+     *             describes the supported configurations
      * 
      * @return
      *     possible object is
@@ -121,6 +141,7 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link G726DecOptions }
      *     
+     * @see #getG726DecOptions()
      */
     public void setG726DecOptions(G726DecOptions value) {
         this.g726DecOptions = value;

@@ -12,19 +12,19 @@ import org.oasis_open.docs.wsn.b_2.FilterType;
 
 
 /**
- * <p>Java class for EventFilter complex type.
+ * <p>Java class for EventFilter complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="EventFilter"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://docs.oasis-open.org/wsn/b-2}FilterType"&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="EventFilter">
+ *   <complexContent>
+ *     <extension base="{http://docs.oasis-open.org/wsn/b-2}FilterType">
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,7 +35,7 @@ public class EventFilter
 {
 
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.

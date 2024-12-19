@@ -11,26 +11,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * 
- *             The AreaInfo structure contains basic information about an Area.
+ * The AreaInfo structure contains basic information about an Area.
  *             An ONVIF compliant device shall provide the following fields for each Area:
- *           
  * 
- * <p>Java class for AreaInfo complex type.
+ * <p>Java class for AreaInfo complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="AreaInfo"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AreaInfoBase"&gt;
- *       &lt;sequence&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="AreaInfo">
+ *   <complexContent>
+ *     <extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AreaInfoBase">
+ *       <sequence>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </extension>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,7 +39,7 @@ public class AreaInfo
 {
 
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.

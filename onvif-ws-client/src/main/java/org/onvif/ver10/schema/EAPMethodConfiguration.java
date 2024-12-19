@@ -12,24 +12,24 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EAPMethodConfiguration complex type.
+ * <p>Java class for EAPMethodConfiguration complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="EAPMethodConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="TLSConfiguration" type="{http://www.onvif.org/ver10/schema}TLSConfiguration" minOccurs="0"/&gt;
- *         &lt;element name="Password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}EapMethodExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="EAPMethodConfiguration">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="TLSConfiguration" type="{http://www.onvif.org/ver10/schema}TLSConfiguration" minOccurs="0"/>
+ *         <element name="Password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}EapMethodExtension" minOccurs="0"/>
+ *       </sequence>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -41,17 +41,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class EAPMethodConfiguration {
 
+    /**
+     * Confgiuration information for TLS Method.
+     * 
+     */
     @XmlElement(name = "TLSConfiguration")
     protected TLSConfiguration tlsConfiguration;
+    /**
+     * Password for those EAP Methods that require a password. The password
+     *             shall never be returned on a get method.
+     * 
+     */
     @XmlElement(name = "Password")
     protected String password;
     @XmlElement(name = "Extension")
     protected EapMethodExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the tlsConfiguration property.
+     * Confgiuration information for TLS Method.
      * 
      * @return
      *     possible object is
@@ -69,13 +78,15 @@ public class EAPMethodConfiguration {
      *     allowed object is
      *     {@link TLSConfiguration }
      *     
+     * @see #getTLSConfiguration()
      */
     public void setTLSConfiguration(TLSConfiguration value) {
         this.tlsConfiguration = value;
     }
 
     /**
-     * Gets the value of the password property.
+     * Password for those EAP Methods that require a password. The password
+     *             shall never be returned on a get method.
      * 
      * @return
      *     possible object is
@@ -93,6 +104,7 @@ public class EAPMethodConfiguration {
      *     allowed object is
      *     {@link String }
      *     
+     * @see #getPassword()
      */
     public void setPassword(String value) {
         this.password = value;

@@ -17,27 +17,27 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for PTZConfigurationOptions complex type.
+ * <p>Java class for PTZConfigurationOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="PTZConfigurationOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Spaces" type="{http://www.onvif.org/ver10/schema}PTZSpaces"/&gt;
- *         &lt;element name="PTZTimeout" type="{http://www.onvif.org/ver10/schema}DurationRange"/&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="PTControlDirection" type="{http://www.onvif.org/ver10/schema}PTControlDirectionOptions" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZConfigurationOptions2" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="PTZRamps" type="{http://www.onvif.org/ver10/schema}IntAttrList" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="PTZConfigurationOptions">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Spaces" type="{http://www.onvif.org/ver10/schema}PTZSpaces"/>
+ *         <element name="PTZTimeout" type="{http://www.onvif.org/ver10/schema}DurationRange"/>
+ *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
+ *         <element name="PTControlDirection" type="{http://www.onvif.org/ver10/schema}PTControlDirectionOptions" minOccurs="0"/>
+ *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZConfigurationOptions2" minOccurs="0"/>
+ *       </sequence>
+ *       <attribute name="PTZRamps" type="{http://www.onvif.org/ver10/schema}IntAttrList" />
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -51,23 +51,41 @@ import org.w3c.dom.Element;
 })
 public class PTZConfigurationOptions {
 
+    /**
+     * A list of supported coordinate systems including their range limitations.
+     * 
+     */
     @XmlElement(name = "Spaces", required = true)
     protected PTZSpaces spaces;
+    /**
+     * A timeout Range within which Timeouts are accepted by the PTZ Node.
+     * 
+     */
     @XmlElement(name = "PTZTimeout", required = true)
     protected DurationRange ptzTimeout;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
+    /**
+     * Supported options for PT Direction Control.
+     * 
+     */
     @XmlElement(name = "PTControlDirection")
     protected PTControlDirectionOptions ptControlDirection;
     @XmlElement(name = "Extension")
     protected PTZConfigurationOptions2 extension;
+    /**
+     * The list of acceleration ramps supported by the device. The
+     *           smallest acceleration value corresponds to the minimal index, the
+     *           highest acceleration corresponds to the maximum index.
+     * 
+     */
     @XmlAttribute(name = "PTZRamps")
     protected List<Integer> ptzRamps;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
-     * Gets the value of the spaces property.
+     * A list of supported coordinate systems including their range limitations.
      * 
      * @return
      *     possible object is
@@ -85,13 +103,14 @@ public class PTZConfigurationOptions {
      *     allowed object is
      *     {@link PTZSpaces }
      *     
+     * @see #getSpaces()
      */
     public void setSpaces(PTZSpaces value) {
         this.spaces = value;
     }
 
     /**
-     * Gets the value of the ptzTimeout property.
+     * A timeout Range within which Timeouts are accepted by the PTZ Node.
      * 
      * @return
      *     possible object is
@@ -109,6 +128,7 @@ public class PTZConfigurationOptions {
      *     allowed object is
      *     {@link DurationRange }
      *     
+     * @see #getPTZTimeout()
      */
     public void setPTZTimeout(DurationRange value) {
         this.ptzTimeout = value;
@@ -117,16 +137,16 @@ public class PTZConfigurationOptions {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getAny().add(newItem);
+     * getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -134,18 +154,21 @@ public class PTZConfigurationOptions {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<java.lang.Object>();
+            any = new ArrayList<>();
         }
         return this.any;
     }
 
     /**
-     * Gets the value of the ptControlDirection property.
+     * Supported options for PT Direction Control.
      * 
      * @return
      *     possible object is
@@ -163,6 +186,7 @@ public class PTZConfigurationOptions {
      *     allowed object is
      *     {@link PTControlDirectionOptions }
      *     
+     * @see #getPTControlDirection()
      */
     public void setPTControlDirection(PTControlDirectionOptions value) {
         this.ptControlDirection = value;
@@ -193,30 +217,37 @@ public class PTZConfigurationOptions {
     }
 
     /**
+     * The list of acceleration ramps supported by the device. The
+     *           smallest acceleration value corresponds to the minimal index, the
+     *           highest acceleration corresponds to the maximum index.
+     * 
      * Gets the value of the ptzRamps property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
+     * <p>This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the ptzRamps property.
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ptzRamps property.</p>
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * </p>
      * <pre>
-     *    getPTZRamps().add(newItem);
+     * getPTZRamps().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Integer }
+     * </p>
      * 
      * 
+     * @return
+     *     The value of the ptzRamps property.
      */
     public List<Integer> getPTZRamps() {
         if (ptzRamps == null) {
-            ptzRamps = new ArrayList<Integer>();
+            ptzRamps = new ArrayList<>();
         }
         return this.ptzRamps;
     }

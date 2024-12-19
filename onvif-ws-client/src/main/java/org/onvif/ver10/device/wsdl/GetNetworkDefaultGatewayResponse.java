@@ -10,21 +10,21 @@ import org.onvif.ver10.schema.NetworkGateway;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for anonymous complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="NetworkGateway" type="{http://www.onvif.org/ver10/schema}NetworkGateway"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType>
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="NetworkGateway" type="{http://www.onvif.org/ver10/schema}NetworkGateway"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -35,11 +35,15 @@ import org.onvif.ver10.schema.NetworkGateway;
 @XmlRootElement(name = "GetNetworkDefaultGatewayResponse")
 public class GetNetworkDefaultGatewayResponse {
 
+    /**
+     * Gets the default IPv4 and IPv6 gateway settings from the device.
+     * 
+     */
     @XmlElement(name = "NetworkGateway", required = true)
     protected NetworkGateway networkGateway;
 
     /**
-     * Gets the value of the networkGateway property.
+     * Gets the default IPv4 and IPv6 gateway settings from the device.
      * 
      * @return
      *     possible object is
@@ -57,6 +61,7 @@ public class GetNetworkDefaultGatewayResponse {
      *     allowed object is
      *     {@link NetworkGateway }
      *     
+     * @see #getNetworkGateway()
      */
     public void setNetworkGateway(NetworkGateway value) {
         this.networkGateway = value;

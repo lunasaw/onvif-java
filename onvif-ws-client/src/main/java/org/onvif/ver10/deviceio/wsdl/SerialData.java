@@ -14,23 +14,23 @@ import jakarta.xml.bind.annotation.XmlType;
 /**
  * The serial port data.
  * 
- * <p>Java class for SerialData complex type.
+ * <p>Java class for SerialData complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="SerialData"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;choice&gt;
- *         &lt;element name="Binary" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&gt;
- *         &lt;element name="String" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/choice&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="SerialData">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <choice>
+ *         <element name="Binary" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
+ *         <element name="String" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       </choice>
+ *       <anyAttribute processContents='lax'/>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
@@ -46,7 +46,7 @@ public class SerialData {
     @XmlElement(name = "String")
     protected String string;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
+    private Map<QName, String> otherAttributes = new HashMap<>();
 
     /**
      * Gets the value of the binary property.

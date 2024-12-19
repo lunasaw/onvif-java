@@ -10,24 +10,23 @@ import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * Range of duration greater equal Min duration and less equal Max duration.
- *       
  * 
- * <p>Java class for DurationRange complex type.
+ * <p>Java class for DurationRange complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
  * 
- * <pre>
- * &lt;complexType name="DurationRange"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Min" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *         &lt;element name="Max" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * <pre>{@code
+ * <complexType name="DurationRange">
+ *   <complexContent>
+ *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       <sequence>
+ *         <element name="Min" type="{http://www.w3.org/2001/XMLSchema}duration"/>
+ *         <element name="Max" type="{http://www.w3.org/2001/XMLSchema}duration"/>
+ *       </sequence>
+ *     </restriction>
+ *   </complexContent>
+ * </complexType>
+ * }</pre>
  * 
  * 
  */
