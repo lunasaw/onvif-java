@@ -143,7 +143,7 @@ public class SimpleSecurityHandler implements SOAPHandler<SOAPMessageContext> {
     }
 
     public String getUTCTime() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-d'T'HH:mm:ss'Z'");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         sdf.setTimeZone(new SimpleTimeZone(SimpleTimeZone.UTC_TIME, "UTC"));
         Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
         String utcTime = sdf.format(cal.getTime());
