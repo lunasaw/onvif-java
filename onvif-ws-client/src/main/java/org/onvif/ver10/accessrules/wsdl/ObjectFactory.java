@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.accessrules.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,8 +32,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -42,8 +40,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -52,8 +48,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link ServiceCapabilities }
      */
     public ServiceCapabilities createServiceCapabilities() {
         return new ServiceCapabilities();
@@ -62,8 +56,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileInfo }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileInfo }
      */
     public GetAccessProfileInfo createGetAccessProfileInfo() {
         return new GetAccessProfileInfo();
@@ -72,8 +64,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileInfoResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileInfoResponse }
      */
     public GetAccessProfileInfoResponse createGetAccessProfileInfoResponse() {
         return new GetAccessProfileInfoResponse();
@@ -82,8 +72,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessProfileInfo }
      * 
-     * @return
-     *     the new instance of {@link AccessProfileInfo }
      */
     public AccessProfileInfo createAccessProfileInfo() {
         return new AccessProfileInfo();
@@ -92,8 +80,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileInfoList }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileInfoList }
      */
     public GetAccessProfileInfoList createGetAccessProfileInfoList() {
         return new GetAccessProfileInfoList();
@@ -102,8 +88,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileInfoListResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileInfoListResponse }
      */
     public GetAccessProfileInfoListResponse createGetAccessProfileInfoListResponse() {
         return new GetAccessProfileInfoListResponse();
@@ -112,8 +96,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfiles }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfiles }
      */
     public GetAccessProfiles createGetAccessProfiles() {
         return new GetAccessProfiles();
@@ -122,8 +104,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfilesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfilesResponse }
      */
     public GetAccessProfilesResponse createGetAccessProfilesResponse() {
         return new GetAccessProfilesResponse();
@@ -132,8 +112,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessProfile }
      * 
-     * @return
-     *     the new instance of {@link AccessProfile }
      */
     public AccessProfile createAccessProfile() {
         return new AccessProfile();
@@ -142,8 +120,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileList }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileList }
      */
     public GetAccessProfileList createGetAccessProfileList() {
         return new GetAccessProfileList();
@@ -152,8 +128,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessProfileListResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessProfileListResponse }
      */
     public GetAccessProfileListResponse createGetAccessProfileListResponse() {
         return new GetAccessProfileListResponse();
@@ -162,8 +136,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateAccessProfile }
      * 
-     * @return
-     *     the new instance of {@link CreateAccessProfile }
      */
     public CreateAccessProfile createCreateAccessProfile() {
         return new CreateAccessProfile();
@@ -172,8 +144,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateAccessProfileResponse }
      * 
-     * @return
-     *     the new instance of {@link CreateAccessProfileResponse }
      */
     public CreateAccessProfileResponse createCreateAccessProfileResponse() {
         return new CreateAccessProfileResponse();
@@ -182,8 +152,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ModifyAccessProfile }
      * 
-     * @return
-     *     the new instance of {@link ModifyAccessProfile }
      */
     public ModifyAccessProfile createModifyAccessProfile() {
         return new ModifyAccessProfile();
@@ -192,8 +160,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ModifyAccessProfileResponse }
      * 
-     * @return
-     *     the new instance of {@link ModifyAccessProfileResponse }
      */
     public ModifyAccessProfileResponse createModifyAccessProfileResponse() {
         return new ModifyAccessProfileResponse();
@@ -202,8 +168,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteAccessProfile }
      * 
-     * @return
-     *     the new instance of {@link DeleteAccessProfile }
      */
     public DeleteAccessProfile createDeleteAccessProfile() {
         return new DeleteAccessProfile();
@@ -212,8 +176,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteAccessProfileResponse }
      * 
-     * @return
-     *     the new instance of {@link DeleteAccessProfileResponse }
      */
     public DeleteAccessProfileResponse createDeleteAccessProfileResponse() {
         return new DeleteAccessProfileResponse();
@@ -222,8 +184,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPolicy }
      * 
-     * @return
-     *     the new instance of {@link AccessPolicy }
      */
     public AccessPolicy createAccessPolicy() {
         return new AccessPolicy();
@@ -232,8 +192,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPolicyExtension }
      * 
-     * @return
-     *     the new instance of {@link AccessPolicyExtension }
      */
     public AccessPolicyExtension createAccessPolicyExtension() {
         return new AccessPolicyExtension();
@@ -242,8 +200,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessProfileExtension }
      * 
-     * @return
-     *     the new instance of {@link AccessProfileExtension }
      */
     public AccessProfileExtension createAccessProfileExtension() {
         return new AccessProfileExtension();

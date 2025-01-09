@@ -17,7 +17,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 /**
  * 
  *         A media profile consists of a set of media configurations. Media profiles are used by a
- *         client
+ *         tests
  *         to configure properties of a media stream from an NVT.
  *         
  * <pre>

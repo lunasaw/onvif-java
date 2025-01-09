@@ -46,7 +46,7 @@ public interface DisplayPort {
      * List all currently defined panes of a device for a specified video output
      *         (regardless if this pane is visible at a moment). A Pane is a display area on the monitor
      *         that is attached to a video output. A pane has a
-     *         PaneConfiguration that describes which entities are associated with the pane. A client has
+     *         PaneConfiguration that describes which entities are associated with the pane. A tests has
      *         to configure the pane according to the connection to be established by setting the
      *         AudioOutput and/or AudioSourceToken. If a Token is not set, the corresponding session will
      *         not be established.

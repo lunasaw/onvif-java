@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver20.imaging.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver20/imaging/wsdl", "Capabilities");
+    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver20/imaging/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver20.imaging.wsdl
@@ -36,8 +36,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -46,8 +44,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -56,8 +52,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
-     * @return
-     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -66,8 +60,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetImagingSettings }
      * 
-     * @return
-     *     the new instance of {@link GetImagingSettings }
      */
     public GetImagingSettings createGetImagingSettings() {
         return new GetImagingSettings();
@@ -76,8 +68,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetImagingSettingsResponse }
      * 
-     * @return
-     *     the new instance of {@link GetImagingSettingsResponse }
      */
     public GetImagingSettingsResponse createGetImagingSettingsResponse() {
         return new GetImagingSettingsResponse();
@@ -86,8 +76,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetImagingSettings }
      * 
-     * @return
-     *     the new instance of {@link SetImagingSettings }
      */
     public SetImagingSettings createSetImagingSettings() {
         return new SetImagingSettings();
@@ -96,8 +84,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetImagingSettingsResponse }
      * 
-     * @return
-     *     the new instance of {@link SetImagingSettingsResponse }
      */
     public SetImagingSettingsResponse createSetImagingSettingsResponse() {
         return new SetImagingSettingsResponse();
@@ -106,8 +92,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOptions }
      * 
-     * @return
-     *     the new instance of {@link GetOptions }
      */
     public GetOptions createGetOptions() {
         return new GetOptions();
@@ -116,8 +100,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetOptionsResponse }
      * 
-     * @return
-     *     the new instance of {@link GetOptionsResponse }
      */
     public GetOptionsResponse createGetOptionsResponse() {
         return new GetOptionsResponse();
@@ -126,8 +108,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Move }
      * 
-     * @return
-     *     the new instance of {@link Move }
      */
     public Move createMove() {
         return new Move();
@@ -136,8 +116,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link MoveResponse }
      * 
-     * @return
-     *     the new instance of {@link MoveResponse }
      */
     public MoveResponse createMoveResponse() {
         return new MoveResponse();
@@ -146,8 +124,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMoveOptions }
      * 
-     * @return
-     *     the new instance of {@link GetMoveOptions }
      */
     public GetMoveOptions createGetMoveOptions() {
         return new GetMoveOptions();
@@ -156,8 +132,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetMoveOptionsResponse }
      * 
-     * @return
-     *     the new instance of {@link GetMoveOptionsResponse }
      */
     public GetMoveOptionsResponse createGetMoveOptionsResponse() {
         return new GetMoveOptionsResponse();
@@ -166,8 +140,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Stop }
      * 
-     * @return
-     *     the new instance of {@link Stop }
      */
     public Stop createStop() {
         return new Stop();
@@ -176,8 +148,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link StopResponse }
      * 
-     * @return
-     *     the new instance of {@link StopResponse }
      */
     public StopResponse createStopResponse() {
         return new StopResponse();
@@ -186,8 +156,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStatus }
      * 
-     * @return
-     *     the new instance of {@link GetStatus }
      */
     public GetStatus createGetStatus() {
         return new GetStatus();
@@ -196,8 +164,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetStatusResponse }
      * 
-     * @return
-     *     the new instance of {@link GetStatusResponse }
      */
     public GetStatusResponse createGetStatusResponse() {
         return new GetStatusResponse();
@@ -213,7 +179,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver20/imaging/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

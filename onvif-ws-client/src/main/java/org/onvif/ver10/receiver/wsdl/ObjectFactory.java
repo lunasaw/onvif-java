@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.receiver.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/receiver/wsdl", "Capabilities");
+    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/receiver/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.receiver.wsdl
@@ -36,8 +36,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -46,8 +44,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -56,8 +52,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
-     * @return
-     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -66,8 +60,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceivers }
      * 
-     * @return
-     *     the new instance of {@link GetReceivers }
      */
     public GetReceivers createGetReceivers() {
         return new GetReceivers();
@@ -76,8 +68,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceiversResponse }
      * 
-     * @return
-     *     the new instance of {@link GetReceiversResponse }
      */
     public GetReceiversResponse createGetReceiversResponse() {
         return new GetReceiversResponse();
@@ -86,8 +76,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceiver }
      * 
-     * @return
-     *     the new instance of {@link GetReceiver }
      */
     public GetReceiver createGetReceiver() {
         return new GetReceiver();
@@ -96,8 +84,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceiverResponse }
      * 
-     * @return
-     *     the new instance of {@link GetReceiverResponse }
      */
     public GetReceiverResponse createGetReceiverResponse() {
         return new GetReceiverResponse();
@@ -106,8 +92,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateReceiver }
      * 
-     * @return
-     *     the new instance of {@link CreateReceiver }
      */
     public CreateReceiver createCreateReceiver() {
         return new CreateReceiver();
@@ -116,8 +100,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreateReceiverResponse }
      * 
-     * @return
-     *     the new instance of {@link CreateReceiverResponse }
      */
     public CreateReceiverResponse createCreateReceiverResponse() {
         return new CreateReceiverResponse();
@@ -126,8 +108,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteReceiver }
      * 
-     * @return
-     *     the new instance of {@link DeleteReceiver }
      */
     public DeleteReceiver createDeleteReceiver() {
         return new DeleteReceiver();
@@ -136,8 +116,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeleteReceiverResponse }
      * 
-     * @return
-     *     the new instance of {@link DeleteReceiverResponse }
      */
     public DeleteReceiverResponse createDeleteReceiverResponse() {
         return new DeleteReceiverResponse();
@@ -146,8 +124,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ConfigureReceiver }
      * 
-     * @return
-     *     the new instance of {@link ConfigureReceiver }
      */
     public ConfigureReceiver createConfigureReceiver() {
         return new ConfigureReceiver();
@@ -156,8 +132,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ConfigureReceiverResponse }
      * 
-     * @return
-     *     the new instance of {@link ConfigureReceiverResponse }
      */
     public ConfigureReceiverResponse createConfigureReceiverResponse() {
         return new ConfigureReceiverResponse();
@@ -166,8 +140,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetReceiverMode }
      * 
-     * @return
-     *     the new instance of {@link SetReceiverMode }
      */
     public SetReceiverMode createSetReceiverMode() {
         return new SetReceiverMode();
@@ -176,8 +148,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetReceiverModeResponse }
      * 
-     * @return
-     *     the new instance of {@link SetReceiverModeResponse }
      */
     public SetReceiverModeResponse createSetReceiverModeResponse() {
         return new SetReceiverModeResponse();
@@ -186,8 +156,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceiverState }
      * 
-     * @return
-     *     the new instance of {@link GetReceiverState }
      */
     public GetReceiverState createGetReceiverState() {
         return new GetReceiverState();
@@ -196,8 +164,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetReceiverStateResponse }
      * 
-     * @return
-     *     the new instance of {@link GetReceiverStateResponse }
      */
     public GetReceiverStateResponse createGetReceiverStateResponse() {
         return new GetReceiverStateResponse();
@@ -213,7 +179,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/receiver/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

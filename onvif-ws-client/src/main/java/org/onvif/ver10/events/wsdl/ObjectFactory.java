@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.events.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,8 +24,9 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/events/wsdl", "Capabilities");
-    private static final QName _CreatePullPointSubscriptionInitialTerminationTime_QNAME = new QName("http://www.onvif.org/ver10/events/wsdl", "InitialTerminationTime");
+    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/events/wsdl", "Capabilities");
+    private final static QName _ChangedOnly_QNAME = new QName("http://www.onvif.org/ver10/events/wsdl", "ChangedOnly");
+    private final static QName _CreatePullPointSubscriptionInitialTerminationTime_QNAME = new QName("http://www.onvif.org/ver10/events/wsdl", "InitialTerminationTime");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.events.wsdl
@@ -37,8 +38,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePullPointSubscription }
      * 
-     * @return
-     *     the new instance of {@link CreatePullPointSubscription }
      */
     public CreatePullPointSubscription createCreatePullPointSubscription() {
         return new CreatePullPointSubscription();
@@ -47,8 +46,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -57,8 +54,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -67,8 +62,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
-     * @return
-     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -77,8 +70,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePullPointSubscription.SubscriptionPolicy }
      * 
-     * @return
-     *     the new instance of {@link CreatePullPointSubscription.SubscriptionPolicy }
      */
     public CreatePullPointSubscription.SubscriptionPolicy createCreatePullPointSubscriptionSubscriptionPolicy() {
         return new CreatePullPointSubscription.SubscriptionPolicy();
@@ -87,8 +78,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePullPointSubscriptionResponse }
      * 
-     * @return
-     *     the new instance of {@link CreatePullPointSubscriptionResponse }
      */
     public CreatePullPointSubscriptionResponse createCreatePullPointSubscriptionResponse() {
         return new CreatePullPointSubscriptionResponse();
@@ -97,8 +86,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PullMessages }
      * 
-     * @return
-     *     the new instance of {@link PullMessages }
      */
     public PullMessages createPullMessages() {
         return new PullMessages();
@@ -107,8 +94,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PullMessagesResponse }
      * 
-     * @return
-     *     the new instance of {@link PullMessagesResponse }
      */
     public PullMessagesResponse createPullMessagesResponse() {
         return new PullMessagesResponse();
@@ -117,8 +102,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link PullMessagesFaultResponse }
      * 
-     * @return
-     *     the new instance of {@link PullMessagesFaultResponse }
      */
     public PullMessagesFaultResponse createPullMessagesFaultResponse() {
         return new PullMessagesFaultResponse();
@@ -127,8 +110,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Seek }
      * 
-     * @return
-     *     the new instance of {@link Seek }
      */
     public Seek createSeek() {
         return new Seek();
@@ -137,8 +118,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SeekResponse }
      * 
-     * @return
-     *     the new instance of {@link SeekResponse }
      */
     public SeekResponse createSeekResponse() {
         return new SeekResponse();
@@ -147,8 +126,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSynchronizationPoint }
      * 
-     * @return
-     *     the new instance of {@link SetSynchronizationPoint }
      */
     public SetSynchronizationPoint createSetSynchronizationPoint() {
         return new SetSynchronizationPoint();
@@ -157,8 +134,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetSynchronizationPointResponse }
      * 
-     * @return
-     *     the new instance of {@link SetSynchronizationPointResponse }
      */
     public SetSynchronizationPointResponse createSetSynchronizationPointResponse() {
         return new SetSynchronizationPointResponse();
@@ -167,8 +142,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetEventProperties }
      * 
-     * @return
-     *     the new instance of {@link GetEventProperties }
      */
     public GetEventProperties createGetEventProperties() {
         return new GetEventProperties();
@@ -177,21 +150,65 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetEventPropertiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetEventPropertiesResponse }
      */
     public GetEventPropertiesResponse createGetEventPropertiesResponse() {
         return new GetEventPropertiesResponse();
     }
 
     /**
-     * Create an instance of {@link org.onvif.ver10.events.wsdl.SubscriptionPolicy }
+     * Create an instance of {@link AddEventBroker }
      * 
-     * @return
-     *     the new instance of {@link org.onvif.ver10.events.wsdl.SubscriptionPolicy }
      */
-    public org.onvif.ver10.events.wsdl.SubscriptionPolicy createSubscriptionPolicy() {
-        return new org.onvif.ver10.events.wsdl.SubscriptionPolicy();
+    public AddEventBroker createAddEventBroker() {
+        return new AddEventBroker();
+    }
+
+    /**
+     * Create an instance of {@link EventBrokerConfig }
+     * 
+     */
+    public EventBrokerConfig createEventBrokerConfig() {
+        return new EventBrokerConfig();
+    }
+
+    /**
+     * Create an instance of {@link AddEventBrokerResponse }
+     * 
+     */
+    public AddEventBrokerResponse createAddEventBrokerResponse() {
+        return new AddEventBrokerResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteEventBroker }
+     * 
+     */
+    public DeleteEventBroker createDeleteEventBroker() {
+        return new DeleteEventBroker();
+    }
+
+    /**
+     * Create an instance of {@link DeleteEventBrokerResponse }
+     * 
+     */
+    public DeleteEventBrokerResponse createDeleteEventBrokerResponse() {
+        return new DeleteEventBrokerResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetEventBrokers }
+     * 
+     */
+    public GetEventBrokers createGetEventBrokers() {
+        return new GetEventBrokers();
+    }
+
+    /**
+     * Create an instance of {@link GetEventBrokersResponse }
+     * 
+     */
+    public GetEventBrokersResponse createGetEventBrokersResponse() {
+        return new GetEventBrokersResponse();
     }
 
     /**
@@ -204,7 +221,20 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/events/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Object }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://www.onvif.org/ver10/events/wsdl", name = "ChangedOnly")
+    public JAXBElement<Object> createChangedOnly(Object value) {
+        return new JAXBElement<Object>(_ChangedOnly_QNAME, Object.class, null, value);
     }
 
     /**
@@ -217,7 +247,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/events/wsdl", name = "InitialTerminationTime", scope = CreatePullPointSubscription.class)
     public JAXBElement<String> createCreatePullPointSubscriptionInitialTerminationTime(String value) {
-        return new JAXBElement<>(_CreatePullPointSubscriptionInitialTerminationTime_QNAME, String.class, CreatePullPointSubscription.class, value);
+        return new JAXBElement<String>(_CreatePullPointSubscriptionInitialTerminationTime_QNAME, String.class, CreatePullPointSubscription.class, value);
     }
 
 }

@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.display.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/display/wsdl", "Capabilities");
+    private final static QName _Capabilities_QNAME = new QName("http://www.onvif.org/ver10/display/wsdl", "Capabilities");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.onvif.ver10.display.wsdl
@@ -36,8 +36,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -46,8 +44,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -56,8 +52,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Capabilities }
      * 
-     * @return
-     *     the new instance of {@link Capabilities }
      */
     public Capabilities createCapabilities() {
         return new Capabilities();
@@ -66,8 +60,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetLayout }
      * 
-     * @return
-     *     the new instance of {@link GetLayout }
      */
     public GetLayout createGetLayout() {
         return new GetLayout();
@@ -76,8 +68,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetLayoutResponse }
      * 
-     * @return
-     *     the new instance of {@link GetLayoutResponse }
      */
     public GetLayoutResponse createGetLayoutResponse() {
         return new GetLayoutResponse();
@@ -86,8 +76,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetLayout }
      * 
-     * @return
-     *     the new instance of {@link SetLayout }
      */
     public SetLayout createSetLayout() {
         return new SetLayout();
@@ -96,8 +84,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetLayoutResponse }
      * 
-     * @return
-     *     the new instance of {@link SetLayoutResponse }
      */
     public SetLayoutResponse createSetLayoutResponse() {
         return new SetLayoutResponse();
@@ -106,8 +92,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDisplayOptions }
      * 
-     * @return
-     *     the new instance of {@link GetDisplayOptions }
      */
     public GetDisplayOptions createGetDisplayOptions() {
         return new GetDisplayOptions();
@@ -116,8 +100,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetDisplayOptionsResponse }
      * 
-     * @return
-     *     the new instance of {@link GetDisplayOptionsResponse }
      */
     public GetDisplayOptionsResponse createGetDisplayOptionsResponse() {
         return new GetDisplayOptionsResponse();
@@ -126,8 +108,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPaneConfigurations }
      * 
-     * @return
-     *     the new instance of {@link GetPaneConfigurations }
      */
     public GetPaneConfigurations createGetPaneConfigurations() {
         return new GetPaneConfigurations();
@@ -136,8 +116,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPaneConfigurationsResponse }
      * 
-     * @return
-     *     the new instance of {@link GetPaneConfigurationsResponse }
      */
     public GetPaneConfigurationsResponse createGetPaneConfigurationsResponse() {
         return new GetPaneConfigurationsResponse();
@@ -146,8 +124,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPaneConfiguration }
      * 
-     * @return
-     *     the new instance of {@link GetPaneConfiguration }
      */
     public GetPaneConfiguration createGetPaneConfiguration() {
         return new GetPaneConfiguration();
@@ -156,8 +132,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetPaneConfigurationResponse }
      * 
-     * @return
-     *     the new instance of {@link GetPaneConfigurationResponse }
      */
     public GetPaneConfigurationResponse createGetPaneConfigurationResponse() {
         return new GetPaneConfigurationResponse();
@@ -166,8 +140,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPaneConfigurations }
      * 
-     * @return
-     *     the new instance of {@link SetPaneConfigurations }
      */
     public SetPaneConfigurations createSetPaneConfigurations() {
         return new SetPaneConfigurations();
@@ -176,8 +148,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPaneConfigurationsResponse }
      * 
-     * @return
-     *     the new instance of {@link SetPaneConfigurationsResponse }
      */
     public SetPaneConfigurationsResponse createSetPaneConfigurationsResponse() {
         return new SetPaneConfigurationsResponse();
@@ -186,8 +156,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPaneConfiguration }
      * 
-     * @return
-     *     the new instance of {@link SetPaneConfiguration }
      */
     public SetPaneConfiguration createSetPaneConfiguration() {
         return new SetPaneConfiguration();
@@ -196,8 +164,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link SetPaneConfigurationResponse }
      * 
-     * @return
-     *     the new instance of {@link SetPaneConfigurationResponse }
      */
     public SetPaneConfigurationResponse createSetPaneConfigurationResponse() {
         return new SetPaneConfigurationResponse();
@@ -206,8 +172,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePaneConfiguration }
      * 
-     * @return
-     *     the new instance of {@link CreatePaneConfiguration }
      */
     public CreatePaneConfiguration createCreatePaneConfiguration() {
         return new CreatePaneConfiguration();
@@ -216,8 +180,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link CreatePaneConfigurationResponse }
      * 
-     * @return
-     *     the new instance of {@link CreatePaneConfigurationResponse }
      */
     public CreatePaneConfigurationResponse createCreatePaneConfigurationResponse() {
         return new CreatePaneConfigurationResponse();
@@ -226,8 +188,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeletePaneConfiguration }
      * 
-     * @return
-     *     the new instance of {@link DeletePaneConfiguration }
      */
     public DeletePaneConfiguration createDeletePaneConfiguration() {
         return new DeletePaneConfiguration();
@@ -236,8 +196,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DeletePaneConfigurationResponse }
      * 
-     * @return
-     *     the new instance of {@link DeletePaneConfigurationResponse }
      */
     public DeletePaneConfigurationResponse createDeletePaneConfigurationResponse() {
         return new DeletePaneConfigurationResponse();
@@ -253,7 +211,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://www.onvif.org/ver10/display/wsdl", name = "Capabilities")
     public JAXBElement<Capabilities> createCapabilities(Capabilities value) {
-        return new JAXBElement<>(_Capabilities_QNAME, Capabilities.class, null, value);
+        return new JAXBElement<Capabilities>(_Capabilities_QNAME, Capabilities.class, null, value);
     }
 
 }

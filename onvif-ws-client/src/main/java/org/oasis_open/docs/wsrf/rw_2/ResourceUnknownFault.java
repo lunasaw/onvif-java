@@ -9,5 +9,34 @@ import jakarta.xml.ws.WebFault;
  * Generated source version: 4.0.5
  */
 
+@WebFault(name = "ResourceUnknownFault", targetNamespace = "http://docs.oasis-open.org/wsrf/r-2")
 public class ResourceUnknownFault extends Exception {
+
+    private org.oasis_open.docs.wsrf.r_2.ResourceUnknownFaultType faultInfo;
+
+    public ResourceUnknownFault() {
+        super();
+    }
+
+    public ResourceUnknownFault(String message) {
+        super(message);
+    }
+
+    public ResourceUnknownFault(String message, java.lang.Throwable cause) {
+        super(message, cause);
+    }
+
+    public ResourceUnknownFault(String message, org.oasis_open.docs.wsrf.r_2.ResourceUnknownFaultType resourceUnknownFault) {
+        super(message);
+        this.faultInfo = resourceUnknownFault;
+    }
+
+    public ResourceUnknownFault(String message, org.oasis_open.docs.wsrf.r_2.ResourceUnknownFaultType resourceUnknownFault, java.lang.Throwable cause) {
+        super(message, cause);
+        this.faultInfo = resourceUnknownFault;
+    }
+
+    public org.oasis_open.docs.wsrf.r_2.ResourceUnknownFaultType getFaultInfo() {
+        return this.faultInfo;
+    }
 }

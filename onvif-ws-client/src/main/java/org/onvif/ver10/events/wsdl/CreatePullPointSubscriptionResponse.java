@@ -86,7 +86,6 @@ public class CreatePullPointSubscriptionResponse {
 
     /**
      * Current time of the server for synchronization purposes.
-     *                 
      * 
      * @return
      *     possible object is
@@ -110,9 +109,7 @@ public class CreatePullPointSubscriptionResponse {
     }
 
     /**
-     * Date time when the PullPoint will be shut down without further
-     *                   pull requests.
-     *                 
+     * Date time when the PullPoint will be shut down without further pull requests.
      * 
      * @return
      *     possible object is

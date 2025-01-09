@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.w3._2005._05.xmlmime package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,8 +32,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link Base64Binary }
      * 
-     * @return
-     *     the new instance of {@link Base64Binary }
      */
     public Base64Binary createBase64Binary() {
         return new Base64Binary();
@@ -42,8 +40,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link HexBinary }
      * 
-     * @return
-     *     the new instance of {@link HexBinary }
      */
     public HexBinary createHexBinary() {
         return new HexBinary();

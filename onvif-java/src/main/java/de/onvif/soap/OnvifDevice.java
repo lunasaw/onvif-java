@@ -58,6 +58,7 @@ public class OnvifDevice {
   private PTZ ptz;
   private ImagingPort imaging;
   private EventPortType events;
+  public final EventService eventService = new EventService();
 
   private static boolean verbose = false; // enable/disable logging of SOAP messages
   final SimpleSecurityHandler securityHandler;

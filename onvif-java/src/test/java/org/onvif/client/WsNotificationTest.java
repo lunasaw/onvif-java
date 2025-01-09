@@ -133,10 +133,12 @@ public class WsNotificationTest {
       ActiveMQConnectionFactory activemq =
           new ActiveMQConnectionFactory(
               "vm:(broker:(tcp://localhost:" + queuePort + ")?persistent=false)");
-      JaxwsNotificationBroker notificationBrokerServer =
-          new JaxwsNotificationBroker("WSNotificationBroker", activemq);
-      notificationBrokerServer.setAddress(brokerAddress);
-      notificationBrokerServer.init();
+
+      // This is deprecated in cxf 4
+//      JaxwsNotificationBroker notificationBrokerServer =
+//          new JaxwsNotificationBroker("WSNotificationBroker", activemq);
+//      notificationBrokerServer.setAddress(brokerAddress);
+//      notificationBrokerServer.init();
 
       // Create a subscription for a Topic on the broker
       NotificationBroker notificationBroker = new NotificationBroker(brokerAddress);

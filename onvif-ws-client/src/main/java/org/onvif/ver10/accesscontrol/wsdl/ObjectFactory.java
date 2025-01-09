@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
  * generated in the org.onvif.ver10.accesscontrol.wsdl package. 
- * <p>An ObjectFactory allows you to programmatically 
+ * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
  * content can consist of schema derived interfaces 
@@ -32,8 +32,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilities }
      */
     public GetServiceCapabilities createGetServiceCapabilities() {
         return new GetServiceCapabilities();
@@ -42,8 +40,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetServiceCapabilitiesResponse }
      * 
-     * @return
-     *     the new instance of {@link GetServiceCapabilitiesResponse }
      */
     public GetServiceCapabilitiesResponse createGetServiceCapabilitiesResponse() {
         return new GetServiceCapabilitiesResponse();
@@ -52,8 +48,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ServiceCapabilities }
      * 
-     * @return
-     *     the new instance of {@link ServiceCapabilities }
      */
     public ServiceCapabilities createServiceCapabilities() {
         return new ServiceCapabilities();
@@ -62,8 +56,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointInfoList }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointInfoList }
      */
     public GetAccessPointInfoList createGetAccessPointInfoList() {
         return new GetAccessPointInfoList();
@@ -72,8 +64,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointInfoListResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointInfoListResponse }
      */
     public GetAccessPointInfoListResponse createGetAccessPointInfoListResponse() {
         return new GetAccessPointInfoListResponse();
@@ -82,8 +72,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPointInfo }
      * 
-     * @return
-     *     the new instance of {@link AccessPointInfo }
      */
     public AccessPointInfo createAccessPointInfo() {
         return new AccessPointInfo();
@@ -92,8 +80,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointInfo }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointInfo }
      */
     public GetAccessPointInfo createGetAccessPointInfo() {
         return new GetAccessPointInfo();
@@ -102,8 +88,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointInfoResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointInfoResponse }
      */
     public GetAccessPointInfoResponse createGetAccessPointInfoResponse() {
         return new GetAccessPointInfoResponse();
@@ -112,8 +96,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAreaInfoList }
      * 
-     * @return
-     *     the new instance of {@link GetAreaInfoList }
      */
     public GetAreaInfoList createGetAreaInfoList() {
         return new GetAreaInfoList();
@@ -122,8 +104,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAreaInfoListResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAreaInfoListResponse }
      */
     public GetAreaInfoListResponse createGetAreaInfoListResponse() {
         return new GetAreaInfoListResponse();
@@ -132,8 +112,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AreaInfo }
      * 
-     * @return
-     *     the new instance of {@link AreaInfo }
      */
     public AreaInfo createAreaInfo() {
         return new AreaInfo();
@@ -142,8 +120,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAreaInfo }
      * 
-     * @return
-     *     the new instance of {@link GetAreaInfo }
      */
     public GetAreaInfo createGetAreaInfo() {
         return new GetAreaInfo();
@@ -152,8 +128,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAreaInfoResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAreaInfoResponse }
      */
     public GetAreaInfoResponse createGetAreaInfoResponse() {
         return new GetAreaInfoResponse();
@@ -162,8 +136,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointState }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointState }
      */
     public GetAccessPointState createGetAccessPointState() {
         return new GetAccessPointState();
@@ -172,8 +144,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link GetAccessPointStateResponse }
      * 
-     * @return
-     *     the new instance of {@link GetAccessPointStateResponse }
      */
     public GetAccessPointStateResponse createGetAccessPointStateResponse() {
         return new GetAccessPointStateResponse();
@@ -182,8 +152,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPointState }
      * 
-     * @return
-     *     the new instance of {@link AccessPointState }
      */
     public AccessPointState createAccessPointState() {
         return new AccessPointState();
@@ -192,8 +160,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link EnableAccessPoint }
      * 
-     * @return
-     *     the new instance of {@link EnableAccessPoint }
      */
     public EnableAccessPoint createEnableAccessPoint() {
         return new EnableAccessPoint();
@@ -202,8 +168,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link EnableAccessPointResponse }
      * 
-     * @return
-     *     the new instance of {@link EnableAccessPointResponse }
      */
     public EnableAccessPointResponse createEnableAccessPointResponse() {
         return new EnableAccessPointResponse();
@@ -212,8 +176,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DisableAccessPoint }
      * 
-     * @return
-     *     the new instance of {@link DisableAccessPoint }
      */
     public DisableAccessPoint createDisableAccessPoint() {
         return new DisableAccessPoint();
@@ -222,8 +184,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link DisableAccessPointResponse }
      * 
-     * @return
-     *     the new instance of {@link DisableAccessPointResponse }
      */
     public DisableAccessPointResponse createDisableAccessPointResponse() {
         return new DisableAccessPointResponse();
@@ -232,8 +192,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ExternalAuthorization }
      * 
-     * @return
-     *     the new instance of {@link ExternalAuthorization }
      */
     public ExternalAuthorization createExternalAuthorization() {
         return new ExternalAuthorization();
@@ -242,8 +200,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link ExternalAuthorizationResponse }
      * 
-     * @return
-     *     the new instance of {@link ExternalAuthorizationResponse }
      */
     public ExternalAuthorizationResponse createExternalAuthorizationResponse() {
         return new ExternalAuthorizationResponse();
@@ -252,8 +208,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPointInfoBase }
      * 
-     * @return
-     *     the new instance of {@link AccessPointInfoBase }
      */
     public AccessPointInfoBase createAccessPointInfoBase() {
         return new AccessPointInfoBase();
@@ -262,8 +216,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AccessPointCapabilities }
      * 
-     * @return
-     *     the new instance of {@link AccessPointCapabilities }
      */
     public AccessPointCapabilities createAccessPointCapabilities() {
         return new AccessPointCapabilities();
@@ -272,8 +224,6 @@ public class ObjectFactory {
     /**
      * Create an instance of {@link AreaInfoBase }
      * 
-     * @return
-     *     the new instance of {@link AreaInfoBase }
      */
     public AreaInfoBase createAreaInfoBase() {
         return new AreaInfoBase();
