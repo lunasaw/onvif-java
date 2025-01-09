@@ -5,25 +5,27 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for VideoResolution complex type</p>.
+ * <p>Java class for VideoResolution complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoResolution">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoResolution"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Width" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Height" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,21 +36,13 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoResolution {
 
-    /**
-     * Number of the columns of the Video image.
-     * 
-     */
     @XmlElement(name = "Width")
     protected int width;
-    /**
-     * Number of the lines of the Video image.
-     * 
-     */
     @XmlElement(name = "Height")
     protected int height;
 
     /**
-     * Number of the columns of the Video image.
+     * Gets the value of the width property.
      * 
      */
     public int getWidth() {
@@ -64,7 +58,7 @@ public class VideoResolution {
     }
 
     /**
-     * Number of the lines of the Video image.
+     * Gets the value of the height property.
      * 
      */
     public int getHeight() {
@@ -77,6 +71,16 @@ public class VideoResolution {
      */
     public void setHeight(int value) {
         this.height = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

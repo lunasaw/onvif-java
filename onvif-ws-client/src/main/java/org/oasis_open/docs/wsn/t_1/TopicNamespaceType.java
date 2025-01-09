@@ -12,39 +12,41 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for TopicNamespaceType complex type</p>.
+ * <p>Java class for TopicNamespaceType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="TopicNamespaceType">
- *   <complexContent>
- *     <extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented">
- *       <sequence>
- *         <element name="Topic" maxOccurs="unbounded" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType">
- *                 <attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" />
- *                 <anyAttribute processContents='lax' namespace='##other'/>
- *               </extension>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="name" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       <attribute name="targetNamespace" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *       <attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
- *       <anyAttribute processContents='lax' namespace='##other'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="TopicNamespaceType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Topic" maxOccurs="unbounded" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType"&gt;
+ *                 &lt;attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" /&gt;
+ *                 &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}NCName" /&gt;
+ *       &lt;attribute name="targetNamespace" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *       &lt;attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -74,31 +76,28 @@ public class TopicNamespaceType
     /**
      * Gets the value of the topic property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the topic property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the topic property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getTopic().add(newItem);
+     *    getTopic().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TopicNamespaceType.Topic }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the topic property.
      */
     public List<TopicNamespaceType.Topic> getTopic() {
         if (topic == null) {
-            topic = new ArrayList<>();
+            topic = new ArrayList<TopicNamespaceType.Topic>();
         }
         return this.topic;
     }
@@ -106,16 +105,16 @@ public class TopicNamespaceType
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -123,15 +122,12 @@ public class TopicNamespaceType
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
@@ -186,13 +182,14 @@ public class TopicNamespaceType
 
     /**
      * Gets the value of the final property.
+     * This getter has been renamed from isFinal() to getFinal() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public boolean isFinal() {
+    public boolean getFinal() {
         if (_final == null) {
             return false;
         } else {
@@ -212,22 +209,32 @@ public class TopicNamespaceType
         this._final = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType">
-     *       <attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" />
-     *       <anyAttribute processContents='lax' namespace='##other'/>
-     *     </extension>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}TopicType"&gt;
+     *       &lt;attribute name="parent" type="{http://docs.oasis-open.org/wsn/t-1}ConcreteTopicExpression" /&gt;
+     *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -263,6 +270,16 @@ public class TopicNamespaceType
          */
         public void setParent(String value) {
             this.parent = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

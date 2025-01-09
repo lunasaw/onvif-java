@@ -6,28 +6,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ColorCovariance complex type</p>.
+ * <p>Java class for ColorCovariance complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ColorCovariance">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <attribute name="XX" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="YY" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="ZZ" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="XY" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="XZ" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="YZ" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ColorCovariance"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="XX" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="YY" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="ZZ" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="XY" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="XZ" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="YZ" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -193,6 +195,16 @@ public class ColorCovariance {
      */
     public void setColorspace(String value) {
         this.colorspace = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

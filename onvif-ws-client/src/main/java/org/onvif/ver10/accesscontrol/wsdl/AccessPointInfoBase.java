@@ -7,32 +7,36 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.pacs.DataEntity;
 
 
 /**
- * Used as extension base for AccessPointInfo.
  * 
- * <p>Java class for AccessPointInfoBase complex type</p>.
+ *             Used as extension base for AccessPointInfo.
+ *           
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>Java class for AccessPointInfoBase complex type.
  * 
- * <pre>{@code
- * <complexType name="AccessPointInfoBase">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/pacs}DataEntity">
- *       <sequence>
- *         <element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/>
- *         <element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/>
- *         <element name="AreaFrom" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/>
- *         <element name="AreaTo" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/>
- *         <element name="EntityType" type="{http://www.w3.org/2001/XMLSchema}QName" minOccurs="0"/>
- *         <element name="Entity" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/>
- *       </sequence>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="AccessPointInfoBase"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
+ *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
+ *         &lt;element name="AreaFrom" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&gt;
+ *         &lt;element name="AreaTo" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&gt;
+ *         &lt;element name="EntityType" type="{http://www.w3.org/2001/XMLSchema}QName" minOccurs="0"/&gt;
+ *         &lt;element name="Entity" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -52,53 +56,21 @@ public class AccessPointInfoBase
     extends DataEntity
 {
 
-    /**
-     * A user readable name. It shall be up to 64 characters.
-     * 
-     */
     @XmlElement(name = "Name", required = true)
     protected String name;
-    /**
-     * Optional user readable description for the AccessPoint. It shall
-     *                     be up to 1024 characters.
-     * 
-     */
     @XmlElement(name = "Description")
     protected String description;
-    /**
-     * Optional reference to the Area from which access is requested.
-     * 
-     */
     @XmlElement(name = "AreaFrom")
     protected String areaFrom;
-    /**
-     * Optional reference to the Area to which access is requested.
-     * 
-     */
     @XmlElement(name = "AreaTo")
     protected String areaTo;
-    /**
-     * Optional entity type; if missing, a Door type as defined by the
-     *                     ONVIF DoorControl service should be assumed. This can also be represented by the
-     *                     QName value "tdc:Door" - where tdc is the namespace of the Door Control service:
-     *                     "http://www.onvif.org/ver10/doorcontrol/wsdl". This field is provided
-     *                     for future extensions; it will allow an AccessPoint being extended to cover
-     *                     entity types other than Doors as well.
-     * 
-     */
     @XmlElement(name = "EntityType")
     protected QName entityType;
-    /**
-     * Reference to the entity used to control access; the entity type
-     *                     may be specified by the optional EntityType field explained below but is
-     *                     typically a Door.
-     * 
-     */
     @XmlElement(name = "Entity", required = true)
     protected String entity;
 
     /**
-     * A user readable name. It shall be up to 64 characters.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -116,15 +88,13 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Optional user readable description for the AccessPoint. It shall
-     *                     be up to 1024 characters.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -142,14 +112,13 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;
     }
 
     /**
-     * Optional reference to the Area from which access is requested.
+     * Gets the value of the areaFrom property.
      * 
      * @return
      *     possible object is
@@ -167,14 +136,13 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAreaFrom()
      */
     public void setAreaFrom(String value) {
         this.areaFrom = value;
     }
 
     /**
-     * Optional reference to the Area to which access is requested.
+     * Gets the value of the areaTo property.
      * 
      * @return
      *     possible object is
@@ -192,19 +160,13 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAreaTo()
      */
     public void setAreaTo(String value) {
         this.areaTo = value;
     }
 
     /**
-     * Optional entity type; if missing, a Door type as defined by the
-     *                     ONVIF DoorControl service should be assumed. This can also be represented by the
-     *                     QName value "tdc:Door" - where tdc is the namespace of the Door Control service:
-     *                     "http://www.onvif.org/ver10/doorcontrol/wsdl". This field is provided
-     *                     for future extensions; it will allow an AccessPoint being extended to cover
-     *                     entity types other than Doors as well.
+     * Gets the value of the entityType property.
      * 
      * @return
      *     possible object is
@@ -222,16 +184,13 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link QName }
      *     
-     * @see #getEntityType()
      */
     public void setEntityType(QName value) {
         this.entityType = value;
     }
 
     /**
-     * Reference to the entity used to control access; the entity type
-     *                     may be specified by the optional EntityType field explained below but is
-     *                     typically a Door.
+     * Gets the value of the entity property.
      * 
      * @return
      *     possible object is
@@ -249,10 +208,19 @@ public class AccessPointInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getEntity()
      */
     public void setEntity(String value) {
         this.entity = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

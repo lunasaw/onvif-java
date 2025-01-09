@@ -9,28 +9,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for VideoDecoderConfigurationOptions complex type</p>.
+ * <p>Java class for VideoDecoderConfigurationOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoDecoderConfigurationOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="JpegDecOptions" type="{http://www.onvif.org/ver10/schema}JpegDecOptions" minOccurs="0"/>
- *         <element name="H264DecOptions" type="{http://www.onvif.org/ver10/schema}H264DecOptions" minOccurs="0"/>
- *         <element name="Mpeg4DecOptions" type="{http://www.onvif.org/ver10/schema}Mpeg4DecOptions" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoDecoderConfigurationOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoDecoderConfigurationOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="JpegDecOptions" type="{http://www.onvif.org/ver10/schema}JpegDecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="H264DecOptions" type="{http://www.onvif.org/ver10/schema}H264DecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Mpeg4DecOptions" type="{http://www.onvif.org/ver10/schema}Mpeg4DecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoDecoderConfigurationOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,35 +45,19 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoDecoderConfigurationOptions {
 
-    /**
-     * If the device is able to decode Jpeg streams this element describes the
-     *             supported codecs and configurations
-     * 
-     */
     @XmlElement(name = "JpegDecOptions")
     protected JpegDecOptions jpegDecOptions;
-    /**
-     * If the device is able to decode H.264 streams this element describes the
-     *             supported codecs and configurations
-     * 
-     */
     @XmlElement(name = "H264DecOptions")
     protected H264DecOptions h264DecOptions;
-    /**
-     * If the device is able to decode Mpeg4 streams this element describes the
-     *             supported codecs and configurations
-     * 
-     */
     @XmlElement(name = "Mpeg4DecOptions")
     protected Mpeg4DecOptions mpeg4DecOptions;
     @XmlElement(name = "Extension")
     protected VideoDecoderConfigurationOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * If the device is able to decode Jpeg streams this element describes the
-     *             supported codecs and configurations
+     * Gets the value of the jpegDecOptions property.
      * 
      * @return
      *     possible object is
@@ -89,15 +75,13 @@ public class VideoDecoderConfigurationOptions {
      *     allowed object is
      *     {@link JpegDecOptions }
      *     
-     * @see #getJpegDecOptions()
      */
     public void setJpegDecOptions(JpegDecOptions value) {
         this.jpegDecOptions = value;
     }
 
     /**
-     * If the device is able to decode H.264 streams this element describes the
-     *             supported codecs and configurations
+     * Gets the value of the h264DecOptions property.
      * 
      * @return
      *     possible object is
@@ -115,15 +99,13 @@ public class VideoDecoderConfigurationOptions {
      *     allowed object is
      *     {@link H264DecOptions }
      *     
-     * @see #getH264DecOptions()
      */
     public void setH264DecOptions(H264DecOptions value) {
         this.h264DecOptions = value;
     }
 
     /**
-     * If the device is able to decode Mpeg4 streams this element describes the
-     *             supported codecs and configurations
+     * Gets the value of the mpeg4DecOptions property.
      * 
      * @return
      *     possible object is
@@ -141,7 +123,6 @@ public class VideoDecoderConfigurationOptions {
      *     allowed object is
      *     {@link Mpeg4DecOptions }
      *     
-     * @see #getMpeg4DecOptions()
      */
     public void setMpeg4DecOptions(Mpeg4DecOptions value) {
         this.mpeg4DecOptions = value;
@@ -187,6 +168,16 @@ public class VideoDecoderConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

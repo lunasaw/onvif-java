@@ -8,30 +8,32 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for SystemCapabilitiesExtension complex type</p>.
+ * <p>Java class for SystemCapabilitiesExtension complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SystemCapabilitiesExtension">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="HttpFirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="HttpSystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="HttpSystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="HttpSupportInformation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension2" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SystemCapabilitiesExtension"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="HttpFirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="HttpSystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="HttpSystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="HttpSupportInformation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension2" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -62,16 +64,16 @@ public class SystemCapabilitiesExtension {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -79,28 +81,26 @@ public class SystemCapabilitiesExtension {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
 
     /**
      * Gets the value of the httpFirmwareUpgrade property.
+     * This getter has been renamed from isHttpFirmwareUpgrade() to getHttpFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isHttpFirmwareUpgrade() {
+    public Boolean getHttpFirmwareUpgrade() {
         return httpFirmwareUpgrade;
     }
 
@@ -118,13 +118,14 @@ public class SystemCapabilitiesExtension {
 
     /**
      * Gets the value of the httpSystemBackup property.
+     * This getter has been renamed from isHttpSystemBackup() to getHttpSystemBackup() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isHttpSystemBackup() {
+    public Boolean getHttpSystemBackup() {
         return httpSystemBackup;
     }
 
@@ -142,13 +143,14 @@ public class SystemCapabilitiesExtension {
 
     /**
      * Gets the value of the httpSystemLogging property.
+     * This getter has been renamed from isHttpSystemLogging() to getHttpSystemLogging() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isHttpSystemLogging() {
+    public Boolean getHttpSystemLogging() {
         return httpSystemLogging;
     }
 
@@ -166,13 +168,14 @@ public class SystemCapabilitiesExtension {
 
     /**
      * Gets the value of the httpSupportInformation property.
+     * This getter has been renamed from isHttpSupportInformation() to getHttpSupportInformation() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isHttpSupportInformation() {
+    public Boolean getHttpSupportInformation() {
         return httpSupportInformation;
     }
 
@@ -210,6 +213,16 @@ public class SystemCapabilitiesExtension {
      */
     public void setExtension(SystemCapabilitiesExtension2 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

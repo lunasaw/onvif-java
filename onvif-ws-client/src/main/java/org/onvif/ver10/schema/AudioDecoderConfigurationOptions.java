@@ -9,28 +9,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for AudioDecoderConfigurationOptions complex type</p>.
+ * <p>Java class for AudioDecoderConfigurationOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="AudioDecoderConfigurationOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="AACDecOptions" type="{http://www.onvif.org/ver10/schema}AACDecOptions" minOccurs="0"/>
- *         <element name="G711DecOptions" type="{http://www.onvif.org/ver10/schema}G711DecOptions" minOccurs="0"/>
- *         <element name="G726DecOptions" type="{http://www.onvif.org/ver10/schema}G726DecOptions" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="AudioDecoderConfigurationOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="AACDecOptions" type="{http://www.onvif.org/ver10/schema}AACDecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="G711DecOptions" type="{http://www.onvif.org/ver10/schema}G711DecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="G726DecOptions" type="{http://www.onvif.org/ver10/schema}G726DecOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,35 +45,19 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class AudioDecoderConfigurationOptions {
 
-    /**
-     * If the device is able to decode AAC encoded audio this section describes
-     *             the supported configurations
-     * 
-     */
     @XmlElement(name = "AACDecOptions")
     protected AACDecOptions aacDecOptions;
-    /**
-     * If the device is able to decode G711 encoded audio this section
-     *             describes the supported configurations
-     * 
-     */
     @XmlElement(name = "G711DecOptions")
     protected G711DecOptions g711DecOptions;
-    /**
-     * If the device is able to decode G726 encoded audio this section
-     *             describes the supported configurations
-     * 
-     */
     @XmlElement(name = "G726DecOptions")
     protected G726DecOptions g726DecOptions;
     @XmlElement(name = "Extension")
     protected AudioDecoderConfigurationOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * If the device is able to decode AAC encoded audio this section describes
-     *             the supported configurations
+     * Gets the value of the aacDecOptions property.
      * 
      * @return
      *     possible object is
@@ -89,15 +75,13 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link AACDecOptions }
      *     
-     * @see #getAACDecOptions()
      */
     public void setAACDecOptions(AACDecOptions value) {
         this.aacDecOptions = value;
     }
 
     /**
-     * If the device is able to decode G711 encoded audio this section
-     *             describes the supported configurations
+     * Gets the value of the g711DecOptions property.
      * 
      * @return
      *     possible object is
@@ -115,15 +99,13 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link G711DecOptions }
      *     
-     * @see #getG711DecOptions()
      */
     public void setG711DecOptions(G711DecOptions value) {
         this.g711DecOptions = value;
     }
 
     /**
-     * If the device is able to decode G726 encoded audio this section
-     *             describes the supported configurations
+     * Gets the value of the g726DecOptions property.
      * 
      * @return
      *     possible object is
@@ -141,7 +123,6 @@ public class AudioDecoderConfigurationOptions {
      *     allowed object is
      *     {@link G726DecOptions }
      *     
-     * @see #getG726DecOptions()
      */
     public void setG726DecOptions(G726DecOptions value) {
         this.g726DecOptions = value;
@@ -187,6 +168,16 @@ public class AudioDecoderConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

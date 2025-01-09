@@ -5,26 +5,28 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for VideoRateControl complex type</p>.
+ * <p>Java class for VideoRateControl complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoRateControl">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="FrameRateLimit" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="EncodingInterval" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="BitrateLimit" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoRateControl"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="FrameRateLimit" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="EncodingInterval" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="BitrateLimit" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -36,31 +38,15 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoRateControl {
 
-    /**
-     * Maximum output framerate in fps. If an EncodingInterval is provided the
-     *             resulting encoded framerate will be reduced by the given factor.
-     * 
-     */
     @XmlElement(name = "FrameRateLimit")
     protected int frameRateLimit;
-    /**
-     * Interval at which images are encoded and transmitted. (A value of 1
-     *             means that every frame is encoded, a value of 2 means that every 2nd frame is encoded
-     *             ...)
-     * 
-     */
     @XmlElement(name = "EncodingInterval")
     protected int encodingInterval;
-    /**
-     * the maximum output bitrate in kbps
-     * 
-     */
     @XmlElement(name = "BitrateLimit")
     protected int bitrateLimit;
 
     /**
-     * Maximum output framerate in fps. If an EncodingInterval is provided the
-     *             resulting encoded framerate will be reduced by the given factor.
+     * Gets the value of the frameRateLimit property.
      * 
      */
     public int getFrameRateLimit() {
@@ -76,9 +62,7 @@ public class VideoRateControl {
     }
 
     /**
-     * Interval at which images are encoded and transmitted. (A value of 1
-     *             means that every frame is encoded, a value of 2 means that every 2nd frame is encoded
-     *             ...)
+     * Gets the value of the encodingInterval property.
      * 
      */
     public int getEncodingInterval() {
@@ -94,7 +78,7 @@ public class VideoRateControl {
     }
 
     /**
-     * the maximum output bitrate in kbps
+     * Gets the value of the bitrateLimit property.
      * 
      */
     public int getBitrateLimit() {
@@ -107,6 +91,16 @@ public class VideoRateControl {
      */
     public void setBitrateLimit(int value) {
         this.bitrateLimit = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

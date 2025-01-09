@@ -12,30 +12,32 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for IPv4Configuration complex type</p>.
+ * <p>Java class for IPv4Configuration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="IPv4Configuration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Manual" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="LinkLocal" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" minOccurs="0"/>
- *         <element name="FromDHCP" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" minOccurs="0"/>
- *         <element name="DHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="IPv4Configuration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Manual" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="LinkLocal" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" minOccurs="0"/&gt;
+ *         &lt;element name="FromDHCP" type="{http://www.onvif.org/ver10/schema}PrefixedIPv4Address" minOccurs="0"/&gt;
+ *         &lt;element name="DHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,71 +51,50 @@ import org.w3c.dom.Element;
 })
 public class IPv4Configuration {
 
-    /**
-     * List of manually added IPv4 addresses.
-     * 
-     */
     @XmlElement(name = "Manual")
     protected List<PrefixedIPv4Address> manual;
-    /**
-     * Link local address.
-     * 
-     */
     @XmlElement(name = "LinkLocal")
     protected PrefixedIPv4Address linkLocal;
-    /**
-     * IPv4 address configured by using DHCP.
-     * 
-     */
     @XmlElement(name = "FromDHCP")
     protected PrefixedIPv4Address fromDHCP;
-    /**
-     * Indicates whether or not DHCP is used.
-     * 
-     */
     @XmlElement(name = "DHCP")
     protected boolean dhcp;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * List of manually added IPv4 addresses.
-     * 
      * Gets the value of the manual property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the manual property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the manual property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getManual().add(newItem);
+     *    getManual().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PrefixedIPv4Address }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the manual property.
      */
     public List<PrefixedIPv4Address> getManual() {
         if (manual == null) {
-            manual = new ArrayList<>();
+            manual = new ArrayList<PrefixedIPv4Address>();
         }
         return this.manual;
     }
 
     /**
-     * Link local address.
+     * Gets the value of the linkLocal property.
      * 
      * @return
      *     possible object is
@@ -131,14 +112,13 @@ public class IPv4Configuration {
      *     allowed object is
      *     {@link PrefixedIPv4Address }
      *     
-     * @see #getLinkLocal()
      */
     public void setLinkLocal(PrefixedIPv4Address value) {
         this.linkLocal = value;
     }
 
     /**
-     * IPv4 address configured by using DHCP.
+     * Gets the value of the fromDHCP property.
      * 
      * @return
      *     possible object is
@@ -156,17 +136,17 @@ public class IPv4Configuration {
      *     allowed object is
      *     {@link PrefixedIPv4Address }
      *     
-     * @see #getFromDHCP()
      */
     public void setFromDHCP(PrefixedIPv4Address value) {
         this.fromDHCP = value;
     }
 
     /**
-     * Indicates whether or not DHCP is used.
+     * Gets the value of the dhcp property.
+     * This getter has been renamed from isDHCP() to getDHCP() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDHCP() {
+    public boolean getDHCP() {
         return dhcp;
     }
 
@@ -181,16 +161,16 @@ public class IPv4Configuration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -198,15 +178,12 @@ public class IPv4Configuration {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -227,6 +204,16 @@ public class IPv4Configuration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

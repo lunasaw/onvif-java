@@ -9,37 +9,39 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Crl" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/>
- *         <element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="anyParameters" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <sequence>
- *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *                 </sequence>
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Crl" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/&gt;
+ *         &lt;element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="anyParameters" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -52,22 +54,14 @@ import org.w3c.dom.Element;
 @XmlRootElement(name = "UploadCRL")
 public class UploadCRL {
 
-    /**
-     * The CRL to be uploaded to the device.
-     * 
-     */
     @XmlElement(name = "Crl", required = true)
     protected byte[] crl;
-    /**
-     * The alias to assign to the uploaded CRL.
-     * 
-     */
     @XmlElement(name = "Alias")
     protected String alias;
     protected UploadCRL.AnyParameters anyParameters;
 
     /**
-     * The CRL to be uploaded to the device.
+     * Gets the value of the crl property.
      * 
      * @return
      *     possible object is
@@ -83,14 +77,13 @@ public class UploadCRL {
      * @param value
      *     allowed object is
      *     byte[]
-     * @see #getCrl()
      */
     public void setCrl(byte[] value) {
         this.crl = value;
     }
 
     /**
-     * The alias to assign to the uploaded CRL.
+     * Gets the value of the alias property.
      * 
      * @return
      *     possible object is
@@ -108,7 +101,6 @@ public class UploadCRL {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAlias()
      */
     public void setAlias(String value) {
         this.alias = value;
@@ -138,23 +130,33 @@ public class UploadCRL {
         this.anyParameters = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <sequence>
-     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
-     *       </sequence>
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -170,16 +172,16 @@ public class UploadCRL {
         /**
          * Gets the value of the any property.
          * 
-         * <p>This accessor method returns a reference to the live list,
+         * <p>
+         * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
-         * </p>
          * <pre>
-         * getAny().add(newItem);
+         *    getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -187,17 +189,24 @@ public class UploadCRL {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
-         * </p>
          * 
          * 
-         * @return
-         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<>();
+                any = new ArrayList<Object>();
             }
             return this.any;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

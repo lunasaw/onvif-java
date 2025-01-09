@@ -12,27 +12,29 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for SupportedRules complex type</p>.
+ * <p>Java class for SupportedRules complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SupportedRules">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="RuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedRulesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SupportedRules"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RuleContentSchemaLocation" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="RuleDescription" type="{http://www.onvif.org/ver10/schema}ConfigDescription" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SupportedRulesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -44,88 +46,70 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SupportedRules {
 
-    /**
-     * Lists the location of all schemas that are referenced in the rules.
-     * 
-     */
     @XmlElement(name = "RuleContentSchemaLocation")
     @XmlSchemaType(name = "anyURI")
     protected List<String> ruleContentSchemaLocation;
-    /**
-     * List of rules supported by the Video Analytics configuration..
-     * 
-     */
     @XmlElement(name = "RuleDescription")
     protected List<ConfigDescription> ruleDescription;
     @XmlElement(name = "Extension")
     protected SupportedRulesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Lists the location of all schemas that are referenced in the rules.
-     * 
      * Gets the value of the ruleContentSchemaLocation property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ruleContentSchemaLocation property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the ruleContentSchemaLocation property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getRuleContentSchemaLocation().add(newItem);
+     *    getRuleContentSchemaLocation().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the ruleContentSchemaLocation property.
      */
     public List<String> getRuleContentSchemaLocation() {
         if (ruleContentSchemaLocation == null) {
-            ruleContentSchemaLocation = new ArrayList<>();
+            ruleContentSchemaLocation = new ArrayList<String>();
         }
         return this.ruleContentSchemaLocation;
     }
 
     /**
-     * List of rules supported by the Video Analytics configuration..
-     * 
      * Gets the value of the ruleDescription property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ruleDescription property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the ruleDescription property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getRuleDescription().add(newItem);
+     *    getRuleDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigDescription }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the ruleDescription property.
      */
     public List<ConfigDescription> getRuleDescription() {
         if (ruleDescription == null) {
-            ruleDescription = new ArrayList<>();
+            ruleDescription = new ArrayList<ConfigDescription>();
         }
         return this.ruleDescription;
     }
@@ -170,6 +154,16 @@ public class SupportedRules {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

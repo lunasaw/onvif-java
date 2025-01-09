@@ -6,26 +6,28 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.PTZConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="PTZConfiguration" type="{http://www.onvif.org/ver10/schema}PTZConfiguration"/>
- *         <element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="PTZConfiguration" type="{http://www.onvif.org/ver10/schema}PTZConfiguration"/&gt;
+ *         &lt;element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -39,11 +41,6 @@ public class SetConfiguration {
 
     @XmlElement(name = "PTZConfiguration", required = true)
     protected PTZConfiguration ptzConfiguration;
-    /**
-     * Flag that makes configuration persistent. Example: User wants the
-     *                   configuration to exist after reboot.
-     * 
-     */
     @XmlElement(name = "ForcePersistence")
     protected boolean forcePersistence;
 
@@ -72,11 +69,11 @@ public class SetConfiguration {
     }
 
     /**
-     * Flag that makes configuration persistent. Example: User wants the
-     *                   configuration to exist after reboot.
+     * Gets the value of the forcePersistence property.
+     * This getter has been renamed from isForcePersistence() to getForcePersistence() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isForcePersistence() {
+    public boolean getForcePersistence() {
         return forcePersistence;
     }
 
@@ -86,6 +83,16 @@ public class SetConfiguration {
      */
     public void setForcePersistence(boolean value) {
         this.forcePersistence = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

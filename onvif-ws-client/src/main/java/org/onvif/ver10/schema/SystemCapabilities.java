@@ -11,32 +11,34 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for SystemCapabilities complex type</p>.
+ * <p>Java class for SystemCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SystemCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="SupportedVersions" type="{http://www.onvif.org/ver10/schema}OnvifVersion" maxOccurs="unbounded"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SystemCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="DiscoveryResolve" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="DiscoveryBye" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="RemoteDiscovery" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="SystemBackup" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="SystemLogging" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="FirmwareUpgrade" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="SupportedVersions" type="{http://www.onvif.org/ver10/schema}OnvifVersion" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemCapabilitiesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -53,58 +55,31 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SystemCapabilities {
 
-    /**
-     * Indicates whether or not WS Discovery resolve requests are supported.
-     * 
-     */
     @XmlElement(name = "DiscoveryResolve")
     protected boolean discoveryResolve;
-    /**
-     * Indicates whether or not WS-Discovery Bye is supported.
-     * 
-     */
     @XmlElement(name = "DiscoveryBye")
     protected boolean discoveryBye;
-    /**
-     * Indicates whether or not remote discovery is supported.
-     * 
-     */
     @XmlElement(name = "RemoteDiscovery")
     protected boolean remoteDiscovery;
-    /**
-     * Indicates whether or not system backup is supported.
-     * 
-     */
     @XmlElement(name = "SystemBackup")
     protected boolean systemBackup;
-    /**
-     * Indicates whether or not system logging is supported.
-     * 
-     */
     @XmlElement(name = "SystemLogging")
     protected boolean systemLogging;
-    /**
-     * Indicates whether or not firmware upgrade is supported.
-     * 
-     */
     @XmlElement(name = "FirmwareUpgrade")
     protected boolean firmwareUpgrade;
-    /**
-     * Indicates supported ONVIF version(s).
-     * 
-     */
     @XmlElement(name = "SupportedVersions", required = true)
     protected List<OnvifVersion> supportedVersions;
     @XmlElement(name = "Extension")
     protected SystemCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether or not WS Discovery resolve requests are supported.
+     * Gets the value of the discoveryResolve property.
+     * This getter has been renamed from isDiscoveryResolve() to getDiscoveryResolve() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDiscoveryResolve() {
+    public boolean getDiscoveryResolve() {
         return discoveryResolve;
     }
 
@@ -117,10 +92,11 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates whether or not WS-Discovery Bye is supported.
+     * Gets the value of the discoveryBye property.
+     * This getter has been renamed from isDiscoveryBye() to getDiscoveryBye() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDiscoveryBye() {
+    public boolean getDiscoveryBye() {
         return discoveryBye;
     }
 
@@ -133,10 +109,11 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates whether or not remote discovery is supported.
+     * Gets the value of the remoteDiscovery property.
+     * This getter has been renamed from isRemoteDiscovery() to getRemoteDiscovery() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isRemoteDiscovery() {
+    public boolean getRemoteDiscovery() {
         return remoteDiscovery;
     }
 
@@ -149,10 +126,11 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates whether or not system backup is supported.
+     * Gets the value of the systemBackup property.
+     * This getter has been renamed from isSystemBackup() to getSystemBackup() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isSystemBackup() {
+    public boolean getSystemBackup() {
         return systemBackup;
     }
 
@@ -165,10 +143,11 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates whether or not system logging is supported.
+     * Gets the value of the systemLogging property.
+     * This getter has been renamed from isSystemLogging() to getSystemLogging() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isSystemLogging() {
+    public boolean getSystemLogging() {
         return systemLogging;
     }
 
@@ -181,10 +160,11 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates whether or not firmware upgrade is supported.
+     * Gets the value of the firmwareUpgrade property.
+     * This getter has been renamed from isFirmwareUpgrade() to getFirmwareUpgrade() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isFirmwareUpgrade() {
+    public boolean getFirmwareUpgrade() {
         return firmwareUpgrade;
     }
 
@@ -197,35 +177,30 @@ public class SystemCapabilities {
     }
 
     /**
-     * Indicates supported ONVIF version(s).
-     * 
      * Gets the value of the supportedVersions property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedVersions property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the supportedVersions property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getSupportedVersions().add(newItem);
+     *    getSupportedVersions().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link OnvifVersion }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the supportedVersions property.
      */
     public List<OnvifVersion> getSupportedVersions() {
         if (supportedVersions == null) {
-            supportedVersions = new ArrayList<>();
+            supportedVersions = new ArrayList<OnvifVersion>();
         }
         return this.supportedVersions;
     }
@@ -270,6 +245,16 @@ public class SystemCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

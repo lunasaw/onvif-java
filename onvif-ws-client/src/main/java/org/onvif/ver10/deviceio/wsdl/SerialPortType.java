@@ -7,24 +7,21 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * The type of serial port.Generic can be signaled as a vendor specific
- *             serial port type.
+ * <p>Java class for SerialPortType.
  * 
- * <p>Java class for SerialPortType</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="SerialPortType">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="RS232"/>
- *     <enumeration value="RS422HalfDuplex"/>
- *     <enumeration value="RS422FullDuplex"/>
- *     <enumeration value="RS485HalfDuplex"/>
- *     <enumeration value="RS485FullDuplex"/>
- *     <enumeration value="Generic"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="SerialPortType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="RS232"/&gt;
+ *     &lt;enumeration value="RS422HalfDuplex"/&gt;
+ *     &lt;enumeration value="RS422FullDuplex"/&gt;
+ *     &lt;enumeration value="RS485HalfDuplex"/&gt;
+ *     &lt;enumeration value="RS485FullDuplex"/&gt;
+ *     &lt;enumeration value="Generic"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "SerialPortType")
@@ -49,26 +46,10 @@ public enum SerialPortType {
         value = v;
     }
 
-    /**
-     * Gets the value associated to the enum constant.
-     * 
-     * @return
-     *     The value linked to the enum.
-     */
     public String value() {
         return value;
     }
 
-    /**
-     * Gets the enum associated to the value passed as parameter.
-     * 
-     * @param v
-     *     The value to get the enum from.
-     * @return
-     *     The enum which corresponds to the value, if it exists.
-     * @throws IllegalArgumentException
-     *     If no value matches in the enum declaration.
-     */
     public static SerialPortType fromValue(String v) {
         for (SerialPortType c: SerialPortType.values()) {
             if (c.value.equals(v)) {

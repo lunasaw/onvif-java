@@ -7,26 +7,28 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.ReceiverMode;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ReceiverMode"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ReceiverToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ReceiverMode"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -38,22 +40,14 @@ import org.onvif.ver10.schema.ReceiverMode;
 @XmlRootElement(name = "SetReceiverMode")
 public class SetReceiverMode {
 
-    /**
-     * The token of the receiver to be changed.
-     * 
-     */
     @XmlElement(name = "ReceiverToken", required = true)
     protected String receiverToken;
-    /**
-     * The new receiver mode. Options available are:
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected ReceiverMode mode;
 
     /**
-     * The token of the receiver to be changed.
+     * Gets the value of the receiverToken property.
      * 
      * @return
      *     possible object is
@@ -71,14 +65,13 @@ public class SetReceiverMode {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getReceiverToken()
      */
     public void setReceiverToken(String value) {
         this.receiverToken = value;
     }
 
     /**
-     * The new receiver mode. Options available are:
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -96,10 +89,19 @@ public class SetReceiverMode {
      *     allowed object is
      *     {@link ReceiverMode }
      *     
-     * @see #getMode()
      */
     public void setMode(ReceiverMode value) {
         this.mode = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

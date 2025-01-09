@@ -8,25 +8,27 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for PrefixedIPv4Address complex type</p>.
+ * <p>Java class for PrefixedIPv4Address complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="PrefixedIPv4Address">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Address" type="{http://www.onvif.org/ver10/schema}IPv4Address"/>
- *         <element name="PrefixLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="PrefixedIPv4Address"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Address" type="{http://www.onvif.org/ver10/schema}IPv4Address"/&gt;
+ *         &lt;element name="PrefixLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,23 +39,15 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class PrefixedIPv4Address {
 
-    /**
-     * IPv4 address
-     * 
-     */
     @XmlElement(name = "Address", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String address;
-    /**
-     * Prefix/submask length
-     * 
-     */
     @XmlElement(name = "PrefixLength")
     protected int prefixLength;
 
     /**
-     * IPv4 address
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -71,14 +65,13 @@ public class PrefixedIPv4Address {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAddress()
      */
     public void setAddress(String value) {
         this.address = value;
     }
 
     /**
-     * Prefix/submask length
+     * Gets the value of the prefixLength property.
      * 
      */
     public int getPrefixLength() {
@@ -91,6 +84,16 @@ public class PrefixedIPv4Address {
      */
     public void setPrefixLength(int value) {
         this.prefixLength = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -8,37 +8,39 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for CertPathValidationParameters complex type</p>.
+ * <p>Java class for CertPathValidationParameters complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="CertPathValidationParameters">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RequireTLSWWWClientAuthExtendedKeyUsage" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="UseDeltaCRLs" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="anyParameters" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <sequence>
- *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *                 </sequence>
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="CertPathValidationParameters"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RequireTLSWWWClientAuthExtendedKeyUsage" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="UseDeltaCRLs" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="anyParameters" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,34 +52,22 @@ import org.w3c.dom.Element;
 })
 public class CertPathValidationParameters {
 
-    /**
-     * True if and only if the TLS server shall not authenticate tests
-     *                 certificates that do not contain the TLS WWW tests authentication key usage
-     *                 extension as specified in RFC 5280, Sect. 4.2.1.12.
-     * 
-     */
     @XmlElement(name = "RequireTLSWWWClientAuthExtendedKeyUsage", defaultValue = "false")
     protected Boolean requireTLSWWWClientAuthExtendedKeyUsage;
-    /**
-     * True if and only if delta CRLs, if available, shall be applied to
-     *                 CRLs.
-     * 
-     */
     @XmlElement(name = "UseDeltaCRLs", defaultValue = "false")
     protected Boolean useDeltaCRLs;
     protected CertPathValidationParameters.AnyParameters anyParameters;
 
     /**
-     * True if and only if the TLS server shall not authenticate tests
-     *                 certificates that do not contain the TLS WWW tests authentication key usage
-     *                 extension as specified in RFC 5280, Sect. 4.2.1.12.
+     * Gets the value of the requireTLSWWWClientAuthExtendedKeyUsage property.
+     * This getter has been renamed from isRequireTLSWWWClientAuthExtendedKeyUsage() to getRequireTLSWWWClientAuthExtendedKeyUsage() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isRequireTLSWWWClientAuthExtendedKeyUsage() {
+    public Boolean getRequireTLSWWWClientAuthExtendedKeyUsage() {
         return requireTLSWWWClientAuthExtendedKeyUsage;
     }
 
@@ -88,22 +78,21 @@ public class CertPathValidationParameters {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isRequireTLSWWWClientAuthExtendedKeyUsage()
      */
     public void setRequireTLSWWWClientAuthExtendedKeyUsage(Boolean value) {
         this.requireTLSWWWClientAuthExtendedKeyUsage = value;
     }
 
     /**
-     * True if and only if delta CRLs, if available, shall be applied to
-     *                 CRLs.
+     * Gets the value of the useDeltaCRLs property.
+     * This getter has been renamed from isUseDeltaCRLs() to getUseDeltaCRLs() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isUseDeltaCRLs() {
+    public Boolean getUseDeltaCRLs() {
         return useDeltaCRLs;
     }
 
@@ -114,7 +103,6 @@ public class CertPathValidationParameters {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isUseDeltaCRLs()
      */
     public void setUseDeltaCRLs(Boolean value) {
         this.useDeltaCRLs = value;
@@ -144,23 +132,33 @@ public class CertPathValidationParameters {
         this.anyParameters = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <sequence>
-     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
-     *       </sequence>
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -176,16 +174,16 @@ public class CertPathValidationParameters {
         /**
          * Gets the value of the any property.
          * 
-         * <p>This accessor method returns a reference to the live list,
+         * <p>
+         * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
-         * </p>
          * <pre>
-         * getAny().add(newItem);
+         *    getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -193,17 +191,24 @@ public class CertPathValidationParameters {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
-         * </p>
          * 
          * 
-         * @return
-         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<>();
+                any = new ArrayList<Object>();
             }
             return this.any;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

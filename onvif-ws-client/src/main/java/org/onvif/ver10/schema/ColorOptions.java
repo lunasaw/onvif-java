@@ -11,6 +11,8 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
@@ -21,25 +23,26 @@ import jakarta.xml.bind.annotation.XmlType;
  * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/YCbCr - YCbCr colourspace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/CIELUV - CIE LUV&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/CIELAB - CIE 1976 (L*a*b*)&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/colorspace/HSV - HSV colourspace&lt;/li&gt;&lt;/ul&gt;
  * </pre>
  * 
- * <p>Java class for ColorOptions complex type</p>.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>Java class for ColorOptions complex type.
  * 
- * <pre>{@code
- * <complexType name="ColorOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <choice>
- *           <element name="ColorList" type="{http://www.onvif.org/ver10/schema}Color" maxOccurs="unbounded"/>
- *           <element name="ColorspaceRange" type="{http://www.onvif.org/ver10/schema}ColorspaceRange" maxOccurs="unbounded"/>
- *         </choice>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="ColorOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;choice&gt;
+ *           &lt;element name="ColorList" type="{http://www.onvif.org/ver10/schema}Color" maxOccurs="unbounded"/&gt;
+ *           &lt;element name="ColorspaceRange" type="{http://www.onvif.org/ver10/schema}ColorspaceRange" maxOccurs="unbounded"/&gt;
+ *         &lt;/choice&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,85 +53,67 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ColorOptions {
 
-    /**
-     * List the supported color.
-     * 
-     */
     @XmlElement(name = "ColorList")
     protected List<Color> colorList;
-    /**
-     * Define the rang of color supported.
-     * 
-     */
     @XmlElement(name = "ColorspaceRange")
     protected List<ColorspaceRange> colorspaceRange;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * List the supported color.
-     * 
      * Gets the value of the colorList property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the colorList property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the colorList property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getColorList().add(newItem);
+     *    getColorList().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Color }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the colorList property.
      */
     public List<Color> getColorList() {
         if (colorList == null) {
-            colorList = new ArrayList<>();
+            colorList = new ArrayList<Color>();
         }
         return this.colorList;
     }
 
     /**
-     * Define the rang of color supported.
-     * 
      * Gets the value of the colorspaceRange property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the colorspaceRange property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the colorspaceRange property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getColorspaceRange().add(newItem);
+     *    getColorspaceRange().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ColorspaceRange }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the colorspaceRange property.
      */
     public List<ColorspaceRange> getColorspaceRange() {
         if (colorspaceRange == null) {
-            colorspaceRange = new ArrayList<>();
+            colorspaceRange = new ArrayList<ColorspaceRange>();
         }
         return this.colorspaceRange;
     }
@@ -149,6 +134,16 @@ public class ColorOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

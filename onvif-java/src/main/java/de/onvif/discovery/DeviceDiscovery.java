@@ -1,16 +1,41 @@
 package de.onvif.discovery;
 
-import jakarta.xml.soap.*;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.MalformedURLException;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Random;
+import java.util.TreeSet;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import jakarta.xml.soap.MessageFactory;
+import jakarta.xml.soap.MimeHeaders;
+import jakarta.xml.soap.SOAPBody;
+import jakarta.xml.soap.SOAPException;
+import jakarta.xml.soap.SOAPMessage;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Device discovery class to list local accessible devices probed per UDP probe messages.
@@ -88,8 +113,9 @@ public class DeviceDiscovery {
     for (String key : discoverWsDevices()) {
       try {
         final URL url = new URL(key);
-        boolean ok = regexpProtocol.length() <= 0 || url.getProtocol().matches(regexpProtocol);
-          if (regexpPath.length() > 0 && !url.getPath().matches(regexpPath)) ok = false;
+        boolean ok = true;
+        if (regexpProtocol.length() > 0 && !url.getProtocol().matches(regexpProtocol)) ok = false;
+        if (regexpPath.length() > 0 && !url.getPath().matches(regexpPath)) ok = false;
         // ignore ip6 hosts
         if (ok && !enableIPv6 && url.getHost().startsWith("[")) ok = false;
         if (ok) urls.add(url);

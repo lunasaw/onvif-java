@@ -6,19 +6,17 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
+ * <p>Java class for Mpeg4Profile.
  * 
- * 
- * <p>Java class for Mpeg4Profile</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="Mpeg4Profile">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="SP"/>
- *     <enumeration value="ASP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="Mpeg4Profile"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SP"/&gt;
+ *     &lt;enumeration value="ASP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "Mpeg4Profile")

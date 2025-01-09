@@ -9,30 +9,32 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for NetworkInterface complex type</p>.
+ * <p>Java class for NetworkInterface complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="NetworkInterface">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/schema}DeviceEntity">
- *       <sequence>
- *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="Info" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceInfo" minOccurs="0"/>
- *         <element name="Link" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceLink" minOccurs="0"/>
- *         <element name="IPv4" type="{http://www.onvif.org/ver10/schema}IPv4NetworkInterface" minOccurs="0"/>
- *         <element name="IPv6" type="{http://www.onvif.org/ver10/schema}IPv6NetworkInterface" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="NetworkInterface"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="Info" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceInfo" minOccurs="0"/&gt;
+ *         &lt;element name="Link" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceLink" minOccurs="0"/&gt;
+ *         &lt;element name="IPv4" type="{http://www.onvif.org/ver10/schema}IPv4NetworkInterface" minOccurs="0"/&gt;
+ *         &lt;element name="IPv6" type="{http://www.onvif.org/ver10/schema}IPv6NetworkInterface" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,46 +51,27 @@ public class NetworkInterface
     extends DeviceEntity
 {
 
-    /**
-     * Indicates whether or not an interface is enabled.
-     * 
-     */
     @XmlElement(name = "Enabled")
     protected boolean enabled;
-    /**
-     * Network interface information
-     * 
-     */
     @XmlElement(name = "Info")
     protected NetworkInterfaceInfo info;
-    /**
-     * Link configuration.
-     * 
-     */
     @XmlElement(name = "Link")
     protected NetworkInterfaceLink link;
-    /**
-     * IPv4 network interface configuration.
-     * 
-     */
     @XmlElement(name = "IPv4")
     protected IPv4NetworkInterface iPv4;
-    /**
-     * IPv6 network interface configuration.
-     * 
-     */
     @XmlElement(name = "IPv6")
     protected IPv6NetworkInterface iPv6;
     @XmlElement(name = "Extension")
     protected NetworkInterfaceExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether or not an interface is enabled.
+     * Gets the value of the enabled property.
+     * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isEnabled() {
+    public boolean getEnabled() {
         return enabled;
     }
 
@@ -101,7 +84,7 @@ public class NetworkInterface
     }
 
     /**
-     * Network interface information
+     * Gets the value of the info property.
      * 
      * @return
      *     possible object is
@@ -119,14 +102,13 @@ public class NetworkInterface
      *     allowed object is
      *     {@link NetworkInterfaceInfo }
      *     
-     * @see #getInfo()
      */
     public void setInfo(NetworkInterfaceInfo value) {
         this.info = value;
     }
 
     /**
-     * Link configuration.
+     * Gets the value of the link property.
      * 
      * @return
      *     possible object is
@@ -144,14 +126,13 @@ public class NetworkInterface
      *     allowed object is
      *     {@link NetworkInterfaceLink }
      *     
-     * @see #getLink()
      */
     public void setLink(NetworkInterfaceLink value) {
         this.link = value;
     }
 
     /**
-     * IPv4 network interface configuration.
+     * Gets the value of the iPv4 property.
      * 
      * @return
      *     possible object is
@@ -169,14 +150,13 @@ public class NetworkInterface
      *     allowed object is
      *     {@link IPv4NetworkInterface }
      *     
-     * @see #getIPv4()
      */
     public void setIPv4(IPv4NetworkInterface value) {
         this.iPv4 = value;
     }
 
     /**
-     * IPv6 network interface configuration.
+     * Gets the value of the iPv6 property.
      * 
      * @return
      *     possible object is
@@ -194,7 +174,6 @@ public class NetworkInterface
      *     allowed object is
      *     {@link IPv6NetworkInterface }
      *     
-     * @see #getIPv6()
      */
     public void setIPv6(IPv6NetworkInterface value) {
         this.iPv6 = value;
@@ -240,6 +219,16 @@ public class NetworkInterface
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

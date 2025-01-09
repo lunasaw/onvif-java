@@ -6,24 +6,26 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RebootNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RebootNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,36 +36,15 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SetNetworkInterfacesResponse")
 public class SetNetworkInterfacesResponse {
 
-    /**
-     * Indicates whether or not a reboot is required after configuration updates.
-     *                   If a device responds with RebootNeeded set to false, the device can be reached
-     *                   via the new IP address without further action. A tests should be aware that a
-     *                   device
-     *                   may not be responsive for a short period of time until it signals availability at
-     *                   the new address via the discovery Hello messages.
-     *                   If a device responds with RebootNeeded set to true, it will be further available
-     *                   under
-     *                   its previous IP address. The settings will only be activated when the device is
-     *                   rebooted via the SystemReboot command.
-     * 
-     */
     @XmlElement(name = "RebootNeeded")
     protected boolean rebootNeeded;
 
     /**
-     * Indicates whether or not a reboot is required after configuration updates.
-     *                   If a device responds with RebootNeeded set to false, the device can be reached
-     *                   via the new IP address without further action. A tests should be aware that a
-     *                   device
-     *                   may not be responsive for a short period of time until it signals availability at
-     *                   the new address via the discovery Hello messages.
-     *                   If a device responds with RebootNeeded set to true, it will be further available
-     *                   under
-     *                   its previous IP address. The settings will only be activated when the device is
-     *                   rebooted via the SystemReboot command.
+     * Gets the value of the rebootNeeded property.
+     * This getter has been renamed from isRebootNeeded() to getRebootNeeded() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isRebootNeeded() {
+    public boolean getRebootNeeded() {
         return rebootNeeded;
     }
 
@@ -73,6 +54,16 @@ public class SetNetworkInterfacesResponse {
      */
     public void setRebootNeeded(boolean value) {
         this.rebootNeeded = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

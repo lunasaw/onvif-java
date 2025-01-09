@@ -9,29 +9,31 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for VideoEncoderConfigurationOptions complex type</p>.
+ * <p>Java class for VideoEncoderConfigurationOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoEncoderConfigurationOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="QualityRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="JPEG" type="{http://www.onvif.org/ver10/schema}JpegOptions" minOccurs="0"/>
- *         <element name="MPEG4" type="{http://www.onvif.org/ver10/schema}Mpeg4Options" minOccurs="0"/>
- *         <element name="H264" type="{http://www.onvif.org/ver10/schema}H264Options" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoEncoderOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoEncoderConfigurationOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="QualityRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="JPEG" type="{http://www.onvif.org/ver10/schema}JpegOptions" minOccurs="0"/&gt;
+ *         &lt;element name="MPEG4" type="{http://www.onvif.org/ver10/schema}Mpeg4Options" minOccurs="0"/&gt;
+ *         &lt;element name="H264" type="{http://www.onvif.org/ver10/schema}H264Options" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoEncoderOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,37 +47,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class VideoEncoderConfigurationOptions {
 
-    /**
-     * Range of the quality values. A high value means higher quality.
-     * 
-     */
     @XmlElement(name = "QualityRange", required = true)
     protected IntRange qualityRange;
-    /**
-     * Optional JPEG encoder settings ranges (See also Extension element).
-     * 
-     */
     @XmlElement(name = "JPEG")
     protected JpegOptions jpeg;
-    /**
-     * Optional MPEG-4 encoder settings ranges (See also Extension element).
-     * 
-     */
     @XmlElement(name = "MPEG4")
     protected Mpeg4Options mpeg4;
-    /**
-     * Optional H.264 encoder settings ranges (See also Extension element).
-     * 
-     */
     @XmlElement(name = "H264")
     protected H264Options h264;
     @XmlElement(name = "Extension")
     protected VideoEncoderOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Range of the quality values. A high value means higher quality.
+     * Gets the value of the qualityRange property.
      * 
      * @return
      *     possible object is
@@ -93,14 +79,13 @@ public class VideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getQualityRange()
      */
     public void setQualityRange(IntRange value) {
         this.qualityRange = value;
     }
 
     /**
-     * Optional JPEG encoder settings ranges (See also Extension element).
+     * Gets the value of the jpeg property.
      * 
      * @return
      *     possible object is
@@ -118,14 +103,13 @@ public class VideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link JpegOptions }
      *     
-     * @see #getJPEG()
      */
     public void setJPEG(JpegOptions value) {
         this.jpeg = value;
     }
 
     /**
-     * Optional MPEG-4 encoder settings ranges (See also Extension element).
+     * Gets the value of the mpeg4 property.
      * 
      * @return
      *     possible object is
@@ -143,14 +127,13 @@ public class VideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link Mpeg4Options }
      *     
-     * @see #getMPEG4()
      */
     public void setMPEG4(Mpeg4Options value) {
         this.mpeg4 = value;
     }
 
     /**
-     * Optional H.264 encoder settings ranges (See also Extension element).
+     * Gets the value of the h264 property.
      * 
      * @return
      *     possible object is
@@ -168,7 +151,6 @@ public class VideoEncoderConfigurationOptions {
      *     allowed object is
      *     {@link H264Options }
      *     
-     * @see #getH264()
      */
     public void setH264(H264Options value) {
         this.h264 = value;
@@ -214,6 +196,16 @@ public class VideoEncoderConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,24 +5,26 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ContinuousFocus complex type</p>.
+ * <p>Java class for ContinuousFocus complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ContinuousFocus">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ContinuousFocus"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Speed" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -32,15 +34,11 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ContinuousFocus {
 
-    /**
-     * Speed parameter for the Continuous focus control.
-     * 
-     */
     @XmlElement(name = "Speed")
     protected float speed;
 
     /**
-     * Speed parameter for the Continuous focus control.
+     * Gets the value of the speed property.
      * 
      */
     public float getSpeed() {
@@ -53,6 +51,16 @@ public class ContinuousFocus {
      */
     public void setSpeed(float value) {
         this.speed = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

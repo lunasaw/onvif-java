@@ -12,29 +12,31 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for GetRecordingsResponseItem complex type</p>.
+ * <p>Java class for GetRecordingsResponseItem complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="GetRecordingsResponseItem">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
- *         <element name="Configuration" type="{http://www.onvif.org/ver10/schema}RecordingConfiguration"/>
- *         <element name="Tracks" type="{http://www.onvif.org/ver10/schema}GetTracksResponseList"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="GetRecordingsResponseItem"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
+ *         &lt;element name="Configuration" type="{http://www.onvif.org/ver10/schema}RecordingConfiguration"/&gt;
+ *         &lt;element name="Tracks" type="{http://www.onvif.org/ver10/schema}GetTracksResponseList"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -47,31 +49,19 @@ import org.w3c.dom.Element;
 })
 public class GetRecordingsResponseItem {
 
-    /**
-     * Token of the recording.
-     * 
-     */
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
-    /**
-     * Configuration of the recording.
-     * 
-     */
     @XmlElement(name = "Configuration", required = true)
     protected RecordingConfiguration configuration;
-    /**
-     * List of tracks.
-     * 
-     */
     @XmlElement(name = "Tracks", required = true)
     protected GetTracksResponseList tracks;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Token of the recording.
+     * Gets the value of the recordingToken property.
      * 
      * @return
      *     possible object is
@@ -89,14 +79,13 @@ public class GetRecordingsResponseItem {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getRecordingToken()
      */
     public void setRecordingToken(String value) {
         this.recordingToken = value;
     }
 
     /**
-     * Configuration of the recording.
+     * Gets the value of the configuration property.
      * 
      * @return
      *     possible object is
@@ -114,14 +103,13 @@ public class GetRecordingsResponseItem {
      *     allowed object is
      *     {@link RecordingConfiguration }
      *     
-     * @see #getConfiguration()
      */
     public void setConfiguration(RecordingConfiguration value) {
         this.configuration = value;
     }
 
     /**
-     * List of tracks.
+     * Gets the value of the tracks property.
      * 
      * @return
      *     possible object is
@@ -139,7 +127,6 @@ public class GetRecordingsResponseItem {
      *     allowed object is
      *     {@link GetTracksResponseList }
      *     
-     * @see #getTracks()
      */
     public void setTracks(GetTracksResponseList value) {
         this.tracks = value;
@@ -148,16 +135,16 @@ public class GetRecordingsResponseItem {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -165,15 +152,12 @@ public class GetRecordingsResponseItem {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -194,6 +178,16 @@ public class GetRecordingsResponseItem {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

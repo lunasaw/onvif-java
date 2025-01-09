@@ -10,28 +10,30 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ColorspaceRange complex type</p>.
+ * <p>Java class for ColorspaceRange complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ColorspaceRange">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="X" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
- *         <element name="Y" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
- *         <element name="Z" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
- *         <element name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ColorspaceRange"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="X" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
+ *         &lt;element name="Y" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
+ *         &lt;element name="Z" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
+ *         &lt;element name="Colorspace" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -54,7 +56,7 @@ public class ColorspaceRange {
     @XmlSchemaType(name = "anyURI")
     protected String colorspace;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the x property.
@@ -168,6 +170,16 @@ public class ColorspaceRange {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -6,35 +6,37 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Exposure complex type</p>.
+ * <p>Java class for Exposure complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Exposure">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode"/>
- *         <element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority"/>
- *         <element name="Window" type="{http://www.onvif.org/ver10/schema}Rectangle"/>
- *         <element name="MinExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MaxExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MinGain" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MaxGain" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MinIris" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MaxIris" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="ExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="Gain" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="Iris" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Exposure"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode"/&gt;
+ *         &lt;element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority"/&gt;
+ *         &lt;element name="Window" type="{http://www.onvif.org/ver10/schema}Rectangle"/&gt;
+ *         &lt;element name="MinExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MaxExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MinGain" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MaxGain" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MinIris" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MaxIris" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="ExposureTime" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="Gain" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="Iris" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -55,92 +57,35 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Exposure {
 
-    /**
-     * Exposure Mode
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;Auto – Enabled the exposure algorithm on the NVT.&lt;/li&gt;&lt;li&gt;Manual – Disabled exposure algorithm on the NVT.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected ExposureMode mode;
-    /**
-     * The exposure priority mode (low noise/framerate).
-     * 
-     */
     @XmlElement(name = "Priority", required = true)
     @XmlSchemaType(name = "string")
     protected ExposurePriority priority;
-    /**
-     * Rectangular exposure mask.
-     * 
-     */
     @XmlElement(name = "Window", required = true)
     protected Rectangle window;
-    /**
-     * Minimum value of exposure time range allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MinExposureTime")
     protected float minExposureTime;
-    /**
-     * Maximum value of exposure time range allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MaxExposureTime")
     protected float maxExposureTime;
-    /**
-     * Minimum value of the sensor gain range that is allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MinGain")
     protected float minGain;
-    /**
-     * Maximum value of the sensor gain range that is allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MaxGain")
     protected float maxGain;
-    /**
-     * Minimum value of the iris range allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MinIris")
     protected float minIris;
-    /**
-     * Maximum value of the iris range allowed to be used by the algorithm.
-     * 
-     */
     @XmlElement(name = "MaxIris")
     protected float maxIris;
-    /**
-     * The fixed exposure time used by the image sensor (μs).
-     * 
-     */
     @XmlElement(name = "ExposureTime")
     protected float exposureTime;
-    /**
-     * The fixed gain used by the image sensor (dB).
-     * 
-     */
     @XmlElement(name = "Gain")
     protected float gain;
-    /**
-     * The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully
-     *             opened iris.
-     * 
-     */
     @XmlElement(name = "Iris")
     protected float iris;
 
     /**
-     * Exposure Mode
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;Auto – Enabled the exposure algorithm on the NVT.&lt;/li&gt;&lt;li&gt;Manual – Disabled exposure algorithm on the NVT.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -158,14 +103,13 @@ public class Exposure {
      *     allowed object is
      *     {@link ExposureMode }
      *     
-     * @see #getMode()
      */
     public void setMode(ExposureMode value) {
         this.mode = value;
     }
 
     /**
-     * The exposure priority mode (low noise/framerate).
+     * Gets the value of the priority property.
      * 
      * @return
      *     possible object is
@@ -183,14 +127,13 @@ public class Exposure {
      *     allowed object is
      *     {@link ExposurePriority }
      *     
-     * @see #getPriority()
      */
     public void setPriority(ExposurePriority value) {
         this.priority = value;
     }
 
     /**
-     * Rectangular exposure mask.
+     * Gets the value of the window property.
      * 
      * @return
      *     possible object is
@@ -208,14 +151,13 @@ public class Exposure {
      *     allowed object is
      *     {@link Rectangle }
      *     
-     * @see #getWindow()
      */
     public void setWindow(Rectangle value) {
         this.window = value;
     }
 
     /**
-     * Minimum value of exposure time range allowed to be used by the algorithm.
+     * Gets the value of the minExposureTime property.
      * 
      */
     public float getMinExposureTime() {
@@ -231,7 +173,7 @@ public class Exposure {
     }
 
     /**
-     * Maximum value of exposure time range allowed to be used by the algorithm.
+     * Gets the value of the maxExposureTime property.
      * 
      */
     public float getMaxExposureTime() {
@@ -247,7 +189,7 @@ public class Exposure {
     }
 
     /**
-     * Minimum value of the sensor gain range that is allowed to be used by the algorithm.
+     * Gets the value of the minGain property.
      * 
      */
     public float getMinGain() {
@@ -263,7 +205,7 @@ public class Exposure {
     }
 
     /**
-     * Maximum value of the sensor gain range that is allowed to be used by the algorithm.
+     * Gets the value of the maxGain property.
      * 
      */
     public float getMaxGain() {
@@ -279,7 +221,7 @@ public class Exposure {
     }
 
     /**
-     * Minimum value of the iris range allowed to be used by the algorithm.
+     * Gets the value of the minIris property.
      * 
      */
     public float getMinIris() {
@@ -295,7 +237,7 @@ public class Exposure {
     }
 
     /**
-     * Maximum value of the iris range allowed to be used by the algorithm.
+     * Gets the value of the maxIris property.
      * 
      */
     public float getMaxIris() {
@@ -311,7 +253,7 @@ public class Exposure {
     }
 
     /**
-     * The fixed exposure time used by the image sensor (μs).
+     * Gets the value of the exposureTime property.
      * 
      */
     public float getExposureTime() {
@@ -327,7 +269,7 @@ public class Exposure {
     }
 
     /**
-     * The fixed gain used by the image sensor (dB).
+     * Gets the value of the gain property.
      * 
      */
     public float getGain() {
@@ -343,8 +285,7 @@ public class Exposure {
     }
 
     /**
-     * The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully
-     *             opened iris.
+     * Gets the value of the iris property.
      * 
      */
     public float getIris() {
@@ -357,6 +298,16 @@ public class Exposure {
      */
     public void setIris(float value) {
         this.iris = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

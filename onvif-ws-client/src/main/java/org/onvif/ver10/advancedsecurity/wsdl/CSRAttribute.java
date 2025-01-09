@@ -12,40 +12,42 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * A CSR attribute as specified in PKCS#10.
  * 
- * <p>Java class for CSRAttribute complex type</p>.
+ * <p>Java class for CSRAttribute complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="CSRAttribute">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <choice>
- *         <element name="X509v3Extension" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}X509v3Extension"/>
- *         <element name="BasicRequestAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}BasicRequestAttribute"/>
- *         <element name="anyAttribute" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <sequence>
- *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *                 </sequence>
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *       </choice>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="CSRAttribute"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;choice&gt;
+ *         &lt;element name="X509v3Extension" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}X509v3Extension"/&gt;
+ *         &lt;element name="BasicRequestAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}BasicRequestAttribute"/&gt;
+ *         &lt;element name="anyAttribute" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/choice&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -57,24 +59,16 @@ import org.w3c.dom.Element;
 })
 public class CSRAttribute {
 
-    /**
-     * An X.509v3 extension field.
-     * 
-     */
     @XmlElement(name = "X509v3Extension")
     protected X509V3Extension x509V3Extension;
-    /**
-     * A basic CSR attribute.
-     * 
-     */
     @XmlElement(name = "BasicRequestAttribute")
     protected BasicRequestAttribute basicRequestAttribute;
     protected CSRAttribute.AnyAttribute anyAttribute;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * An X.509v3 extension field.
+     * Gets the value of the x509V3Extension property.
      * 
      * @return
      *     possible object is
@@ -92,14 +86,13 @@ public class CSRAttribute {
      *     allowed object is
      *     {@link X509V3Extension }
      *     
-     * @see #getX509V3Extension()
      */
     public void setX509V3Extension(X509V3Extension value) {
         this.x509V3Extension = value;
     }
 
     /**
-     * A basic CSR attribute.
+     * Gets the value of the basicRequestAttribute property.
      * 
      * @return
      *     possible object is
@@ -117,7 +110,6 @@ public class CSRAttribute {
      *     allowed object is
      *     {@link BasicRequestAttribute }
      *     
-     * @see #getBasicRequestAttribute()
      */
     public void setBasicRequestAttribute(BasicRequestAttribute value) {
         this.basicRequestAttribute = value;
@@ -165,23 +157,33 @@ public class CSRAttribute {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <sequence>
-     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
-     *       </sequence>
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -197,16 +199,16 @@ public class CSRAttribute {
         /**
          * Gets the value of the any property.
          * 
-         * <p>This accessor method returns a reference to the live list,
+         * <p>
+         * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
-         * </p>
          * <pre>
-         * getAny().add(newItem);
+         *    getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -214,17 +216,24 @@ public class CSRAttribute {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
-         * </p>
          * 
          * 
-         * @return
-         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<>();
+                any = new ArrayList<Object>();
             }
             return this.any;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

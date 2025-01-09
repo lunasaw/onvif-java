@@ -8,27 +8,29 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for IPv6NetworkInterfaceSetConfiguration complex type</p>.
+ * <p>Java class for IPv6NetworkInterfaceSetConfiguration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="IPv6NetworkInterfaceSetConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="AcceptRouterAdvert" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Manual" type="{http://www.onvif.org/ver10/schema}PrefixedIPv6Address" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="DHCP" type="{http://www.onvif.org/ver10/schema}IPv6DHCPConfiguration" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="IPv6NetworkInterfaceSetConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="AcceptRouterAdvert" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Manual" type="{http://www.onvif.org/ver10/schema}PrefixedIPv6Address" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DHCP" type="{http://www.onvif.org/ver10/schema}IPv6DHCPConfiguration" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -41,41 +43,26 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IPv6NetworkInterfaceSetConfiguration {
 
-    /**
-     * Indicates whether or not IPv6 is enabled.
-     * 
-     */
     @XmlElement(name = "Enabled")
     protected Boolean enabled;
-    /**
-     * Indicates whether router advertisment is used.
-     * 
-     */
     @XmlElement(name = "AcceptRouterAdvert")
     protected Boolean acceptRouterAdvert;
-    /**
-     * List of manually added IPv6 addresses.
-     * 
-     */
     @XmlElement(name = "Manual")
     protected List<PrefixedIPv6Address> manual;
-    /**
-     * DHCP configuration.
-     * 
-     */
     @XmlElement(name = "DHCP")
     @XmlSchemaType(name = "string")
     protected IPv6DHCPConfiguration dhcp;
 
     /**
-     * Indicates whether or not IPv6 is enabled.
+     * Gets the value of the enabled property.
+     * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
@@ -86,21 +73,21 @@ public class IPv6NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isEnabled()
      */
     public void setEnabled(Boolean value) {
         this.enabled = value;
     }
 
     /**
-     * Indicates whether router advertisment is used.
+     * Gets the value of the acceptRouterAdvert property.
+     * This getter has been renamed from isAcceptRouterAdvert() to getAcceptRouterAdvert() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isAcceptRouterAdvert() {
+    public Boolean getAcceptRouterAdvert() {
         return acceptRouterAdvert;
     }
 
@@ -111,48 +98,42 @@ public class IPv6NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isAcceptRouterAdvert()
      */
     public void setAcceptRouterAdvert(Boolean value) {
         this.acceptRouterAdvert = value;
     }
 
     /**
-     * List of manually added IPv6 addresses.
-     * 
      * Gets the value of the manual property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the manual property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the manual property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getManual().add(newItem);
+     *    getManual().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PrefixedIPv6Address }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the manual property.
      */
     public List<PrefixedIPv6Address> getManual() {
         if (manual == null) {
-            manual = new ArrayList<>();
+            manual = new ArrayList<PrefixedIPv6Address>();
         }
         return this.manual;
     }
 
     /**
-     * DHCP configuration.
+     * Gets the value of the dhcp property.
      * 
      * @return
      *     possible object is
@@ -170,10 +151,19 @@ public class IPv6NetworkInterfaceSetConfiguration {
      *     allowed object is
      *     {@link IPv6DHCPConfiguration }
      *     
-     * @see #getDHCP()
      */
     public void setDHCP(IPv6DHCPConfiguration value) {
         this.dhcp = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

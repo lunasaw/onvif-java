@@ -12,49 +12,53 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * Describes a list of items. Each item in the list shall have a unique name.
+ * 
+ *         Describes a list of items. Each item in the list shall have a unique name.
  *         The list is designed as linear structure without optional or unbounded elements.
  *         Use ElementItems only when complex structures are inevitable.
+ *       
  * 
- * <p>Java class for ItemListDescription complex type</p>.
+ * <p>Java class for ItemListDescription complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ItemListDescription">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="SimpleItemDescription" maxOccurs="unbounded" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 <attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *         <element name="ElementItemDescription" maxOccurs="unbounded" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 <attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ItemListDescriptionExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ItemListDescription"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SimpleItemDescription" maxOccurs="unbounded" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                 &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="ElementItemDescription" maxOccurs="unbounded" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *                 &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ItemListDescriptionExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -66,89 +70,69 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ItemListDescription {
 
-    /**
-     * Description of a simple item. The type must be of cathegory simpleType
-     *             (xs:string, xs:integer, xs:float, ...).
-     * 
-     */
     @XmlElement(name = "SimpleItemDescription")
     protected List<ItemListDescription.SimpleItemDescription> simpleItemDescription;
-    /**
-     * Description of a complex type. The Type must reference a defined type.
-     * 
-     */
     @XmlElement(name = "ElementItemDescription")
     protected List<ItemListDescription.ElementItemDescription> elementItemDescription;
     @XmlElement(name = "Extension")
     protected ItemListDescriptionExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Description of a simple item. The type must be of cathegory simpleType
-     *             (xs:string, xs:integer, xs:float, ...).
-     * 
      * Gets the value of the simpleItemDescription property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the simpleItemDescription property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the simpleItemDescription property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getSimpleItemDescription().add(newItem);
+     *    getSimpleItemDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ItemListDescription.SimpleItemDescription }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the simpleItemDescription property.
      */
     public List<ItemListDescription.SimpleItemDescription> getSimpleItemDescription() {
         if (simpleItemDescription == null) {
-            simpleItemDescription = new ArrayList<>();
+            simpleItemDescription = new ArrayList<ItemListDescription.SimpleItemDescription>();
         }
         return this.simpleItemDescription;
     }
 
     /**
-     * Description of a complex type. The Type must reference a defined type.
-     * 
      * Gets the value of the elementItemDescription property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the elementItemDescription property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the elementItemDescription property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getElementItemDescription().add(newItem);
+     *    getElementItemDescription().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ItemListDescription.ElementItemDescription }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the elementItemDescription property.
      */
     public List<ItemListDescription.ElementItemDescription> getElementItemDescription() {
         if (elementItemDescription == null) {
-            elementItemDescription = new ArrayList<>();
+            elementItemDescription = new ArrayList<ItemListDescription.ElementItemDescription>();
         }
         return this.elementItemDescription;
     }
@@ -195,22 +179,32 @@ public class ItemListDescription {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *       <attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -218,21 +212,13 @@ public class ItemListDescription {
     @XmlType(name = "")
     public static class ElementItemDescription {
 
-        /**
-         * Item name. Must be unique within a list.
-         * 
-         */
         @XmlAttribute(name = "Name", required = true)
         protected String name;
-        /**
-         * The type of the item. The Type must reference a defined type.
-         * 
-         */
         @XmlAttribute(name = "Type", required = true)
         protected QName type;
 
         /**
-         * Item name. Must be unique within a list.
+         * Gets the value of the name property.
          * 
          * @return
          *     possible object is
@@ -250,91 +236,6 @@ public class ItemListDescription {
          *     allowed object is
          *     {@link String }
          *     
-         * @see #getName()
-         */
-        public void setName(String value) {
-            this.name = value;
-        }
-
-        /**
-         * The type of the item. The Type must reference a defined type.
-         * 
-         * @return
-         *     possible object is
-         *     {@link QName }
-         *     
-         */
-        public QName getType() {
-            return type;
-        }
-
-        /**
-         * Sets the value of the type property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link QName }
-         *     
-         * @see #getType()
-         */
-        public void setType(QName value) {
-            this.type = value;
-        }
-
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type</p>.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
-     * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *       <attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
-     * 
-     * 
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "")
-    public static class SimpleItemDescription {
-
-        /**
-         * Item name. Must be unique within a list.
-         * 
-         */
-        @XmlAttribute(name = "Name", required = true)
-        protected String name;
-        @XmlAttribute(name = "Type", required = true)
-        protected QName type;
-
-        /**
-         * Item name. Must be unique within a list.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getName() {
-            return name;
-        }
-
-        /**
-         * Sets the value of the name property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         * @see #getName()
          */
         public void setName(String value) {
             this.name = value;
@@ -362,6 +263,104 @@ public class ItemListDescription {
          */
         public void setType(QName value) {
             this.type = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+     *       &lt;attribute name="Type" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "")
+    public static class SimpleItemDescription {
+
+        @XmlAttribute(name = "Name", required = true)
+        protected String name;
+        @XmlAttribute(name = "Type", required = true)
+        protected QName type;
+
+        /**
+         * Gets the value of the name property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * Sets the value of the name property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setName(String value) {
+            this.name = value;
+        }
+
+        /**
+         * Gets the value of the type property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link QName }
+         *     
+         */
+        public QName getType() {
+            return type;
+        }
+
+        /**
+         * Sets the value of the type property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link QName }
+         *     
+         */
+        public void setType(QName value) {
+            this.type = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

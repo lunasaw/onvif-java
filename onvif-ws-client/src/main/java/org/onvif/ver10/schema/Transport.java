@@ -6,25 +6,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Transport complex type</p>.
+ * <p>Java class for Transport complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Transport">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Protocol" type="{http://www.onvif.org/ver10/schema}TransportProtocol"/>
- *         <element name="Tunnel" type="{http://www.onvif.org/ver10/schema}Transport" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Transport"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Protocol" type="{http://www.onvif.org/ver10/schema}TransportProtocol"/&gt;
+ *         &lt;element name="Tunnel" type="{http://www.onvif.org/ver10/schema}Transport" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -35,25 +37,14 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Transport {
 
-    /**
-     * Defines the network protocol for streaming, either UDP=RTP/UDP,
-     *             RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP
-     * 
-     */
     @XmlElement(name = "Protocol", required = true)
     @XmlSchemaType(name = "string")
     protected TransportProtocol protocol;
-    /**
-     * Optional element to describe further tunnel options. This element is
-     *             normally not needed
-     * 
-     */
     @XmlElement(name = "Tunnel")
     protected Transport tunnel;
 
     /**
-     * Defines the network protocol for streaming, either UDP=RTP/UDP,
-     *             RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP
+     * Gets the value of the protocol property.
      * 
      * @return
      *     possible object is
@@ -71,15 +62,13 @@ public class Transport {
      *     allowed object is
      *     {@link TransportProtocol }
      *     
-     * @see #getProtocol()
      */
     public void setProtocol(TransportProtocol value) {
         this.protocol = value;
     }
 
     /**
-     * Optional element to describe further tunnel options. This element is
-     *             normally not needed
+     * Gets the value of the tunnel property.
      * 
      * @return
      *     possible object is
@@ -97,10 +86,19 @@ public class Transport {
      *     allowed object is
      *     {@link Transport }
      *     
-     * @see #getTunnel()
      */
     public void setTunnel(Transport value) {
         this.tunnel = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

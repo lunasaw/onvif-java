@@ -14,33 +14,35 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for RecordingInformation complex type</p>.
+ * <p>Java class for RecordingInformation complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RecordingInformation">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
- *         <element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingSourceInformation"/>
- *         <element name="EarliestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         <element name="LatestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         <element name="Content" type="{http://www.onvif.org/ver10/schema}Description"/>
- *         <element name="Track" type="{http://www.onvif.org/ver10/schema}TrackInformation" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="RecordingStatus" type="{http://www.onvif.org/ver10/schema}RecordingStatus"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RecordingInformation"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
+ *         &lt;element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingSourceInformation"/&gt;
+ *         &lt;element name="EarliestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="LatestRecording" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="Content" type="{http://www.onvif.org/ver10/schema}Description"/&gt;
+ *         &lt;element name="Track" type="{http://www.onvif.org/ver10/schema}TrackInformation" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="RecordingStatus" type="{http://www.onvif.org/ver10/schema}RecordingStatus"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -59,15 +61,6 @@ public class RecordingInformation {
 
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
-    /**
-     * Information about the source of the recording. This gives a description of where the
-     *             data in the recording comes from. Since a single
-     *             recording is intended to record related material, there is just one source. It is
-     *             indicates the physical location or the
-     *             major data source for the recording. Currently the recordingconfiguration cannot
-     *             describe each individual data source.
-     * 
-     */
     @XmlElement(name = "Source", required = true)
     protected RecordingSourceInformation source;
     @XmlElement(name = "EarliestRecording")
@@ -78,11 +71,6 @@ public class RecordingInformation {
     protected XMLGregorianCalendar latestRecording;
     @XmlElement(name = "Content", required = true)
     protected String content;
-    /**
-     * Basic information about the track. Note that a track may represent a
-     *             single contiguous time span or consist of multiple slices.
-     * 
-     */
     @XmlElement(name = "Track")
     protected List<TrackInformation> track;
     @XmlElement(name = "RecordingStatus", required = true)
@@ -91,7 +79,7 @@ public class RecordingInformation {
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the recordingToken property.
@@ -118,12 +106,7 @@ public class RecordingInformation {
     }
 
     /**
-     * Information about the source of the recording. This gives a description of where the
-     *             data in the recording comes from. Since a single
-     *             recording is intended to record related material, there is just one source. It is
-     *             indicates the physical location or the
-     *             major data source for the recording. Currently the recordingconfiguration cannot
-     *             describe each individual data source.
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
@@ -141,7 +124,6 @@ public class RecordingInformation {
      *     allowed object is
      *     {@link RecordingSourceInformation }
      *     
-     * @see #getSource()
      */
     public void setSource(RecordingSourceInformation value) {
         this.source = value;
@@ -220,36 +202,30 @@ public class RecordingInformation {
     }
 
     /**
-     * Basic information about the track. Note that a track may represent a
-     *             single contiguous time span or consist of multiple slices.
-     * 
      * Gets the value of the track property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the track property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the track property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getTrack().add(newItem);
+     *    getTrack().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TrackInformation }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the track property.
      */
     public List<TrackInformation> getTrack() {
         if (track == null) {
-            track = new ArrayList<>();
+            track = new ArrayList<TrackInformation>();
         }
         return this.track;
     }
@@ -281,16 +257,16 @@ public class RecordingInformation {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -298,15 +274,12 @@ public class RecordingInformation {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -327,6 +300,16 @@ public class RecordingInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

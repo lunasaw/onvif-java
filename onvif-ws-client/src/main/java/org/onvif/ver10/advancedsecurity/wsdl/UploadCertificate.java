@@ -6,27 +6,29 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Certificate" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/>
- *         <element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="KeyAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="PrivateKeyRequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Certificate" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}Base64DERencodedASN1Value"/&gt;
+ *         &lt;element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="KeyAlias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="PrivateKeyRequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -40,36 +42,17 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "UploadCertificate")
 public class UploadCertificate {
 
-    /**
-     * The base64-encoded DER representation of the X.509 certificate to
-     *                   be uploaded.
-     * 
-     */
     @XmlElement(name = "Certificate", required = true)
     protected byte[] certificate;
-    /**
-     * The tests-defined alias of the certificate.
-     * 
-     */
     @XmlElement(name = "Alias")
     protected String alias;
-    /**
-     * The tests-defined alias of the key pair.
-     * 
-     */
     @XmlElement(name = "KeyAlias")
     protected String keyAlias;
-    /**
-     * Indicates if the device shall verify that a matching key pair with
-     *                   a private key exists in the keystore.
-     * 
-     */
     @XmlElement(name = "PrivateKeyRequired", defaultValue = "false")
     protected Boolean privateKeyRequired;
 
     /**
-     * The base64-encoded DER representation of the X.509 certificate to
-     *                   be uploaded.
+     * Gets the value of the certificate property.
      * 
      * @return
      *     possible object is
@@ -85,14 +68,13 @@ public class UploadCertificate {
      * @param value
      *     allowed object is
      *     byte[]
-     * @see #getCertificate()
      */
     public void setCertificate(byte[] value) {
         this.certificate = value;
     }
 
     /**
-     * The tests-defined alias of the certificate.
+     * Gets the value of the alias property.
      * 
      * @return
      *     possible object is
@@ -110,14 +92,13 @@ public class UploadCertificate {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAlias()
      */
     public void setAlias(String value) {
         this.alias = value;
     }
 
     /**
-     * The tests-defined alias of the key pair.
+     * Gets the value of the keyAlias property.
      * 
      * @return
      *     possible object is
@@ -135,22 +116,21 @@ public class UploadCertificate {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getKeyAlias()
      */
     public void setKeyAlias(String value) {
         this.keyAlias = value;
     }
 
     /**
-     * Indicates if the device shall verify that a matching key pair with
-     *                   a private key exists in the keystore.
+     * Gets the value of the privateKeyRequired property.
+     * This getter has been renamed from isPrivateKeyRequired() to getPrivateKeyRequired() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isPrivateKeyRequired() {
+    public Boolean getPrivateKeyRequired() {
         return privateKeyRequired;
     }
 
@@ -161,10 +141,19 @@ public class UploadCertificate {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isPrivateKeyRequired()
      */
     public void setPrivateKeyRequired(Boolean value) {
         this.privateKeyRequired = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -9,28 +9,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for RealTimeStreamingCapabilities complex type</p>.
+ * <p>Java class for RealTimeStreamingCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RealTimeStreamingCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RTPMulticast" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RealTimeStreamingCapabilitiesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RealTimeStreamingCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RTPMulticast" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="RTP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="RTP_RTSP_TCP" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RealTimeStreamingCapabilitiesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,38 +45,27 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RealTimeStreamingCapabilities {
 
-    /**
-     * Indicates whether or not RTP multicast is supported.
-     * 
-     */
     @XmlElement(name = "RTPMulticast")
     protected Boolean rtpMulticast;
-    /**
-     * Indicates whether or not RTP over TCP is supported.
-     * 
-     */
     @XmlElement(name = "RTP_TCP")
     protected Boolean rtptcp;
-    /**
-     * Indicates whether or not RTP/RTSP/TCP is supported.
-     * 
-     */
     @XmlElement(name = "RTP_RTSP_TCP")
     protected Boolean rtprtsptcp;
     @XmlElement(name = "Extension")
     protected RealTimeStreamingCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether or not RTP multicast is supported.
+     * Gets the value of the rtpMulticast property.
+     * This getter has been renamed from isRTPMulticast() to getRTPMulticast() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isRTPMulticast() {
+    public Boolean getRTPMulticast() {
         return rtpMulticast;
     }
 
@@ -85,21 +76,21 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isRTPMulticast()
      */
     public void setRTPMulticast(Boolean value) {
         this.rtpMulticast = value;
     }
 
     /**
-     * Indicates whether or not RTP over TCP is supported.
+     * Gets the value of the rtptcp property.
+     * This getter has been renamed from isRTPTCP() to getRTPTCP() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isRTPTCP() {
+    public Boolean getRTPTCP() {
         return rtptcp;
     }
 
@@ -110,21 +101,21 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isRTPTCP()
      */
     public void setRTPTCP(Boolean value) {
         this.rtptcp = value;
     }
 
     /**
-     * Indicates whether or not RTP/RTSP/TCP is supported.
+     * Gets the value of the rtprtsptcp property.
+     * This getter has been renamed from isRTPRTSPTCP() to getRTPRTSPTCP() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isRTPRTSPTCP() {
+    public Boolean getRTPRTSPTCP() {
         return rtprtsptcp;
     }
 
@@ -135,7 +126,6 @@ public class RealTimeStreamingCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isRTPRTSPTCP()
      */
     public void setRTPRTSPTCP(Boolean value) {
         this.rtprtsptcp = value;
@@ -181,6 +171,16 @@ public class RealTimeStreamingCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

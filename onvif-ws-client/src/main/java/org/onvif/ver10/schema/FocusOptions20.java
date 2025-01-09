@@ -8,28 +8,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for FocusOptions20 complex type</p>.
+ * <p>Java class for FocusOptions20 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="FocusOptions20">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="AutoFocusModes" type="{http://www.onvif.org/ver10/schema}AutoFocusMode" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="DefaultSpeed" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/>
- *         <element name="NearLimit" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/>
- *         <element name="FarLimit" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusOptions20Extension" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="FocusOptions20"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="AutoFocusModes" type="{http://www.onvif.org/ver10/schema}AutoFocusMode" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DefaultSpeed" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
+ *         &lt;element name="NearLimit" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
+ *         &lt;element name="FarLimit" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusOptions20Extension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,78 +45,49 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FocusOptions20 {
 
-    /**
-     * Supported mode for auto focus.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;AUTO - The device supports automatic focus adjustment.&lt;/li&gt;&lt;li&gt;MANUAL - The device supports manual focus adjustment.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     */
     @XmlElement(name = "AutoFocusModes")
     @XmlSchemaType(name = "string")
     protected List<AutoFocusMode> autoFocusModes;
-    /**
-     * Valid range of DefaultSpeed.
-     * 
-     */
     @XmlElement(name = "DefaultSpeed")
     protected FloatRange defaultSpeed;
-    /**
-     * Valid range of NearLimit.
-     * 
-     */
     @XmlElement(name = "NearLimit")
     protected FloatRange nearLimit;
-    /**
-     * Valid range of FarLimit.
-     * 
-     */
     @XmlElement(name = "FarLimit")
     protected FloatRange farLimit;
     @XmlElement(name = "Extension")
     protected FocusOptions20Extension extension;
 
     /**
-     * Supported mode for auto focus.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;AUTO - The device supports automatic focus adjustment.&lt;/li&gt;&lt;li&gt;MANUAL - The device supports manual focus adjustment.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
      * Gets the value of the autoFocusModes property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the autoFocusModes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAutoFocusModes().add(newItem);
+     *    getAutoFocusModes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link AutoFocusMode }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the autoFocusModes property.
      */
     public List<AutoFocusMode> getAutoFocusModes() {
         if (autoFocusModes == null) {
-            autoFocusModes = new ArrayList<>();
+            autoFocusModes = new ArrayList<AutoFocusMode>();
         }
         return this.autoFocusModes;
     }
 
     /**
-     * Valid range of DefaultSpeed.
+     * Gets the value of the defaultSpeed property.
      * 
      * @return
      *     possible object is
@@ -132,14 +105,13 @@ public class FocusOptions20 {
      *     allowed object is
      *     {@link FloatRange }
      *     
-     * @see #getDefaultSpeed()
      */
     public void setDefaultSpeed(FloatRange value) {
         this.defaultSpeed = value;
     }
 
     /**
-     * Valid range of NearLimit.
+     * Gets the value of the nearLimit property.
      * 
      * @return
      *     possible object is
@@ -157,14 +129,13 @@ public class FocusOptions20 {
      *     allowed object is
      *     {@link FloatRange }
      *     
-     * @see #getNearLimit()
      */
     public void setNearLimit(FloatRange value) {
         this.nearLimit = value;
     }
 
     /**
-     * Valid range of FarLimit.
+     * Gets the value of the farLimit property.
      * 
      * @return
      *     possible object is
@@ -182,7 +153,6 @@ public class FocusOptions20 {
      *     allowed object is
      *     {@link FloatRange }
      *     
-     * @see #getFarLimit()
      */
     public void setFarLimit(FloatRange value) {
         this.farLimit = value;
@@ -210,6 +180,16 @@ public class FocusOptions20 {
      */
     public void setExtension(FocusOptions20Extension value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

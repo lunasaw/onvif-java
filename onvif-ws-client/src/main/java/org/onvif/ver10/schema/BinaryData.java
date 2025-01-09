@@ -6,25 +6,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for BinaryData complex type</p>.
+ * <p>Java class for BinaryData complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="BinaryData">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Data" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
- *       </sequence>
- *       <attribute ref="{http://www.w3.org/2005/05/xmlmime}contentType"/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="BinaryData"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Data" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute ref="{http://www.w3.org/2005/05/xmlmime}contentType"/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,17 +36,13 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class BinaryData {
 
-    /**
-     * base64 encoded binary data.
-     * 
-     */
     @XmlElement(name = "Data", required = true)
     protected byte[] data;
     @XmlAttribute(name = "contentType", namespace = "http://www.w3.org/2005/05/xmlmime")
     protected String contentType;
 
     /**
-     * base64 encoded binary data.
+     * Gets the value of the data property.
      * 
      * @return
      *     possible object is
@@ -60,7 +58,6 @@ public class BinaryData {
      * @param value
      *     allowed object is
      *     byte[]
-     * @see #getData()
      */
     public void setData(byte[] value) {
         this.data = value;
@@ -88,6 +85,16 @@ public class BinaryData {
      */
     public void setContentType(String value) {
         this.contentType = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

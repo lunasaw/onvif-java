@@ -14,30 +14,32 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlList;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.RelayMode;
 
 
 /**
- * <p>Java class for RelayOutputOptions complex type</p>.
+ * <p>Java class for RelayOutputOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RelayOutputOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}RelayMode" maxOccurs="unbounded"/>
- *         <element name="DelayTimes" type="{http://www.onvif.org/ver10/deviceIO/wsdl}DelayTimes" minOccurs="0"/>
- *         <element name="Discrete" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/deviceIO/wsdl}RelayOutputOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RelayOutputOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}RelayMode" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="DelayTimes" type="{http://www.onvif.org/ver10/deviceIO/wsdl}DelayTimes" minOccurs="0"/&gt;
+ *         &lt;element name="Discrete" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/deviceIO/wsdl}RelayOutputOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,118 +52,89 @@ import org.onvif.ver10.schema.RelayMode;
 })
 public class RelayOutputOptions {
 
-    /**
-     * Supported Modes.
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected List<RelayMode> mode;
-    /**
-     * Supported delay time range or discrete values in seconds. This
-     *                 element must be present if MonoStable mode is supported.
-     * 
-     */
     @XmlList
     @XmlElement(name = "DelayTimes", type = Float.class)
     protected List<Float> delayTimes;
-    /**
-     * True if the relay only supports the exact values for the DelayTimes
-     *                 listed. Default is false.
-     * 
-     */
     @XmlElement(name = "Discrete")
     protected Boolean discrete;
     @XmlElement(name = "Extension")
     protected RelayOutputOptionsExtension extension;
-    /**
-     * Token of the relay output.
-     * 
-     */
     @XmlAttribute(name = "token", required = true)
     protected String token;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Supported Modes.
-     * 
      * Gets the value of the mode property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mode property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the mode property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getMode().add(newItem);
+     *    getMode().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link RelayMode }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the mode property.
      */
     public List<RelayMode> getMode() {
         if (mode == null) {
-            mode = new ArrayList<>();
+            mode = new ArrayList<RelayMode>();
         }
         return this.mode;
     }
 
     /**
-     * Supported delay time range or discrete values in seconds. This
-     *                 element must be present if MonoStable mode is supported.
-     * 
      * Gets the value of the delayTimes property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the delayTimes property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the delayTimes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getDelayTimes().add(newItem);
+     *    getDelayTimes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Float }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the delayTimes property.
      */
     public List<Float> getDelayTimes() {
         if (delayTimes == null) {
-            delayTimes = new ArrayList<>();
+            delayTimes = new ArrayList<Float>();
         }
         return this.delayTimes;
     }
 
     /**
-     * True if the relay only supports the exact values for the DelayTimes
-     *                 listed. Default is false.
+     * Gets the value of the discrete property.
+     * This getter has been renamed from isDiscrete() to getDiscrete() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDiscrete() {
+    public Boolean getDiscrete() {
         return discrete;
     }
 
@@ -172,7 +145,6 @@ public class RelayOutputOptions {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDiscrete()
      */
     public void setDiscrete(Boolean value) {
         this.discrete = value;
@@ -203,7 +175,7 @@ public class RelayOutputOptions {
     }
 
     /**
-     * Token of the relay output.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -221,7 +193,6 @@ public class RelayOutputOptions {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
@@ -243,6 +214,16 @@ public class RelayOutputOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

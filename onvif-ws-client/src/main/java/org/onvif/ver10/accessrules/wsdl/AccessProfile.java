@@ -11,32 +11,36 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * The access profile structure contains information about the collection of access
+ * 
+ *             The access profile structure contains information about the collection of access
  *             policies. The
  *             device shall include all properties of the AccessProfileInfo structure and also a list
  *             of access
  *             policies.
+ *           
  * 
- * <p>Java class for AccessProfile complex type</p>.
+ * <p>Java class for AccessProfile complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="AccessProfile">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileInfo">
- *       <sequence>
- *         <element name="AccessPolicy" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessPolicy" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="AccessProfile"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileInfo"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="AccessPolicy" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessPolicy" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/accessrules/wsdl}AccessProfileExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,49 +53,38 @@ public class AccessProfile
     extends AccessProfileInfo
 {
 
-    /**
-     * A list of access policy structures, where each access policy
-     *                     defines during which schedule an access point can be accessed.
-     * 
-     */
     @XmlElement(name = "AccessPolicy")
     protected List<AccessPolicy> accessPolicy;
     @XmlElement(name = "Extension")
     protected AccessProfileExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * A list of access policy structures, where each access policy
-     *                     defines during which schedule an access point can be accessed.
-     * 
      * Gets the value of the accessPolicy property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the accessPolicy property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the accessPolicy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAccessPolicy().add(newItem);
+     *    getAccessPolicy().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link AccessPolicy }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the accessPolicy property.
      */
     public List<AccessPolicy> getAccessPolicy() {
         if (accessPolicy == null) {
-            accessPolicy = new ArrayList<>();
+            accessPolicy = new ArrayList<AccessPolicy>();
         }
         return this.accessPolicy;
     }
@@ -136,6 +129,16 @@ public class AccessProfile
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

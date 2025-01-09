@@ -12,39 +12,41 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ConfigDescription complex type</p>.
+ * <p>Java class for ConfigDescription complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ConfigDescription">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Parameters" type="{http://www.onvif.org/ver10/schema}ItemListDescription"/>
- *         <element name="Messages" maxOccurs="unbounded" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <extension base="{http://www.onvif.org/ver10/schema}MessageDescription">
- *                 <sequence>
- *                   <element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                 </sequence>
- *                 <anyAttribute processContents='lax'/>
- *               </extension>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ConfigDescriptionExtension" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ConfigDescription"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Parameters" type="{http://www.onvif.org/ver10/schema}ItemListDescription"/&gt;
+ *         &lt;element name="Messages" maxOccurs="unbounded" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;extension base="{http://www.onvif.org/ver10/schema}MessageDescription"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *                 &lt;/sequence&gt;
+ *                 &lt;anyAttribute processContents='lax'/&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ConfigDescriptionExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Name" use="required" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -56,46 +58,19 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ConfigDescription {
 
-    /**
-     * List describing the configuration parameters. The names of the parameters must be
-     *             unique. If possible SimpleItems
-     *             should be used to transport the information to ease parsing of dynamically defined
-     *             messages by a tests
-     *             application.
-     * 
-     */
     @XmlElement(name = "Parameters", required = true)
     protected ItemListDescription parameters;
-    /**
-     * The analytics modules and rule engine produce Events, which must be listed within the
-     *             Analytics Module Description. In order to do so
-     *             the structure of the Message is defined and consists of three groups: Source, Key, and
-     *             Data. It is recommended to use SimpleItemDescriptions wherever applicable.
-     *             The name of all Items must be unique within all Items contained in any group of this
-     *             Message.
-     *             Depending on the component multiple parameters or none may be needed to identify the
-     *             component uniquely.
-     * 
-     */
     @XmlElement(name = "Messages")
     protected List<ConfigDescription.Messages> messages;
     @XmlElement(name = "Extension")
     protected ConfigDescriptionExtension extension;
-    /**
-     * XML Type of the Configuration (e.g. "tt::LineDetector").
-     * 
-     */
     @XmlAttribute(name = "Name", required = true)
     protected QName name;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * List describing the configuration parameters. The names of the parameters must be
-     *             unique. If possible SimpleItems
-     *             should be used to transport the information to ease parsing of dynamically defined
-     *             messages by a tests
-     *             application.
+     * Gets the value of the parameters property.
      * 
      * @return
      *     possible object is
@@ -113,49 +88,36 @@ public class ConfigDescription {
      *     allowed object is
      *     {@link ItemListDescription }
      *     
-     * @see #getParameters()
      */
     public void setParameters(ItemListDescription value) {
         this.parameters = value;
     }
 
     /**
-     * The analytics modules and rule engine produce Events, which must be listed within the
-     *             Analytics Module Description. In order to do so
-     *             the structure of the Message is defined and consists of three groups: Source, Key, and
-     *             Data. It is recommended to use SimpleItemDescriptions wherever applicable.
-     *             The name of all Items must be unique within all Items contained in any group of this
-     *             Message.
-     *             Depending on the component multiple parameters or none may be needed to identify the
-     *             component uniquely.
-     * 
      * Gets the value of the messages property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the messages property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the messages property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getMessages().add(newItem);
+     *    getMessages().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ConfigDescription.Messages }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the messages property.
      */
     public List<ConfigDescription.Messages> getMessages() {
         if (messages == null) {
-            messages = new ArrayList<>();
+            messages = new ArrayList<ConfigDescription.Messages>();
         }
         return this.messages;
     }
@@ -185,7 +147,7 @@ public class ConfigDescription {
     }
 
     /**
-     * XML Type of the Configuration (e.g. "tt::LineDetector").
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -203,7 +165,6 @@ public class ConfigDescription {
      *     allowed object is
      *     {@link QName }
      *     
-     * @see #getName()
      */
     public void setName(QName value) {
         this.name = value;
@@ -227,24 +188,34 @@ public class ConfigDescription {
         return otherAttributes;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <extension base="{http://www.onvif.org/ver10/schema}MessageDescription">
-     *       <sequence>
-     *         <element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *       </sequence>
-     *       <anyAttribute processContents='lax'/>
-     *     </extension>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://www.onvif.org/ver10/schema}MessageDescription"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="ParentTopic" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+     *       &lt;/sequence&gt;
+     *       &lt;anyAttribute processContents='lax'/&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -256,33 +227,11 @@ public class ConfigDescription {
         extends MessageDescription
     {
 
-        /**
-         * The ParentTopic labels the message (e.g. "nn:RuleEngine/LineCrossing"). The
-         *                       real message can extend the ParentTopic
-         *                       by for example the name of the instaniated rule (e.g.
-         *                       "nn:RuleEngine/LineCrossing/corssMyFirstLine").
-         *                       Even without knowing the complete topic name, the subscriber will be able to
-         *                       distiguish the
-         *                       messages produced by different rule instances of the same type via the Source
-         *                       fields of the message.
-         *                       There the name of the rule instance, which produced the message, must be
-         *                       listed.
-         * 
-         */
         @XmlElement(name = "ParentTopic", required = true)
         protected String parentTopic;
 
         /**
-         * The ParentTopic labels the message (e.g. "nn:RuleEngine/LineCrossing"). The
-         *                       real message can extend the ParentTopic
-         *                       by for example the name of the instaniated rule (e.g.
-         *                       "nn:RuleEngine/LineCrossing/corssMyFirstLine").
-         *                       Even without knowing the complete topic name, the subscriber will be able to
-         *                       distiguish the
-         *                       messages produced by different rule instances of the same type via the Source
-         *                       fields of the message.
-         *                       There the name of the rule instance, which produced the message, must be
-         *                       listed.
+         * Gets the value of the parentTopic property.
          * 
          * @return
          *     possible object is
@@ -300,10 +249,19 @@ public class ConfigDescription {
          *     allowed object is
          *     {@link String }
          *     
-         * @see #getParentTopic()
          */
         public void setParentTopic(String value) {
             this.parentTopic = value;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

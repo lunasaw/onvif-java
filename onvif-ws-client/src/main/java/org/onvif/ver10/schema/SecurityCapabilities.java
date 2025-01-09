@@ -12,35 +12,37 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for SecurityCapabilities complex type</p>.
+ * <p>Java class for SecurityCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SecurityCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="TLS1.1" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="TLS1.2" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="OnboardKeyGeneration" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="AccessPolicyConfig" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="X.509Token" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="SAMLToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="KerberosToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="RELToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SecurityCapabilitiesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SecurityCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="TLS1.1" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="TLS1.2" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="OnboardKeyGeneration" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="AccessPolicyConfig" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="X.509Token" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="SAMLToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="KerberosToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="RELToken" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SecurityCapabilitiesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -59,52 +61,20 @@ import org.w3c.dom.Element;
 })
 public class SecurityCapabilities {
 
-    /**
-     * Indicates whether or not TLS 1.1 is supported.
-     * 
-     */
     @XmlElement(name = "TLS1.1")
     protected boolean tls11;
-    /**
-     * Indicates whether or not TLS 1.2 is supported.
-     * 
-     */
     @XmlElement(name = "TLS1.2")
     protected boolean tls12;
-    /**
-     * Indicates whether or not onboard key generation is supported.
-     * 
-     */
     @XmlElement(name = "OnboardKeyGeneration")
     protected boolean onboardKeyGeneration;
-    /**
-     * Indicates whether or not access policy configuration is supported.
-     * 
-     */
     @XmlElement(name = "AccessPolicyConfig")
     protected boolean accessPolicyConfig;
-    /**
-     * Indicates whether or not WS-Security X.509 token is supported.
-     * 
-     */
     @XmlElement(name = "X.509Token")
     protected boolean x509Token;
-    /**
-     * Indicates whether or not WS-Security SAML token is supported.
-     * 
-     */
     @XmlElement(name = "SAMLToken")
     protected boolean samlToken;
-    /**
-     * Indicates whether or not WS-Security Kerberos token is supported.
-     * 
-     */
     @XmlElement(name = "KerberosToken")
     protected boolean kerberosToken;
-    /**
-     * Indicates whether or not WS-Security REL token is supported.
-     * 
-     */
     @XmlElement(name = "RELToken")
     protected boolean relToken;
     @XmlAnyElement(lax = true)
@@ -112,13 +82,14 @@ public class SecurityCapabilities {
     @XmlElement(name = "Extension")
     protected SecurityCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether or not TLS 1.1 is supported.
+     * Gets the value of the tls11 property.
+     * This getter has been renamed from isTLS11() to getTLS11() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isTLS11() {
+    public boolean getTLS11() {
         return tls11;
     }
 
@@ -131,10 +102,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not TLS 1.2 is supported.
+     * Gets the value of the tls12 property.
+     * This getter has been renamed from isTLS12() to getTLS12() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isTLS12() {
+    public boolean getTLS12() {
         return tls12;
     }
 
@@ -147,10 +119,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not onboard key generation is supported.
+     * Gets the value of the onboardKeyGeneration property.
+     * This getter has been renamed from isOnboardKeyGeneration() to getOnboardKeyGeneration() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isOnboardKeyGeneration() {
+    public boolean getOnboardKeyGeneration() {
         return onboardKeyGeneration;
     }
 
@@ -163,10 +136,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not access policy configuration is supported.
+     * Gets the value of the accessPolicyConfig property.
+     * This getter has been renamed from isAccessPolicyConfig() to getAccessPolicyConfig() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isAccessPolicyConfig() {
+    public boolean getAccessPolicyConfig() {
         return accessPolicyConfig;
     }
 
@@ -179,10 +153,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not WS-Security X.509 token is supported.
+     * Gets the value of the x509Token property.
+     * This getter has been renamed from isX509Token() to getX509Token() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isX509Token() {
+    public boolean getX509Token() {
         return x509Token;
     }
 
@@ -195,10 +170,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not WS-Security SAML token is supported.
+     * Gets the value of the samlToken property.
+     * This getter has been renamed from isSAMLToken() to getSAMLToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isSAMLToken() {
+    public boolean getSAMLToken() {
         return samlToken;
     }
 
@@ -211,10 +187,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not WS-Security Kerberos token is supported.
+     * Gets the value of the kerberosToken property.
+     * This getter has been renamed from isKerberosToken() to getKerberosToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isKerberosToken() {
+    public boolean getKerberosToken() {
         return kerberosToken;
     }
 
@@ -227,10 +204,11 @@ public class SecurityCapabilities {
     }
 
     /**
-     * Indicates whether or not WS-Security REL token is supported.
+     * Gets the value of the relToken property.
+     * This getter has been renamed from isRELToken() to getRELToken() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isRELToken() {
+    public boolean getRELToken() {
         return relToken;
     }
 
@@ -245,16 +223,16 @@ public class SecurityCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -262,15 +240,12 @@ public class SecurityCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -315,6 +290,16 @@ public class SecurityCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

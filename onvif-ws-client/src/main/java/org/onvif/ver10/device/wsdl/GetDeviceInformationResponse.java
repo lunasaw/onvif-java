@@ -6,28 +6,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Model" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="FirmwareVersion" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="HardwareId" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Manufacturer" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Model" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="FirmwareVersion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="SerialNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="HardwareId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -42,39 +44,19 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetDeviceInformationResponse")
 public class GetDeviceInformationResponse {
 
-    /**
-     * The manufactor of the device.
-     * 
-     */
     @XmlElement(name = "Manufacturer", required = true)
     protected String manufacturer;
-    /**
-     * The device model.
-     * 
-     */
     @XmlElement(name = "Model", required = true)
     protected String model;
-    /**
-     * The firmware version in the device.
-     * 
-     */
     @XmlElement(name = "FirmwareVersion", required = true)
     protected String firmwareVersion;
-    /**
-     * The serial number of the device.
-     * 
-     */
     @XmlElement(name = "SerialNumber", required = true)
     protected String serialNumber;
-    /**
-     * The hardware ID of the device.
-     * 
-     */
     @XmlElement(name = "HardwareId", required = true)
     protected String hardwareId;
 
     /**
-     * The manufactor of the device.
+     * Gets the value of the manufacturer property.
      * 
      * @return
      *     possible object is
@@ -92,14 +74,13 @@ public class GetDeviceInformationResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getManufacturer()
      */
     public void setManufacturer(String value) {
         this.manufacturer = value;
     }
 
     /**
-     * The device model.
+     * Gets the value of the model property.
      * 
      * @return
      *     possible object is
@@ -117,14 +98,13 @@ public class GetDeviceInformationResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getModel()
      */
     public void setModel(String value) {
         this.model = value;
     }
 
     /**
-     * The firmware version in the device.
+     * Gets the value of the firmwareVersion property.
      * 
      * @return
      *     possible object is
@@ -142,14 +122,13 @@ public class GetDeviceInformationResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getFirmwareVersion()
      */
     public void setFirmwareVersion(String value) {
         this.firmwareVersion = value;
     }
 
     /**
-     * The serial number of the device.
+     * Gets the value of the serialNumber property.
      * 
      * @return
      *     possible object is
@@ -167,14 +146,13 @@ public class GetDeviceInformationResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getSerialNumber()
      */
     public void setSerialNumber(String value) {
         this.serialNumber = value;
     }
 
     /**
-     * The hardware ID of the device.
+     * Gets the value of the hardwareId property.
      * 
      * @return
      *     possible object is
@@ -192,10 +170,19 @@ public class GetDeviceInformationResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getHardwareId()
      */
     public void setHardwareId(String value) {
         this.hardwareId = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

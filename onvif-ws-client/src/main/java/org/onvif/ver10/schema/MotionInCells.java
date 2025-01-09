@@ -13,29 +13,31 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for MotionInCells complex type</p>.
+ * <p>Java class for MotionInCells complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="MotionInCells">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="Columns" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       <attribute name="Rows" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *       <attribute name="Cells" use="required" type="{http://www.w3.org/2001/XMLSchema}base64Binary" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="MotionInCells"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="Columns" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="Rows" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="Cells" use="required" type="{http://www.w3.org/2001/XMLSchema}base64Binary" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -47,44 +49,28 @@ public class MotionInCells {
 
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
-    /**
-     * Number of columns of the cell grid (x dimension)
-     * 
-     */
     @XmlAttribute(name = "Columns", required = true)
     protected BigInteger columns;
-    /**
-     * Number of rows of the cell grid (y dimension)
-     * 
-     */
     @XmlAttribute(name = "Rows", required = true)
     protected BigInteger rows;
-    /**
-     * A “1” denotes a cell where motion is detected and a “0” an empty cell. The
-     *           first cell is in the upper left corner. Then the cell order goes first from left to right
-     *           and then from up to down. If the number of cells is not a multiple of 8 the last byte is
-     *           filled with zeros. The information is run length encoded according to Packbit coding in
-     *           ISO 12369 (TIFF, Revision 6.0).
-     * 
-     */
     @XmlAttribute(name = "Cells", required = true)
     protected byte[] cells;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -92,21 +78,18 @@ public class MotionInCells {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
 
     /**
-     * Number of columns of the cell grid (x dimension)
+     * Gets the value of the columns property.
      * 
      * @return
      *     possible object is
@@ -124,14 +107,13 @@ public class MotionInCells {
      *     allowed object is
      *     {@link BigInteger }
      *     
-     * @see #getColumns()
      */
     public void setColumns(BigInteger value) {
         this.columns = value;
     }
 
     /**
-     * Number of rows of the cell grid (y dimension)
+     * Gets the value of the rows property.
      * 
      * @return
      *     possible object is
@@ -149,18 +131,13 @@ public class MotionInCells {
      *     allowed object is
      *     {@link BigInteger }
      *     
-     * @see #getRows()
      */
     public void setRows(BigInteger value) {
         this.rows = value;
     }
 
     /**
-     * A “1” denotes a cell where motion is detected and a “0” an empty cell. The
-     *           first cell is in the upper left corner. Then the cell order goes first from left to right
-     *           and then from up to down. If the number of cells is not a multiple of 8 the last byte is
-     *           filled with zeros. The information is run length encoded according to Packbit coding in
-     *           ISO 12369 (TIFF, Revision 6.0).
+     * Gets the value of the cells property.
      * 
      * @return
      *     possible object is
@@ -176,7 +153,6 @@ public class MotionInCells {
      * @param value
      *     allowed object is
      *     byte[]
-     * @see #getCells()
      */
     public void setCells(byte[] value) {
         this.cells = value;
@@ -198,6 +174,16 @@ public class MotionInCells {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

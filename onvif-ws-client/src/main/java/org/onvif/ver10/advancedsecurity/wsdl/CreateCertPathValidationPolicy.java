@@ -9,38 +9,40 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="Parameters" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CertPathValidationParameters"/>
- *         <element name="TrustAnchor" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}TrustAnchor" maxOccurs="unbounded"/>
- *         <element name="anyParameters" minOccurs="0">
- *           <complexType>
- *             <complexContent>
- *               <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 <sequence>
- *                   <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *                 </sequence>
- *               </restriction>
- *             </complexContent>
- *           </complexType>
- *         </element>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Alias" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Parameters" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}CertPathValidationParameters"/&gt;
+ *         &lt;element name="TrustAnchor" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}TrustAnchor" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="anyParameters" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -54,28 +56,16 @@ import org.w3c.dom.Element;
 @XmlRootElement(name = "CreateCertPathValidationPolicy")
 public class CreateCertPathValidationPolicy {
 
-    /**
-     * The alias to assign to the created certification path validation policy.
-     * 
-     */
     @XmlElement(name = "Alias")
     protected String alias;
-    /**
-     * The parameters of the certification path validation policy to be created.
-     * 
-     */
     @XmlElement(name = "Parameters", required = true)
     protected CertPathValidationParameters parameters;
-    /**
-     * The trust anchors of the certification path validation policy to be created.
-     * 
-     */
     @XmlElement(name = "TrustAnchor", required = true)
     protected List<TrustAnchor> trustAnchor;
     protected CreateCertPathValidationPolicy.AnyParameters anyParameters;
 
     /**
-     * The alias to assign to the created certification path validation policy.
+     * Gets the value of the alias property.
      * 
      * @return
      *     possible object is
@@ -93,14 +83,13 @@ public class CreateCertPathValidationPolicy {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAlias()
      */
     public void setAlias(String value) {
         this.alias = value;
     }
 
     /**
-     * The parameters of the certification path validation policy to be created.
+     * Gets the value of the parameters property.
      * 
      * @return
      *     possible object is
@@ -118,42 +107,36 @@ public class CreateCertPathValidationPolicy {
      *     allowed object is
      *     {@link CertPathValidationParameters }
      *     
-     * @see #getParameters()
      */
     public void setParameters(CertPathValidationParameters value) {
         this.parameters = value;
     }
 
     /**
-     * The trust anchors of the certification path validation policy to be created.
-     * 
      * Gets the value of the trustAnchor property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the trustAnchor property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the trustAnchor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getTrustAnchor().add(newItem);
+     *    getTrustAnchor().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TrustAnchor }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the trustAnchor property.
      */
     public List<TrustAnchor> getTrustAnchor() {
         if (trustAnchor == null) {
-            trustAnchor = new ArrayList<>();
+            trustAnchor = new ArrayList<TrustAnchor>();
         }
         return this.trustAnchor;
     }
@@ -182,23 +165,33 @@ public class CreateCertPathValidationPolicy {
         this.anyParameters = value;
     }
 
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
+    }
+
 
     /**
-     * <p>Java class for anonymous complex type</p>.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>The following schema fragment specifies the expected content contained within this class.</p>
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
-     * <pre>{@code
-     * <complexType>
-     *   <complexContent>
-     *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       <sequence>
-     *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
-     *       </sequence>
-     *     </restriction>
-     *   </complexContent>
-     * </complexType>
-     * }</pre>
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
      * 
      * 
      */
@@ -214,16 +207,16 @@ public class CreateCertPathValidationPolicy {
         /**
          * Gets the value of the any property.
          * 
-         * <p>This accessor method returns a reference to the live list,
+         * <p>
+         * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+         * returned list will be present inside the Jakarta XML Binding object.
+         * This is why there is not a <CODE>set</CODE> method for the any property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
-         * </p>
          * <pre>
-         * getAny().add(newItem);
+         *    getAny().add(newItem);
          * </pre>
          * 
          * 
@@ -231,17 +224,24 @@ public class CreateCertPathValidationPolicy {
          * Objects of the following type(s) are allowed in the list
          * {@link Object }
          * {@link Element }
-         * </p>
          * 
          * 
-         * @return
-         *     The value of the any property.
          */
         public List<Object> getAny() {
             if (any == null) {
-                any = new ArrayList<>();
+                any = new ArrayList<Object>();
             }
             return this.any;
+        }
+
+        /**
+         * Generates a String representation of the contents of this type.
+         * This is an extension method, produced by the 'ts' xjc plugin
+         * 
+         */
+        @Override
+        public String toString() {
+            return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
         }
 
     }

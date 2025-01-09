@@ -10,28 +10,30 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for FocusStatus20 complex type</p>.
+ * <p>Java class for FocusStatus20 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="FocusStatus20">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}MoveStatus"/>
- *         <element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusStatus20Extension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="FocusStatus20"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Position" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="MoveStatus" type="{http://www.onvif.org/ver10/schema}MoveStatus"/&gt;
+ *         &lt;element name="Error" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusStatus20Extension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -44,32 +46,20 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FocusStatus20 {
 
-    /**
-     * Status of focus position.
-     * 
-     */
     @XmlElement(name = "Position")
     protected float position;
-    /**
-     * Status of focus MoveStatus.
-     * 
-     */
     @XmlElement(name = "MoveStatus", required = true)
     @XmlSchemaType(name = "string")
     protected MoveStatus moveStatus;
-    /**
-     * Error status of focus.
-     * 
-     */
     @XmlElement(name = "Error")
     protected String error;
     @XmlElement(name = "Extension")
     protected FocusStatus20Extension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Status of focus position.
+     * Gets the value of the position property.
      * 
      */
     public float getPosition() {
@@ -85,7 +75,7 @@ public class FocusStatus20 {
     }
 
     /**
-     * Status of focus MoveStatus.
+     * Gets the value of the moveStatus property.
      * 
      * @return
      *     possible object is
@@ -103,14 +93,13 @@ public class FocusStatus20 {
      *     allowed object is
      *     {@link MoveStatus }
      *     
-     * @see #getMoveStatus()
      */
     public void setMoveStatus(MoveStatus value) {
         this.moveStatus = value;
     }
 
     /**
-     * Error status of focus.
+     * Gets the value of the error property.
      * 
      * @return
      *     possible object is
@@ -128,7 +117,6 @@ public class FocusStatus20 {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getError()
      */
     public void setError(String value) {
         this.error = value;
@@ -174,6 +162,16 @@ public class FocusStatus20 {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

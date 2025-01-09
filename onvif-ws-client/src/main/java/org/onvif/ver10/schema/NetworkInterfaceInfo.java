@@ -8,26 +8,28 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for NetworkInterfaceInfo complex type</p>.
+ * <p>Java class for NetworkInterfaceInfo complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="NetworkInterfaceInfo">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="HwAddress" type="{http://www.onvif.org/ver10/schema}HwAddress"/>
- *         <element name="MTU" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="NetworkInterfaceInfo"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="HwAddress" type="{http://www.onvif.org/ver10/schema}HwAddress"/&gt;
+ *         &lt;element name="MTU" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -39,29 +41,17 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class NetworkInterfaceInfo {
 
-    /**
-     * Network interface name, for example eth0.
-     * 
-     */
     @XmlElement(name = "Name")
     protected String name;
-    /**
-     * Network interface MAC address.
-     * 
-     */
     @XmlElement(name = "HwAddress", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String hwAddress;
-    /**
-     * Maximum transmission unit.
-     * 
-     */
     @XmlElement(name = "MTU")
     protected Integer mtu;
 
     /**
-     * Network interface name, for example eth0.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -79,14 +69,13 @@ public class NetworkInterfaceInfo {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Network interface MAC address.
+     * Gets the value of the hwAddress property.
      * 
      * @return
      *     possible object is
@@ -104,14 +93,13 @@ public class NetworkInterfaceInfo {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getHwAddress()
      */
     public void setHwAddress(String value) {
         this.hwAddress = value;
     }
 
     /**
-     * Maximum transmission unit.
+     * Gets the value of the mtu property.
      * 
      * @return
      *     possible object is
@@ -129,10 +117,19 @@ public class NetworkInterfaceInfo {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getMTU()
      */
     public void setMTU(Integer value) {
         this.mtu = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

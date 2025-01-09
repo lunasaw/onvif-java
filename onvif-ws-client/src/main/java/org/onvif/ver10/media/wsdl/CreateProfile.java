@@ -6,25 +6,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/>
- *         <element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/&gt;
+ *         &lt;element name="Token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -36,27 +38,13 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "CreateProfile")
 public class CreateProfile {
 
-    /**
-     * friendly name of the profile to be created
-     * 
-     */
     @XmlElement(name = "Name", required = true)
     protected String name;
-    /**
-     * Optional token, specifying the unique identifier of the new
-     *                   profile.
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:trt="http://www.onvif.org/ver10/media/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
-     * </pre>
-     * A device supports at least a token length of 12 characters and
-     *                   characters "A-Z" | "a-z" | "0-9" | "-.".
-     * 
-     */
     @XmlElement(name = "Token")
     protected String token;
 
     /**
-     * friendly name of the profile to be created
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -74,20 +62,13 @@ public class CreateProfile {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Optional token, specifying the unique identifier of the new
-     *                   profile.
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:trt="http://www.onvif.org/ver10/media/wsdl" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
-     * </pre>
-     * A device supports at least a token length of 12 characters and
-     *                   characters "A-Z" | "a-z" | "0-9" | "-.".
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -105,10 +86,19 @@ public class CreateProfile {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

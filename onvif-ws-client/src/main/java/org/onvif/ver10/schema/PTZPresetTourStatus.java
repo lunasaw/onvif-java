@@ -10,27 +10,29 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for PTZPresetTourStatus complex type</p>.
+ * <p>Java class for PTZPresetTourStatus complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="PTZPresetTourStatus">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="State" type="{http://www.onvif.org/ver10/schema}PTZPresetTourState"/>
- *         <element name="CurrentTourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatusExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="PTZPresetTourStatus"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="State" type="{http://www.onvif.org/ver10/schema}PTZPresetTourState"/&gt;
+ *         &lt;element name="CurrentTourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatusExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -42,26 +44,18 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourStatus {
 
-    /**
-     * Indicates state of this preset tour by Idle/Touring/Paused.
-     * 
-     */
     @XmlElement(name = "State", required = true)
     @XmlSchemaType(name = "string")
     protected PTZPresetTourState state;
-    /**
-     * Indicates a tour spot currently staying.
-     * 
-     */
     @XmlElement(name = "CurrentTourSpot")
     protected PTZPresetTourSpot currentTourSpot;
     @XmlElement(name = "Extension")
     protected PTZPresetTourStatusExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates state of this preset tour by Idle/Touring/Paused.
+     * Gets the value of the state property.
      * 
      * @return
      *     possible object is
@@ -79,14 +73,13 @@ public class PTZPresetTourStatus {
      *     allowed object is
      *     {@link PTZPresetTourState }
      *     
-     * @see #getState()
      */
     public void setState(PTZPresetTourState value) {
         this.state = value;
     }
 
     /**
-     * Indicates a tour spot currently staying.
+     * Gets the value of the currentTourSpot property.
      * 
      * @return
      *     possible object is
@@ -104,7 +97,6 @@ public class PTZPresetTourStatus {
      *     allowed object is
      *     {@link PTZPresetTourSpot }
      *     
-     * @see #getCurrentTourSpot()
      */
     public void setCurrentTourSpot(PTZPresetTourSpot value) {
         this.currentTourSpot = value;
@@ -150,6 +142,16 @@ public class PTZPresetTourStatus {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

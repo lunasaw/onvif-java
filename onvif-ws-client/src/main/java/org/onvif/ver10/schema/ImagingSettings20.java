@@ -10,38 +10,41 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Type describing the ImagingSettings of a VideoSource. The supported options
  *         and ranges can be obtained via the GetOptions command.
+ *       
  * 
- * <p>Java class for ImagingSettings20 complex type</p>.
+ * <p>Java class for ImagingSettings20 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ImagingSettings20">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensation20" minOccurs="0"/>
- *         <element name="Brightness" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="ColorSaturation" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="Contrast" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="Exposure" type="{http://www.onvif.org/ver10/schema}Exposure20" minOccurs="0"/>
- *         <element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusConfiguration20" minOccurs="0"/>
- *         <element name="IrCutFilter" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" minOccurs="0"/>
- *         <element name="Sharpness" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRange20" minOccurs="0"/>
- *         <element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalance20" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingSettingsExtension20" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ImagingSettings20"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensation20" minOccurs="0"/&gt;
+ *         &lt;element name="Brightness" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="ColorSaturation" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="Contrast" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}Exposure20" minOccurs="0"/&gt;
+ *         &lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusConfiguration20" minOccurs="0"/&gt;
+ *         &lt;element name="IrCutFilter" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" minOccurs="0"/&gt;
+ *         &lt;element name="Sharpness" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRange20" minOccurs="0"/&gt;
+ *         &lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalance20" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingSettingsExtension20" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -61,74 +64,34 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImagingSettings20 {
 
-    /**
-     * Enabled/disabled BLC mode (on/off).
-     * 
-     */
     @XmlElement(name = "BacklightCompensation")
     protected BacklightCompensation20 backlightCompensation;
-    /**
-     * Image brightness (unit unspecified).
-     * 
-     */
     @XmlElement(name = "Brightness")
     protected Float brightness;
-    /**
-     * Color saturation of the image (unit unspecified).
-     * 
-     */
     @XmlElement(name = "ColorSaturation")
     protected Float colorSaturation;
-    /**
-     * Contrast of the image (unit unspecified).
-     * 
-     */
     @XmlElement(name = "Contrast")
     protected Float contrast;
-    /**
-     * Exposure mode of the device.
-     * 
-     */
     @XmlElement(name = "Exposure")
     protected Exposure20 exposure;
-    /**
-     * Focus configuration.
-     * 
-     */
     @XmlElement(name = "Focus")
     protected FocusConfiguration20 focus;
-    /**
-     * Infrared Cutoff Filter settings.
-     * 
-     */
     @XmlElement(name = "IrCutFilter")
     @XmlSchemaType(name = "string")
     protected IrCutFilterMode irCutFilter;
-    /**
-     * Sharpness of the Video image.
-     * 
-     */
     @XmlElement(name = "Sharpness")
     protected Float sharpness;
-    /**
-     * WDR settings.
-     * 
-     */
     @XmlElement(name = "WideDynamicRange")
     protected WideDynamicRange20 wideDynamicRange;
-    /**
-     * White balance settings.
-     * 
-     */
     @XmlElement(name = "WhiteBalance")
     protected WhiteBalance20 whiteBalance;
     @XmlElement(name = "Extension")
     protected ImagingSettingsExtension20 extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Enabled/disabled BLC mode (on/off).
+     * Gets the value of the backlightCompensation property.
      * 
      * @return
      *     possible object is
@@ -146,14 +109,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link BacklightCompensation20 }
      *     
-     * @see #getBacklightCompensation()
      */
     public void setBacklightCompensation(BacklightCompensation20 value) {
         this.backlightCompensation = value;
     }
 
     /**
-     * Image brightness (unit unspecified).
+     * Gets the value of the brightness property.
      * 
      * @return
      *     possible object is
@@ -171,14 +133,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getBrightness()
      */
     public void setBrightness(Float value) {
         this.brightness = value;
     }
 
     /**
-     * Color saturation of the image (unit unspecified).
+     * Gets the value of the colorSaturation property.
      * 
      * @return
      *     possible object is
@@ -196,14 +157,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getColorSaturation()
      */
     public void setColorSaturation(Float value) {
         this.colorSaturation = value;
     }
 
     /**
-     * Contrast of the image (unit unspecified).
+     * Gets the value of the contrast property.
      * 
      * @return
      *     possible object is
@@ -221,14 +181,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getContrast()
      */
     public void setContrast(Float value) {
         this.contrast = value;
     }
 
     /**
-     * Exposure mode of the device.
+     * Gets the value of the exposure property.
      * 
      * @return
      *     possible object is
@@ -246,14 +205,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link Exposure20 }
      *     
-     * @see #getExposure()
      */
     public void setExposure(Exposure20 value) {
         this.exposure = value;
     }
 
     /**
-     * Focus configuration.
+     * Gets the value of the focus property.
      * 
      * @return
      *     possible object is
@@ -271,14 +229,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link FocusConfiguration20 }
      *     
-     * @see #getFocus()
      */
     public void setFocus(FocusConfiguration20 value) {
         this.focus = value;
     }
 
     /**
-     * Infrared Cutoff Filter settings.
+     * Gets the value of the irCutFilter property.
      * 
      * @return
      *     possible object is
@@ -296,14 +253,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link IrCutFilterMode }
      *     
-     * @see #getIrCutFilter()
      */
     public void setIrCutFilter(IrCutFilterMode value) {
         this.irCutFilter = value;
     }
 
     /**
-     * Sharpness of the Video image.
+     * Gets the value of the sharpness property.
      * 
      * @return
      *     possible object is
@@ -321,14 +277,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getSharpness()
      */
     public void setSharpness(Float value) {
         this.sharpness = value;
     }
 
     /**
-     * WDR settings.
+     * Gets the value of the wideDynamicRange property.
      * 
      * @return
      *     possible object is
@@ -346,14 +301,13 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link WideDynamicRange20 }
      *     
-     * @see #getWideDynamicRange()
      */
     public void setWideDynamicRange(WideDynamicRange20 value) {
         this.wideDynamicRange = value;
     }
 
     /**
-     * White balance settings.
+     * Gets the value of the whiteBalance property.
      * 
      * @return
      *     possible object is
@@ -371,7 +325,6 @@ public class ImagingSettings20 {
      *     allowed object is
      *     {@link WhiteBalance20 }
      *     
-     * @see #getWhiteBalance()
      */
     public void setWhiteBalance(WhiteBalance20 value) {
         this.whiteBalance = value;
@@ -417,6 +370,16 @@ public class ImagingSettings20 {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

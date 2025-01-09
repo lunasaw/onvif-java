@@ -12,27 +12,29 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for HostnameInformation complex type</p>.
+ * <p>Java class for HostnameInformation complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="HostnameInformation">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="Name" type="{http://www.w3.org/2001/XMLSchema}token" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}HostnameInformationExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="HostnameInformation"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="FromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}token" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}HostnameInformationExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -44,16 +46,8 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class HostnameInformation {
 
-    /**
-     * Indicates whether the hostname is obtained from DHCP or not.
-     * 
-     */
     @XmlElement(name = "FromDHCP")
     protected boolean fromDHCP;
-    /**
-     * Indicates the hostname.
-     * 
-     */
     @XmlElement(name = "Name")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
@@ -61,13 +55,14 @@ public class HostnameInformation {
     @XmlElement(name = "Extension")
     protected HostnameInformationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether the hostname is obtained from DHCP or not.
+     * Gets the value of the fromDHCP property.
+     * This getter has been renamed from isFromDHCP() to getFromDHCP() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isFromDHCP() {
+    public boolean getFromDHCP() {
         return fromDHCP;
     }
 
@@ -80,7 +75,7 @@ public class HostnameInformation {
     }
 
     /**
-     * Indicates the hostname.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -98,7 +93,6 @@ public class HostnameInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
@@ -144,6 +138,16 @@ public class HostnameInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

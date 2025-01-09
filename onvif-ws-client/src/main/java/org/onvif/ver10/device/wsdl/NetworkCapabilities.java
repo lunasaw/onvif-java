@@ -9,31 +9,33 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for NetworkCapabilities complex type</p>.
+ * <p>Java class for NetworkCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="NetworkCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <attribute name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="Dot11Configuration" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="Dot1XConfigurations" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       <attribute name="HostnameFromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="NTP" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       <attribute name="DHCPv6" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="NetworkCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Dot11Configuration" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Dot1XConfigurations" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="HostnameFromDHCP" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="NTP" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="DHCPv6" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -41,74 +43,37 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "NetworkCapabilities")
 public class NetworkCapabilities {
 
-    /**
-     * Indicates support for IP filtering.
-     * 
-     */
     @XmlAttribute(name = "IPFilter")
     protected Boolean ipFilter;
-    /**
-     * Indicates support for zeroconf.
-     * 
-     */
     @XmlAttribute(name = "ZeroConfiguration")
     protected Boolean zeroConfiguration;
-    /**
-     * Indicates support for IPv6.
-     * 
-     */
     @XmlAttribute(name = "IPVersion6")
     protected Boolean ipVersion6;
-    /**
-     * Indicates support for dynamic DNS configuration.
-     * 
-     */
     @XmlAttribute(name = "DynDNS")
     protected Boolean dynDNS;
-    /**
-     * Indicates support for IEEE 802.11 configuration.
-     * 
-     */
     @XmlAttribute(name = "Dot11Configuration")
     protected Boolean dot11Configuration;
-    /**
-     * Indicates the maximum number of Dot1X configurations supported by the
-     *               device
-     * 
-     */
     @XmlAttribute(name = "Dot1XConfigurations")
     protected Integer dot1XConfigurations;
-    /**
-     * Indicates support for retrieval of hostname from DHCP.
-     * 
-     */
     @XmlAttribute(name = "HostnameFromDHCP")
     protected Boolean hostnameFromDHCP;
-    /**
-     * Maximum number of NTP servers supported by the devices SetNTP
-     *               command.
-     * 
-     */
     @XmlAttribute(name = "NTP")
     protected Integer ntp;
-    /**
-     * Indicates support for Stateful IPv6 DHCP.
-     * 
-     */
     @XmlAttribute(name = "DHCPv6")
     protected Boolean dhcPv6;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates support for IP filtering.
+     * Gets the value of the ipFilter property.
+     * This getter has been renamed from isIPFilter() to getIPFilter() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isIPFilter() {
+    public Boolean getIPFilter() {
         return ipFilter;
     }
 
@@ -119,21 +84,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isIPFilter()
      */
     public void setIPFilter(Boolean value) {
         this.ipFilter = value;
     }
 
     /**
-     * Indicates support for zeroconf.
+     * Gets the value of the zeroConfiguration property.
+     * This getter has been renamed from isZeroConfiguration() to getZeroConfiguration() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isZeroConfiguration() {
+    public Boolean getZeroConfiguration() {
         return zeroConfiguration;
     }
 
@@ -144,21 +109,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isZeroConfiguration()
      */
     public void setZeroConfiguration(Boolean value) {
         this.zeroConfiguration = value;
     }
 
     /**
-     * Indicates support for IPv6.
+     * Gets the value of the ipVersion6 property.
+     * This getter has been renamed from isIPVersion6() to getIPVersion6() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isIPVersion6() {
+    public Boolean getIPVersion6() {
         return ipVersion6;
     }
 
@@ -169,21 +134,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isIPVersion6()
      */
     public void setIPVersion6(Boolean value) {
         this.ipVersion6 = value;
     }
 
     /**
-     * Indicates support for dynamic DNS configuration.
+     * Gets the value of the dynDNS property.
+     * This getter has been renamed from isDynDNS() to getDynDNS() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDynDNS() {
+    public Boolean getDynDNS() {
         return dynDNS;
     }
 
@@ -194,21 +159,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDynDNS()
      */
     public void setDynDNS(Boolean value) {
         this.dynDNS = value;
     }
 
     /**
-     * Indicates support for IEEE 802.11 configuration.
+     * Gets the value of the dot11Configuration property.
+     * This getter has been renamed from isDot11Configuration() to getDot11Configuration() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDot11Configuration() {
+    public Boolean getDot11Configuration() {
         return dot11Configuration;
     }
 
@@ -219,15 +184,13 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDot11Configuration()
      */
     public void setDot11Configuration(Boolean value) {
         this.dot11Configuration = value;
     }
 
     /**
-     * Indicates the maximum number of Dot1X configurations supported by the
-     *               device
+     * Gets the value of the dot1XConfigurations property.
      * 
      * @return
      *     possible object is
@@ -245,21 +208,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getDot1XConfigurations()
      */
     public void setDot1XConfigurations(Integer value) {
         this.dot1XConfigurations = value;
     }
 
     /**
-     * Indicates support for retrieval of hostname from DHCP.
+     * Gets the value of the hostnameFromDHCP property.
+     * This getter has been renamed from isHostnameFromDHCP() to getHostnameFromDHCP() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isHostnameFromDHCP() {
+    public Boolean getHostnameFromDHCP() {
         return hostnameFromDHCP;
     }
 
@@ -270,15 +233,13 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isHostnameFromDHCP()
      */
     public void setHostnameFromDHCP(Boolean value) {
         this.hostnameFromDHCP = value;
     }
 
     /**
-     * Maximum number of NTP servers supported by the devices SetNTP
-     *               command.
+     * Gets the value of the ntp property.
      * 
      * @return
      *     possible object is
@@ -296,21 +257,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getNTP()
      */
     public void setNTP(Integer value) {
         this.ntp = value;
     }
 
     /**
-     * Indicates support for Stateful IPv6 DHCP.
+     * Gets the value of the dhcPv6 property.
+     * This getter has been renamed from isDHCPv6() to getDHCPv6() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDHCPv6() {
+    public Boolean getDHCPv6() {
         return dhcPv6;
     }
 
@@ -321,7 +282,6 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDHCPv6()
      */
     public void setDHCPv6(Boolean value) {
         this.dhcPv6 = value;
@@ -343,6 +303,16 @@ public class NetworkCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

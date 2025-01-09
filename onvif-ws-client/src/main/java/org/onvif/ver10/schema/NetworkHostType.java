@@ -7,20 +7,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
+ * <p>Java class for NetworkHostType.
  * 
- * 
- * <p>Java class for NetworkHostType</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="NetworkHostType">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="IPv4"/>
- *     <enumeration value="IPv6"/>
- *     <enumeration value="DNS"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="NetworkHostType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="IPv4"/&gt;
+ *     &lt;enumeration value="IPv6"/&gt;
+ *     &lt;enumeration value="DNS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "NetworkHostType")
@@ -38,26 +36,10 @@ public enum NetworkHostType {
         value = v;
     }
 
-    /**
-     * Gets the value associated to the enum constant.
-     * 
-     * @return
-     *     The value linked to the enum.
-     */
     public String value() {
         return value;
     }
 
-    /**
-     * Gets the enum associated to the value passed as parameter.
-     * 
-     * @param v
-     *     The value to get the enum from.
-     * @return
-     *     The enum which corresponds to the value, if it exists.
-     * @throws IllegalArgumentException
-     *     If no value matches in the enum declaration.
-     */
     public static NetworkHostType fromValue(String v) {
         for (NetworkHostType c: NetworkHostType.values()) {
             if (c.value.equals(v)) {

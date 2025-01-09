@@ -6,29 +6,33 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.accesscontrol.wsdl.AccessPointInfoBase;
 import org.onvif.ver10.accesscontrol.wsdl.AreaInfoBase;
 
 
 /**
- * General datastructure referenced by a token.
+ * 
+ *         General datastructure referenced by a token.
  *         Should be used as extension base.
+ *       
  * 
- * <p>Java class for DataEntity complex type</p>.
+ * <p>Java class for DataEntity complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="DataEntity">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *       </sequence>
- *       <attribute name="token" use="required" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" />
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="DataEntity"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -40,15 +44,11 @@ import org.onvif.ver10.accesscontrol.wsdl.AreaInfoBase;
 })
 public class DataEntity {
 
-    /**
-     * A service-unique identifier of the item.
-     * 
-     */
     @XmlAttribute(name = "token", required = true)
     protected String token;
 
     /**
-     * A service-unique identifier of the item.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -66,10 +66,19 @@ public class DataEntity {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

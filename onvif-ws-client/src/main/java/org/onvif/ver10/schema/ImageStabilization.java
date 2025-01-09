@@ -10,27 +10,29 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ImageStabilization complex type</p>.
+ * <p>Java class for ImageStabilization complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ImageStabilization">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ImageStabilizationMode"/>
- *         <element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImageStabilizationExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ImageStabilization"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ImageStabilizationMode"/&gt;
+ *         &lt;element name="Level" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImageStabilizationExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -42,26 +44,18 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImageStabilization {
 
-    /**
-     * Parameter to enable/disable Image Stabilization feature.
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected ImageStabilizationMode mode;
-    /**
-     * Optional level parameter (unit unspecified)
-     * 
-     */
     @XmlElement(name = "Level")
     protected Float level;
     @XmlElement(name = "Extension")
     protected ImageStabilizationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Parameter to enable/disable Image Stabilization feature.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -79,14 +73,13 @@ public class ImageStabilization {
      *     allowed object is
      *     {@link ImageStabilizationMode }
      *     
-     * @see #getMode()
      */
     public void setMode(ImageStabilizationMode value) {
         this.mode = value;
     }
 
     /**
-     * Optional level parameter (unit unspecified)
+     * Gets the value of the level property.
      * 
      * @return
      *     possible object is
@@ -104,7 +97,6 @@ public class ImageStabilization {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getLevel()
      */
     public void setLevel(Float value) {
         this.level = value;
@@ -150,6 +142,16 @@ public class ImageStabilization {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

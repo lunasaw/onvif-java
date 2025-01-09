@@ -12,36 +12,38 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Capabilities complex type</p>.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Capabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="Encoding" type="{http://www.onvif.org/ver10/recording/wsdl}EncodingTypes" />
- *       <attribute name="MaxRate" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="MaxTotalRate" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="MaxRecordings" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="MaxRecordingJobs" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       <attribute name="Options" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="MetadataRecording" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="SupportedExportFileFormats" type="{http://www.onvif.org/ver10/schema}StringAttrList" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Capabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Encoding" type="{http://www.onvif.org/ver10/recording/wsdl}EncodingTypes" /&gt;
+ *       &lt;attribute name="MaxRate" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="MaxTotalRate" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="MaxRecordings" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="MaxRecordingJobs" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="Options" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="MetadataRecording" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="SupportedExportFileFormats" type="{http://www.onvif.org/ver10/schema}StringAttrList" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -53,90 +55,42 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
-    /**
-     * Indication if the device supports dynamic creation and deletion of
-     *               recordings
-     * 
-     */
     @XmlAttribute(name = "DynamicRecordings")
     protected Boolean dynamicRecordings;
-    /**
-     * Indication if the device supports dynamic creation and deletion of
-     *               tracks
-     * 
-     */
     @XmlAttribute(name = "DynamicTracks")
     protected Boolean dynamicTracks;
-    /**
-     * Indication which encodings are supported for recording. The list may
-     *               contain one or more enumeration values of tt:VideoEncoding and tt:AudioEncoding. If
-     *               device does not support audio recording tt:AudioEncoding shall not be listed.
-     * 
-     */
     @XmlAttribute(name = "Encoding")
     protected List<String> encoding;
-    /**
-     * Maximum supported bit rate for all tracks of a recording in kBit/s.
-     * 
-     */
     @XmlAttribute(name = "MaxRate")
     protected Float maxRate;
-    /**
-     * Maximum supported bit rate for all recordings in kBit/s.
-     * 
-     */
     @XmlAttribute(name = "MaxTotalRate")
     protected Float maxTotalRate;
-    /**
-     * Maximum number of recordings supported. (Integer values only.)
-     * 
-     */
     @XmlAttribute(name = "MaxRecordings")
     protected Float maxRecordings;
-    /**
-     * Maximum total number of supported recording jobs by the device.
-     * 
-     */
     @XmlAttribute(name = "MaxRecordingJobs")
     protected Integer maxRecordingJobs;
-    /**
-     * Indication if the device supports the GetRecordingOptions command.
-     * 
-     */
     @XmlAttribute(name = "Options")
     protected Boolean options;
-    /**
-     * Indication if the device supports recording metadata.
-     * 
-     */
     @XmlAttribute(name = "MetadataRecording")
     protected Boolean metadataRecording;
-    /**
-     * Indication that the device supports ExportRecordedData command for the listed export
-     *               file formats.
-     *               The list shall return at least one export file format value. The value of 'ONVIF'
-     *               refers to
-     *               ONVIF Export File Format specification.
-     * 
-     */
     @XmlAttribute(name = "SupportedExportFileFormats")
     protected List<String> supportedExportFileFormats;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -144,29 +98,26 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
 
     /**
-     * Indication if the device supports dynamic creation and deletion of
-     *               recordings
+     * Gets the value of the dynamicRecordings property.
+     * This getter has been renamed from isDynamicRecordings() to getDynamicRecordings() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDynamicRecordings() {
+    public Boolean getDynamicRecordings() {
         return dynamicRecordings;
     }
 
@@ -177,22 +128,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDynamicRecordings()
      */
     public void setDynamicRecordings(Boolean value) {
         this.dynamicRecordings = value;
     }
 
     /**
-     * Indication if the device supports dynamic creation and deletion of
-     *               tracks
+     * Gets the value of the dynamicTracks property.
+     * This getter has been renamed from isDynamicTracks() to getDynamicTracks() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDynamicTracks() {
+    public Boolean getDynamicTracks() {
         return dynamicTracks;
     }
 
@@ -203,50 +153,42 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDynamicTracks()
      */
     public void setDynamicTracks(Boolean value) {
         this.dynamicTracks = value;
     }
 
     /**
-     * Indication which encodings are supported for recording. The list may
-     *               contain one or more enumeration values of tt:VideoEncoding and tt:AudioEncoding. If
-     *               device does not support audio recording tt:AudioEncoding shall not be listed.
-     * 
      * Gets the value of the encoding property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the encoding property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the encoding property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getEncoding().add(newItem);
+     *    getEncoding().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the encoding property.
      */
     public List<String> getEncoding() {
         if (encoding == null) {
-            encoding = new ArrayList<>();
+            encoding = new ArrayList<String>();
         }
         return this.encoding;
     }
 
     /**
-     * Maximum supported bit rate for all tracks of a recording in kBit/s.
+     * Gets the value of the maxRate property.
      * 
      * @return
      *     possible object is
@@ -264,14 +206,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getMaxRate()
      */
     public void setMaxRate(Float value) {
         this.maxRate = value;
     }
 
     /**
-     * Maximum supported bit rate for all recordings in kBit/s.
+     * Gets the value of the maxTotalRate property.
      * 
      * @return
      *     possible object is
@@ -289,14 +230,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getMaxTotalRate()
      */
     public void setMaxTotalRate(Float value) {
         this.maxTotalRate = value;
     }
 
     /**
-     * Maximum number of recordings supported. (Integer values only.)
+     * Gets the value of the maxRecordings property.
      * 
      * @return
      *     possible object is
@@ -314,14 +254,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getMaxRecordings()
      */
     public void setMaxRecordings(Float value) {
         this.maxRecordings = value;
     }
 
     /**
-     * Maximum total number of supported recording jobs by the device.
+     * Gets the value of the maxRecordingJobs property.
      * 
      * @return
      *     possible object is
@@ -339,21 +278,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getMaxRecordingJobs()
      */
     public void setMaxRecordingJobs(Integer value) {
         this.maxRecordingJobs = value;
     }
 
     /**
-     * Indication if the device supports the GetRecordingOptions command.
+     * Gets the value of the options property.
+     * This getter has been renamed from isOptions() to getOptions() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isOptions() {
+    public Boolean getOptions() {
         return options;
     }
 
@@ -364,21 +303,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isOptions()
      */
     public void setOptions(Boolean value) {
         this.options = value;
     }
 
     /**
-     * Indication if the device supports recording metadata.
+     * Gets the value of the metadataRecording property.
+     * This getter has been renamed from isMetadataRecording() to getMetadataRecording() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isMetadataRecording() {
+    public Boolean getMetadataRecording() {
         return metadataRecording;
     }
 
@@ -389,46 +328,36 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isMetadataRecording()
      */
     public void setMetadataRecording(Boolean value) {
         this.metadataRecording = value;
     }
 
     /**
-     * Indication that the device supports ExportRecordedData command for the listed export
-     *               file formats.
-     *               The list shall return at least one export file format value. The value of 'ONVIF'
-     *               refers to
-     *               ONVIF Export File Format specification.
-     * 
      * Gets the value of the supportedExportFileFormats property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedExportFileFormats property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the supportedExportFileFormats property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getSupportedExportFileFormats().add(newItem);
+     *    getSupportedExportFileFormats().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the supportedExportFileFormats property.
      */
     public List<String> getSupportedExportFileFormats() {
         if (supportedExportFileFormats == null) {
-            supportedExportFileFormats = new ArrayList<>();
+            supportedExportFileFormats = new ArrayList<String>();
         }
         return this.supportedExportFileFormats;
     }
@@ -449,6 +378,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

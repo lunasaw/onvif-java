@@ -12,30 +12,32 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for MulticastConfiguration complex type</p>.
+ * <p>Java class for MulticastConfiguration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="MulticastConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Address" type="{http://www.onvif.org/ver10/schema}IPAddress"/>
- *         <element name="Port" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="TTL" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="MulticastConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Address" type="{http://www.onvif.org/ver10/schema}IPAddress"/&gt;
+ *         &lt;element name="Port" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="TTL" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,45 +51,21 @@ import org.w3c.dom.Element;
 })
 public class MulticastConfiguration {
 
-    /**
-     * The multicast address (if this address is set to 0 no multicast
-     *             streaming is enaled)
-     * 
-     */
     @XmlElement(name = "Address", required = true)
     protected IPAddress address;
-    /**
-     * The RTP mutlicast destination port. A device may support RTCP. In this
-     *             case the port value shall be even to allow the corresponding RTCP stream to be mapped to
-     *             the next higher (odd) destination port number as defined in the RTSP specification.
-     * 
-     */
     @XmlElement(name = "Port")
     protected int port;
-    /**
-     * In case of IPv6 the TTL value is assumed as the hop limit. Note that for
-     *             IPV6 and administratively scoped IPv4 multicast the primary use for hop limit / TTL is
-     *             to prevent packets from (endlessly) circulating and not limiting scope. In these cases
-     *             the address contains the scope.
-     * 
-     */
     @XmlElement(name = "TTL")
     protected int ttl;
-    /**
-     * Read only property signalling that streaming is persistant. Use the
-     *             methods StartMulticastStreaming and StopMulticastStreaming to switch its state.
-     * 
-     */
     @XmlElement(name = "AutoStart")
     protected boolean autoStart;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * The multicast address (if this address is set to 0 no multicast
-     *             streaming is enaled)
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -105,16 +83,13 @@ public class MulticastConfiguration {
      *     allowed object is
      *     {@link IPAddress }
      *     
-     * @see #getAddress()
      */
     public void setAddress(IPAddress value) {
         this.address = value;
     }
 
     /**
-     * The RTP mutlicast destination port. A device may support RTCP. In this
-     *             case the port value shall be even to allow the corresponding RTCP stream to be mapped to
-     *             the next higher (odd) destination port number as defined in the RTSP specification.
+     * Gets the value of the port property.
      * 
      */
     public int getPort() {
@@ -130,10 +105,7 @@ public class MulticastConfiguration {
     }
 
     /**
-     * In case of IPv6 the TTL value is assumed as the hop limit. Note that for
-     *             IPV6 and administratively scoped IPv4 multicast the primary use for hop limit / TTL is
-     *             to prevent packets from (endlessly) circulating and not limiting scope. In these cases
-     *             the address contains the scope.
+     * Gets the value of the ttl property.
      * 
      */
     public int getTTL() {
@@ -149,11 +121,11 @@ public class MulticastConfiguration {
     }
 
     /**
-     * Read only property signalling that streaming is persistant. Use the
-     *             methods StartMulticastStreaming and StopMulticastStreaming to switch its state.
+     * Gets the value of the autoStart property.
+     * This getter has been renamed from isAutoStart() to getAutoStart() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isAutoStart() {
+    public boolean getAutoStart() {
         return autoStart;
     }
 
@@ -168,16 +140,16 @@ public class MulticastConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -185,15 +157,12 @@ public class MulticastConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -214,6 +183,16 @@ public class MulticastConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

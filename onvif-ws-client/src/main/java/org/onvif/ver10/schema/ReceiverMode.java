@@ -7,21 +7,19 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * Specifies a receiver connection mode.
+ * <p>Java class for ReceiverMode.
  * 
- * <p>Java class for ReceiverMode</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="ReceiverMode">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AutoConnect"/>
- *     <enumeration value="AlwaysConnect"/>
- *     <enumeration value="NeverConnect"/>
- *     <enumeration value="Unknown"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="ReceiverMode"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AutoConnect"/&gt;
+ *     &lt;enumeration value="AlwaysConnect"/&gt;
+ *     &lt;enumeration value="NeverConnect"/&gt;
+ *     &lt;enumeration value="Unknown"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "ReceiverMode")
@@ -32,6 +30,7 @@ public enum ReceiverMode {
     /**
      * The receiver connects on demand, as required by consumers of the media
      *             streams.
+     *           
      * 
      */
     @XmlEnumValue("AutoConnect")
@@ -40,6 +39,7 @@ public enum ReceiverMode {
     /**
      * The receiver attempts to maintain a persistent connection to the
      *             configured endpoint.
+     *           
      * 
      */
     @XmlEnumValue("AlwaysConnect")
@@ -64,26 +64,10 @@ public enum ReceiverMode {
         value = v;
     }
 
-    /**
-     * Gets the value associated to the enum constant.
-     * 
-     * @return
-     *     The value linked to the enum.
-     */
     public String value() {
         return value;
     }
 
-    /**
-     * Gets the enum associated to the value passed as parameter.
-     * 
-     * @param v
-     *     The value to get the enum from.
-     * @return
-     *     The enum which corresponds to the value, if it exists.
-     * @throws IllegalArgumentException
-     *     If no value matches in the enum declaration.
-     */
     public static ReceiverMode fromValue(String v) {
         for (ReceiverMode c: ReceiverMode.values()) {
             if (c.value.equals(v)) {

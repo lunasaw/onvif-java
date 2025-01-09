@@ -9,31 +9,33 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Representation of a physical video outputs.
  * 
- * <p>Java class for VideoOutput complex type</p>.
+ * <p>Java class for VideoOutput complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoOutput">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/schema}DeviceEntity">
- *       <sequence>
- *         <element name="Layout" type="{http://www.onvif.org/ver10/schema}Layout"/>
- *         <element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution" minOccurs="0"/>
- *         <element name="RefreshRate" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="AspectRatio" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoOutputExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoOutput"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Layout" type="{http://www.onvif.org/ver10/schema}Layout"/&gt;
+ *         &lt;element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution" minOccurs="0"/&gt;
+ *         &lt;element name="RefreshRate" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="AspectRatio" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoOutputExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -51,29 +53,16 @@ public class VideoOutput
 
     @XmlElement(name = "Layout", required = true)
     protected Layout layout;
-    /**
-     * Resolution of the display in Pixel.
-     * 
-     */
     @XmlElement(name = "Resolution")
     protected VideoResolution resolution;
-    /**
-     * Refresh rate of the display in Hertz.
-     * 
-     */
     @XmlElement(name = "RefreshRate")
     protected Float refreshRate;
-    /**
-     * Aspect ratio of the display as physical extent of width divided by
-     *                 height.
-     * 
-     */
     @XmlElement(name = "AspectRatio")
     protected Float aspectRatio;
     @XmlElement(name = "Extension")
     protected VideoOutputExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the layout property.
@@ -100,7 +89,7 @@ public class VideoOutput
     }
 
     /**
-     * Resolution of the display in Pixel.
+     * Gets the value of the resolution property.
      * 
      * @return
      *     possible object is
@@ -118,14 +107,13 @@ public class VideoOutput
      *     allowed object is
      *     {@link VideoResolution }
      *     
-     * @see #getResolution()
      */
     public void setResolution(VideoResolution value) {
         this.resolution = value;
     }
 
     /**
-     * Refresh rate of the display in Hertz.
+     * Gets the value of the refreshRate property.
      * 
      * @return
      *     possible object is
@@ -143,15 +131,13 @@ public class VideoOutput
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getRefreshRate()
      */
     public void setRefreshRate(Float value) {
         this.refreshRate = value;
     }
 
     /**
-     * Aspect ratio of the display as physical extent of width divided by
-     *                 height.
+     * Gets the value of the aspectRatio property.
      * 
      * @return
      *     possible object is
@@ -169,7 +155,6 @@ public class VideoOutput
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getAspectRatio()
      */
     public void setAspectRatio(Float value) {
         this.aspectRatio = value;
@@ -215,6 +200,16 @@ public class VideoOutput
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

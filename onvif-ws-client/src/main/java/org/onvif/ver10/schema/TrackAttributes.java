@@ -9,29 +9,31 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for TrackAttributes complex type</p>.
+ * <p>Java class for TrackAttributes complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="TrackAttributes">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="TrackInformation" type="{http://www.onvif.org/ver10/schema}TrackInformation"/>
- *         <element name="VideoAttributes" type="{http://www.onvif.org/ver10/schema}VideoAttributes" minOccurs="0"/>
- *         <element name="AudioAttributes" type="{http://www.onvif.org/ver10/schema}AudioAttributes" minOccurs="0"/>
- *         <element name="MetadataAttributes" type="{http://www.onvif.org/ver10/schema}MetadataAttributes" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}TrackAttributesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="TrackAttributes"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="TrackInformation" type="{http://www.onvif.org/ver10/schema}TrackInformation"/&gt;
+ *         &lt;element name="VideoAttributes" type="{http://www.onvif.org/ver10/schema}VideoAttributes" minOccurs="0"/&gt;
+ *         &lt;element name="AudioAttributes" type="{http://www.onvif.org/ver10/schema}AudioAttributes" minOccurs="0"/&gt;
+ *         &lt;element name="MetadataAttributes" type="{http://www.onvif.org/ver10/schema}MetadataAttributes" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}TrackAttributesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,42 +47,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class TrackAttributes {
 
-    /**
-     * The basic information about the track. Note that a track may represent a
-     *             single contiguous time span or consist of multiple slices.
-     * 
-     */
     @XmlElement(name = "TrackInformation", required = true)
     protected TrackInformation trackInformation;
-    /**
-     * If the track is a video track, exactly one of this structure shall be
-     *             present and contain the video attributes.
-     * 
-     */
     @XmlElement(name = "VideoAttributes")
     protected VideoAttributes videoAttributes;
-    /**
-     * If the track is an audio track, exactly one of this structure shall be
-     *             present and contain the audio attributes.
-     * 
-     */
     @XmlElement(name = "AudioAttributes")
     protected AudioAttributes audioAttributes;
-    /**
-     * If the track is an metadata track, exactly one of this structure shall
-     *             be present and contain the metadata attributes.
-     * 
-     */
     @XmlElement(name = "MetadataAttributes")
     protected MetadataAttributes metadataAttributes;
     @XmlElement(name = "Extension")
     protected TrackAttributesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * The basic information about the track. Note that a track may represent a
-     *             single contiguous time span or consist of multiple slices.
+     * Gets the value of the trackInformation property.
      * 
      * @return
      *     possible object is
@@ -98,15 +79,13 @@ public class TrackAttributes {
      *     allowed object is
      *     {@link TrackInformation }
      *     
-     * @see #getTrackInformation()
      */
     public void setTrackInformation(TrackInformation value) {
         this.trackInformation = value;
     }
 
     /**
-     * If the track is a video track, exactly one of this structure shall be
-     *             present and contain the video attributes.
+     * Gets the value of the videoAttributes property.
      * 
      * @return
      *     possible object is
@@ -124,15 +103,13 @@ public class TrackAttributes {
      *     allowed object is
      *     {@link VideoAttributes }
      *     
-     * @see #getVideoAttributes()
      */
     public void setVideoAttributes(VideoAttributes value) {
         this.videoAttributes = value;
     }
 
     /**
-     * If the track is an audio track, exactly one of this structure shall be
-     *             present and contain the audio attributes.
+     * Gets the value of the audioAttributes property.
      * 
      * @return
      *     possible object is
@@ -150,15 +127,13 @@ public class TrackAttributes {
      *     allowed object is
      *     {@link AudioAttributes }
      *     
-     * @see #getAudioAttributes()
      */
     public void setAudioAttributes(AudioAttributes value) {
         this.audioAttributes = value;
     }
 
     /**
-     * If the track is an metadata track, exactly one of this structure shall
-     *             be present and contain the metadata attributes.
+     * Gets the value of the metadataAttributes property.
      * 
      * @return
      *     possible object is
@@ -176,7 +151,6 @@ public class TrackAttributes {
      *     allowed object is
      *     {@link MetadataAttributes }
      *     
-     * @see #getMetadataAttributes()
      */
     public void setMetadataAttributes(MetadataAttributes value) {
         this.metadataAttributes = value;
@@ -222,6 +196,16 @@ public class TrackAttributes {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

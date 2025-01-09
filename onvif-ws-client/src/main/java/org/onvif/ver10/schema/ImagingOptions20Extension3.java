@@ -5,27 +5,29 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ImagingOptions20Extension3 complex type</p>.
+ * <p>Java class for ImagingOptions20Extension3 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ImagingOptions20Extension3">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="ToneCompensationOptions" type="{http://www.onvif.org/ver10/schema}ToneCompensationOptions" minOccurs="0"/>
- *         <element name="DefoggingOptions" type="{http://www.onvif.org/ver10/schema}DefoggingOptions" minOccurs="0"/>
- *         <element name="NoiseReductionOptions" type="{http://www.onvif.org/ver10/schema}NoiseReductionOptions" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension4" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ImagingOptions20Extension3"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ToneCompensationOptions" type="{http://www.onvif.org/ver10/schema}ToneCompensationOptions" minOccurs="0"/&gt;
+ *         &lt;element name="DefoggingOptions" type="{http://www.onvif.org/ver10/schema}DefoggingOptions" minOccurs="0"/&gt;
+ *         &lt;element name="NoiseReductionOptions" type="{http://www.onvif.org/ver10/schema}NoiseReductionOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension4" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -38,29 +40,17 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImagingOptions20Extension3 {
 
-    /**
-     * Options of parameters for Tone Compensation feature.
-     * 
-     */
     @XmlElement(name = "ToneCompensationOptions")
     protected ToneCompensationOptions toneCompensationOptions;
-    /**
-     * Options of parameters for Defogging feature.
-     * 
-     */
     @XmlElement(name = "DefoggingOptions")
     protected DefoggingOptions defoggingOptions;
-    /**
-     * Options of parameter for Noise Reduction feature.
-     * 
-     */
     @XmlElement(name = "NoiseReductionOptions")
     protected NoiseReductionOptions noiseReductionOptions;
     @XmlElement(name = "Extension")
     protected ImagingOptions20Extension4 extension;
 
     /**
-     * Options of parameters for Tone Compensation feature.
+     * Gets the value of the toneCompensationOptions property.
      * 
      * @return
      *     possible object is
@@ -78,14 +68,13 @@ public class ImagingOptions20Extension3 {
      *     allowed object is
      *     {@link ToneCompensationOptions }
      *     
-     * @see #getToneCompensationOptions()
      */
     public void setToneCompensationOptions(ToneCompensationOptions value) {
         this.toneCompensationOptions = value;
     }
 
     /**
-     * Options of parameters for Defogging feature.
+     * Gets the value of the defoggingOptions property.
      * 
      * @return
      *     possible object is
@@ -103,14 +92,13 @@ public class ImagingOptions20Extension3 {
      *     allowed object is
      *     {@link DefoggingOptions }
      *     
-     * @see #getDefoggingOptions()
      */
     public void setDefoggingOptions(DefoggingOptions value) {
         this.defoggingOptions = value;
     }
 
     /**
-     * Options of parameter for Noise Reduction feature.
+     * Gets the value of the noiseReductionOptions property.
      * 
      * @return
      *     possible object is
@@ -128,7 +116,6 @@ public class ImagingOptions20Extension3 {
      *     allowed object is
      *     {@link NoiseReductionOptions }
      *     
-     * @see #getNoiseReductionOptions()
      */
     public void setNoiseReductionOptions(NoiseReductionOptions value) {
         this.noiseReductionOptions = value;
@@ -156,6 +143,16 @@ public class ImagingOptions20Extension3 {
      */
     public void setExtension(ImagingOptions20Extension4 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

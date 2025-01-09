@@ -6,19 +6,17 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
+ * <p>Java class for AutoFocusMode.
  * 
- * 
- * <p>Java class for AutoFocusMode</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="AutoFocusMode">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="AUTO"/>
- *     <enumeration value="MANUAL"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="AutoFocusMode"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AUTO"/&gt;
+ *     &lt;enumeration value="MANUAL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "AutoFocusMode")

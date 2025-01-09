@@ -11,29 +11,31 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for RecordingJobConfiguration complex type</p>.
+ * <p>Java class for RecordingJobConfiguration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RecordingJobConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}RecordingJobMode"/>
- *         <element name="Priority" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingJobSource" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}RecordingJobConfigurationExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RecordingJobConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RecordingToken" type="{http://www.onvif.org/ver10/schema}RecordingReference"/&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}RecordingJobMode"/&gt;
+ *         &lt;element name="Priority" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Source" type="{http://www.onvif.org/ver10/schema}RecordingJobSource" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}RecordingJobConfigurationExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -47,56 +49,21 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class RecordingJobConfiguration {
 
-    /**
-     * Identifies the recording to which this job shall store the received
-     *             data.
-     * 
-     */
     @XmlElement(name = "RecordingToken", required = true)
     protected String recordingToken;
-    /**
-     * The mode of the job. If it is idle, nothing shall happen. If it is
-     *             active, the device shall try
-     *             to obtain data from the receivers. A tests shall use GetRecordingJobState to determine
-     *             if data transfer is really taking place.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
-     * </pre>
-     * 
-     *             The only valid values for Mode shall be “Idle” and “Active”.
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     protected String mode;
-    /**
-     * This shall be a non-negative number. If there are multiple recording
-     *             jobs that store data to
-     *             the same track, the device will only store the data for the recording job with the
-     *             highest
-     *             priority. The priority is specified per recording job, but the device shall determine
-     *             the priority
-     *             of each track individually. If there are two recording jobs with the same priority, the
-     *             device
-     *             shall record the data corresponding to the recording job that was activated the latest.
-     * 
-     */
     @XmlElement(name = "Priority")
     protected int priority;
-    /**
-     * Source of the recording.
-     * 
-     */
     @XmlElement(name = "Source")
     protected List<RecordingJobSource> source;
     @XmlElement(name = "Extension")
     protected RecordingJobConfigurationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Identifies the recording to which this job shall store the received
-     *             data.
+     * Gets the value of the recordingToken property.
      * 
      * @return
      *     possible object is
@@ -114,23 +81,13 @@ public class RecordingJobConfiguration {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getRecordingToken()
      */
     public void setRecordingToken(String value) {
         this.recordingToken = value;
     }
 
     /**
-     * The mode of the job. If it is idle, nothing shall happen. If it is
-     *             active, the device shall try
-     *             to obtain data from the receivers. A tests shall use GetRecordingJobState to determine
-     *             if data transfer is really taking place.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;br xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"/&gt;
-     * </pre>
-     * 
-     *             The only valid values for Mode shall be “Idle” and “Active”.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -148,22 +105,13 @@ public class RecordingJobConfiguration {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getMode()
      */
     public void setMode(String value) {
         this.mode = value;
     }
 
     /**
-     * This shall be a non-negative number. If there are multiple recording
-     *             jobs that store data to
-     *             the same track, the device will only store the data for the recording job with the
-     *             highest
-     *             priority. The priority is specified per recording job, but the device shall determine
-     *             the priority
-     *             of each track individually. If there are two recording jobs with the same priority, the
-     *             device
-     *             shall record the data corresponding to the recording job that was activated the latest.
+     * Gets the value of the priority property.
      * 
      */
     public int getPriority() {
@@ -179,35 +127,30 @@ public class RecordingJobConfiguration {
     }
 
     /**
-     * Source of the recording.
-     * 
      * Gets the value of the source property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the source property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the source property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getSource().add(newItem);
+     *    getSource().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link RecordingJobSource }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the source property.
      */
     public List<RecordingJobSource> getSource() {
         if (source == null) {
-            source = new ArrayList<>();
+            source = new ArrayList<RecordingJobSource>();
         }
         return this.source;
     }
@@ -252,6 +195,16 @@ public class RecordingJobConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -8,26 +8,28 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.oasis_open.docs.wsrf.bf_2.BaseFaultType;
 
 
 /**
- * <p>Java class for UnrecognizedPolicyRequestFaultType complex type</p>.
+ * <p>Java class for UnrecognizedPolicyRequestFaultType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="UnrecognizedPolicyRequestFaultType">
- *   <complexContent>
- *     <extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType">
- *       <sequence>
- *         <element name="UnrecognizedPolicy" type="{http://www.w3.org/2001/XMLSchema}QName" maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax' namespace='##other'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="UnrecognizedPolicyRequestFaultType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://docs.oasis-open.org/wsrf/bf-2}BaseFaultType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="UnrecognizedPolicy" type="{http://www.w3.org/2001/XMLSchema}QName" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,33 +47,40 @@ public class UnrecognizedPolicyRequestFaultType
     /**
      * Gets the value of the unrecognizedPolicy property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the unrecognizedPolicy property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the unrecognizedPolicy property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getUnrecognizedPolicy().add(newItem);
+     *    getUnrecognizedPolicy().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link QName }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the unrecognizedPolicy property.
      */
     public List<QName> getUnrecognizedPolicy() {
         if (unrecognizedPolicy == null) {
-            unrecognizedPolicy = new ArrayList<>();
+            unrecognizedPolicy = new ArrayList<QName>();
         }
         return this.unrecognizedPolicy;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

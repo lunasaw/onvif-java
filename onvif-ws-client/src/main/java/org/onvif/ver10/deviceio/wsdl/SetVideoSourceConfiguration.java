@@ -9,28 +9,30 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.VideoSourceConfiguration;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Configuration" type="{http://www.onvif.org/ver10/schema}VideoSourceConfiguration"/>
- *         <element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Configuration" type="{http://www.onvif.org/ver10/schema}VideoSourceConfiguration"/&gt;
+ *         &lt;element name="ForcePersistence" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,13 +47,6 @@ public class SetVideoSourceConfiguration {
 
     @XmlElement(name = "Configuration", required = true)
     protected VideoSourceConfiguration configuration;
-    /**
-     * The ForcePersistence element determines how configuration
-     *                   changes shall be stored. If true, changes shall be persistent. If false, changes
-     *                   MAY revert to previous values
-     *                   after reboot.
-     * 
-     */
     @XmlElement(name = "ForcePersistence")
     protected boolean forcePersistence;
     @XmlAnyElement(lax = true)
@@ -82,13 +77,11 @@ public class SetVideoSourceConfiguration {
     }
 
     /**
-     * The ForcePersistence element determines how configuration
-     *                   changes shall be stored. If true, changes shall be persistent. If false, changes
-     *                   MAY revert to previous values
-     *                   after reboot.
+     * Gets the value of the forcePersistence property.
+     * This getter has been renamed from isForcePersistence() to getForcePersistence() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isForcePersistence() {
+    public boolean getForcePersistence() {
         return forcePersistence;
     }
 
@@ -103,16 +96,16 @@ public class SetVideoSourceConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -120,17 +113,24 @@ public class SetVideoSourceConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

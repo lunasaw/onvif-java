@@ -10,32 +10,35 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * General date time inforamtion returned by the GetSystemDateTime method.
+ *       
  * 
- * <p>Java class for SystemDateTime complex type</p>.
+ * <p>Java class for SystemDateTime complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SystemDateTime">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="DateTimeType" type="{http://www.onvif.org/ver10/schema}SetDateTimeType"/>
- *         <element name="DaylightSavings" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="TimeZone" type="{http://www.onvif.org/ver10/schema}TimeZone" minOccurs="0"/>
- *         <element name="UTCDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/>
- *         <element name="LocalDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemDateTimeExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SystemDateTime"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="DateTimeType" type="{http://www.onvif.org/ver10/schema}SetDateTimeType"/&gt;
+ *         &lt;element name="DaylightSavings" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="TimeZone" type="{http://www.onvif.org/ver10/schema}TimeZone" minOccurs="0"/&gt;
+ *         &lt;element name="UTCDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="LocalDateTime" type="{http://www.onvif.org/ver10/schema}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}SystemDateTimeExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,45 +53,24 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class SystemDateTime {
 
-    /**
-     * Indicates if the time is set manully or through NTP.
-     * 
-     */
     @XmlElement(name = "DateTimeType", required = true)
     @XmlSchemaType(name = "string")
     protected SetDateTimeType dateTimeType;
-    /**
-     * Informative indicator whether daylight savings is currently on/off.
-     * 
-     */
     @XmlElement(name = "DaylightSavings")
     protected boolean daylightSavings;
-    /**
-     * Timezone information in Posix format.
-     * 
-     */
     @XmlElement(name = "TimeZone")
     protected TimeZone timeZone;
-    /**
-     * Current system date and time in UTC format. This field is mandatory
-     *             since version 2.0.
-     * 
-     */
     @XmlElement(name = "UTCDateTime")
     protected DateTime utcDateTime;
-    /**
-     * Date and time in local format.
-     * 
-     */
     @XmlElement(name = "LocalDateTime")
     protected DateTime localDateTime;
     @XmlElement(name = "Extension")
     protected SystemDateTimeExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates if the time is set manully or through NTP.
+     * Gets the value of the dateTimeType property.
      * 
      * @return
      *     possible object is
@@ -106,17 +88,17 @@ public class SystemDateTime {
      *     allowed object is
      *     {@link SetDateTimeType }
      *     
-     * @see #getDateTimeType()
      */
     public void setDateTimeType(SetDateTimeType value) {
         this.dateTimeType = value;
     }
 
     /**
-     * Informative indicator whether daylight savings is currently on/off.
+     * Gets the value of the daylightSavings property.
+     * This getter has been renamed from isDaylightSavings() to getDaylightSavings() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDaylightSavings() {
+    public boolean getDaylightSavings() {
         return daylightSavings;
     }
 
@@ -129,7 +111,7 @@ public class SystemDateTime {
     }
 
     /**
-     * Timezone information in Posix format.
+     * Gets the value of the timeZone property.
      * 
      * @return
      *     possible object is
@@ -147,15 +129,13 @@ public class SystemDateTime {
      *     allowed object is
      *     {@link TimeZone }
      *     
-     * @see #getTimeZone()
      */
     public void setTimeZone(TimeZone value) {
         this.timeZone = value;
     }
 
     /**
-     * Current system date and time in UTC format. This field is mandatory
-     *             since version 2.0.
+     * Gets the value of the utcDateTime property.
      * 
      * @return
      *     possible object is
@@ -173,14 +153,13 @@ public class SystemDateTime {
      *     allowed object is
      *     {@link DateTime }
      *     
-     * @see #getUTCDateTime()
      */
     public void setUTCDateTime(DateTime value) {
         this.utcDateTime = value;
     }
 
     /**
-     * Date and time in local format.
+     * Gets the value of the localDateTime property.
      * 
      * @return
      *     possible object is
@@ -198,7 +177,6 @@ public class SystemDateTime {
      *     allowed object is
      *     {@link DateTime }
      *     
-     * @see #getLocalDateTime()
      */
     public void setLocalDateTime(DateTime value) {
         this.localDateTime = value;
@@ -244,6 +222,16 @@ public class SystemDateTime {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

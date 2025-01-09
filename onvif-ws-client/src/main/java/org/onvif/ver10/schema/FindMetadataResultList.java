@@ -8,25 +8,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for FindMetadataResultList complex type</p>.
+ * <p>Java class for FindMetadataResultList complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="FindMetadataResultList">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="SearchState" type="{http://www.onvif.org/ver10/schema}SearchState"/>
- *         <element name="Result" type="{http://www.onvif.org/ver10/schema}FindMetadataResult" maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="FindMetadataResultList"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SearchState" type="{http://www.onvif.org/ver10/schema}SearchState"/&gt;
+ *         &lt;element name="Result" type="{http://www.onvif.org/ver10/schema}FindMetadataResult" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,25 +39,14 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FindMetadataResultList {
 
-    /**
-     * The state of the search when the result is returned. Indicates if there
-     *             can be more results, or if the search is completed.
-     * 
-     */
     @XmlElement(name = "SearchState", required = true)
     @XmlSchemaType(name = "string")
     protected SearchState searchState;
-    /**
-     * A FindMetadataResult structure for each found set of Metadata matching
-     *             the search.
-     * 
-     */
     @XmlElement(name = "Result")
     protected List<FindMetadataResult> result;
 
     /**
-     * The state of the search when the result is returned. Indicates if there
-     *             can be more results, or if the search is completed.
+     * Gets the value of the searchState property.
      * 
      * @return
      *     possible object is
@@ -73,45 +64,48 @@ public class FindMetadataResultList {
      *     allowed object is
      *     {@link SearchState }
      *     
-     * @see #getSearchState()
      */
     public void setSearchState(SearchState value) {
         this.searchState = value;
     }
 
     /**
-     * A FindMetadataResult structure for each found set of Metadata matching
-     *             the search.
-     * 
      * Gets the value of the result property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the result property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the result property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getResult().add(newItem);
+     *    getResult().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FindMetadataResult }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the result property.
      */
     public List<FindMetadataResult> getResult() {
         if (result == null) {
-            result = new ArrayList<>();
+            result = new ArrayList<FindMetadataResult>();
         }
         return this.result;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

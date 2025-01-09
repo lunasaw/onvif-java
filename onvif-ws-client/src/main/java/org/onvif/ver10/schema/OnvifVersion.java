@@ -5,25 +5,27 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for OnvifVersion complex type</p>.
+ * <p>Java class for OnvifVersion complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="OnvifVersion">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Major" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="Minor" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="OnvifVersion"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Major" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Minor" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,22 +36,13 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OnvifVersion {
 
-    /**
-     * Major version number.
-     * 
-     */
     @XmlElement(name = "Major")
     protected int major;
-    /**
-     * Two digit minor version number (e.g. X.0.1 maps to "01" and X.2.1 maps
-     *             to "21" where X stands for Major version number).
-     * 
-     */
     @XmlElement(name = "Minor")
     protected int minor;
 
     /**
-     * Major version number.
+     * Gets the value of the major property.
      * 
      */
     public int getMajor() {
@@ -65,8 +58,7 @@ public class OnvifVersion {
     }
 
     /**
-     * Two digit minor version number (e.g. X.0.1 maps to "01" and X.2.1 maps
-     *             to "21" where X stands for Major version number).
+     * Gets the value of the minor property.
      * 
      */
     public int getMinor() {
@@ -79,6 +71,16 @@ public class OnvifVersion {
      */
     public void setMinor(int value) {
         this.minor = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

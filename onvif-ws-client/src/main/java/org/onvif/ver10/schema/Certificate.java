@@ -8,25 +8,27 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Certificate complex type</p>.
+ * <p>Java class for Certificate complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Certificate">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="CertificateID" type="{http://www.w3.org/2001/XMLSchema}token"/>
- *         <element name="Certificate" type="{http://www.onvif.org/ver10/schema}BinaryData"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Certificate"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="CertificateID" type="{http://www.w3.org/2001/XMLSchema}token"/&gt;
+ *         &lt;element name="Certificate" type="{http://www.onvif.org/ver10/schema}BinaryData"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,23 +39,15 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class Certificate {
 
-    /**
-     * Certificate id.
-     * 
-     */
     @XmlElement(name = "CertificateID", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String certificateID;
-    /**
-     * base64 encoded DER representation of certificate.
-     * 
-     */
     @XmlElement(name = "Certificate", required = true)
     protected BinaryData certificate;
 
     /**
-     * Certificate id.
+     * Gets the value of the certificateID property.
      * 
      * @return
      *     possible object is
@@ -71,14 +65,13 @@ public class Certificate {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getCertificateID()
      */
     public void setCertificateID(String value) {
         this.certificateID = value;
     }
 
     /**
-     * base64 encoded DER representation of certificate.
+     * Gets the value of the certificate property.
      * 
      * @return
      *     possible object is
@@ -96,10 +89,19 @@ public class Certificate {
      *     allowed object is
      *     {@link BinaryData }
      *     
-     * @see #getCertificate()
      */
     public void setCertificate(BinaryData value) {
         this.certificate = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

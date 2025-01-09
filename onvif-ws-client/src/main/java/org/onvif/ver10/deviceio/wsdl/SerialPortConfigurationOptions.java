@@ -13,6 +13,8 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.FloatList;
 import org.onvif.ver10.schema.IntList;
 import org.w3c.dom.Element;
@@ -20,28 +22,29 @@ import org.w3c.dom.Element;
 
 /**
  * The configuration options that relates to serial port.
+ *           
  * 
- * <p>Java class for SerialPortConfigurationOptions complex type</p>.
+ * <p>Java class for SerialPortConfigurationOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SerialPortConfigurationOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="BaudRateList" type="{http://www.onvif.org/ver10/schema}IntList"/>
- *         <element name="ParityBitList" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBitList"/>
- *         <element name="CharacterLengthList" type="{http://www.onvif.org/ver10/schema}IntList"/>
- *         <element name="StopBitList" type="{http://www.onvif.org/ver10/schema}FloatList"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SerialPortConfigurationOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BaudRateList" type="{http://www.onvif.org/ver10/schema}IntList"/&gt;
+ *         &lt;element name="ParityBitList" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBitList"/&gt;
+ *         &lt;element name="CharacterLengthList" type="{http://www.onvif.org/ver10/schema}IntList"/&gt;
+ *         &lt;element name="StopBitList" type="{http://www.onvif.org/ver10/schema}FloatList"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -55,29 +58,12 @@ import org.w3c.dom.Element;
 })
 public class SerialPortConfigurationOptions {
 
-    /**
-     * The list of configurable transfer bitrate.
-     * 
-     */
     @XmlElement(name = "BaudRateList", required = true)
     protected IntList baudRateList;
-    /**
-     * The list of configurable parity for the data error detection.
-     * 
-     */
     @XmlElement(name = "ParityBitList", required = true)
     protected ParityBitList parityBitList;
-    /**
-     * The list of configurable bit length for each character.
-     * 
-     */
     @XmlElement(name = "CharacterLengthList", required = true)
     protected IntList characterLengthList;
-    /**
-     * The list of configurable number of stop bits used to terminate each
-     *                 character.
-     * 
-     */
     @XmlElement(name = "StopBitList", required = true)
     protected FloatList stopBitList;
     @XmlAnyElement(lax = true)
@@ -85,10 +71,10 @@ public class SerialPortConfigurationOptions {
     @XmlAttribute(name = "token", required = true)
     protected String token;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * The list of configurable transfer bitrate.
+     * Gets the value of the baudRateList property.
      * 
      * @return
      *     possible object is
@@ -106,14 +92,13 @@ public class SerialPortConfigurationOptions {
      *     allowed object is
      *     {@link IntList }
      *     
-     * @see #getBaudRateList()
      */
     public void setBaudRateList(IntList value) {
         this.baudRateList = value;
     }
 
     /**
-     * The list of configurable parity for the data error detection.
+     * Gets the value of the parityBitList property.
      * 
      * @return
      *     possible object is
@@ -131,14 +116,13 @@ public class SerialPortConfigurationOptions {
      *     allowed object is
      *     {@link ParityBitList }
      *     
-     * @see #getParityBitList()
      */
     public void setParityBitList(ParityBitList value) {
         this.parityBitList = value;
     }
 
     /**
-     * The list of configurable bit length for each character.
+     * Gets the value of the characterLengthList property.
      * 
      * @return
      *     possible object is
@@ -156,15 +140,13 @@ public class SerialPortConfigurationOptions {
      *     allowed object is
      *     {@link IntList }
      *     
-     * @see #getCharacterLengthList()
      */
     public void setCharacterLengthList(IntList value) {
         this.characterLengthList = value;
     }
 
     /**
-     * The list of configurable number of stop bits used to terminate each
-     *                 character.
+     * Gets the value of the stopBitList property.
      * 
      * @return
      *     possible object is
@@ -182,7 +164,6 @@ public class SerialPortConfigurationOptions {
      *     allowed object is
      *     {@link FloatList }
      *     
-     * @see #getStopBitList()
      */
     public void setStopBitList(FloatList value) {
         this.stopBitList = value;
@@ -191,16 +172,16 @@ public class SerialPortConfigurationOptions {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -208,15 +189,12 @@ public class SerialPortConfigurationOptions {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
@@ -261,6 +239,16 @@ public class SerialPortConfigurationOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

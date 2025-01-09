@@ -6,26 +6,28 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Space2DDescription complex type</p>.
+ * <p>Java class for Space2DDescription complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Space2DDescription">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="URI" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <element name="XRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
- *         <element name="YRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Space2DDescription"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="URI" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="XRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
+ *         &lt;element name="YRange" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,28 +39,16 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Space2DDescription {
 
-    /**
-     * A URI of coordinate systems.
-     * 
-     */
     @XmlElement(name = "URI", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String uri;
-    /**
-     * A range of x-axis.
-     * 
-     */
     @XmlElement(name = "XRange", required = true)
     protected FloatRange xRange;
-    /**
-     * A range of y-axis.
-     * 
-     */
     @XmlElement(name = "YRange", required = true)
     protected FloatRange yRange;
 
     /**
-     * A URI of coordinate systems.
+     * Gets the value of the uri property.
      * 
      * @return
      *     possible object is
@@ -76,14 +66,13 @@ public class Space2DDescription {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getURI()
      */
     public void setURI(String value) {
         this.uri = value;
     }
 
     /**
-     * A range of x-axis.
+     * Gets the value of the xRange property.
      * 
      * @return
      *     possible object is
@@ -101,14 +90,13 @@ public class Space2DDescription {
      *     allowed object is
      *     {@link FloatRange }
      *     
-     * @see #getXRange()
      */
     public void setXRange(FloatRange value) {
         this.xRange = value;
     }
 
     /**
-     * A range of y-axis.
+     * Gets the value of the yRange property.
      * 
      * @return
      *     possible object is
@@ -126,10 +114,19 @@ public class Space2DDescription {
      *     allowed object is
      *     {@link FloatRange }
      *     
-     * @see #getYRange()
      */
     public void setYRange(FloatRange value) {
         this.yRange = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

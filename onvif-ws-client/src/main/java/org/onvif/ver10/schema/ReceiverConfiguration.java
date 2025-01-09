@@ -13,31 +13,35 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * Describes the configuration of a receiver.
  * 
- * <p>Java class for ReceiverConfiguration complex type</p>.
+ *         Describes the configuration of a receiver.
+ *       
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>Java class for ReceiverConfiguration complex type.
  * 
- * <pre>{@code
- * <complexType name="ReceiverConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Mode" type="{http://www.onvif.org/ver10/schema}ReceiverMode"/>
- *         <element name="MediaUri" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <element name="StreamSetup" type="{http://www.onvif.org/ver10/schema}StreamSetup"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="ReceiverConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ReceiverMode"/&gt;
+ *         &lt;element name="MediaUri" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="StreamSetup" type="{http://www.onvif.org/ver10/schema}StreamSetup"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,33 +54,21 @@ import org.w3c.dom.Element;
 })
 public class ReceiverConfiguration {
 
-    /**
-     * The following connection modes are defined:
-     * 
-     */
     @XmlElement(name = "Mode", required = true)
     @XmlSchemaType(name = "string")
     protected ReceiverMode mode;
-    /**
-     * Details of the URI to which the receiver should connect.
-     * 
-     */
     @XmlElement(name = "MediaUri", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String mediaUri;
-    /**
-     * Stream connection parameters.
-     * 
-     */
     @XmlElement(name = "StreamSetup", required = true)
     protected StreamSetup streamSetup;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * The following connection modes are defined:
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -94,14 +86,13 @@ public class ReceiverConfiguration {
      *     allowed object is
      *     {@link ReceiverMode }
      *     
-     * @see #getMode()
      */
     public void setMode(ReceiverMode value) {
         this.mode = value;
     }
 
     /**
-     * Details of the URI to which the receiver should connect.
+     * Gets the value of the mediaUri property.
      * 
      * @return
      *     possible object is
@@ -119,14 +110,13 @@ public class ReceiverConfiguration {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getMediaUri()
      */
     public void setMediaUri(String value) {
         this.mediaUri = value;
     }
 
     /**
-     * Stream connection parameters.
+     * Gets the value of the streamSetup property.
      * 
      * @return
      *     possible object is
@@ -144,7 +134,6 @@ public class ReceiverConfiguration {
      *     allowed object is
      *     {@link StreamSetup }
      *     
-     * @see #getStreamSetup()
      */
     public void setStreamSetup(StreamSetup value) {
         this.streamSetup = value;
@@ -153,16 +142,16 @@ public class ReceiverConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -170,15 +159,12 @@ public class ReceiverConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -199,6 +185,16 @@ public class ReceiverConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

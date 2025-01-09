@@ -6,21 +6,19 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
+ * <p>Java class for TransportProtocol.
  * 
- * 
- * <p>Java class for TransportProtocol</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="TransportProtocol">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="UDP"/>
- *     <enumeration value="TCP"/>
- *     <enumeration value="RTSP"/>
- *     <enumeration value="HTTP"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="TransportProtocol"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UDP"/&gt;
+ *     &lt;enumeration value="TCP"/&gt;
+ *     &lt;enumeration value="RTSP"/&gt;
+ *     &lt;enumeration value="HTTP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "TransportProtocol")

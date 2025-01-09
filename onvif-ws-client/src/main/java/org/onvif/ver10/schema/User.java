@@ -10,28 +10,30 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for User complex type</p>.
+ * <p>Java class for User complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="User">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Username" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         <element name="UserLevel" type="{http://www.onvif.org/ver10/schema}UserLevel"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}UserExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="User"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="UserLevel" type="{http://www.onvif.org/ver10/schema}UserLevel"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}UserExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -44,32 +46,20 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class User {
 
-    /**
-     * Username string.
-     * 
-     */
     @XmlElement(name = "Username", required = true)
     protected String username;
-    /**
-     * Password string.
-     * 
-     */
     @XmlElement(name = "Password")
     protected String password;
-    /**
-     * User level string.
-     * 
-     */
     @XmlElement(name = "UserLevel", required = true)
     @XmlSchemaType(name = "string")
     protected UserLevel userLevel;
     @XmlElement(name = "Extension")
     protected UserExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Username string.
+     * Gets the value of the username property.
      * 
      * @return
      *     possible object is
@@ -87,14 +77,13 @@ public class User {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getUsername()
      */
     public void setUsername(String value) {
         this.username = value;
     }
 
     /**
-     * Password string.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
@@ -112,14 +101,13 @@ public class User {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getPassword()
      */
     public void setPassword(String value) {
         this.password = value;
     }
 
     /**
-     * User level string.
+     * Gets the value of the userLevel property.
      * 
      * @return
      *     possible object is
@@ -137,7 +125,6 @@ public class User {
      *     allowed object is
      *     {@link UserLevel }
      *     
-     * @see #getUserLevel()
      */
     public void setUserLevel(UserLevel value) {
         this.userLevel = value;
@@ -183,6 +170,16 @@ public class User {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

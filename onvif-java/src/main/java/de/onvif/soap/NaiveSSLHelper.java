@@ -1,20 +1,26 @@
 package de.onvif.soap;
 
-import jakarta.xml.ws.BindingProvider;
-import org.apache.cxf.configuration.jsse.TLSClientParameters;
-import org.apache.cxf.transport.http.HTTPConduit;
-
-import javax.net.ssl.*;
 import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Map;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+import jakarta.xml.ws.BindingProvider;
+import org.apache.cxf.configuration.jsse.TLSClientParameters;
+import org.apache.cxf.transport.http.HTTPConduit;
 
 public class NaiveSSLHelper {
   public static void makeWebServiceClientTrustEveryone(Object webServicePort) {
-    if (webServicePort instanceof BindingProvider bp) {
-        Map requestContext = bp.getRequestContext();
+    if (webServicePort instanceof BindingProvider) {
+      BindingProvider bp = (BindingProvider) webServicePort;
+      Map requestContext = bp.getRequestContext();
       requestContext.put(JAXWS_SSL_SOCKET_FACTORY, getTrustingSSLSocketFactory());
       requestContext.put(JAXWS_HOSTNAME_VERIFIER, new NaiveHostnameVerifier());
     } else {
@@ -79,8 +85,8 @@ public class NaiveSSLHelper {
     }
   }
 
-  private static final String JAXWS_HOSTNAME_VERIFIER =
+  private static final java.lang.String JAXWS_HOSTNAME_VERIFIER =
       "com.sun.xml.internal.ws.transport.https.client.hostname.verifier";
-  private static final String JAXWS_SSL_SOCKET_FACTORY =
+  private static final java.lang.String JAXWS_SSL_SOCKET_FACTORY =
       "com.sun.xml.internal.ws.transport.https.client.SSLSocketFactory";
 }

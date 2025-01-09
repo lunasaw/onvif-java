@@ -10,29 +10,31 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for FocusConfiguration20 complex type</p>.
+ * <p>Java class for FocusConfiguration20 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="FocusConfiguration20">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="AutoFocusMode" type="{http://www.onvif.org/ver10/schema}AutoFocusMode"/>
- *         <element name="DefaultSpeed" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="NearLimit" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="FarLimit" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusConfiguration20Extension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="FocusConfiguration20"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="AutoFocusMode" type="{http://www.onvif.org/ver10/schema}AutoFocusMode"/&gt;
+ *         &lt;element name="DefaultSpeed" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="NearLimit" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="FarLimit" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}FocusConfiguration20Extension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -46,48 +48,22 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FocusConfiguration20 {
 
-    /**
-     * Mode of auto focus.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;AUTO - The device automatically adjusts focus.&lt;/li&gt;&lt;li&gt;MANUAL - The device does not automatically adjust focus.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     *             Note: for devices supporting both manual and auto operation at the same time manual
-     *             operation may be supported even if the Mode parameter is set to Auto.
-     * 
-     */
     @XmlElement(name = "AutoFocusMode", required = true)
     @XmlSchemaType(name = "string")
     protected AutoFocusMode autoFocusMode;
     @XmlElement(name = "DefaultSpeed")
     protected Float defaultSpeed;
-    /**
-     * Parameter to set autofocus near limit (unit: meter).
-     * 
-     */
     @XmlElement(name = "NearLimit")
     protected Float nearLimit;
-    /**
-     * Parameter to set autofocus far limit (unit: meter).
-     * 
-     */
     @XmlElement(name = "FarLimit")
     protected Float farLimit;
     @XmlElement(name = "Extension")
     protected FocusConfiguration20Extension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Mode of auto focus.
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;AUTO - The device automatically adjusts focus.&lt;/li&gt;&lt;li&gt;MANUAL - The device does not automatically adjust focus.&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     *             Note: for devices supporting both manual and auto operation at the same time manual
-     *             operation may be supported even if the Mode parameter is set to Auto.
+     * Gets the value of the autoFocusMode property.
      * 
      * @return
      *     possible object is
@@ -105,7 +81,6 @@ public class FocusConfiguration20 {
      *     allowed object is
      *     {@link AutoFocusMode }
      *     
-     * @see #getAutoFocusMode()
      */
     public void setAutoFocusMode(AutoFocusMode value) {
         this.autoFocusMode = value;
@@ -136,7 +111,7 @@ public class FocusConfiguration20 {
     }
 
     /**
-     * Parameter to set autofocus near limit (unit: meter).
+     * Gets the value of the nearLimit property.
      * 
      * @return
      *     possible object is
@@ -154,14 +129,13 @@ public class FocusConfiguration20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getNearLimit()
      */
     public void setNearLimit(Float value) {
         this.nearLimit = value;
     }
 
     /**
-     * Parameter to set autofocus far limit (unit: meter).
+     * Gets the value of the farLimit property.
      * 
      * @return
      *     possible object is
@@ -179,7 +153,6 @@ public class FocusConfiguration20 {
      *     allowed object is
      *     {@link Float }
      *     
-     * @see #getFarLimit()
      */
     public void setFarLimit(Float value) {
         this.farLimit = value;
@@ -225,6 +198,16 @@ public class FocusConfiguration20 {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

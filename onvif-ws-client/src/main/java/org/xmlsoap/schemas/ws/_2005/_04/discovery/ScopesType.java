@@ -13,23 +13,25 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.XmlValue;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ScopesType complex type</p>.
+ * <p>Java class for ScopesType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ScopesType">
- *   <simpleContent>
- *     <extension base="<http://schemas.xmlsoap.org/ws/2005/04/discovery>UriListType">
- *       <attribute name="MatchBy" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *       <anyAttribute processContents='lax' namespace='##other'/>
- *     </extension>
- *   </simpleContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ScopesType"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://schemas.xmlsoap.org/ws/2005/04/discovery&gt;UriListType"&gt;
+ *       &lt;attribute name="MatchBy" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,36 +47,33 @@ public class ScopesType {
     @XmlSchemaType(name = "anyURI")
     protected String matchBy;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the value property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the value property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the value property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getValue().add(newItem);
+     *    getValue().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the value property.
      */
     public List<String> getValue() {
         if (value == null) {
-            value = new ArrayList<>();
+            value = new ArrayList<String>();
         }
         return this.value;
     }
@@ -119,6 +118,16 @@ public class ScopesType {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -14,34 +14,36 @@ import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for TopicType complex type</p>.
+ * <p>Java class for TopicType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="TopicType">
- *   <complexContent>
- *     <extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented">
- *       <sequence>
- *         <element name="MessagePattern" type="{http://docs.oasis-open.org/wsn/t-1}QueryExpressionType" minOccurs="0"/>
- *         <element name="Topic" type="{http://docs.oasis-open.org/wsn/t-1}TopicType" maxOccurs="unbounded" minOccurs="0"/>
- *         <any namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" />
- *       <attribute name="messageTypes">
- *         <simpleType>
- *           <list itemType="{http://www.w3.org/2001/XMLSchema}QName" />
- *         </simpleType>
- *       </attribute>
- *       <attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" />
- *       <anyAttribute processContents='lax' namespace='##other'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="TopicType"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://docs.oasis-open.org/wsn/t-1}ExtensibleDocumented"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="MessagePattern" type="{http://docs.oasis-open.org/wsn/t-1}QueryExpressionType" minOccurs="0"/&gt;
+ *         &lt;element name="Topic" type="{http://docs.oasis-open.org/wsn/t-1}TopicType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;any namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}NCName" /&gt;
+ *       &lt;attribute name="messageTypes"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;list itemType="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="final" type="{http://www.w3.org/2001/XMLSchema}boolean" default="false" /&gt;
+ *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -100,31 +102,28 @@ public class TopicType
     /**
      * Gets the value of the topic property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the topic property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the topic property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getTopic().add(newItem);
+     *    getTopic().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TopicType }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the topic property.
      */
     public List<TopicType> getTopic() {
         if (topic == null) {
-            topic = new ArrayList<>();
+            topic = new ArrayList<TopicType>();
         }
         return this.topic;
     }
@@ -132,31 +131,28 @@ public class TopicType
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
@@ -188,44 +184,42 @@ public class TopicType
     /**
      * Gets the value of the messageTypes property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the messageTypes property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the messageTypes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getMessageTypes().add(newItem);
+     *    getMessageTypes().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link QName }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the messageTypes property.
      */
     public List<QName> getMessageTypes() {
         if (messageTypes == null) {
-            messageTypes = new ArrayList<>();
+            messageTypes = new ArrayList<QName>();
         }
         return this.messageTypes;
     }
 
     /**
      * Gets the value of the final property.
+     * This getter has been renamed from isFinal() to getFinal() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public boolean isFinal() {
+    public boolean getFinal() {
         if (_final == null) {
             return false;
         } else {
@@ -243,6 +237,16 @@ public class TopicType
      */
     public void setFinal(Boolean value) {
         this._final = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

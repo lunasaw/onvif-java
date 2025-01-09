@@ -12,52 +12,56 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * The service capabilities reflect optional functionality of a service. The information is
+ * 
+ *             The service capabilities reflect optional functionality of a service. The information is
  *             static
  *             and does not change during device operation. The following capabilities are available:
+ *           
  * 
- * <p>Java class for ServiceCapabilities complex type</p>.
+ * <p>Java class for ServiceCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ServiceCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="MaxLimit" use="required">
- *         <simpleType>
- *           <restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt">
- *             <minInclusive value="1"/>
- *           </restriction>
- *         </simpleType>
- *       </attribute>
- *       <attribute name="MaxAccessProfiles" use="required">
- *         <simpleType>
- *           <restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt">
- *             <minInclusive value="1"/>
- *           </restriction>
- *         </simpleType>
- *       </attribute>
- *       <attribute name="MaxAccessPoliciesPerAccessProfile" use="required">
- *         <simpleType>
- *           <restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt">
- *             <minInclusive value="1"/>
- *           </restriction>
- *         </simpleType>
- *       </attribute>
- *       <attribute name="MultipleSchedulesPerAccessPointSupported" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ServiceCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="MaxLimit" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
+ *             &lt;minInclusive value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="MaxAccessProfiles" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
+ *             &lt;minInclusive value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="MaxAccessPoliciesPerAccessProfile" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}unsignedInt"&gt;
+ *             &lt;minInclusive value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *       &lt;attribute name="MultipleSchedulesPerAccessPointSupported" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -69,51 +73,30 @@ public class ServiceCapabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
-    /**
-     * The maximum number of entries returned by a single Get<Entity>List or Get<Entity>
-     *               request. The device shall never return more than this number of entities in a single
-     *               response.
-     * 
-     */
     @XmlAttribute(name = "MaxLimit", required = true)
     protected long maxLimit;
-    /**
-     * Indicates the maximum number of access profiles supported by the device.
-     * 
-     */
     @XmlAttribute(name = "MaxAccessProfiles", required = true)
     protected long maxAccessProfiles;
-    /**
-     * Indicates the maximum number of access policies per access profile supported by the
-     *               device.
-     * 
-     */
     @XmlAttribute(name = "MaxAccessPoliciesPerAccessProfile", required = true)
     protected long maxAccessPoliciesPerAccessProfile;
-    /**
-     * Indicates whether or not several access policies can refer to the same access point in
-     *               an
-     *               access profile.
-     * 
-     */
     @XmlAttribute(name = "MultipleSchedulesPerAccessPointSupported", required = true)
     protected boolean multipleSchedulesPerAccessPointSupported;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -121,23 +104,18 @@ public class ServiceCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
 
     /**
-     * The maximum number of entries returned by a single Get<Entity>List or Get<Entity>
-     *               request. The device shall never return more than this number of entities in a single
-     *               response.
+     * Gets the value of the maxLimit property.
      * 
      */
     public long getMaxLimit() {
@@ -153,7 +131,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Indicates the maximum number of access profiles supported by the device.
+     * Gets the value of the maxAccessProfiles property.
      * 
      */
     public long getMaxAccessProfiles() {
@@ -169,8 +147,7 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Indicates the maximum number of access policies per access profile supported by the
-     *               device.
+     * Gets the value of the maxAccessPoliciesPerAccessProfile property.
      * 
      */
     public long getMaxAccessPoliciesPerAccessProfile() {
@@ -186,12 +163,11 @@ public class ServiceCapabilities {
     }
 
     /**
-     * Indicates whether or not several access policies can refer to the same access point in
-     *               an
-     *               access profile.
+     * Gets the value of the multipleSchedulesPerAccessPointSupported property.
+     * This getter has been renamed from isMultipleSchedulesPerAccessPointSupported() to getMultipleSchedulesPerAccessPointSupported() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isMultipleSchedulesPerAccessPointSupported() {
+    public boolean getMultipleSchedulesPerAccessPointSupported() {
         return multipleSchedulesPerAccessPointSupported;
     }
 
@@ -219,6 +195,16 @@ public class ServiceCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

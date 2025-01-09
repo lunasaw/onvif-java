@@ -12,29 +12,31 @@ import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for NetworkHost complex type</p>.
+ * <p>Java class for NetworkHost complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="NetworkHost">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Type" type="{http://www.onvif.org/ver10/schema}NetworkHostType"/>
- *         <element name="IPv4Address" type="{http://www.onvif.org/ver10/schema}IPv4Address" minOccurs="0"/>
- *         <element name="IPv6Address" type="{http://www.onvif.org/ver10/schema}IPv6Address" minOccurs="0"/>
- *         <element name="DNSname" type="{http://www.onvif.org/ver10/schema}DNSName" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkHostExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="NetworkHost"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Type" type="{http://www.onvif.org/ver10/schema}NetworkHostType"/&gt;
+ *         &lt;element name="IPv4Address" type="{http://www.onvif.org/ver10/schema}IPv4Address" minOccurs="0"/&gt;
+ *         &lt;element name="IPv6Address" type="{http://www.onvif.org/ver10/schema}IPv6Address" minOccurs="0"/&gt;
+ *         &lt;element name="DNSname" type="{http://www.onvif.org/ver10/schema}DNSName" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkHostExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -48,33 +50,17 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class NetworkHost {
 
-    /**
-     * Network host type: IPv4, IPv6 or DNS.
-     * 
-     */
     @XmlElement(name = "Type", required = true)
     @XmlSchemaType(name = "string")
     protected NetworkHostType type;
-    /**
-     * IPv4 address.
-     * 
-     */
     @XmlElement(name = "IPv4Address")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String iPv4Address;
-    /**
-     * IPv6 address.
-     * 
-     */
     @XmlElement(name = "IPv6Address")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
     protected String iPv6Address;
-    /**
-     * DNS name.
-     * 
-     */
     @XmlElement(name = "DNSname")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "token")
@@ -82,10 +68,10 @@ public class NetworkHost {
     @XmlElement(name = "Extension")
     protected NetworkHostExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Network host type: IPv4, IPv6 or DNS.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -103,14 +89,13 @@ public class NetworkHost {
      *     allowed object is
      *     {@link NetworkHostType }
      *     
-     * @see #getType()
      */
     public void setType(NetworkHostType value) {
         this.type = value;
     }
 
     /**
-     * IPv4 address.
+     * Gets the value of the iPv4Address property.
      * 
      * @return
      *     possible object is
@@ -128,14 +113,13 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getIPv4Address()
      */
     public void setIPv4Address(String value) {
         this.iPv4Address = value;
     }
 
     /**
-     * IPv6 address.
+     * Gets the value of the iPv6Address property.
      * 
      * @return
      *     possible object is
@@ -153,14 +137,13 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getIPv6Address()
      */
     public void setIPv6Address(String value) {
         this.iPv6Address = value;
     }
 
     /**
-     * DNS name.
+     * Gets the value of the dnSname property.
      * 
      * @return
      *     possible object is
@@ -178,7 +161,6 @@ public class NetworkHost {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getDNSname()
      */
     public void setDNSname(String value) {
         this.dnSname = value;
@@ -224,6 +206,16 @@ public class NetworkHost {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

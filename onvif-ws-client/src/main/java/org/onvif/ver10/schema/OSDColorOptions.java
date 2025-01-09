@@ -9,29 +9,31 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Describe the option of the color and its transparency.
  * 
- * <p>Java class for OSDColorOptions complex type</p>.
+ * <p>Java class for OSDColorOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="OSDColorOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Color" type="{http://www.onvif.org/ver10/schema}ColorOptions" minOccurs="0"/>
- *         <element name="Transparent" type="{http://www.onvif.org/ver10/schema}IntRange" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDColorOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="OSDColorOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Color" type="{http://www.onvif.org/ver10/schema}ColorOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Transparent" type="{http://www.onvif.org/ver10/schema}IntRange" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDColorOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,25 +45,17 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OSDColorOptions {
 
-    /**
-     * Optional list of supported colors.
-     * 
-     */
     @XmlElement(name = "Color")
     protected ColorOptions color;
-    /**
-     * Range of the transparent level. Larger means more tranparent.
-     * 
-     */
     @XmlElement(name = "Transparent")
     protected IntRange transparent;
     @XmlElement(name = "Extension")
     protected OSDColorOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Optional list of supported colors.
+     * Gets the value of the color property.
      * 
      * @return
      *     possible object is
@@ -79,14 +73,13 @@ public class OSDColorOptions {
      *     allowed object is
      *     {@link ColorOptions }
      *     
-     * @see #getColor()
      */
     public void setColor(ColorOptions value) {
         this.color = value;
     }
 
     /**
-     * Range of the transparent level. Larger means more tranparent.
+     * Gets the value of the transparent property.
      * 
      * @return
      *     possible object is
@@ -104,7 +97,6 @@ public class OSDColorOptions {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getTransparent()
      */
     public void setTransparent(IntRange value) {
         this.transparent = value;
@@ -150,6 +142,16 @@ public class OSDColorOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -9,27 +9,29 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for OSDPosConfiguration complex type</p>.
+ * <p>Java class for OSDPosConfiguration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="OSDPosConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Pos" type="{http://www.onvif.org/ver10/schema}Vector" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDPosConfigurationExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="OSDPosConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Type" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Pos" type="{http://www.onvif.org/ver10/schema}Vector" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}OSDPosConfigurationExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -41,14 +43,6 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class OSDPosConfiguration {
 
-    /**
-     * For OSD position type, following are the pre-defined:
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;&lt;li&gt;UpperRight&lt;/li&gt;&lt;li&gt;LowerLeft&lt;/li&gt;&lt;li&gt;LowerRight&lt;/li&gt;&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     */
     @XmlElement(name = "Type", required = true)
     protected String type;
     @XmlElement(name = "Pos")
@@ -56,14 +50,10 @@ public class OSDPosConfiguration {
     @XmlElement(name = "Extension")
     protected OSDPosConfigurationExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * For OSD position type, following are the pre-defined:
-     *             
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;li&gt;UpperLeft&lt;/li&gt;&lt;li&gt;UpperRight&lt;/li&gt;&lt;li&gt;LowerLeft&lt;/li&gt;&lt;li&gt;LowerRight&lt;/li&gt;&lt;li&gt;Custom&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -81,7 +71,6 @@ public class OSDPosConfiguration {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getType()
      */
     public void setType(String value) {
         this.type = value;
@@ -151,6 +140,16 @@ public class OSDPosConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

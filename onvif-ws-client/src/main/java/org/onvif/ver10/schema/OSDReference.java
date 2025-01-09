@@ -9,22 +9,24 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.XmlValue;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for OSDReference complex type</p>.
+ * <p>Java class for OSDReference complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="OSDReference">
- *   <simpleContent>
- *     <extension base="<http://www.onvif.org/ver10/schema>ReferenceToken">
- *       <anyAttribute processContents='lax'/>
- *     </extension>
- *   </simpleContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="OSDReference"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.onvif.org/ver10/schema&gt;ReferenceToken"&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,23 +36,17 @@ import jakarta.xml.bind.annotation.XmlValue;
 })
 public class OSDReference {
 
-    /**
-     * Unique identifier for a physical or logical resource.
-     *         Tokens should be assigned such that they are unique within a device. Tokens must be at least
-     *         unique within its class.
-     *         Length up to 64 characters.
-     * 
-     */
     @XmlValue
     protected String value;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Unique identifier for a physical or logical resource.
      *         Tokens should be assigned such that they are unique within a device. Tokens must be at least
      *         unique within its class.
      *         Length up to 64 characters.
+     *       
      * 
      * @return
      *     possible object is
@@ -68,7 +64,6 @@ public class OSDReference {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getValue()
      */
     public void setValue(String value) {
         this.value = value;
@@ -90,6 +85,16 @@ public class OSDReference {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

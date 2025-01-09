@@ -6,20 +6,18 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
+ * <p>Java class for DefoggingMode.
  * 
- * 
- * <p>Java class for DefoggingMode</p>.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
- * <pre>{@code
- * <simpleType name="DefoggingMode">
- *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     <enumeration value="OFF"/>
- *     <enumeration value="ON"/>
- *     <enumeration value="AUTO"/>
- *   </restriction>
- * </simpleType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <pre>
+ * &lt;simpleType name="DefoggingMode"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="OFF"/&gt;
+ *     &lt;enumeration value="ON"/&gt;
+ *     &lt;enumeration value="AUTO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "DefoggingMode")

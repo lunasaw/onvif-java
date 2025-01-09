@@ -12,31 +12,33 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for PresetTour complex type</p>.
+ * <p>Java class for PresetTour complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="PresetTour">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/>
- *         <element name="Status" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatus"/>
- *         <element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="StartingCondition" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingCondition"/>
- *         <element name="TourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" maxOccurs="unbounded" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourExtension" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="PresetTour"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name" minOccurs="0"/&gt;
+ *         &lt;element name="Status" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStatus"/&gt;
+ *         &lt;element name="AutoStart" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="StartingCondition" type="{http://www.onvif.org/ver10/schema}PTZPresetTourStartingCondition"/&gt;
+ *         &lt;element name="TourSpot" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpot" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="token" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -51,50 +53,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PresetTour {
 
-    /**
-     * Readable name of the preset tour.
-     * 
-     */
     @XmlElement(name = "Name")
     protected String name;
-    /**
-     * Read only parameters to indicate the status of the preset tour.
-     * 
-     */
     @XmlElement(name = "Status", required = true)
     protected PTZPresetTourStatus status;
-    /**
-     * Auto Start flag of the preset tour. True allows the preset tour to be
-     *             activated always.
-     * 
-     */
     @XmlElement(name = "AutoStart")
     protected boolean autoStart;
-    /**
-     * Parameters to specify the detail behavior of the preset tour.
-     * 
-     */
     @XmlElement(name = "StartingCondition", required = true)
     protected PTZPresetTourStartingCondition startingCondition;
-    /**
-     * A list of detail of touring spots including preset positions.
-     * 
-     */
     @XmlElement(name = "TourSpot")
     protected List<PTZPresetTourSpot> tourSpot;
     @XmlElement(name = "Extension")
     protected PTZPresetTourExtension extension;
-    /**
-     * Unique identifier of this preset tour.
-     * 
-     */
     @XmlAttribute(name = "token")
     protected String token;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Readable name of the preset tour.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -112,14 +89,13 @@ public class PresetTour {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Read only parameters to indicate the status of the preset tour.
+     * Gets the value of the status property.
      * 
      * @return
      *     possible object is
@@ -137,18 +113,17 @@ public class PresetTour {
      *     allowed object is
      *     {@link PTZPresetTourStatus }
      *     
-     * @see #getStatus()
      */
     public void setStatus(PTZPresetTourStatus value) {
         this.status = value;
     }
 
     /**
-     * Auto Start flag of the preset tour. True allows the preset tour to be
-     *             activated always.
+     * Gets the value of the autoStart property.
+     * This getter has been renamed from isAutoStart() to getAutoStart() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isAutoStart() {
+    public boolean getAutoStart() {
         return autoStart;
     }
 
@@ -161,7 +136,7 @@ public class PresetTour {
     }
 
     /**
-     * Parameters to specify the detail behavior of the preset tour.
+     * Gets the value of the startingCondition property.
      * 
      * @return
      *     possible object is
@@ -179,42 +154,36 @@ public class PresetTour {
      *     allowed object is
      *     {@link PTZPresetTourStartingCondition }
      *     
-     * @see #getStartingCondition()
      */
     public void setStartingCondition(PTZPresetTourStartingCondition value) {
         this.startingCondition = value;
     }
 
     /**
-     * A list of detail of touring spots including preset positions.
-     * 
      * Gets the value of the tourSpot property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tourSpot property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the tourSpot property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getTourSpot().add(newItem);
+     *    getTourSpot().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PTZPresetTourSpot }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the tourSpot property.
      */
     public List<PTZPresetTourSpot> getTourSpot() {
         if (tourSpot == null) {
-            tourSpot = new ArrayList<>();
+            tourSpot = new ArrayList<PTZPresetTourSpot>();
         }
         return this.tourSpot;
     }
@@ -244,7 +213,7 @@ public class PresetTour {
     }
 
     /**
-     * Unique identifier of this preset tour.
+     * Gets the value of the token property.
      * 
      * @return
      *     possible object is
@@ -262,7 +231,6 @@ public class PresetTour {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getToken()
      */
     public void setToken(String value) {
         this.token = value;
@@ -284,6 +252,16 @@ public class PresetTour {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

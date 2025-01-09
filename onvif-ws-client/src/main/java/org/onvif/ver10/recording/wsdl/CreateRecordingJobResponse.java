@@ -6,26 +6,28 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.RecordingJobConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/>
- *         <element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="JobToken" type="{http://www.onvif.org/ver10/schema}RecordingJobReference"/&gt;
+ *         &lt;element name="JobConfiguration" type="{http://www.onvif.org/ver10/schema}RecordingJobConfiguration"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,23 +39,13 @@ import org.onvif.ver10.schema.RecordingJobConfiguration;
 @XmlRootElement(name = "CreateRecordingJobResponse")
 public class CreateRecordingJobResponse {
 
-    /**
-     * The JobToken shall identify the created recording job.
-     * 
-     */
     @XmlElement(name = "JobToken", required = true)
     protected String jobToken;
-    /**
-     * The JobConfiguration structure shall be the configuration as it is used by the
-     *                   device. This may be different from the
-     *                   JobConfiguration passed to CreateRecordingJob.
-     * 
-     */
     @XmlElement(name = "JobConfiguration", required = true)
     protected RecordingJobConfiguration jobConfiguration;
 
     /**
-     * The JobToken shall identify the created recording job.
+     * Gets the value of the jobToken property.
      * 
      * @return
      *     possible object is
@@ -71,16 +63,13 @@ public class CreateRecordingJobResponse {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getJobToken()
      */
     public void setJobToken(String value) {
         this.jobToken = value;
     }
 
     /**
-     * The JobConfiguration structure shall be the configuration as it is used by the
-     *                   device. This may be different from the
-     *                   JobConfiguration passed to CreateRecordingJob.
+     * Gets the value of the jobConfiguration property.
      * 
      * @return
      *     possible object is
@@ -98,10 +87,19 @@ public class CreateRecordingJobResponse {
      *     allowed object is
      *     {@link RecordingJobConfiguration }
      *     
-     * @see #getJobConfiguration()
      */
     public void setJobConfiguration(RecordingJobConfiguration value) {
         this.jobConfiguration = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

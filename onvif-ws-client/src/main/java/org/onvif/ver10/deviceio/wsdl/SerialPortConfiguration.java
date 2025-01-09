@@ -14,34 +14,36 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * The parameters for configuring the serial port.
  * 
- * <p>Java class for SerialPortConfiguration complex type</p>.
+ * <p>Java class for SerialPortConfiguration complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="SerialPortConfiguration">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="BaudRate" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="ParityBit" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBit"/>
- *         <element name="CharacterLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="StopBit" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" />
- *       <attribute name="type" use="required" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialPortType" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="SerialPortConfiguration"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BaudRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="ParityBit" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBit"/&gt;
+ *         &lt;element name="CharacterLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="StopBit" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
+ *       &lt;attribute name="type" use="required" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialPortType" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -55,29 +57,13 @@ import org.w3c.dom.Element;
 })
 public class SerialPortConfiguration {
 
-    /**
-     * The transfer bitrate.
-     * 
-     */
     @XmlElement(name = "BaudRate")
     protected int baudRate;
-    /**
-     * The parity for the data error detection.
-     * 
-     */
     @XmlElement(name = "ParityBit", required = true)
     @XmlSchemaType(name = "string")
     protected ParityBit parityBit;
-    /**
-     * The bit length for each character.
-     * 
-     */
     @XmlElement(name = "CharacterLength")
     protected int characterLength;
-    /**
-     * The number of stop bits used to terminate each character.
-     * 
-     */
     @XmlElement(name = "StopBit")
     protected float stopBit;
     @XmlAnyElement(lax = true)
@@ -87,10 +73,10 @@ public class SerialPortConfiguration {
     @XmlAttribute(name = "type", required = true)
     protected SerialPortType type;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * The transfer bitrate.
+     * Gets the value of the baudRate property.
      * 
      */
     public int getBaudRate() {
@@ -106,7 +92,7 @@ public class SerialPortConfiguration {
     }
 
     /**
-     * The parity for the data error detection.
+     * Gets the value of the parityBit property.
      * 
      * @return
      *     possible object is
@@ -124,14 +110,13 @@ public class SerialPortConfiguration {
      *     allowed object is
      *     {@link ParityBit }
      *     
-     * @see #getParityBit()
      */
     public void setParityBit(ParityBit value) {
         this.parityBit = value;
     }
 
     /**
-     * The bit length for each character.
+     * Gets the value of the characterLength property.
      * 
      */
     public int getCharacterLength() {
@@ -147,7 +132,7 @@ public class SerialPortConfiguration {
     }
 
     /**
-     * The number of stop bits used to terminate each character.
+     * Gets the value of the stopBit property.
      * 
      */
     public float getStopBit() {
@@ -165,16 +150,16 @@ public class SerialPortConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -182,15 +167,12 @@ public class SerialPortConfiguration {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
@@ -259,6 +241,16 @@ public class SerialPortConfiguration {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

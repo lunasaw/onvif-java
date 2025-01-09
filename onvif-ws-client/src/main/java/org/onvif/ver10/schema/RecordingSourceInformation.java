@@ -13,34 +13,38 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * A set of informative desciptions of a data source. The Search searvice allows a tests to
+ * 
+ *         A set of informative desciptions of a data source. The Search searvice allows a client to
  *         filter on recordings based on information in this structure.
+ *       
  * 
- * <p>Java class for RecordingSourceInformation complex type</p>.
+ * <p>Java class for RecordingSourceInformation complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RecordingSourceInformation">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="SourceId" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/>
- *         <element name="Location" type="{http://www.onvif.org/ver10/schema}Description"/>
- *         <element name="Description" type="{http://www.onvif.org/ver10/schema}Description"/>
- *         <element name="Address" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RecordingSourceInformation"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SourceId" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/&gt;
+ *         &lt;element name="Location" type="{http://www.onvif.org/ver10/schema}Description"/&gt;
+ *         &lt;element name="Description" type="{http://www.onvif.org/ver10/schema}Description"/&gt;
+ *         &lt;element name="Address" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -55,52 +59,25 @@ import org.w3c.dom.Element;
 })
 public class RecordingSourceInformation {
 
-    /**
-     * Identifier for the source chosen by the tests that creates the structure.
-     *             This identifier is opaque to the device. Clients may use any type of URI for this field.
-     *             A device shall support at least 128 characters.
-     * 
-     */
     @XmlElement(name = "SourceId", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String sourceId;
-    /**
-     * Informative user readable name of the source, e.g. "Camera23". A device
-     *             shall support at least 20 characters.
-     * 
-     */
     @XmlElement(name = "Name", required = true)
     protected String name;
-    /**
-     * Informative description of the physical location of the source, e.g. the
-     *             coordinates on a map.
-     * 
-     */
     @XmlElement(name = "Location", required = true)
     protected String location;
-    /**
-     * Informative description of the source.
-     * 
-     */
     @XmlElement(name = "Description", required = true)
     protected String description;
-    /**
-     * URI provided by the service supplying data to be recorded. A device
-     *             shall support at least 128 characters.
-     * 
-     */
     @XmlElement(name = "Address", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String address;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Identifier for the source chosen by the tests that creates the structure.
-     *             This identifier is opaque to the device. Clients may use any type of URI for this field.
-     *             A device shall support at least 128 characters.
+     * Gets the value of the sourceId property.
      * 
      * @return
      *     possible object is
@@ -118,15 +95,13 @@ public class RecordingSourceInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getSourceId()
      */
     public void setSourceId(String value) {
         this.sourceId = value;
     }
 
     /**
-     * Informative user readable name of the source, e.g. "Camera23". A device
-     *             shall support at least 20 characters.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -144,15 +119,13 @@ public class RecordingSourceInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Informative description of the physical location of the source, e.g. the
-     *             coordinates on a map.
+     * Gets the value of the location property.
      * 
      * @return
      *     possible object is
@@ -170,14 +143,13 @@ public class RecordingSourceInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getLocation()
      */
     public void setLocation(String value) {
         this.location = value;
     }
 
     /**
-     * Informative description of the source.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -195,15 +167,13 @@ public class RecordingSourceInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;
     }
 
     /**
-     * URI provided by the service supplying data to be recorded. A device
-     *             shall support at least 128 characters.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -221,7 +191,6 @@ public class RecordingSourceInformation {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getAddress()
      */
     public void setAddress(String value) {
         this.address = value;
@@ -230,16 +199,16 @@ public class RecordingSourceInformation {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -247,15 +216,12 @@ public class RecordingSourceInformation {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -276,6 +242,16 @@ public class RecordingSourceInformation {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

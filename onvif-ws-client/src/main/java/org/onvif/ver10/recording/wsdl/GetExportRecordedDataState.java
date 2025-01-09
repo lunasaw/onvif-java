@@ -6,24 +6,26 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="OperationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="OperationToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,15 +36,11 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetExportRecordedDataState")
 public class GetExportRecordedDataState {
 
-    /**
-     * Unique ExportRecordedData operation token
-     * 
-     */
     @XmlElement(name = "OperationToken", required = true)
     protected String operationToken;
 
     /**
-     * Unique ExportRecordedData operation token
+     * Gets the value of the operationToken property.
      * 
      * @return
      *     possible object is
@@ -60,10 +58,19 @@ public class GetExportRecordedDataState {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getOperationToken()
      */
     public void setOperationToken(String value) {
         this.operationToken = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -10,27 +10,29 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for AnalyticsDeviceCapabilities complex type</p>.
+ * <p>Java class for AnalyticsDeviceCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="AnalyticsDeviceCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <element name="RuleSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}AnalyticsDeviceExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="AnalyticsDeviceCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="RuleSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}AnalyticsDeviceExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,16 +47,12 @@ public class AnalyticsDeviceCapabilities {
     @XmlElement(name = "XAddr", required = true)
     @XmlSchemaType(name = "anyURI")
     protected String xAddr;
-    /**
-     * Obsolete property.
-     * 
-     */
     @XmlElement(name = "RuleSupport")
     protected Boolean ruleSupport;
     @XmlElement(name = "Extension")
     protected AnalyticsDeviceExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the xAddr property.
@@ -81,14 +79,15 @@ public class AnalyticsDeviceCapabilities {
     }
 
     /**
-     * Obsolete property.
+     * Gets the value of the ruleSupport property.
+     * This getter has been renamed from isRuleSupport() to getRuleSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isRuleSupport() {
+    public Boolean getRuleSupport() {
         return ruleSupport;
     }
 
@@ -99,7 +98,6 @@ public class AnalyticsDeviceCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isRuleSupport()
      */
     public void setRuleSupport(Boolean value) {
         this.ruleSupport = value;
@@ -145,6 +143,16 @@ public class AnalyticsDeviceCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -6,25 +6,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Limit" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         <element name="StartReference" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Limit" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="StartReference" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -36,29 +38,13 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetAccessProfileList")
 public class GetAccessProfileList {
 
-    /**
-     * Maximum number of entries to return. If not specified, less than
-     *                   one
-     *                   or higher than what the device supports, the number of items is determined by the
-     *                   device.
-     * 
-     */
     @XmlElement(name = "Limit")
     protected Integer limit;
-    /**
-     * Start returning entries from this start reference. If not
-     *                   specified,
-     *                   entries shall start from the beginning of the dataset.
-     * 
-     */
     @XmlElement(name = "StartReference")
     protected String startReference;
 
     /**
-     * Maximum number of entries to return. If not specified, less than
-     *                   one
-     *                   or higher than what the device supports, the number of items is determined by the
-     *                   device.
+     * Gets the value of the limit property.
      * 
      * @return
      *     possible object is
@@ -76,16 +62,13 @@ public class GetAccessProfileList {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getLimit()
      */
     public void setLimit(Integer value) {
         this.limit = value;
     }
 
     /**
-     * Start returning entries from this start reference. If not
-     *                   specified,
-     *                   entries shall start from the beginning of the dataset.
+     * Gets the value of the startReference property.
      * 
      * @return
      *     possible object is
@@ -103,10 +86,19 @@ public class GetAccessProfileList {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getStartReference()
      */
     public void setStartReference(String value) {
         this.startReference = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -12,38 +12,42 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * The AccessPoint capabilities reflect optional functionality of a particular physical
+ * 
+ *             The AccessPoint capabilities reflect optional functionality of a particular physical
  *             entity.
  *             Different AccessPoint instances may have different set of capabilities. This information
  *             may
  *             change during device operation, e.g. if hardware settings are changed.
  *             The following capabilities are available:
+ *           
  * 
- * <p>Java class for AccessPointCapabilities complex type</p>.
+ * <p>Java class for AccessPointCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="AccessPointCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="DisableAccessPoint" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="Duress" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="AnonymousAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="AccessTaken" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="ExternalAuthorization" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="AccessPointCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DisableAccessPoint" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="Duress" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="AnonymousAccess" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="AccessTaken" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="ExternalAuthorization" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -55,61 +59,32 @@ public class AccessPointCapabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
-    /**
-     * Indicates whether or not this AccessPoint instance supports
-     *               EnableAccessPoint and DisableAccessPoint commands.
-     * 
-     */
     @XmlAttribute(name = "DisableAccessPoint", required = true)
     protected boolean disableAccessPoint;
-    /**
-     * Indicates whether or not this AccessPoint instance supports generation
-     *               of duress events.
-     * 
-     */
     @XmlAttribute(name = "Duress")
     protected Boolean duress;
-    /**
-     * Indicates whether or not this AccessPoint has a REX switch or other
-     *               input that allows anonymous access.
-     * 
-     */
     @XmlAttribute(name = "AnonymousAccess")
     protected Boolean anonymousAccess;
-    /**
-     * Indicates whether or not this AccessPoint instance supports generation
-     *               of AccessTaken and AccessNotTaken events. If AnonymousAccess and AccessTaken are both
-     *               true, it indicates that the Anonymous versions of AccessTaken and AccessNotTaken are
-     *               supported.
-     * 
-     */
     @XmlAttribute(name = "AccessTaken")
     protected Boolean accessTaken;
-    /**
-     * Indicates whether or not this AccessPoint instance supports the
-     *               ExternalAuthorization operation and the generation of Request events. If
-     *               AnonymousAccess and ExternalAuthorization are both true, it indicates that the
-     *               Anonymous version is supported as well.
-     * 
-     */
     @XmlAttribute(name = "ExternalAuthorization")
     protected Boolean externalAuthorization;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -117,25 +92,22 @@ public class AccessPointCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
 
     /**
-     * Indicates whether or not this AccessPoint instance supports
-     *               EnableAccessPoint and DisableAccessPoint commands.
+     * Gets the value of the disableAccessPoint property.
+     * This getter has been renamed from isDisableAccessPoint() to getDisableAccessPoint() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDisableAccessPoint() {
+    public boolean getDisableAccessPoint() {
         return disableAccessPoint;
     }
 
@@ -148,15 +120,15 @@ public class AccessPointCapabilities {
     }
 
     /**
-     * Indicates whether or not this AccessPoint instance supports generation
-     *               of duress events.
+     * Gets the value of the duress property.
+     * This getter has been renamed from isDuress() to getDuress() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDuress() {
+    public Boolean getDuress() {
         return duress;
     }
 
@@ -167,22 +139,21 @@ public class AccessPointCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDuress()
      */
     public void setDuress(Boolean value) {
         this.duress = value;
     }
 
     /**
-     * Indicates whether or not this AccessPoint has a REX switch or other
-     *               input that allows anonymous access.
+     * Gets the value of the anonymousAccess property.
+     * This getter has been renamed from isAnonymousAccess() to getAnonymousAccess() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isAnonymousAccess() {
+    public Boolean getAnonymousAccess() {
         return anonymousAccess;
     }
 
@@ -193,24 +164,21 @@ public class AccessPointCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isAnonymousAccess()
      */
     public void setAnonymousAccess(Boolean value) {
         this.anonymousAccess = value;
     }
 
     /**
-     * Indicates whether or not this AccessPoint instance supports generation
-     *               of AccessTaken and AccessNotTaken events. If AnonymousAccess and AccessTaken are both
-     *               true, it indicates that the Anonymous versions of AccessTaken and AccessNotTaken are
-     *               supported.
+     * Gets the value of the accessTaken property.
+     * This getter has been renamed from isAccessTaken() to getAccessTaken() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isAccessTaken() {
+    public Boolean getAccessTaken() {
         return accessTaken;
     }
 
@@ -221,24 +189,21 @@ public class AccessPointCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isAccessTaken()
      */
     public void setAccessTaken(Boolean value) {
         this.accessTaken = value;
     }
 
     /**
-     * Indicates whether or not this AccessPoint instance supports the
-     *               ExternalAuthorization operation and the generation of Request events. If
-     *               AnonymousAccess and ExternalAuthorization are both true, it indicates that the
-     *               Anonymous version is supported as well.
+     * Gets the value of the externalAuthorization property.
+     * This getter has been renamed from isExternalAuthorization() to getExternalAuthorization() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isExternalAuthorization() {
+    public Boolean getExternalAuthorization() {
         return externalAuthorization;
     }
 
@@ -249,7 +214,6 @@ public class AccessPointCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isExternalAuthorization()
      */
     public void setExternalAuthorization(Boolean value) {
         this.externalAuthorization = value;
@@ -271,6 +235,16 @@ public class AccessPointCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

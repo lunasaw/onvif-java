@@ -5,26 +5,28 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Time complex type</p>.
+ * <p>Java class for Time complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Time">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Hour" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <element name="Second" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Time"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Hour" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Second" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -36,27 +38,15 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Time {
 
-    /**
-     * Range is 0 to 23.
-     * 
-     */
     @XmlElement(name = "Hour")
     protected int hour;
-    /**
-     * Range is 0 to 59.
-     * 
-     */
     @XmlElement(name = "Minute")
     protected int minute;
-    /**
-     * Range is 0 to 61 (typically 59).
-     * 
-     */
     @XmlElement(name = "Second")
     protected int second;
 
     /**
-     * Range is 0 to 23.
+     * Gets the value of the hour property.
      * 
      */
     public int getHour() {
@@ -72,7 +62,7 @@ public class Time {
     }
 
     /**
-     * Range is 0 to 59.
+     * Gets the value of the minute property.
      * 
      */
     public int getMinute() {
@@ -88,7 +78,7 @@ public class Time {
     }
 
     /**
-     * Range is 0 to 61 (typically 59).
+     * Gets the value of the second property.
      * 
      */
     public int getSecond() {
@@ -101,6 +91,16 @@ public class Time {
      */
     public void setSecond(int value) {
         this.second = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

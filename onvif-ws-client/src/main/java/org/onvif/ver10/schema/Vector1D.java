@@ -6,23 +6,25 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Vector1D complex type</p>.
+ * <p>Java class for Vector1D complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Vector1D">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}float" />
- *       <attribute name="space" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Vector1D"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="x" use="required" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
+ *       &lt;attribute name="space" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -32,14 +34,6 @@ public class Vector1D {
 
     @XmlAttribute(name = "x", required = true)
     protected float x;
-    /**
-     * Pan/tilt coordinate space selector. The following options are defined:
-     *           
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" style=""&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
-     * 
-     */
     @XmlAttribute(name = "space")
     @XmlSchemaType(name = "anyURI")
     protected String space;
@@ -61,11 +55,7 @@ public class Vector1D {
     }
 
     /**
-     * Pan/tilt coordinate space selector. The following options are defined:
-     *           
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;ul xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope" xmlns:tt="http://www.onvif.org/ver10/schema" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" style=""&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace&lt;/li&gt;&lt;li&gt;http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace&lt;/li&gt;&lt;/ul&gt;
-     * </pre>
+     * Gets the value of the space property.
      * 
      * @return
      *     possible object is
@@ -83,10 +73,19 @@ public class Vector1D {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getSpace()
      */
     public void setSpace(String value) {
         this.space = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

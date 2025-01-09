@@ -9,30 +9,32 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Representation of a physical video input.
  * 
- * <p>Java class for VideoSource complex type</p>.
+ * <p>Java class for VideoSource complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="VideoSource">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/schema}DeviceEntity">
- *       <sequence>
- *         <element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution"/>
- *         <element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingSettings" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="VideoSource"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
+ *         &lt;element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution"/&gt;
+ *         &lt;element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingSettings" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -47,31 +49,19 @@ public class VideoSource
     extends DeviceEntity
 {
 
-    /**
-     * Frame rate in frames per second.
-     * 
-     */
     @XmlElement(name = "Framerate")
     protected float framerate;
-    /**
-     * Horizontal and vertical resolution
-     * 
-     */
     @XmlElement(name = "Resolution", required = true)
     protected VideoResolution resolution;
-    /**
-     * Optional configuration of the image sensor.
-     * 
-     */
     @XmlElement(name = "Imaging")
     protected ImagingSettings imaging;
     @XmlElement(name = "Extension")
     protected VideoSourceExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Frame rate in frames per second.
+     * Gets the value of the framerate property.
      * 
      */
     public float getFramerate() {
@@ -87,7 +77,7 @@ public class VideoSource
     }
 
     /**
-     * Horizontal and vertical resolution
+     * Gets the value of the resolution property.
      * 
      * @return
      *     possible object is
@@ -105,14 +95,13 @@ public class VideoSource
      *     allowed object is
      *     {@link VideoResolution }
      *     
-     * @see #getResolution()
      */
     public void setResolution(VideoResolution value) {
         this.resolution = value;
     }
 
     /**
-     * Optional configuration of the image sensor.
+     * Gets the value of the imaging property.
      * 
      * @return
      *     possible object is
@@ -130,7 +119,6 @@ public class VideoSource
      *     allowed object is
      *     {@link ImagingSettings }
      *     
-     * @see #getImaging()
      */
     public void setImaging(ImagingSettings value) {
         this.imaging = value;
@@ -176,6 +164,16 @@ public class VideoSource
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

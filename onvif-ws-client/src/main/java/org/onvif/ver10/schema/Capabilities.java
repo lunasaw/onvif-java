@@ -9,31 +9,33 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for Capabilities complex type</p>.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Capabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Analytics" type="{http://www.onvif.org/ver10/schema}AnalyticsCapabilities" minOccurs="0"/>
- *         <element name="Device" type="{http://www.onvif.org/ver10/schema}DeviceCapabilities" minOccurs="0"/>
- *         <element name="Events" type="{http://www.onvif.org/ver10/schema}EventCapabilities" minOccurs="0"/>
- *         <element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingCapabilities" minOccurs="0"/>
- *         <element name="Media" type="{http://www.onvif.org/ver10/schema}MediaCapabilities" minOccurs="0"/>
- *         <element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZCapabilities" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}CapabilitiesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Capabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Analytics" type="{http://www.onvif.org/ver10/schema}AnalyticsCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="Device" type="{http://www.onvif.org/ver10/schema}DeviceCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="Events" type="{http://www.onvif.org/ver10/schema}EventCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="Media" type="{http://www.onvif.org/ver10/schema}MediaCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="PTZ" type="{http://www.onvif.org/ver10/schema}PTZCapabilities" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}CapabilitiesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,49 +51,25 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class Capabilities {
 
-    /**
-     * Analytics capabilities
-     * 
-     */
     @XmlElement(name = "Analytics")
     protected AnalyticsCapabilities analytics;
-    /**
-     * Device capabilities
-     * 
-     */
     @XmlElement(name = "Device")
     protected DeviceCapabilities device;
-    /**
-     * Event capabilities
-     * 
-     */
     @XmlElement(name = "Events")
     protected EventCapabilities events;
-    /**
-     * Imaging capabilities
-     * 
-     */
     @XmlElement(name = "Imaging")
     protected ImagingCapabilities imaging;
-    /**
-     * Media capabilities
-     * 
-     */
     @XmlElement(name = "Media")
     protected MediaCapabilities media;
-    /**
-     * PTZ capabilities
-     * 
-     */
     @XmlElement(name = "PTZ")
     protected PTZCapabilities ptz;
     @XmlElement(name = "Extension")
     protected CapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Analytics capabilities
+     * Gets the value of the analytics property.
      * 
      * @return
      *     possible object is
@@ -109,14 +87,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link AnalyticsCapabilities }
      *     
-     * @see #getAnalytics()
      */
     public void setAnalytics(AnalyticsCapabilities value) {
         this.analytics = value;
     }
 
     /**
-     * Device capabilities
+     * Gets the value of the device property.
      * 
      * @return
      *     possible object is
@@ -134,14 +111,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link DeviceCapabilities }
      *     
-     * @see #getDevice()
      */
     public void setDevice(DeviceCapabilities value) {
         this.device = value;
     }
 
     /**
-     * Event capabilities
+     * Gets the value of the events property.
      * 
      * @return
      *     possible object is
@@ -159,14 +135,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link EventCapabilities }
      *     
-     * @see #getEvents()
      */
     public void setEvents(EventCapabilities value) {
         this.events = value;
     }
 
     /**
-     * Imaging capabilities
+     * Gets the value of the imaging property.
      * 
      * @return
      *     possible object is
@@ -184,14 +159,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link ImagingCapabilities }
      *     
-     * @see #getImaging()
      */
     public void setImaging(ImagingCapabilities value) {
         this.imaging = value;
     }
 
     /**
-     * Media capabilities
+     * Gets the value of the media property.
      * 
      * @return
      *     possible object is
@@ -209,14 +183,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link MediaCapabilities }
      *     
-     * @see #getMedia()
      */
     public void setMedia(MediaCapabilities value) {
         this.media = value;
     }
 
     /**
-     * PTZ capabilities
+     * Gets the value of the ptz property.
      * 
      * @return
      *     possible object is
@@ -234,7 +207,6 @@ public class Capabilities {
      *     allowed object is
      *     {@link PTZCapabilities }
      *     
-     * @see #getPTZ()
      */
     public void setPTZ(PTZCapabilities value) {
         this.ptz = value;
@@ -280,6 +252,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

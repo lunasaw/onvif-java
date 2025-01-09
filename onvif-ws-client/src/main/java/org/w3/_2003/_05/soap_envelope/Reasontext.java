@@ -6,22 +6,24 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
 import jakarta.xml.bind.annotation.XmlValue;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for reasontext complex type</p>.
+ * <p>Java class for reasontext complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="reasontext">
- *   <simpleContent>
- *     <extension base="<http://www.w3.org/2001/XMLSchema>string">
- *       <attribute ref="{http://www.w3.org/XML/1998/namespace}lang use="required""/>
- *     </extension>
- *   </simpleContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="reasontext"&gt;
+ *   &lt;simpleContent&gt;
+ *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
+ *       &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang use="required""/&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/simpleContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -33,38 +35,6 @@ public class Reasontext {
 
     @XmlValue
     protected String value;
-    /**
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;&lt;p&gt;
-     *             denotes an attribute whose value
-     *             is a language code for the natural language of the content of
-     *             any element; its value is inherited. This name is reserved
-     *             by virtue of its definition in the XML specification.
-     *           &lt;/p&gt;&lt;/div&gt;
-     * </pre>
-     * 
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h4&gt;Notes&lt;/h4&gt;&lt;p&gt;
-     *             Attempting to install the relevant ISO 2- and 3-letter
-     *             codes as the enumerated possible values is probably never
-     *             going to be a realistic possibility.
-     *           &lt;/p&gt;&lt;p&gt;
-     *             See BCP 47 at
-     *             &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
-     *               http://www.rfc-editor.org/rfc/bcp/bcp47.txt
-     *             &lt;/a&gt;
-     *             and the IANA language subtag registry at
-     *             &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
-     *               http://www.iana.org/assignments/language-subtag-registry
-     *             &lt;/a&gt;
-     *             for further information.
-     *           &lt;/p&gt;&lt;p&gt;
-     *             The union allows for the 'un-declaration' of xml:lang with
-     *             the empty string.
-     *           &lt;/p&gt;&lt;/div&gt;
-     * </pre>
-     * 
-     */
     @XmlAttribute(name = "lang", namespace = "http://www.w3.org/XML/1998/namespace", required = true)
     protected String lang;
 
@@ -93,35 +63,7 @@ public class Reasontext {
     }
 
     /**
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h3&gt;lang (as an attribute name)&lt;/h3&gt;&lt;p&gt;
-     *             denotes an attribute whose value
-     *             is a language code for the natural language of the content of
-     *             any element; its value is inherited. This name is reserved
-     *             by virtue of its definition in the XML specification.
-     *           &lt;/p&gt;&lt;/div&gt;
-     * </pre>
-     * 
-     * <pre>
-     * &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;div xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;&lt;h4&gt;Notes&lt;/h4&gt;&lt;p&gt;
-     *             Attempting to install the relevant ISO 2- and 3-letter
-     *             codes as the enumerated possible values is probably never
-     *             going to be a realistic possibility.
-     *           &lt;/p&gt;&lt;p&gt;
-     *             See BCP 47 at
-     *             &lt;a href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt"&gt;
-     *               http://www.rfc-editor.org/rfc/bcp/bcp47.txt
-     *             &lt;/a&gt;
-     *             and the IANA language subtag registry at
-     *             &lt;a href="http://www.iana.org/assignments/language-subtag-registry"&gt;
-     *               http://www.iana.org/assignments/language-subtag-registry
-     *             &lt;/a&gt;
-     *             for further information.
-     *           &lt;/p&gt;&lt;p&gt;
-     *             The union allows for the 'un-declaration' of xml:lang with
-     *             the empty string.
-     *           &lt;/p&gt;&lt;/div&gt;
-     * </pre>
+     * Gets the value of the lang property.
      * 
      * @return
      *     possible object is
@@ -139,10 +81,19 @@ public class Reasontext {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getLang()
      */
     public void setLang(String value) {
         this.lang = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

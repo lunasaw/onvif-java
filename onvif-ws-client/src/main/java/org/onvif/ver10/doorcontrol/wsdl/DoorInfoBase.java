@@ -6,28 +6,32 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.pacs.DataEntity;
 
 
 /**
- * Used as extension base.
  * 
- * <p>Java class for DoorInfoBase complex type</p>.
+ *             Used as extension base.
+ *           
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>Java class for DoorInfoBase complex type.
  * 
- * <pre>{@code
- * <complexType name="DoorInfoBase">
- *   <complexContent>
- *     <extension base="{http://www.onvif.org/ver10/pacs}DataEntity">
- *       <sequence>
- *         <element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/>
- *         <element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/>
- *       </sequence>
- *     </extension>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="DoorInfoBase"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
+ *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -43,22 +47,13 @@ public class DoorInfoBase
     extends DataEntity
 {
 
-    /**
-     * A user readable name. It shall be up to 64 characters.
-     * 
-     */
     @XmlElement(name = "Name", required = true)
     protected String name;
-    /**
-     * A user readable description. It shall be up to 1024
-     *                     characters.
-     * 
-     */
     @XmlElement(name = "Description")
     protected String description;
 
     /**
-     * A user readable name. It shall be up to 64 characters.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -76,15 +71,13 @@ public class DoorInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getName()
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * A user readable description. It shall be up to 1024
-     *                     characters.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -102,10 +95,19 @@ public class DoorInfoBase
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getDescription()
      */
     public void setDescription(String value) {
         this.description = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

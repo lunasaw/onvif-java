@@ -6,25 +6,27 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.AudioOutputConfigurationOptions;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Options" type="{http://www.onvif.org/ver10/schema}AudioOutputConfigurationOptions"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Options" type="{http://www.onvif.org/ver10/schema}AudioOutputConfigurationOptions"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -35,23 +37,11 @@ import org.onvif.ver10.schema.AudioOutputConfigurationOptions;
 @XmlRootElement(name = "GetAudioOutputConfigurationOptionsResponse")
 public class GetAudioOutputConfigurationOptionsResponse {
 
-    /**
-     * This message contains the audio output configuration options. If a
-     *                   audio output configuration is specified, the options shall concern that particular
-     *                   configuration. If a media profile is specified, the options shall be compatible
-     *                   with that media profile. If no tokens are specified, the options shall be
-     *                   considered generic for the device.
-     * 
-     */
     @XmlElement(name = "Options", required = true)
     protected AudioOutputConfigurationOptions options;
 
     /**
-     * This message contains the audio output configuration options. If a
-     *                   audio output configuration is specified, the options shall concern that particular
-     *                   configuration. If a media profile is specified, the options shall be compatible
-     *                   with that media profile. If no tokens are specified, the options shall be
-     *                   considered generic for the device.
+     * Gets the value of the options property.
      * 
      * @return
      *     possible object is
@@ -69,10 +59,19 @@ public class GetAudioOutputConfigurationOptionsResponse {
      *     allowed object is
      *     {@link AudioOutputConfigurationOptions }
      *     
-     * @see #getOptions()
      */
     public void setOptions(AudioOutputConfigurationOptions value) {
         this.options = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

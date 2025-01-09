@@ -9,32 +9,34 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.EventFilter;
 import org.onvif.ver10.schema.SearchScope;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="StartPoint" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
- *         <element name="EndPoint" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         <element name="Scope" type="{http://www.onvif.org/ver10/schema}SearchScope"/>
- *         <element name="SearchFilter" type="{http://www.onvif.org/ver10/schema}EventFilter"/>
- *         <element name="IncludeStartState" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="MaxMatches" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         <element name="KeepAliveTime" type="{http://www.w3.org/2001/XMLSchema}duration"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="StartPoint" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
+ *         &lt;element name="EndPoint" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="Scope" type="{http://www.onvif.org/ver10/schema}SearchScope"/&gt;
+ *         &lt;element name="SearchFilter" type="{http://www.onvif.org/ver10/schema}EventFilter"/&gt;
+ *         &lt;element name="IncludeStartState" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="MaxMatches" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="KeepAliveTime" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -51,18 +53,9 @@ import org.onvif.ver10.schema.SearchScope;
 @XmlRootElement(name = "FindEvents")
 public class FindEvents {
 
-    /**
-     * The point of time where the search will start.
-     * 
-     */
     @XmlElement(name = "StartPoint", required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar startPoint;
-    /**
-     * The point of time where the search will stop. This can be a time
-     *                   before the StartPoint, in which case the search is performed backwards in time.
-     * 
-     */
     @XmlElement(name = "EndPoint")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar endPoint;
@@ -70,34 +63,15 @@ public class FindEvents {
     protected SearchScope scope;
     @XmlElement(name = "SearchFilter", required = true)
     protected EventFilter searchFilter;
-    /**
-     * Setting IncludeStartState to true means that the server should
-     *                   return virtual events representing the start state for any recording included in
-     *                   the scope. Start state events are limited to the topics defined in the
-     *                   SearchFilter that have the IsProperty flag set to true.
-     * 
-     */
     @XmlElement(name = "IncludeStartState")
     protected boolean includeStartState;
-    /**
-     * The search will be completed after this many matches. If not
-     *                   specified, the search will continue until reaching the endpoint or until the
-     *                   session expires.
-     * 
-     */
     @XmlElement(name = "MaxMatches")
     protected Integer maxMatches;
-    /**
-     * The time the search session will be kept alive after responding to
-     *                   this and subsequent requests. A device shall support at least values up to ten
-     *                   seconds.
-     * 
-     */
     @XmlElement(name = "KeepAliveTime", required = true)
     protected Duration keepAliveTime;
 
     /**
-     * The point of time where the search will start.
+     * Gets the value of the startPoint property.
      * 
      * @return
      *     possible object is
@@ -115,15 +89,13 @@ public class FindEvents {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
-     * @see #getStartPoint()
      */
     public void setStartPoint(XMLGregorianCalendar value) {
         this.startPoint = value;
     }
 
     /**
-     * The point of time where the search will stop. This can be a time
-     *                   before the StartPoint, in which case the search is performed backwards in time.
+     * Gets the value of the endPoint property.
      * 
      * @return
      *     possible object is
@@ -141,7 +113,6 @@ public class FindEvents {
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
-     * @see #getEndPoint()
      */
     public void setEndPoint(XMLGregorianCalendar value) {
         this.endPoint = value;
@@ -196,13 +167,11 @@ public class FindEvents {
     }
 
     /**
-     * Setting IncludeStartState to true means that the server should
-     *                   return virtual events representing the start state for any recording included in
-     *                   the scope. Start state events are limited to the topics defined in the
-     *                   SearchFilter that have the IsProperty flag set to true.
+     * Gets the value of the includeStartState property.
+     * This getter has been renamed from isIncludeStartState() to getIncludeStartState() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isIncludeStartState() {
+    public boolean getIncludeStartState() {
         return includeStartState;
     }
 
@@ -215,9 +184,7 @@ public class FindEvents {
     }
 
     /**
-     * The search will be completed after this many matches. If not
-     *                   specified, the search will continue until reaching the endpoint or until the
-     *                   session expires.
+     * Gets the value of the maxMatches property.
      * 
      * @return
      *     possible object is
@@ -235,16 +202,13 @@ public class FindEvents {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getMaxMatches()
      */
     public void setMaxMatches(Integer value) {
         this.maxMatches = value;
     }
 
     /**
-     * The time the search session will be kept alive after responding to
-     *                   this and subsequent requests. A device shall support at least values up to ten
-     *                   seconds.
+     * Gets the value of the keepAliveTime property.
      * 
      * @return
      *     possible object is
@@ -262,10 +226,19 @@ public class FindEvents {
      *     allowed object is
      *     {@link Duration }
      *     
-     * @see #getKeepAliveTime()
      */
     public void setKeepAliveTime(Duration value) {
         this.keepAliveTime = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

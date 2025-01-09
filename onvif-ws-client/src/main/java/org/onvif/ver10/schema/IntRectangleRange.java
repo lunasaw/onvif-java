@@ -5,30 +5,33 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
  * Range of a rectangle. The rectangle itself is defined by lower left corner
  *         position and size. Units are pixel.
+ *       
  * 
- * <p>Java class for IntRectangleRange complex type</p>.
+ * <p>Java class for IntRectangleRange complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="IntRectangleRange">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="XRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="YRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="WidthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="HeightRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="IntRectangleRange"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="XRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="YRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="WidthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="HeightRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -41,33 +44,17 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IntRectangleRange {
 
-    /**
-     * Range of X-axis.
-     * 
-     */
     @XmlElement(name = "XRange", required = true)
     protected IntRange xRange;
-    /**
-     * Range of Y-axis.
-     * 
-     */
     @XmlElement(name = "YRange", required = true)
     protected IntRange yRange;
-    /**
-     * Range of width.
-     * 
-     */
     @XmlElement(name = "WidthRange", required = true)
     protected IntRange widthRange;
-    /**
-     * Range of height.
-     * 
-     */
     @XmlElement(name = "HeightRange", required = true)
     protected IntRange heightRange;
 
     /**
-     * Range of X-axis.
+     * Gets the value of the xRange property.
      * 
      * @return
      *     possible object is
@@ -85,14 +72,13 @@ public class IntRectangleRange {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getXRange()
      */
     public void setXRange(IntRange value) {
         this.xRange = value;
     }
 
     /**
-     * Range of Y-axis.
+     * Gets the value of the yRange property.
      * 
      * @return
      *     possible object is
@@ -110,14 +96,13 @@ public class IntRectangleRange {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getYRange()
      */
     public void setYRange(IntRange value) {
         this.yRange = value;
     }
 
     /**
-     * Range of width.
+     * Gets the value of the widthRange property.
      * 
      * @return
      *     possible object is
@@ -135,14 +120,13 @@ public class IntRectangleRange {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getWidthRange()
      */
     public void setWidthRange(IntRange value) {
         this.widthRange = value;
     }
 
     /**
-     * Range of height.
+     * Gets the value of the heightRange property.
      * 
      * @return
      *     possible object is
@@ -160,10 +144,19 @@ public class IntRectangleRange {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getHeightRange()
      */
     public void setHeightRange(IntRange value) {
         this.heightRange = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

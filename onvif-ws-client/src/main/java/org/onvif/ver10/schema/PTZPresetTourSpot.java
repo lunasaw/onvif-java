@@ -10,28 +10,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for PTZPresetTourSpot complex type</p>.
+ * <p>Java class for PTZPresetTourSpot complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="PTZPresetTourSpot">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="PresetDetail" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetail"/>
- *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/>
- *         <element name="StayTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpotExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="PTZPresetTourSpot"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="PresetDetail" type="{http://www.onvif.org/ver10/schema}PTZPresetTourPresetDetail"/&gt;
+ *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/&gt;
+ *         &lt;element name="StayTime" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}PTZPresetTourSpotExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -44,33 +46,19 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class PTZPresetTourSpot {
 
-    /**
-     * Detail definition of preset position of the tour spot.
-     * 
-     */
     @XmlElement(name = "PresetDetail", required = true)
     protected PTZPresetTourPresetDetail presetDetail;
-    /**
-     * Optional parameter to specify Pan/Tilt and Zoom speed on moving toward
-     *             this tour spot.
-     * 
-     */
     @XmlElement(name = "Speed")
     protected PTZSpeed speed;
-    /**
-     * Optional parameter to specify time duration of staying on this tour
-     *             sport.
-     * 
-     */
     @XmlElement(name = "StayTime")
     protected Duration stayTime;
     @XmlElement(name = "Extension")
     protected PTZPresetTourSpotExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Detail definition of preset position of the tour spot.
+     * Gets the value of the presetDetail property.
      * 
      * @return
      *     possible object is
@@ -88,15 +76,13 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link PTZPresetTourPresetDetail }
      *     
-     * @see #getPresetDetail()
      */
     public void setPresetDetail(PTZPresetTourPresetDetail value) {
         this.presetDetail = value;
     }
 
     /**
-     * Optional parameter to specify Pan/Tilt and Zoom speed on moving toward
-     *             this tour spot.
+     * Gets the value of the speed property.
      * 
      * @return
      *     possible object is
@@ -114,15 +100,13 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link PTZSpeed }
      *     
-     * @see #getSpeed()
      */
     public void setSpeed(PTZSpeed value) {
         this.speed = value;
     }
 
     /**
-     * Optional parameter to specify time duration of staying on this tour
-     *             sport.
+     * Gets the value of the stayTime property.
      * 
      * @return
      *     possible object is
@@ -140,7 +124,6 @@ public class PTZPresetTourSpot {
      *     allowed object is
      *     {@link Duration }
      *     
-     * @see #getStayTime()
      */
     public void setStayTime(Duration value) {
         this.stayTime = value;
@@ -186,6 +169,16 @@ public class PTZPresetTourSpot {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

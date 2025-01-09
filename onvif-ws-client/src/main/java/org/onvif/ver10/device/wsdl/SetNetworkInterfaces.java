@@ -6,26 +6,28 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.NetworkInterfaceSetConfiguration;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="InterfaceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         <element name="NetworkInterface" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceSetConfiguration"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="InterfaceToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
+ *         &lt;element name="NetworkInterface" type="{http://www.onvif.org/ver10/schema}NetworkInterfaceSetConfiguration"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,21 +39,13 @@ import org.onvif.ver10.schema.NetworkInterfaceSetConfiguration;
 @XmlRootElement(name = "SetNetworkInterfaces")
 public class SetNetworkInterfaces {
 
-    /**
-     * Symbolic network interface name.
-     * 
-     */
     @XmlElement(name = "InterfaceToken", required = true)
     protected String interfaceToken;
-    /**
-     * Network interface name.
-     * 
-     */
     @XmlElement(name = "NetworkInterface", required = true)
     protected NetworkInterfaceSetConfiguration networkInterface;
 
     /**
-     * Symbolic network interface name.
+     * Gets the value of the interfaceToken property.
      * 
      * @return
      *     possible object is
@@ -69,14 +63,13 @@ public class SetNetworkInterfaces {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getInterfaceToken()
      */
     public void setInterfaceToken(String value) {
         this.interfaceToken = value;
     }
 
     /**
-     * Network interface name.
+     * Gets the value of the networkInterface property.
      * 
      * @return
      *     possible object is
@@ -94,10 +87,19 @@ public class SetNetworkInterfaces {
      *     allowed object is
      *     {@link NetworkInterfaceSetConfiguration }
      *     
-     * @see #getNetworkInterface()
      */
     public void setNetworkInterface(NetworkInterfaceSetConfiguration value) {
         this.networkInterface = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

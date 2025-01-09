@@ -6,26 +6,28 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.onvif.ver10.schema.PTZSpeed;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/>
- *         <element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ProfileToken" type="{http://www.onvif.org/ver10/schema}ReferenceToken"/&gt;
+ *         &lt;element name="Speed" type="{http://www.onvif.org/ver10/schema}PTZSpeed" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -37,24 +39,13 @@ import org.onvif.ver10.schema.PTZSpeed;
 @XmlRootElement(name = "GotoHomePosition")
 public class GotoHomePosition {
 
-    /**
-     * A reference to the MediaProfile where the operation should take
-     *                   place.
-     * 
-     */
     @XmlElement(name = "ProfileToken", required = true)
     protected String profileToken;
-    /**
-     * A requested speed.The speed parameter can only be specified when
-     *                   Speed Spaces are available for the PTZ Node.
-     * 
-     */
     @XmlElement(name = "Speed")
     protected PTZSpeed speed;
 
     /**
-     * A reference to the MediaProfile where the operation should take
-     *                   place.
+     * Gets the value of the profileToken property.
      * 
      * @return
      *     possible object is
@@ -72,15 +63,13 @@ public class GotoHomePosition {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getProfileToken()
      */
     public void setProfileToken(String value) {
         this.profileToken = value;
     }
 
     /**
-     * A requested speed.The speed parameter can only be specified when
-     *                   Speed Spaces are available for the PTZ Node.
+     * Gets the value of the speed property.
      * 
      * @return
      *     possible object is
@@ -98,10 +87,19 @@ public class GotoHomePosition {
      *     allowed object is
      *     {@link PTZSpeed }
      *     
-     * @see #getSpeed()
      */
     public void setSpeed(PTZSpeed value) {
         this.speed = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

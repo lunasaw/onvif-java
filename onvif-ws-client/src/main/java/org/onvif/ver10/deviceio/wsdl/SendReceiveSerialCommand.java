@@ -8,27 +8,29 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for anonymous complex type</p>.
+ * <p>Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType>
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="SerialData" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialData" minOccurs="0"/>
- *         <element name="TimeOut" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/>
- *         <element name="DataLength" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/>
- *         <element name="Delimiter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SerialData" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialData" minOccurs="0"/&gt;
+ *         &lt;element name="TimeOut" type="{http://www.w3.org/2001/XMLSchema}duration" minOccurs="0"/&gt;
+ *         &lt;element name="DataLength" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
+ *         &lt;element name="Delimiter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -42,40 +44,17 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "SendReceiveSerialCommand")
 public class SendReceiveSerialCommand {
 
-    /**
-     * The serial port data.
-     * 
-     */
     @XmlElement(name = "SerialData")
     protected SerialData serialData;
-    /**
-     * Indicates that the command should be responded back within the
-     *                   specified period of time.
-     * 
-     */
     @XmlElement(name = "TimeOut")
     protected Duration timeOut;
-    /**
-     * This element may be put in the case that data length returned from
-     *                   the connected serial device is already determined as some fixed bytes length. It
-     *                   indicates the length of received data which can be regarded as available.
-     * 
-     */
     @XmlElement(name = "DataLength")
     protected BigInteger dataLength;
-    /**
-     * This element may be put in the case that the delimiter codes
-     *                   returned from the connected serial device is already known. It indicates the
-     *                   termination data sequence of the responded data. In case the string has more than
-     *                   one character a device shall interpret the whole string as a single delimiter.
-     *                   Furthermore a device shall return the delimiter character(s) to the tests.
-     * 
-     */
     @XmlElement(name = "Delimiter")
     protected String delimiter;
 
     /**
-     * The serial port data.
+     * Gets the value of the serialData property.
      * 
      * @return
      *     possible object is
@@ -93,15 +72,13 @@ public class SendReceiveSerialCommand {
      *     allowed object is
      *     {@link SerialData }
      *     
-     * @see #getSerialData()
      */
     public void setSerialData(SerialData value) {
         this.serialData = value;
     }
 
     /**
-     * Indicates that the command should be responded back within the
-     *                   specified period of time.
+     * Gets the value of the timeOut property.
      * 
      * @return
      *     possible object is
@@ -119,16 +96,13 @@ public class SendReceiveSerialCommand {
      *     allowed object is
      *     {@link Duration }
      *     
-     * @see #getTimeOut()
      */
     public void setTimeOut(Duration value) {
         this.timeOut = value;
     }
 
     /**
-     * This element may be put in the case that data length returned from
-     *                   the connected serial device is already determined as some fixed bytes length. It
-     *                   indicates the length of received data which can be regarded as available.
+     * Gets the value of the dataLength property.
      * 
      * @return
      *     possible object is
@@ -146,18 +120,13 @@ public class SendReceiveSerialCommand {
      *     allowed object is
      *     {@link BigInteger }
      *     
-     * @see #getDataLength()
      */
     public void setDataLength(BigInteger value) {
         this.dataLength = value;
     }
 
     /**
-     * This element may be put in the case that the delimiter codes
-     *                   returned from the connected serial device is already known. It indicates the
-     *                   termination data sequence of the responded data. In case the string has more than
-     *                   one character a device shall interpret the whole string as a single delimiter.
-     *                   Furthermore a device shall return the delimiter character(s) to the tests.
+     * Gets the value of the delimiter property.
      * 
      * @return
      *     possible object is
@@ -175,10 +144,19 @@ public class SendReceiveSerialCommand {
      *     allowed object is
      *     {@link String }
      *     
-     * @see #getDelimiter()
      */
     public void setDelimiter(String value) {
         this.delimiter = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

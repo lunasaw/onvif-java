@@ -5,25 +5,27 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for ImagingOptions20Extension2 complex type</p>.
+ * <p>Java class for ImagingOptions20Extension2 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="ImagingOptions20Extension2">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="IrCutFilterAutoAdjustment" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptions" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension3" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="ImagingOptions20Extension2"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="IrCutFilterAutoAdjustment" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptions" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension3" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,17 +36,13 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class ImagingOptions20Extension2 {
 
-    /**
-     * Options of parameters for adjustment of Ir cut filter auto mode.
-     * 
-     */
     @XmlElement(name = "IrCutFilterAutoAdjustment")
     protected IrCutFilterAutoAdjustmentOptions irCutFilterAutoAdjustment;
     @XmlElement(name = "Extension")
     protected ImagingOptions20Extension3 extension;
 
     /**
-     * Options of parameters for adjustment of Ir cut filter auto mode.
+     * Gets the value of the irCutFilterAutoAdjustment property.
      * 
      * @return
      *     possible object is
@@ -62,7 +60,6 @@ public class ImagingOptions20Extension2 {
      *     allowed object is
      *     {@link IrCutFilterAutoAdjustmentOptions }
      *     
-     * @see #getIrCutFilterAutoAdjustment()
      */
     public void setIrCutFilterAutoAdjustment(IrCutFilterAutoAdjustmentOptions value) {
         this.irCutFilterAutoAdjustment = value;
@@ -90,6 +87,16 @@ public class ImagingOptions20Extension2 {
      */
     public void setExtension(ImagingOptions20Extension3 value) {
         this.extension = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

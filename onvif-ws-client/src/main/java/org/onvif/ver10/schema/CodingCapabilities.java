@@ -12,32 +12,35 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
  * This type contains the Audio and Video coding capabilities of a display
  *         service.
+ *       
  * 
- * <p>Java class for CodingCapabilities complex type</p>.
+ * <p>Java class for CodingCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="CodingCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="AudioEncodingCapabilities" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfigurationOptions" minOccurs="0"/>
- *         <element name="AudioDecodingCapabilities" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptions" minOccurs="0"/>
- *         <element name="VideoDecodingCapabilities" type="{http://www.onvif.org/ver10/schema}VideoDecoderConfigurationOptions"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="CodingCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="AudioEncodingCapabilities" type="{http://www.onvif.org/ver10/schema}AudioEncoderConfigurationOptions" minOccurs="0"/&gt;
+ *         &lt;element name="AudioDecodingCapabilities" type="{http://www.onvif.org/ver10/schema}AudioDecoderConfigurationOptions" minOccurs="0"/&gt;
+ *         &lt;element name="VideoDecodingCapabilities" type="{http://www.onvif.org/ver10/schema}VideoDecoderConfigurationOptions"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -50,35 +53,19 @@ import org.w3c.dom.Element;
 })
 public class CodingCapabilities {
 
-    /**
-     * If the device supports audio encoding this section describes the
-     *             supported codecs and their configuration.
-     * 
-     */
     @XmlElement(name = "AudioEncodingCapabilities")
     protected AudioEncoderConfigurationOptions audioEncodingCapabilities;
-    /**
-     * If the device supports audio decoding this section describes the
-     *             supported codecs and their settings.
-     * 
-     */
     @XmlElement(name = "AudioDecodingCapabilities")
     protected AudioDecoderConfigurationOptions audioDecodingCapabilities;
-    /**
-     * This section describes the supported video codesc and their
-     *             configuration.
-     * 
-     */
     @XmlElement(name = "VideoDecodingCapabilities", required = true)
     protected VideoDecoderConfigurationOptions videoDecodingCapabilities;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * If the device supports audio encoding this section describes the
-     *             supported codecs and their configuration.
+     * Gets the value of the audioEncodingCapabilities property.
      * 
      * @return
      *     possible object is
@@ -96,15 +83,13 @@ public class CodingCapabilities {
      *     allowed object is
      *     {@link AudioEncoderConfigurationOptions }
      *     
-     * @see #getAudioEncodingCapabilities()
      */
     public void setAudioEncodingCapabilities(AudioEncoderConfigurationOptions value) {
         this.audioEncodingCapabilities = value;
     }
 
     /**
-     * If the device supports audio decoding this section describes the
-     *             supported codecs and their settings.
+     * Gets the value of the audioDecodingCapabilities property.
      * 
      * @return
      *     possible object is
@@ -122,15 +107,13 @@ public class CodingCapabilities {
      *     allowed object is
      *     {@link AudioDecoderConfigurationOptions }
      *     
-     * @see #getAudioDecodingCapabilities()
      */
     public void setAudioDecodingCapabilities(AudioDecoderConfigurationOptions value) {
         this.audioDecodingCapabilities = value;
     }
 
     /**
-     * This section describes the supported video codesc and their
-     *             configuration.
+     * Gets the value of the videoDecodingCapabilities property.
      * 
      * @return
      *     possible object is
@@ -148,7 +131,6 @@ public class CodingCapabilities {
      *     allowed object is
      *     {@link VideoDecoderConfigurationOptions }
      *     
-     * @see #getVideoDecodingCapabilities()
      */
     public void setVideoDecodingCapabilities(VideoDecoderConfigurationOptions value) {
         this.videoDecodingCapabilities = value;
@@ -157,16 +139,16 @@ public class CodingCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -174,15 +156,12 @@ public class CodingCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -203,6 +182,16 @@ public class CodingCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -5,25 +5,27 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for IPv6NetworkInterface complex type</p>.
+ * <p>Java class for IPv6NetworkInterface complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="IPv6NetworkInterface">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="Config" type="{http://www.onvif.org/ver10/schema}IPv6Configuration" minOccurs="0"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="IPv6NetworkInterface"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="Enabled" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="Config" type="{http://www.onvif.org/ver10/schema}IPv6Configuration" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -34,24 +36,17 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IPv6NetworkInterface {
 
-    /**
-     * Indicates whether or not IPv6 is enabled.
-     * 
-     */
     @XmlElement(name = "Enabled")
     protected boolean enabled;
-    /**
-     * IPv6 configuration.
-     * 
-     */
     @XmlElement(name = "Config")
     protected IPv6Configuration config;
 
     /**
-     * Indicates whether or not IPv6 is enabled.
+     * Gets the value of the enabled property.
+     * This getter has been renamed from isEnabled() to getEnabled() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isEnabled() {
+    public boolean getEnabled() {
         return enabled;
     }
 
@@ -64,7 +59,7 @@ public class IPv6NetworkInterface {
     }
 
     /**
-     * IPv6 configuration.
+     * Gets the value of the config property.
      * 
      * @return
      *     possible object is
@@ -82,10 +77,19 @@ public class IPv6NetworkInterface {
      *     allowed object is
      *     {@link IPv6Configuration }
      *     
-     * @see #getConfig()
      */
     public void setConfig(IPv6Configuration value) {
         this.config = value;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

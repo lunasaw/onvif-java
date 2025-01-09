@@ -11,28 +11,30 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for IrCutFilterAutoAdjustmentOptions complex type</p>.
+ * <p>Java class for IrCutFilterAutoAdjustmentOptions complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="IrCutFilterAutoAdjustmentOptions">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="BoundaryType" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
- *         <element name="BoundaryOffset" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="ResponseTimeRange" type="{http://www.onvif.org/ver10/schema}DurationRange" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptionsExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="IrCutFilterAutoAdjustmentOptions"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="BoundaryType" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="BoundaryOffset" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="ResponseTimeRange" type="{http://www.onvif.org/ver10/schema}DurationRange" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}IrCutFilterAutoAdjustmentOptionsExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,76 +47,56 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class IrCutFilterAutoAdjustmentOptions {
 
-    /**
-     * Supported options of boundary types for adjustment of Ir cut filter auto
-     *             mode. The opptions shall be chosen from tt:IrCutFilterAutoBoundaryType.
-     * 
-     */
     @XmlElement(name = "BoundaryType", required = true)
     protected List<String> boundaryType;
-    /**
-     * Indicates whether or not boundary offset for toggling Ir cut filter is
-     *             supported.
-     * 
-     */
     @XmlElement(name = "BoundaryOffset")
     protected Boolean boundaryOffset;
-    /**
-     * Supported range of delay time for toggling Ir cut filter.
-     * 
-     */
     @XmlElement(name = "ResponseTimeRange")
     protected DurationRange responseTimeRange;
     @XmlElement(name = "Extension")
     protected IrCutFilterAutoAdjustmentOptionsExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Supported options of boundary types for adjustment of Ir cut filter auto
-     *             mode. The opptions shall be chosen from tt:IrCutFilterAutoBoundaryType.
-     * 
      * Gets the value of the boundaryType property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the boundaryType property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the boundaryType property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getBoundaryType().add(newItem);
+     *    getBoundaryType().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the boundaryType property.
      */
     public List<String> getBoundaryType() {
         if (boundaryType == null) {
-            boundaryType = new ArrayList<>();
+            boundaryType = new ArrayList<String>();
         }
         return this.boundaryType;
     }
 
     /**
-     * Indicates whether or not boundary offset for toggling Ir cut filter is
-     *             supported.
+     * Gets the value of the boundaryOffset property.
+     * This getter has been renamed from isBoundaryOffset() to getBoundaryOffset() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isBoundaryOffset() {
+    public Boolean getBoundaryOffset() {
         return boundaryOffset;
     }
 
@@ -125,14 +107,13 @@ public class IrCutFilterAutoAdjustmentOptions {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isBoundaryOffset()
      */
     public void setBoundaryOffset(Boolean value) {
         this.boundaryOffset = value;
     }
 
     /**
-     * Supported range of delay time for toggling Ir cut filter.
+     * Gets the value of the responseTimeRange property.
      * 
      * @return
      *     possible object is
@@ -150,7 +131,6 @@ public class IrCutFilterAutoAdjustmentOptions {
      *     allowed object is
      *     {@link DurationRange }
      *     
-     * @see #getResponseTimeRange()
      */
     public void setResponseTimeRange(DurationRange value) {
         this.responseTimeRange = value;
@@ -196,6 +176,16 @@ public class IrCutFilterAutoAdjustmentOptions {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

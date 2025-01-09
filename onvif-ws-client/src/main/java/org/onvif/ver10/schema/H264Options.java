@@ -9,28 +9,30 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for H264Options complex type</p>.
+ * <p>Java class for H264Options complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="H264Options">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/>
- *         <element name="GovLengthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="FrameRateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="EncodingIntervalRange" type="{http://www.onvif.org/ver10/schema}IntRange"/>
- *         <element name="H264ProfilesSupported" type="{http://www.onvif.org/ver10/schema}H264Profile" maxOccurs="unbounded"/>
- *       </sequence>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="H264Options"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="ResolutionsAvailable" type="{http://www.onvif.org/ver10/schema}VideoResolution" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="GovLengthRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="FrameRateRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="EncodingIntervalRange" type="{http://www.onvif.org/ver10/schema}IntRange"/&gt;
+ *         &lt;element name="H264ProfilesSupported" type="{http://www.onvif.org/ver10/schema}H264Profile" maxOccurs="unbounded"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -47,78 +49,49 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class H264Options {
 
-    /**
-     * List of supported image sizes.
-     * 
-     */
     @XmlElement(name = "ResolutionsAvailable", required = true)
     protected List<VideoResolution> resolutionsAvailable;
-    /**
-     * Supported group of Video frames length. This value typically corresponds
-     *             to the I-Frame distance.
-     * 
-     */
     @XmlElement(name = "GovLengthRange", required = true)
     protected IntRange govLengthRange;
-    /**
-     * Supported frame rate in fps (frames per second).
-     * 
-     */
     @XmlElement(name = "FrameRateRange", required = true)
     protected IntRange frameRateRange;
-    /**
-     * Supported encoding interval range. The encoding interval corresponds to
-     *             the number of frames devided by the encoded frames. An encoding interval value of "1"
-     *             means that all frames are encoded.
-     * 
-     */
     @XmlElement(name = "EncodingIntervalRange", required = true)
     protected IntRange encodingIntervalRange;
-    /**
-     * List of supported H.264 profiles.
-     * 
-     */
     @XmlElement(name = "H264ProfilesSupported", required = true)
     @XmlSchemaType(name = "string")
     protected List<H264Profile> h264ProfilesSupported;
 
     /**
-     * List of supported image sizes.
-     * 
      * Gets the value of the resolutionsAvailable property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the resolutionsAvailable property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getResolutionsAvailable().add(newItem);
+     *    getResolutionsAvailable().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link VideoResolution }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the resolutionsAvailable property.
      */
     public List<VideoResolution> getResolutionsAvailable() {
         if (resolutionsAvailable == null) {
-            resolutionsAvailable = new ArrayList<>();
+            resolutionsAvailable = new ArrayList<VideoResolution>();
         }
         return this.resolutionsAvailable;
     }
 
     /**
-     * Supported group of Video frames length. This value typically corresponds
-     *             to the I-Frame distance.
+     * Gets the value of the govLengthRange property.
      * 
      * @return
      *     possible object is
@@ -136,14 +109,13 @@ public class H264Options {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getGovLengthRange()
      */
     public void setGovLengthRange(IntRange value) {
         this.govLengthRange = value;
     }
 
     /**
-     * Supported frame rate in fps (frames per second).
+     * Gets the value of the frameRateRange property.
      * 
      * @return
      *     possible object is
@@ -161,16 +133,13 @@ public class H264Options {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getFrameRateRange()
      */
     public void setFrameRateRange(IntRange value) {
         this.frameRateRange = value;
     }
 
     /**
-     * Supported encoding interval range. The encoding interval corresponds to
-     *             the number of frames devided by the encoded frames. An encoding interval value of "1"
-     *             means that all frames are encoded.
+     * Gets the value of the encodingIntervalRange property.
      * 
      * @return
      *     possible object is
@@ -188,44 +157,48 @@ public class H264Options {
      *     allowed object is
      *     {@link IntRange }
      *     
-     * @see #getEncodingIntervalRange()
      */
     public void setEncodingIntervalRange(IntRange value) {
         this.encodingIntervalRange = value;
     }
 
     /**
-     * List of supported H.264 profiles.
-     * 
      * Gets the value of the h264ProfilesSupported property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the h264ProfilesSupported property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the h264ProfilesSupported property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getH264ProfilesSupported().add(newItem);
+     *    getH264ProfilesSupported().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link H264Profile }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the h264ProfilesSupported property.
      */
     public List<H264Profile> getH264ProfilesSupported() {
         if (h264ProfilesSupported == null) {
-            h264ProfilesSupported = new ArrayList<>();
+            h264ProfilesSupported = new ArrayList<H264Profile>();
         }
         return this.h264ProfilesSupported;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

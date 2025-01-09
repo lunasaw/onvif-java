@@ -12,32 +12,34 @@ import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for Capabilities complex type</p>.
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="Capabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       <attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       <attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="Capabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,60 +51,34 @@ public class Capabilities {
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
-    /**
-     * Indicates that the WS Subscription policy is supported.
-     * 
-     */
     @XmlAttribute(name = "WSSubscriptionPolicySupport")
     protected Boolean wsSubscriptionPolicySupport;
-    /**
-     * Indicates that the WS Pull Point is supported.
-     * 
-     */
     @XmlAttribute(name = "WSPullPointSupport")
     protected Boolean wsPullPointSupport;
-    /**
-     * Indicates that the WS Pausable Subscription Manager Interface is
-     *               supported.
-     * 
-     */
     @XmlAttribute(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected Boolean wsPausableSubscriptionManagerInterfaceSupport;
-    /**
-     * Maximum number of supported notification producers as defined by
-     *               WS-BaseNotification.
-     * 
-     */
     @XmlAttribute(name = "MaxNotificationProducers")
     protected Integer maxNotificationProducers;
-    /**
-     * Maximum supported number of notification pull points.
-     * 
-     */
     @XmlAttribute(name = "MaxPullPoints")
     protected Integer maxPullPoints;
-    /**
-     * Indication if the device supports persistent notification storage.
-     * 
-     */
     @XmlAttribute(name = "PersistentNotificationStorage")
     protected Boolean persistentNotificationStorage;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -110,28 +86,26 @@ public class Capabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<Object>();
         }
         return this.any;
     }
 
     /**
-     * Indicates that the WS Subscription policy is supported.
+     * Gets the value of the wsSubscriptionPolicySupport property.
+     * This getter has been renamed from isWSSubscriptionPolicySupport() to getWSSubscriptionPolicySupport() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isWSSubscriptionPolicySupport() {
+    public Boolean getWSSubscriptionPolicySupport() {
         return wsSubscriptionPolicySupport;
     }
 
@@ -142,21 +116,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isWSSubscriptionPolicySupport()
      */
     public void setWSSubscriptionPolicySupport(Boolean value) {
         this.wsSubscriptionPolicySupport = value;
     }
 
     /**
-     * Indicates that the WS Pull Point is supported.
+     * Gets the value of the wsPullPointSupport property.
+     * This getter has been renamed from isWSPullPointSupport() to getWSPullPointSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isWSPullPointSupport() {
+    public Boolean getWSPullPointSupport() {
         return wsPullPointSupport;
     }
 
@@ -167,22 +141,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isWSPullPointSupport()
      */
     public void setWSPullPointSupport(Boolean value) {
         this.wsPullPointSupport = value;
     }
 
     /**
-     * Indicates that the WS Pausable Subscription Manager Interface is
-     *               supported.
+     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
+     * This getter has been renamed from isWSPausableSubscriptionManagerInterfaceSupport() to getWSPausableSubscriptionManagerInterfaceSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isWSPausableSubscriptionManagerInterfaceSupport() {
+    public Boolean getWSPausableSubscriptionManagerInterfaceSupport() {
         return wsPausableSubscriptionManagerInterfaceSupport;
     }
 
@@ -193,15 +166,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isWSPausableSubscriptionManagerInterfaceSupport()
      */
     public void setWSPausableSubscriptionManagerInterfaceSupport(Boolean value) {
         this.wsPausableSubscriptionManagerInterfaceSupport = value;
     }
 
     /**
-     * Maximum number of supported notification producers as defined by
-     *               WS-BaseNotification.
+     * Gets the value of the maxNotificationProducers property.
      * 
      * @return
      *     possible object is
@@ -219,14 +190,13 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getMaxNotificationProducers()
      */
     public void setMaxNotificationProducers(Integer value) {
         this.maxNotificationProducers = value;
     }
 
     /**
-     * Maximum supported number of notification pull points.
+     * Gets the value of the maxPullPoints property.
      * 
      * @return
      *     possible object is
@@ -244,21 +214,21 @@ public class Capabilities {
      *     allowed object is
      *     {@link Integer }
      *     
-     * @see #getMaxPullPoints()
      */
     public void setMaxPullPoints(Integer value) {
         this.maxPullPoints = value;
     }
 
     /**
-     * Indication if the device supports persistent notification storage.
+     * Gets the value of the persistentNotificationStorage property.
+     * This getter has been renamed from isPersistentNotificationStorage() to getPersistentNotificationStorage() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isPersistentNotificationStorage() {
+    public Boolean getPersistentNotificationStorage() {
         return persistentNotificationStorage;
     }
 
@@ -269,7 +239,6 @@ public class Capabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isPersistentNotificationStorage()
      */
     public void setPersistentNotificationStorage(Boolean value) {
         this.persistentNotificationStorage = value;
@@ -291,6 +260,16 @@ public class Capabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -9,29 +9,31 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Java class for NetworkCapabilities complex type</p>.
+ * <p>Java class for NetworkCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="NetworkCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         <element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkCapabilitiesExtension" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="NetworkCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="IPFilter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="ZeroConfiguration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="IPVersion6" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="DynDNS" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}NetworkCapabilitiesExtension" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -45,44 +47,29 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class NetworkCapabilities {
 
-    /**
-     * Indicates whether or not IP filtering is supported.
-     * 
-     */
     @XmlElement(name = "IPFilter")
     protected Boolean ipFilter;
-    /**
-     * Indicates whether or not zeroconf is supported.
-     * 
-     */
     @XmlElement(name = "ZeroConfiguration")
     protected Boolean zeroConfiguration;
-    /**
-     * Indicates whether or not IPv6 is supported.
-     * 
-     */
     @XmlElement(name = "IPVersion6")
     protected Boolean ipVersion6;
-    /**
-     * Indicates whether or not is supported.
-     * 
-     */
     @XmlElement(name = "DynDNS")
     protected Boolean dynDNS;
     @XmlElement(name = "Extension")
     protected NetworkCapabilitiesExtension extension;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates whether or not IP filtering is supported.
+     * Gets the value of the ipFilter property.
+     * This getter has been renamed from isIPFilter() to getIPFilter() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isIPFilter() {
+    public Boolean getIPFilter() {
         return ipFilter;
     }
 
@@ -93,21 +80,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isIPFilter()
      */
     public void setIPFilter(Boolean value) {
         this.ipFilter = value;
     }
 
     /**
-     * Indicates whether or not zeroconf is supported.
+     * Gets the value of the zeroConfiguration property.
+     * This getter has been renamed from isZeroConfiguration() to getZeroConfiguration() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isZeroConfiguration() {
+    public Boolean getZeroConfiguration() {
         return zeroConfiguration;
     }
 
@@ -118,21 +105,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isZeroConfiguration()
      */
     public void setZeroConfiguration(Boolean value) {
         this.zeroConfiguration = value;
     }
 
     /**
-     * Indicates whether or not IPv6 is supported.
+     * Gets the value of the ipVersion6 property.
+     * This getter has been renamed from isIPVersion6() to getIPVersion6() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isIPVersion6() {
+    public Boolean getIPVersion6() {
         return ipVersion6;
     }
 
@@ -143,21 +130,21 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isIPVersion6()
      */
     public void setIPVersion6(Boolean value) {
         this.ipVersion6 = value;
     }
 
     /**
-     * Indicates whether or not is supported.
+     * Gets the value of the dynDNS property.
+     * This getter has been renamed from isDynDNS() to getDynDNS() by cxf-xjc-boolean plugin.
      * 
      * @return
      *     possible object is
      *     {@link Boolean }
      *     
      */
-    public Boolean isDynDNS() {
+    public Boolean getDynDNS() {
         return dynDNS;
     }
 
@@ -168,7 +155,6 @@ public class NetworkCapabilities {
      *     allowed object is
      *     {@link Boolean }
      *     
-     * @see #isDynDNS()
      */
     public void setDynDNS(Boolean value) {
         this.dynDNS = value;
@@ -214,6 +200,16 @@ public class NetworkCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

@@ -13,32 +13,34 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for RecordingCapabilities complex type</p>.
+ * <p>Java class for RecordingCapabilities complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="RecordingCapabilities">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         <element name="ReceiverSource" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="MediaProfileSource" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="MaxStringLength" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         <any processContents='lax' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="RecordingCapabilities"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="XAddr" type="{http://www.w3.org/2001/XMLSchema}anyURI"/&gt;
+ *         &lt;element name="ReceiverSource" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="MediaProfileSource" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="MaxStringLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -70,7 +72,7 @@ public class RecordingCapabilities {
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
      * Gets the value of the xAddr property.
@@ -98,9 +100,10 @@ public class RecordingCapabilities {
 
     /**
      * Gets the value of the receiverSource property.
+     * This getter has been renamed from isReceiverSource() to getReceiverSource() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isReceiverSource() {
+    public boolean getReceiverSource() {
         return receiverSource;
     }
 
@@ -114,9 +117,10 @@ public class RecordingCapabilities {
 
     /**
      * Gets the value of the mediaProfileSource property.
+     * This getter has been renamed from isMediaProfileSource() to getMediaProfileSource() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isMediaProfileSource() {
+    public boolean getMediaProfileSource() {
         return mediaProfileSource;
     }
 
@@ -130,9 +134,10 @@ public class RecordingCapabilities {
 
     /**
      * Gets the value of the dynamicRecordings property.
+     * This getter has been renamed from isDynamicRecordings() to getDynamicRecordings() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDynamicRecordings() {
+    public boolean getDynamicRecordings() {
         return dynamicRecordings;
     }
 
@@ -146,9 +151,10 @@ public class RecordingCapabilities {
 
     /**
      * Gets the value of the dynamicTracks property.
+     * This getter has been renamed from isDynamicTracks() to getDynamicTracks() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isDynamicTracks() {
+    public boolean getDynamicTracks() {
         return dynamicTracks;
     }
 
@@ -179,16 +185,16 @@ public class RecordingCapabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -196,15 +202,12 @@ public class RecordingCapabilities {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
@@ -225,6 +228,16 @@ public class RecordingCapabilities {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }

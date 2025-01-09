@@ -13,30 +13,32 @@ import jakarta.xml.bind.annotation.XmlAnyElement;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlType;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for MetadataAttributes complex type</p>.
+ * <p>Java class for MetadataAttributes complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
- * <pre>{@code
- * <complexType name="MetadataAttributes">
- *   <complexContent>
- *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       <sequence>
- *         <element name="CanContainPTZ" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="CanContainAnalytics" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <element name="CanContainNotifications" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         <any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/>
- *       </sequence>
- *       <attribute name="PtzSpaces" type="{http://www.onvif.org/ver10/schema}StringAttrList" />
- *       <anyAttribute processContents='lax'/>
- *     </restriction>
- *   </complexContent>
- * </complexType>
- * }</pre>
+ * <pre>
+ * &lt;complexType name="MetadataAttributes"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="CanContainPTZ" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="CanContainAnalytics" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="CanContainNotifications" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;any processContents='lax' namespace='http://www.onvif.org/ver10/schema' maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="PtzSpaces" type="{http://www.onvif.org/ver10/schema}StringAttrList" /&gt;
+ *       &lt;anyAttribute processContents='lax'/&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */
@@ -49,46 +51,25 @@ import org.w3c.dom.Element;
 })
 public class MetadataAttributes {
 
-    /**
-     * Indicates that there can be PTZ data in the metadata track in the
-     *             specified time interval.
-     * 
-     */
     @XmlElement(name = "CanContainPTZ")
     protected boolean canContainPTZ;
-    /**
-     * Indicates that there can be analytics data in the metadata track in the
-     *             specified time interval.
-     * 
-     */
     @XmlElement(name = "CanContainAnalytics")
     protected boolean canContainAnalytics;
-    /**
-     * Indicates that there can be notifications in the metadata track in the
-     *             specified time interval.
-     * 
-     */
     @XmlElement(name = "CanContainNotifications")
     protected boolean canContainNotifications;
     @XmlAnyElement(lax = true)
     protected List<java.lang.Object> any;
-    /**
-     * List of all PTZ spaces active for recording. Note that events are only
-     *           recorded on position changes and the actual point of recording may not necessarily contain
-     *           an event of the specified type.
-     * 
-     */
     @XmlAttribute(name = "PtzSpaces")
     protected List<String> ptzSpaces;
     @XmlAnyAttribute
-    private Map<QName, String> otherAttributes = new HashMap<>();
+    private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
     /**
-     * Indicates that there can be PTZ data in the metadata track in the
-     *             specified time interval.
+     * Gets the value of the canContainPTZ property.
+     * This getter has been renamed from isCanContainPTZ() to getCanContainPTZ() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isCanContainPTZ() {
+    public boolean getCanContainPTZ() {
         return canContainPTZ;
     }
 
@@ -101,11 +82,11 @@ public class MetadataAttributes {
     }
 
     /**
-     * Indicates that there can be analytics data in the metadata track in the
-     *             specified time interval.
+     * Gets the value of the canContainAnalytics property.
+     * This getter has been renamed from isCanContainAnalytics() to getCanContainAnalytics() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isCanContainAnalytics() {
+    public boolean getCanContainAnalytics() {
         return canContainAnalytics;
     }
 
@@ -118,11 +99,11 @@ public class MetadataAttributes {
     }
 
     /**
-     * Indicates that there can be notifications in the metadata track in the
-     *             specified time interval.
+     * Gets the value of the canContainNotifications property.
+     * This getter has been renamed from isCanContainNotifications() to getCanContainNotifications() by cxf-xjc-boolean plugin.
      * 
      */
-    public boolean isCanContainNotifications() {
+    public boolean getCanContainNotifications() {
         return canContainNotifications;
     }
 
@@ -137,16 +118,16 @@ public class MetadataAttributes {
     /**
      * Gets the value of the any property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getAny().add(newItem);
+     *    getAny().add(newItem);
      * </pre>
      * 
      * 
@@ -154,51 +135,41 @@ public class MetadataAttributes {
      * Objects of the following type(s) are allowed in the list
      * {@link java.lang.Object }
      * {@link Element }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the any property.
      */
     public List<java.lang.Object> getAny() {
         if (any == null) {
-            any = new ArrayList<>();
+            any = new ArrayList<java.lang.Object>();
         }
         return this.any;
     }
 
     /**
-     * List of all PTZ spaces active for recording. Note that events are only
-     *           recorded on position changes and the actual point of recording may not necessarily contain
-     *           an event of the specified type.
-     * 
      * Gets the value of the ptzSpaces property.
      * 
-     * <p>This accessor method returns a reference to the live list,
+     * <p>
+     * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ptzSpaces property.</p>
+     * returned list will be present inside the Jakarta XML Binding object.
+     * This is why there is not a <CODE>set</CODE> method for the ptzSpaces property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
-     * </p>
      * <pre>
-     * getPtzSpaces().add(newItem);
+     *    getPtzSpaces().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * </p>
      * 
      * 
-     * @return
-     *     The value of the ptzSpaces property.
      */
     public List<String> getPtzSpaces() {
         if (ptzSpaces == null) {
-            ptzSpaces = new ArrayList<>();
+            ptzSpaces = new ArrayList<String>();
         }
         return this.ptzSpaces;
     }
@@ -219,6 +190,16 @@ public class MetadataAttributes {
      */
     public Map<QName, String> getOtherAttributes() {
         return otherAttributes;
+    }
+
+    /**
+     * Generates a String representation of the contents of this type.
+     * This is an extension method, produced by the 'ts' xjc plugin
+     * 
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, JAXBToStringStyle.DEFAULT_STYLE);
     }
 
 }
