@@ -19,6 +19,7 @@ import org.w3c.dom.NodeList;
 
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.URISyntaxException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +45,9 @@ public class PullPointTest implements PullMessagesCallbacks {
             cam = new OnvifDevice(creds.getHost(), creds.getUser(), creds.getPassword());
         } catch (ConnectException | SOAPException e1) {
             System.err.println("No connection to device with ip " + creds + ", please try again.");
+            System.exit(0);
+        } catch (URISyntaxException e) {
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
         System.out.println("Connected to device " + cam.getDeviceInfo());
@@ -75,8 +79,8 @@ public class PullPointTest implements PullMessagesCallbacks {
         JAXBElement<?> topicExpElem = objectFactory.createTopicExpression(topicExp);
         filter.getAny().add(topicExpElem);
         //pullPointSubscription.setFilter(filter);
-        org.onvif.ver10.events.wsdl.ObjectFactory eventObjFactory =
-                new org.onvif.ver10.events.wsdl.ObjectFactory();
+        ObjectFactory eventObjFactory =
+                new ObjectFactory();
         SubscriptionPolicy subcriptionPolicy =
                 eventObjFactory.createCreatePullPointSubscriptionSubscriptionPolicy();
         pullPointSubscription.setSubscriptionPolicy(subcriptionPolicy);

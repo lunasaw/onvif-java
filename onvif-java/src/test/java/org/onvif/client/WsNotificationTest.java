@@ -4,6 +4,7 @@ import de.onvif.soap.OnvifDevice;
 import java.io.File;
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -62,8 +63,10 @@ public class WsNotificationTest {
     } catch (ConnectException | SOAPException e1) {
       System.err.println("No connection to device with ip " + creds + ", please try again.");
       System.exit(0);
+    } catch (URISyntaxException e) {
+        System.err.println(e.getClass().getName() + ": " + e.getMessage());
     }
-    System.out.println("Connected to device " + cam.getDeviceInfo());
+      System.out.println("Connected to device " + cam.getDeviceInfo());
 
     // get device capabilities
     Capabilities cap = cam.getDevice().getCapabilities(Arrays.asList(CapabilityCategory.ALL));
