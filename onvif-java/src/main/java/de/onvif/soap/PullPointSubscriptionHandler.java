@@ -13,9 +13,7 @@ import org.oasis_open.docs.wsn.b_2.Renew;
 import org.oasis_open.docs.wsn.b_2.RenewResponse;
 import org.oasis_open.docs.wsn.b_2.Unsubscribe;
 import org.oasis_open.docs.wsn.b_2.UnsubscribeResponse;
-import org.oasis_open.docs.wsn.bw_2.SubscriptionManager;
-import org.oasis_open.docs.wsn.bw_2.UnableToDestroySubscriptionFault;
-import org.oasis_open.docs.wsn.bw_2.UnacceptableTerminationTimeFault;
+import org.oasis_open.docs.wsn.bw_2.*;
 import org.oasis_open.docs.wsrf.rw_2.ResourceUnknownFault;
 import org.onvif.ver10.events.wsdl.*;
 import org.slf4j.Logger;
@@ -36,56 +34,43 @@ import java.util.concurrent.Executors;
 
 public class PullPointSubscriptionHandler {
     private final Logger LOG = LoggerFactory.getLogger(PullPointSubscriptionHandler.class);
+    private final EventPortType eventWs;
     private final ExecutorService pullMessagesExecutor;
     private final List<Header> headers;
-    final private PullPointSubscription pullPointSubscription;
-    final private SubscriptionManager subscriptionManager;
-    private final Client pullPointSubscriptionProxy;
-    private final Client subscriptionManagerProxy;
-    final private String serviceAddress;
+    private final OnvifDevice device;
+    private PullPointSubscription pullPointSubscription;
+    private SubscriptionManager subscriptionManager;
+    private final CreatePullPointSubscription cpps;
     PullMessages pm = null;
     Renew renew = null;
     PullMessagesCallbacks callback;
     SOAPElement messageIDEl;
     boolean terminate = false;
 
-    public PullPointSubscriptionHandler(final OnvifDevice device, CreatePullPointSubscriptionResponse cppsr, PullMessagesCallbacks callback) {
+    public PullPointSubscriptionHandler(final OnvifDevice device, CreatePullPointSubscription cpps, PullMessagesCallbacks callback) {
+        eventWs = device.getEvents();
+        this.device = device;
+        this.cpps = cpps;
         headers = new ArrayList<>();
         pullMessagesExecutor = Executors.newSingleThreadExecutor();
-        serviceAddress = getWSAAddress(cppsr.getSubscriptionReference());
-        pullPointSubscription = device.getServiceProxy((BindingProvider) device.eventService.getEventPort(), serviceAddress).create(PullPointSubscription.class);
-        subscriptionManager = device.getServiceProxy((BindingProvider) device.eventService.getEventPort(), serviceAddress).create(SubscriptionManager.class);
-        pullPointSubscriptionProxy = ClientProxy.getClient(pullPointSubscription);
-        subscriptionManagerProxy = ClientProxy.getClient(subscriptionManager);
         this.callback = callback;
         init();
     }
 
-    // PullPointSubscription functions
-    public SeekResponse seek(Seek parameters) {
-        return pullPointSubscription.seek(parameters);
-    }
-
-    public void setSynchronizationPoint() {
-        pullPointSubscription.setSynchronizationPoint();
-    }
-
-    public UnsubscribeResponse unsubscribe(Unsubscribe unsubscribeRequest) throws UnableToDestroySubscriptionFault, ResourceUnknownFault {
-        return pullPointSubscription.unsubscribe(unsubscribeRequest);
-    }
-
-    public PullMessagesResponse pullMessages(PullMessages parameters) throws PullMessagesFaultResponse_Exception {
-        return pullPointSubscription.pullMessages(parameters);
-    }
-
-    // SubscriptionManager functions
-    public RenewResponse renew(Renew renewRequest) throws UnacceptableTerminationTimeFault, ResourceUnknownFault {
-        return subscriptionManager.renew(renewRequest);
-    }
-
-    public void init() {
+    private void init() {
         final String addressingNS = "http://www.w3.org/2005/08/addressing";
         try {
+            CreatePullPointSubscriptionResponse resp =
+                    eventWs.createPullPointSubscription(cpps);
+
+            final String serviceAddress = getWSAAddress(resp.getSubscriptionReference());
+            pullPointSubscription = device.getServiceProxy((BindingProvider) device.eventService.getEventPort(), serviceAddress).create(PullPointSubscription.class);
+            subscriptionManager = device.getServiceProxy((BindingProvider) device.eventService.getEventPort(), serviceAddress).create(SubscriptionManager.class);
+
+            final Client pullPointSubscriptionProxy = ClientProxy.getClient(pullPointSubscription);
+            final Client subscriptionManagerProxy = ClientProxy.getClient(subscriptionManager);
+
+
             pm = new PullMessages();
             pm.setMessageLimit(1024);
             Duration dur = DatatypeFactory.newInstance().newDuration("PT1M");
@@ -117,7 +102,8 @@ public class PullPointSubscriptionHandler {
             var messageIdHdr = new Header(messageID, messageIDEl);
             var toHdr = new Header(to, toEl);
             var replyToHdr = new Header(replyTo, replyToEl);
-
+            
+            headers.clear();
             headers.add(actionHdr);
             headers.add(messageIdHdr);
             headers.add(toHdr);
@@ -127,8 +113,19 @@ public class PullPointSubscriptionHandler {
             subscriptionManagerProxy.getRequestContext().put(Header.HEADER_LIST, headers);
 
             startPullMessages();
-        } catch (DatatypeConfigurationException | SOAPException ex) {
-            LOG.error(ex.getMessage(), ex);
+        } catch (DatatypeConfigurationException | SOAPException | UnsupportedPolicyRequestFault |
+                 TopicExpressionDialectUnknownFault | TopicNotSupportedFault | ResourceUnknownFault |
+                 UnrecognizedPolicyRequestFault | NotifyMessageNotSupportedFault | SubscribeCreationFailedFault |
+                 UnacceptableInitialTerminationTimeFault | InvalidProducerPropertiesExpressionFault |
+                 InvalidTopicExpressionFault | InvalidMessageContentExpressionFault | InvalidFilterFault e) {
+            LOG.error("{}: {}", e.getClass().getName(), e.getMessage());
+            try {
+                if(!terminate) {
+                    Thread.sleep(3000);
+                    init(); // On failure, tru again after delay
+                }
+            }
+            catch (InterruptedException ignored) {}
         }
     }
 
@@ -157,14 +154,46 @@ public class PullPointSubscriptionHandler {
                     unsubscribe(new Unsubscribe());
                     pullMessagesExecutor.shutdown();
                 }
-            } catch (PullMessagesFaultResponse_Exception | UnacceptableTerminationTimeFault | ResourceUnknownFault |
-                     UnableToDestroySubscriptionFault e) {
+            } catch (Exception e) {
                 LOG.error(e.getMessage(), e);
+                if(!terminate) {
+                    try {
+                        // This will most likely fail but try it anyway
+                        unsubscribe(new Unsubscribe());
+                    } catch (Exception ignore) {}
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException ignored) {}
+                    // On error restart from the beginning
+                    init();
+                }
             } finally {
                 if(!terminate)
                     startPullMessages();
             }
         });
+    }
+
+    // PullPointSubscription functions
+    public SeekResponse seek(Seek parameters) {
+        return pullPointSubscription.seek(parameters);
+    }
+
+    public void setSynchronizationPoint() {
+        pullPointSubscription.setSynchronizationPoint();
+    }
+
+    public UnsubscribeResponse unsubscribe(Unsubscribe unsubscribeRequest) throws UnableToDestroySubscriptionFault, ResourceUnknownFault {
+        return pullPointSubscription.unsubscribe(unsubscribeRequest);
+    }
+
+    public PullMessagesResponse pullMessages(PullMessages parameters) throws PullMessagesFaultResponse_Exception {
+        return pullPointSubscription.pullMessages(parameters);
+    }
+
+    // SubscriptionManager functions
+    public RenewResponse renew(Renew renewRequest) throws UnacceptableTerminationTimeFault, ResourceUnknownFault {
+        return subscriptionManager.renew(renewRequest);
     }
 
     public void setTerminate() {

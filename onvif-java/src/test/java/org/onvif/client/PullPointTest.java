@@ -6,7 +6,6 @@ import de.onvif.soap.PullMessagesCallbacks;
 import de.onvif.soap.PullPointSubscriptionHandler;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.soap.SOAPException;
-import org.apache.cxf.wsn.client.Publisher;
 import org.oasis_open.docs.wsn.b_2.FilterType;
 import org.oasis_open.docs.wsn.b_2.TopicExpressionType;
 import org.onvif.ver10.events.wsdl.*;
@@ -24,7 +23,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CountDownLatch;
 
 public class PullPointTest implements PullMessagesCallbacks {
     private PullPointTest() {
@@ -87,11 +85,7 @@ public class PullPointTest implements PullMessagesCallbacks {
                 objectFactory.createSubscribeInitialTerminationTime(timespan));
 
         try {
-            CreatePullPointSubscriptionResponse resp =
-                    eventWs.createPullPointSubscription(pullPointSubscription);
-
-            PullPointSubscriptionHandler ppsh = new PullPointSubscriptionHandler(cam, resp, this);
-
+            PullPointSubscriptionHandler ppsh = new PullPointSubscriptionHandler(cam, pullPointSubscription, this);
             Thread.currentThread().join();
             ppsh.setTerminate();
 
@@ -125,25 +119,10 @@ public class PullPointTest implements PullMessagesCallbacks {
     @Override
     public void onPullMessagesReceived(PullMessagesResponse pullMessages) {
         ProcessedPullMessagesResponse ppmr = new ProcessedPullMessagesResponse(pullMessages);
-        ppmr.responseData.forEach((x) -> {
-            x.Data.forEach((data) -> {
-                System.out.println(x.created + " " + x.topic + " " + data.Name + " " + data.Value);
-            });
-        });
+        ppmr.responseData.forEach((x) ->
+                x.Data.forEach((data) ->
+                        System.out.println(x.created + " " + x.topic + " " + data.Name + " " + data.Value)));
 
         responses.put(new Date(), ppmr);
-    }
-
-    public static class PublisherCallback implements Publisher.Callback {
-        final CountDownLatch subscribed = new CountDownLatch(1);
-        final CountDownLatch unsubscribed = new CountDownLatch(1);
-
-        public void subscribe(TopicExpressionType topic) {
-            subscribed.countDown();
-        }
-
-        public void unsubscribe(TopicExpressionType topic) {
-            unsubscribed.countDown();
-        }
     }
 }
