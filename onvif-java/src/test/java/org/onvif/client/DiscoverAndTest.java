@@ -59,8 +59,8 @@ public class DiscoverAndTest {
 
   public static void main(String[] args) {
     // get user and password.. we will ignore device host
-    String user = "";
-    String password = "";
+    String user = "admin";
+    String password = "R%40nc1dTapsB0ttom";
     if (args.length > 0) user = args[0];
     if (args.length > 1) password = args[1];
 

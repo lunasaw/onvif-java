@@ -17,7 +17,7 @@ public class SimpleTest {
 
     final Map<String, OnvifDevice> onvifCameras = new HashMap<>();
     final Map<String, OnvifCredentials> credentialsMap = new HashMap<>();
-    final String propFileRelativePath = "src/test/resources/onvif.properties";
+    final String propFileRelativePath = "onvif-java/src/test/resources/onvif.properties";
     final Properties config = new Properties();
     final File f = new File(propFileRelativePath);
     if (!f.exists()) throw new Exception("fnf: " + f.getAbsolutePath());
@@ -32,7 +32,7 @@ public class SimpleTest {
           OnvifDevice cam =
               new OnvifDevice(
                   credentials.getHost(), credentials.getUser(), credentials.getPassword());
-          System.out.printf("Connected to device %s (%s)%n", cam.getDeviceInfo(), k.toString());
+          System.out.printf("Connected to device %s (%s)%n", cam.getDeviceInfo(), k);
           System.out.println(TestDevice.inspect(cam));
 
           String snapshotUri = cam.getSnapshotUri();
@@ -46,8 +46,7 @@ public class SimpleTest {
                 "snapshot: " + tempFile.getAbsolutePath() + " length:" + tempFile.length());
           }
 
-        } catch (Throwable th) {
-          System.err.println("Error on device: " + k);
+        } catch (Throwable th) {System.err.println("Error on device: " + k);
           th.printStackTrace();
         }
       }

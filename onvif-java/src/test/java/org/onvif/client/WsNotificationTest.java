@@ -4,12 +4,13 @@ import de.onvif.soap.OnvifDevice;
 import java.io.File;
 import java.io.IOException;
 import java.net.ConnectException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import javax.xml.bind.JAXBElement;
-import javax.xml.soap.SOAPException;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.soap.SOAPException;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.cxf.wsn.client.Consumer;
@@ -62,8 +63,10 @@ public class WsNotificationTest {
     } catch (ConnectException | SOAPException e1) {
       System.err.println("No connection to device with ip " + creds + ", please try again.");
       System.exit(0);
+    } catch (URISyntaxException e) {
+        System.err.println(e.getClass().getName() + ": " + e.getMessage());
     }
-    System.out.println("Connected to device " + cam.getDeviceInfo());
+      System.out.println("Connected to device " + cam.getDeviceInfo());
 
     // get device capabilities
     Capabilities cap = cam.getDevice().getCapabilities(Arrays.asList(CapabilityCategory.ALL));
@@ -133,10 +136,12 @@ public class WsNotificationTest {
       ActiveMQConnectionFactory activemq =
           new ActiveMQConnectionFactory(
               "vm:(broker:(tcp://localhost:" + queuePort + ")?persistent=false)");
-      JaxwsNotificationBroker notificationBrokerServer =
-          new JaxwsNotificationBroker("WSNotificationBroker", activemq);
-      notificationBrokerServer.setAddress(brokerAddress);
-      notificationBrokerServer.init();
+
+      // This is deprecated in cxf 4
+//      JaxwsNotificationBroker notificationBrokerServer =
+//          new JaxwsNotificationBroker("WSNotificationBroker", activemq);
+//      notificationBrokerServer.setAddress(brokerAddress);
+//      notificationBrokerServer.init();
 
       // Create a subscription for a Topic on the broker
       NotificationBroker notificationBroker = new NotificationBroker(brokerAddress);

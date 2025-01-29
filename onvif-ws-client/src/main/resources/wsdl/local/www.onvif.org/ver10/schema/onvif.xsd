@@ -252,7 +252,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     <xs:annotation>
       <xs:documentation>
         A media profile consists of a set of media configurations. Media profiles are used by a
-        client
+        tests
         to configure properties of a media stream from an NVT.
         <br/>
         An NVT shall provide at least one media profile at boot. An NVT should provide “ready to
@@ -1408,7 +1408,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
           </xs:element>
           <xs:element name="Events" type="tt:EventSubscription" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Optional element to configure the streaming of events. A client
+              <xs:documentation>Optional element to configure the streaming of events. A tests
                 might be interested in receiving all,
                 none or some of the events produced by the device:
                 <ul>
@@ -1815,13 +1815,13 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
                 The following modes for the Send-Primacy are defined:
                 <ul>
                   <li>www.onvif.org/ver20/HalfDuplex/Server
-                    The server is allowed to send audio data to the client. The client shall not
-                    send
-                    audio data via the backchannel to the NVT in this mode.
+                      The server is allowed to send audio data to the tests. The tests shall not
+                      send
+                      audio data via the backchannel to the NVT in this mode.
                   </li>
                   <li>www.onvif.org/ver20/HalfDuplex/Client
-                    The client is allowed to send audio data via the backchannel to the server. The
-                    NVT shall not send audio data to the client in this mode.
+                    The tests is allowed to send audio data via the backchannel to the server. The
+                    NVT shall not send audio data to the tests in this mode.
                   </li>
                   <li>www.onvif.org/ver20/HalfDuplex/Auto
                     It is up to the device how to deal with sending and receiving audio data.
@@ -1870,12 +1870,12 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
             The following modes for the Send-Primacy are defined:
             <ul>
               <li>www.onvif.org/ver20/HalfDuplex/Server
-                The server is allowed to send audio data to the client. The client shall not send
-                audio data via the backchannel to the NVT in this mode.
+                  The server is allowed to send audio data to the tests. The tests shall not send
+                  audio data via the backchannel to the NVT in this mode.
               </li>
               <li>www.onvif.org/ver20/HalfDuplex/Client
-                The client is allowed to send audio data via the backchannel to the server. The
-                NVT shall not send audio data to the client in this mode.
+                The tests is allowed to send audio data via the backchannel to the server. The
+                NVT shall not send audio data to the tests in this mode.
               </li>
               <li>www.onvif.org/ver20/HalfDuplex/Auto
                 It is up to the device how to deal with sending and receiving audio data.
@@ -7630,7 +7630,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
             List describing the configuration parameters. The names of the parameters must be
             unique. If possible SimpleItems
             should be used to transport the information to ease parsing of dynamically defined
-            messages by a client
+            messages by a tests
             application.
           </xs:documentation>
         </xs:annotation>
@@ -7973,7 +7973,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <xs:element name="AudioOutputToken" type="tt:ReferenceToken" minOccurs="0">
         <xs:annotation>
           <xs:documentation>If the device has audio outputs, this element contains a pointer to the
-            audio output that is associated with the pane. A client
+            audio output that is associated with the pane. A tests
             can retrieve the available audio outputs of a device using the GetAudioOutputs command
             of the DeviceIO service.
           </xs:documentation>
@@ -7984,7 +7984,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
           <xs:documentation>If the device has audio sources, this element contains a pointer to the
             audio source that is associated with this pane.
             The audio connection from a decoder device to the NVT is established using the
-            backchannel mechanism. A client can retrieve the available audio sources of a device
+            backchannel mechanism. A tests can retrieve the available audio sources of a device
             using the GetAudioSources command of the
             DeviceIO service.
           </xs:documentation>
@@ -8002,7 +8002,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         <xs:annotation>
           <xs:documentation>A pointer to a Receiver that has the necessary information to receive
             data from a Transmitter. This Receiver can be connected and the network video decoder
-            displays the received data on the specified outputs. A client can retrieve the available
+            displays the received data on the specified outputs. A tests can retrieve the available
             Receivers using the
             GetReceivers command of the Receiver Service.
           </xs:documentation>
@@ -8698,7 +8698,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
   <xs:complexType name="RecordingSourceInformation">
     <xs:annotation>
       <xs:documentation>
-        A set of informative desciptions of a data source. The Search searvice allows a client to
+        A set of informative desciptions of a data source. The Search searvice allows a tests to
         filter on recordings based on information in this structure.
       </xs:documentation>
     </xs:annotation>
@@ -8706,7 +8706,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <xs:element name="SourceId" type="xs:anyURI">
         <xs:annotation>
           <xs:documentation>
-            Identifier for the source chosen by the client that creates the structure.
+            Identifier for the source chosen by the tests that creates the structure.
             This identifier is opaque to the device. Clients may use any type of URI for this field.
             A device shall support at least 128 characters.
           </xs:documentation>
@@ -9108,7 +9108,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         <xs:annotation>
           <xs:documentation>The mode of the job. If it is idle, nothing shall happen. If it is
             active, the device shall try
-            to obtain data from the receivers. A client shall use GetRecordingJobState to determine
+            to obtain data from the receivers. A tests shall use GetRecordingJobState to determine
             if data transfer is really taking place.
             <br/>
             The only valid values for Mode shall be “Idle” and “Active”.

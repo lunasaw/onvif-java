@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
@@ -30,11 +30,13 @@ import org.w3c.dom.Element;
  *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
  *       &lt;attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
  *       &lt;attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="EventBrokerProtocols" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="MaxEventBrokers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="MetadataOverMQTT" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;anyAttribute processContents='lax'/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -53,8 +55,6 @@ public class Capabilities {
     protected List<Object> any;
     @XmlAttribute(name = "WSSubscriptionPolicySupport")
     protected Boolean wsSubscriptionPolicySupport;
-    @XmlAttribute(name = "WSPullPointSupport")
-    protected Boolean wsPullPointSupport;
     @XmlAttribute(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected Boolean wsPausableSubscriptionManagerInterfaceSupport;
     @XmlAttribute(name = "MaxNotificationProducers")
@@ -63,6 +63,12 @@ public class Capabilities {
     protected Integer maxPullPoints;
     @XmlAttribute(name = "PersistentNotificationStorage")
     protected Boolean persistentNotificationStorage;
+    @XmlAttribute(name = "EventBrokerProtocols")
+    protected String eventBrokerProtocols;
+    @XmlAttribute(name = "MaxEventBrokers")
+    protected Integer maxEventBrokers;
+    @XmlAttribute(name = "MetadataOverMQTT")
+    protected Boolean metadataOverMQTT;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
@@ -72,7 +78,7 @@ public class Capabilities {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
+     * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
@@ -84,8 +90,8 @@ public class Capabilities {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link Object }
+     * {@link Element }
      * 
      * 
      */
@@ -119,31 +125,6 @@ public class Capabilities {
      */
     public void setWSSubscriptionPolicySupport(Boolean value) {
         this.wsSubscriptionPolicySupport = value;
-    }
-
-    /**
-     * Gets the value of the wsPullPointSupport property.
-     * This getter has been renamed from isWSPullPointSupport() to getWSPullPointSupport() by cxf-xjc-boolean plugin.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean getWSPullPointSupport() {
-        return wsPullPointSupport;
-    }
-
-    /**
-     * Sets the value of the wsPullPointSupport property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setWSPullPointSupport(Boolean value) {
-        this.wsPullPointSupport = value;
     }
 
     /**
@@ -242,6 +223,79 @@ public class Capabilities {
      */
     public void setPersistentNotificationStorage(Boolean value) {
         this.persistentNotificationStorage = value;
+    }
+
+    /**
+     * Gets the value of the eventBrokerProtocols property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventBrokerProtocols() {
+        return eventBrokerProtocols;
+    }
+
+    /**
+     * Sets the value of the eventBrokerProtocols property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventBrokerProtocols(String value) {
+        this.eventBrokerProtocols = value;
+    }
+
+    /**
+     * Gets the value of the maxEventBrokers property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getMaxEventBrokers() {
+        return maxEventBrokers;
+    }
+
+    /**
+     * Sets the value of the maxEventBrokers property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMaxEventBrokers(Integer value) {
+        this.maxEventBrokers = value;
+    }
+
+    /**
+     * Gets the value of the metadataOverMQTT property.
+     * This getter has been renamed from isMetadataOverMQTT() to getMetadataOverMQTT() by cxf-xjc-boolean plugin.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean getMetadataOverMQTT() {
+        return metadataOverMQTT;
+    }
+
+    /**
+     * Sets the value of the metadataOverMQTT property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setMetadataOverMQTT(Boolean value) {
+        this.metadataOverMQTT = value;
     }
 
     /**
