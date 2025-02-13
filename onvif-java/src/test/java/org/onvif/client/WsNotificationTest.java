@@ -52,13 +52,16 @@ public class WsNotificationTest {
   // A good idea could be to follow this guide:
   // https://access.redhat.com/documentation/en-us/red_hat_jboss_a-mq/6.1/html-single/ws-notification_guide/index#WSNTutorial
 
+
+
   public static void main(String[] args) throws IOException {
     OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
     System.out.println("Connect to camera, please wait ...");
 
     OnvifDevice cam = null;
     try {
-      cam = new OnvifDevice(creds.getHost(), creds.getUser(), creds.getPassword());
+//      cam = new OnvifDevice(creds.getHost(), creds.getUser(), creds.getPassword());
+      cam = new OnvifDevice("172.25.5.68:18080", "admin", "weidian_24h");
     } catch (ConnectException | SOAPException e1) {
       System.err.println("No connection to device with ip " + creds + ", please try again.");
       System.exit(0);

@@ -4,19 +4,20 @@ import de.onvif.beans.DeviceInfo;
 import de.onvif.soap.OnvifDevice;
 import de.onvif.utils.OnvifUtils;
 import java.io.IOException;
+import java.lang.Object;
 import java.net.URL;
 import java.util.List;
 import javax.xml.soap.SOAPException;
+
+import lombok.SneakyThrows;
 import org.onvif.ver10.device.wsdl.DeviceServiceCapabilities;
+import org.onvif.ver10.device.wsdl.GetNTP;
+import org.onvif.ver10.device.wsdl.GetNTPResponse;
 import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.GetEventProperties;
 import org.onvif.ver10.events.wsdl.GetEventPropertiesResponse;
 import org.onvif.ver10.media.wsdl.Media;
-import org.onvif.ver10.schema.AudioSource;
-import org.onvif.ver10.schema.PTZPreset;
-import org.onvif.ver10.schema.PTZStatus;
-import org.onvif.ver10.schema.Profile;
-import org.onvif.ver10.schema.VideoSource;
+import org.onvif.ver10.schema.*;
 import org.onvif.ver20.imaging.wsdl.ImagingPort;
 import org.onvif.ver20.ptz.wsdl.Capabilities;
 import org.onvif.ver20.ptz.wsdl.PTZ;
@@ -178,19 +179,35 @@ public class TestDevice {
       throws SOAPException, IOException {
     LOG.info("Testing camera:" + url);
     OnvifDevice device = new OnvifDevice(url, user, password);
+    System.out.println(device.getDeviceInfo().getManufacturer());
+
     return inspect(device);
   }
 
+  @SneakyThrows
   public static void main(String[] args) {
-    OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
-    try {
-      // OnvifDevice.setVerbose(true);
-      String out = testCamera(creds);
+//    OnvifCredentials creds = GetTestDevice.getOnvifCredentials(args);
+//    try {
+//      // OnvifDevice.setVerbose(true);
+//      String out = testCamera(creds);
+//
+//      LOG.info("\n" + out + "\n");
+//    } catch (Throwable th) {
+//      LOG.error("Failed for " + creds, th);
+//      th.printStackTrace();
+//    }
 
-      LOG.info("\n" + out + "\n");
-    } catch (Throwable th) {
-      LOG.error("Failed for " + creds, th);
-      th.printStackTrace();
-    }
+    OnvifDevice onvifDevice = new OnvifDevice("192.168.125.24", "admin", "weidian_24h");
+    System.out.println(onvifDevice.getDeviceInfo().getManufacturer());
+    System.out.println(onvifDevice.getDeviceInfo().getManufacturer());
+    onvifDevice.getDeviceInfo();
+    PTZ ptz = onvifDevice.getPtz();
+    List<PTZConfiguration> configurations = ptz.getConfigurations();
+    System.out.println(configurations.size());
+    String token = configurations.get(0).getToken();
+    PTZConfiguration ptzConfiguration = ptz.getConfiguration(token);
+    System.out.println(ptzConfiguration);
+    System.out.println(onvifDevice.getDeviceInfo().getManufacturer());
+
   }
 }

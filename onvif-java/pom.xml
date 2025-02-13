@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>onvif-java</artifactId>
-
+  <version>1.0.1-plugin-SNAPSHOT</version>
 
   <dependencies>
     <dependency>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>org.onvif</groupId>
       <artifactId>onvif-ws-client</artifactId>
-      <version>${project.version}</version>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
@@ -114,7 +114,11 @@
       <scope>test</scope>
     </dependency>
 
-
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.34</version>
+    </dependency>
   </dependencies>
 
 </project>
