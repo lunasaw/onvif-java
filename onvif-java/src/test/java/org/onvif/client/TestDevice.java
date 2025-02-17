@@ -200,6 +200,28 @@ public class TestDevice {
     OnvifDevice onvifDevice = new OnvifDevice("192.168.125.24", "admin", "weidian_24h");
     System.out.println(onvifDevice.getDeviceInfo().getManufacturer());
     System.out.println(onvifDevice.getDeviceInfo().getManufacturer());
+
+    List<Profile> profiles = onvifDevice.getMedia().getProfiles();
+    String token1 = profiles.get(0).getToken();
+    String token2 = profiles.get(1).getToken();
+    Profile profile = onvifDevice.getMedia().getProfile(token1);
+    MetadataConfiguration metadataConfiguration = profile.getMetadataConfiguration();
+    List<MetadataConfiguration> metadataConfigurations = onvifDevice.getMedia().getMetadataConfigurations();
+
+    StreamSetup streamSetup = new StreamSetup();
+    streamSetup.setStream(StreamType.RTP_MULTICAST);
+    Transport transport = new Transport();
+    transport.setProtocol(TransportProtocol.RTSP);
+    streamSetup.setTransport(transport);
+
+    streamSetup.setTransport(transport);
+    MediaUri streamUri = onvifDevice.getMedia().getStreamUri(streamSetup, token1);
+    System.out.println(streamUri.getUri());
+    System.out.println(streamUri);
+    MediaUri sceenshotUri = onvifDevice.getMedia().getSnapshotUri(token1);
+    System.out.println(sceenshotUri);
+    System.out.println(sceenshotUri.getUri());
+
     onvifDevice.getDeviceInfo();
     PTZ ptz = onvifDevice.getPtz();
     List<PTZConfiguration> configurations = ptz.getConfigurations();
