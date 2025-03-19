@@ -48,7 +48,7 @@ public class ProcessedPullMessagesResponse {
                         source.add(new SimpleItem(attrNameValue, attrValValue));
                     }
                 }
-                responseData.add(new PullMessagesResponseData(nm.getTopic().getContent().getFirst().toString(), source, data));
+                responseData.add(new PullMessagesResponseData(nm.getTopic().getContent().stream().findFirst().toString(), source, data));
             }
         });
     }

@@ -1,6 +1,5 @@
 package org.onvif.client;
 
-import com.google.common.collect.Lists;
 import de.onvif.soap.OnvifDevice;
 import lombok.SneakyThrows;
 import org.onvif.ver10.media.wsdl.GetOSD;

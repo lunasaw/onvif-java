@@ -8,8 +8,6 @@ import jakarta.xml.bind.annotation.XmlSeeAlso;
 import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
-import org.onvif.ver10.device.wsdl.StorageConfiguration;
-import org.onvif.ver10.deviceio.wsdl.SerialPort;
 
 
 /**
@@ -42,9 +40,7 @@ import org.onvif.ver10.deviceio.wsdl.SerialPort;
     RelayOutput.class,
     DigitalInput.class,
     PTZNode.class,
-    OSDConfiguration.class,
-    SerialPort.class,
-    StorageConfiguration.class
+    OSDConfiguration.class
 })
 public class DeviceEntity {
 

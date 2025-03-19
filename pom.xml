@@ -8,18 +8,72 @@
   <packaging>pom</packaging>
 
   <properties>
-    <java.version>21</java.version>
-    <cxf.version>4.1.0</cxf.version>
+    <java.version>11</java.version>
+    <cxf.version>4.0.2</cxf.version>
     <checkstyle-maven-plugin.version>3.6.0</checkstyle-maven-plugin.version>
     <jaxb.api.version>2.3.1</jaxb.api.version>         <!-- 2.3.0,  2.3.1 or 2.4.0-b180830.0359 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <onvif.version>1.0.2-plugin-SNAPSHOT</onvif.version>
   </properties>
 
   <modules>
     <module>onvif-ws-client</module>
     <module>onvif-java</module>
   </modules>
-
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://nexus.vdian.net/repository/maven-public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>snapshots</id>
+      <url>http://nexus.vdian.net/repository/maven-public/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <url>http://nexus.vdian.net/repository/maven-public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>snapshots</id>
+      <url>http://nexus.vdian.net/repository/maven-public/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <url>http://nexus.vdian.net/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <url>http://nexus.vdian.net/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
@@ -68,11 +122,11 @@
     </plugins>
   </reporting>
 
-  <distributionManagement>
-    <repository>
-      <id>internal</id>
-      <url>file://${project.build.directory}/mvn-repo</url>
-    </repository>
-  </distributionManagement>
+<!--  <distributionManagement>-->
+<!--    <repository>-->
+<!--      <id>internal</id>-->
+<!--      <url>file://${project.build.directory}/mvn-repo</url>-->
+<!--    </repository>-->
+<!--  </distributionManagement>-->
 
 </project>

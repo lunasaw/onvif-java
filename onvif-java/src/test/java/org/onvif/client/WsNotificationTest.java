@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.soap.SOAPException;
-import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.cxf.wsn.client.Consumer;
 import org.apache.cxf.wsn.client.NotificationBroker;
 import org.apache.cxf.wsn.client.Publisher;
 import org.apache.cxf.wsn.client.Subscription;
-import org.apache.cxf.wsn.services.JaxwsNotificationBroker;
 import org.oasis_open.docs.wsn.b_2.FilterType;
 import org.oasis_open.docs.wsn.b_2.NotificationMessageHolderType;
 import org.oasis_open.docs.wsn.b_2.TopicExpressionType;
@@ -133,15 +131,8 @@ public class WsNotificationTest {
       String queuePort = "8182";
       String brokerPort = "8181";
       String brokerAddress = "http://localhost:" + brokerPort + "/wsn/NotificationBroker";
-      ActiveMQConnectionFactory activemq =
-          new ActiveMQConnectionFactory(
-              "vm:(broker:(tcp://localhost:" + queuePort + ")?persistent=false)");
 
-      // This is deprecated in cxf 4
-//      JaxwsNotificationBroker notificationBrokerServer =
-//          new JaxwsNotificationBroker("WSNotificationBroker", activemq);
-//      notificationBrokerServer.setAddress(brokerAddress);
-//      notificationBrokerServer.init();
+
 
       // Create a subscription for a Topic on the broker
       NotificationBroker notificationBroker = new NotificationBroker(brokerAddress);
