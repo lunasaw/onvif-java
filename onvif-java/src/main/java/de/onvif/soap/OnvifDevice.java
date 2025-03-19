@@ -239,6 +239,10 @@ public class OnvifDevice {
     return result;
   }
 
+  public URL url() {
+    return url;
+  }
+
   /** Is used for basic devices and requests of given Onvif Device */
   public Device getDevice() {
     return device;
