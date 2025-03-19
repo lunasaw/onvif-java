@@ -1,17 +1,9 @@
 package de.onvif.soap;
 
 import de.onvif.beans.DeviceInfo;
-import java.net.ConnectException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-import javax.xml.soap.SOAPException;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.Holder;
+import jakarta.xml.soap.SOAPException;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.Holder;
 import org.apache.cxf.binding.soap.Soap12;
 import org.apache.cxf.binding.soap.SoapBindingConfiguration;
 import org.apache.cxf.endpoint.Client;
@@ -27,21 +19,20 @@ import org.onvif.ver10.events.wsdl.EventPortType;
 import org.onvif.ver10.events.wsdl.EventService;
 import org.onvif.ver10.media.wsdl.Media;
 import org.onvif.ver10.media.wsdl.MediaService;
-import org.onvif.ver10.schema.Capabilities;
-import org.onvif.ver10.schema.CapabilityCategory;
-import org.onvif.ver10.schema.DateTime;
-import org.onvif.ver10.schema.MediaUri;
-import org.onvif.ver10.schema.SetDateTimeType;
-import org.onvif.ver10.schema.StreamSetup;
-import org.onvif.ver10.schema.StreamType;
-import org.onvif.ver10.schema.Transport;
-import org.onvif.ver10.schema.TransportProtocol;
+import org.onvif.ver10.schema.*;
 import org.onvif.ver20.imaging.wsdl.ImagingPort;
 import org.onvif.ver20.imaging.wsdl.ImagingService;
 import org.onvif.ver20.ptz.wsdl.PTZ;
 import org.onvif.ver20.ptz.wsdl.PtzService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.net.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Robin Dick
@@ -58,6 +49,7 @@ public class OnvifDevice {
   private PTZ ptz;
   private ImagingPort imaging;
   private EventPortType events;
+  public final EventService eventService = new EventService();
 
   private static boolean verbose = false; // enable/disable logging of SOAP messages
   final SimpleSecurityHandler securityHandler;
@@ -68,8 +60,8 @@ public class OnvifDevice {
     if (!f.isEmpty()) {
       String out = u.toString().replace(f, "");
       try {
-        return new URL(out);
-      } catch (MalformedURLException e) {
+        return new URI(out).toURL();
+      } catch (MalformedURLException | URISyntaxException e) {
         throw new ConnectException("MalformedURLException " + u);
       }
     }
@@ -99,9 +91,9 @@ public class OnvifDevice {
    * @throws SOAPException
    */
   public OnvifDevice(String deviceIp, String user, String password)
-      throws ConnectException, SOAPException, MalformedURLException {
+          throws ConnectException, SOAPException, MalformedURLException, URISyntaxException {
     this(
-        deviceIp.startsWith("http") ? new URL(deviceIp) : new URL("http://" + deviceIp),
+        deviceIp.startsWith("http") ? new URI(deviceIp).toURL() : new URI("http://" + deviceIp).toURL(),
         user,
         password);
   }
@@ -115,7 +107,7 @@ public class OnvifDevice {
    *     doesn't answer to SOAP messages
    * @throws SOAPException
    */
-  public OnvifDevice(String hostIp) throws ConnectException, SOAPException, MalformedURLException {
+  public OnvifDevice(String hostIp) throws ConnectException, SOAPException, MalformedURLException, URISyntaxException {
     this(hostIp, null, null);
   }
 
@@ -136,7 +128,7 @@ public class OnvifDevice {
 
     // resetSystemDateAndTime();		// don't modify the camera in a constructor.. :)
 
-    Capabilities capabilities = this.device.getCapabilities(Arrays.asList(CapabilityCategory.ALL));
+    Capabilities capabilities = this.device.getCapabilities(List.of(CapabilityCategory.ALL));
     if (capabilities == null) {
       throw new ConnectException("Capabilities not reachable.");
     }
@@ -163,7 +155,7 @@ public class OnvifDevice {
     }
 
     if (capabilities.getEvents() != null && capabilities.getEvents().getXAddr() != null) {
-      this.events = new EventService().getEventPort();
+      this.events = eventService.getEventPort();
       this.events =
           getServiceProxy((BindingProvider) events, capabilities.getEvents().getXAddr())
               .create(EventPortType.class);
@@ -207,7 +199,7 @@ public class OnvifDevice {
     boolean daylightSavings = calendar.getTimeZone().inDaylightTime(currentDate);
     org.onvif.ver10.schema.TimeZone timeZone = new org.onvif.ver10.schema.TimeZone();
     timeZone.setTZ(displayTimeZone(calendar.getTimeZone()));
-    org.onvif.ver10.schema.Time time = new org.onvif.ver10.schema.Time();
+    Time time = new Time();
     time.setHour(calendar.get(Calendar.HOUR_OF_DAY));
     time.setMinute(calendar.get(Calendar.MINUTE));
     time.setSecond(calendar.get(Calendar.SECOND));
@@ -215,7 +207,7 @@ public class OnvifDevice {
     date.setYear(calendar.get(Calendar.YEAR));
     date.setMonth(calendar.get(Calendar.MONTH) + 1);
     date.setDay(calendar.get(Calendar.DAY_OF_MONTH));
-    org.onvif.ver10.schema.DateTime utcDateTime = new org.onvif.ver10.schema.DateTime();
+    DateTime utcDateTime = new DateTime();
     utcDateTime.setDate(date);
     utcDateTime.setTime(time);
     device.setSystemDateAndTime(SetDateTimeType.MANUAL, daylightSavings, timeZone, utcDateTime);
@@ -229,7 +221,7 @@ public class OnvifDevice {
     // avoid -4:-30 issue
     minutes = Math.abs(minutes);
 
-    String result = "";
+    String result;
     if (hours > 0) {
       result = String.format("GMT+%02d:%02d", hours, minutes);
     } else {
@@ -237,10 +229,6 @@ public class OnvifDevice {
     }
 
     return result;
-  }
-
-  public URL url() {
-    return url;
   }
 
   /** Is used for basic devices and requests of given Onvif Device */

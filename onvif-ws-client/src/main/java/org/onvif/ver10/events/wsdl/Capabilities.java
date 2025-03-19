@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 import org.w3c.dom.Element;
 
 
 /**
- * <p>Capabilities complex type的 Java 类。
+ * <p>Java class for Capabilities complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="Capabilities"&gt;
@@ -30,11 +30,13 @@ import org.w3c.dom.Element;
  *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="WSSubscriptionPolicySupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="WSPullPointSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;attribute name="WSPausableSubscriptionManagerInterfaceSupport" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;attribute name="MaxNotificationProducers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
  *       &lt;attribute name="MaxPullPoints" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
  *       &lt;attribute name="PersistentNotificationStorage" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
+ *       &lt;attribute name="EventBrokerProtocols" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="MaxEventBrokers" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
+ *       &lt;attribute name="MetadataOverMQTT" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
  *       &lt;anyAttribute processContents='lax'/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -53,8 +55,6 @@ public class Capabilities {
     protected List<Object> any;
     @XmlAttribute(name = "WSSubscriptionPolicySupport")
     protected Boolean wsSubscriptionPolicySupport;
-    @XmlAttribute(name = "WSPullPointSupport")
-    protected Boolean wsPullPointSupport;
     @XmlAttribute(name = "WSPausableSubscriptionManagerInterfaceSupport")
     protected Boolean wsPausableSubscriptionManagerInterfaceSupport;
     @XmlAttribute(name = "MaxNotificationProducers")
@@ -63,6 +63,12 @@ public class Capabilities {
     protected Integer maxPullPoints;
     @XmlAttribute(name = "PersistentNotificationStorage")
     protected Boolean persistentNotificationStorage;
+    @XmlAttribute(name = "EventBrokerProtocols")
+    protected String eventBrokerProtocols;
+    @XmlAttribute(name = "MaxEventBrokers")
+    protected Integer maxEventBrokers;
+    @XmlAttribute(name = "MetadataOverMQTT")
+    protected Boolean metadataOverMQTT;
     @XmlAnyAttribute
     private Map<QName, String> otherAttributes = new HashMap<QName, String>();
 
@@ -72,7 +78,7 @@ public class Capabilities {
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
+     * returned list will be present inside the Jakarta XML Binding object.
      * This is why there is not a <CODE>set</CODE> method for the any property.
      * 
      * <p>
@@ -84,8 +90,8 @@ public class Capabilities {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Element }
      * {@link Object }
+     * {@link Element }
      * 
      * 
      */
@@ -97,7 +103,7 @@ public class Capabilities {
     }
 
     /**
-     * 获取wsSubscriptionPolicySupport属性的值。
+     * Gets the value of the wsSubscriptionPolicySupport property.
      * This getter has been renamed from isWSSubscriptionPolicySupport() to getWSSubscriptionPolicySupport() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -110,7 +116,7 @@ public class Capabilities {
     }
 
     /**
-     * 设置wsSubscriptionPolicySupport属性的值。
+     * Sets the value of the wsSubscriptionPolicySupport property.
      * 
      * @param value
      *     allowed object is
@@ -122,32 +128,7 @@ public class Capabilities {
     }
 
     /**
-     * 获取wsPullPointSupport属性的值。
-     * This getter has been renamed from isWSPullPointSupport() to getWSPullPointSupport() by cxf-xjc-boolean plugin.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean getWSPullPointSupport() {
-        return wsPullPointSupport;
-    }
-
-    /**
-     * 设置wsPullPointSupport属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setWSPullPointSupport(Boolean value) {
-        this.wsPullPointSupport = value;
-    }
-
-    /**
-     * 获取wsPausableSubscriptionManagerInterfaceSupport属性的值。
+     * Gets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * This getter has been renamed from isWSPausableSubscriptionManagerInterfaceSupport() to getWSPausableSubscriptionManagerInterfaceSupport() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -160,7 +141,7 @@ public class Capabilities {
     }
 
     /**
-     * 设置wsPausableSubscriptionManagerInterfaceSupport属性的值。
+     * Sets the value of the wsPausableSubscriptionManagerInterfaceSupport property.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +153,7 @@ public class Capabilities {
     }
 
     /**
-     * 获取maxNotificationProducers属性的值。
+     * Gets the value of the maxNotificationProducers property.
      * 
      * @return
      *     possible object is
@@ -184,7 +165,7 @@ public class Capabilities {
     }
 
     /**
-     * 设置maxNotificationProducers属性的值。
+     * Sets the value of the maxNotificationProducers property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +177,7 @@ public class Capabilities {
     }
 
     /**
-     * 获取maxPullPoints属性的值。
+     * Gets the value of the maxPullPoints property.
      * 
      * @return
      *     possible object is
@@ -208,7 +189,7 @@ public class Capabilities {
     }
 
     /**
-     * 设置maxPullPoints属性的值。
+     * Sets the value of the maxPullPoints property.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +201,7 @@ public class Capabilities {
     }
 
     /**
-     * 获取persistentNotificationStorage属性的值。
+     * Gets the value of the persistentNotificationStorage property.
      * This getter has been renamed from isPersistentNotificationStorage() to getPersistentNotificationStorage() by cxf-xjc-boolean plugin.
      * 
      * @return
@@ -233,7 +214,7 @@ public class Capabilities {
     }
 
     /**
-     * 设置persistentNotificationStorage属性的值。
+     * Sets the value of the persistentNotificationStorage property.
      * 
      * @param value
      *     allowed object is
@@ -242,6 +223,79 @@ public class Capabilities {
      */
     public void setPersistentNotificationStorage(Boolean value) {
         this.persistentNotificationStorage = value;
+    }
+
+    /**
+     * Gets the value of the eventBrokerProtocols property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEventBrokerProtocols() {
+        return eventBrokerProtocols;
+    }
+
+    /**
+     * Sets the value of the eventBrokerProtocols property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEventBrokerProtocols(String value) {
+        this.eventBrokerProtocols = value;
+    }
+
+    /**
+     * Gets the value of the maxEventBrokers property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getMaxEventBrokers() {
+        return maxEventBrokers;
+    }
+
+    /**
+     * Sets the value of the maxEventBrokers property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setMaxEventBrokers(Integer value) {
+        this.maxEventBrokers = value;
+    }
+
+    /**
+     * Gets the value of the metadataOverMQTT property.
+     * This getter has been renamed from isMetadataOverMQTT() to getMetadataOverMQTT() by cxf-xjc-boolean plugin.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean getMetadataOverMQTT() {
+        return metadataOverMQTT;
+    }
+
+    /**
+     * Sets the value of the metadataOverMQTT property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setMetadataOverMQTT(Boolean value) {
+        this.metadataOverMQTT = value;
     }
 
     /**

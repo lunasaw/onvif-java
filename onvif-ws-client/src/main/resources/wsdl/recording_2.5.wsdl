@@ -543,7 +543,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
           <xs:sequence>
             <xs:element name="OperationToken" type="tt:ReferenceToken">
               <xs:annotation>
-                <xs:documentation>Unique operation token for client to associate the relevant
+                <xs:documentation>Unique operation token for tests to associate the relevant
                   events.
                 </xs:documentation>
               </xs:annotation>

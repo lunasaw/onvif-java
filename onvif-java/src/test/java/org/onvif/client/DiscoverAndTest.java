@@ -6,8 +6,6 @@ import java.io.StringWriter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
-
-import de.onvif.soap.OnvifDevice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,24 +54,21 @@ public class DiscoverAndTest {
     out.append("RESULTS: " + sep);
     for (String s : results) out.append(s + sep);
     out.append("cameras found:" + urls.size() + " good=" + good + ", bad=" + bad + sep);
-
-
-
     return out.toString();
   }
 
   public static void main(String[] args) {
     // get user and password.. we will ignore device host
     String user = "admin";
-    String password = "weidian_24h";
+    String password = "R%40nc1dTapsB0ttom";
     if (args.length > 0) user = args[0];
     if (args.length > 1) password = args[1];
+
     if (password.isEmpty()) {
       LOG.warn(
           "Warning: No password for discover and test... run with common user password as arguments");
     }
     // OnvifDevice.setVerbose(true);
-    String s = discoverAndTest(user, password);
-    LOG.info(s);
+    LOG.info(discoverAndTest(user, password));
   }
 }

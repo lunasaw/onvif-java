@@ -722,7 +722,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
                   returned from the connected serial device is already known. It indicates the
                   termination data sequence of the responded data. In case the string has more than
                   one character a device shall interpret the whole string as a single delimiter.
-                  Furthermore a device shall return the delimiter character(s) to the client.
+                  Furthermore a device shall return the delimiter character(s) to the tests.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>

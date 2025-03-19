@@ -1,16 +1,15 @@
 
 package org.onvif.ver10.accesscontrol.wsdl;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Decision的 Java 类。
+ * <p>Java class for Decision.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * <pre>
  * &lt;simpleType name="Decision"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;

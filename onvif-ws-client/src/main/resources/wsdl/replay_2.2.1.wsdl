@@ -89,7 +89,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
           <xs:sequence>
             <xs:element name="Uri" type="xs:anyURI">
               <xs:annotation>
-                <xs:documentation>The URI to which the client should connect in order to stream the
+                <xs:documentation>The URI to which the tests should connect in order to stream the
                   recording.
                 </xs:documentation>
               </xs:annotation>

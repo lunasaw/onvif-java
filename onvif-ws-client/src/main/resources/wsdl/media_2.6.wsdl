@@ -2714,7 +2714,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <wsdl:documentation>Any endpoint can ask for the existing media profiles of a device using the
         GetProfiles
         command. Pre-configured or dynamically configured profiles can be retrieved using this
-        command. This command lists all configured profiles in a device. The client does not need to
+        command. This command lists all configured profiles in a device. The tests does not need to
         know the media profile in order to use the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetProfilesRequest"/>
@@ -2830,7 +2830,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         that media
         profile can contain video analytics data (in the metadata) as defined by the submitted
         configuration reference. A profile containing only a video analytics configuration but no
-        video source configuration is incomplete. Therefore, a client should first add a video
+        video source configuration is incomplete. Therefore, a tests should first add a video
         source configuration to a profile before adding a video analytics configuration. The device
         can deny adding of a video analytics
         configuration before a video source configuration.
@@ -2907,7 +2907,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     <!--===============================-->
     <wsdl:operation name="GetVideoSourceConfigurations">
       <wsdl:documentation>This operation lists all existing video source configurations for a
-        device. The client need not know anything about the video source configurations in order to
+        device. The tests need not know anything about the video source configurations in order to
         use the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetVideoSourceConfigurationsRequest"/>
@@ -2916,7 +2916,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     <wsdl:operation name="GetVideoEncoderConfigurations">
       <wsdl:documentation>This operation lists all existing video encoder configurations of a
         device. This command lists all configured video encoder configurations in a device. The
-        client need not know anything apriori about the video encoder configurations in order to use
+        tests need not know anything apriori about the video encoder configurations in order to use
         the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetVideoEncoderConfigurationsRequest"/>
@@ -2924,7 +2924,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     </wsdl:operation>
     <wsdl:operation name="GetAudioSourceConfigurations">
       <wsdl:documentation>This operation lists all existing audio source configurations of a device.
-        This command lists all audio source configurations in a device. The client need not know
+        This command lists all audio source configurations in a device. The tests need not know
         anything apriori about the audio source configurations in order to use the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetAudioSourceConfigurationsRequest"/>
@@ -2932,7 +2932,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     </wsdl:operation>
     <wsdl:operation name="GetAudioEncoderConfigurations">
       <wsdl:documentation>This operation lists all existing device audio encoder configurations. The
-        client need not know anything apriori about the audio encoder configurations in order to use
+        tests need not know anything apriori about the audio encoder configurations in order to use
         the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetAudioEncoderConfigurationsRequest"/>
@@ -2940,14 +2940,14 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
     </wsdl:operation>
     <wsdl:operation name="GetVideoAnalyticsConfigurations">
       <wsdl:documentation>This operation lists all video analytics configurations of a device. This
-        command lists all configured video analytics in a device. The client need not know anything
+        command lists all configured video analytics in a device. The tests need not know anything
         apriori about the video analytics in order to use the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetVideoAnalyticsConfigurationsRequest"/>
       <wsdl:output message="trt:GetVideoAnalyticsConfigurationsResponse"/>
     </wsdl:operation>
     <wsdl:operation name="GetMetadataConfigurations">
-      <wsdl:documentation>This operation lists all existing metadata configurations. The client need
+      <wsdl:documentation>This operation lists all existing metadata configurations. The tests need
         not know anything apriori about the metadata in order to use the command.
       </wsdl:documentation>
       <wsdl:input message="trt:GetMetadataConfigurationsRequest"/>
@@ -3105,7 +3105,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <wsdl:documentation>This operation modifies a video source configuration. The ForcePersistence
         flag indicates if the changes shall remain after reboot of the device. Running streams using
         this configuration may be immediately updated according to the new settings. The changes are
-        not guaranteed to take effect unless the client requests a new stream URI and restarts any
+        not guaranteed to take effect unless the tests requests a new stream URI and restarts any
         affected stream. NVC methods for changing a running stream are out of scope for this
         specification.
       </wsdl:documentation>
@@ -3117,11 +3117,11 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         ForcePersistence flag indicates if the changes shall remain after reboot of the device.
         Changes in the Multicast settings shall always be persistent. Running streams using this
         configuration may be immediately updated according to the new settings. The changes are not
-        guaranteed to take effect unless the client requests a new stream URI and restarts any
+        guaranteed to take effect unless the tests requests a new stream URI and restarts any
         affected stream. NVC methods for changing a running stream are out of scope for this
         specification.<br/>SessionTimeout is provided as a hint for keeping rtsp session by a
         device. If necessary the device may adapt parameter values for SessionTimeout elements
-        without returning an error. For the time between keep alive calls the client shall adhere to
+        without returning an error. For the time between keep alive calls the tests shall adhere to
         the timeout value signaled via RTSP.
       </wsdl:documentation>
       <wsdl:input message="trt:SetVideoEncoderConfigurationRequest"/>
@@ -3133,7 +3133,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         the changes shall remain after reboot of the device. Running streams using this
         configuration
         may be immediately updated according to the new settings. The changes are not guaranteed
-        to take effect unless the client requests a new stream URI and restarts any affected stream
+        to take effect unless the tests requests a new stream URI and restarts any affected stream
         NVC methods for changing a running stream are out of scope for this specification.
       </wsdl:documentation>
       <wsdl:input message="trt:SetAudioSourceConfigurationRequest"/>
@@ -3145,7 +3145,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         the changes shall remain after reboot of the device. Running streams using this
         configuration may be immediately updated
         according to the new settings. The changes are not guaranteed to take effect unless the
-        client
+        tests
         requests a new stream URI and restarts any affected streams. NVC methods for changing a
         running stream are out of scope for this specification.
       </wsdl:documentation>
@@ -3171,7 +3171,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
         changes shall remain after reboot of the device. Changes in the Multicast settings shall
         always be persistent. Running streams using this configuration may be updated immediately
         according to the new settings. The changes are not guaranteed to take effect unless the
-        client
+        tests
         requests a new stream URI and restarts any affected streams. NVC methods for changing a
         running stream are out of scope for this specification.
       </wsdl:documentation>
@@ -3331,11 +3331,11 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <wsdl:documentation>Synchronization points allow clients to decode and correctly use all data
         after the
         synchronization point.
-        For example, if a video stream is configured with a large I-frame distance and a client
+        For example, if a video stream is configured with a large I-frame distance and a tests
         loses a
-        single packet, the client does not display video until the next I-frame is transmitted. In
+        single packet, the tests does not display video until the next I-frame is transmitted. In
         such
-        cases, the client can request a Synchronization Point which enforces the device to add an
+        cases, the tests can request a Synchronization Point which enforces the device to add an
         I-Frame as soon as possible. Clients can request Synchronization Points for profiles. The
         device
         shall add synchronization points for all streams associated with this profile.
@@ -3351,7 +3351,7 @@ IN NO EVENT WILL THE CORPORATION OR ITS MEMBERS OR THEIR AFFILIATES BE LIABLE FO
       <wsdl:output message="trt:SetSynchronizationPointResponse"/>
     </wsdl:operation>
     <wsdl:operation name="GetSnapshotUri">
-      <wsdl:documentation>A client uses the GetSnapshotUri command to obtain a JPEG snapshot from
+      <wsdl:documentation>A tests uses the GetSnapshotUri command to obtain a JPEG snapshot from
         the
         device. The returned URI shall remain valid indefinitely even if the profile is changed. The
         ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set accordingly

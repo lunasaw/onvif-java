@@ -1,16 +1,15 @@
 
 package org.onvif.ver10.doorcontrol.wsdl;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>DoorAlarmState的 Java 类。
+ * <p>Java class for DoorAlarmState.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * <pre>
  * &lt;simpleType name="DoorAlarmState"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
