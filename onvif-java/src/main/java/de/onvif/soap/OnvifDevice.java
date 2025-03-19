@@ -232,8 +232,13 @@ public class OnvifDevice {
   }
 
   /** Is used for basic devices and requests of given Onvif Device */
+
   public Device getDevice() {
     return device;
+  }
+
+  public URL url() {
+    return url;
   }
 
   public PTZ getPtz() {
