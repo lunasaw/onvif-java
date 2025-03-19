@@ -5,10 +5,10 @@
   <parent>
     <groupId>org.onvif</groupId>
     <artifactId>onvif</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-plugin-SNAPSHOT</version>
   </parent>
   <artifactId>onvif-ws-client</artifactId>
-
+  <version>1.0.1-plugin-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>org.apache.cxf</groupId>
