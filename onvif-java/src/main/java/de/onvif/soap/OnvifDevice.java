@@ -279,6 +279,10 @@ public class OnvifDevice {
         hardwareId.value);
   }
 
+  public URL url() {
+    return url;
+  }
+
   public String getHostname() {
     return device.getHostname().getName();
   }
