@@ -59,6 +59,10 @@ public class DeviceDiscovery {
         return discoverWsDevicesAsUrls("", "");
     }
 
+    public static Collection<URL> discoverWsDevicesAsUrls(String regexpProtocol, String regexpPath) {
+        return discoverWsDevicesAsUrls(regexpProtocol, regexpPath, new ArrayList<>());
+    }
+
     /**
      * Discover WS device on the local network with specified filter
      *
@@ -66,10 +70,10 @@ public class DeviceDiscovery {
      * @param regexpPath     url path matching regexp like "onvif", might be empty ""
      * @return list of unique device urls filtered
      */
-    public static Collection<URL> discoverWsDevicesAsUrls(String regexpProtocol, String regexpPath) {
+    public static Collection<URL> discoverWsDevicesAsUrls(String regexpProtocol, String regexpPath, List<String> ipList) {
         final Collection<URL> urls =
                 new TreeSet<>(Comparator.comparing(URL::toString));
-        for (String key : discoverWsDevices()) {
+        for (String key : discoverWsDevices(ipList)) {
             try {
                 final URL url = new URL(key);
                 boolean ok = true;
@@ -200,13 +204,14 @@ public class DeviceDiscovery {
                                                 WS_DISCOVERY_PORT));
                             } else {
                                 if (address instanceof Inet6Address) {
-                                    if (enableIPv6)
+                                    if (enableIPv6) {
                                         server.send(
                                                 new DatagramPacket(
                                                         probe.getBytes(StandardCharsets.UTF_8),
                                                         probe.length(),
                                                         InetAddress.getByName(WS_DISCOVERY_ADDRESS_IPv6),
                                                         WS_DISCOVERY_PORT));
+                                    }
                                 } else {
                                     assert (false); // 	unknown network type.. ignore or warn developer
                                 }
@@ -233,8 +238,12 @@ public class DeviceDiscovery {
 
     private static Collection<Node> getNodeMatching(Node body, String regexp) {
         final Collection<Node> nodes = new ArrayList<>();
-        if (body.getNodeName().matches(regexp)) nodes.add(body);
-        if (body.getChildNodes().getLength() == 0) return nodes;
+        if (body.getNodeName().matches(regexp)) {
+            nodes.add(body);
+        }
+        if (body.getChildNodes().getLength() == 0) {
+            return nodes;
+        }
         NodeList returnList = body.getChildNodes();
         for (int k = 0; k < returnList.getLength(); k++) {
             final Node node = returnList.item(k);
