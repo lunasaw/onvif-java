@@ -7,22 +7,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>ParityBit的 Java 类。
+ * &lt;p&gt;ParityBit的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="ParityBit"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="None"/&gt;
- *     &lt;enumeration value="Even"/&gt;
- *     &lt;enumeration value="Odd"/&gt;
- *     &lt;enumeration value="Mark"/&gt;
- *     &lt;enumeration value="Space"/&gt;
- *     &lt;enumeration value="Extended"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="ParityBit"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="None"/&amp;gt;
+ *     &amp;lt;enumeration value="Even"/&amp;gt;
+ *     &amp;lt;enumeration value="Odd"/&amp;gt;
+ *     &amp;lt;enumeration value="Mark"/&amp;gt;
+ *     &amp;lt;enumeration value="Space"/&amp;gt;
+ *     &amp;lt;enumeration value="Extended"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "ParityBit")

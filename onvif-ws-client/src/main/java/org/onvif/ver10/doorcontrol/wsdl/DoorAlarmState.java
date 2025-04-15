@@ -7,19 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>DoorAlarmState的 Java 类。
+ * &lt;p&gt;DoorAlarmState的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="DoorAlarmState"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Normal"/&gt;
- *     &lt;enumeration value="DoorForcedOpen"/&gt;
- *     &lt;enumeration value="DoorOpenTooLong"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="DoorAlarmState"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="Normal"/&amp;gt;
+ *     &amp;lt;enumeration value="DoorForcedOpen"/&amp;gt;
+ *     &amp;lt;enumeration value="DoorOpenTooLong"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "DoorAlarmState")

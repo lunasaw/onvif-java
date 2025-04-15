@@ -45,54 +45,54 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>BaseFaultType complex type的 Java 类。
+ * &lt;p&gt;BaseFaultType complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="BaseFaultType"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&gt;
- *         &lt;element name="Originator" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType" minOccurs="0"/&gt;
- *         &lt;element name="ErrorCode" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
- *                 &lt;anyAttribute processContents='skip'/&gt;
- *               &lt;/extension&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="Description" maxOccurs="unbounded" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;simpleContent&gt;
- *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
- *                 &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&gt;
- *               &lt;/extension&gt;
- *             &lt;/simpleContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="FaultCause" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' namespace='##other'/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="BaseFaultType"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;any processContents='lax' namespace='##other' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/&amp;gt;
+ *         &amp;lt;element name="Originator" type="{http://www.w3.org/2005/08/addressing}EndpointReferenceType" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="ErrorCode" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&amp;gt;
+ *                 &amp;lt;anyAttribute processContents='skip'/&amp;gt;
+ *               &amp;lt;/extension&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="Description" maxOccurs="unbounded" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;simpleContent&amp;gt;
+ *               &amp;lt;extension base="&amp;lt;http://www.w3.org/2001/XMLSchema&amp;gt;string"&amp;gt;
+ *                 &amp;lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&amp;gt;
+ *               &amp;lt;/extension&amp;gt;
+ *             &amp;lt;/simpleContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *         &amp;lt;element name="FaultCause" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;any processContents='lax' namespace='##other'/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax' namespace='##other'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -148,20 +148,20 @@ public class BaseFaultType {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAny().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link Object }
@@ -250,20 +250,20 @@ public class BaseFaultType {
     /**
      * Gets the value of the description property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the description property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the description property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getDescription().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link BaseFaultType.Description }
      * 
@@ -303,7 +303,7 @@ public class BaseFaultType {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 
@@ -330,19 +330,19 @@ public class BaseFaultType {
 
 
     /**
-     * <p>anonymous complex type的 Java 类。
+     * &lt;p&gt;anonymous complex type的 Java 类。
      * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
+     * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;simpleContent&gt;
-     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;string"&gt;
-     *       &lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&gt;
-     *     &lt;/extension&gt;
-     *   &lt;/simpleContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;simpleContent&amp;gt;
+     *     &amp;lt;extension base="&amp;lt;http://www.w3.org/2001/XMLSchema&amp;gt;string"&amp;gt;
+     *       &amp;lt;attribute ref="{http://www.w3.org/XML/1998/namespace}lang"/&amp;gt;
+     *     &amp;lt;/extension&amp;gt;
+     *   &amp;lt;/simpleContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -419,20 +419,20 @@ public class BaseFaultType {
 
 
     /**
-     * <p>anonymous complex type的 Java 类。
+     * &lt;p&gt;anonymous complex type的 Java 类。
      * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
+     * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
-     *       &lt;anyAttribute processContents='skip'/&gt;
-     *     &lt;/extension&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;extension base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;attribute name="dialect" use="required" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&amp;gt;
+     *       &amp;lt;anyAttribute processContents='skip'/&amp;gt;
+     *     &amp;lt;/extension&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -454,20 +454,20 @@ public class BaseFaultType {
         /**
          * Gets the value of the content property.
          * 
-         * <p>
+         * &lt;p&gt;
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the content property.
+         * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the content property.
          * 
-         * <p>
+         * &lt;p&gt;
          * For example, to add a new item, do as follows:
-         * <pre>
+         * &lt;pre&gt;
          *    getContent().add(newItem);
-         * </pre>
+         * &lt;/pre&gt;
          * 
          * 
-         * <p>
+         * &lt;p&gt;
          * Objects of the following type(s) are allowed in the list
          * {@link Element }
          * {@link String }
@@ -508,7 +508,7 @@ public class BaseFaultType {
         /**
          * Gets a map that contains attributes that aren't bound to any typed property on this class.
          * 
-         * <p>
+         * &lt;p&gt;
          * the map is keyed by the name of the attribute and 
          * the value is the string value of the attribute.
          * 
@@ -537,21 +537,21 @@ public class BaseFaultType {
 
 
     /**
-     * <p>anonymous complex type的 Java 类。
+     * &lt;p&gt;anonymous complex type的 Java 类。
      * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
+     * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' namespace='##other'/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;any processContents='lax' namespace='##other'/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */

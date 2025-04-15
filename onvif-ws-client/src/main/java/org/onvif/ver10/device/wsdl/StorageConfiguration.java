@@ -11,21 +11,21 @@ import org.onvif.ver10.schema.DeviceEntity;
 
 
 /**
- * <p>StorageConfiguration complex type的 Java 类。
+ * &lt;p&gt;StorageConfiguration complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="StorageConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Data" type="{http://www.onvif.org/ver10/device/wsdl}StorageConfigurationData"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="StorageConfiguration"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Data" type="{http://www.onvif.org/ver10/device/wsdl}StorageConfigurationData"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

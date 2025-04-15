@@ -19,32 +19,32 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>ImagingOptions complex type的 Java 类。
+ * &lt;p&gt;ImagingOptions complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="ImagingOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions"/&gt;
- *         &lt;element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions"/&gt;
- *         &lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions"/&gt;
- *         &lt;element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions"/&gt;
- *         &lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="ImagingOptions"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions"/&amp;gt;
+ *         &amp;lt;element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions"/&amp;gt;
+ *         &amp;lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions"/&amp;gt;
+ *         &amp;lt;element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded"/&amp;gt;
+ *         &amp;lt;element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions"/&amp;gt;
+ *         &amp;lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions"/&amp;gt;
+ *         &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -237,20 +237,20 @@ public class ImagingOptions {
     /**
      * Gets the value of the irCutFilterModes property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the irCutFilterModes property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the irCutFilterModes property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getIrCutFilterModes().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link IrCutFilterMode }
      * 
@@ -338,20 +338,20 @@ public class ImagingOptions {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAny().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link java.lang.Object }
@@ -368,7 +368,7 @@ public class ImagingOptions {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

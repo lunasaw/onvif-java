@@ -16,25 +16,25 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 /**
  * Representation of a physical video input.
  * 
- * <p>VideoSource complex type的 Java 类。
+ * &lt;p&gt;VideoSource complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="VideoSource"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution"/&gt;
- *         &lt;element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingSettings" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="VideoSource"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://www.onvif.org/ver10/schema}DeviceEntity"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Framerate" type="{http://www.w3.org/2001/XMLSchema}float"/&amp;gt;
+ *         &amp;lt;element name="Resolution" type="{http://www.onvif.org/ver10/schema}VideoResolution"/&amp;gt;
+ *         &amp;lt;element name="Imaging" type="{http://www.onvif.org/ver10/schema}ImagingSettings" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}VideoSourceExtension" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -151,7 +151,7 @@ public class VideoSource
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

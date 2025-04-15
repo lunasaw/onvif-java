@@ -14,22 +14,22 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
  * Range of duration greater equal Min duration and less equal Max duration.
  *       
  * 
- * <p>DurationRange complex type的 Java 类。
+ * &lt;p&gt;DurationRange complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="DurationRange"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Min" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *         &lt;element name="Max" type="{http://www.w3.org/2001/XMLSchema}duration"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="DurationRange"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Min" type="{http://www.w3.org/2001/XMLSchema}duration"/&amp;gt;
+ *         &amp;lt;element name="Max" type="{http://www.w3.org/2001/XMLSchema}duration"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

@@ -6,19 +6,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>RotateMode的 Java 类。
+ * &lt;p&gt;RotateMode的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="RotateMode"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="OFF"/&gt;
- *     &lt;enumeration value="ON"/&gt;
- *     &lt;enumeration value="AUTO"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="RotateMode"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="OFF"/&amp;gt;
+ *     &amp;lt;enumeration value="ON"/&amp;gt;
+ *     &amp;lt;enumeration value="AUTO"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "RotateMode")

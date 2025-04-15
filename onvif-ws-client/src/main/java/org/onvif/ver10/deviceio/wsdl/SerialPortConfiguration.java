@@ -22,28 +22,28 @@ import org.w3c.dom.Element;
 /**
  * The parameters for configuring the serial port.
  * 
- * <p>SerialPortConfiguration complex type的 Java 类。
+ * &lt;p&gt;SerialPortConfiguration complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="SerialPortConfiguration"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BaudRate" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="ParityBit" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBit"/&gt;
- *         &lt;element name="CharacterLength" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="StopBit" type="{http://www.w3.org/2001/XMLSchema}float"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
- *       &lt;attribute name="type" use="required" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialPortType" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="SerialPortConfiguration"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="BaudRate" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="ParityBit" type="{http://www.onvif.org/ver10/deviceIO/wsdl}ParityBit"/&amp;gt;
+ *         &amp;lt;element name="CharacterLength" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *         &amp;lt;element name="StopBit" type="{http://www.w3.org/2001/XMLSchema}float"/&amp;gt;
+ *         &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&amp;gt;
+ *       &amp;lt;attribute name="type" use="required" type="{http://www.onvif.org/ver10/deviceIO/wsdl}SerialPortType" /&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -150,20 +150,20 @@ public class SerialPortConfiguration {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAny().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link Object }
@@ -228,7 +228,7 @@ public class SerialPortConfiguration {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

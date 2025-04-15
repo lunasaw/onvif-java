@@ -16,20 +16,20 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Relationship complex type的 Java 类。
+ * &lt;p&gt;Relationship complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="Relationship"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;anyURI"&gt;
- *       &lt;attribute name="RelationshipType" type="{http://www.w3.org/2001/XMLSchema}QName" /&gt;
- *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="Relationship"&amp;gt;
+ *   &amp;lt;simpleContent&amp;gt;
+ *     &amp;lt;extension base="&amp;lt;http://www.w3.org/2001/XMLSchema&amp;gt;anyURI"&amp;gt;
+ *       &amp;lt;attribute name="RelationshipType" type="{http://www.w3.org/2001/XMLSchema}QName" /&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax' namespace='##other'/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/simpleContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -98,7 +98,7 @@ public class Relationship {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

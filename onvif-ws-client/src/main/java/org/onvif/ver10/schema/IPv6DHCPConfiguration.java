@@ -7,20 +7,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>IPv6DHCPConfiguration的 Java 类。
+ * &lt;p&gt;IPv6DHCPConfiguration的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="IPv6DHCPConfiguration"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Auto"/&gt;
- *     &lt;enumeration value="Stateful"/&gt;
- *     &lt;enumeration value="Stateless"/&gt;
- *     &lt;enumeration value="Off"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="IPv6DHCPConfiguration"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="Auto"/&amp;gt;
+ *     &amp;lt;enumeration value="Stateful"/&amp;gt;
+ *     &amp;lt;enumeration value="Stateless"/&amp;gt;
+ *     &amp;lt;enumeration value="Off"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "IPv6DHCPConfiguration")

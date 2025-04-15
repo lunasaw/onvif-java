@@ -7,23 +7,22 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>CapabilityCategory的 Java 类。
+ * &lt;p&gt;CapabilityCategory的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="CapabilityCategory"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="All"/&gt;
- *     &lt;enumeration value="Analytics"/&gt;
- *     &lt;enumeration value="Device"/&gt;
- *     &lt;enumeration value="Events"/&gt;
- *     &lt;enumeration value="Imaging"/&gt;
- *     &lt;enumeration value="Media"/&gt;
- *     &lt;enumeration value="PTZ"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="CapabilityCategory"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="All"/&amp;gt;
+ *     &amp;lt;enumeration value="Analytics"/&amp;gt;
+ *     &amp;lt;enumeration value="Device"/&amp;gt;
+ *     &amp;lt;enumeration value="Events"/&amp;gt;
+ *     &amp;lt;enumeration value="Imaging"/&amp;gt;
+ *     &amp;lt;enumeration value="Media"/&amp;gt;
+ *     &amp;lt;enumeration value="PTZ"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "CapabilityCategory")

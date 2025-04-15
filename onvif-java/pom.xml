@@ -97,10 +97,11 @@
       <version>2.3.0.1</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
-      <version>${jaxb.api.version}</version>
+      <version>2.3.9</version>
     </dependency>
     <!-- Java 9+ javax dependencies end -->
 

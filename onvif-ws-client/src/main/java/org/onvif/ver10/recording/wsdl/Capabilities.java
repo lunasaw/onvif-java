@@ -18,32 +18,32 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Capabilities complex type的 Java 类。
+ * &lt;p&gt;Capabilities complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="Capabilities"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="Encoding" type="{http://www.onvif.org/ver10/recording/wsdl}EncodingTypes" /&gt;
- *       &lt;attribute name="MaxRate" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="MaxTotalRate" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="MaxRecordings" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="MaxRecordingJobs" type="{http://www.w3.org/2001/XMLSchema}int" /&gt;
- *       &lt;attribute name="Options" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="MetadataRecording" type="{http://www.w3.org/2001/XMLSchema}boolean" /&gt;
- *       &lt;attribute name="SupportedExportFileFormats" type="{http://www.onvif.org/ver10/schema}StringAttrList" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="Capabilities"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;attribute name="DynamicRecordings" type="{http://www.w3.org/2001/XMLSchema}boolean" /&amp;gt;
+ *       &amp;lt;attribute name="DynamicTracks" type="{http://www.w3.org/2001/XMLSchema}boolean" /&amp;gt;
+ *       &amp;lt;attribute name="Encoding" type="{http://www.onvif.org/ver10/recording/wsdl}EncodingTypes" /&amp;gt;
+ *       &amp;lt;attribute name="MaxRate" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="MaxTotalRate" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="MaxRecordings" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="MaxRecordingJobs" type="{http://www.w3.org/2001/XMLSchema}int" /&amp;gt;
+ *       &amp;lt;attribute name="Options" type="{http://www.w3.org/2001/XMLSchema}boolean" /&amp;gt;
+ *       &amp;lt;attribute name="MetadataRecording" type="{http://www.w3.org/2001/XMLSchema}boolean" /&amp;gt;
+ *       &amp;lt;attribute name="SupportedExportFileFormats" type="{http://www.onvif.org/ver10/schema}StringAttrList" /&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -81,20 +81,20 @@ public class Capabilities {
     /**
      * Gets the value of the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAny().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link Object }
@@ -161,20 +161,20 @@ public class Capabilities {
     /**
      * Gets the value of the encoding property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the encoding property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the encoding property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getEncoding().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -336,20 +336,20 @@ public class Capabilities {
     /**
      * Gets the value of the supportedExportFileFormats property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the supportedExportFileFormats property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the supportedExportFileFormats property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getSupportedExportFileFormats().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -365,7 +365,7 @@ public class Capabilities {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

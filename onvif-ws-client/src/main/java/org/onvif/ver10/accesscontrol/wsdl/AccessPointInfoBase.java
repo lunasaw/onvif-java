@@ -17,26 +17,26 @@ import org.onvif.ver10.pacs.DataEntity;
  *             Used as extension base for AccessPointInfo.
  *           
  * 
- * <p>AccessPointInfoBase complex type的 Java 类。
+ * &lt;p&gt;AccessPointInfoBase complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="AccessPointInfoBase"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
- *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
- *         &lt;element name="AreaFrom" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="AreaTo" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&gt;
- *         &lt;element name="EntityType" type="{http://www.w3.org/2001/XMLSchema}QName" minOccurs="0"/&gt;
- *         &lt;element name="Entity" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="AccessPointInfoBase"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&amp;gt;
+ *         &amp;lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="AreaFrom" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="AreaTo" type="{http://www.onvif.org/ver10/pacs}ReferenceToken" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="EntityType" type="{http://www.w3.org/2001/XMLSchema}QName" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Entity" type="{http://www.onvif.org/ver10/pacs}ReferenceToken"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

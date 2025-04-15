@@ -7,19 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>MetadataCompressionType的 Java 类。
+ * &lt;p&gt;MetadataCompressionType的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="MetadataCompressionType"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="None"/&gt;
- *     &lt;enumeration value="GZIP"/&gt;
- *     &lt;enumeration value="EXI"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="MetadataCompressionType"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="None"/&amp;gt;
+ *     &amp;lt;enumeration value="GZIP"/&amp;gt;
+ *     &amp;lt;enumeration value="EXI"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "MetadataCompressionType")

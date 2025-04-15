@@ -16,23 +16,23 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 /**
  * The serial port data.
  * 
- * <p>SerialData complex type的 Java 类。
+ * &lt;p&gt;SerialData complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="SerialData"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;choice&gt;
- *         &lt;element name="Binary" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&gt;
- *         &lt;element name="String" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/choice&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="SerialData"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;choice&amp;gt;
+ *         &amp;lt;element name="Binary" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/&amp;gt;
+ *         &amp;lt;element name="String" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *       &amp;lt;/choice&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -99,7 +99,7 @@ public class SerialData {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

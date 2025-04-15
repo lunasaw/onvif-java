@@ -10,22 +10,22 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>Rectangle complex type的 Java 类。
+ * &lt;p&gt;Rectangle complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="Rectangle"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;attribute name="bottom" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="top" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="right" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *       &lt;attribute name="left" type="{http://www.w3.org/2001/XMLSchema}float" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="Rectangle"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;attribute name="bottom" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="top" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="right" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *       &amp;lt;attribute name="left" type="{http://www.w3.org/2001/XMLSchema}float" /&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

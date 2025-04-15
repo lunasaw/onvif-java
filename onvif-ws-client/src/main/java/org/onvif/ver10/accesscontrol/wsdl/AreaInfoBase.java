@@ -16,22 +16,22 @@ import org.onvif.ver10.pacs.DataEntity;
  *             Basic information about an Area. Used as extension base.
  *           
  * 
- * <p>AreaInfoBase complex type的 Java 类。
+ * &lt;p&gt;AreaInfoBase complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="AreaInfoBase"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&gt;
- *         &lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="AreaInfoBase"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://www.onvif.org/ver10/pacs}DataEntity"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Name" type="{http://www.onvif.org/ver10/pacs}Name"/&amp;gt;
+ *         &amp;lt;element name="Description" type="{http://www.onvif.org/ver10/pacs}Description" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

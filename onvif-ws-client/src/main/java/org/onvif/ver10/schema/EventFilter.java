@@ -14,19 +14,19 @@ import org.oasis_open.docs.wsn.b_2.FilterType;
 
 
 /**
- * <p>EventFilter complex type的 Java 类。
+ * &lt;p&gt;EventFilter complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="EventFilter"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://docs.oasis-open.org/wsn/b-2}FilterType"&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="EventFilter"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://docs.oasis-open.org/wsn/b-2}FilterType"&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -42,7 +42,7 @@ public class EventFilter
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

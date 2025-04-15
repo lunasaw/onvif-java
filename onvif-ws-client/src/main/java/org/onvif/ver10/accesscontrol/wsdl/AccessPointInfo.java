@@ -24,35 +24,35 @@ import org.w3c.dom.Element;
  *             AccessPointInfo provides basic information on how access is controlled in one direction
  *             for a
  *             door (from which area to which area).
- *             </p><p>
+ *             &lt;/p&gt;&lt;p&gt;
  *             door is the typical device involved, but other type of
  *             devices may be supported as well.
  *             Multiple AccessPoints may cover the same Door.
  *             A typical case is one AccessPoint for entry and another for exit, both referencing
  *             the same Door.
- *             </p><p>
+ *             &lt;/p&gt;&lt;p&gt;
  * 
  *             An ONVIF compliant device shall provide the following fields for each AccessPoint
  *             instance:
  *           
  * 
- * <p>AccessPointInfo complex type的 Java 类。
+ * &lt;p&gt;AccessPointInfo complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="AccessPointInfo"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointInfoBase"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Capabilities" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointCapabilities"/&gt;
- *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="AccessPointInfo"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;extension base="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointInfoBase"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Capabilities" type="{http://www.onvif.org/ver10/accesscontrol/wsdl}AccessPointCapabilities"/&amp;gt;
+ *         &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -99,20 +99,20 @@ public class AccessPointInfo
     /**
      * Gets the value of the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the any property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getAny().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link Object }
@@ -129,7 +129,7 @@ public class AccessPointInfo
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

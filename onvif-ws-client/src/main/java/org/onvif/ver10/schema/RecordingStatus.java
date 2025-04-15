@@ -7,22 +7,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>RecordingStatus的 Java 类。
+ * &lt;p&gt;RecordingStatus的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="RecordingStatus"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Initiated"/&gt;
- *     &lt;enumeration value="Recording"/&gt;
- *     &lt;enumeration value="Stopped"/&gt;
- *     &lt;enumeration value="Removing"/&gt;
- *     &lt;enumeration value="Removed"/&gt;
- *     &lt;enumeration value="Unknown"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="RecordingStatus"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="Initiated"/&amp;gt;
+ *     &amp;lt;enumeration value="Recording"/&amp;gt;
+ *     &amp;lt;enumeration value="Stopped"/&amp;gt;
+ *     &amp;lt;enumeration value="Removing"/&amp;gt;
+ *     &amp;lt;enumeration value="Removed"/&amp;gt;
+ *     &amp;lt;enumeration value="Unknown"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "RecordingStatus")

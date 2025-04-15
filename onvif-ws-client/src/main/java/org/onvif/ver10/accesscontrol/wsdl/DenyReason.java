@@ -7,23 +7,22 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>DenyReason的 Java 类。
+ * &lt;p&gt;DenyReason的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="DenyReason"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="CredentialNotEnabled"/&gt;
- *     &lt;enumeration value="CredentialNotActive"/&gt;
- *     &lt;enumeration value="CredentialExpired"/&gt;
- *     &lt;enumeration value="InvalidPIN"/&gt;
- *     &lt;enumeration value="NotPermittedAtThisTime"/&gt;
- *     &lt;enumeration value="Unauthorized"/&gt;
- *     &lt;enumeration value="Other"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="DenyReason"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="CredentialNotEnabled"/&amp;gt;
+ *     &amp;lt;enumeration value="CredentialNotActive"/&amp;gt;
+ *     &amp;lt;enumeration value="CredentialExpired"/&amp;gt;
+ *     &amp;lt;enumeration value="InvalidPIN"/&amp;gt;
+ *     &amp;lt;enumeration value="NotPermittedAtThisTime"/&amp;gt;
+ *     &amp;lt;enumeration value="Unauthorized"/&amp;gt;
+ *     &amp;lt;enumeration value="Other"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "DenyReason")

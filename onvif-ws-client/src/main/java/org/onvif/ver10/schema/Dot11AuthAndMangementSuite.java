@@ -7,20 +7,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Dot11AuthAndMangementSuite的 Java 类。
+ * &lt;p&gt;Dot11AuthAndMangementSuite的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="Dot11AuthAndMangementSuite"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="None"/&gt;
- *     &lt;enumeration value="Dot1X"/&gt;
- *     &lt;enumeration value="PSK"/&gt;
- *     &lt;enumeration value="Extended"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="Dot11AuthAndMangementSuite"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="None"/&amp;gt;
+ *     &amp;lt;enumeration value="Dot1X"/&amp;gt;
+ *     &amp;lt;enumeration value="PSK"/&amp;gt;
+ *     &amp;lt;enumeration value="Extended"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "Dot11AuthAndMangementSuite")

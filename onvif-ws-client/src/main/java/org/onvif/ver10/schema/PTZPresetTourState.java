@@ -7,20 +7,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>PTZPresetTourState的 Java 类。
+ * &lt;p&gt;PTZPresetTourState的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
- * <p>
- * <pre>
- * &lt;simpleType name="PTZPresetTourState"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Idle"/&gt;
- *     &lt;enumeration value="Touring"/&gt;
- *     &lt;enumeration value="Paused"/&gt;
- *     &lt;enumeration value="Extended"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
+ * &lt;pre&gt;
+ * &amp;lt;simpleType name="PTZPresetTourState"&amp;gt;
+ *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
+ *     &amp;lt;enumeration value="Idle"/&amp;gt;
+ *     &amp;lt;enumeration value="Touring"/&amp;gt;
+ *     &amp;lt;enumeration value="Paused"/&amp;gt;
+ *     &amp;lt;enumeration value="Extended"/&amp;gt;
+ *   &amp;lt;/restriction&amp;gt;
+ * &amp;lt;/simpleType&amp;gt;
+ * &lt;/pre&gt;
  * 
  */
 @XmlType(name = "PTZPresetTourState")

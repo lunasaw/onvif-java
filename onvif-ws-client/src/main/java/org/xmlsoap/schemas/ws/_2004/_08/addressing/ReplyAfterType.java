@@ -16,19 +16,19 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>ReplyAfterType complex type的 Java 类。
+ * &lt;p&gt;ReplyAfterType complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="ReplyAfterType"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;nonNegativeInteger"&gt;
- *       &lt;anyAttribute namespace='##other'/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="ReplyAfterType"&amp;gt;
+ *   &amp;lt;simpleContent&amp;gt;
+ *     &amp;lt;extension base="&amp;lt;http://www.w3.org/2001/XMLSchema&amp;gt;nonNegativeInteger"&amp;gt;
+ *       &amp;lt;anyAttribute namespace='##other'/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/simpleContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -71,7 +71,7 @@ public class ReplyAfterType {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

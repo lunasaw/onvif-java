@@ -13,32 +13,32 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 /**
  * Type describing the exposure settings.
  * 
- * <p>Exposure20 complex type的 Java 类。
+ * &lt;p&gt;Exposure20 complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="Exposure20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode"/&gt;
- *         &lt;element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority" minOccurs="0"/&gt;
- *         &lt;element name="Window" type="{http://www.onvif.org/ver10/schema}Rectangle" minOccurs="0"/&gt;
- *         &lt;element name="MinExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="MaxExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="MinGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="MaxGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="MinIris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="MaxIris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="ExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="Gain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *         &lt;element name="Iris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="Exposure20"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode"/&amp;gt;
+ *         &amp;lt;element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Window" type="{http://www.onvif.org/ver10/schema}Rectangle" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MinExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MaxExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MinGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MaxGain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MinIris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MaxIris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="ExposureTime" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Gain" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Iris" type="{http://www.w3.org/2001/XMLSchema}float" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

@@ -18,27 +18,27 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>anonymous complex type的 Java 类。
+ * &lt;p&gt;anonymous complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Source" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&gt;
- *         &lt;element name="Key" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&gt;
- *         &lt;element name="Data" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}MessageExtension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="UtcTime" use="required" type="{http://www.w3.org/2001/XMLSchema}dateTime" /&gt;
- *       &lt;attribute name="PropertyOperation" type="{http://www.onvif.org/ver10/schema}PropertyOperation" /&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Source" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Key" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Data" type="{http://www.onvif.org/ver10/schema}ItemList" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}MessageExtension" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;attribute name="UtcTime" use="required" type="{http://www.w3.org/2001/XMLSchema}dateTime" /&amp;gt;
+ *       &amp;lt;attribute name="PropertyOperation" type="{http://www.onvif.org/ver10/schema}PropertyOperation" /&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -215,7 +215,7 @@ public class Message {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 

@@ -13,31 +13,31 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>ExposureOptions complex type的 Java 类。
+ * &lt;p&gt;ExposureOptions complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="ExposureOptions"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode" maxOccurs="unbounded"/&gt;
- *         &lt;element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority" maxOccurs="unbounded"/&gt;
- *         &lt;element name="MinExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="MaxExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="MinGain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="MaxGain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="MinIris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="MaxIris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="ExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Gain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *         &lt;element name="Iris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="ExposureOptions"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Mode" type="{http://www.onvif.org/ver10/schema}ExposureMode" maxOccurs="unbounded"/&amp;gt;
+ *         &amp;lt;element name="Priority" type="{http://www.onvif.org/ver10/schema}ExposurePriority" maxOccurs="unbounded"/&amp;gt;
+ *         &amp;lt;element name="MinExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="MaxExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="MinGain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="MaxGain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="MinIris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="MaxIris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="ExposureTime" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="Gain" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *         &amp;lt;element name="Iris" type="{http://www.onvif.org/ver10/schema}FloatRange"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -85,20 +85,20 @@ public class ExposureOptions {
     /**
      * Gets the value of the mode property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mode property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the mode property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getMode().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link ExposureMode }
      * 
@@ -114,20 +114,20 @@ public class ExposureOptions {
     /**
      * Gets the value of the priority property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the priority property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the priority property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getPriority().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link ExposurePriority }
      * 

@@ -15,23 +15,23 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
  * Base type defining the common properties of a configuration.
  *       
  * 
- * <p>ConfigurationEntity complex type的 Java 类。
+ * &lt;p&gt;ConfigurationEntity complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="ConfigurationEntity"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/&gt;
- *         &lt;element name="UseCount" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="ConfigurationEntity"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Name" type="{http://www.onvif.org/ver10/schema}Name"/&amp;gt;
+ *         &amp;lt;element name="UseCount" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;attribute name="token" use="required" type="{http://www.onvif.org/ver10/schema}ReferenceToken" /&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

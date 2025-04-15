@@ -11,19 +11,19 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>base64Binary complex type的 Java 类。
+ * &lt;p&gt;base64Binary complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="base64Binary"&gt;
- *   &lt;simpleContent&gt;
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema&gt;base64Binary"&gt;
- *       &lt;attribute ref="{http://www.w3.org/2005/05/xmlmime}contentType"/&gt;
- *     &lt;/extension&gt;
- *   &lt;/simpleContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="base64Binary"&amp;gt;
+ *   &amp;lt;simpleContent&amp;gt;
+ *     &amp;lt;extension base="&amp;lt;http://www.w3.org/2001/XMLSchema&amp;gt;base64Binary"&amp;gt;
+ *       &amp;lt;attribute ref="{http://www.w3.org/2005/05/xmlmime}contentType"/&amp;gt;
+ *     &amp;lt;/extension&amp;gt;
+ *   &amp;lt;/simpleContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */

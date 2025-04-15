@@ -18,48 +18,48 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>DistinguishedName complex type的 Java 类。
+ * &lt;p&gt;DistinguishedName complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="DistinguishedName"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="Country" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Organization" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="OrganizationalUnit" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="DistinguishedNameQualifier" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="StateOrProvinceName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="CommonName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="SerialNumber" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Locality" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Title" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Surname" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="GivenName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Initials" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Pseudonym" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="GenerationQualifier" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="GenericAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeTypeAndValue" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="MultiValuedRDN" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}MultiValuedRDN" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="anyAttribute" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="DistinguishedName"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="Country" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Organization" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="OrganizationalUnit" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="DistinguishedNameQualifier" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="StateOrProvinceName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="CommonName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="SerialNumber" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Locality" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Title" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Surname" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="GivenName" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Initials" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Pseudonym" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="GenerationQualifier" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="GenericAttribute" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}DNAttributeTypeAndValue" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="MultiValuedRDN" type="{http://www.onvif.org/ver10/advancedsecurity/wsdl}MultiValuedRDN" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="anyAttribute" minOccurs="0"&amp;gt;
+ *           &amp;lt;complexType&amp;gt;
+ *             &amp;lt;complexContent&amp;gt;
+ *               &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *                 &amp;lt;sequence&amp;gt;
+ *                   &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *                 &amp;lt;/sequence&amp;gt;
+ *               &amp;lt;/restriction&amp;gt;
+ *             &amp;lt;/complexContent&amp;gt;
+ *           &amp;lt;/complexType&amp;gt;
+ *         &amp;lt;/element&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -124,20 +124,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the country property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the country property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the country property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getCountry().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -153,20 +153,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the organization property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organization property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the organization property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getOrganization().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -182,20 +182,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the organizationalUnit property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the organizationalUnit property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the organizationalUnit property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getOrganizationalUnit().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -211,20 +211,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the distinguishedNameQualifier property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the distinguishedNameQualifier property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the distinguishedNameQualifier property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getDistinguishedNameQualifier().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -240,20 +240,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the stateOrProvinceName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stateOrProvinceName property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the stateOrProvinceName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getStateOrProvinceName().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -269,20 +269,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the commonName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the commonName property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the commonName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getCommonName().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -298,20 +298,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the serialNumber property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the serialNumber property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the serialNumber property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getSerialNumber().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -327,20 +327,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the locality property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the locality property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the locality property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getLocality().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -356,20 +356,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the title property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the title property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the title property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getTitle().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -385,20 +385,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the surname property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the surname property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the surname property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getSurname().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -414,20 +414,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the givenName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the givenName property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the givenName property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getGivenName().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -443,20 +443,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the initials property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the initials property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the initials property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getInitials().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -472,20 +472,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the pseudonym property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the pseudonym property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the pseudonym property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getPseudonym().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -501,20 +501,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the generationQualifier property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the generationQualifier property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the generationQualifier property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getGenerationQualifier().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link String }
      * 
@@ -530,20 +530,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the genericAttribute property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the genericAttribute property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the genericAttribute property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getGenericAttribute().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link DNAttributeTypeAndValue }
      * 
@@ -559,20 +559,20 @@ public class DistinguishedName {
     /**
      * Gets the value of the multiValuedRDN property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the multiValuedRDN property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the multiValuedRDN property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getMultiValuedRDN().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link MultiValuedRDN }
      * 
@@ -612,7 +612,7 @@ public class DistinguishedName {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 
@@ -639,21 +639,21 @@ public class DistinguishedName {
 
 
     /**
-     * <p>anonymous complex type的 Java 类。
+     * &lt;p&gt;anonymous complex type的 Java 类。
      * 
-     * <p>以下模式片段指定包含在此类中的预期内容。
+     * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
      * 
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
+     * &lt;pre&gt;
+     * &amp;lt;complexType&amp;gt;
+     *   &amp;lt;complexContent&amp;gt;
+     *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+     *       &amp;lt;sequence&amp;gt;
+     *         &amp;lt;any processContents='lax' maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+     *       &amp;lt;/sequence&amp;gt;
+     *     &amp;lt;/restriction&amp;gt;
+     *   &amp;lt;/complexContent&amp;gt;
+     * &amp;lt;/complexType&amp;gt;
+     * &lt;/pre&gt;
      * 
      * 
      */
@@ -669,20 +669,20 @@ public class DistinguishedName {
         /**
          * Gets the value of the any property.
          * 
-         * <p>
+         * &lt;p&gt;
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the any property.
+         * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the any property.
          * 
-         * <p>
+         * &lt;p&gt;
          * For example, to add a new item, do as follows:
-         * <pre>
+         * &lt;pre&gt;
          *    getAny().add(newItem);
-         * </pre>
+         * &lt;/pre&gt;
          * 
          * 
-         * <p>
+         * &lt;p&gt;
          * Objects of the following type(s) are allowed in the list
          * {@link Element }
          * {@link Object }

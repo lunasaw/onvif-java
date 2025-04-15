@@ -17,32 +17,32 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 
 
 /**
- * <p>ImagingOptions20 complex type的 Java 类。
+ * &lt;p&gt;ImagingOptions20 complex type的 Java 类。
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * &lt;p&gt;以下模式片段指定包含在此类中的预期内容。
  * 
- * <pre>
- * &lt;complexType name="ImagingOptions20"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions20" minOccurs="0"/&gt;
- *         &lt;element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
- *         &lt;element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
- *         &lt;element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
- *         &lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions20" minOccurs="0"/&gt;
- *         &lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions20" minOccurs="0"/&gt;
- *         &lt;element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&gt;
- *         &lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions20" minOccurs="0"/&gt;
- *         &lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions20" minOccurs="0"/&gt;
- *         &lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension" minOccurs="0"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;anyAttribute processContents='lax'/&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
+ * &lt;pre&gt;
+ * &amp;lt;complexType name="ImagingOptions20"&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name="BacklightCompensation" type="{http://www.onvif.org/ver10/schema}BacklightCompensationOptions20" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Brightness" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="ColorSaturation" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Contrast" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Exposure" type="{http://www.onvif.org/ver10/schema}ExposureOptions20" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Focus" type="{http://www.onvif.org/ver10/schema}FocusOptions20" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="IrCutFilterModes" type="{http://www.onvif.org/ver10/schema}IrCutFilterMode" maxOccurs="unbounded" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Sharpness" type="{http://www.onvif.org/ver10/schema}FloatRange" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="WideDynamicRange" type="{http://www.onvif.org/ver10/schema}WideDynamicRangeOptions20" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="WhiteBalance" type="{http://www.onvif.org/ver10/schema}WhiteBalanceOptions20" minOccurs="0"/&amp;gt;
+ *         &amp;lt;element name="Extension" type="{http://www.onvif.org/ver10/schema}ImagingOptions20Extension" minOccurs="0"/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *       &amp;lt;anyAttribute processContents='lax'/&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
  * 
  * 
  */
@@ -235,20 +235,20 @@ public class ImagingOptions20 {
     /**
      * Gets the value of the irCutFilterModes property.
      * 
-     * <p>
+     * &lt;p&gt;
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the irCutFilterModes property.
+     * This is why there is not a &lt;CODE&gt;set&lt;/CODE&gt; method for the irCutFilterModes property.
      * 
-     * <p>
+     * &lt;p&gt;
      * For example, to add a new item, do as follows:
-     * <pre>
+     * &lt;pre&gt;
      *    getIrCutFilterModes().add(newItem);
-     * </pre>
+     * &lt;/pre&gt;
      * 
      * 
-     * <p>
+     * &lt;p&gt;
      * Objects of the following type(s) are allowed in the list
      * {@link IrCutFilterMode }
      * 
@@ -360,7 +360,7 @@ public class ImagingOptions20 {
     /**
      * Gets a map that contains attributes that aren't bound to any typed property on this class.
      * 
-     * <p>
+     * &lt;p&gt;
      * the map is keyed by the name of the attribute and 
      * the value is the string value of the attribute.
      * 
